@@ -1,9 +1,17 @@
-site_name: 98336/98633 Documents
+site_name: 98336/98633 SDK Documents
 nav:
     #- Home: index.md
     - CVAI:
        - MD User Guide: NT9833X_MD_User_Guide_en.md
+       - IVE User Guide: NT9833X_IVE_User_Guide_en.md
+    - ISPQ:
        - VPE IQ Tuning Guide: NT9833x_VPE_IQ_Tuning_Guide_en.md
+       - LCD IQ Tuning Guide: NT9833x_LCD_IQ_Tuning_Guide_en.md
+    - MEDIA:
+       - HDAL hd_videodec: Novatek+HDAL+Design+Specification+-+hd_videodec.md
+       - HDAL hd_videoenc: Novatek+HDAL+Design+Specification+-+hd_videoenc.md
+    - OSDRV:
+       - Linux Programming Guide: NT9833x_SDK_Pure_Linux_Programming_Guide_en.md  
 theme:
   name: material
   highlightjs: true
@@ -16,4 +24,9 @@ markdown_extensions:
     - sane_lists
 plugins:
   - search
+  
 use_directory_urls: false
+extra:
+    social: 
+        - icon: fontawesome/brands/github
+          link: https://github.com
