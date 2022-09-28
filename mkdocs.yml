@@ -1,22 +1,30 @@
-site_name: 98336/98633 SDK Documents
+site_name: NT98336/NT98633 Documents
 nav:
     #- Home: index.md
-    - CVAI:
-       - MD User Guide: NT9833X_MD_User_Guide_en.md
-       - IVE User Guide: NT9833X_IVE_User_Guide_en.md
-    - ISPQ:
-       - VPE IQ Tuning Guide: NT9833x_VPE_IQ_Tuning_Guide_en.md
-       - LCD IQ Tuning Guide: NT9833x_LCD_IQ_Tuning_Guide_en.md
-    - MEDIA:
-       - HDAL hd_videodec: Novatek+HDAL+Design+Specification+-+hd_videodec.md
-       - HDAL hd_videoenc: Novatek+HDAL+Design+Specification+-+hd_videoenc.md
-    - OSDRV:
-       - Linux Programming Guide: NT9833x_SDK_Pure_Linux_Programming_Guide_en.md  
+    - Software: 
+       - CVAI:
+           - MD User Guide: NT9833X_MD_User_Guide_en.md
+           - IVE User Guide: NT9833X_IVE_User_Guide_en.md
+       - ISPQ:
+          - VPE IQ Tuning Guide: NT9833x_VPE_IQ_Tuning_Guide_en.md
+          - LCD IQ Tuning Guide: NT9833x_LCD_IQ_Tuning_Guide_en.md
+       - MEDIA:
+          - HDAL hd_videodec: Novatek+HDAL+Design+Specification+-+hd_videodec.md
+          - HDAL hd_videoenc: Novatek+HDAL+Design+Specification+-+hd_videoenc.md
+       - OSDRV:
+          - Linux Programming Guide: NT9833x_SDK_Pure_Linux_Programming_Guide_en.md  
+    - Hardware(Not Ready): 
+       - Not Ready: 
+          - not_ready - not_reay.md
+    - For Reference(Not Ready): 
+       - Not Ready: 
+          - not_ready - not_reay.md          
 theme:
   name: material
-  highlightjs: true
+  highlightjs: true 
   features:
     - search.highlight
+    - navigation.tabs
 markdown_extensions:
     - smarty
     - toc:
