@@ -1,0 +1,1642 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.3">
+    
+    
+      
+        <title>Quick Bringup User Guide - NT98336/NT98633 Documents</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7a952b86.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#board-setup" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="NT98336/NT98633 Documents" class="md-header__button md-logo" aria-label="NT98336/NT98633 Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NT98336/NT98633 Documents
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Quick Bringup User Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../CVAI/NT9833X_MD_User_Guide_en.html" class="md-tabs__link md-tabs__link--active">
+        Software
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../not_ready - not_reay.md" class="md-tabs__link">
+        Hardware(Not Ready)
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../not_ready - not_reay.md" class="md-tabs__link">
+        For Reference(Not Ready)
+      </a>
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="NT98336/NT98633 Documents" class="md-nav__button md-logo" aria-label="NT98336/NT98633 Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    NT98336/NT98633 Documents
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          Software
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Software" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Software
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_1" type="checkbox" id="__nav_1_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_1">
+          CVAI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="CVAI" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          CVAI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CVAI/NT9833X_MD_User_Guide_en.html" class="md-nav__link">
+        MD User Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CVAI/NT9833X_IVE_User_Guide_en.html" class="md-nav__link">
+        IVE User Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CVAI/NT9833X_MD_Tuning_Guide_en.html" class="md-nav__link">
+        MD Tuning Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_2" type="checkbox" id="__nav_1_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_2">
+          ISPQ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="ISPQ" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          ISPQ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ISP/NT9833x_VPE_IQ_Tuning_Guide_en.html" class="md-nav__link">
+        VPE IQ Tuning Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ISP/NT9833x_LCD_IQ_Tuning_Guide_en.html" class="md-nav__link">
+        LCD IQ Tuning Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ISP/NT9833x_DI_Tuning_Guide_en.html" class="md-nav__link">
+        DI Tuning Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_3">
+          MEDIA
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MEDIA" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          MEDIA
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MEDIA/NT9833x_HDAL_Vendor_ISP_Programming_Guide_en.html" class="md-nav__link">
+        Vendor ISP Programming Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MEDIA/NT9833x_HDAL_Vendor_Media_Programming_Guide_en.html" class="md-nav__link">
+        Vendor Media Programming Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MEDIA/NT9833x_HDAL_Vendor_PCIe_Programming_Guide_en.html" class="md-nav__link">
+        Vendor PCie Programming Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_4">
+          OSDRV
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="OSDRV" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          OSDRV
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="NT9833x_SDK_Pure_Linux_Programming_Guide_en.html" class="md-nav__link">
+        Linux Programming Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Quick Bringup User Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="NT9833x_Quick_Bringup_User_Guide_en.html" class="md-nav__link md-nav__link--active">
+        Quick Bringup User Guide
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#board-setup" class="md-nav__link">
+    Board setup
+  </a>
+  
+    <nav class="md-nav" aria-label="Board setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-board-without-pcie-cascade" class="md-nav__link">
+    Single board (Without PCIE cascade)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dual-board-with-pcie-cascade" class="md-nav__link">
+    Dual board (With PCIE cascade)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boot-from-uart" class="md-nav__link">
+    Boot from UART
+  </a>
+  
+    <nav class="md-nav" aria-label="Boot from UART">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operation-architecture" class="md-nav__link">
+    Operation architecture
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-flow" class="md-nav__link">
+    Update flow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-generation" class="md-nav__link">
+    Image generation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-tool" class="md-nav__link">
+    Update Tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-sop" class="md-nav__link">
+    Update SOP
+  </a>
+  
+    <nav class="md-nav" aria-label="Update SOP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boot-from-uart-sop" class="md-nav__link">
+    Boot from UART SOP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dfu-sop" class="md-nav__link">
+    DFU SOP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tftp-sop" class="md-nav__link">
+    TFTP SOP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pcie-cascade-update-sop-nand" class="md-nav__link">
+    PCIE cascade update SOP (NAND)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emmc-update-sop" class="md-nav__link">
+    EMMC update SOP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pcie-cascade-update-sop-emmc" class="md-nav__link">
+    PCIE cascade update SOP (EMMC)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nor-update-sop" class="md-nav__link">
+    NOR update SOP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trouble-shooting" class="md-nav__link">
+    Trouble shooting
+  </a>
+  
+    <nav class="md-nav" aria-label="Trouble shooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ping-error-on-uboot-shell" class="md-nav__link">
+    Ping error on uboot shell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dfu-driver-problem" class="md-nav__link">
+    DFU driver problem
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="NT9833x_PCIe_User_Guide_en.html" class="md-nav__link">
+        PCIe User Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NT9833x_DVR_NVR_SDK_Quick_Start.html" class="md-nav__link">
+        Quick Start
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Hardware(Not Ready)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Hardware(Not Ready)" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Hardware(Not Ready)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          Not Ready
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Not Ready" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Not Ready
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../not_ready - not_reay.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          For Reference(Not Ready)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="For Reference(Not Ready)" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          For Reference(Not Ready)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1">
+          Not Ready
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Not Ready" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Not Ready
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../not_ready - not_reay.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#board-setup" class="md-nav__link">
+    Board setup
+  </a>
+  
+    <nav class="md-nav" aria-label="Board setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-board-without-pcie-cascade" class="md-nav__link">
+    Single board (Without PCIE cascade)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dual-board-with-pcie-cascade" class="md-nav__link">
+    Dual board (With PCIE cascade)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boot-from-uart" class="md-nav__link">
+    Boot from UART
+  </a>
+  
+    <nav class="md-nav" aria-label="Boot from UART">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operation-architecture" class="md-nav__link">
+    Operation architecture
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-flow" class="md-nav__link">
+    Update flow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-generation" class="md-nav__link">
+    Image generation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-tool" class="md-nav__link">
+    Update Tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-sop" class="md-nav__link">
+    Update SOP
+  </a>
+  
+    <nav class="md-nav" aria-label="Update SOP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boot-from-uart-sop" class="md-nav__link">
+    Boot from UART SOP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dfu-sop" class="md-nav__link">
+    DFU SOP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tftp-sop" class="md-nav__link">
+    TFTP SOP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pcie-cascade-update-sop-nand" class="md-nav__link">
+    PCIE cascade update SOP (NAND)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emmc-update-sop" class="md-nav__link">
+    EMMC update SOP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pcie-cascade-update-sop-emmc" class="md-nav__link">
+    PCIE cascade update SOP (EMMC)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nor-update-sop" class="md-nav__link">
+    NOR update SOP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trouble-shooting" class="md-nav__link">
+    Trouble shooting
+  </a>
+  
+    <nav class="md-nav" aria-label="Trouble shooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ping-error-on-uboot-shell" class="md-nav__link">
+    Ping error on uboot shell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dfu-driver-problem" class="md-nav__link">
+    DFU driver problem
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Quick Bringup User Guide</h1>
+
+<h2 id="board-setup">Board setup<a class="headerlink" href="#board-setup" title="Permanent link">&para;</a></h2>
+<h3 id="single-board-without-pcie-cascade">Single board (Without PCIE cascade)<a class="headerlink" href="#single-board-without-pcie-cascade" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="nvt_media/bfd508fd0e5ef40597a224060de42ea7.jpg" /><strong><br />
+</strong></p>
+<p><img alt="" src="nvt_media/81dbbaef13232e684e8142690f5828d7.jpg" /></p>
+<h3 id="dual-board-with-pcie-cascade">Dual board (With PCIE cascade)<a class="headerlink" href="#dual-board-with-pcie-cascade" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="nvt_media/ac5da29a6690beac9752af94a4364a3f.jpeg" /><img alt="" src="nvt_media/a17f7d53e074dfdaacd50e53a55555d8.jpeg" /></p>
+<p><strong><br />
+</strong></p>
+<h2 id="boot-from-uart">Boot from UART<a class="headerlink" href="#boot-from-uart" title="Permanent link">&para;</a></h2>
+<p>This mode will be responsible for the loader update when the flash of the board is new or can’t boot conditions.</p>
+<h3 id="operation-architecture">Operation architecture<a class="headerlink" href="#operation-architecture" title="Permanent link">&para;</a></h3>
+<p>We will transfer the write loader(WLD9833XA.bin) to EVB to do update process, and get every image through UART, loader will update each image to specific address. Due to uart speed is slow, we suggest you can update to uboot stage only. Other images can be updated by uboot.</p>
+<p><strong><br />
+</strong></p>
+<h3 id="update-flow">Update flow<a class="headerlink" href="#update-flow" title="Permanent link">&para;</a></h3>
+<p>When you select the boot from uart setting in EVB, the boot flow is shown as below. PC FwUpgrade.exe tool will send write loader sram and jump into this entry. Write loader is incharge of raw image update process.</p>
+<h3 id="image-generation">Image generation<a class="headerlink" href="#image-generation" title="Permanent link">&para;</a></h3>
+<p>WLD9833XA.bin is used to update other low level loader images, which is the boot from UART mode loader, it also can be compiled by loader source code.</p>
+<p><strong><br />
+</strong></p>
+<h3 id="update-tool">Update Tool<a class="headerlink" href="#update-tool" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Common Tools :</li>
+<li>FwUpgrade.exe: Running on your PC which can send write loader image to EVB</li>
+<li>Zadig-2.4.exe: DFU Windows driver</li>
+<li>Dfu-util-static: DFU tool on your PC</li>
+<li>NAND :</li>
+<li>WLD98336A.bin: write loader</li>
+<li>DfuBringUp.bat: Update image Windows script</li>
+<li>DfuBringUp_cascade.bat: Update image Windows script for PCIE cascade</li>
+<li>Image: The SDK image you want to update.</li>
+<li>Image_cascade: The SDK image you want to update for PCIE cascade</li>
+<li>EMMC :</li>
+<li>WLD98336A_for_emmc_4bit.bin: EMMC write loader for 4bit mode</li>
+<li>DfuBringUp_emmc.bat: Update image Windows script.</li>
+<li>DfuBringUp_emmc_cascade.bat: Update image Windows script for PCIE cascade.</li>
+<li>Image_emmc: The SDK image you want to update.</li>
+<li>Image_emmc_cascade: The SDK image you want to update for PCIE cascade.</li>
+<li>NOR :</li>
+<li>WLD98336A_nor.bin: EMMC write loader for 4bit mode</li>
+<li>DfuBringUp_nor.bat: Update image Windows script.</li>
+<li>Image_nor: The SDK image you want to update.</li>
+</ul>
+<p><img alt="" src="nvt_media/534b83ff2539b31244be3f117a825e6a.png" /></p>
+<p><strong><br />
+</strong></p>
+<h3 id="update-sop">Update SOP<a class="headerlink" href="#update-sop" title="Permanent link">&para;</a></h3>
+<p>The major steps of the update flow are two parts.</p>
+<ul>
+<li>Boot from UART SOP – In order to update loader, atf and uboot.bin</li>
+</ul>
+<p>And then, you can use either one of below to update image.</p>
+<ul>
+<li>DFU SOP – In order to update images</li>
+<li>TFTP SOP – In order to update images</li>
+</ul>
+<p><strong><br />
+</strong></p>
+<h4 id="boot-from-uart-sop">Boot from UART SOP<a class="headerlink" href="#boot-from-uart-sop" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Using FwUpgrade.exe and select “NEW INI”</li>
+</ul>
+<p><img alt="" src="nvt_media/f34b9cb19fbde21e2369627fe53f64d6.png" /></p>
+<ul>
+<li>
+<p>Click non-all-in-one</p>
+<p><img alt="" src="nvt_media/09c106854668c0249614e195666ce5c6.png" /></p>
+</li>
+<li>
+<p>Select your com port and click upgrade button.</p>
+</li>
+<li>Remember to turn off your com port tool (e.g. Teraterm or putty)</li>
+<li>Load WrLoader means that select your write loader<ul>
+<li>NAND : WLD98336A.bin</li>
+<li>EMMC : WLD98336A_for_emmc_4bit.bin if update 4bit emmc system board</li>
+<li>NOR : WLD98336A_nor.bin</li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="nvt_media/57b7a64fcc4bf0143b8bbe6cea712b19.png" /></p>
+<ul>
+<li>It means that your com port is blocked if the message ” [HOST][ERR] COM3 open failed” is shown. Please turn off your console tool.</li>
+</ul>
+<p><img alt="" src="nvt_media/fd67d0310de52db94dbc6901139c821c.png" /></p>
+<ul>
+<li>Setup partition and upgrade</li>
+<li>Refer to nvt-storage-partition.dtsi set loader, fdt, atf, uboot partition offset and size</li>
+<li>select images.</li>
+<li>
+<p>Click the checkbox</p>
+<p>Loader size is fixed to 0x10000, tool will aotomaticlly write loader to emmc HW partition boot0</p>
+</li>
+</ul>
+<p><img alt="" src="nvt_media/e68d9a7124422b0a24a4080676f7c7c3.png" /></p>
+<ul>
+<li>This message “[HOST] finished” means that update is success, you can switch jump and reboot to do further setup update.</li>
+</ul>
+<p><img alt="" src="nvt_media/ad44da324b972d00110f340871e574be.png" /></p>
+<ul>
+<li>Switch jump with nand/nor/emmc boot mode and reboot</li>
+<li>You can use TFTP or DFU to do further update image procedures in uboot stage, we will introduce them separately in the following chapters.</li>
+</ul>
+<p><strong><br />
+</strong></p>
+<h4 id="dfu-sop">DFU SOP<a class="headerlink" href="#dfu-sop" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Setup uboot env (if your uboot env mtdparts is null or your layout is different with SDK partition table.)</li>
+</ul>
+<pre><code>uboot $ setenv mtdparts &quot;spi_nand.0:0x40000@0x40000(fdt),0x40000@0xc0000(atf),0x1c0000@0x100000(uboot),0x40000@0x2c0000(uenv),0x500000@0x300000(linux),0x3160000@0x800000(rootfs0),0x2500000@0x3960000(rootfs1),0x21a0000@0x5e60000(app)&quot;
+
+uboot $ setenv mtdids &quot;nand0=spi_nand.0&quot;
+</code></pre>
+<ul>
+<li>DFU init in uboot shell</li>
+</ul>
+<pre><code>uboot $ dfu 0 nand 0
+</code></pre>
+<ul>
+<li>To check whether the USB download gadget in your device management of the PC’s Windows is existed or not as below, please install the Windows drivers by zadig-2.4.exe if it does not exist.</li>
+</ul>
+<p><img alt="" src="nvt_media/9ce818a61477df5656e5693ac9fced33.png" /></p>
+<ul>
+<li>Running DFUBringUP.bat can update all partitions.</li>
+</ul>
+<p><img alt="" src="nvt_media/ab662e89f73c831dbffdac643de375c3.png" /></p>
+<ul>
+<li>You can edit this “DFUBringUP.bat” to control the update flow.</li>
+<li>For other partition layout or file type modification details can refer to software\pc\document\DFUTools\ NT9833x_DFU_User_Guide_en.pdf</li>
+</ul>
+<pre><code>dfu-util-static.exe -d 07b4:0109 -a 0 -D image\LD98336A.bin
+dfu-util-static.exe -d 07b4:0109 -a 1 -D image\nvt-all.bin
+dfu-util-static.exe -d 07b4:0109 -a 2 -D image\atf.bin
+dfu-util-static.exe -d 07b4:0109 -a 3 -D image\uboot.bin
+dfu-util-static.exe -d 07b4:0109 -a 4 -D image\Image.bin
+dfu-util-static.exe -d 07b4:0109 -a 5 -D image\rootfs.ramdisk.bin.raw
+dfu-util-static.exe -d 07b4:0109 -a 6 -D image\rootfs_1.rw.ubifs.bin.ubi.raw
+dfu-util-static.exe -d 07b4:0109 -a 7 -D image\NVR_16CH.nand.ubifs.raw
+pause
+</code></pre>
+<p><strong><br />
+</strong></p>
+<h4 id="tftp-sop">TFTP SOP<a class="headerlink" href="#tftp-sop" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>Check if the serverip, ipadder, netmask and gatewayip settings are in the same LAN.</p>
+<p><img alt="" src="nvt_media/db87429ba4bb5160e1b404d36a54cb49.png" /></p>
+</li>
+<li>
+<p>Ping command to check network status</p>
+<p>uboot \$ ping 192.168.1.11</p>
+</li>
+</ul>
+<p><img alt="" src="nvt_media/fd58d08a5a79067cd7695480f184df5d.png" /></p>
+<ul>
+<li>
+<p>Using the TFTP download Loader, ATF, DTB, Linux and rootfs images</p>
+<p>Please follow the document NT9833x Memory Map.xls to get Linux temp buffer address and partition table in nvt-storage-partition.dtsi.</p>
+</li>
+<li>
+<p>Partial load images command</p>
+</li>
+</ul>
+<pre><code>uboot $ setenv bootargs “YOUR_EVB_BOOTARGS” 
+uboot $ setenv serverip server ip   (set TFTP server IP address) 
+uboot $ setenv ipaddr evb ip        (set EVB IP address) 
+uboot $ tftp &lt;ddr_addr&gt; &lt;file_name&gt; /* Download image to DDR */
+/*Erase flash, must block alignment*/
+uboot $ nand erase &lt;flash_start_addr&gt; &lt;flash_end_addr&gt; 
+/* Write image from DDR to flash */
+uboot $ nand write &lt;ddr_addr&gt; &lt;flash_addr&gt; &lt;flash_size&gt; 
+/* Write ubifs/jffs2 image from DDR to flash */
+uboot $ nand write.trimffs &lt;ddr_addr&gt; &lt;flash_addr&gt; &lt;flash_size&gt; 
+</code></pre>
+<ul>
+<li>Examples</li>
+</ul>
+<p>Loader</p>
+<pre><code>uboot $ setenv bootargs “YOUR_EVB_BOOTARGS” 
+uboot $ setenv serverip server 192.168.1.20 
+uboot $ setenv ipaddr 192.168.1.11 
+uboot $ tftp 0x200000 LD98336A
+uboot $ nand erase 0x0000000 0x40000
+uboot $ nand write 0x200000 0x000000 FileSize(Hex)
+</code></pre>
+<p>ATF</p>
+<pre><code>uboot $ setenv bootargs “YOUR_EVB_BOOTARGS” 
+uboot $ setenv serverip server 192.168.1.20 
+uboot $ setenv ipaddr 192.168.1.11 
+uboot $ tftp 0x200000 atf.bin
+uboot $ nand erase 0x0C0000 0x40000
+uboot $ nand write 0x200000 0x0C0000 FileSize(Hex)
+</code></pre>
+<p>uboot</p>
+<pre><code>uboot $ setenv bootargs “YOUR_EVB_BOOTARGS” 
+uboot $ setenv serverip server 192.168.1.20 
+uboot $ setenv ipaddr 192.168.1.11 
+uboot $ tftp 0x200000 uboot.bin
+uboot $ nand erase 0x100000 0x1C0000
+uboot $ nand write 0x200000 0x100000 FileSize(Hex)
+</code></pre>
+<p>Linux kernel</p>
+<pre><code>uboot $ setenv bootargs “YOUR_EVB_BOOTARGS” 
+uboot $ setenv serverip server 192.168.1.20 
+uboot $ setenv ipaddr 192.168.1.11 
+uboot $ tftp 0x200000 Image.bin
+uboot $ nand erase 0x300000 0x0500000
+uboot $ nand write 0x200000 0x300000 FileSize(Hex)
+</code></pre>
+<p>Ramdisk (SDK/output/raw/)</p>
+<pre><code>uboot $ setenv bootargs “YOUR_EVB_BOOTARGS” 
+uboot $ setenv serverip server 192.168.1.20 
+uboot $ setenv ipaddr 192.168.1.11 
+uboot $ tftp 0x200000 rootfs.ramdisk.bin.raw
+uboot $ nand erase 0x800000 0x3160000
+uboot $ nand write 0x200000 0x800000 FileSize(Hex)
+</code></pre>
+<p>UBIFS (SDK/output/raw/)</p>
+<pre><code>uboot $ setenv bootargs “YOUR_EVB_BOOTARGS” 
+uboot $ setenv serverip server 192.168.1.20 
+uboot $ setenv ipaddr 192.168.1.11 
+uboot $ tftp 0x200000 rootfs_1.rw.ubifs.bin.ubi.raw
+uboot $ nand erase 0x3960000 0x2500000
+uboot $ nand write.trimffs 0x200000 0x3960000 FileSize(Hex)
+</code></pre>
+<h4 id="pcie-cascade-update-sop-nand">PCIE cascade update SOP (NAND)<a class="headerlink" href="#pcie-cascade-update-sop-nand" title="Permanent link">&para;</a></h4>
+<ul>
+<li>First step, it’s to follow up chapter 2.5.1 “Boot from UART SOP” let the system booting to uboot shell.</li>
+<li>Setup uboot env (if your uboot env mtdparts is null or your layout is different with SDK partition table.)</li>
+</ul>
+<pre><code>uboot $ setenv mtdparts &quot;spi_nand.0:0x40000@0x40000(fdt),0x40000@0xc0000(atf),0x1c0000@0x100000(uboot),0x40000@0x2c0000(uenv),0x500000@0x300000(linux),0x2100000@0x800000(rootfs0),0x2500000@0x2900000(rootfs1),0x1060000@0x4E00000(rootfs2),0x21a0000@0x5e60000(app)&quot;
+
+uboot $ setenv mtdids &quot;nand0=spi_nand.0&quot;
+</code></pre>
+<ul>
+<li>DFU init in uboot shell</li>
+</ul>
+<pre><code>uboot $ dfu 0 nand 0
+</code></pre>
+<ul>
+<li>To check whether the USB download gadget in your device management of the PC’s Windows is existed or not as below, please install the Windows drivers by zadig-2.4.exe if it does not exist.</li>
+</ul>
+<p><img alt="" src="nvt_media/9ce818a61477df5656e5693ac9fced33.png" /></p>
+<ul>
+<li>Running DFUBringUP_cascade.bat can update all partitions.</li>
+</ul>
+<p><img alt="" src="nvt_media/ab662e89f73c831dbffdac643de375c3.png" /></p>
+<ul>
+<li>You can edit this “DFUBringUP_cascade.bat” to control the update flow.</li>
+<li>For other partition layout or file type modification details can refer to software\pc\document\DFUTools\ NT9833x_DFU_User_Guide_en.pdf</li>
+</ul>
+<pre><code>dfu-util-static.exe -d 07b4:0109 -a 0 -D image_cascade\LD98336A.bin
+dfu-util-static.exe -d 07b4:0109 -a 1 -D image_cascade\nvt-all.bin
+dfu-util-static.exe -d 07b4:0109 -a 2 -D image_cascade\atf.bin
+dfu-util-static.exe -d 07b4:0109 -a 3 -D image_cascade\uboot.bin
+dfu-util-static.exe -d 07b4:0109 -a 4 -D image_cascade\Image.bin
+dfu-util-static.exe -d 07b4:0109 -a 5 -D image_cascade\rootfs.ramdisk.bin.raw
+dfu-util-static.exe -d 07b4:0109 -a 6 -D image_cascade\rootfs_1.rw.ubifs.bin.ubi.raw
+dfu-util-static.exe -d 07b4:0109 -a 7 -D image_cascade\rootfs.ep.ramdisk.bin.raw
+dfu-util-static.exe -d 07b4:0109 -a 8 -D image_cascade\DVR_DUAL_32CH.nand.ubifs.raw
+pause
+</code></pre>
+<ul>
+<li>Switch jump with nand boot mode and reboot</li>
+</ul>
+<p><strong><br />
+</strong></p>
+<h4 id="emmc-update-sop">EMMC update SOP<a class="headerlink" href="#emmc-update-sop" title="Permanent link">&para;</a></h4>
+<ul>
+<li>First step, it’s to follow up chapter 2.5.1 “Boot from UART SOP” let the system booting to uboot shell.</li>
+<li>Setup uboot env (if your uboot env mtdparts is null or your layout is different with SDK partition table.)</li>
+</ul>
+<pre><code>uboot $ setenv nvtemmcpart &quot;0x200@0x0(loader),0x40000@0x40000(fdt)ro,0x40000@0x80000(fdt.restore),0x40000@0xc0000(atf)ro,0x200000@0x100000(uboot)ro,0x40000@0x300000(uenv),0x400000@0x340000(linux)ro,0xa000000@0x740000(rootfs0),0xa000000@0xa740000(rootfs1),0xc000000@0x14740000(rootfs2)&quot;
+</code></pre>
+<ul>
+<li>DFU init in uboot shell</li>
+</ul>
+<pre><code>uboot $ dfu 0 mmc 1
+</code></pre>
+<ul>
+<li>To check whether the USB download gadget in your device management of the PC’s Windows is existed or not as below, please install the Windows drivers by zadig-2.4.exe if it does not exist.</li>
+</ul>
+<p><img alt="" src="nvt_media/9ce818a61477df5656e5693ac9fced33.png" /></p>
+<ul>
+<li>Check HW bootstrap setting is 4-bit or 8-bit mode, select the corresponding loader and put it into the image_emmc folder.</li>
+<li>Running DFUBringUP_emmc.bat can update all partitions.</li>
+</ul>
+<p><img alt="" src="nvt_media/ab662e89f73c831dbffdac643de375c3.png" /></p>
+<ul>
+<li>You can edit this “DFUBringUP_emmc.bat” to control the update flow.</li>
+<li>For other partition layout or file type modification details can refer to software\pc\document\DFUTools\ NT9833x_DFU_User_Guide_en.pdf</li>
+</ul>
+<pre><code>dfu-util-static.exe -d 07b4:0109 -a 0 -D image_emmc\LD98336A_4bit.bin
+dfu-util-static.exe -d 07b4:0109 -a 1 -D image_emmc\nvt-all.bin
+dfu-util-static.exe -d 07b4:0109 -a 2 -D image_emmc\atf.bin
+dfu-util-static.exe -d 07b4:0109 -a 3 -D image_emmc\u-boot.bin
+dfu-util-static.exe -d 07b4:0109 -a 4 -D image_emmc\Image.bin
+dfu-util-static.exe -d 07b4:0109 -a 5 -D image_emmc\rootfs.ramdisk.bin.raw
+dfu-util-static.exe -d 07b4:0109 -a 6 -D image_emmc\rootfs.rw.ext4.bin.raw
+dfu-util-static.exe -d 07b4:0109 -a 7 -D image_emmc\DVR_16CH.emmc.ext4.bin.raw
+pause
+</code></pre>
+<ul>
+<li>Switch jump with emmc boot mode and reboot</li>
+</ul>
+<h4 id="pcie-cascade-update-sop-emmc">PCIE cascade update SOP (EMMC)<a class="headerlink" href="#pcie-cascade-update-sop-emmc" title="Permanent link">&para;</a></h4>
+<ul>
+<li>First step, it’s to follow up chapter 2.5.1 “Boot from UART SOP” let the system booting to uboot shell.</li>
+<li>Setup uboot env (if your uboot env mtdparts is null or your layout is different with SDK partition table.)</li>
+</ul>
+<pre><code>uboot $ setenv nvtemmcpart &quot;0x200@0x0(loader),0x40000@0x40000(fdt)ro,0x40000@0x80000(fdt.restore),0x40000@0xc0000(atf)ro,0x200000@0x100000(uboot)ro,0x40000@0x300000(uenv),0x400000@0x340000(linux)ro,0xa000000@0x740000(rootfs0),0xa000000@0xa740000(rootfs1),0xc000000@0x14740000(rootfs2),0x1060000@0x20740000(rootfs3)&quot;
+</code></pre>
+<ul>
+<li>DFU init in uboot shell</li>
+</ul>
+<pre><code>uboot $ dfu 0 mmc 1
+</code></pre>
+<ul>
+<li>To check whether the USB download gadget in your device management of the PC’s Windows is existed or not as below, please install the Windows drivers by zadig-2.4.exe if it does not exist.</li>
+</ul>
+<p><img alt="" src="nvt_media/9ce818a61477df5656e5693ac9fced33.png" /></p>
+<ul>
+<li>Running DfuBringUp_emmc_cascade.bat can update all partitions.</li>
+</ul>
+<p><img alt="" src="nvt_media/ab662e89f73c831dbffdac643de375c3.png" /></p>
+<ul>
+<li>You can edit this “DfuBringUp_emmc_cascade.bat” to control the update flow.</li>
+<li>For other partition layout or file type modification details can refer to software\pc\document\DFUTools\ NT9833x_DFU_User_Guide_en.pdf</li>
+</ul>
+<pre><code>dfu-util-static.exe -d 07b4:0109 -a 0 -D image_emmc_cascade\LD98336A_4bit.bin
+dfu-util-static.exe -d 07b4:0109 -a 1 -D image_emmc_cascade\nvt-all.bin
+dfu-util-static.exe -d 07b4:0109 -a 2 -D image_emmc_cascade\atf.bin
+dfu-util-static.exe -d 07b4:0109 -a 3 -D image_emmc_cascade\u-boot.bin
+dfu-util-static.exe -d 07b4:0109 -a 4 -D image_emmc_cascade\Image.bin
+dfu-util-static.exe -d 07b4:0109 -a 5 -D image_emmc_cascade\rootfs.ramdisk.bin.raw
+dfu-util-static.exe -d 07b4:0109 -a 6 -D image_emmc_cascade\rootfs.rw.ext4.bin.raw
+dfu-util-static.exe -d 07b4:0109 -a 7 -D image_emmc_cascade\DVR_DUAL_16CH.emmc.ext4.bin.raw
+dfu-util-static.exe -d 07b4:0109 -a 8 -D image_emmc_cascade\rootfs.ep.ramdisk.bin.raw
+pause
+</code></pre>
+<ul>
+<li>Switch jump with emmc boot mode and reboot</li>
+</ul>
+<p><strong><br />
+</strong></p>
+<h4 id="nor-update-sop">NOR update SOP<a class="headerlink" href="#nor-update-sop" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Setup uboot env (if your uboot env mtdparts is null or your layout is different with SDK partition table.)</li>
+</ul>
+<pre><code>uboot $ setenv mtdparts &quot;spi_nor.0:0x20000@0x10000(fdt),0x20000@0x50000(atf),0x40000@0x70000(uboot),0x10000@0xb0000(uenv),0x300000@0xc0000(linux),0xd40000@0x3c0000(rootfs0),0xe20000@0x1100000(app)&quot;
+
+uboot $ setenv mtdids &quot;nor0=spi_nor.0&quot;
+</code></pre>
+<ul>
+<li>DFU init in uboot shell</li>
+</ul>
+<pre><code>uboot $ dfu 0 sf 0:0
+</code></pre>
+<ul>
+<li>To check whether the USB download gadget in your device management of the PC’s Windows is existed or not as below, please install the Windows drivers by zadig-2.4.exe if it does not exist.</li>
+</ul>
+<p><img alt="" src="nvt_media/9ce818a61477df5656e5693ac9fced33.png" /></p>
+<ul>
+<li>Running DFUBringUP_nor.bat can update all partitions.</li>
+</ul>
+<p><img alt="" src="nvt_media/ab662e89f73c831dbffdac643de375c3.png" /></p>
+<ul>
+<li>You can edit this “DFUBringUP_nor.bat” to control the update flow.</li>
+<li>For other partition layout or file type modification details can refer to software\pc\document\DFUTools\ NT9833x_DFU_User_Guide_en.pdf</li>
+</ul>
+<pre><code>dfu-util-static.exe -d 07b4:0109 -a 0 -D image_nor\LD98336A.bin
+dfu-util-static.exe -d 07b4:0109 -a 1 -D image_nor\nvt-all.bin
+dfu-util-static.exe -d 07b4:0109 -a 2 -D image_nor\atf.bin
+dfu-util-static.exe -d 07b4:0109 -a 3 -D image_nor\u-boot.lz.bin
+dfu-util-static.exe -d 07b4:0109 -a 4 -D image_nor\Image.bin
+dfu-util-static.exe -d 07b4:0109 -a 5 -D image_nor\rootfs.squash.bin.raw
+dfu-util-static.exe -d 07b4:0109 -a 6 -D image_nor\DVR_16CH.nor.jffs2.bin.raw
+pause
+</code></pre>
+<p><strong><br />
+</strong></p>
+<h2 id="trouble-shooting">Trouble shooting<a class="headerlink" href="#trouble-shooting" title="Permanent link">&para;</a></h2>
+<h4 id="ping-error-on-uboot-shell">Ping error on uboot shell<a class="headerlink" href="#ping-error-on-uboot-shell" title="Permanent link">&para;</a></h4>
+<p>Please follow steps as below to fix the problem :</p>
+<ol>
+<li>Check if your uboot config CONFIG_NOVATEK_MAC_ENET_NA51090 is enable</li>
+<li>Check if the serverip, ipadder, netmask and gatewayip settings are in the same LAN</li>
+<li>Check if your windows firewall is close</li>
+</ol>
+<h4 id="dfu-driver-problem">DFU driver problem<a class="headerlink" href="#dfu-driver-problem" title="Permanent link">&para;</a></h4>
+<p>The following message is your dfu device driver problem, please install the DFU drivers.</p>
+<p><img alt="" src="nvt_media/eb288f5cecca47a17abd4987fade7a6e.png" /></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="NT9833x_SDK_Pure_Linux_Programming_Guide_en.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Linux Programming Guide" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Linux Programming Guide
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="NT9833x_PCIe_User_Guide_en.html" class="md-footer__link md-footer__link--next" aria-label="Next: PCIe User Guide" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              PCIe User Guide
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.highlight", "navigation.tabs"], "search": "../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.37e9125f.min.js"></script>
+      
+    
+  </body>
+</html>

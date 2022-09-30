@@ -1,0 +1,5187 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.3">
+    
+    
+      
+        <title>VPE IQ Tuning Guide - NT98336/NT98633 Documents</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7a952b86.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#overview" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="NT98336/NT98633 Documents" class="md-header__button md-logo" aria-label="NT98336/NT98633 Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NT98336/NT98633 Documents
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              VPE IQ Tuning Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../CVAI/NT9833X_MD_User_Guide_en.html" class="md-tabs__link md-tabs__link--active">
+        Software
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../not_ready - not_reay.md" class="md-tabs__link">
+        Hardware(Not Ready)
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../not_ready - not_reay.md" class="md-tabs__link">
+        For Reference(Not Ready)
+      </a>
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="NT98336/NT98633 Documents" class="md-nav__button md-logo" aria-label="NT98336/NT98633 Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    NT98336/NT98633 Documents
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          Software
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Software" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Software
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_1" type="checkbox" id="__nav_1_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_1">
+          CVAI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="CVAI" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          CVAI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CVAI/NT9833X_MD_User_Guide_en.html" class="md-nav__link">
+        MD User Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CVAI/NT9833X_IVE_User_Guide_en.html" class="md-nav__link">
+        IVE User Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CVAI/NT9833X_MD_Tuning_Guide_en.html" class="md-nav__link">
+        MD Tuning Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_2" type="checkbox" id="__nav_1_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_2">
+          ISPQ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="ISPQ" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          ISPQ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          VPE IQ Tuning Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="NT9833x_VPE_IQ_Tuning_Guide_en.html" class="md-nav__link md-nav__link--active">
+        VPE IQ Tuning Guide
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-control" class="md-nav__link">
+    System Control
+  </a>
+  
+    <nav class="md-nav" aria-label="System Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameter-description" class="md-nav__link">
+    Parameter Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-interface" class="md-nav__link">
+    Setting Interface
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proc" class="md-nav__link">
+    Proc
+  </a>
+  
+    <nav class="md-nav" aria-label="Proc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpech_fd" class="md-nav__link">
+    /proc/videograph/vpe/ch_fd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpepipe_mode" class="md-nav__link">
+    /proc/videograph/vpe/pipe_mode
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spatial-noise-reduction" class="md-nav__link">
+    Spatial Noise Reduction
+  </a>
+  
+    <nav class="md-nav" aria-label="Spatial Noise Reduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_1" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameter-description_1" class="md-nav__link">
+    Parameter Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-interface_1" class="md-nav__link">
+    Setting Interface
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proc_1" class="md-nav__link">
+    Proc
+  </a>
+  
+    <nav class="md-nav" aria-label="Proc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpemrnrdump_info" class="md-nav__link">
+    /proc/videograph/vpe/mrnr/dump_info
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpemrnrmrnr_en" class="md-nav__link">
+    /proc/videograph/vpe/mrnr/mrnr_en
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpemrnrt_xx_edge_det" class="md-nav__link">
+    /proc/videograph/vpe/mrnr/t_xx_edge_det
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpemrnrt_xx_edge_smooth" class="md-nav__link">
+    /proc/videograph/vpe/mrnr/t_xx_edge_smooth
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpemrnrnr_strength" class="md-nav__link">
+    /proc/videograph/vpe/mrnr/nr_strength
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vendor-api" class="md-nav__link">
+    Vendor API
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#temporal-noise-reduction-tmnr" class="md-nav__link">
+    Temporal Noise Reduction (TMNR)
+  </a>
+  
+    <nav class="md-nav" aria-label="Temporal Noise Reduction (TMNR)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_2" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameter-description_2" class="md-nav__link">
+    Parameter description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-interface_2" class="md-nav__link">
+    Setting Interface
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proc_2" class="md-nav__link">
+    Proc
+  </a>
+  
+    <nav class="md-nav" aria-label="Proc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnrdump_info" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/dump_info
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnrch_en_status" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/ch_en_status
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnrnr_strength" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/nr_strength
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnry_base" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/y_base
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnrmotion_level_th" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/motion_level_th
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnry_coeffa" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/y_coeffa
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnry_coeffb" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/y_coeffb
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnry_std" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/y_std
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnrcb_mean" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/cb_mean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnrcb_std" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/cb_std
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnrcr_mean" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/cr_mean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnrcr_std" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/cr_std
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnrlut_y_3d_1_th" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/lut_y_3d_1_th
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnrlut_y_3d_2_th" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/lut_y_3d_2_th
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnrlut_y_2d_th" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/lut_y_2d_th
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnrlut_c_3d_th" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/lut_c_3d_th
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnrlut_c_2d_th" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/lut_c_2d_th
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnrfcs_str" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/fcs_str
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnrfcs_th" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/fcs_th
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnrmotion_map" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/motion_map
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnrdiff_blur_str" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/diff_blur_str
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnravoid_residue_th" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/avoid_residue_th
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnrdithering" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/dithering
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnrerr_compensate" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/err_compensate
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vendor-api_1" class="md-nav__link">
+    Vendor API
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sharpen-shp" class="md-nav__link">
+    Sharpen (SHP)
+  </a>
+  
+    <nav class="md-nav" aria-label="Sharpen (SHP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_3" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-interface_3" class="md-nav__link">
+    Setting Interface
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proc_3" class="md-nav__link">
+    Proc
+  </a>
+  
+    <nav class="md-nav" aria-label="Proc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpesharpendump_info" class="md-nav__link">
+    /proc/videograph/vpe/sharpen/dump_info
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpesharpensharp_en" class="md-nav__link">
+    /proc/videograph/vpe/sharpen/sharp_en
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpesharpenedge_weight_src_sel" class="md-nav__link">
+    /proc/videograph/vpe/sharpen/edge_weight_src_sel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpesharpenedge_weigt_gain" class="md-nav__link">
+    /proc/videograph/vpe/sharpen/edge_weigt_gain
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpesharpenedge_weight_th" class="md-nav__link">
+    /proc/videograph/vpe/sharpen/edge_weight_th
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpesharpenblend_inv_gamma" class="md-nav__link">
+    /proc/videograph/vpe/sharpen/blend_inv_gamma
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpesharpenedge_sharp_str" class="md-nav__link">
+    /proc/videograph/vpe/sharpen/edge_sharp_str
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpesharpenflat_sharp_str" class="md-nav__link">
+    /proc/videograph/vpe/sharpen/flat_sharp_str
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpesharpencoring_th" class="md-nav__link">
+    /proc/videograph/vpe/sharpen/coring_th
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpesharpenhalo_clip" class="md-nav__link">
+    /proc/videograph/vpe/sharpen/halo_clip
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpesharpennoise_curve" class="md-nav__link">
+    /proc/videograph/vpe/sharpen/noise_curve
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vendor-api_2" class="md-nav__link">
+    Vendor API
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edge-smoothing-es" class="md-nav__link">
+    Edge Smoothing (ES)
+  </a>
+  
+    <nav class="md-nav" aria-label="Edge Smoothing (ES)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_4" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameter-description_3" class="md-nav__link">
+    Parameter Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-interface_4" class="md-nav__link">
+    Setting Interface
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proc_4" class="md-nav__link">
+    Proc
+  </a>
+  
+    <nav class="md-nav" aria-label="Proc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpeesparam" class="md-nav__link">
+    /proc/videograph/vpe/es/param
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpeesedge_smooth_en" class="md-nav__link">
+    /proc/videograph/vpe/es/edge_smooth_en
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpeesedge_smooth_out_sel" class="md-nav__link">
+    /proc/videograph/vpe/es/edge_smooth_out_sel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpeesedge_smooth_th" class="md-nav__link">
+    /proc/videograph/vpe/es/edge_smooth_th
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpeesedge_smooth_y_edi_th" class="md-nav__link">
+    /proc/videograph/vpe/es/edge_smooth_y_edi_th
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpeesedge_smooth_y_ds_str" class="md-nav__link">
+    /proc/videograph/vpe/es/edge_smooth_y_ds_str
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vendor-api_3" class="md-nav__link">
+    Vendor API
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scaling-sca" class="md-nav__link">
+    Scaling (SCA)
+  </a>
+  
+    <nav class="md-nav" aria-label="Scaling (SCA)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_5" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameter-description_4" class="md-nav__link">
+    Parameter Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-interface_5" class="md-nav__link">
+    Setting Interface
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proc_5" class="md-nav__link">
+    Proc
+  </a>
+  
+    <nav class="md-nav" aria-label="Proc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpescaparam" class="md-nav__link">
+    /proc/videograph/vpe/sca/param
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpescactrl_param" class="md-nav__link">
+    /proc/videograph/vpe/sca/ctrl_param
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpescalpf_param" class="md-nav__link">
+    /proc/videograph/vpe/sca/lpf_param
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpescayuv_range" class="md-nav__link">
+    /proc/videograph/vpe/sca/yuv_range
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vendor-api_4" class="md-nav__link">
+    Vendor API
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distortion-correction-engine-dce" class="md-nav__link">
+    Distortion Correction Engine (DCE)
+  </a>
+  
+    <nav class="md-nav" aria-label="Distortion Correction Engine (DCE)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_6" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dce-parameter-description" class="md-nav__link">
+    DCE Parameter Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-interface_6" class="md-nav__link">
+    Setting Interface
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proc_6" class="md-nav__link">
+    Proc
+  </a>
+  
+    <nav class="md-nav" aria-label="Proc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpedcedump_info" class="md-nav__link">
+    /proc/videograph/vpe/dce/dump_info
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpedcech_en" class="md-nav__link">
+    /proc/videograph/vpe/dce/ch_en
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vendor-api_5" class="md-nav__link">
+    Vendor API
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dc-table-generatordctg" class="md-nav__link">
+    DC Table Generator(DCTG)
+  </a>
+  
+    <nav class="md-nav" aria-label="DC Table Generator(DCTG)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_7" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameter-description_5" class="md-nav__link">
+    Parameter Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-interface_7" class="md-nav__link">
+    Setting Interface
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proc_7" class="md-nav__link">
+    Proc
+  </a>
+  
+    <nav class="md-nav" aria-label="Proc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpedctgdump_info" class="md-nav__link">
+    /proc/videograph/vpe/dctg/dump_info
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpedctgch_en" class="md-nav__link">
+    /proc/videograph/vpe/dctg/ch_en
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpedctgphi" class="md-nav__link">
+    /proc/videograph/vpe/dctg/phi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpedctgrot" class="md-nav__link">
+    /proc/videograph/vpe/dctg/rot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpedctgtheta" class="md-nav__link">
+    /proc/videograph/vpe/dctg/theta
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vendor-api_6" class="md-nav__link">
+    Vendor API
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#revise-history" class="md-nav__link">
+    Revise History
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="NT9833x_LCD_IQ_Tuning_Guide_en.html" class="md-nav__link">
+        LCD IQ Tuning Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="NT9833x_DI_Tuning_Guide_en.html" class="md-nav__link">
+        DI Tuning Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_3">
+          MEDIA
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MEDIA" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          MEDIA
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MEDIA/NT9833x_HDAL_Vendor_ISP_Programming_Guide_en.html" class="md-nav__link">
+        Vendor ISP Programming Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MEDIA/NT9833x_HDAL_Vendor_Media_Programming_Guide_en.html" class="md-nav__link">
+        Vendor Media Programming Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MEDIA/NT9833x_HDAL_Vendor_PCIe_Programming_Guide_en.html" class="md-nav__link">
+        Vendor PCie Programming Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_4">
+          OSDRV
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="OSDRV" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          OSDRV
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OSDRV/NT9833x_SDK_Pure_Linux_Programming_Guide_en.html" class="md-nav__link">
+        Linux Programming Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OSDRV/NT9833x_Quick_Bringup_User_Guide_en.html" class="md-nav__link">
+        Quick Bringup User Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OSDRV/NT9833x_PCIe_User_Guide_en.html" class="md-nav__link">
+        PCIe User Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NT9833x_DVR_NVR_SDK_Quick_Start.html" class="md-nav__link">
+        Quick Start
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Hardware(Not Ready)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Hardware(Not Ready)" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Hardware(Not Ready)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          Not Ready
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Not Ready" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Not Ready
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../not_ready - not_reay.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          For Reference(Not Ready)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="For Reference(Not Ready)" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          For Reference(Not Ready)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1">
+          Not Ready
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Not Ready" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Not Ready
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../not_ready - not_reay.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-control" class="md-nav__link">
+    System Control
+  </a>
+  
+    <nav class="md-nav" aria-label="System Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameter-description" class="md-nav__link">
+    Parameter Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-interface" class="md-nav__link">
+    Setting Interface
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proc" class="md-nav__link">
+    Proc
+  </a>
+  
+    <nav class="md-nav" aria-label="Proc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpech_fd" class="md-nav__link">
+    /proc/videograph/vpe/ch_fd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpepipe_mode" class="md-nav__link">
+    /proc/videograph/vpe/pipe_mode
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spatial-noise-reduction" class="md-nav__link">
+    Spatial Noise Reduction
+  </a>
+  
+    <nav class="md-nav" aria-label="Spatial Noise Reduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_1" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameter-description_1" class="md-nav__link">
+    Parameter Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-interface_1" class="md-nav__link">
+    Setting Interface
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proc_1" class="md-nav__link">
+    Proc
+  </a>
+  
+    <nav class="md-nav" aria-label="Proc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpemrnrdump_info" class="md-nav__link">
+    /proc/videograph/vpe/mrnr/dump_info
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpemrnrmrnr_en" class="md-nav__link">
+    /proc/videograph/vpe/mrnr/mrnr_en
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpemrnrt_xx_edge_det" class="md-nav__link">
+    /proc/videograph/vpe/mrnr/t_xx_edge_det
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpemrnrt_xx_edge_smooth" class="md-nav__link">
+    /proc/videograph/vpe/mrnr/t_xx_edge_smooth
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpemrnrnr_strength" class="md-nav__link">
+    /proc/videograph/vpe/mrnr/nr_strength
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vendor-api" class="md-nav__link">
+    Vendor API
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#temporal-noise-reduction-tmnr" class="md-nav__link">
+    Temporal Noise Reduction (TMNR)
+  </a>
+  
+    <nav class="md-nav" aria-label="Temporal Noise Reduction (TMNR)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_2" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameter-description_2" class="md-nav__link">
+    Parameter description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-interface_2" class="md-nav__link">
+    Setting Interface
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proc_2" class="md-nav__link">
+    Proc
+  </a>
+  
+    <nav class="md-nav" aria-label="Proc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnrdump_info" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/dump_info
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnrch_en_status" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/ch_en_status
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnrnr_strength" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/nr_strength
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnry_base" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/y_base
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnrmotion_level_th" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/motion_level_th
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnry_coeffa" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/y_coeffa
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnry_coeffb" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/y_coeffb
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnry_std" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/y_std
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnrcb_mean" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/cb_mean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnrcb_std" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/cb_std
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnrcr_mean" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/cr_mean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnrcr_std" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/cr_std
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnrlut_y_3d_1_th" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/lut_y_3d_1_th
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnrlut_y_3d_2_th" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/lut_y_3d_2_th
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnrlut_y_2d_th" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/lut_y_2d_th
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnrlut_c_3d_th" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/lut_c_3d_th
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnrlut_c_2d_th" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/lut_c_2d_th
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnrfcs_str" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/fcs_str
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnrfcs_th" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/fcs_th
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnrmotion_map" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/motion_map
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnrdiff_blur_str" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/diff_blur_str
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnravoid_residue_th" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/avoid_residue_th
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnrdithering" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/dithering
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpetmnrerr_compensate" class="md-nav__link">
+    /proc/videograph/vpe/tmnr/err_compensate
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vendor-api_1" class="md-nav__link">
+    Vendor API
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sharpen-shp" class="md-nav__link">
+    Sharpen (SHP)
+  </a>
+  
+    <nav class="md-nav" aria-label="Sharpen (SHP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_3" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-interface_3" class="md-nav__link">
+    Setting Interface
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proc_3" class="md-nav__link">
+    Proc
+  </a>
+  
+    <nav class="md-nav" aria-label="Proc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpesharpendump_info" class="md-nav__link">
+    /proc/videograph/vpe/sharpen/dump_info
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpesharpensharp_en" class="md-nav__link">
+    /proc/videograph/vpe/sharpen/sharp_en
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpesharpenedge_weight_src_sel" class="md-nav__link">
+    /proc/videograph/vpe/sharpen/edge_weight_src_sel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpesharpenedge_weigt_gain" class="md-nav__link">
+    /proc/videograph/vpe/sharpen/edge_weigt_gain
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpesharpenedge_weight_th" class="md-nav__link">
+    /proc/videograph/vpe/sharpen/edge_weight_th
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpesharpenblend_inv_gamma" class="md-nav__link">
+    /proc/videograph/vpe/sharpen/blend_inv_gamma
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpesharpenedge_sharp_str" class="md-nav__link">
+    /proc/videograph/vpe/sharpen/edge_sharp_str
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpesharpenflat_sharp_str" class="md-nav__link">
+    /proc/videograph/vpe/sharpen/flat_sharp_str
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpesharpencoring_th" class="md-nav__link">
+    /proc/videograph/vpe/sharpen/coring_th
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpesharpenhalo_clip" class="md-nav__link">
+    /proc/videograph/vpe/sharpen/halo_clip
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpesharpennoise_curve" class="md-nav__link">
+    /proc/videograph/vpe/sharpen/noise_curve
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vendor-api_2" class="md-nav__link">
+    Vendor API
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edge-smoothing-es" class="md-nav__link">
+    Edge Smoothing (ES)
+  </a>
+  
+    <nav class="md-nav" aria-label="Edge Smoothing (ES)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_4" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameter-description_3" class="md-nav__link">
+    Parameter Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-interface_4" class="md-nav__link">
+    Setting Interface
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proc_4" class="md-nav__link">
+    Proc
+  </a>
+  
+    <nav class="md-nav" aria-label="Proc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpeesparam" class="md-nav__link">
+    /proc/videograph/vpe/es/param
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpeesedge_smooth_en" class="md-nav__link">
+    /proc/videograph/vpe/es/edge_smooth_en
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpeesedge_smooth_out_sel" class="md-nav__link">
+    /proc/videograph/vpe/es/edge_smooth_out_sel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpeesedge_smooth_th" class="md-nav__link">
+    /proc/videograph/vpe/es/edge_smooth_th
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpeesedge_smooth_y_edi_th" class="md-nav__link">
+    /proc/videograph/vpe/es/edge_smooth_y_edi_th
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpeesedge_smooth_y_ds_str" class="md-nav__link">
+    /proc/videograph/vpe/es/edge_smooth_y_ds_str
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vendor-api_3" class="md-nav__link">
+    Vendor API
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scaling-sca" class="md-nav__link">
+    Scaling (SCA)
+  </a>
+  
+    <nav class="md-nav" aria-label="Scaling (SCA)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_5" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameter-description_4" class="md-nav__link">
+    Parameter Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-interface_5" class="md-nav__link">
+    Setting Interface
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proc_5" class="md-nav__link">
+    Proc
+  </a>
+  
+    <nav class="md-nav" aria-label="Proc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpescaparam" class="md-nav__link">
+    /proc/videograph/vpe/sca/param
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpescactrl_param" class="md-nav__link">
+    /proc/videograph/vpe/sca/ctrl_param
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpescalpf_param" class="md-nav__link">
+    /proc/videograph/vpe/sca/lpf_param
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpescayuv_range" class="md-nav__link">
+    /proc/videograph/vpe/sca/yuv_range
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vendor-api_4" class="md-nav__link">
+    Vendor API
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distortion-correction-engine-dce" class="md-nav__link">
+    Distortion Correction Engine (DCE)
+  </a>
+  
+    <nav class="md-nav" aria-label="Distortion Correction Engine (DCE)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_6" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dce-parameter-description" class="md-nav__link">
+    DCE Parameter Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-interface_6" class="md-nav__link">
+    Setting Interface
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proc_6" class="md-nav__link">
+    Proc
+  </a>
+  
+    <nav class="md-nav" aria-label="Proc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpedcedump_info" class="md-nav__link">
+    /proc/videograph/vpe/dce/dump_info
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpedcech_en" class="md-nav__link">
+    /proc/videograph/vpe/dce/ch_en
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vendor-api_5" class="md-nav__link">
+    Vendor API
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dc-table-generatordctg" class="md-nav__link">
+    DC Table Generator(DCTG)
+  </a>
+  
+    <nav class="md-nav" aria-label="DC Table Generator(DCTG)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_7" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameter-description_5" class="md-nav__link">
+    Parameter Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-interface_7" class="md-nav__link">
+    Setting Interface
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proc_7" class="md-nav__link">
+    Proc
+  </a>
+  
+    <nav class="md-nav" aria-label="Proc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpedctgdump_info" class="md-nav__link">
+    /proc/videograph/vpe/dctg/dump_info
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpedctgch_en" class="md-nav__link">
+    /proc/videograph/vpe/dctg/ch_en
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpedctgphi" class="md-nav__link">
+    /proc/videograph/vpe/dctg/phi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpedctgrot" class="md-nav__link">
+    /proc/videograph/vpe/dctg/rot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographvpedctgtheta" class="md-nav__link">
+    /proc/videograph/vpe/dctg/theta
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vendor-api_6" class="md-nav__link">
+    Vendor API
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#revise-history" class="md-nav__link">
+    Revise History
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>VPE IQ Tuning Guide</h1>
+
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="media/86fefe8bd2d1a437b80bee52b0397c24.png" /></p>
+<p>Figure 11 NT9833x Video Flow</p>
+<p>VPE is an independent image processing engine in YUV domain, and it performs some pre-processing process before LCD display or encoder to improve the image quality. The related modules are as follows:</p>
+<ul>
+<li>Spatial Noise Reduction Module(SPNR, using MRNR method)</li>
+<li>Tempoarl Noise Reduction Module(TMNR)</li>
+<li>Sharpen Module(SHP)</li>
+<li>Scaling Module(SCA)</li>
+</ul>
+<p>※ The 9833x series has removed DCE and DCTG.</p>
+<p>※ In the following description, the area shown in blue is the same module as the 9831x series but the parameters are different. Please pay special attention)</p>
+<p><img alt="" src="media/5e398ecf4d2e1bbd08501c06913ddd4d.jpeg" /></p>
+<p><img alt="" src="media/e2a5a40194c5333a6a395e702ec2a728.jpeg" /></p>
+<p>Figure 12 VPE Image Processing Flow</p>
+<h2 id="system-control">System Control<a class="headerlink" href="#system-control" title="Permanent link">&para;</a></h2>
+<p>The processing sequence of Sharpen, SPNR(using MRNR method) and TMNR is changeable, and user can change the processing sequence depends on different camera charateristic to achieve the best image quality.</p>
+<h3 id="parameter-description">Parameter Description<a class="headerlink" href="#parameter-description" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Range</strong></th>
+<th><strong>Def</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ch_fd</td>
+<td></td>
+<td></td>
+<td>Video graph use ch_fd to represent the connected video engine of each channel. User can fine tune parameter of each video engine by setting ch_fd.</td>
+</tr>
+<tr>
+<td>pipe_mode</td>
+<td>0\~5</td>
+<td>0</td>
+<td>Set module processing sequence. 0 : MRNR -> TMNR -> Sharpen 1 : MRNR-> Sharpen -> TMNR 2 : Sharpen -> MRNR -> TMNR 3 : SHP->TMNR->MRNR 4 : TMNR->MRNR->SHP 5 : TMNR->SHP->MRNR</td>
+</tr>
+</tbody>
+</table>
+<h3 id="setting-interface">Setting Interface<a class="headerlink" href="#setting-interface" title="Permanent link">&para;</a></h3>
+<h4 id="proc">Proc<a class="headerlink" href="#proc" title="Permanent link">&para;</a></h4>
+<h6 id="procvideographvpech_fd">/proc/videograph/vpe/ch_fd<a class="headerlink" href="#procvideographvpech_fd" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the current camera channel, and it only needs to set once, the following SHP, MRNR, TMNR parameters will work on this channel.</p>
+<p>The following proc command will list all ch_fd of the current video engine:</p>
+<p><img alt="" src="media/f4c9736295f5ba46eb5432431c7b3e1f.png" /></p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [fd ] > /proc/videograph/vpe/ch_fd</td>
+<td><strong>Fw Internal Pointer</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Read : cat /proc/videograph/vpe/ch_fd</p>
+<h6 id="procvideographvpepipe_mode">/proc/videograph/vpe/pipe_mode<a class="headerlink" href="#procvideographvpepipe_mode" title="Permanent link">&para;</a></h6>
+<p>[Description]</p>
+<p>Read or write the executing sequence of SHP, MRNR and TMNR.</p>
+<p>[Command]</p>
+<p>Write :</p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [pipe_mode ] > /proc/videograph/vpe/pipe_mode</td>
+<td><strong>src_ppo_idx</strong>  <strong>mrnr_ppi_idx</strong>  <strong>mrnr_ppo_idx</strong>  <strong>tmnr_ppi_idx</strong>  <strong>tmnr_ppo_idx</strong>  <strong>shp_ppi_idx</strong>  <strong>shp_ppo_idx</strong>  <strong>sca_ppi_idx</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Read : cat /proc/videograph/vpe/pipe_mode</p>
+<h2 id="spatial-noise-reduction">Spatial Noise Reduction<a class="headerlink" href="#spatial-noise-reduction" title="Permanent link">&para;</a></h2>
+<p>This is spatial noise reduction module(abbreviation is “SPNR”). It will divide the image into high frequency part and middle frequency part, performing noise reduction process respectively, then combine together to achieve the purpose of noise reduction and retain detail.</p>
+<h3 id="overview_1">Overview<a class="headerlink" href="#overview_1" title="Permanent link">&para;</a></h3>
+<p>Major processing flow is as follows :</p>
+<p><img alt="" src="media/4a3437da1eed12b046ae60cdc8bd7309.png" /></p>
+<p>Figure 31 The SPNR processing flow.</p>
+<p>Major processing flow :</p>
+<ol>
+<li>Divide the input image into high frequency image and middle frequency image.</li>
+<li>Determine and label whether the processing pixel is on the edge.</li>
+<li>Perform edge smooth process on high frequency image and middle frequency image, respectively.</li>
+<li>Perform flat region noise reduction process on middle frequency image.</li>
+<li>Use high/middle frequency image which had performed noise reduction process to reconstruct image.</li>
+</ol>
+<h3 id="parameter-description_1">Parameter Description<a class="headerlink" href="#parameter-description_1" title="Permanent link">&para;</a></h3>
+<p>(The blue text is the part of the parameter difference between this module and the 9831x series, please pay special attention)</p>
+<p>Table 31 SPNR Parameter List</p>
+<table>
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Range</strong></th>
+<th><strong>Def</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>t_y_edge_detection [2][8]</td>
+<td>0\~1023</td>
+<td>161,322,483,447, 419,320,195,130, 108,215,308,272, 246,185,125,100</td>
+<td>Y threshold for determining whether the current processing pixel is on the edge.  It has eight thresholds mapping to pixel brightness from dark to bright, respectively. [0][0\~7] is the threshold from dark to bright for high frequency image. [1][0\~7] is the threshold from dark to bright for middle frequency image.</td>
+</tr>
+<tr>
+<td>t_cb_edge_detection</td>
+<td>0\~1023</td>
+<td>0,249</td>
+<td>Cb threshold for determining whether the current processing pixel is on the edge. Only works in middle frequency image.</td>
+</tr>
+<tr>
+<td>t_cr_edge_detection [2]</td>
+<td>0\~1023</td>
+<td>0,249</td>
+<td>Cr threshold for determining whether the current processing pixel is on the edge. Only works in middle frequency image.</td>
+</tr>
+<tr>
+<td>t_y_edge_smoothing[2][8]</td>
+<td>0\~255</td>
+<td>66,132,161,149, 140,107,80,53, 44,88,103,91, 82,62,51,41</td>
+<td>Y threshold for determining whether it will perform smooth process.  It has eight thresholds mapping to pixel brightness from dark to bright, respectively. [0][0\~7] is the threshold from dark to bright for high frequency image. [1][0\~7] is the threshold from dark to bright for middle frequency image.</td>
+</tr>
+<tr>
+<td>t_cb_edge_smoothing [2]</td>
+<td>0\~255</td>
+<td>0,153</td>
+<td>Cb threshold for determining whether it will perform smooth process. Only works in middle frequency image.</td>
+</tr>
+<tr>
+<td>t_cr_edge_smoothing [2]</td>
+<td>0\~255</td>
+<td>0,153</td>
+<td>Cr threshold for determining whether it will perform smooth process. Only works in middle frequency image.</td>
+</tr>
+<tr>
+<td>nr_strength_y[2]</td>
+<td>0\~15</td>
+<td>{0, 0}</td>
+<td>The denoise strength of spatial domain on Y channel. [0] is denoise strength for high frequency image. [1] is denoise strength for middle frequency image.</td>
+</tr>
+<tr>
+<td>nr_strength_c</td>
+<td>0\~15</td>
+<td>{0, 10}</td>
+<td>The denoise strength of spatial domain on Cb/Cr channel. Only works in middle frequency image.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Advance description</strong>:</p>
+<ul>
+<li>edge_smoothing : When SPNR performs smooth process, it will calculate weighting sum of neighbor pixels along the edge direction, if the difference between the neighbor pixel and center pixel is larger than threshold, this neighbor pixel will not be used in the smooth process. The smooth process of Y/Cb/Cr are the same.</li>
+</ul>
+<h3 id="setting-interface_1">Setting Interface<a class="headerlink" href="#setting-interface_1" title="Permanent link">&para;</a></h3>
+<h4 id="proc_1">Proc<a class="headerlink" href="#proc_1" title="Permanent link">&para;</a></h4>
+<h6 id="procvideographvpemrnrdump_info">/proc/videograph/vpe/mrnr/dump_info<a class="headerlink" href="#procvideographvpemrnrdump_info" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read all SPNR(using MRNR method) parameters of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write : Not support.</strong></p>
+<p><strong>Read : cat /proc/videograph/vpe/mrnr/dump_info</strong></p>
+<p><strong>Output:</strong></p>
+<h6 id="procvideographvpemrnrmrnr_en">/proc/videograph/vpe/mrnr/mrnr_en<a class="headerlink" href="#procvideographvpemrnrmrnr_en" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the MRNR enable status of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>echo [mrnr_en (0\~1)] > /proc/videograph/vpe/mrnr/mrnr_en</strong></td>
+<td><strong>mrnr_en</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read : cat /proc/videograph/vpe/mrnr/mrnr_en</strong></p>
+<p><strong>Output:</strong></p>
+<h6 id="procvideographvpemrnrt_xx_edge_det">/proc/videograph/vpe/mrnr/t_xx_edge_det<a class="headerlink" href="#procvideographvpemrnrt_xx_edge_det" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write edge_detection parameters.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [t_y_edge_det[0][0] …..[0][7]] > /proc/videograph/vpe/mrnr/ t_y_edge_det_1</td>
+<td><strong>t_y_edge_detection[0\~7]</strong></td>
+</tr>
+<tr>
+<td>echo [t_y_edge_det[1][0] …..[1][7]] > /proc/videograph/vpe/mrnr/ t_y_edge_det_2</td>
+<td><strong>t_y_edge_detection[8\~15]</strong></td>
+</tr>
+<tr>
+<td>echo [t_cb_edge_det] > /proc/videograph/vpe/mrnr/ t_cb_edge_det</td>
+<td><strong>t_cb_edge_detection[0\~1]</strong></td>
+</tr>
+<tr>
+<td>echo [t_cr_edge_det] > /proc/videograph/vpe/mrnr/ t_cr_edge_det</td>
+<td><strong>t_cr_edge_detection[0\~1]</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p><strong>cat /proc/videograph/vpe/mrnr/</strong>t_y_edge_det_1</p>
+<p><strong>cat /proc/videograph/vpe/mrnr/</strong>t_y_edge_det_2</p>
+<p><strong>cat /proc/videograph/vpe/mrnr/</strong>t_cb_edge_det_1</p>
+<p><strong>cat /proc/videograph/vpe/mrnr/</strong>t_cr_edge_det_1</p>
+<p><strong>Output :</strong></p>
+<h6 id="procvideographvpemrnrt_xx_edge_smooth">/proc/videograph/vpe/mrnr/t_xx_edge_smooth<a class="headerlink" href="#procvideographvpemrnrt_xx_edge_smooth" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write edge_smoothing parameters.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [t_y_edge_smooth[0][0]] ……..[t_y_edge_smooth [0][7]] > /proc/videograph/vpe/mrnr/ t_y_edge_smooth_1</td>
+<td><strong>t_y_edge_ smoothing[0\~7]</strong></td>
+</tr>
+<tr>
+<td>echo [t_y_edge_smooth[1][0] …….. [t_y_edge_smooth[1] [7]] > /proc/videograph/vpe/mrnr/t_y_edge_smooth_2</td>
+<td><strong>t_y_edge_ smoothing[8\~16]</strong></td>
+</tr>
+<tr>
+<td>echo [t_cb_edge_smooth] > /proc/videograph/vpe/mrnr/ t_cb_edge_smooth</td>
+<td><strong>t_cb_edge_smoothing[0\~1]</strong></td>
+</tr>
+<tr>
+<td>echo [t_cr_edge_smooth] > /proc/videograph/vpe/mrnr/ t_cr_edge_smooth</td>
+<td><strong>t_cr_edge_ smoothing[0\~1]</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p>cat /proc/videograph/vpe/mrnr/t_y_edge_smooth_1</p>
+<p>cat /proc/videograph/vpe/mrnr/t_y_edge_smooth_2</p>
+<p>cat /proc/videograph/vpe/mrnr/t_cb_edge_smooth</p>
+<p>cat /proc/videograph/vpe/mrnr/t_cr_edge_smooth</p>
+<p><strong>Output :</strong></p>
+<h6 id="procvideographvpemrnrnr_strength">/proc/videograph/vpe/mrnr/nr_strength<a class="headerlink" href="#procvideographvpemrnrnr_strength" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write nr_strength parameters on Y/C channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [strength_y[0]] [strength_y [1]] [strength_c] > /proc/videograph/vpe/mrnr/nr_strength</td>
+<td><strong>nr_strength_y[0\~1], nr_strength_c</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read : cat /proc/videograph/vpe/mrnr/ nr_strength</strong></p>
+<p><strong>Output :</strong></p>
+<h4 id="vendor-api">Vendor API<a class="headerlink" href="#vendor-api" title="Permanent link">&para;</a></h4>
+<p><strong>[Description]</strong></p>
+<p>Get and set the 2DNR parameters corresponding to current path_id.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Get：</strong></p>
+<p>HD_RESULT vendor_video_get(HD_PATH_ID path_id, VENDOR_VIDEO_DN_2D, VENDOR_VIDEO_PARAM_MRNR *p_param);</p>
+<p><strong>Set：</strong></p>
+<p>HD_RESULT vendor_video_set(HD_PATH_ID path_id, VENDOR_VIDEO_DN_2D, VENDOR_VIDEO_PARAM_MRNR *p_param);</p>
+<p><strong>[Definition]</strong></p>
+<h2 id="temporal-noise-reduction-tmnr">Temporal Noise Reduction (TMNR)<a class="headerlink" href="#temporal-noise-reduction-tmnr" title="Permanent link">&para;</a></h2>
+<p>This is temporal noise reduction module(abbreviation is “TMNR”). The major function is to eliminate temporal noise in the image.</p>
+<h3 id="overview_2">Overview<a class="headerlink" href="#overview_2" title="Permanent link">&para;</a></h3>
+<p>The concept of TMNR algorithm is to determine whether the pixel status is static(MotionLevel=0) or motion(MotionLevel=2) by Motion Detect module. The static region perform 3DNR to reduce the temporal noise, and the motion region will not perform 3DNR to prevent from having ghost, instead, it will perform 2DNR to reduce noise. The transition region between static region and motion region will combine the result of 2DNR and 3DNR by weighting.</p>
+<h3 id="parameter-description_2">Parameter description<a class="headerlink" href="#parameter-description_2" title="Permanent link">&para;</a></h3>
+<p>(The blue text is the part of the parameter difference between this module and the 9831x series, please pay special attention)</p>
+<p>Table 41 TMNR Parameter List</p>
+<table>
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Range</strong></th>
+<th><strong>Default</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>tmnr_en</strong></td>
+<td>0\~1</td>
+<td>1</td>
+<td>TMNR ON/OFF</td>
+</tr>
+<tr>
+<td><strong>luma_dn_en</strong></td>
+<td>0\~1</td>
+<td>1</td>
+<td>Y channel TMNR ON/OFF</td>
+</tr>
+<tr>
+<td><strong>chroma_dn_en</strong></td>
+<td>0\~1</td>
+<td>1</td>
+<td>Cb/Cr channel TMNR ON/OFF</td>
+</tr>
+<tr>
+<td><strong>tmnr_fcs_en</strong></td>
+<td>0\~1</td>
+<td>0</td>
+<td>Temporal de-false color function ON/OFF It only works when “chroma_dn_en” is set to 1. Please refer to advance description.</td>
+</tr>
+<tr>
+<td><strong>nr_str_y_3d</strong></td>
+<td>0\~32</td>
+<td>8</td>
+<td>Y channel temporal NR strength</td>
+</tr>
+<tr>
+<td><strong>nr_str_y_2d</strong></td>
+<td>0\~32</td>
+<td>16</td>
+<td>Y channel spatial NR strength of motion object</td>
+</tr>
+<tr>
+<td><strong>nr_str _c_3d</strong></td>
+<td>0\~32</td>
+<td>16</td>
+<td>Cb/Cr channel temporal NR strength</td>
+</tr>
+<tr>
+<td><strong>nr_str _c_2d</strong></td>
+<td>0\~32</td>
+<td>16</td>
+<td>Cb/Cr channel spatial NR strength of motion object</td>
+</tr>
+<tr>
+<td><strong>blur_str_y</strong></td>
+<td>0\~2</td>
+<td>1</td>
+<td>Y image blurred strength 0: No blur 1: low-strength blur 2: high-strength blur ※It is recommend to set enable, if the executing sequence of 3DNR is after Sharpness; otherwise, it is recommend to set disable. For DVR/NVR application, due to in most case the front-end camera had perfomed sharpen process, it is recommend to set 1.</td>
+</tr>
+<tr>
+<td><strong>center_wzero_y_2d_en</strong></td>
+<td>0\~1</td>
+<td>1</td>
+<td>Set to enable represents when performing the 2DNR, the weighting of center point is 0. It will increase NR strength, but might lose detail. Due to 2DNR only works on motion region, the detail loss is not obvious, it is recommend to fix enable.</td>
+</tr>
+<tr>
+<td><strong>center_wzero_y_3d_en</strong></td>
+<td>0\~1</td>
+<td>1</td>
+<td>Set to enable represents when performing 3DNR, the weighting of center point is 0. It is recommend to fix enable.</td>
+</tr>
+<tr>
+<td><strong>small_vibrat_supp_y_en</strong></td>
+<td>0\~1</td>
+<td>0</td>
+<td>Y channel small vibration suppresiioon ON/OFF. This function will enhance suppression on small vibration noise to make the image more stable. However, it also causes slower ghost removal. It is recommend to enable at normal luminance, and disable at dark luminance.</td>
+</tr>
+<tr>
+<td><strong>avoid_residue_th_y</strong></td>
+<td>1\~4</td>
+<td>2</td>
+<td>Upper threshold for Y channel small noise putting back. If <strong>err_compensate</strong> = 0, bigger this value will cause smaller temporal noise. On the other hand, if err_compensate = 1, bigger this value will cause bigger temporal noise.</td>
+</tr>
+<tr>
+<td><strong>avoid_residue_th_c</strong></td>
+<td>1\~4</td>
+<td>1</td>
+<td>Upper threshold for Vb/Cr channel small noise putting back. If <strong>err_compensate</strong> = 0, bigger this value will cause smaller temporal noise. On the other hand, if err_compensate = 1, bigger this value will cause bigger temporal noise.</td>
+</tr>
+<tr>
+<td><strong>display_motion_map_en</strong></td>
+<td>0\~1</td>
+<td>0</td>
+<td>Debug mode. Show motion detection result on the image to assist to judge the correctness of motion detect parameters. Please refer to advance description.</td>
+</tr>
+<tr>
+<td><strong>motion_map_channel</strong></td>
+<td>0\~4</td>
+<td>0</td>
+<td>Select debug signal channel. 0: Y channel 1: Cb channel 2: Cr channel 3: temporal de-false color Cb channel 4: temporal de-false color Cr channel</td>
+</tr>
+<tr>
+<td><strong>y_base[8]</strong></td>
+<td>0\~16320</td>
+<td>{146,147,107,110,102,104,104,104}</td>
+<td>y_base[0]-[7] are NoiseSAD mapping to pixel brightness from dark to bright. When performing 2DNR, the internal algorithm will automatically fine tune strength based on y_base. The larger the y_base, the stronger strength of 2DNR of motion object. It is recommend to increase y_base as sensor gain increases.</td>
+</tr>
+<tr>
+<td><strong>motion_level_th_y_k1</strong></td>
+<td>0\~32</td>
+<td>8</td>
+<td>Threshold (motion_level_th_y_k1*Y_NOISE) for determining transition region on Y channel. Y_NOISE please refer to advance description.</td>
+</tr>
+<tr>
+<td><strong>motion_level_th_y_k2</strong></td>
+<td>0\~32</td>
+<td>8</td>
+<td>Threshold (motion_level_th_y_k2*Y_NOISE) for determining motion region on Y channel.  K2 must larger or equal to K1.</td>
+</tr>
+<tr>
+<td><strong>y_coefa[8]</strong></td>
+<td>0\~48</td>
+<td>{0,0,0,0,0,0,0,0}</td>
+<td>The slope of NoiseSAD from flat region to detail region on Y channel. y_coefa[0]-[7] mapping to pixel brightness from dark to bright.</td>
+</tr>
+<tr>
+<td><strong>y_coefb[8]</strong></td>
+<td>0\~16320</td>
+<td>{27,27,20,12,7,10,10,10}</td>
+<td>NoiseSAD of flat region on Y channel. y_coefb[0]-[7] mapping to pixel brightness from dark to bright.</td>
+</tr>
+<tr>
+<td><strong>y_std[8]</strong></td>
+<td>0\~16320</td>
+<td>{20,70,70,70,70,50,28,18}</td>
+<td>The standard deviation of NoiseSAD on Y channel. y_std[0]-[7] mapping to pixel brightness from dark to bright.</td>
+</tr>
+<tr>
+<td><strong>motion_level_th_c_k1</strong></td>
+<td>0\~32</td>
+<td>8</td>
+<td>Threshold for determining transition region on Cb/Cr channel.</td>
+</tr>
+<tr>
+<td><strong>motion_level_th_c_k2</strong></td>
+<td>0\~32</td>
+<td>8</td>
+<td>Threshold for determining motion region on Cb/Cr channel, K2 must larger or equal to K1.</td>
+</tr>
+<tr>
+<td><strong>cb_mean[8]</strong></td>
+<td>0\~6375</td>
+<td>{33,33,34,32,29,28,28,28}</td>
+<td>The NoiseSAD mean value on Cb channel. cb_mean[0]-[7] mapping to pixel brightness from dark to bright.</td>
+</tr>
+<tr>
+<td><strong>cb_std[8]</strong></td>
+<td>0\~6375</td>
+<td>{10,9,10,10,9,9,9,9}</td>
+<td>The standard deviation of NoiseSAD on Cb channel. cb_std[0]-[7] mapping to pixel brightness from dark to bright.</td>
+</tr>
+<tr>
+<td><strong>cr_mean[8]</strong></td>
+<td>0\~6375</td>
+<td>{23,23,25,23,20,20,21,21}</td>
+<td>The NoiseSAD mean value on Cr channel. cr_mean[0]-[7] mapping to pixel brightness from dark to bright.</td>
+</tr>
+<tr>
+<td><strong>cr_std[8]</strong></td>
+<td>0\~6375</td>
+<td>{7,7,8,7,7,77,7}</td>
+<td>The standard deviation of NoiseSAD on Cr channel. cr_std[0]-[7] mapping to pixel brightness from dark to bright.</td>
+</tr>
+<tr>
+<td><strong>lut_y_3d_1_Th[4]</strong></td>
+<td>0\~127</td>
+<td>{11,33,55,77}</td>
+<td>Lut of Y channel 3D_1 filter Please refer to advance description.</td>
+</tr>
+<tr>
+<td><strong>lut_y _3d_2_Th[4]</strong></td>
+<td>0\~127</td>
+<td>{40,14,7,3}</td>
+<td>Lut of Y channel 3D_2 filter Please refer to advance description.</td>
+</tr>
+<tr>
+<td><strong>lut_y_2d_Th[4]</strong></td>
+<td>0\~127</td>
+<td>{11,33,55,77}</td>
+<td>Lut of Y channel 2D filter Please refer to advance description.</td>
+</tr>
+<tr>
+<td><strong>lut_c_3d_Th[4]</strong></td>
+<td>0\~127</td>
+<td>{37,19,11,7}</td>
+<td>Lut of Cb/Cr channel 3D filter Please refer to advance description.</td>
+</tr>
+<tr>
+<td><strong>lut_c_2d_Th[4]</strong></td>
+<td>0\~127</td>
+<td>{11,33,55,77}</td>
+<td>Lut of Cb/Cr channel 2D filter Please refer to advance description.</td>
+</tr>
+<tr>
+<td><strong>tmnr_fcs_str</strong></td>
+<td>0\~15</td>
+<td>4</td>
+<td>The strength of temporal de-false color function.</td>
+</tr>
+<tr>
+<td><strong>tmnr_fcs_th</strong></td>
+<td>0\~255</td>
+<td>32</td>
+<td>Threshold for the difference between the previous frame and the current frame to determine whether it is false color.</td>
+</tr>
+<tr>
+<td><strong>dithering_en</strong></td>
+<td>0\~1</td>
+<td>1</td>
+<td>Dithering enable. This function can be used to eliminate slight power noise or flicker phenomenon.</td>
+</tr>
+<tr>
+<td><strong>dithering_bit_y</strong></td>
+<td>0\~3</td>
+<td>2</td>
+<td>Y channel random bit number. The higher the value, the stronger the ability to eliminate the power noiser and filcker phenomenon, but the picture may appear larger fine noise.</td>
+</tr>
+<tr>
+<td><strong>dithering_bit_u</strong></td>
+<td>0\~3</td>
+<td>1</td>
+<td>U channel random bit number. The higher the value, the stronger the ability to eliminate the power noiser and filcker phenomenon, but the picture may appear larger fine noise.</td>
+</tr>
+<tr>
+<td><strong>dithering_bit_v</strong></td>
+<td>0\~3</td>
+<td>1</td>
+<td>V channel random bit number. The higher the value, the stronger the ability to eliminate the power noiser and filcker phenomenon, but the picture may appear larger fine noise.</td>
+</tr>
+<tr>
+<td><strong>err_compensate</strong></td>
+<td>0\~1</td>
+<td>1</td>
+<td>YC Compression error compensation.  0: Antiflicker mode. (Larger anti-flicker effect) 1: Compensation mode. (Data Compression Error Compensation)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Advance Description:</strong></p>
+<ul>
+<li><strong>tmnr_fcs_en:</strong> Temporal de-false color ON/OFF. This function will eliminate color-flash phenomenon in high frequency region.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>FCS off</strong></th>
+<th><strong>FCS on</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="" src="media/5d97d7ec6ce6c04c51cbbd7fac4a4c14.png" /></td>
+<td><img alt="" src="media/739ad8dd14c71553c9ca374a7d25fdfd.png" /></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>display_motion_map_en:</strong>。</li>
+</ul>
+<p>Motion region will label with red color, static region will label with black color, and transition region will label with white color.</p>
+<table>
+<thead>
+<tr>
+<th>Original image</th>
+<th>Motion Map</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td><img alt="" src="media/f8c88e8b210fdbbc3a3bad1aa076d29b.png" /></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Y_NOISE:</strong> Block SAD is the summation of pixel difference between the previous frame and current frame at the same location. If the Block SAD is larger than K2*NoiseSAD_STD(NoiseSAD_STD is the input parameter), it determines as motion region. If the Block SAD is smaller than K1*NoiseSAD_STD, it determines as static region. If the Block SAD is larger than K1*NoiseSAD_STD and smaller than K2*NoiseSAD_STD, it determines as transition region.</li>
+</ul>
+<p>As follows :</p>
+<p><img alt="" src="media/f6e933b9951d28148772c67dcbb32146.png" /></p>
+<ul>
+<li>
+<p>Cb_NOISE, Cr_NOISE:</p>
+<p>Different from Y channel, the NoiseSAD of Cb/Cr channel has no relationship with detail. Therefore, it has no slope parameter.</p>
+</li>
+<li>
+<p><strong>lut_Y_3d_1_Th:</strong> Weighting Lut for stage 1 3DNR on Y channel, the x-axis is delta difference of neighbor pixel, the y-axis is weighting. As the following figure, the larger the difference, the smaller the weighting. The smaller the difference, the larger the weighting. Then, based on each weighting to perform weighting sum.</p>
+</li>
+<li><strong>lut_Y_3d_2_Th:</strong> Weighting Lut for Stage 2 3DNR on Y channel, the x-axis is difference of the reference point between the previous frame and current frame, the y-axis is weighting. As the following figure, those with smaller difference might be static region, and set smaller weighting, the output will close to the reference frame. On the contrast, those with larger difference might be motion region, and set larger weighting, the output will close to the current frame.</li>
+<li><strong>lut_Y_2d_Th:</strong> Weighting Lut of neighbor pixel for 2DNR on Y channel, the x-axis is difference, the y-axis is weighting. As the following figure, the larger the difference, the smaller the weighting. The smaller the difference, the larger the weighting. Then, based on each weighting to perform weighting sum.</li>
+<li><strong>lut_c_3d_Th:</strong> Suppression Level Lut for 3DNR on Cb/Cr channel, the x-axis is the difference of the reference point between the previous frame and current frame, the y-axis is the suppression level. The concept is the same with “<strong>LUT_Y_3d_2_Th</strong>”.</li>
+<li><strong>lut_c_2d_Th:</strong> Weighting Lut of neighbor pixel for 2DNR on Cb/Cr channel, the x-axis is difference, the y-axis is weighting. The concept is the same with “<strong>lut_Y_2d_Th</strong>”.</li>
+</ul>
+<h3 id="setting-interface_2">Setting Interface<a class="headerlink" href="#setting-interface_2" title="Permanent link">&para;</a></h3>
+<h4 id="proc_2">Proc<a class="headerlink" href="#proc_2" title="Permanent link">&para;</a></h4>
+<h6 id="procvideographvpetmnrdump_info">/proc/videograph/vpe/tmnr/dump_info<a class="headerlink" href="#procvideographvpetmnrdump_info" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read all parameters of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write : Not support.</strong></p>
+<p><strong>Read :</strong></p>
+<p>cat /proc/videograph/vpe/tmnr/dump_info</p>
+<p><strong>Output :</strong></p>
+<h6 id="procvideographvpetmnrch_en_status">/proc/videograph/vpe/tmnr/ch_en_status<a class="headerlink" href="#procvideographvpetmnrch_en_status" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the enable status of the current channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [luma_en] [chroma_en] [fcs_en] > /proc/videograph/vpe/tmnr/ch_en_status</td>
+<td><strong>luma_dn_en</strong> <strong>chroma_dn_en</strong> <strong>tmnr_fcs_en</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p><strong>cat /proc/videograph/vpe/tmnr/ch_en_status</strong></p>
+<p><strong>Output :</strong></p>
+<h6 id="procvideographvpetmnrnr_strength">/proc/videograph/vpe/tmnr/nr_strength<a class="headerlink" href="#procvideographvpetmnrnr_strength" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the TMNR strength of the current channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [y_3d_str] [y_2d_str] [c_3d_str] [c_2d_str] > /proc/videograph/vpe/tmnr/nr_strength</td>
+<td><strong>nr_str_y_3d, nr_str_y_2d</strong> <strong>nr_str_c_3d, nr_str_c_2d</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p><strong>cat /proc/videograph/vpe/tmnr/nr_strength</strong></p>
+<p><strong>Output :</strong></p>
+<h6 id="procvideographvpetmnry_base">/proc/videograph/vpe/tmnr/y_base<a class="headerlink" href="#procvideographvpetmnry_base" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the base noise level of TMNR of the current channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [y_base0] [y_base1]………[y_base7] > /proc/videograph/vpe/tmnr/y_base</td>
+<td><strong>y_base[0]\~[7]</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p><strong>cat /proc/videograph/vpe/tmnr/y_base</strong></p>
+<p><strong>Output :</strong></p>
+<h6 id="procvideographvpetmnrmotion_level_th">/proc/videograph/vpe/tmnr/motion_level_th<a class="headerlink" href="#procvideographvpetmnrmotion_level_th" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the noise model parameters of TMNR of the current channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [y_k1] [y_k2] [c_k1] [c_k2] > /proc/videograph/vpe/tmnr/motion_level_th</td>
+<td><strong>motion_level_th_y_k1</strong> <strong>motion_level_th_y_k2</strong> <strong>motion_level_th_c_k1</strong> <strong>motion_level_th_c_k2</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p><strong>cat /proc/videograph/vpe/tmnr/motion_level_th</strong></p>
+<p><strong>Output :</strong></p>
+<h6 id="procvideographvpetmnry_coeffa">/proc/videograph/vpe/tmnr/y_coeffa<a class="headerlink" href="#procvideographvpetmnry_coeffa" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the noise model parameters of TMNR of the current channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [y_coeffa0] [y_coeffa1]………[y_coeffa7] > /proc/videograph/vpe/tmnr/y_coeffa</td>
+<td><strong>y_coeffa[0]\~[7]</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p><strong>cat /proc/videograph/vpe/tmnr/y_coeffa</strong></p>
+<p><strong>Output :</strong></p>
+<h6 id="procvideographvpetmnry_coeffb">/proc/videograph/vpe/tmnr/y_coeffb<a class="headerlink" href="#procvideographvpetmnry_coeffb" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the noise model parameters of TMNR of the current channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [y_coeffb0] [y_coeffb1]………[y_coeffb7] > /proc/videograph/vpe/tmnr/y_coeffb</td>
+<td><strong>y_coeffb[0]\~[7]</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p><strong>cat /proc/videograph/vpe/tmnr/y_coeffb</strong></p>
+<p><strong>Output :</strong></p>
+<h6 id="procvideographvpetmnry_std">/proc/videograph/vpe/tmnr/y_std<a class="headerlink" href="#procvideographvpetmnry_std" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the noise model parameters of TMNR of the current channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [y_std0] [y_std1]………[y_std7] > /proc/videograph/vpe/tmnr/y_std</td>
+<td><strong>y_std[0]\~[7]</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p><strong>cat /proc/videograph/vpe/tmnr/y_std</strong></p>
+<p><strong>Output :</strong></p>
+<h6 id="procvideographvpetmnrcb_mean">/proc/videograph/vpe/tmnr/cb_mean<a class="headerlink" href="#procvideographvpetmnrcb_mean" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the noise model parameters of TMNR of the current channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [cb_mean0] [cb_mean1]………[cb_mean 7] > /proc/videograph/vpe/tmnr/cb_mean</td>
+<td><strong>cb_mean[0]\~[7]</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p><strong>cat /proc/videograph/vpe/tmnr/cb_mean</strong></p>
+<p><strong>Output :</strong></p>
+<h6 id="procvideographvpetmnrcb_std">/proc/videograph/vpe/tmnr/cb_std<a class="headerlink" href="#procvideographvpetmnrcb_std" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the noise model parameters of TMNR of the current channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [cb_std0] [cb_std1]………[cb_std7] > /proc/videograph/vpe/tmnr/cb_std</td>
+<td><strong>cb_std[0]\~[7]</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p><strong>cat /proc/videograph/vpe/tmnr/cb_std</strong></p>
+<p><strong>Output :</strong></p>
+<h6 id="procvideographvpetmnrcr_mean">/proc/videograph/vpe/tmnr/cr_mean<a class="headerlink" href="#procvideographvpetmnrcr_mean" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the noise model parameters of TMNR of the current channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [cr_mean0] [cr_mean1]………[cr_std7] > /proc/videograph/vpe/tmnr/cr_mean</td>
+<td><strong>cr_std[0]\~[7]</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p><strong>cat /proc/videograph/vpe/tmnr/cr_mean</strong></p>
+<p><strong>Output :</strong></p>
+<h6 id="procvideographvpetmnrcr_std">/proc/videograph/vpe/tmnr/cr_std<a class="headerlink" href="#procvideographvpetmnrcr_std" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the noise model parameters of TMNR of the current channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [cr_std0] [cr_std1]………[cr_std7] ] > /proc/videograph/vpe/tmnr/cr_std</td>
+<td><strong>cr_std[0]\~[7]</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p><strong>cat /proc/videograph/vpe/tmnr/cr_std</strong></p>
+<p><strong>Output :</strong></p>
+<h6 id="procvideographvpetmnrlut_y_3d_1_th">/proc/videograph/vpe/tmnr/lut_y_3d_1_th<a class="headerlink" href="#procvideographvpetmnrlut_y_3d_1_th" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the 3D noise reduction parameters of TMNR of the current channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [th0] [th1] [th2] [th3] > /proc/videograph/vpe/tmnr/lut_y_3d_1_th</td>
+<td><strong>lut_y_3d_1_th[0]\~[3]</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p><strong>cat /proc/videograph/vpe/tmnr/lut_y_3d_1_th</strong></p>
+<p><strong>Output :</strong></p>
+<h6 id="procvideographvpetmnrlut_y_3d_2_th">/proc/videograph/vpe/tmnr/lut_y_3d_2_th<a class="headerlink" href="#procvideographvpetmnrlut_y_3d_2_th" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the 3D noise reduction parameters of TMNR of the current channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [th0] [th1] [th2] [th3] > /proc/videograph/vpe/tmnr/lut_y_3d_2_th</td>
+<td><strong>lut_y_3d_2_th[0]\~[3]</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p><strong>cat /proc/videograph/vpe/tmnr/lut_y_3d_2_th</strong></p>
+<p><strong>Output :</strong></p>
+<h6 id="procvideographvpetmnrlut_y_2d_th">/proc/videograph/vpe/tmnr/lut_y_2d_th<a class="headerlink" href="#procvideographvpetmnrlut_y_2d_th" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the 2D noise reduction parameters of TMNR of the current channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [th0] [th1] [th2] [th3] > /proc/videograph/vpe/tmnr/lut_y_2d_th</td>
+<td><strong>lut_y_2d_th[0]\~[3]</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p>cat /proc/videograph/vpe/tmnr/lut_y_2d_th</p>
+<p><strong>Output :</strong></p>
+<h6 id="procvideographvpetmnrlut_c_3d_th">/proc/videograph/vpe/tmnr/lut_c_3d_th<a class="headerlink" href="#procvideographvpetmnrlut_c_3d_th" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the 3D noise reduction parameters of 3DNR of the current channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [th0] [th1] [th2] [th3] > /proc/videograph/vpe/tmnr/lut_c_3d_th</td>
+<td><strong>lut_c_3d_th[0]\~[3]</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p><strong>cat /proc/videograph/vpe/tmnr/lut_c_3d_th</strong></p>
+<p><strong>Output :</strong></p>
+<h6 id="procvideographvpetmnrlut_c_2d_th">/proc/videograph/vpe/tmnr/lut_c_2d_th<a class="headerlink" href="#procvideographvpetmnrlut_c_2d_th" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the 2D noise reduction parameters of TMNR of the current channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [th0] [th1] [th2] [th3] > /proc/videograph/vpe/tmnr/lut_c_2d_th</td>
+<td><strong>lut_c_2d_th[0]\~[3]</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p><strong>cat /proc/videograph/vpe/tmnr/lut_c_2d_th</strong></p>
+<p><strong>Output :</strong></p>
+<h6 id="procvideographvpetmnrfcs_str">/proc/videograph/vpe/tmnr/fcs_str<a class="headerlink" href="#procvideographvpetmnrfcs_str" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the false color suppression strength of TMNR of the current channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [fcs_str (0\~15) ] > /proc/videograph/vpe/tmnr/fcs_str</td>
+<td><strong>tmnr_fcs_str</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p>cat /proc/videograph/vpe/tmnr/fcs_str</p>
+<p><strong>Output :</strong></p>
+<h6 id="procvideographvpetmnrfcs_th">/proc/videograph/vpe/tmnr/fcs_th<a class="headerlink" href="#procvideographvpetmnrfcs_th" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the threshold for determining whether it is false color of TMNR of the current channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [fcs_th (0\~255) ] > /proc/videograph/vpe/tmnr/fcs_th</td>
+<td><strong>tmnr_fcs_th</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p>cat /proc/videograph/vpe/tmnr/fcs_th</p>
+<p><strong>Output :</strong></p>
+<h6 id="procvideographvpetmnrmotion_map">/proc/videograph/vpe/tmnr/motion_map<a class="headerlink" href="#procvideographvpetmnrmotion_map" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the motion map of TMNR of the current channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [map_en (0\~1)] > [map_idx] > /proc/videograph/vpe/tmnr/motion_map map_en: 0: display_motion_map_en = 0 1: display_motion_map_en = 1 map_idx :  0: motion_map_channel=Y  1: motion_map_channel=Cb  2: motion_map_channel=Cr 3: motion_map_channel=FCS_Cb 4: motion_map_channel=FCS_Cr</td>
+<td><strong>display_motion_map_en,</strong> <strong>motion_map_channel</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p>cat /proc/videograph/vpe/tmnr/motion_map</p>
+<p><strong>Output :</strong></p>
+<h6 id="procvideographvpetmnrdiff_blur_str">/proc/videograph/vpe/tmnr/diff_blur_str<a class="headerlink" href="#procvideographvpetmnrdiff_blur_str" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the Diff. image blur strength of TMNR of the current channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [str (0\~2)] > /proc/videograph/vpe/tmnr/diff_blur_str str: blur strength 0 \~2</td>
+<td><strong>blur_str_y</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p>cat /proc/videograph/vpe/tmnr/diff_blur_str</p>
+<p><strong>Output :</strong></p>
+<h6 id="procvideographvpetmnravoid_residue_th">/proc/videograph/vpe/tmnr/avoid_residue_th<a class="headerlink" href="#procvideographvpetmnravoid_residue_th" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the Diff. image blur strength of TMNR of the current channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [avoid_residue_th_y (1\~4)] [avoid_residue_th_c (1\~4)] > /proc/videograph/vpe/tmnr/avoid_residue_th</td>
+<td><strong>avoid_residue_th_y, avoid_residue_th_c</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p>cat /proc/videograph/vpe/tmnr/avoid_residue_th</p>
+<p><strong>Output :</strong></p>
+<h6 id="procvideographvpetmnrdithering">/proc/videograph/vpe/tmnr/dithering<a class="headerlink" href="#procvideographvpetmnrdithering" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the dithering relative parameters of the current channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [dithering_en (0\~1)] [dithering_bit_y (0\~7)] [dithering_bit_u (0\~7)] [dithering_bit_v (0\~7)] > /proc/videograph/vpe/tmnr/dithering</td>
+<td><strong>dithering_en</strong> <strong>dithering_bit_y</strong> <strong>dithering_bit_u</strong> <strong>dithering_bit_v</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p>cat /proc/videograph/vpe/tmnr/ dithering</p>
+<p><strong>Output :</strong></p>
+<h6 id="procvideographvpetmnrerr_compensate">/proc/videograph/vpe/tmnr/err_compensate<a class="headerlink" href="#procvideographvpetmnrerr_compensate" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the err_compensate parameter of the current channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [err_compensate (0\~1)] > /proc/videograph/vpe/tmnr/err_compensate</td>
+<td><strong>err_compensate</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p>cat /proc/videograph/vpe/tmnr/err_compensate</p>
+<p><strong>Output :</strong></p>
+<h4 id="vendor-api_1">Vendor API<a class="headerlink" href="#vendor-api_1" title="Permanent link">&para;</a></h4>
+<p><strong>[Description]</strong></p>
+<p>Get and set the TMNR parameters corresponding to current path_id.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Get：</strong></p>
+<p>HD_RESULT vendor_video_get(HD_PATH_ID path_id, VENDOR_VIDEO_TMNR_CTRL, VENDOR_VIDEO_PARAM_TMNR_EXT *p_param);</p>
+<p><strong>Set：</strong></p>
+<p>HD_RESULT vendor_video_set(HD_PATH_ID path_id, VENDOR_VIDEO_DN_2D, VENDOR_VIDEO_PARAM_TMNR_EXT *p_param);</p>
+<p><strong>[Definition]</strong></p>
+<h2 id="sharpen-shp">Sharpen (SHP)<a class="headerlink" href="#sharpen-shp" title="Permanent link">&para;</a></h2>
+<p>This is texture enhancement module.</p>
+<h3 id="overview_3">Overview<a class="headerlink" href="#overview_3" title="Permanent link">&para;</a></h3>
+<p>This algorithm adopts inverse gamma information and after gamma information to perform texture enhancement, respectively, to improve the enhancement strength not smooth problem of the bright/dark region. Besides, it adopts 3x3 and 5x5 filter to enhance thin edge and thick edge, repectively, to take care of the detail and contrast of image. Calculating “Edge Weight” to determine this is detail region or flat region(thinner edge) and automatically adjusting weighting of detail enhancement result and flat region enhancement result to take care of texture enhancement and avoid noise enhancement. The “Halo clip” is used to control the overshootong phenomenon caused by edge enhancement.</p>
+<p>The major flow please refer to the following figure:</p>
+<p><img alt="" src="media/48e6124f5cfb8ffe61c1c7f84e11fecb.png" /></p>
+<p>Parameter Description</p>
+<p>Table 51 SHP Parameter List</p>
+<table>
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Range</strong></th>
+<th><strong>Def</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>sharpen_en</strong></td>
+<td>0\~1</td>
+<td>0</td>
+<td>Edge enhance ON/OFF</td>
+</tr>
+<tr>
+<td><strong>edge_weight_src_sel</strong></td>
+<td>0\~1</td>
+<td>0</td>
+<td>Select the image source to calculate “Edge Weight ”.  0: after gamma, 1: inverse gamma. Please refer to description.</td>
+</tr>
+<tr>
+<td><strong>edge_weight_th</strong></td>
+<td>0\~255</td>
+<td>2</td>
+<td>Threshold for calculating “Edge Weight”, those smaller than threshold will be considered as flat region, and the output all adopt flat region enhancement result.</td>
+</tr>
+<tr>
+<td><strong>edge_weight_gain</strong></td>
+<td>0\~255</td>
+<td>175</td>
+<td>Adjust the weighting of detail enhancement result and flat region(thin edge) enhancement result. Based on the setting of “noise_level+noise_curve” to adjust EdgeWeight for different pixel brightness. The larger the Edge Weight, the larger weighting of detail enhancement result, repersenting the edge enhance is more stronger(more noise). In the contrast, the smaller the edge weight, the larger weighting of flat region enhancement result, representing the edge enhancement is less stronger.</td>
+</tr>
+<tr>
+<td><strong>noise_level</strong></td>
+<td>0\~255</td>
+<td>25</td>
+<td>Please refer to advance description.</td>
+</tr>
+<tr>
+<td><strong>noise_curve[17]</strong></td>
+<td>0\~255</td>
+<td>{50, 50, 50, 48, 47, 44, 39, 38, 37, 36, 35, 35, 35, 35, 35, 35, 35}</td>
+<td>Please refer to advance description.</td>
+</tr>
+<tr>
+<td><strong>blend_inv_gamma</strong></td>
+<td>0\~128</td>
+<td>64</td>
+<td>The blending weight of inverse gamma edge enhancement result and after gamma edge enhancement result. This parameter is equal to adjust the ratio of edge enhancement between bright region and dark region, let the edge enhancement level of bright region and dark region is more even. The larger the value, the stronger strength of bright region enhancement, but the weaker strength of dark region enhancement.</td>
+</tr>
+<tr>
+<td><strong>edge_sharp_str1</strong></td>
+<td>0\~255</td>
+<td>25</td>
+<td>Adjust the strength of thin edge enhancement</td>
+</tr>
+<tr>
+<td><strong>edge_sharp_str2</strong></td>
+<td>0\~255</td>
+<td>10</td>
+<td>Adjust the strength of thick edge enhancement</td>
+</tr>
+<tr>
+<td><strong>flat_sharp_str</strong></td>
+<td>0\~255</td>
+<td>0</td>
+<td>Adjust the strength of flat region(thin detail) enhancement.</td>
+</tr>
+<tr>
+<td><strong>coring_th</strong></td>
+<td>0\~255</td>
+<td>0</td>
+<td>Threshold for determing whether to perform enhancement. For those edge value smaller than threshold, they will not perform edge enhancement to avoid enhancing noise.</td>
+</tr>
+<tr>
+<td><strong>bright_halo_clip</strong></td>
+<td>0\~128</td>
+<td>32</td>
+<td>Remove bright halo edge caused by edge enhancement. The smaller the “bright_halo_clip”, the less bright halo edge, but the sharpness might be decreased.</td>
+</tr>
+<tr>
+<td><strong>dark_halo_clip</strong></td>
+<td>0\~128</td>
+<td>96</td>
+<td>Remove dark halo edge caused by edge enhancement. The smaller the “dark_halo_clip”, the less dark halo edge, but the sharpness might be decreased.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Advance description</strong></p>
+<ul>
+<li>
+<p><strong>noise_level, noise_curve[17]:</strong></p>
+<p>noise_level = noise_level + NoiseofPixel, wherein the NoiseofPixel is the y-axis of noise_curve.</p>
+<p>The noise_curve may depend on the pixel brightness to set the noise size, respectively. Normally, human eyes are less sensitive to the noise in high bright region; thus, it can set small value to increase the edge enhancement strength to enhance detail. It is recommend to use the following default value. If user want to adjust the noise size at all Y range(0-255), it just needs to adjust noise_level.</p>
+</li>
+</ul>
+<p><img alt="" src="media/bf0ce7acd928bcb8e947b31a8321cc75.png" /></p>
+<p>Default value:</p>
+<p><strong>edge_weight_src_sel</strong> =0</p>
+<p>noise_curve[17] ={50,50,50,48,47,44,39,38,37,36,35,35,35,35,35,35,35}</p>
+<ul>
+<li>
+<p>More strengthen on detail in bright region to avoid enhancing noise.</p>
+<p><strong>edge_weight_src_sel</strong> =1</p>
+<p>noise_curve[17] = {0, 38, 46, 51, 54, 57, 59, 61, 62, 62, 62, 62, 62, 62, 62, 62, 62}</p>
+<ul>
+<li>More strengthen on detail in dark region to enhance thin detail, but the noise in dark region will be enhanced, either.</li>
+</ul>
+</li>
+</ul>
+<h3 id="setting-interface_3">Setting Interface<a class="headerlink" href="#setting-interface_3" title="Permanent link">&para;</a></h3>
+<h4 id="proc_3">Proc<a class="headerlink" href="#proc_3" title="Permanent link">&para;</a></h4>
+<h6 id="procvideographvpesharpendump_info">/proc/videograph/vpe/sharpen/dump_info<a class="headerlink" href="#procvideographvpesharpendump_info" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read all Sharpen parameters of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write : Not support.</strong></p>
+<p>Read : cat /proc/videograph/vpe/sharpen/dump_info</p>
+<h6 id="procvideographvpesharpensharp_en">/proc/videograph/vpe/sharpen/sharp_en<a class="headerlink" href="#procvideographvpesharpensharp_en" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the enable status of the cuurent channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [ sharp_en (0\~1) ] > /proc/videograph/vpe/sharpen/sharp_en</td>
+<td><strong>sharpen_en</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p><strong>cat /proc/videograph/vpe/sharpen/shp_en</strong></p>
+<p><strong>Output :</strong></p>
+<h6 id="procvideographvpesharpenedge_weight_src_sel">/proc/videograph/vpe/sharpen/edge_weight_src_sel<a class="headerlink" href="#procvideographvpesharpenedge_weight_src_sel" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the sharpen parameter of the current channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [src_sel (0 \~ 1) ] > /proc/videograph/vpe/sharpen/edge_weight_src_sel</td>
+<td><strong>edge_weight_src_sel</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p>cat /proc/videograph/vpe/sharpen/edge_weight_src_sel</p>
+<p><strong>Output :</strong></p>
+<h6 id="procvideographvpesharpenedge_weigt_gain">/proc/videograph/vpe/sharpen/edge_weigt_gain<a class="headerlink" href="#procvideographvpesharpenedge_weigt_gain" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the sharpen parameter of the current channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [gain (0\~255) ] > /proc/videograph/vpe/sharpen/edge_weight_gain</td>
+<td><strong>edge_weight_gain</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p>cat /proc/videograph/vpe/sharpen/edge_weight_gain</p>
+<p><strong>Output :</strong></p>
+<h6 id="procvideographvpesharpenedge_weight_th">/proc/videograph/vpe/sharpen/edge_weight_th<a class="headerlink" href="#procvideographvpesharpenedge_weight_th" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the sharpen parameter of the current channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [th (0\~255) ] > /proc/videograph/vpe/sharpen/edge_weight_th</td>
+<td><strong>edge_weight_th</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p>cat /proc/videograph/vpe/sharpen/edge_weight_th</p>
+<p><strong>Output :</strong></p>
+<h6 id="procvideographvpesharpenblend_inv_gamma">/proc/videograph/vpe/sharpen/blend_inv_gamma<a class="headerlink" href="#procvideographvpesharpenblend_inv_gamma" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the sharpen parameter of the current channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [th (0\~128) ] > /proc/videograph/vpe/sharpen/blend_inv_gamma</td>
+<td><strong>blend_inv_gamma</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p>cat /proc/videograph/vpe/sharpen/blend_inv_gamma</p>
+<p><strong>Output :</strong></p>
+<h6 id="procvideographvpesharpenedge_sharp_str">/proc/videograph/vpe/sharpen/edge_sharp_str<a class="headerlink" href="#procvideographvpesharpenedge_sharp_str" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the sharpen parameter of the current channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [str1 (0\~255)] [str2 (0\~255)] > /proc/videograph/vpe/sharpen/edge_sharp_str</td>
+<td><strong>edge_sharp_str1</strong> <strong>edge_sharp_str2</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p>cat /proc/videograph/vpe/sharpen/edge_sharp_str</p>
+<p><strong>Output :</strong></p>
+<h6 id="procvideographvpesharpenflat_sharp_str">/proc/videograph/vpe/sharpen/flat_sharp_str<a class="headerlink" href="#procvideographvpesharpenflat_sharp_str" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the sharpen parameter of the current channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [str (0\~255)] > /proc/videograph/vpe/sharpen/flat_sharp_str</td>
+<td><strong>flat_sharp_str</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p>cat /proc/videograph/vpe/sharpen/flat_sharp_str</p>
+<p><strong>Output :</strong></p>
+<h6 id="procvideographvpesharpencoring_th">/proc/videograph/vpe/sharpen/coring_th<a class="headerlink" href="#procvideographvpesharpencoring_th" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the sharpen parameter of the current channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [coring_th (0\~255)] > /proc/videograph/vpe/sharpen/coring_th</td>
+<td><strong>coring_th</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p>cat /proc/videograph/vpe/sharpen/coring_th</p>
+<p><strong>Output :</strong></p>
+<h6 id="procvideographvpesharpenhalo_clip">/proc/videograph/vpe/sharpen/halo_clip<a class="headerlink" href="#procvideographvpesharpenhalo_clip" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the sharpen parameter of the current channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [bright_clip (0\~128)] [dark_clip(0\~128)] > /proc/videograph/vpe/sharpen/halo_clip</td>
+<td><strong>bright_halo_clip</strong> <strong>drak_halo_clip</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p>cat /proc/videograph/vpe/sharpen/halo_clip</p>
+<p><strong>Output :</strong></p>
+<h6 id="procvideographvpesharpennoise_curve">/proc/videograph/vpe/sharpen/noise_curve<a class="headerlink" href="#procvideographvpesharpennoise_curve" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the sharpen parameter of the current channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [noise_curve[0] (0\~255)]…. [noise_curve [16] (0\~255)] > /proc/videograph/vpe/sharpen/noise_curve</td>
+<td><strong>noise_curve[17]</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p>cat /proc/videograph/vpe/sharpen/noise_curve</p>
+<p><strong>Output :</strong></p>
+<h4 id="vendor-api_2">Vendor API<a class="headerlink" href="#vendor-api_2" title="Permanent link">&para;</a></h4>
+<p><strong>[Description]</strong></p>
+<p>Get and set the sharpen parameters corresponding to current path_id.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Get：</strong></p>
+<p>HD_RESULT vendor_video_get(HD_PATH_ID path_id, VENDOR_VIDEO_SHARP, VENDOR_VIDEO_PARAM_SHARP *p_param);</p>
+<p><strong>Set：</strong></p>
+<p>HD_RESULT vendor_video_set(HD_PATH_ID path_id, VENDOR_VIDEO_SHARP, VENDOR_VIDEO_PARAM_SHARP *p_param);</p>
+<p><strong>[定義]</strong></p>
+<h2 id="edge-smoothing-es">Edge Smoothing (ES)<a class="headerlink" href="#edge-smoothing-es" title="Permanent link">&para;</a></h2>
+<p>This module is edge smoothing. The main function is to eliminate aliasing in the picture to improve the smoothness of the picture.</p>
+<h3 id="overview_4">Overview<a class="headerlink" href="#overview_4" title="Permanent link">&para;</a></h3>
+<p>The characteristics of this algorithm are to effectively smooth the edges of the input image, correct the jaggedness in the edge area of the input image, and avoid the Sharpen module to enhance the degree of jaggedness in the image edge again. The algorithm divides the input image into edge area and detail area, calculates the direction of the edge on the edge area, and then performs LPF convolution adaptively along the edge direction to smooth the edge of the image. The Edge Mask can be adjusted to avoid high-frequency areas being blurred due to smoothing.</p>
+<p>Please refer to the following figure for the main process:</p>
+<p><img alt="" src="media/c4e9611f70c36554d09f2043fd951e2c.png" /></p>
+<h3 id="parameter-description_3">Parameter Description<a class="headerlink" href="#parameter-description_3" title="Permanent link">&para;</a></h3>
+<p>Table 61 ES Parameter List</p>
+<table>
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Range</strong></th>
+<th><strong>Def</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>edge_smooth_en</strong></td>
+<td>0\~1</td>
+<td>0</td>
+<td>Edge smooth enable</td>
+</tr>
+<tr>
+<td><strong>edge_smooth_y_edeng_th_lo</strong></td>
+<td>0\~255</td>
+<td>10</td>
+<td>Adjust the strength threshold of detail areas in the picture Please refer to the advanced instructions</td>
+</tr>
+<tr>
+<td><strong>edge_smooth_y_edeng_th_hi</strong></td>
+<td>0\~255</td>
+<td>70</td>
+<td>Adjust the strength threshold of the edge area in the picture Please refer to the advanced instructions</td>
+</tr>
+<tr>
+<td><strong>edge_smooth_y_ew_lo</strong></td>
+<td>0\~255</td>
+<td>2</td>
+<td>Adjust the smoothing strength weight of detail areas in the picture Please refer to the advanced instructions</td>
+</tr>
+<tr>
+<td><strong>edge_smooth_y_ew_hi</strong></td>
+<td>0\~255</td>
+<td>32</td>
+<td>Adjust the suppression threshold for the smoothing of high-frequency areas in the picture. The larger the value, the easier it is to determine and smooth the high-frequency area. Therefore, the larger the value, the smoother the high-frequency area, and the smaller the value, the clearer the high-frequency area</td>
+</tr>
+<tr>
+<td><strong>edge_smooth_y_edi_th</strong></td>
+<td>0\~63</td>
+<td>31</td>
+<td>Suppresses the strength of smoothing in the high-frequency region. The larger the value, the stronger the smoothing in the high-frequency region.</td>
+</tr>
+<tr>
+<td><strong>edge_smooth_y_ds_str</strong></td>
+<td>0\~7</td>
+<td>5</td>
+<td>Adjust the strength of the smoothing filter in the picture. The larger the value, the stronger the smoothing degree.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Advance description:</strong></p>
+<ul>
+<li><strong>edge_smooth_y_edeng_th_lo, edge_smooth_y_edeng_th_hi, edge_smooth_y_ew_lo, edge_smooth_y_ew_hi:</strong> The strength of edge smooth is controlled by the edge energy intensity of the input image, where edge_smooth_y_edeng_th_hi and edge_smooth_y_edeng_th_lo are the ranges that set the edge area and the detail area, and edge_smooth_y_ew_hi and edge_smooth_y_ew_lo set the smoothness strength of the edge area and detail area. The larger the number, the stronger of the smoothness.</li>
+</ul>
+<p>The relationship between the edge area and the detail area is a continuous linear change, and the corresponding relationship is shown in the following figure:</p>
+<p><img alt="" src="media/e19085f81dcaf1d27069bb8195a10a91.png" /></p>
+<h3 id="setting-interface_4">Setting Interface<a class="headerlink" href="#setting-interface_4" title="Permanent link">&para;</a></h3>
+<h4 id="proc_4">Proc<a class="headerlink" href="#proc_4" title="Permanent link">&para;</a></h4>
+<h6 id="procvideographvpeesparam">/proc/videograph/vpe/es/param<a class="headerlink" href="#procvideographvpeesparam" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read all edge smoothing parameters of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write : Not support.</strong></p>
+<p>Read : cat /proc/videograph/vpe/es/param</p>
+<h6 id="procvideographvpeesedge_smooth_en">/proc/videograph/vpe/es/edge_smooth_en<a class="headerlink" href="#procvideographvpeesedge_smooth_en" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Set the edge smooth switch of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [edge_smooth_en (0\~1)] > /proc/videograph/vpe/es/edge_smooth_en</td>
+<td><strong>edge_smooth_en</strong></td>
+</tr>
+</tbody>
+</table>
+<h6 id="procvideographvpeesedge_smooth_out_sel">/proc/videograph/vpe/es/edge_smooth_out_sel<a class="headerlink" href="#procvideographvpeesedge_smooth_out_sel" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Set the edge smooth debugging switch of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [edge_smooth_out_sel (0\~1)] > /proc/videograph/vpe/es/edge_smooth_out_sel</td>
+<td><strong>edge_smooth_out_sel</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p>cat /proc/videograph/vpe/es/edge_smooth_out_sel</p>
+<p><strong>Output :</strong></p>
+<h6 id="procvideographvpeesedge_smooth_th">/proc/videograph/vpe/es/edge_smooth_th<a class="headerlink" href="#procvideographvpeesedge_smooth_th" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Set the edge smooth related threshold of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [y_edeng_th_lo (0\~255)] [y_edeng_th_hi (0\~255)] [y_ew_lo (0\~255)] [y_ew_hi (0\~255)] > /proc/videograph/vpe/es/edge_smooth_th</td>
+<td><strong>edge_smooth_y_edeng_th_l</strong> <strong>edge_smooth_y_edeng_th_hi</strong> <strong>edge_smooth_y_ew_lo</strong> <strong>edge_smooth_y_ew_hi</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p>cat /proc/videograph/vpe/es/edge_smooth_th</p>
+<p><strong>Output :</strong></p>
+<h6 id="procvideographvpeesedge_smooth_y_edi_th">/proc/videograph/vpe/es/edge_smooth_y_edi_th<a class="headerlink" href="#procvideographvpeesedge_smooth_y_edi_th" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Set the edge smooth mask related parameters of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [edge_smooth_y_edi_th (0\~63)] > /proc/videograph/vpe/es/edge_smooth_y_edi_th</td>
+<td><strong>edge_smooth_y_edi_th</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p>cat /proc/videograph/vpe/es/edge_smooth_y_edi_th</p>
+<p><strong>Output :</strong></p>
+<h6 id="procvideographvpeesedge_smooth_y_ds_str">/proc/videograph/vpe/es/edge_smooth_y_ds_str<a class="headerlink" href="#procvideographvpeesedge_smooth_y_ds_str" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Sets the filter strength of the edge smooth of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [edge_smooth_y_ds_str (0\~7)] > /proc/videograph/vpe/es/edge_smooth_y_ds_str</td>
+<td><strong>edge_smooth_y_ds_str</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p>cat /proc/videograph/vpe/es/edge_smooth_y_ds_str</p>
+<p><strong>Output :</strong></p>
+<h4 id="vendor-api_3">Vendor API<a class="headerlink" href="#vendor-api_3" title="Permanent link">&para;</a></h4>
+<p><strong>[Description]</strong></p>
+<p>Get and set the edge smooth parameters corresponding to current path_id.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Get：</strong></p>
+<p>HD_RESULT vendor_video_get(HD_PATH_ID path_id, VENDOR_VIDEO_EDGE_SMOOTH, VENDOR_VIDEO_PARAM_SHARP *p_param);</p>
+<p><strong>Set：</strong></p>
+<p>HD_RESULT vendor_video_set(HD_PATH_ID path_id, VENDOR_VIDEO_EDGE_SMOOTH, VENDOR_VIDEO_PARAM_SHARP *p_param);</p>
+<p><strong>[Definition]</strong></p>
+<h2 id="scaling-sca">Scaling (SCA)<a class="headerlink" href="#scaling-sca" title="Permanent link">&para;</a></h2>
+<p>Inupt/Output low pass filter process with different resolution. The recommend maximum scaling down ratio is 8, and the recommend maximum scaling up ratio is 8.</p>
+<h3 id="overview_5">Overview<a class="headerlink" href="#overview_5" title="Permanent link">&para;</a></h3>
+<p>This is image scaling module, the major concept is interpolation and smooth process.</p>
+<h3 id="parameter-description_4">Parameter Description<a class="headerlink" href="#parameter-description_4" title="Permanent link">&para;</a></h3>
+<p>Table 71 SCA Parameter List</p>
+<table>
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Range</strong></th>
+<th><strong>Def</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>sca_y_luma_algo_en</strong></td>
+<td>0\~3</td>
+<td>0</td>
+<td>Algorithm select for vertical luma scaler. 0: judge by HW algorithm 1: select the nearest point on the left side 2: select the left side point and perform low pass filter process 3: the same as option 0 It is recommend to set 0.</td>
+</tr>
+<tr>
+<td><strong>sca_x_luma_algo_en</strong></td>
+<td>0\~3</td>
+<td>0</td>
+<td>Algorithm select for horizontal luma scaler. 0: judge by HW algorithm 1: select the nearest point on the left side 2: select the left side point and perform low pass filter process 3: the same as option 0 It is recommend to set 0.</td>
+</tr>
+<tr>
+<td><strong>sca_y_chroma_algo_en</strong></td>
+<td>0\~3</td>
+<td>0</td>
+<td>Algorithm select for vertical chroma scaler. 0: judge by HW algorithm 1: select the nearest point on the left side 2: bilinear interpolation 3: average It is recommend to set 0.</td>
+</tr>
+<tr>
+<td><strong>sca_x_chroma_algo_en</strong></td>
+<td>0\~3</td>
+<td>0</td>
+<td>Algorithm select for horizontal chroma scaler. 0: judge by HW algorithm 1: select the nearest point on the left side 2: bilinear interpolation 3: average It is recommend to set 0.</td>
+</tr>
+<tr>
+<td><strong>sca_map_sel</strong></td>
+<td>0\~1</td>
+<td>0</td>
+<td>Select scaler source mapping format.  0: without 0.5 pixel distance shift(start from the 0th pixel of image image) 1: with 0.5 pixel distance shift(start from the 0.5th pixel of image image) If set to 1, when the size of input image and output image is the same or the size is multiple of 2, the scaling performance of output image will similar to perform low pass filter. It is recommend to set 0.</td>
+</tr>
+<tr>
+<td><strong>sca_ceffH_0\~3</strong></td>
+<td>-128\~127</td>
+<td>[0, 0, 0, 64]</td>
+<td>LPF coefficient in horizontal direction. Please refer to advance description. ※The software limit range is between -128\~127, to reduce memory usage.</td>
+</tr>
+<tr>
+<td><strong>sca_ceffv_0\~3</strong></td>
+<td>-128\~127</td>
+<td>[0, 0, 0, 64]</td>
+<td>LPF coefficient in vertical direction. Please refer to advance description. ※The software limit range is between -128\~127, to reduce memory usage.</td>
+</tr>
+<tr>
+<td><strong>des_drt</strong></td>
+<td>0, 2,3</td>
+<td>0</td>
+<td>YUV domain transform 0: bypass 2: PC level to TV level (Y: 16\~235 / C:16\~240) 3: TV level to PC level (Y: 0\~235 C:0\~255) 255: decide by job parameter of AP rather than driver (default value is 255, other settings are used for debug)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Advance description:</strong></p>
+<ul>
+<li><strong>sca_ceffH_0\~3, sca_ceffV_0\~3:</strong> LPF coefficients in horizontal direction and vertical direction. User can adjust LPF coefficients to fine tune sawtooth phenomenon in oblique line caused by scaling.</li>
+</ul>
+<p>Table 72 Scaler Low pass filter default parameter list</p>
+<table>
+<thead>
+<tr>
+<th><strong>Scaling Ratio (R)</strong></th>
+<th><strong>HCoef0</strong></th>
+<th><strong>HCoef1</strong></th>
+<th><strong>HCoef2</strong></th>
+<th><strong>HCoef3</strong></th>
+<th><strong>VCoef0</strong></th>
+<th><strong>VCoef1</strong></th>
+<th><strong>VCoef2</strong></th>
+<th><strong>VCoef3</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>≧ 1x</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>64</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>64</td>
+</tr>
+<tr>
+<td><strong>1 \&lt; R ≦ 1.25x</strong></td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td>58</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td>58</td>
+</tr>
+<tr>
+<td><strong>1.25 \&lt; R ≦ 1.5x</strong></td>
+<td>0</td>
+<td>0</td>
+<td>7</td>
+<td>50</td>
+<td>0</td>
+<td>0</td>
+<td>7</td>
+<td>50</td>
+</tr>
+<tr>
+<td><strong>1.5 \&lt; R ≦ 1.75x</strong></td>
+<td>0</td>
+<td>0</td>
+<td>11</td>
+<td>42</td>
+<td>0</td>
+<td>0</td>
+<td>11</td>
+<td>42</td>
+</tr>
+<tr>
+<td><strong>1.75 \&lt; R ≦ 2x</strong></td>
+<td>0</td>
+<td>1</td>
+<td>13</td>
+<td>36</td>
+<td>0</td>
+<td>1</td>
+<td>13</td>
+<td>36</td>
+</tr>
+<tr>
+<td><strong>2 \&lt; R ≦ 2.25x</strong></td>
+<td>0</td>
+<td>1</td>
+<td>15</td>
+<td>32</td>
+<td>0</td>
+<td>1</td>
+<td>15</td>
+<td>32</td>
+</tr>
+<tr>
+<td><strong>2.25 \&lt; R ≦ 2.5x</strong></td>
+<td>0</td>
+<td>2</td>
+<td>15</td>
+<td>30</td>
+<td>0</td>
+<td>2</td>
+<td>15</td>
+<td>30</td>
+</tr>
+<tr>
+<td><strong>2.5 \&lt; R ≦ 2.75x</strong></td>
+<td>0</td>
+<td>3</td>
+<td>15</td>
+<td>28</td>
+<td>0</td>
+<td>3</td>
+<td>15</td>
+<td>28</td>
+</tr>
+<tr>
+<td><strong>2.75 \&lt; R ≦ 3x</strong></td>
+<td>0</td>
+<td>4</td>
+<td>15</td>
+<td>26</td>
+<td>0</td>
+<td>4</td>
+<td>15</td>
+<td>26</td>
+</tr>
+<tr>
+<td><strong>3 \&lt; R ≦ 3.25x</strong></td>
+<td>1</td>
+<td>4</td>
+<td>15</td>
+<td>24</td>
+<td>1</td>
+<td>4</td>
+<td>15</td>
+<td>24</td>
+</tr>
+<tr>
+<td><strong>3.25 \&lt; R ≦ 3.5x</strong></td>
+<td>1</td>
+<td>5</td>
+<td>15</td>
+<td>22</td>
+<td>1</td>
+<td>5</td>
+<td>15</td>
+<td>22</td>
+</tr>
+<tr>
+<td><strong>3.5 \&lt; R ≦ 3.75x</strong></td>
+<td>2</td>
+<td>7</td>
+<td>14</td>
+<td>18</td>
+<td>2</td>
+<td>7</td>
+<td>14</td>
+<td>18</td>
+</tr>
+<tr>
+<td><strong>3.75 \&lt; R ≦ 4x</strong></td>
+<td>3</td>
+<td>8</td>
+<td>13</td>
+<td>16</td>
+<td>3</td>
+<td>8</td>
+<td>13</td>
+<td>16</td>
+</tr>
+<tr>
+<td><strong>4 \&lt; R ≦ 5x</strong></td>
+<td>4</td>
+<td>8</td>
+<td>13</td>
+<td>14</td>
+<td>4</td>
+<td>8</td>
+<td>13</td>
+<td>14</td>
+</tr>
+<tr>
+<td><strong>5 \&lt; R ≦ 6x</strong></td>
+<td>4</td>
+<td>9</td>
+<td>12</td>
+<td>14</td>
+<td>4</td>
+<td>9</td>
+<td>12</td>
+<td>14</td>
+</tr>
+<tr>
+<td><strong>6x \&lt; R ≦ 7x</strong></td>
+<td>6</td>
+<td>9</td>
+<td>11</td>
+<td>12</td>
+<td>6</td>
+<td>9</td>
+<td>11</td>
+<td>12</td>
+</tr>
+<tr>
+<td><strong>7x \&lt; R</strong></td>
+<td>6</td>
+<td>9</td>
+<td>11</td>
+<td>12</td>
+<td>6</td>
+<td>9</td>
+<td>11</td>
+<td>12</td>
+</tr>
+</tbody>
+</table>
+<h3 id="setting-interface_5">Setting Interface<a class="headerlink" href="#setting-interface_5" title="Permanent link">&para;</a></h3>
+<h4 id="proc_5">Proc<a class="headerlink" href="#proc_5" title="Permanent link">&para;</a></h4>
+<h6 id="procvideographvpescaparam">/proc/videograph/vpe/sca/param<a class="headerlink" href="#procvideographvpescaparam" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read all SCA parameters of the cuurent scaling ratio</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write : Not support.</strong></p>
+<p>Read : cat /proc/videograph/vpe/sca/param</p>
+<h6 id="procvideographvpescactrl_param">/proc/videograph/vpe/sca/ctrl_param<a class="headerlink" href="#procvideographvpescactrl_param" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Set SCA controlling parameter for specific ratio.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [sca_luma_algo (0\~3)] [sca_chroma_algo (0\~3)] [sca_map_sel (0\~1)] > /proc/videograph/vpe/sca/ctrl_param</td>
+<td>index: Target ratio The command “sca_luma_algo” set parameters “sca_y_luma_algo_en” and “sca_x_luma_algo_en” at the same time. The command “sca_chroma_algo” set parameters “sca_y_chroma_algo_en” and “sca_x_chroma_algo_en” at the same time. The command “sca_map_sel” set “sca_map_sel” parameter.</td>
+</tr>
+</tbody>
+</table>
+<p>Read : Not support</p>
+<h6 id="procvideographvpescalpf_param">/proc/videograph/vpe/sca/lpf_param<a class="headerlink" href="#procvideographvpescalpf_param" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Set SCA low pass filter parameter for specific ratio.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [index (0\~16)] [coeffH[0]] [coeffH[1]] [coeffH[2]] ]coeffH[3]] [coeffV[0]] [coeffV[1]] [coeffV[2]] [coeffV[3]] (-128 \~ 127) > /proc/videograph/vpe/sca/lpf_param</td>
+<td>index: Target ratio coeffH : sca_ceffH[4] coeffV: sca_ceffV[4] ※The software limit range is between -128\~127, to reduce memory usage.</td>
+</tr>
+</tbody>
+</table>
+<p>Read : Not support</p>
+<h6 id="procvideographvpescayuv_range">/proc/videograph/vpe/sca/yuv_range<a class="headerlink" href="#procvideographvpescayuv_range" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write YUV range of SCA at each one of the channel.</p>
+<p><strong>※Parameter can be set by put job of AP depends on channel requests, it is not recommend to be set by this proc command or ioctl to avoid conflicts. This command is used for debugging.</strong></p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [fd range] > /proc/videograph/vpe/sca /yuv_range yuv_range: 0, 2, 3, 255 (disable) ※disable represent AP directly control parameters</td>
+<td><strong>des_drt</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p>cat /proc/videograph/vpe/sca/yuv_range</p>
+<p><strong>Output :</strong></p>
+<h4 id="vendor-api_4">Vendor API<a class="headerlink" href="#vendor-api_4" title="Permanent link">&para;</a></h4>
+<p><strong>[Description]</strong></p>
+<p>Get and set the scaling parameters corresponding to current path_id.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Get：</strong></p>
+<p>HD_RESULT vendor_video_get(HD_PATH_ID path_id, VENDOR_VIDEO_SCA, VENDOR_VIDEO_PARAM_SCA_SET *p_param);</p>
+<p><strong>Set：</strong></p>
+<p>HD_RESULT vendor_video_set(HD_PATH_ID path_id, VENDOR_VIDEO_SCA, VENDOR_VIDEO_PARAM_SCA_SET *p_param);</p>
+<p><strong>[Definition]</strong></p>
+<h2 id="distortion-correction-engine-dce">Distortion Correction Engine (DCE)<a class="headerlink" href="#distortion-correction-engine-dce" title="Permanent link">&para;</a></h2>
+<h3 id="overview_6">Overview<a class="headerlink" href="#overview_6" title="Permanent link">&para;</a></h3>
+<p>This is lens distortion calibration module, it can perform calibration on wide-angle lens and fish-eye lens.</p>
+<h3 id="dce-parameter-description">DCE Parameter Description<a class="headerlink" href="#dce-parameter-description" title="Permanent link">&para;</a></h3>
+<p>Table 81 DCE Parameter List</p>
+<table>
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Range</strong></th>
+<th><strong>Def</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>dce_mode</strong></td>
+<td>0\~1</td>
+<td>0</td>
+<td>Select distortion function 0: GDC lens calibration 1: 2DLUT self-define XY coordinate distortion</td>
+</tr>
+<tr>
+<td><strong>lut2d_sz</strong></td>
+<td>0\~5</td>
+<td>0</td>
+<td>Size selection of 2D look-up table. The larger the size, the more precision to describe distortion. 0: 9x9 3: 65x65 4: 129x129 5: 257x257</td>
+</tr>
+<tr>
+<td><strong>lsb_rand</strong></td>
+<td>0\~1</td>
+<td>0</td>
+<td>LSB 2 bit random generation for internal 10 bit->8 bit image. 0: fixed fill 0 1: random generate 0\~3</td>
+</tr>
+<tr>
+<td><strong>fovbound</strong></td>
+<td>0\~1</td>
+<td>0</td>
+<td>FOV boundary process method selection. When the distortion result can not fill the total output image, select different way to proceed the exceed range. 0: Replace out of boundary pixels with duplicate nearest pixel 1: Replace out of boundary pixels with bound pixels</td>
+</tr>
+<tr>
+<td><strong>boundy</strong></td>
+<td>0\~1023</td>
+<td>0</td>
+<td>Bound value for Y component(u8.2)</td>
+</tr>
+<tr>
+<td><strong>boundu</strong></td>
+<td>0\~1023</td>
+<td>0</td>
+<td>Bound value for U component(u8.2)</td>
+</tr>
+<tr>
+<td><strong>boundv</strong></td>
+<td>0\~1023</td>
+<td>0</td>
+<td>Bound value for V component(u8.2)</td>
+</tr>
+<tr>
+<td><strong>cent_x_s</strong></td>
+<td>213-1</td>
+<td>0</td>
+<td>Define lens center of x-axis. It is recommend to set width/2.</td>
+</tr>
+<tr>
+<td><strong>cent_y_s</strong></td>
+<td>213-1</td>
+<td>0</td>
+<td>Define lens center of y-axis. It is recommend to set height/2.</td>
+</tr>
+<tr>
+<td><strong>xdist</strong></td>
+<td>0\~4095</td>
+<td>0</td>
+<td>X input distance factor, for oval shape modeling. It is recommend to set 4095, which is suitable for most situation.</td>
+</tr>
+<tr>
+<td><strong>ydist</strong></td>
+<td>0\~4095</td>
+<td>0</td>
+<td>Y input distance factor, for oval shape modeling. It is recommend to set 4095, which is suitable for most situation.</td>
+</tr>
+<tr>
+<td><strong>geo_lut</strong></td>
+<td>0\~65535</td>
+<td>0</td>
+<td>The GEO deformation gain table, a total of 65 points, indicates the magnification of each pixel in the image at a different distance from the deformation center (magnification = 65535 * input radius / output radius), the gainbase is 65535, please refer to Note 2 for the gain table example.  Value range：[0, 65535]。</td>
+</tr>
+<tr>
+<td><strong>normfact</strong></td>
+<td>0\~255</td>
+<td>128</td>
+<td>Radius normalization factor. Normfact = 1 \&lt;\&lt; (normbit + 7) / R2</td>
+</tr>
+<tr>
+<td><strong>normbit</strong></td>
+<td>0\~31</td>
+<td>31</td>
+<td>Radius normalization shift bit. R2 = (width/2)2+(height/2)2 The total bit number of R2 is normbit. Example: 9602+5402 = 1213200 (21 bits)</td>
+</tr>
+<tr>
+<td><strong>fovgain</strong></td>
+<td>0\~4095</td>
+<td>0</td>
+<td>Adjust the scaling ratio of the final distortion coordinate to preserve FOV. Scale down factor for FOV preservation. Due to it will effect the calibration performance, it is recommend to set 1024.</td>
+</tr>
+<tr>
+<td><strong>hfact</strong></td>
+<td>0 \~ 224 -1</td>
+<td>0</td>
+<td>Horizontal scaling factor for 2DLut scaling up(u0.24). ((2DLUT horizontal pixel number – 1) \&lt;\&lt; 24) / (width – 1)</td>
+</tr>
+<tr>
+<td><strong>vfact</strong></td>
+<td>0 \~ 224 -1</td>
+<td>0</td>
+<td>Vertical scaling factor for 2DLut scaling up(u0.24). ((2DLUT vertical pixel number – 1) \&lt;\&lt; 24) / (height – 1)</td>
+</tr>
+<tr>
+<td><strong>xofs_i</strong></td>
+<td>0\~127</td>
+<td>0</td>
+<td>2DLut x offset, integer part. It is recommend to set 0, if user need to adjust the DCE performance, user need to change the 2DLUT value.</td>
+</tr>
+<tr>
+<td><strong>xofs_f</strong></td>
+<td>0\~224-1</td>
+<td>0</td>
+<td>2DLut x offset, fraction part. It is recommend to set 0, if user need to adjust the DCE performance, user need to change the 2DLUT value.</td>
+</tr>
+<tr>
+<td><strong>yofs_i</strong></td>
+<td>0\~127</td>
+<td>0</td>
+<td>2DLut y offset, integer part. It is recommend to set 0, if user need to adjust the DCE performance, user need to change the 2DLUT value.</td>
+</tr>
+<tr>
+<td><strong>yofs_f</strong></td>
+<td>0\~224-1</td>
+<td>0</td>
+<td>2DLut y offset, fraction part. It is recommend to set 0, if user need to adjust the DCE performance, user need to change the 2DLUT value.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>[Note 1]</strong></p>
+<p>Adjust geo_fov_gain, the left side is 1024, the right side is 1320, you can observe the increase in the field of view on the right side.</p>
+<p><img alt="" src="media/eba9c06255b7fd67274077ba6d250382.png" /> <img alt="" src="media/bf25b70960f0f4add2e66ac0374e018d.png" /></p>
+<p><strong>[Note 2]</strong></p>
+<p>The example of the GEO deformation gain table, from left to right, corresponds to the deformation amount from the center of the image to the edge. This parameter group indicates that the larger the deformation amount toward the edge is. This example is a barrel deformation correction.</p>
+<p>R is the distance from the center of the image to each point. This distance can be understood as the radius of the circle.</p>
+<p>Ri represents the radius of each point of the input (before correction) image.</p>
+<p>Ro represents the radius of each point of the output (corrected) image.</p>
+<p>RoMax represents the longest distance from the center of the output image to the four corners. If the center of the image falls at 1/2 of the width and height, the four corners are all equal, and they are the longest distances. <img alt="" src="media/8f6cabb3344adc6e4088795a6d3e49ed.png" /><img alt="" src="media/00c44bcf31b3c0896221ffeb1715b606.png" /><img alt="" src="media/8a3c7024a6db1b2414cc55aa7bec7efa.emf" /></p>
+<h3 id="setting-interface_6">Setting Interface<a class="headerlink" href="#setting-interface_6" title="Permanent link">&para;</a></h3>
+<h4 id="proc_6">Proc<a class="headerlink" href="#proc_6" title="Permanent link">&para;</a></h4>
+<h6 id="procvideographvpedcedump_info">/proc/videograph/vpe/dce/dump_info<a class="headerlink" href="#procvideographvpedcedump_info" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read all DCE parameters at the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write : Not support.</strong></p>
+<p>Read : cat /proc/videograph/vpe/dce/dump_info</p>
+<h6 id="procvideographvpedcech_en">/proc/videograph/vpe/dce/ch_en<a class="headerlink" href="#procvideographvpedcech_en" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the enable status of the current channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [ dc_en 0\~1 ] > /proc/videograph/vpe/dce/ch_en</td>
+<td><strong>dc_en</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p><strong>cat /proc/videograph/vpe/dce/ch_en</strong></p>
+<p><strong>Output :</strong></p>
+<h4 id="vendor-api_5">Vendor API<a class="headerlink" href="#vendor-api_5" title="Permanent link">&para;</a></h4>
+<p><strong>[Description]</strong></p>
+<p>Get and set the dce parameters corresponding to current path_id.</p>
+<p><strong>[Command]</strong></p>
+<p>Get：</p>
+<p>HD_RESULT vendor_video_get(HD_PATH_ID path_id, VENDOR_VIDEOPROC_DEWARP_INFO, VENDOR_DEWARP_INFO *p_param);</p>
+<p>Set：</p>
+<p>HD_RESULT c(HD_PATH_ID path_id, VENDOR_ VENDOR_VIDEOPROC_DEWARP_INFO, VENDOR_DEWARP_INFO *p_param);</p>
+<p><strong>[Define]</strong></p>
+<h2 id="dc-table-generatordctg">DC Table Generator(DCTG)<a class="headerlink" href="#dc-table-generatordctg" title="Permanent link">&para;</a></h2>
+<h3 id="overview_7">Overview<a class="headerlink" href="#overview_7" title="Permanent link">&para;</a></h3>
+<p>For perspective projection application, in order to increase the convenience of usage, DCTG module let user to set the desired angle and size with an instinct way to generate DCTG parameters automatically. Whenever this function is enabled, manual set DCE 2D-LUT function will be invalid.</p>
+<p><strong>[Note]</strong></p>
+<p>When using DCTG function, user needs to set two parameters enable, one is dc_enable, the other is dctg_en.</p>
+<p>Please refer to the following description:</p>
+<p>The “theta” is the top/bottom angle.</p>
+<p>The “phi” is the rotate angle.</p>
+<p>The “rot_y” is the rotate offset of (x, z) plane towards Y-axis.</p>
+<p>The “rot_z” is the rotate offset of (x, y) plane towards Z-axis.</p>
+<p>Generate LUT:</p>
+<p>Define the rotate angle of FOV by phi_st/phi_ed, and then rotate to FOV location by rot_y.</p>
+<p>Define the top/bottom angle of FOV by theta_st/theta_ed, and then rotate to FOV location by rot_z.</p>
+<p><img alt="" src="media/cd0b976666f1953455c6d14398ba0a66.png" /><img alt="" src="media/26d92d917ee155e047f26e92b20be608.png" /></p>
+<h3 id="parameter-description_5">Parameter Description<a class="headerlink" href="#parameter-description_5" title="Permanent link">&para;</a></h3>
+<p>Table 91 DCTG parameter list</p>
+<table>
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Range</strong></th>
+<th><strong>Def</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>dctg_en</strong></td>
+<td>0-1</td>
+<td>0</td>
+<td>DCTG ON/OFF</td>
+</tr>
+<tr>
+<td><strong>mount_type</strong></td>
+<td>0\~1</td>
+<td>0</td>
+<td>Camera mount type.  0: Ceiling mount 1: Floor mount</td>
+</tr>
+<tr>
+<td><strong>lut2d_sz</strong></td>
+<td>0, 3</td>
+<td>3</td>
+<td>Select size of 2D look-up table, this parameter must the same with DCE parameter. 0: 9x9 3: 65x65</td>
+</tr>
+<tr>
+<td><strong>lens_r</strong></td>
+<td>0\~215-1</td>
+<td>0</td>
+<td>Valid radius of fish-eye lens, the unit is pixel. Please refer to advance description.</td>
+</tr>
+<tr>
+<td><strong>lens_x_st</strong></td>
+<td>0\~214-1</td>
+<td>0</td>
+<td>The start x position of fish-eye lens at the source image, the unit is pixel.</td>
+</tr>
+<tr>
+<td><strong>lens_y_st</strong></td>
+<td>0\~214-1</td>
+<td>0</td>
+<td>The start y position of fish-eye lens at the source image, the unit is pixel.</td>
+</tr>
+<tr>
+<td><strong>theta_st</strong></td>
+<td>-180 \~ 180 (-*pi \~ *pi)</td>
+<td>0</td>
+<td>FOV theta start radian.</td>
+</tr>
+<tr>
+<td><strong>theta_ed</strong></td>
+<td>-180 \~ 180 (-*pi \~ *pi)</td>
+<td>0</td>
+<td>FOV theta end radian. theta_end > theta_st: normal image theta_end \&lt; theta_st: flip image</td>
+</tr>
+<tr>
+<td><strong>phi_st</strong></td>
+<td>-360 \~ 360 (-2*pi \~ 2*pi)</td>
+<td>0</td>
+<td>OV phi start radian.</td>
+</tr>
+<tr>
+<td><strong>phi_ed</strong></td>
+<td>-360 \~ 360 (-2*pi \~ 2*pi)</td>
+<td>0</td>
+<td>FOV phi end radian. (-2*pi \~ 2*pi) phi_end > theta_st: normal image phi_end \&lt; theta_st: flip image</td>
+</tr>
+<tr>
+<td><strong>rot_z</strong></td>
+<td>-360 \~ 360 (-2*pi \~ 2*pi)</td>
+<td>0</td>
+<td>Z-axis rotate radian</td>
+</tr>
+<tr>
+<td><strong>rot_y</strong></td>
+<td>-360 \~ 360 (-2*pi \~ 2*pi)</td>
+<td>0</td>
+<td>Y-zxis rotate radian.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Advance description:</strong></p>
+<ul>
+<li><strong>lens_r:</strong> The valid radius of fish-eye device.</li>
+<li><strong>lens_x_st :</strong> The start x position of fish-eye lens at the source image, the unit is pixel.</li>
+<li>
+<p><strong>lens_y_st :</strong> The start y position of fish-eye lens at the source image, the unit is pixel.</p>
+<p><img alt="" src="media/95ec8c69aa74ea93bef7c47133f014f4.png" /></p>
+</li>
+</ul>
+<h3 id="setting-interface_7">Setting Interface<a class="headerlink" href="#setting-interface_7" title="Permanent link">&para;</a></h3>
+<h4 id="proc_7">Proc<a class="headerlink" href="#proc_7" title="Permanent link">&para;</a></h4>
+<h6 id="procvideographvpedctgdump_info">/proc/videograph/vpe/dctg/dump_info<a class="headerlink" href="#procvideographvpedctgdump_info" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read all dctg parameters of the current channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write : Not support.</strong></p>
+<p>Read : cat /proc/videograph/vpe/dctg/dump_info</p>
+<h6 id="procvideographvpedctgch_en">/proc/videograph/vpe/dctg/ch_en<a class="headerlink" href="#procvideographvpedctgch_en" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Set dctg enable.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [dctg_en] > /proc/videograph/vpe/dctg/ch_en</td>
+<td>dctg_en: dctg enable</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p>cat /proc/videograph/vpe/dctg/ch_en</p>
+<p><strong>Output :</strong></p>
+<h6 id="procvideographvpedctgphi">/proc/videograph/vpe/dctg/phi<a class="headerlink" href="#procvideographvpedctgphi" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Set FOV phi start radian</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [st] [ed] > /proc/videograph/vpe/dctg/phi</td>
+<td>st: FOV phi start radian ed : FOV phi end radian ※angle range: -360 \~ 360</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p>cat /proc/videograph/vpe/dctg/phi</p>
+<p><strong>Output :</strong></p>
+<h6 id="procvideographvpedctgrot">/proc/videograph/vpe/dctg/rot<a class="headerlink" href="#procvideographvpedctgrot" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Set Z-axis and Y-zxis rotate radian.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [z] [y] > /prc/videograph/vpe/dctg/rot</td>
+<td>z: Z-axis rotate radian. y: Y-zxis rotate radian ※angle range: -360 \~ 360</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p>cat /proc/videograph/vpe/dctg/rot</p>
+<p><strong>Output :</strong></p>
+<h6 id="procvideographvpedctgtheta">/proc/videograph/vpe/dctg/theta<a class="headerlink" href="#procvideographvpedctgtheta" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Set FOV theta start radian.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>目標參數</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [st] [ed] > /prc/videograph/vpe/dctg/theta</td>
+<td>st: FOV theta start radian. ed : FOV theta end radian ※angle range: -180 \~ 180</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read :</strong></p>
+<p>cat /proc/videograph/vpe/dctg/theta</p>
+<p><strong>Output :</strong></p>
+<h4 id="vendor-api_6">Vendor API<a class="headerlink" href="#vendor-api_6" title="Permanent link">&para;</a></h4>
+<p><strong>[Description]</strong></p>
+<p>Get and set the dctg parameters corresponding to current path_id.</p>
+<p><strong>[Command]</strong></p>
+<p>Get：</p>
+<p>HD_RESULT vendor_videoproc_get(HD_PATH_ID path_id, VENDOR_VIDEOPROC_DEWARP_DCTG_INFO, VENDOR_DEWARP_DCTG_INFO *p_param);</p>
+<p>Set：</p>
+<p>HD_RESULT vendor_videoproc_set(HD_PATH_ID path_id, VENDOR_VIDEOPROC_DEWARP_DCTG_INFO, VENDOR_DEWARP_DCTG_INFO *p_param);</p>
+<p><strong>[Define]</strong></p>
+<h2 id="revise-history">Revise History<a class="headerlink" href="#revise-history" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th><strong>Version</strong></th>
+<th><strong>Date</strong></th>
+<th><strong>Advisor</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.1.00</td>
+<td>2021/01/20</td>
+<td>Allen Hsu</td>
+<td>First version.</td>
+</tr>
+<tr>
+<td>0.2.00</td>
+<td>2021/3/26</td>
+<td>Allen Hsu</td>
+<td>Add description of Vendor command.</td>
+</tr>
+<tr>
+<td>0.3.00</td>
+<td>2022/4/11</td>
+<td>Mina Wang</td>
+<td>Add description for dce and dctg</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../CVAI/NT9833X_MD_Tuning_Guide_en.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: MD Tuning Guide" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              MD Tuning Guide
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="NT9833x_LCD_IQ_Tuning_Guide_en.html" class="md-footer__link md-footer__link--next" aria-label="Next: LCD IQ Tuning Guide" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              LCD IQ Tuning Guide
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.highlight", "navigation.tabs"], "search": "../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.37e9125f.min.js"></script>
+      
+    
+  </body>
+</html>

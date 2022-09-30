@@ -1,0 +1,4715 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.3">
+    
+    
+      
+        <title>Vendor Media Programming Guide - NT98336/NT98633 Documents</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7a952b86.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="NT98336/NT98633 Documents" class="md-header__button md-logo" aria-label="NT98336/NT98633 Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NT98336/NT98633 Documents
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Vendor Media Programming Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../CVAI/NT9833X_MD_User_Guide_en.html" class="md-tabs__link md-tabs__link--active">
+        Software
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../not_ready - not_reay.md" class="md-tabs__link">
+        Hardware(Not Ready)
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../not_ready - not_reay.md" class="md-tabs__link">
+        For Reference(Not Ready)
+      </a>
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="NT98336/NT98633 Documents" class="md-nav__button md-logo" aria-label="NT98336/NT98633 Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    NT98336/NT98633 Documents
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          Software
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Software" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Software
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_1" type="checkbox" id="__nav_1_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_1">
+          CVAI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="CVAI" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          CVAI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CVAI/NT9833X_MD_User_Guide_en.html" class="md-nav__link">
+        MD User Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CVAI/NT9833X_IVE_User_Guide_en.html" class="md-nav__link">
+        IVE User Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CVAI/NT9833X_MD_Tuning_Guide_en.html" class="md-nav__link">
+        MD Tuning Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_2" type="checkbox" id="__nav_1_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_2">
+          ISPQ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="ISPQ" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          ISPQ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ISP/NT9833x_VPE_IQ_Tuning_Guide_en.html" class="md-nav__link">
+        VPE IQ Tuning Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ISP/NT9833x_LCD_IQ_Tuning_Guide_en.html" class="md-nav__link">
+        LCD IQ Tuning Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ISP/NT9833x_DI_Tuning_Guide_en.html" class="md-nav__link">
+        DI Tuning Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_3">
+          MEDIA
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MEDIA" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          MEDIA
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="NT9833x_HDAL_Vendor_ISP_Programming_Guide_en.html" class="md-nav__link">
+        Vendor ISP Programming Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Vendor Media Programming Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="NT9833x_HDAL_Vendor_Media_Programming_Guide_en.html" class="md-nav__link md-nav__link--active">
+        Vendor Media Programming Guide
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameter-ids-and-data-structure-definition" class="md-nav__link">
+    Parameter IDs and data structure definition
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameter IDs and data structure definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#videocap-function-and-data-structure-definition" class="md-nav__link">
+    Videocap function and data structure definition
+  </a>
+  
+    <nav class="md-nav" aria-label="Videocap function and data structure definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_videocap_get" class="md-nav__link">
+    Function: vendor_videocap_get
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_videocap_set" class="md-nav__link">
+    Function: vendor_videocap_set
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_videocap_push_in_buf" class="md-nav__link">
+    Function: vendor_videocap_push_in_buf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_videocap_pull_out_buf" class="md-nav__link">
+    Function: vendor_videocap_pull_out_buf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_videocap_cropctrl_info" class="md-nav__link">
+    Structure: VENDOR_VIDEOCAP_CROPCTRL_INFO
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_videocap_syscaps" class="md-nav__link">
+    Structure: VENDOR_VIDEOCAP_SYSCAPS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#videodec-function-and-data-structure-definition" class="md-nav__link">
+    Videodec function and data structure definition
+  </a>
+  
+    <nav class="md-nav" aria-label="Videodec function and data structure definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_videodec_get" class="md-nav__link">
+    Function: vendor_videodec_get
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_videodec_set" class="md-nav__link">
+    Function: vendor_videodec_set
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_videodec_jpeg_work_buffer" class="md-nav__link">
+    Structure: VENDOR_VIDEODEC_JPEG_WORK_BUFFER
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_videodec_free_jpeg_work_buffer" class="md-nav__link">
+    Structure: VENDOR_VIDEODEC_FREE_JPEG_WORK_BUFFER
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_videodec_sub_yuv" class="md-nav__link">
+    Structure: VENDOR_VIDEODEC_SUB_YUV
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_videodec_qp_config" class="md-nav__link">
+    Structure: VENDOR_VIDEODEC_QP_CONFIG
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_videodec_h26x_out" class="md-nav__link">
+    Structure: VENDOR_VIDEODEC_H26X_OUT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_videodec_syscaps" class="md-nav__link">
+    Structure: VENDOR_VIDEODEC_SYSCAPS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#videoenc-function-and-data-structure-definition" class="md-nav__link">
+    Videoenc function and data structure definition
+  </a>
+  
+    <nav class="md-nav" aria-label="Videoenc function and data structure definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_videoenc_get" class="md-nav__link">
+    Function: vendor_videoenc_get
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_videoenc_set" class="md-nav__link">
+    Function: vendor_videoenc_set
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_videoenc_osg" class="md-nav__link">
+    Structure: VENDOR_VIDEOENC_OSG
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_videoenc_min_compress_ratio" class="md-nav__link">
+    Structure: VENDOR_VIDEOENC_MIN_COMPRESS_RATIO
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_jpegenc_param_rate_control" class="md-nav__link">
+    Structure: VENDOR_JPEGENC_PARAM_RATE_CONTROL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_videoenc_syscaps" class="md-nav__link">
+    Structure: VENDOR_VIDEOENC_SYSCAPS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#videoout-function-and-data-structure-definition" class="md-nav__link">
+    Videoout function and data structure definition
+  </a>
+  
+    <nav class="md-nav" aria-label="Videoout function and data structure definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_videoout_get" class="md-nav__link">
+    Function: vendor_videoout_get
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_videoout_set" class="md-nav__link">
+    Function: vendor_videoout_set
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_videoout_writeback" class="md-nav__link">
+    Structure: VENDOR_VIDEOOUT_WRITEBACK
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_videoout_win_layer_attr" class="md-nav__link">
+    Structure: VENDOR_VIDEOOUT_WIN_LAYER_ATTR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_videoout_mode" class="md-nav__link">
+    Structure: VENDOR_VIDEOOUT_MODE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_videoout_edid" class="md-nav__link">
+    Structure: VENDOR_VIDEOOUT_EDID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_videoout_edid_cap" class="md-nav__link">
+    Structure: VENDOR_VIDEOOUT_EDID_CAP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_videoout_syscaps" class="md-nav__link">
+    Structure: VENDOR_VIDEOOUT_SYSCAPS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#videoprocess-function-and-data-structure-definition" class="md-nav__link">
+    Videoprocess function and data structure definition
+  </a>
+  
+    <nav class="md-nav" aria-label="Videoprocess function and data structure definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_videoproc_get" class="md-nav__link">
+    Function: vendor_videoproc_get
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_videoproc_set" class="md-nav__link">
+    Function: vendor_videoproc_set
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_vdoproc_status" class="md-nav__link">
+    Structure: VENDOR_VDOPROC_STATUS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_vdoproc_sub_ratio_thld" class="md-nav__link">
+    Structure: VENDOR_VDOPROC_SUB_RATIO_THLD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_videoproc_usr_init_frame_info" class="md-nav__link">
+    Structure: VENDOR_VIDEOPROC_USR_INIT_FRAME_INFO
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vendor_videoprocess_pull_in_buf" class="md-nav__link">
+    vendor_videoprocess_pull_in_buf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vendor_videoprocess_release_in_buf" class="md-nav__link">
+    vendor_videoprocess_release_in_buf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_dewarp_2dlut_table" class="md-nav__link">
+    Structure: VENDOR_DEWARP_2DLUT_TABLE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_dewarp_mode" class="md-nav__link">
+    Structure: VENDOR_DEWARP_MODE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_dewarp_dgc_parm" class="md-nav__link">
+    Structure: VENDOR_DEWARP_DGC_PARM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_dewarp_2dlut_parm" class="md-nav__link">
+    Structure: VENDOR_DEWARP_2DLUT_PARM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_dewarp_fov_parm" class="md-nav__link">
+    Structure: VENDOR_DEWARP_FOV_PARM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_dewarp_info" class="md-nav__link">
+    Structure: VENDOR_DEWARP_INFO
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_dewarp_dctg_mode" class="md-nav__link">
+    Structure: VENDOR_DEWARP_DCTG_MODE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_dewarp_dctg_lens_parm" class="md-nav__link">
+    Structure: VENDOR_DEWARP_DCTG_LENS_PARM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_dewarp_dctg_fov_parm" class="md-nav__link">
+    Structure: VENDOR_DEWARP_DCTG_FOV_PARM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_dewarp_dctg_info" class="md-nav__link">
+    Structure: VENDOR_DEWARP_DCTG_INFO
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_dewarp_ctrl" class="md-nav__link">
+    Structure: VENDOR_DEWARP_CTRL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#audioio-function-and-data-structure-definition" class="md-nav__link">
+    Audioio function and data structure definition
+  </a>
+  
+    <nav class="md-nav" aria-label="Audioio function and data structure definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_audioio_get" class="md-nav__link">
+    Function: vendor_audioio_get
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_audioio_set" class="md-nav__link">
+    Function: vendor_audioio_set
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_audioio_set_livesound" class="md-nav__link">
+    Function: vendor_audioio_set_livesound
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_audioio_underrun_config" class="md-nav__link">
+    Structure: VENDOR_AUDIOIO_UNDERRUN_CONFIG
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_audioio_status_info" class="md-nav__link">
+    Structure: VENDOR_AUDIOIO_STATUS_INFO
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_audioio_aout_lb_dev_info" class="md-nav__link">
+    Structure: VENDOR_AUDIOIO_AOUT_LB_DEV_INFO
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_audioio_sync_time_info" class="md-nav__link">
+    Structure: VENDOR_AUDIOIO_SYNC_TIME_INFO
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gfx-function-and-data-structe-definition" class="md-nav__link">
+    Gfx function and data structe definition
+  </a>
+  
+    <nav class="md-nav" aria-label="Gfx function and data structe definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_gfx_syscaps" class="md-nav__link">
+    Structure: VENDOR_GFX_SYSCAPS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_gfx_get_syscaps" class="md-nav__link">
+    Function: vendor_gfx_get_syscaps
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vendor-common-function-and-data-structe-definition" class="md-nav__link">
+    Vendor common function and data structe definition
+  </a>
+  
+    <nav class="md-nav" aria-label="Vendor common function and data structe definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_common_mem_get_block_with_name" class="md-nav__link">
+    Function: vendor_common_mem_get_block_with_name
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_common_clear_pool_blk" class="md-nav__link">
+    Function: vendor_common_clear_pool_blk
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distortion-correction-engine-dce" class="md-nav__link">
+    Distortion Correction Engine (DCE)
+  </a>
+  
+    <nav class="md-nav" aria-label="Distortion Correction Engine (DCE)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dce-parameter-description" class="md-nav__link">
+    DCE Parameter Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dc-table-generator" class="md-nav__link">
+    DC Table Generator
+  </a>
+  
+    <nav class="md-nav" aria-label="DC Table Generator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_1" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dctg-parameter-description" class="md-nav__link">
+    DCTG Parameter Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advance-description" class="md-nav__link">
+    Advance description:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="NT9833x_HDAL_Vendor_PCIe_Programming_Guide_en.html" class="md-nav__link">
+        Vendor PCie Programming Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_4">
+          OSDRV
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="OSDRV" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          OSDRV
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OSDRV/NT9833x_SDK_Pure_Linux_Programming_Guide_en.html" class="md-nav__link">
+        Linux Programming Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OSDRV/NT9833x_Quick_Bringup_User_Guide_en.html" class="md-nav__link">
+        Quick Bringup User Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OSDRV/NT9833x_PCIe_User_Guide_en.html" class="md-nav__link">
+        PCIe User Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NT9833x_DVR_NVR_SDK_Quick_Start.html" class="md-nav__link">
+        Quick Start
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Hardware(Not Ready)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Hardware(Not Ready)" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Hardware(Not Ready)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          Not Ready
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Not Ready" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Not Ready
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../not_ready - not_reay.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          For Reference(Not Ready)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="For Reference(Not Ready)" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          For Reference(Not Ready)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1">
+          Not Ready
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Not Ready" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Not Ready
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../not_ready - not_reay.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameter-ids-and-data-structure-definition" class="md-nav__link">
+    Parameter IDs and data structure definition
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameter IDs and data structure definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#videocap-function-and-data-structure-definition" class="md-nav__link">
+    Videocap function and data structure definition
+  </a>
+  
+    <nav class="md-nav" aria-label="Videocap function and data structure definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_videocap_get" class="md-nav__link">
+    Function: vendor_videocap_get
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_videocap_set" class="md-nav__link">
+    Function: vendor_videocap_set
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_videocap_push_in_buf" class="md-nav__link">
+    Function: vendor_videocap_push_in_buf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_videocap_pull_out_buf" class="md-nav__link">
+    Function: vendor_videocap_pull_out_buf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_videocap_cropctrl_info" class="md-nav__link">
+    Structure: VENDOR_VIDEOCAP_CROPCTRL_INFO
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_videocap_syscaps" class="md-nav__link">
+    Structure: VENDOR_VIDEOCAP_SYSCAPS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#videodec-function-and-data-structure-definition" class="md-nav__link">
+    Videodec function and data structure definition
+  </a>
+  
+    <nav class="md-nav" aria-label="Videodec function and data structure definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_videodec_get" class="md-nav__link">
+    Function: vendor_videodec_get
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_videodec_set" class="md-nav__link">
+    Function: vendor_videodec_set
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_videodec_jpeg_work_buffer" class="md-nav__link">
+    Structure: VENDOR_VIDEODEC_JPEG_WORK_BUFFER
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_videodec_free_jpeg_work_buffer" class="md-nav__link">
+    Structure: VENDOR_VIDEODEC_FREE_JPEG_WORK_BUFFER
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_videodec_sub_yuv" class="md-nav__link">
+    Structure: VENDOR_VIDEODEC_SUB_YUV
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_videodec_qp_config" class="md-nav__link">
+    Structure: VENDOR_VIDEODEC_QP_CONFIG
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_videodec_h26x_out" class="md-nav__link">
+    Structure: VENDOR_VIDEODEC_H26X_OUT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_videodec_syscaps" class="md-nav__link">
+    Structure: VENDOR_VIDEODEC_SYSCAPS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#videoenc-function-and-data-structure-definition" class="md-nav__link">
+    Videoenc function and data structure definition
+  </a>
+  
+    <nav class="md-nav" aria-label="Videoenc function and data structure definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_videoenc_get" class="md-nav__link">
+    Function: vendor_videoenc_get
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_videoenc_set" class="md-nav__link">
+    Function: vendor_videoenc_set
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_videoenc_osg" class="md-nav__link">
+    Structure: VENDOR_VIDEOENC_OSG
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_videoenc_min_compress_ratio" class="md-nav__link">
+    Structure: VENDOR_VIDEOENC_MIN_COMPRESS_RATIO
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_jpegenc_param_rate_control" class="md-nav__link">
+    Structure: VENDOR_JPEGENC_PARAM_RATE_CONTROL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_videoenc_syscaps" class="md-nav__link">
+    Structure: VENDOR_VIDEOENC_SYSCAPS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#videoout-function-and-data-structure-definition" class="md-nav__link">
+    Videoout function and data structure definition
+  </a>
+  
+    <nav class="md-nav" aria-label="Videoout function and data structure definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_videoout_get" class="md-nav__link">
+    Function: vendor_videoout_get
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_videoout_set" class="md-nav__link">
+    Function: vendor_videoout_set
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_videoout_writeback" class="md-nav__link">
+    Structure: VENDOR_VIDEOOUT_WRITEBACK
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_videoout_win_layer_attr" class="md-nav__link">
+    Structure: VENDOR_VIDEOOUT_WIN_LAYER_ATTR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_videoout_mode" class="md-nav__link">
+    Structure: VENDOR_VIDEOOUT_MODE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_videoout_edid" class="md-nav__link">
+    Structure: VENDOR_VIDEOOUT_EDID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_videoout_edid_cap" class="md-nav__link">
+    Structure: VENDOR_VIDEOOUT_EDID_CAP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_videoout_syscaps" class="md-nav__link">
+    Structure: VENDOR_VIDEOOUT_SYSCAPS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#videoprocess-function-and-data-structure-definition" class="md-nav__link">
+    Videoprocess function and data structure definition
+  </a>
+  
+    <nav class="md-nav" aria-label="Videoprocess function and data structure definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_videoproc_get" class="md-nav__link">
+    Function: vendor_videoproc_get
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_videoproc_set" class="md-nav__link">
+    Function: vendor_videoproc_set
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_vdoproc_status" class="md-nav__link">
+    Structure: VENDOR_VDOPROC_STATUS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_vdoproc_sub_ratio_thld" class="md-nav__link">
+    Structure: VENDOR_VDOPROC_SUB_RATIO_THLD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_videoproc_usr_init_frame_info" class="md-nav__link">
+    Structure: VENDOR_VIDEOPROC_USR_INIT_FRAME_INFO
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vendor_videoprocess_pull_in_buf" class="md-nav__link">
+    vendor_videoprocess_pull_in_buf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vendor_videoprocess_release_in_buf" class="md-nav__link">
+    vendor_videoprocess_release_in_buf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_dewarp_2dlut_table" class="md-nav__link">
+    Structure: VENDOR_DEWARP_2DLUT_TABLE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_dewarp_mode" class="md-nav__link">
+    Structure: VENDOR_DEWARP_MODE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_dewarp_dgc_parm" class="md-nav__link">
+    Structure: VENDOR_DEWARP_DGC_PARM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_dewarp_2dlut_parm" class="md-nav__link">
+    Structure: VENDOR_DEWARP_2DLUT_PARM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_dewarp_fov_parm" class="md-nav__link">
+    Structure: VENDOR_DEWARP_FOV_PARM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_dewarp_info" class="md-nav__link">
+    Structure: VENDOR_DEWARP_INFO
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_dewarp_dctg_mode" class="md-nav__link">
+    Structure: VENDOR_DEWARP_DCTG_MODE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_dewarp_dctg_lens_parm" class="md-nav__link">
+    Structure: VENDOR_DEWARP_DCTG_LENS_PARM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_dewarp_dctg_fov_parm" class="md-nav__link">
+    Structure: VENDOR_DEWARP_DCTG_FOV_PARM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_dewarp_dctg_info" class="md-nav__link">
+    Structure: VENDOR_DEWARP_DCTG_INFO
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_dewarp_ctrl" class="md-nav__link">
+    Structure: VENDOR_DEWARP_CTRL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#audioio-function-and-data-structure-definition" class="md-nav__link">
+    Audioio function and data structure definition
+  </a>
+  
+    <nav class="md-nav" aria-label="Audioio function and data structure definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_audioio_get" class="md-nav__link">
+    Function: vendor_audioio_get
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_audioio_set" class="md-nav__link">
+    Function: vendor_audioio_set
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_audioio_set_livesound" class="md-nav__link">
+    Function: vendor_audioio_set_livesound
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_audioio_underrun_config" class="md-nav__link">
+    Structure: VENDOR_AUDIOIO_UNDERRUN_CONFIG
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_audioio_status_info" class="md-nav__link">
+    Structure: VENDOR_AUDIOIO_STATUS_INFO
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_audioio_aout_lb_dev_info" class="md-nav__link">
+    Structure: VENDOR_AUDIOIO_AOUT_LB_DEV_INFO
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_audioio_sync_time_info" class="md-nav__link">
+    Structure: VENDOR_AUDIOIO_SYNC_TIME_INFO
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gfx-function-and-data-structe-definition" class="md-nav__link">
+    Gfx function and data structe definition
+  </a>
+  
+    <nav class="md-nav" aria-label="Gfx function and data structe definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#structure-vendor_gfx_syscaps" class="md-nav__link">
+    Structure: VENDOR_GFX_SYSCAPS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_gfx_get_syscaps" class="md-nav__link">
+    Function: vendor_gfx_get_syscaps
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vendor-common-function-and-data-structe-definition" class="md-nav__link">
+    Vendor common function and data structe definition
+  </a>
+  
+    <nav class="md-nav" aria-label="Vendor common function and data structe definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_common_mem_get_block_with_name" class="md-nav__link">
+    Function: vendor_common_mem_get_block_with_name
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_common_clear_pool_blk" class="md-nav__link">
+    Function: vendor_common_clear_pool_blk
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distortion-correction-engine-dce" class="md-nav__link">
+    Distortion Correction Engine (DCE)
+  </a>
+  
+    <nav class="md-nav" aria-label="Distortion Correction Engine (DCE)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dce-parameter-description" class="md-nav__link">
+    DCE Parameter Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dc-table-generator" class="md-nav__link">
+    DC Table Generator
+  </a>
+  
+    <nav class="md-nav" aria-label="DC Table Generator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview_1" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dctg-parameter-description" class="md-nav__link">
+    DCTG Parameter Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advance-description" class="md-nav__link">
+    Advance description:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Vendor Media Programming Guide</h1>
+
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>Vendor API is an extended library for HDAL. Some features dedicated for the specific IC will not list in the HDAL API but in vendor API. Please refer to this document to know the detail.</p>
+<h2 id="parameter-ids-and-data-structure-definition">Parameter IDs and data structure definition<a class="headerlink" href="#parameter-ids-and-data-structure-definition" title="Permanent link">&para;</a></h2>
+<p><strong>Videocap</strong></p>
+<p><strong>None</strong></p>
+<p><strong>Videodec</strong></p>
+<ul>
+<li>VENDOR_VIDEODEC_PARAM_JPEG_WORK_BUFFER<ul>
+<li>support set/get with i/o path</li>
+<li>using VENDOR_VIDEODEC_JPEG_WORK_BUFFER struct</li>
+</ul>
+</li>
+<li>VENDOR_VIDEODEC_PARAM_FREE_JPEG_WORK_BUFFER<ul>
+<li>support set with i/o path</li>
+<li>using VENDOR_VIDEODEC_JPEG_WORK_BUFFER struct</li>
+</ul>
+</li>
+<li>VENDOR_VIDEODEC_PARAM_SUB_YUV_RATIO<ul>
+<li>support set/get with i/o path</li>
+<li>using VENDOR_VIDEODEC_SUB_YUV struct</li>
+</ul>
+</li>
+<li>VENDOR_VIDEODEC_PARAM_QP_CONFIG<ul>
+<li>support set/get with i/o path</li>
+<li>using VENDOR_VIDEODEC_QP_CONFIG struct</li>
+</ul>
+</li>
+<li>VENDOR_VIDEODEC_PARAM_H26X_OUT<ul>
+<li>support set/get with i/o path</li>
+<li>using VENDOR_VIDEODEC_H26X_OUT struct</li>
+</ul>
+</li>
+<li>VENDOR_VIDEODEC_PARAM_SYSCAPS<ul>
+<li>support get with i/o path</li>
+<li>using VENDOR_VIDEODEC_SYSCAPS struct</li>
+</ul>
+</li>
+</ul>
+<p><strong>Videoenc</strong></p>
+<ul>
+<li>VENDOR_VIDEOENC_PARAM_OSG_SEL<ul>
+<li>support get/set with i/o path</li>
+<li>using VENDOR_VIDEOENC_OSG struct</li>
+</ul>
+</li>
+<li>VENDOR_VIDEOENC_PARAM_MIN_COMPRESS_RATIO<ul>
+<li>support get/set with i/o path</li>
+<li>using VENDOR_VDOENC_MIN_COMPRESS_RATIO struct</li>
+</ul>
+</li>
+</ul>
+<p><strong>Videoout</strong></p>
+<ul>
+<li>VENDOR_VIDEOOUT_PARAM_WRITEBACK<ul>
+<li>support get/set with i/o path</li>
+<li>using VENDOR_VIDEOOUT_WRITEBACK struct</li>
+</ul>
+</li>
+<li>VENDOR_VIDEOOUT_PARAM_WIN_LAYER_ATTR,<ul>
+<li>support get/set with i/o path</li>
+<li>using VENDOR_VIDEOOUT_WIN_LAYER_ATTR struct</li>
+</ul>
+</li>
+<li>VENDOR_VIDEOOUT_PARAM_MODE<ul>
+<li>support get/set with i/o path</li>
+<li>using VENDOR_VIDEOOUT_MODE struct</li>
+</ul>
+</li>
+</ul>
+<p><strong>Videoprocess</strong></p>
+<ul>
+<li>VENDOR_VIDEOPROC_STATUS<ul>
+<li>support set with i/o path</li>
+<li>using VENDOR_VDOPROC_STATUS struct</li>
+</ul>
+</li>
+<li>VENDOR_VIDEOPROC_USER_FLAG<ul>
+<li>support set with i/o path</li>
+<li>using UINT32 struct</li>
+</ul>
+</li>
+<li>VENDOR_VIDEOPROC_SUB_RATIO_THLD<ul>
+<li>support set/get with i/o path</li>
+<li>using VENDOR_VDOPROC_SUB_RATIO_THLD struct</li>
+</ul>
+</li>
+<li>VENDOR_VIDEOPROC_USR_INIT_FRAME<ul>
+<li>support set with i/o path</li>
+<li>using VENDOR_VDOPROC_USR_INIT_FRAME_INFO struct</li>
+</ul>
+</li>
+</ul>
+<p><strong>Audioio</strong></p>
+<ul>
+<li>VENDOR_UNDERRUN_CNT<ul>
+<li>support get with i/o path</li>
+<li>using VENDOR_AUDIOIO_UNDERRUN_CONFIG struct</li>
+</ul>
+</li>
+<li>VENDOR_AUDIOIO_PARAM_SYSCAPS<ul>
+<li>support get with i/o path</li>
+<li>using VENDOR_AUDIOIO_PARAM_SYSCAPS struct</li>
+</ul>
+</li>
+<li>VENDOR_AUDIOIO_STATUS<ul>
+<li>support get with i/o path</li>
+<li>using VENDOR_AUDIOIO_STATUS struct</li>
+</ul>
+</li>
+<li>VENDOR_AUDIOIO_INIT_CFG<ul>
+<li>support set/get with i/o path</li>
+<li>using VENDOR_AUDIOIO_INIT_I2S_CFG struct</li>
+</ul>
+</li>
+<li>VENDOR_AUDIOIO_AOUT_LB_DEV_ID<ul>
+<li>support get with i/o path</li>
+<li>using VENDOR_AUDIOIO_AOUT_LB_DEV_INFO struct</li>
+</ul>
+</li>
+<li>VENDOR_AUDIOIO_SYNC_TIME<ul>
+<li>support set with i/o path</li>
+<li>using VENDOR_AUDIOIO_SYNC_TIME_INFO struct</li>
+</ul>
+</li>
+</ul>
+<h3 id="videocap-function-and-data-structure-definition">Videocap function and data structure definition<a class="headerlink" href="#videocap-function-and-data-structure-definition" title="Permanent link">&para;</a></h3>
+<h4 id="function-vendor_videocap_get">Function: vendor_videocap_get<a class="headerlink" href="#function-vendor_videocap_get" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Get parameters from unit by path id</p>
+<p>[Syntax]</p>
+<p>HD_RESULT vendor_videocap_get (HD_PATH_ID path_id, VENDOR_VIDEOENC_PARAM_ID id, VOID* p_param)</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>path_id</td>
+<td>the path id</td>
+</tr>
+<tr>
+<td>id</td>
+<td>id of parameters</td>
+</tr>
+<tr>
+<td>p_param</td>
+<td>pointer of parameters</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HD_OK</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>HD_ERR_NG</td>
+<td>Failure</td>
+</tr>
+<tr>
+<td>HD_ERR_NOT_SUPPORT</td>
+<td>Not support this parameter</td>
+</tr>
+</tbody>
+</table>
+<h4 id="function-vendor_videocap_set">Function: vendor_videocap_set<a class="headerlink" href="#function-vendor_videocap_set" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Set parameters to unit by path id</p>
+<p>[Syntax]</p>
+<p>HD_RESULT vendor_videocap_set (HD_PATH_ID path_id, VENDOR_VIDEOENC_PARAM_ID id, VOID* p_param)</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>path_id</td>
+<td>the path id</td>
+</tr>
+<tr>
+<td>id</td>
+<td>id of parameters</td>
+</tr>
+<tr>
+<td>p_param</td>
+<td>pointer of parameters</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HD_OK</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>HD_ERR_NG</td>
+<td>Failure</td>
+</tr>
+<tr>
+<td>HD_ERR_NOT_SUPPORT</td>
+<td>Not support this parameter</td>
+</tr>
+</tbody>
+</table>
+<h4 id="function-vendor_videocap_push_in_buf">Function: vendor_videocap_push_in_buf<a class="headerlink" href="#function-vendor_videocap_push_in_buf" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>trigger mode: given a buffer to get yuv data out.</p>
+<p>flow mode: given an additional buffer to get yuv data out. (It will influence the already bound path.)</p>
+<p><strong>It suggests that after 2 or more different buffers are pushed, then vendor_videocap_pull_out_buf starts to get done buffer.</strong></p>
+<p>Note: There is another application to get yuv data out without given buffer, hd_videocap_pull_out_buf(). But, hd_videocap_release_out_buf() should be called to return yuv data buffer.</p>
+<p>[Syntax]</p>
+<p>HD_RESULT vendor_videocap_push_in_buf(HD_PATH_ID path_id, HD_VIDEO_FRAME* p_video_frame, INT32 wait_ms)</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>path_id</td>
+<td>the path id</td>
+</tr>
+<tr>
+<td>p_video_frame</td>
+<td>settings for getting data, must including width/height/pxlfmt/physical address</td>
+</tr>
+<tr>
+<td>wait_ms</td>
+<td>mini-seconds to get callback result</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HD_OK</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>HD_ERR_DEV</td>
+<td>Wrong device id</td>
+</tr>
+<tr>
+<td>HD_ERR_PARAM</td>
+<td>Wrong input settings</td>
+</tr>
+<tr>
+<td>HD_ERR_NOBUF</td>
+<td>Not enough buffer for outputting yuv data</td>
+</tr>
+</tbody>
+</table>
+<h4 id="function-vendor_videocap_pull_out_buf">Function: vendor_videocap_pull_out_buf<a class="headerlink" href="#function-vendor_videocap_pull_out_buf" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>trigger mode: pull out the yuv data buffer.</p>
+<p>flow mode: pull out the yuv data buffer which is pushed-in by vendor_videocap_push_in_buf( ).</p>
+<p>[Syntax]</p>
+<p>HD_RESULT vendor_videocap_pull_out_buf(HD_PATH_ID path_id, HD_VIDEO_FRAME* p_video_frame, INT32 wait_ms)</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>path_id</td>
+<td>the path id</td>
+</tr>
+<tr>
+<td>p_video_frame</td>
+<td>settings for getting data, must including width/height/pxlfmt/physical address</td>
+</tr>
+<tr>
+<td>wait_ms</td>
+<td>mini-seconds to get callback result</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HD_OK</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>HD_ERR_DEV</td>
+<td>Wrong device id</td>
+</tr>
+<tr>
+<td>HD_ERR_PARAM</td>
+<td>Wrong input settings</td>
+</tr>
+<tr>
+<td>HD_ERR_TIMEDOUT</td>
+<td>Vcap module is still busy, need retry</td>
+</tr>
+<tr>
+<td>HD_ERR_SYS</td>
+<td>Vcap module is not ready</td>
+</tr>
+<tr>
+<td>HD_ERR_FAIL</td>
+<td>this job is failed from vcap driver</td>
+</tr>
+</tbody>
+</table>
+<h4 id="structure-vendor_videocap_cropctrl_info">Structure: VENDOR_VIDEOCAP_CROPCTRL_INFO<a class="headerlink" href="#structure-vendor_videocap_cropctrl_info" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Support an option to apply crop information.</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rect</td>
+<td>Crop rectangular, including x, y, w, h</td>
+</tr>
+<tr>
+<td>coord</td>
+<td>Background rectangular</td>
+</tr>
+</tbody>
+</table>
+<p>[Apply Require]</p>
+<table>
+<thead>
+<tr>
+<th>open->set->get</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="structure-vendor_videocap_syscaps">Structure: VENDOR_VIDEOCAP_SYSCAPS<a class="headerlink" href="#structure-vendor_videocap_syscaps" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Get videocap system capability information through user-specified type/mode.</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>wanted_pxlfmt</td>
+<td>[input] vcap out fmt</td>
+</tr>
+<tr>
+<td>min_dim</td>
+<td>[output] min width/height</td>
+</tr>
+<tr>
+<td>max_dim</td>
+<td>[output] max width/height</td>
+</tr>
+<tr>
+<td>crop_min_dim</td>
+<td>[output] min crop width/height</td>
+</tr>
+<tr>
+<td>output_align</td>
+<td>[output] alignment of width/height</td>
+</tr>
+</tbody>
+</table>
+<p>[Apply Require]</p>
+<table>
+<thead>
+<tr>
+<th>open-> get</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="videodec-function-and-data-structure-definition">Videodec function and data structure definition<a class="headerlink" href="#videodec-function-and-data-structure-definition" title="Permanent link">&para;</a></h3>
+<h4 id="function-vendor_videodec_get">Function: vendor_videodec_get<a class="headerlink" href="#function-vendor_videodec_get" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Get parameters from unit by path id</p>
+<p>[Syntax]</p>
+<p>HD_RESULT vendor_videodec_get (HD_PATH_ID path_id, VENDOR_VIDEODEC_PARAM_ID id, VOID* p_param)</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>path_id</td>
+<td>the path id</td>
+</tr>
+<tr>
+<td>id</td>
+<td>id of parameters</td>
+</tr>
+<tr>
+<td>p_param</td>
+<td>pointer of parameters</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HD_OK</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>HD_ERR_NG</td>
+<td>Failure</td>
+</tr>
+<tr>
+<td>HD_ERR_NOT_SUPPORT</td>
+<td>Not support this parameter</td>
+</tr>
+</tbody>
+</table>
+<h4 id="function-vendor_videodec_set">Function: vendor_videodec_set<a class="headerlink" href="#function-vendor_videodec_set" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Set parameters to unit by path id</p>
+<p>[Syntax]</p>
+<p>HD_RESULT vendor_videodec_set (HD_PATH_ID path_id, VENDOR_VIDEODEC_PARAM_ID id, VOID* p_param)</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>path_id</td>
+<td>the path id</td>
+</tr>
+<tr>
+<td>id</td>
+<td>id of parameters</td>
+</tr>
+<tr>
+<td>p_param</td>
+<td>pointer of parameters</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HD_OK</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>HD_ERR_NG</td>
+<td>Failure</td>
+</tr>
+<tr>
+<td>HD_ERR_NOT_SUPPORT</td>
+<td>Not support this parameter</td>
+</tr>
+</tbody>
+</table>
+<h4 id="structure-vendor_videodec_jpeg_work_buffer">Structure: VENDOR_VIDEODEC_JPEG_WORK_BUFFER<a class="headerlink" href="#structure-vendor_videodec_jpeg_work_buffer" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>This function is not supported on NT9833x.</p>
+<h4 id="structure-vendor_videodec_free_jpeg_work_buffer">Structure: VENDOR_VIDEODEC_FREE_JPEG_WORK_BUFFER<a class="headerlink" href="#structure-vendor_videodec_free_jpeg_work_buffer" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>This function is not supported on NT9833x.</p>
+<h4 id="structure-vendor_videodec_sub_yuv">Structure: VENDOR_VIDEODEC_SUB_YUV<a class="headerlink" href="#structure-vendor_videodec_sub_yuv" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Set/get videodec sub-yuv ratio.</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ratio</td>
+<td>Sub-yuv ratio</td>
+</tr>
+</tbody>
+</table>
+<p>[Apply Require]</p>
+<table>
+<thead>
+<tr>
+<th>set / get</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="structure-vendor_videodec_qp_config">Structure: VENDOR_VIDEODEC_QP_CONFIG<a class="headerlink" href="#structure-vendor_videodec_qp_config" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Set/get videodec qp value configuration.</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>qp_value</td>
+<td>Quantization parameter value</td>
+</tr>
+</tbody>
+</table>
+<p>[Apply Require]</p>
+<table>
+<thead>
+<tr>
+<th>set / get</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="structure-vendor_videodec_h26x_out">Structure: VENDOR_VIDEODEC_H26X_OUT<a class="headerlink" href="#structure-vendor_videodec_h26x_out" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Set/get videodec H.26x output format configuration.</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>first_out</td>
+<td>H.26x first output mode</td>
+</tr>
+<tr>
+<td>extra_out</td>
+<td>H.26x extra output mode</td>
+</tr>
+</tbody>
+</table>
+<p>[Apply Require]</p>
+<table>
+<thead>
+<tr>
+<th>set / get</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="structure-vendor_videodec_syscaps">Structure: VENDOR_VIDEODEC_SYSCAPS<a class="headerlink" href="#structure-vendor_videodec_syscaps" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Get videodec system capability information through user-specified type/mode.</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>usr_codec_type</td>
+<td>[user_input] user codec type to get system capabilitys</td>
+</tr>
+<tr>
+<td>usr_first_mode</td>
+<td>[user_input] user first output mode (compress / uncompress)</td>
+</tr>
+<tr>
+<td>usr_extra_mode</td>
+<td>[user_input] user extra output mode (compress / uncompress)</td>
+</tr>
+<tr>
+<td>first_align</td>
+<td>[output] first output buffer dimension alignment</td>
+</tr>
+<tr>
+<td>extra_align</td>
+<td>[output] extra output buffer dimension alignment</td>
+</tr>
+<tr>
+<td>first_pxlfmt</td>
+<td>[output] first output buffer pixel format</td>
+</tr>
+<tr>
+<td>extra_pxlfmt</td>
+<td>[output] extra output buffer pixel format</td>
+</tr>
+<tr>
+<td>min_dim</td>
+<td>[output] minimum dimension</td>
+</tr>
+<tr>
+<td>max_dim</td>
+<td>[output] maximum dimension</td>
+</tr>
+</tbody>
+</table>
+<p>[Apply Require]</p>
+<table>
+<thead>
+<tr>
+<th>get</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="videoenc-function-and-data-structure-definition">Videoenc function and data structure definition<a class="headerlink" href="#videoenc-function-and-data-structure-definition" title="Permanent link">&para;</a></h3>
+<h4 id="function-vendor_videoenc_get">Function: vendor_videoenc_get<a class="headerlink" href="#function-vendor_videoenc_get" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Get parameters from unit by path id</p>
+<p>[Syntax]</p>
+<p>HD_RESULT vendor_videoenc_get (HD_PATH_ID path_id, VENDOR_VIDEOENC_PARAM_ID id, VOID* p_param)</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>path_id</td>
+<td>the path id</td>
+</tr>
+<tr>
+<td>id</td>
+<td>id of parameters</td>
+</tr>
+<tr>
+<td>p_param</td>
+<td>pointer of parameters</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HD_OK</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>HD_ERR_NG</td>
+<td>Failure</td>
+</tr>
+<tr>
+<td>HD_ERR_NOT_SUPPORT</td>
+<td>Not support this parameter</td>
+</tr>
+</tbody>
+</table>
+<h4 id="function-vendor_videoenc_set">Function: vendor_videoenc_set<a class="headerlink" href="#function-vendor_videoenc_set" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Set parameters to unit by path id</p>
+<p>[Syntax]</p>
+<p>HD_RESULT vendor_videoenc_set (HD_PATH_ID path_id, VENDOR_VIDEOENC_PARAM_ID id, VOID* p_param)</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>path_id</td>
+<td>the path id</td>
+</tr>
+<tr>
+<td>id</td>
+<td>id of parameters</td>
+</tr>
+<tr>
+<td>p_param</td>
+<td>pointer of parameters</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HD_OK</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>HD_ERR_NG</td>
+<td>Failure</td>
+</tr>
+<tr>
+<td>HD_ERR_NOT_SUPPORT</td>
+<td>Not support this parameter</td>
+</tr>
+</tbody>
+</table>
+<h4 id="structure-vendor_videoenc_osg">Structure: VENDOR_VIDEOENC_OSG<a class="headerlink" href="#structure-vendor_videoenc_osg" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Support an option to choose internal or external OSG</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>external_osg</td>
+<td>select which osg 1:3d osg 0:encode osg</td>
+</tr>
+</tbody>
+</table>
+<p>[Apply Require]</p>
+<table>
+<thead>
+<tr>
+<th>stop -> close -> open -> set -> start</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="structure-vendor_videoenc_min_compress_ratio">Structure: VENDOR_VIDEOENC_MIN_COMPRESS_RATIO<a class="headerlink" href="#structure-vendor_videoenc_min_compress_ratio" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Set initial compress ratio for different QP</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>codec_type</td>
+<td>select the codec by HD_VIDEO_CODEC type</td>
+</tr>
+<tr>
+<td>qp_ratio</td>
+<td>Set the qp ratio by VENDOR_VIDEOENC_QP_RATIO type</td>
+</tr>
+</tbody>
+</table>
+<p>[Apply Require]</p>
+<table>
+<thead>
+<tr>
+<th>stop -> close -> open -> set -> start</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="structure-vendor_jpegenc_param_rate_control">Structure: VENDOR_JPEGENC_PARAM_RATE_CONTROL<a class="headerlink" href="#structure-vendor_jpegenc_param_rate_control" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>JPEG rate control parameters</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vbr_mode</td>
+<td>0: CBR, 1: VBR, 2: FixQP</td>
+</tr>
+<tr>
+<td>base_qp</td>
+<td>Base qp value  (range 1\~100, not used when FixQP)</td>
+</tr>
+<tr>
+<td>min_quality</td>
+<td>Minimum quality  (range 1\~100, not used when FixQP)</td>
+</tr>
+<tr>
+<td>max_quality</td>
+<td>Maximum quality  (range 1\~100, not used when FixQP)</td>
+</tr>
+<tr>
+<td>bitrate</td>
+<td>bitrate  (max 128M, not used when FixQP)</td>
+</tr>
+<tr>
+<td>frame_rate_base</td>
+<td>Frame rate base</td>
+</tr>
+<tr>
+<td>frame_rate_incr</td>
+<td>Frame rate incr  (fps = frame_rate_base/frame_rate_incr)</td>
+</tr>
+</tbody>
+</table>
+<p>[Apply Require]</p>
+<table>
+<thead>
+<tr>
+<th>stop -> close -> open -> set / get -> start</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="structure-vendor_videoenc_syscaps">Structure: VENDOR_VIDEOENC_SYSCAPS<a class="headerlink" href="#structure-vendor_videoenc_syscaps" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Get videoenc system capability information through user-specified codec type</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>usr_codec_type</td>
+<td>[user_input] user codec type to get system capabilitys</td>
+</tr>
+<tr>
+<td>min_dim</td>
+<td>[output] minimum dimension</td>
+</tr>
+<tr>
+<td>max_dim</td>
+<td>[output] maximum dimension</td>
+</tr>
+<tr>
+<td>fmt_cnt</td>
+<td>[output] supported input format count</td>
+</tr>
+<tr>
+<td>fmt_align</td>
+<td>[output] supported input format and corresponding alignment</td>
+</tr>
+</tbody>
+</table>
+<p>[Apply Require]</p>
+<table>
+<thead>
+<tr>
+<th>stop -> close -> open -> get -> start</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="videoout-function-and-data-structure-definition">Videoout function and data structure definition<a class="headerlink" href="#videoout-function-and-data-structure-definition" title="Permanent link">&para;</a></h3>
+<h4 id="function-vendor_videoout_get">Function: vendor_videoout_get<a class="headerlink" href="#function-vendor_videoout_get" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Get parameters from unit by path id</p>
+<p>[Syntax]</p>
+<p>HD_RESULT vendor_videoout_get (HD_PATH_ID path_id, VENDOR_VIDEOOUT_PARAM_ID id, VOID* p_param)</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>path_id</td>
+<td>the path id</td>
+</tr>
+<tr>
+<td>id</td>
+<td>id of parameters</td>
+</tr>
+<tr>
+<td>p_param</td>
+<td>pointer of parameters</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HD_OK</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>HD_ERR_NG</td>
+<td>Failure</td>
+</tr>
+<tr>
+<td>HD_ERR_SYS</td>
+<td>Operating system call failure</td>
+</tr>
+</tbody>
+</table>
+<h4 id="function-vendor_videoout_set">Function: vendor_videoout_set<a class="headerlink" href="#function-vendor_videoout_set" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Set parameters to unit by path id</p>
+<p>[Syntax]</p>
+<p>HD_RESULT vendor_videoout_set (HD_PATH_ID path_id, VENDOR_VIDEOOUT_PARAM_ID id, VOID* p_param)</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>path_id</td>
+<td>the path id</td>
+</tr>
+<tr>
+<td>id</td>
+<td>id of parameters</td>
+</tr>
+<tr>
+<td>p_param</td>
+<td>pointer of parameters</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HD_OK</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>HD_ERR_NG</td>
+<td>Failure</td>
+</tr>
+<tr>
+<td>HD_ERR_SYS</td>
+<td>Operating system call failure</td>
+</tr>
+</tbody>
+</table>
+<h4 id="structure-vendor_videoout_writeback">Structure: VENDOR_VIDEOOUT_WRITEBACK<a class="headerlink" href="#structure-vendor_videoout_writeback" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Duplicate videoout0 image to dst_lcd_id</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>enabled</td>
+<td>0:disable 1:enable</td>
+</tr>
+<tr>
+<td>wb_lx</td>
+<td>x start pixel (two-pixel alignment), Left x</td>
+</tr>
+<tr>
+<td>wb_ty</td>
+<td>y start line, Top Y, range: 0 \~ 12</td>
+</tr>
+<tr>
+<td>wb_rx</td>
+<td>x start pixel (two-pixel alignment), Right x</td>
+</tr>
+<tr>
+<td>wb_by</td>
+<td>y start line, Bottom Y, range: 0 \~ 12</td>
+</tr>
+<tr>
+<td>wb_width</td>
+<td>write back width size</td>
+</tr>
+<tr>
+<td>wb_height</td>
+<td>write back height size</td>
+</tr>
+<tr>
+<td>dst_lcd_id</td>
+<td>write back to lcdid</td>
+</tr>
+</tbody>
+</table>
+<p>[Apply Require]</p>
+<table>
+<thead>
+<tr>
+<th>stop -> close -> open -> set</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="structure-vendor_videoout_win_layer_attr">Structure: VENDOR_VIDEOOUT_WIN_LAYER_ATTR<a class="headerlink" href="#structure-vendor_videoout_win_layer_attr" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Set win order</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>layer</td>
+<td>0\~7:layer number</td>
+</tr>
+</tbody>
+</table>
+<p>[Apply Require]</p>
+<table>
+<thead>
+<tr>
+<th>stop -> close -> open -> set</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="structure-vendor_videoout_mode">Structure: VENDOR_VIDEOOUT_MODE<a class="headerlink" href="#structure-vendor_videoout_mode" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Set videoout mode for special mode:1440x900/1680x1050/1920x1200</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>output_type</td>
+<td>HD_COMMON_VIDEO_OUT_TYPE</td>
+</tr>
+<tr>
+<td>input_dim</td>
+<td>VENDOR_VIDEOOUT_INPUT_DIM</td>
+</tr>
+<tr>
+<td>output_mode</td>
+<td>VENDOR_VIDEOOUT_HDMI_ID VENDOR_VIDEOOUT_VGA_ID</td>
+</tr>
+</tbody>
+</table>
+<p>[Apply Require]</p>
+<table>
+<thead>
+<tr>
+<th>stop -> close -> open -> set</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="structure-vendor_videoout_edid">Structure: VENDOR_VIDEOOUT_EDID<a class="headerlink" href="#structure-vendor_videoout_edid" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Get videoout support edid value</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>val [VENDOR_VIDEOOUT_EDID_NU]</td>
+<td>Return edid value</td>
+</tr>
+<tr>
+<td>valid_num</td>
+<td>Get support edid number</td>
+</tr>
+</tbody>
+</table>
+<p>[Apply Require]</p>
+<table>
+<thead>
+<tr>
+<th>open -> get</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="structure-vendor_videoout_edid_cap">Structure: VENDOR_VIDEOOUT_EDID_CAP<a class="headerlink" href="#structure-vendor_videoout_edid_cap" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Get monitor edid data</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hdmi_edid</td>
+<td>VENDOR_EDID_TBL</td>
+</tr>
+<tr>
+<td>VENDOR_EDID_TBL</td>
+<td>Store edid data and info</td>
+</tr>
+<tr>
+<td>edid_length</td>
+<td>Edid data size</td>
+</tr>
+<tr>
+<td>edid[512]</td>
+<td>Edid array</td>
+</tr>
+<tr>
+<td>is_valid</td>
+<td>Indicate edid info is valid</td>
+</tr>
+<tr>
+<td>w/h</td>
+<td>Valid edid info dim</td>
+</tr>
+<tr>
+<td>refresh_rate</td>
+<td>Valid edid info refresh rate</td>
+</tr>
+<tr>
+<td>is_progress</td>
+<td>Valid edid info progress format</td>
+</tr>
+<tr>
+<td>aspect_rate</td>
+<td>Valid edid info aspect rate</td>
+</tr>
+</tbody>
+</table>
+<p>[Apply Require]</p>
+<table>
+<thead>
+<tr>
+<th>open -> get</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="structure-vendor_videoout_syscaps">Structure: VENDOR_VIDEOOUT_SYSCAPS<a class="headerlink" href="#structure-vendor_videoout_syscaps" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Get videoout system capability information through user-specified lcd_id.</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>lcd_id</td>
+<td>[input] 0: lcd310, 1: lcd310 lite, 2: lcd210</td>
+</tr>
+<tr>
+<td>pxlfmt_cnt</td>
+<td>[output] count of total pxlfmts</td>
+</tr>
+<tr>
+<td>support_pxlfmt1</td>
+<td>[output] 1st supporting format</td>
+</tr>
+<tr>
+<td>support_pxlfmt2</td>
+<td>[output] 2nd supporting format</td>
+</tr>
+<tr>
+<td>support_pxlfmt3</td>
+<td>[output] 3rd supporting format</td>
+</tr>
+</tbody>
+</table>
+<p>[Apply Require]</p>
+<table>
+<thead>
+<tr>
+<th>open-> get</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="videoprocess-function-and-data-structure-definition">Videoprocess function and data structure definition<a class="headerlink" href="#videoprocess-function-and-data-structure-definition" title="Permanent link">&para;</a></h3>
+<h4 id="function-vendor_videoproc_get">Function: vendor_videoproc_get<a class="headerlink" href="#function-vendor_videoproc_get" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Get parameters from unit by path id</p>
+<p>[Syntax]</p>
+<p>HD_RESULT vendor_videoproc_get (HD_PATH_ID path_id, VENDOR_VIDEOPROC_PARAM_ID id, VOID* p_param)</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>path_id</td>
+<td>the path id</td>
+</tr>
+<tr>
+<td>id</td>
+<td>id of parameters</td>
+</tr>
+<tr>
+<td>p_param</td>
+<td>pointer of parameters</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HD_OK</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>HD_ERR_NG</td>
+<td>Failure</td>
+</tr>
+<tr>
+<td>HD_ERR_NOT_SUPPORT</td>
+<td>Not support this parameter</td>
+</tr>
+</tbody>
+</table>
+<h4 id="function-vendor_videoproc_set">Function: vendor_videoproc_set<a class="headerlink" href="#function-vendor_videoproc_set" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Set parameters to unit by path id</p>
+<p>[Syntax]</p>
+<p>HD_RESULT vendor_videoproc_set (HD_PATH_ID path_id, VENDOR_VIDEOPROC_PARAM_ID id, VOID* p_param)</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>path_id</td>
+<td>the path id</td>
+</tr>
+<tr>
+<td>id</td>
+<td>id of parameters</td>
+</tr>
+<tr>
+<td>p_param</td>
+<td>pointer of parameters</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HD_OK</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>HD_ERR_NG</td>
+<td>Failure</td>
+</tr>
+<tr>
+<td>HD_ERR_NOT_SUPPORT</td>
+<td>Not support this parameter</td>
+</tr>
+</tbody>
+</table>
+<h4 id="structure-vendor_vdoproc_status">Structure: VENDOR_VDOPROC_STATUS<a class="headerlink" href="#structure-vendor_vdoproc_status" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Get vproc available input buffer count</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dti_buf_cnt</td>
+<td>available input buffer count</td>
+</tr>
+</tbody>
+</table>
+<p>[Apply Require]</p>
+<table>
+<thead>
+<tr>
+<th>open -> get</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="structure-vendor_vdoproc_sub_ratio_thld">Structure: VENDOR_VDOPROC_SUB_RATIO_THLD<a class="headerlink" href="#structure-vendor_vdoproc_sub_ratio_thld" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Get/set sub-yuv ratio threshold for vproc unit.</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>numer</td>
+<td>numerator of sub-yuv ratio threshold</td>
+</tr>
+<tr>
+<td>denom</td>
+<td>denominator of sub-yuv ratio threshold</td>
+</tr>
+</tbody>
+</table>
+<p>[Apply Require]</p>
+<table>
+<thead>
+<tr>
+<th>open -> get -> set</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="structure-vendor_videoproc_usr_init_frame_info">Structure: VENDOR_VIDEOPROC_USR_INIT_FRAME_INFO<a class="headerlink" href="#structure-vendor_videoproc_usr_init_frame_info" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Pre-specify the first input frame for this videoproc.</p>
+<p>This is used for playback feature, the frame is shown before decoder has started and the first bitstream data is decoded.</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>image</td>
+<td>The pre-specified frame</td>
+</tr>
+</tbody>
+</table>
+<h4 id="vendor_videoprocess_pull_in_buf">vendor_videoprocess_pull_in_buf<a class="headerlink" href="#vendor_videoprocess_pull_in_buf" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Pull the input video buffer from unit</p>
+<p>[Syntax]</p>
+<p>HD_RESULT vendor_videoproc_pull_in_buf(HD_PATH_ID path_id, HD_VIDEO_FRAME* p_video_frame, INT32 wait_ms);</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>path_id</td>
+<td>the path id</td>
+</tr>
+<tr>
+<td>p_video_frame</td>
+<td>pointer of the output video buffer</td>
+</tr>
+<tr>
+<td>wait_ms</td>
+<td>timeout value in ms</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HD_OK</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>HD_ERR_NG</td>
+<td>Failure</td>
+</tr>
+</tbody>
+</table>
+<h4 id="vendor_videoprocess_release_in_buf">vendor_videoprocess_release_in_buf<a class="headerlink" href="#vendor_videoprocess_release_in_buf" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Release the video frame buffer which is get from unit</p>
+<p>[Syntax]</p>
+<p>HD_RESULT vendor_videoproc_release_in_buf(HD_PATH_ID path_id, HD_VIDEO_FRAME* p_video_frame)</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>path_id</td>
+<td>the path id</td>
+</tr>
+<tr>
+<td>p_video_frame</td>
+<td>pointer of the output video buffer</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HD_OK</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>HD_ERR_NG</td>
+<td>Failure</td>
+</tr>
+</tbody>
+</table>
+<h4 id="structure-vendor_dewarp_2dlut_table">Structure: VENDOR_DEWARP_2DLUT_TABLE<a class="headerlink" href="#structure-vendor_dewarp_2dlut_table" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>2D_lut table is made by the rsc tool. Set 2D_lut table for vpe module to map.</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tbl</td>
+<td>65x68x UINT32</td>
+</tr>
+</tbody>
+</table>
+<p>More details of 2D_lut and dctg, please refer to Chapter 3.</p>
+<p>[Apply Require]</p>
+<table>
+<thead>
+<tr>
+<th>open -> get -> set</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><img alt="" src="nvt_media/ba9c9130fd2bcab9def544a89b44fb00.jpeg" /> <img alt="" src="nvt_media/6316b5b9bcefd2a24a638a312c632049.png" /></p>
+<p>2D_lut example.</p>
+<h4 id="structure-vendor_dewarp_mode">Structure: VENDOR_DEWARP_MODE<a class="headerlink" href="#structure-vendor_dewarp_mode" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Not used now.</p>
+<h4 id="structure-vendor_dewarp_dgc_parm">Structure: VENDOR_DEWARP_DGC_PARM<a class="headerlink" href="#structure-vendor_dewarp_dgc_parm" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Gdc information. (DGC is a typo). User should get this information from vpe module. Only cent_x_s, cent_y_s, and lens_r parameters are suggested to be changed.</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cent_x_s</td>
+<td>lens center of x axis</td>
+</tr>
+<tr>
+<td>cent_y_s</td>
+<td>lens center of y axis</td>
+</tr>
+<tr>
+<td>lens_r</td>
+<td>the radius of image, half of pattern height</td>
+</tr>
+<tr>
+<td>xdist</td>
+<td>Fixed</td>
+</tr>
+<tr>
+<td>Ydist</td>
+<td>Fixed</td>
+</tr>
+<tr>
+<td>normfact</td>
+<td>Fixed</td>
+</tr>
+<tr>
+<td>normbit</td>
+<td>Fixed</td>
+</tr>
+<tr>
+<td>geo_lut[65]</td>
+<td>gdc look-up table</td>
+</tr>
+</tbody>
+</table>
+<p>More details of gdc parameters, please refer to Chapter 3.</p>
+<h4 id="structure-vendor_dewarp_2dlut_parm">Structure: VENDOR_DEWARP_2DLUT_PARM<a class="headerlink" href="#structure-vendor_dewarp_2dlut_parm" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>2D_lut parameters. Only lut2d_sz could be changed to 3 (65x65).</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>lut2d_sz</td>
+<td>size selection, 0: 9x9, 3:65x65</td>
+</tr>
+<tr>
+<td>hfact</td>
+<td>Fixed</td>
+</tr>
+<tr>
+<td>vfact</td>
+<td>Fixed</td>
+</tr>
+<tr>
+<td>xofs_i</td>
+<td>2D-lut x offset (integer)</td>
+</tr>
+<tr>
+<td>xofs_f</td>
+<td>2D-lut x offset (fraction)</td>
+</tr>
+<tr>
+<td>yofs_i</td>
+<td>2D-lut y offset (integer)</td>
+</tr>
+<tr>
+<td>yofs_f</td>
+<td>2D-lut y offset (fraction)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="structure-vendor_dewarp_fov_parm">Structure: VENDOR_DEWARP_FOV_PARM<a class="headerlink" href="#structure-vendor_dewarp_fov_parm" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Fov parameters. Not used now.</p>
+<h4 id="structure-vendor_dewarp_info">Structure: VENDOR_DEWARP_INFO<a class="headerlink" href="#structure-vendor_dewarp_info" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Dewarp paramters.</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VENDOR_DEWARP_MODE</td>
+<td>Section 2.5.8</td>
+</tr>
+<tr>
+<td>VENDOR_DEWARP_DGC_PARM</td>
+<td>Section 2.5.9</td>
+</tr>
+<tr>
+<td>VENDOR_DEWARP_2DLUT_PARM</td>
+<td>Section 2.5.10</td>
+</tr>
+<tr>
+<td>VENDOR_DEWARP_FOV_PARM</td>
+<td>Section 2.5.11</td>
+</tr>
+</tbody>
+</table>
+<p>[Apply Require]</p>
+<table>
+<thead>
+<tr>
+<th>open -> get -> set</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="structure-vendor_dewarp_dctg_mode">Structure: VENDOR_DEWARP_DCTG_MODE<a class="headerlink" href="#structure-vendor_dewarp_dctg_mode" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Set VENDOR_DEWARP_DCTG_MODE_360, when doing 2D_lut.</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VENDOR_DEWARP_DCTG_MODE_90</td>
+<td>Do DCTG</td>
+</tr>
+<tr>
+<td>VENDOR_DEWARP_DCTG_MODE_360</td>
+<td>Do 2D_lut</td>
+</tr>
+</tbody>
+</table>
+<h4 id="structure-vendor_dewarp_dctg_lens_parm">Structure: VENDOR_DEWARP_DCTG_LENS_PARM<a class="headerlink" href="#structure-vendor_dewarp_dctg_lens_parm" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>DCTG lens parameters.</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mount_type</td>
+<td>0: ceiling, 1: floor</td>
+</tr>
+<tr>
+<td>lut2d_sz</td>
+<td>size selection, 0: 9x9, 3:65x65</td>
+</tr>
+<tr>
+<td>lens_r</td>
+<td>radius of lens</td>
+</tr>
+<tr>
+<td>lens_x_st</td>
+<td>lens start x position</td>
+</tr>
+<tr>
+<td>lens_y_st</td>
+<td>lens start y position</td>
+</tr>
+</tbody>
+</table>
+<p>lut2d_sz in VENDOR_DEWARP_DCTG_LENS_PARM should be equal to lut2d_sz in VENDOR_DEWARP_2DLUT_PARM.</p>
+<h4 id="structure-vendor_dewarp_dctg_fov_parm">Structure: VENDOR_DEWARP_DCTG_FOV_PARM<a class="headerlink" href="#structure-vendor_dewarp_dctg_fov_parm" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Not used now.</p>
+<h4 id="structure-vendor_dewarp_dctg_info">Structure: VENDOR_DEWARP_DCTG_INFO<a class="headerlink" href="#structure-vendor_dewarp_dctg_info" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>DCTG information.</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VENDOR_DEWARP_DCTG_MODE</td>
+<td>Section 2.5.13</td>
+</tr>
+<tr>
+<td>VENDOR_DEWARP_DCTG_LENS_PARM</td>
+<td>Section 2.5.14</td>
+</tr>
+<tr>
+<td>VENDOR_DEWARP_DCTG_FOV_PARM</td>
+<td>Section 2.5.15</td>
+</tr>
+</tbody>
+</table>
+<p>[Apply Require]</p>
+<table>
+<thead>
+<tr>
+<th>open -> get -> set</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="structure-vendor_dewarp_ctrl">Structure: VENDOR_DEWARP_CTRL<a class="headerlink" href="#structure-vendor_dewarp_ctrl" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Dewarp engine on/off. After setting VENDOR_DEWARP_INFO and VENDOR_DEWARP_DCTG_INFO, set VENDOR_DEWARP_CTRL to start vpe dewarp action.</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dc_enable</td>
+<td>Use 2D_lut, On. Use dctg, On.</td>
+</tr>
+<tr>
+<td>dctg_enable</td>
+<td>Use dctg, On. Use 2D_lut, OFF</td>
+</tr>
+</tbody>
+</table>
+<p>The difference between 2D_lut and dctg, please refer to Chapter 3.</p>
+<p>[Apply Require]</p>
+<table>
+<thead>
+<tr>
+<th>open -> get -> set</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Sample codes: liveview_with_dewarp.c and playback_with_dewarp.c show how the setting works.</p>
+<h3 id="audioio-function-and-data-structure-definition">Audioio function and data structure definition<a class="headerlink" href="#audioio-function-and-data-structure-definition" title="Permanent link">&para;</a></h3>
+<h4 id="function-vendor_audioio_get">Function: vendor_audioio_get<a class="headerlink" href="#function-vendor_audioio_get" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Get parameters from unit by path id</p>
+<p>[Syntax]</p>
+<p>HD_RESULT vendor_audioio_get (HD_PATH_ID path_id, VENDOR_AUDIOIO_PARAM_ID id, VOID* p_param)</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>path_id</td>
+<td>the path id</td>
+</tr>
+<tr>
+<td>id</td>
+<td>id of parameters</td>
+</tr>
+<tr>
+<td>p_param</td>
+<td>pointer of parameters</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HD_OK</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>HD_ERR_NG</td>
+<td>Failure</td>
+</tr>
+<tr>
+<td>HD_ERR_NOT_SUPPORT</td>
+<td>Not support this parameter</td>
+</tr>
+<tr>
+<td>HD_ERR_PATH</td>
+<td>Invalid path id</td>
+</tr>
+</tbody>
+</table>
+<h4 id="function-vendor_audioio_set">Function: vendor_audioio_set<a class="headerlink" href="#function-vendor_audioio_set" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Set parameters to unit by path id</p>
+<p>[Syntax]</p>
+<p>HD_RESULT vendor_audioio_set (HD_PATH_ID path_id, VENDOR_AUDIOIO_PARAM_ID id, VOID* p_param)</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>path_id</td>
+<td>the path id</td>
+</tr>
+<tr>
+<td>id</td>
+<td>id of parameters</td>
+</tr>
+<tr>
+<td>p_param</td>
+<td>pointer of parameters</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HD_OK</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>HD_ERR_NG</td>
+<td>Failure</td>
+</tr>
+<tr>
+<td>HD_ERR_NOT_SUPPORT</td>
+<td>Not support this parameter</td>
+</tr>
+</tbody>
+</table>
+<h4 id="function-vendor_audioio_set_livesound">Function: vendor_audioio_set_livesound<a class="headerlink" href="#function-vendor_audioio_set_livesound" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>This function supports to send command to lower driver to start/stop livesound function with specified pathid without any binding operation.</p>
+<p>You still need to set audio parameters such as HD_AUDIOCAP_PARAM_IN and HD_AUDIOOUT_PARAM_IN before using this function.</p>
+<p>[Syntax]</p>
+<p>HD_RESULT vendor_audioio_set_livesound(HD_PATH_ID acap_path_id, HD_PATH_ID aout_path_id, UINT on_off)</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>acap_path_id</td>
+<td>The audiocapture path id</td>
+</tr>
+<tr>
+<td>aout_path_id</td>
+<td>The audioout path id</td>
+</tr>
+<tr>
+<td>on_off</td>
+<td>To start or stop livesound 0: stop livesound 1: start livesound</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HD_OK</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>HD_ERR_PATH</td>
+<td>Wrong pathid</td>
+</tr>
+<tr>
+<td>HD_ERR_NG</td>
+<td>Fail to send command to lower driver.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="structure-vendor_audioio_underrun_config">Structure: VENDOR_AUDIOIO_UNDERRUN_CONFIG<a class="headerlink" href="#structure-vendor_audioio_underrun_config" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>This structure describes the internal audio status such as underrun, ongoing, and done counts. This structure is only used for audiocap or audioout.</p>
+<p>VENDOR_AUDIOIO_STATUS_INFO is an alias of this structure.</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>underrun_cnt</td>
+<td>The times of buffer that underrun has happened. For audiocap, it means no buffer for receiving incoming audio PCM. You may lose audio data. For audioout, it means no PCM data for playing. You may hear nothing or staccato wave.</td>
+</tr>
+<tr>
+<td>ongoing_cnt</td>
+<td>The counts of buffers that doesn’t process. For audiocap, it is the count of buffer that is waiting for receiving incoming PCM data. For audioout, it is the count of buffer in the queue waiting for playing. You can tell if the audio playback is done by checking this value until zero.</td>
+</tr>
+<tr>
+<td>done_cnt</td>
+<td>The count of buffers that is processed. For audiocap, it means the count of buffers already filled with PCM data but hasn’t received by APP.  For audioout, this value is meaningless.</td>
+</tr>
+</tbody>
+</table>
+<p>[Apply Require]</p>
+<table>
+<thead>
+<tr>
+<th>open -> get</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="structure-vendor_audioio_status_info">Structure: VENDOR_AUDIOIO_STATUS_INFO<a class="headerlink" href="#structure-vendor_audioio_status_info" title="Permanent link">&para;</a></h4>
+<p>VENDOR_AUDIOIO_STATUS_INFO is an alias of VENDOR_AUDIOIO_UNDERRUN_CONFIG. Please refer to 2.6.4 for details.</p>
+<h4 id="structure-vendor_audioio_aout_lb_dev_info">Structure: VENDOR_AUDIOIO_AOUT_LB_DEV_INFO<a class="headerlink" href="#structure-vendor_audioio_aout_lb_dev_info" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>The structure fills the loopback HDAL dev_id of the calling path(audioout path).</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dev_id</td>
+<td>The loopback HDAL dev_id of this audioout path</td>
+</tr>
+</tbody>
+</table>
+<p>[Apply Require]</p>
+<table>
+<thead>
+<tr>
+<th>open -> get</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="structure-vendor_audioio_sync_time_info">Structure: VENDOR_AUDIOIO_SYNC_TIME_INFO<a class="headerlink" href="#structure-vendor_audioio_sync_time_info" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Fill this structure to specify the target channel for synchronize time of output data.</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sync_target</td>
+<td>The target pathid for synchronizing time with.</td>
+</tr>
+</tbody>
+</table>
+<p>[Apply Require]</p>
+<table>
+<thead>
+<tr>
+<th>open -> set</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="gfx-function-and-data-structe-definition">Gfx function and data structe definition<a class="headerlink" href="#gfx-function-and-data-structe-definition" title="Permanent link">&para;</a></h3>
+<h4 id="structure-vendor_gfx_syscaps">Structure: VENDOR_GFX_SYSCAPS<a class="headerlink" href="#structure-vendor_gfx_syscaps" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Get gfx system capability information.</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>scl_rate</td>
+<td>get system max scaling factor</td>
+</tr>
+<tr>
+<td>min_dim</td>
+<td>get min input /output dimension</td>
+</tr>
+<tr>
+<td>max_dim</td>
+<td>get max input /output dimension</td>
+</tr>
+<tr>
+<td>image_align</td>
+<td>get align limitation</td>
+</tr>
+</tbody>
+</table>
+<h4 id="function-vendor_gfx_get_syscaps">Function: vendor_gfx_get_syscaps<a class="headerlink" href="#function-vendor_gfx_get_syscaps" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Get VENDOR_GFX_SYSCAPS value</p>
+<p>[Syntax]</p>
+<p>HD_RESULT vendor_gfx_get_syscaps(VENDOR_GFX_SYSCAPS *p_param)</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p_param</td>
+<td>pointer of parameters</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HD_OK</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>HD_ERR_NG</td>
+<td>Failure</td>
+</tr>
+<tr>
+<td>HD_ERR_NOT_SUPPORT</td>
+<td>Not support this parameter</td>
+</tr>
+</tbody>
+</table>
+<h3 id="vendor-common-function-and-data-structe-definition">Vendor common function and data structe definition<a class="headerlink" href="#vendor-common-function-and-data-structe-definition" title="Permanent link">&para;</a></h3>
+<h4 id="function-vendor_common_mem_get_block_with_name">Function: vendor_common_mem_get_block_with_name<a class="headerlink" href="#function-vendor_common_mem_get_block_with_name" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Get memory block with name</p>
+<p>[Syntax]</p>
+<p>HD_COMMON_MEM_VB_BLK vendor_common_mem_get_block_with_name(HD_COMMON_MEM_POOL_TYPE pool_type, UINT32 blk_size, HD_COMMON_MEM_DDR_ID ddr, CHAR *usr_name)</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pool_type</td>
+<td>Value of pool type</td>
+</tr>
+<tr>
+<td>blk_size</td>
+<td>Value of memory size</td>
+</tr>
+<tr>
+<td>ddr</td>
+<td>Value of ddr id</td>
+</tr>
+<tr>
+<td>usr_name</td>
+<td>Block name</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HD_COMMON_MEM_VB_BLK</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>HD_COMMON_MEM_VB_INVALID_BLK</td>
+<td>Failure</td>
+</tr>
+</tbody>
+</table>
+<h4 id="function-vendor_common_clear_pool_blk">Function: vendor_common_clear_pool_blk<a class="headerlink" href="#function-vendor_common_clear_pool_blk" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Free all memory block with pool type and ddrid</p>
+<p>[Syntax]</p>
+<p>HD_RESULT vendor_common_clear_pool_blk(HD_COMMON_MEM_POOL_TYPE pool_type, INT ddrid)</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pool_type</td>
+<td>Value of pool type</td>
+</tr>
+<tr>
+<td>ddrid</td>
+<td>Value of ddr id</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HD_OK</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>HD_ERR_NG</td>
+<td>Failure to find pool by type</td>
+</tr>
+<tr>
+<td>HD_ERR_SYS</td>
+<td>Failure to free all blk</td>
+</tr>
+</tbody>
+</table>
+<h3 id="distortion-correction-engine-dce">Distortion Correction Engine (DCE)<a class="headerlink" href="#distortion-correction-engine-dce" title="Permanent link">&para;</a></h3>
+<h4 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h4>
+<p>This is lens distortion calibration module, it can perform calibration on wide-angle lens and fish-eye lens.</p>
+<h4 id="dce-parameter-description">DCE Parameter Description<a class="headerlink" href="#dce-parameter-description" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Range</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dce_mode</td>
+<td>0\~1</td>
+<td>0</td>
+<td>Select distortion function 0: GDC lens calibration 1: 2DLUT self-define XY coordinate distortion</td>
+</tr>
+<tr>
+<td>lut2d_sz</td>
+<td>0\~3</td>
+<td>0</td>
+<td>Size selection of 2D look-up table. The larger the size, the more precision to describe distortion. 0: 9x9 1: (not supported) 2: (not supported) 3: 65x65</td>
+</tr>
+<tr>
+<td>lsb_rand</td>
+<td>0\~1</td>
+<td>0</td>
+<td>LSB 2 bit random generation for internal 10 bit->8 bit image. 0: fixed fill 0 1: random generate 0\~3</td>
+</tr>
+<tr>
+<td>fovbound</td>
+<td>0\~1</td>
+<td>0</td>
+<td>FOV boundary process method selection. When the distortion result can not fill the total output image, select different way to proceed the exceed range. 0: Replace out of boundary pixels with duplicate nearest pixel 1: Replace out of boundary pixels with bound pixels</td>
+</tr>
+<tr>
+<td>boundy</td>
+<td>0\~1023</td>
+<td>0</td>
+<td>Bound value for Y component(u8.2)</td>
+</tr>
+<tr>
+<td>boundu</td>
+<td>0\~1023</td>
+<td>0</td>
+<td>Bound value for U component(u8.2)</td>
+</tr>
+<tr>
+<td>boundv</td>
+<td>0\~1023</td>
+<td>0</td>
+<td>Bound value for V component(u8.2)</td>
+</tr>
+<tr>
+<td>cent_x_s</td>
+<td>213-1</td>
+<td>0</td>
+<td>Define lens center of x-axis. It is recommend to set width/2.</td>
+</tr>
+<tr>
+<td>cent_y_s</td>
+<td>213-1</td>
+<td>0</td>
+<td>Define lens center of y-axis. It is recommend to set height/2.</td>
+</tr>
+<tr>
+<td>xdist</td>
+<td>0\~4095</td>
+<td>0</td>
+<td>X input distance factor, for oval shape modeling. It is recommend to set 4095, which is suitable for most situation.</td>
+</tr>
+<tr>
+<td>ydist</td>
+<td>0\~4095</td>
+<td>0</td>
+<td>Y input distance factor, for oval shape modeling. It is recommend to set 4095, which is suitable for most situation.</td>
+</tr>
+<tr>
+<td>normfact</td>
+<td>0\~255</td>
+<td>128</td>
+<td>Radius normalization factor. Normfact = 1 \&lt;\&lt; (normbit + 7) / R2</td>
+</tr>
+<tr>
+<td>normbit</td>
+<td>0\~31</td>
+<td>31</td>
+<td>Radius normalization shift bit. R2 = (width/2)2+(height/2)2 The total bit number of R2 is normbit. Example: 9602+5402 = 1213200 (21 bits)</td>
+</tr>
+<tr>
+<td>fovgain</td>
+<td>0\~4095</td>
+<td>0</td>
+<td>Adjust the scaling ratio of the final distortion coordinate to preserve FOV. Scale down factor for FOV preservation. Due to it will effect the calibration performance, it is recommend to set 1024.</td>
+</tr>
+<tr>
+<td>hfact</td>
+<td>0 \~ 224 -1</td>
+<td>0</td>
+<td>Horizontal scaling factor for 2DLut scaling up(u0.24). ((2DLUT horizontal pixel number – 1) \&lt;\&lt; 24) / (width – 1)</td>
+</tr>
+<tr>
+<td>vfact</td>
+<td>0 \~ 224 -1</td>
+<td>0</td>
+<td>Vertical scaling factor for 2DLut scaling up(u0.24). ((2DLUT vertical pixel number – 1) \&lt;\&lt; 24) / (height – 1)</td>
+</tr>
+<tr>
+<td>xofs_i</td>
+<td>0\~127</td>
+<td>0</td>
+<td>2DLut x offset, integer part. It is recommend to set 0, if user need to adjust the DCE performance, user need to change the 2DLUT value.</td>
+</tr>
+<tr>
+<td>xofs_f</td>
+<td>0\~224-1</td>
+<td>0</td>
+<td>2DLut x offset, fraction part. It is recommend to set 0, if user need to adjust the DCE performance, user need to change the 2DLUT value.</td>
+</tr>
+<tr>
+<td>yofs_i</td>
+<td>0\~127</td>
+<td>0</td>
+<td>2DLut y offset, integer part. It is recommend to set 0, if user need to adjust the DCE performance, user need to change the 2DLUT value.</td>
+</tr>
+<tr>
+<td>yofs_f</td>
+<td>0\~224-1</td>
+<td>0</td>
+<td>2DLut y offset, fraction part. It is recommend to set 0, if user need to adjust the DCE performance, user need to change the 2DLUT value.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dc-table-generator">DC Table Generator<a class="headerlink" href="#dc-table-generator" title="Permanent link">&para;</a></h3>
+<p>For perspective projection application, in order to increase the convenience of usage, DCTG module let user to set the desired angle and size with an instinct way to generate DCE parameters automatically.</p>
+<h4 id="overview_1">Overview<a class="headerlink" href="#overview_1" title="Permanent link">&para;</a></h4>
+<p>DCTG generate DCE 2D-LUT for perspective projection. Whenever this function is enabled, manual set DCE 2D-LUT function will be invalid.</p>
+<p>Please refer to the following description:</p>
+<p>The “theta” is the top/bottom angle.</p>
+<p>The “phi” is the rotate angle.</p>
+<p>The “rot_y” is the rotate offset of (x, z) plane towards Y-axis.</p>
+<p>The “rot_z” is the rotate offset of (x, y) plane towards Z-axis.</p>
+<p>Generate LUT:</p>
+<p>Define the rotate angle of FOV by phi_st/phi_ed, and then rotate to FOV location by rot_y.</p>
+<p>Define the top/bottom angle of FOV by theta_st/theta_ed, and then rotate to FOV location by rot_z.</p>
+<p><img alt="" src="nvt_media/cd0b976666f1953455c6d14398ba0a66.png" /><img alt="" src="nvt_media/26d92d917ee155e047f26e92b20be608.png" /></p>
+<h4 id="dctg-parameter-description">DCTG Parameter Description<a class="headerlink" href="#dctg-parameter-description" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Range</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dctg_en</td>
+<td>0\~1</td>
+<td>0</td>
+<td>DCTG ON/OFF ※ DCTG and dce_2d_lut_en cannot be enabled at the same time.</td>
+</tr>
+<tr>
+<td>mount_type</td>
+<td>0\~1</td>
+<td>0</td>
+<td>Camera mount type.  0: Ceiling mount 1: Floor mount</td>
+</tr>
+<tr>
+<td>lut2d_sz</td>
+<td>0\~1</td>
+<td>0</td>
+<td>Select size of 2D look-up table, this parameter must the same with DCE parameter. 0: 9x9 1: (not supported) 2: (not supported) 3: 65x65</td>
+</tr>
+<tr>
+<td>lens_r</td>
+<td>0\~215-1</td>
+<td>0</td>
+<td>Valid radius of fish-eye lens, the unit is pixel. Please refer to advance description.</td>
+</tr>
+<tr>
+<td>lens_x_st</td>
+<td>0\~214-1</td>
+<td>0</td>
+<td>The start x position of fish-eye lens at the source image, the unit is pixel.</td>
+</tr>
+<tr>
+<td>lens_y_st</td>
+<td>0\~214-1</td>
+<td>0</td>
+<td>The start y position of fish-eye lens at the source image, the unit is pixel.</td>
+</tr>
+<tr>
+<td>theta_st</td>
+<td>s4.16 -220 \~ 220-1</td>
+<td>0</td>
+<td>FOV theta start radian. (-*pi \~ *pi)</td>
+</tr>
+<tr>
+<td>theta_ed</td>
+<td>s4.16 -220 \~ 220-1 (-*pi \~ *pi)</td>
+<td>0</td>
+<td>FOV theta end radian. (-*pi \~ *pi) theta_end > theta_st: normal image theta_end \&lt; theta_st: flip image</td>
+</tr>
+<tr>
+<td>phi_st</td>
+<td>s4.16 -220 \~ 220-1</td>
+<td>0</td>
+<td>FOV phi start radian. (-2*pi \~ 2*pi)</td>
+</tr>
+<tr>
+<td>phi_ed</td>
+<td>s4.16 -220 \~ 220-1</td>
+<td>0</td>
+<td>FOV phi end radian. (-2*pi \~ 2*pi) phi_end > theta_st: normal image phi_end \&lt; theta_st: flip image</td>
+</tr>
+<tr>
+<td>rot_z</td>
+<td>s4.16 -220 \~ 220-1</td>
+<td>0</td>
+<td>Z-axis rotate radian. (-2*pi \~ 2*pi)</td>
+</tr>
+<tr>
+<td>rot_y</td>
+<td>s4.16 -220 \~ 220-1</td>
+<td>0</td>
+<td>Y-zxis rotate radian. (-2*pi \~ 2*pi)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="advance-description">Advance description:<a class="headerlink" href="#advance-description" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>lens_r:</strong> The valid radius of fish-eye device</li>
+<li><strong>lens_x_</strong>st : The start x position of fish-eye lens at the source image, the unit is pixel.</li>
+<li><strong>lens_y_st :</strong> The start y position of fish-eye lens at the source image, the unit is pixel. <img alt="" src="nvt_media/95ec8c69aa74ea93bef7c47133f014f4.png" /></li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="NT9833x_HDAL_Vendor_ISP_Programming_Guide_en.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Vendor ISP Programming Guide" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Vendor ISP Programming Guide
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="NT9833x_HDAL_Vendor_PCIe_Programming_Guide_en.html" class="md-footer__link md-footer__link--next" aria-label="Next: Vendor PCie Programming Guide" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Vendor PCie Programming Guide
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.highlight", "navigation.tabs"], "search": "../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.37e9125f.min.js"></script>
+      
+    
+  </body>
+</html>
