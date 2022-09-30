@@ -1,0 +1,2718 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.3">
+    
+    
+      
+        <title>PCIe User Guide - NT98336/NT98633 Documents</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7a952b86.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pcie-basic-concepts" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="NT98336/NT98633 Documents" class="md-header__button md-logo" aria-label="NT98336/NT98633 Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NT98336/NT98633 Documents
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              PCIe User Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../CVAI/NT9833X_MD_User_Guide_en.html" class="md-tabs__link md-tabs__link--active">
+        Software
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../not_ready - not_reay.md" class="md-tabs__link">
+        Hardware(Not Ready)
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../not_ready - not_reay.md" class="md-tabs__link">
+        For Reference(Not Ready)
+      </a>
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="NT98336/NT98633 Documents" class="md-nav__button md-logo" aria-label="NT98336/NT98633 Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    NT98336/NT98633 Documents
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          Software
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Software" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Software
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_1" type="checkbox" id="__nav_1_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_1">
+          CVAI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="CVAI" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          CVAI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CVAI/NT9833X_MD_User_Guide_en.html" class="md-nav__link">
+        MD User Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CVAI/NT9833X_IVE_User_Guide_en.html" class="md-nav__link">
+        IVE User Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CVAI/NT9833X_MD_Tuning_Guide_en.html" class="md-nav__link">
+        MD Tuning Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_2" type="checkbox" id="__nav_1_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_2">
+          ISPQ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="ISPQ" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          ISPQ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ISP/NT9833x_VPE_IQ_Tuning_Guide_en.html" class="md-nav__link">
+        VPE IQ Tuning Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ISP/NT9833x_LCD_IQ_Tuning_Guide_en.html" class="md-nav__link">
+        LCD IQ Tuning Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ISP/NT9833x_DI_Tuning_Guide_en.html" class="md-nav__link">
+        DI Tuning Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_3">
+          MEDIA
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MEDIA" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          MEDIA
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MEDIA/NT9833x_HDAL_Vendor_ISP_Programming_Guide_en.html" class="md-nav__link">
+        Vendor ISP Programming Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MEDIA/NT9833x_HDAL_Vendor_Media_Programming_Guide_en.html" class="md-nav__link">
+        Vendor Media Programming Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MEDIA/NT9833x_HDAL_Vendor_PCIe_Programming_Guide_en.html" class="md-nav__link">
+        Vendor PCie Programming Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_4">
+          OSDRV
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="OSDRV" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          OSDRV
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="NT9833x_SDK_Pure_Linux_Programming_Guide_en.html" class="md-nav__link">
+        Linux Programming Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="NT9833x_Quick_Bringup_User_Guide_en.html" class="md-nav__link">
+        Quick Bringup User Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          PCIe User Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="NT9833x_PCIe_User_Guide_en.html" class="md-nav__link md-nav__link--active">
+        PCIe User Guide
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pcie-basic-concepts" class="md-nav__link">
+    PCIe basic concepts
+  </a>
+  
+    <nav class="md-nav" aria-label="PCIe basic concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pcie-cascade" class="md-nav__link">
+    PCIe cascade
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mapping-concepts" class="md-nav__link">
+    Mapping concepts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote-read-write" class="md-nav__link">
+    Remote read / write
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel-configurations" class="md-nav__link">
+    Kernel configurations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#device-tree-configurations" class="md-nav__link">
+    Device tree configurations
+  </a>
+  
+    <nav class="md-nav" aria-label="Device tree configurations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nvt-pcie-cascade-drv" class="md-nav__link">
+    nvt-pcie-cascade-drv
+  </a>
+  
+    <nav class="md-nav" aria-label="nvt-pcie-cascade-drv">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dma-ranges-in-nvt_pcie-pcie2f04f0000" class="md-nav__link">
+    “dma-ranges” in “nvt_pcie: pcie@2,f04f0000”
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reg-in-nvt_ep0" class="md-nav__link">
+    “reg” in “nvt_ep0”
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refclk-out-in-nvt_pcie-pcie2f04f0000" class="md-nav__link">
+    “refclk-out” in “nvt_pcie: pcie@2,f04f0000”
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvt-pcie-lib" class="md-nav__link">
+    nvt-pcie-lib
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nvt-pcie-lib-api-introduction" class="md-nav__link">
+    nvt-pcie-lib API introduction
+  </a>
+  
+    <nav class="md-nav" aria-label="nvt-pcie-lib API introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#address-conversion" class="md-nav__link">
+    Address conversion
+  </a>
+  
+    <nav class="md-nav" aria-label="Address conversion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nvtpcie_get_upstream_pa" class="md-nav__link">
+    nvtpcie_get_upstream_pa
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvtpcie_get_downstream_pa" class="md-nav__link">
+    nvtpcie_get_downstream_pa
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvtpcie_get_pcie_addr" class="md-nav__link">
+    nvtpcie_get_pcie_addr
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvtpcie_get_mapped_pa" class="md-nav__link">
+    nvtpcie_get_mapped_pa
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvtpcie_get_unmapped_pa" class="md-nav__link">
+    nvtpcie_get_unmapped_pa
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shared-memory" class="md-nav__link">
+    Shared memory
+  </a>
+  
+    <nav class="md-nav" aria-label="Shared memory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nvtpcie_shmem_dump" class="md-nav__link">
+    nvtpcie_shmem_dump
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvtpcie_shmem_get_va" class="md-nav__link">
+    nvtpcie_shmem_get_va
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvtpcie_shmem_get_pa" class="md-nav__link">
+    nvtpcie_shmem_get_pa
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvtpcie_shmem_get_size" class="md-nav__link">
+    nvtpcie_shmem_get_size
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ep-utility" class="md-nav__link">
+    EP utility
+  </a>
+  
+    <nav class="md-nav" aria-label="EP utility">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nvtpcie_alloc_epmem" class="md-nav__link">
+    nvtpcie_alloc_epmem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvtpcie_downstream_active" class="md-nav__link">
+    nvtpcie_downstream_active
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvtpcie_get_ep_count" class="md-nav__link">
+    nvtpcie_get_ep_count
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mapping-info" class="md-nav__link">
+    Mapping Info.
+  </a>
+  
+    <nav class="md-nav" aria-label="Mapping Info.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nvtpcie_get_ddrid" class="md-nav__link">
+    nvtpcie_get_ddrid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvtpcie_get_ddrid_map" class="md-nav__link">
+    nvtpcie_get_ddrid_map
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    Misc.
+  </a>
+  
+    <nav class="md-nav" aria-label="Misc.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nvtpcie_get_my_chipid" class="md-nav__link">
+    nvtpcie_get_my_chipid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvtpcie_edma_copy" class="md-nav__link">
+    nvtpcie_edma_copy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proc-interface" class="md-nav__link">
+    /proc interface
+  </a>
+  
+    <nav class="md-nav" aria-label="/proc interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-all-commands" class="md-nav__link">
+    List all commands
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-version" class="md-nav__link">
+    Show version
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-configurations" class="md-nav__link">
+    Show configurations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-a-self-test" class="md-nav__link">
+    Run a self-test
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-a-performance-test" class="md-nav__link">
+    Run a performance test
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uboot-init-flow" class="md-nav__link">
+    uboot init flow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trouble-shooting" class="md-nav__link">
+    Trouble shooting
+  </a>
+  
+    <nav class="md-nav" aria-label="Trouble shooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#which-driver-support-running-on-rc-and-controlling-hw-on-ep" class="md-nav__link">
+    Which driver support running on RC and controlling hw on EP?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i-concern-there-are-any-error-on-pcie-bus-if-there-any-way-to-observe-errors-below-transaction-layer" class="md-nav__link">
+    I concern there are any error on PCIe bus. If there any way to observe errors below transaction layer?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NT9833x_DVR_NVR_SDK_Quick_Start.html" class="md-nav__link">
+        Quick Start
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Hardware(Not Ready)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Hardware(Not Ready)" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Hardware(Not Ready)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          Not Ready
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Not Ready" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Not Ready
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../not_ready - not_reay.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          For Reference(Not Ready)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="For Reference(Not Ready)" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          For Reference(Not Ready)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1">
+          Not Ready
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Not Ready" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Not Ready
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../not_ready - not_reay.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pcie-basic-concepts" class="md-nav__link">
+    PCIe basic concepts
+  </a>
+  
+    <nav class="md-nav" aria-label="PCIe basic concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pcie-cascade" class="md-nav__link">
+    PCIe cascade
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mapping-concepts" class="md-nav__link">
+    Mapping concepts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote-read-write" class="md-nav__link">
+    Remote read / write
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel-configurations" class="md-nav__link">
+    Kernel configurations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#device-tree-configurations" class="md-nav__link">
+    Device tree configurations
+  </a>
+  
+    <nav class="md-nav" aria-label="Device tree configurations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nvt-pcie-cascade-drv" class="md-nav__link">
+    nvt-pcie-cascade-drv
+  </a>
+  
+    <nav class="md-nav" aria-label="nvt-pcie-cascade-drv">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dma-ranges-in-nvt_pcie-pcie2f04f0000" class="md-nav__link">
+    “dma-ranges” in “nvt_pcie: pcie@2,f04f0000”
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reg-in-nvt_ep0" class="md-nav__link">
+    “reg” in “nvt_ep0”
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refclk-out-in-nvt_pcie-pcie2f04f0000" class="md-nav__link">
+    “refclk-out” in “nvt_pcie: pcie@2,f04f0000”
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvt-pcie-lib" class="md-nav__link">
+    nvt-pcie-lib
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nvt-pcie-lib-api-introduction" class="md-nav__link">
+    nvt-pcie-lib API introduction
+  </a>
+  
+    <nav class="md-nav" aria-label="nvt-pcie-lib API introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#address-conversion" class="md-nav__link">
+    Address conversion
+  </a>
+  
+    <nav class="md-nav" aria-label="Address conversion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nvtpcie_get_upstream_pa" class="md-nav__link">
+    nvtpcie_get_upstream_pa
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvtpcie_get_downstream_pa" class="md-nav__link">
+    nvtpcie_get_downstream_pa
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvtpcie_get_pcie_addr" class="md-nav__link">
+    nvtpcie_get_pcie_addr
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvtpcie_get_mapped_pa" class="md-nav__link">
+    nvtpcie_get_mapped_pa
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvtpcie_get_unmapped_pa" class="md-nav__link">
+    nvtpcie_get_unmapped_pa
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shared-memory" class="md-nav__link">
+    Shared memory
+  </a>
+  
+    <nav class="md-nav" aria-label="Shared memory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nvtpcie_shmem_dump" class="md-nav__link">
+    nvtpcie_shmem_dump
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvtpcie_shmem_get_va" class="md-nav__link">
+    nvtpcie_shmem_get_va
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvtpcie_shmem_get_pa" class="md-nav__link">
+    nvtpcie_shmem_get_pa
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvtpcie_shmem_get_size" class="md-nav__link">
+    nvtpcie_shmem_get_size
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ep-utility" class="md-nav__link">
+    EP utility
+  </a>
+  
+    <nav class="md-nav" aria-label="EP utility">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nvtpcie_alloc_epmem" class="md-nav__link">
+    nvtpcie_alloc_epmem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvtpcie_downstream_active" class="md-nav__link">
+    nvtpcie_downstream_active
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvtpcie_get_ep_count" class="md-nav__link">
+    nvtpcie_get_ep_count
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mapping-info" class="md-nav__link">
+    Mapping Info.
+  </a>
+  
+    <nav class="md-nav" aria-label="Mapping Info.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nvtpcie_get_ddrid" class="md-nav__link">
+    nvtpcie_get_ddrid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvtpcie_get_ddrid_map" class="md-nav__link">
+    nvtpcie_get_ddrid_map
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    Misc.
+  </a>
+  
+    <nav class="md-nav" aria-label="Misc.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nvtpcie_get_my_chipid" class="md-nav__link">
+    nvtpcie_get_my_chipid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nvtpcie_edma_copy" class="md-nav__link">
+    nvtpcie_edma_copy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proc-interface" class="md-nav__link">
+    /proc interface
+  </a>
+  
+    <nav class="md-nav" aria-label="/proc interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-all-commands" class="md-nav__link">
+    List all commands
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-version" class="md-nav__link">
+    Show version
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-configurations" class="md-nav__link">
+    Show configurations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-a-self-test" class="md-nav__link">
+    Run a self-test
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-a-performance-test" class="md-nav__link">
+    Run a performance test
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uboot-init-flow" class="md-nav__link">
+    uboot init flow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trouble-shooting" class="md-nav__link">
+    Trouble shooting
+  </a>
+  
+    <nav class="md-nav" aria-label="Trouble shooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#which-driver-support-running-on-rc-and-controlling-hw-on-ep" class="md-nav__link">
+    Which driver support running on RC and controlling hw on EP?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i-concern-there-are-any-error-on-pcie-bus-if-there-any-way-to-observe-errors-below-transaction-layer" class="md-nav__link">
+    I concern there are any error on PCIe bus. If there any way to observe errors below transaction layer?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>PCIe User Guide</h1>
+
+<h2 id="pcie-basic-concepts">PCIe basic concepts<a class="headerlink" href="#pcie-basic-concepts" title="Permanent link">&para;</a></h2>
+<h3 id="pcie-cascade">PCIe cascade<a class="headerlink" href="#pcie-cascade" title="Permanent link">&para;</a></h3>
+<p>Two NT9833x can be cascaded over PCIe to perform more powerful functions. Jobs on the RC (root complex), can be dispatched to EP (endpoint) to accomplish. The communication of data is through shared memory and interrupt notification which implemented by HDAL.</p>
+<p>Once two chips are cascaded, it can be seen as a chip with double HW engines and double CPUs. However, to access memory of a remote chip, a remote memory address needs to be converted to a local mapped physical address, or called a PCIe address. The following sections will introduce the mapping concepts and remote read/write definitions.</p>
+<h3 id="mapping-concepts">Mapping concepts<a class="headerlink" href="#mapping-concepts" title="Permanent link">&para;</a></h3>
+<p>To access memory of a remote chip, a remote address should be converted to a local PCIe address. A mapped PCIe address represents resources of outer PCIe devices, including a cascaded NT9833x EP.</p>
+<p>As the figure shown below, on RC side the lower addresses are used by local dram and peripheral IO, while the upper addresses are used for remote PCIe resources, such as EP dram or EP peripherals. On the other hand, the lower addresses on EP side are used by local dram and peripherals of EP. And the upper addresses are mapped to dram and peripherals of RC.</p>
+<p>We call the direction from RC to EP “downstream” and the opposite direction as “upstream”. Because RC stands for “root complex” which is on the top of PCIe connections.</p>
+<p>Moreover, a dram region could be composed of multiple DDR blocks. The first DDR of dram is index 0, and the second DDR is index 1, etc.</p>
+<h3 id="remote-read-write">Remote read / write<a class="headerlink" href="#remote-read-write" title="Permanent link">&para;</a></h3>
+<p>RC (Root Complex) and EP (Endpoint) either could be the role of local or remote. Where the driver or application is executing in, that side is called the local side. And its opposite side is called the remote side.</p>
+<p>If data is transferred from local to remote, it is called “Remote write”. On the contrary, if data is moved from remote to local, it is called “Remote read”.</p>
+<h2 id="kernel-configurations">Kernel configurations<a class="headerlink" href="#kernel-configurations" title="Permanent link">&para;</a></h2>
+<p>The below introduces kernel configurations about NVT PCIe Library.</p>
+<p>CONFIG_NVT_PCIE_LIB is the configuration to enable NVT PCIe Library. NVT PCIe Library provides status querying, address conversion between RC and EP, and a common shared memory. It is transparent to PCIe HW. If EP does not exist, relative APIs will get an error returned, but not compiler errors.</p>
+<p>CONFIG_NVT_PCIE_CASCADE_DRV is the driver to handle HW dependent initialization of PCIe cascade. It is a proprietary driver of NVT. The implementation is different from Linux common framework. Please note that it depends on “NVT_PCIE_LIB” and “!PCI”. It means NVT PCIe cascade driver requires NVT PCIe Library to provide services for upper layers. And if Linux PCIe common framework is enabled, NVT PCIe cascade driver will be disabled automatically.</p>
+<pre><code>CONFIG_NVT_PCIE_LIB:                          
+Novatek PCIe Library.                         
+Symbol: NVT_PCIE_LIB [=y]                     
+Type  : bool                                  
+Prompt: Novatek PCIe Library                  
+  Location:                                   
+    -&gt; Device Drivers                         
+      -&gt; SOC (System On Chip) specific Drivers
+        -&gt; NovaTek SoC drivers                
+          -&gt; NovaTek SoC Basic drivers        
+</code></pre>
+<pre><code>CONFIG_NVT_PCIE_CASCADE_DRV:                                                                                             
+
+Novatek PCIe cascade.                                                                                                    
+
+Symbol: NVT_PCIE_CASCADE_DRV [=y]                                                                                        
+Type  : bool                                                                                                             
+Prompt: Novatek PCIe cascade                                                                                             
+  Location:                                                                                                              
+    -&gt; Device Drivers                                                                                                    
+      -&gt; SOC (System On Chip) specific Drivers                                                                           
+        -&gt; NovaTek SoC drivers                                                                                           
+          -&gt; NovaTek SoC Basic drivers                                                                                   
+            -&gt; Novatek PCIe Library (NVT_PCIE_LIB [=y])                                                                  
+  Defined at drivers/soc/nvt/basic/Kconfig:24                                                                            
+  Depends on: (ARCH_NVT_IVOT_V7 || ARCH_NVT_IVOT_V8 [=y]) &amp;&amp; NVT_PCIE_LIB [=y] &amp;&amp; NVT_IVOT_PLAT_NA51090 [=y] &amp;&amp; !PCI [=n]
+</code></pre>
+<h2 id="device-tree-configurations">Device tree configurations<a class="headerlink" href="#device-tree-configurations" title="Permanent link">&para;</a></h2>
+<h3 id="nvt-pcie-cascade-drv">nvt-pcie-cascade-drv<a class="headerlink" href="#nvt-pcie-cascade-drv" title="Permanent link">&para;</a></h3>
+<p>There are two device tree nodes (“nvt_pcie: pcie@2,f04f0000” and “nvt_ep0”) to describe pcie hw behavior in the file nvt-peri.dtsi. In most time, it is not needed/encouraged to modify these device tree nodes. Parameters may be modified are:</p>
+<h4 id="dma-ranges-in-nvt_pcie-pcie2f04f0000">“dma-ranges” in “nvt_pcie: pcie@2,f04f0000”<a class="headerlink" href="#dma-ranges-in-nvt_pcie-pcie2f04f0000" title="Permanent link">&para;</a></h4>
+<p>“dma-ranges” is used to describe memory/register exported by RC to EP. Its format has 4 fields: type (don’t care now), pcie address, system address, and size. For example, below line represents map pcie address 0xC_0000_0000 to 33x internal address 0x0_0000_0000 with size 0x2_0000_0000:</p>
+<p><em>0x83000000 0x0C 0x00000000 0x00 0x00000000 0x02 0x00000000 /* RC MAU */</em></p>
+<pre><code>nvt_pcie: pcie@2,f04f0000 {
+                compatible = &quot;nvt,nvt_pcie_drv&quot;;
+…
+                #interrupt-cells = &lt;3&gt;;
+                interrupt-controller;
+                interrupt-parent = &lt;&amp;gic&gt;;
+                #address-cells = &lt;3&gt;;
+                #size-cells = &lt;2&gt;;
+                dma-ranges = &lt;0x83000000 0x0C 0x00000000 0x00 0x00000000 0x02 0x00000000 /* RC MAU */
+                                0x83000001 0x0E 0x00000000 0x02 0xF0000000 0 0x10000000&gt;; /* RC APB */
+/*              refclk-out = &lt;0&gt;;       */
+};
+</code></pre>
+<h4 id="reg-in-nvt_ep0">“reg” in “nvt_ep0”<a class="headerlink" href="#reg-in-nvt_ep0" title="Permanent link">&para;</a></h4>
+<p>“reg” is used to describe pcie address mapping of EP internal resource. It expects fixed sequence to describe mapping of MAU, ATU, APB registers. Its format has 2 fields: pcie address, and size (The internal system address is not allowed to modify). For example, below line represents map pcie address 0x4_0000_0000 to EP MAU with size 0x2_0000_0000.</p>
+<p><em>0x04 0x00000000 0x02 0x00000000 /* MAU */</em></p>
+<pre><code>nvt_ep0 {
+                reg = &lt;0x04 0x00000000 0x02 0x00000000                  /* MAU */
+                                0x06 0x10000000 0x00 0x10000000         /* ATU */
+                                0x06 0x20000000 0x00 0x10000000&gt;;       /* APB */
+        };
+</code></pre>
+<h4 id="refclk-out-in-nvt_pcie-pcie2f04f0000">“refclk-out” in “nvt_pcie: pcie@2,f04f0000”<a class="headerlink" href="#refclk-out-in-nvt_pcie-pcie2f04f0000" title="Permanent link">&para;</a></h4>
+<p>PCIe spec defines a differential clock signal as clock source of each pcie device (i.e. RC, EP). Novatek suggests use external clock buffer IC to generate 100 MHz refclk to 33x RC/EP</p>
+<p>33x RC can be configured to output 100 MHz to cascaded EP by device tree parameter “refclk-out”. However, 33x refclk jitter may exceeds 300ppm defined by PCIe spec. Use it by your own risk!!</p>
+<p>Requirements of outputting REFCLK are:</p>
+<ol>
+<li>
+<p>Bootstrap BS[10] should be tied to LOW</p>
+<p>(for detail bootstrap description, please refer to NT9833x datasheet)</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>10</th>
+<th><strong>PCIE_REFCLK_BOOT_SEL</strong> Select REFCLK source (This will effect default value of register PCIE_REFCLK_SRC) 0: from MPLL5 1: from REFCLK pad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Enable refclk-out at device tree node:</li>
+</ol>
+<pre><code>nvt_pcie: pcie@2,f04f0000 {
+                compatible = &quot;nvt,nvt_pcie_drv&quot;;
+…
+                #interrupt-cells = &lt;3&gt;;
+                interrupt-controller;
+                interrupt-parent = &lt;&amp;gic&gt;;
+                #address-cells = &lt;3&gt;;
+                #size-cells = &lt;2&gt;;
+                dma-ranges = &lt;0x83000000 0x0C 0x00000000 0x00 0x00000000 0x02 0x00000000 /* RC MAU */
+                                0x83000001 0x0E 0x00000000 0x02 0xF0000000 0 0x10000000&gt;; /* RC APB */
+              refclk-out = &lt;1&gt;; 
+};
+</code></pre>
+<h3 id="nvt-pcie-lib">nvt-pcie-lib<a class="headerlink" href="#nvt-pcie-lib" title="Permanent link">&para;</a></h3>
+<p>The relative configurations are defined by node “nvt-pcie-lib-cfg” in the file nvt-mem-tbl-common.dtsi.</p>
+<p>“rc_shm_size” represents the shared memory size. This memory space is allocated from kernel memory at RC side. And the physical address will be passed to EP side through internal registers.</p>
+<p>“ep_alloc_mem” represents EP memory regions which can be allocated by RC users. That means these memory regions belong to EP, but RC users can allocate and put some data directly to these regions through PCIe. This kind of allocation should use nvt-pcie-lib API to accomplish.</p>
+<pre><code>nvt-pcie-lib-cfg {
+        compatible = &quot;nvt,nvt-pcie-lib&quot;;
+        rc_shm_size = &lt;0x0 0x00100000&gt;; /* [SIZE-H] [SIZE-L] */
+        ep_alloc_mem = &lt;0x1 0x0 0x18000000 0x0 0x08000000&gt;; /* &lt; [CHIPID] [ADDR-H] [ADDR-L] [SIZE-H] [SIZE-L] */
+};
+</code></pre>
+<h2 id="nvt-pcie-lib-api-introduction">nvt-pcie-lib API introduction<a class="headerlink" href="#nvt-pcie-lib-api-introduction" title="Permanent link">&para;</a></h2>
+<h3 id="address-conversion">Address conversion<a class="headerlink" href="#address-conversion" title="Permanent link">&para;</a></h3>
+<h4 id="nvtpcie_get_upstream_pa">nvtpcie_get_upstream_pa<a class="headerlink" href="#nvtpcie_get_upstream_pa" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>From the view of EP side, get a mapped physical address to an upstream physical address of RC.</p>
+<p>[Syntax]</p>
+<p>phys_addr_t nvtpcie_get_upstream_pa(nvtpcie_chipid_t ep_chipid, phys_addr_t rc_pa);</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ep_chipid</td>
+<td>EP chip id</td>
+</tr>
+<tr>
+<td>rc_pa</td>
+<td>Physical address of RC</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NVTPCIE_INVALID_PA (-1)</td>
+<td>Failure</td>
+</tr>
+<tr>
+<td>Other values</td>
+<td>The mapped physical address</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nvtpcie_get_downstream_pa">nvtpcie_get_downstream_pa<a class="headerlink" href="#nvtpcie_get_downstream_pa" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>From the view of RC side, get a mapped physical address to a downstream physical address of EP.</p>
+<p>[Syntax]</p>
+<p>phys_addr_t nvtpcie_get_downstream_pa(nvtpcie_chipid_t ep_chipid, phys_addr_t ep_pa);</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ep_chipid</td>
+<td>EP chip id</td>
+</tr>
+<tr>
+<td>ep_pa</td>
+<td>Physical address of EP</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NVTPCIE_INVALID_PA (-1)</td>
+<td>Failure</td>
+</tr>
+<tr>
+<td>Other values</td>
+<td>The mapped physical address</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nvtpcie_get_pcie_addr">nvtpcie_get_pcie_addr<a class="headerlink" href="#nvtpcie_get_pcie_addr" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Get a mapped physical address on the local chip. If the target DDR id is at the same chip as the local chip, the tar_pa is just returned. Otherwise, a mapped address will be returned, which is converted automatically by the given parameters. Please note that the returned address is on the view of the local chip.</p>
+<p>[Syntax]</p>
+<p>phys_addr_t nvtpcie_get_pcie_addr(nvtpcie_chipid_t loc_chipid, nvtpcie_ddrid_t tar_ddrid, phys_addr_t tar_pa);</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>loc_chipid</td>
+<td>Local chip id</td>
+</tr>
+<tr>
+<td>tar_ddrid</td>
+<td>target DDR id</td>
+</tr>
+<tr>
+<td>tar_pa</td>
+<td>target physical address</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NVTPCIE_INVALID_PA (-1)</td>
+<td>Failure</td>
+</tr>
+<tr>
+<td>Other values</td>
+<td>The mapped physical address</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nvtpcie_get_mapped_pa">nvtpcie_get_mapped_pa<a class="headerlink" href="#nvtpcie_get_mapped_pa" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Get a mapped physical address on the local chip automatically by the given parameters. The returned address could be upstream or downstream depending on the direction of the local chip id and the target chip id.</p>
+<p>[Syntax]</p>
+<p>phys_addr_t nvtpcie_get_mapped_pa(nvtpcie_chipid_t loc_chipid, nvtpcie_chipid_t tar_chipid, phys_addr_t tar_pa);</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>loc_chipid</td>
+<td>Local chip id</td>
+</tr>
+<tr>
+<td>tar_chipid</td>
+<td>Target chip id</td>
+</tr>
+<tr>
+<td>tar_pa</td>
+<td>Target physical address</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NVTPCIE_INVALID_PA (-1)</td>
+<td>Failure</td>
+</tr>
+<tr>
+<td>Other values</td>
+<td>The mapped physical address</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nvtpcie_get_unmapped_pa">nvtpcie_get_unmapped_pa<a class="headerlink" href="#nvtpcie_get_unmapped_pa" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Get an unmapped physical address by the given chip id and the mapped address. This is used to revert a mapped address to its original physical address of the target chip. The target chip id can be get from ret_map_chipid. If it is not needed, please set it NULL.</p>
+<p>[Syntax]</p>
+<p>phys_addr_t nvtpcie_get_unmapped_pa(nvtpcie_chipid_t loc_chipid, phys_addr_t mapped_pa, nvtpcie_chipid_t *ret_map_chipid);</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>loc_chipid</td>
+<td>Local chip id</td>
+</tr>
+<tr>
+<td>mapped_pa</td>
+<td>A mapped physical address</td>
+</tr>
+<tr>
+<td>ret_map_chipid</td>
+<td>The mapped chip (optional, NULL if not needed)</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NVTPCIE_INVALID_PA (-1)</td>
+<td>Failure</td>
+</tr>
+<tr>
+<td>Other values</td>
+<td>The unmapped physical address</td>
+</tr>
+</tbody>
+</table>
+<h3 id="shared-memory">Shared memory<a class="headerlink" href="#shared-memory" title="Permanent link">&para;</a></h3>
+<h4 id="nvtpcie_shmem_dump">nvtpcie_shmem_dump<a class="headerlink" href="#nvtpcie_shmem_dump" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Dump the shared memory data by a specific length.</p>
+<p>[Syntax]</p>
+<p>void nvtpcie_shmem_dump(unsigned long length);</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>length</td>
+<td>The length size to be dumped</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<p>None</p>
+<h4 id="nvtpcie_shmem_get_va">nvtpcie_shmem_get_va<a class="headerlink" href="#nvtpcie_shmem_get_va" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Get the virtual address of the shared memory.</p>
+<p>[Syntax]</p>
+<p>void *nvtpcie_shmem_get_va(void);</p>
+<p>[Parameter]</p>
+<p>None</p>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NULL</td>
+<td>Failure</td>
+</tr>
+<tr>
+<td>Other values</td>
+<td>The virtual address of shared memory</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nvtpcie_shmem_get_pa">nvtpcie_shmem_get_pa<a class="headerlink" href="#nvtpcie_shmem_get_pa" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Get the physical address of the shared memory.</p>
+<p>[Syntax]</p>
+<p>phys_addr_t nvtpcie_shmem_get_pa(void);</p>
+<p>[Parameter]</p>
+<p>None</p>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NVTPCIE_INVALID_PA (-1)</td>
+<td>Failure</td>
+</tr>
+<tr>
+<td>Other values</td>
+<td>The physical address of shared memory</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nvtpcie_shmem_get_size">nvtpcie_shmem_get_size<a class="headerlink" href="#nvtpcie_shmem_get_size" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Get the shared memory size.</p>
+<p>[Syntax]</p>
+<p>unsigned long nvtpcie_shmem_get_size(void);</p>
+<p>[Parameter]</p>
+<p>None</p>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Failure. No shared memory.</td>
+</tr>
+<tr>
+<td>Other values</td>
+<td>The size of shared memory</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ep-utility">EP utility<a class="headerlink" href="#ep-utility" title="Permanent link">&para;</a></h3>
+<h4 id="nvtpcie_alloc_epmem">nvtpcie_alloc_epmem<a class="headerlink" href="#nvtpcie_alloc_epmem" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Allocate a memory region from EP to use at RC. The output parameter ret_ep_pa is the mapped physical address at RC side. And the returned value is the virtual address of that physical address. To get the virtual address, an “ioremap” operation is applied when the API is called. You can use this address in kernel-space directly without mapping again.</p>
+<p>[Syntax]</p>
+<p>void *nvtpcie_alloc_epmem(nvtpcie_chipid_t ep_chipid, unsigned long alloc_size, phys_addr_t *ret_ep_pa);</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ep_chipid</td>
+<td>EP chip id</td>
+</tr>
+<tr>
+<td>alloc_size</td>
+<td>The size to be allocated</td>
+</tr>
+<tr>
+<td>ret_ep_pa</td>
+<td>The physical address of allocated memory</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NULL</td>
+<td>Failure</td>
+</tr>
+<tr>
+<td>Other values</td>
+<td>The virtual address of allocated memory</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nvtpcie_downstream_active">nvtpcie_downstream_active<a class="headerlink" href="#nvtpcie_downstream_active" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Check whether the downstream EP is active or not at RC side.</p>
+<p>[Syntax]</p>
+<p>int nvtpcie_downstream_active(nvtpcie_chipid_t ep_chipid);</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ep_chipid</td>
+<td>EP chip id</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>active</td>
+</tr>
+<tr>
+<td>0</td>
+<td>inactive</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nvtpcie_get_ep_count">nvtpcie_get_ep_count<a class="headerlink" href="#nvtpcie_get_ep_count" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Get the active EP count</p>
+<p>[Syntax]</p>
+<p>int nvtpcie_get_ep_count(void);</p>
+<p>[Parameter]</p>
+<p>None</p>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Failure</td>
+</tr>
+<tr>
+<td>Other values</td>
+<td>EP numbers</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mapping-info">Mapping Info.<a class="headerlink" href="#mapping-info" title="Permanent link">&para;</a></h3>
+<h4 id="nvtpcie_get_ddrid">nvtpcie_get_ddrid<a class="headerlink" href="#nvtpcie_get_ddrid" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Get the DDR id by the given parameters. The input physical address “loc_pa” could be a real DDR region or a mapped PCIe region.</p>
+<p>[Syntax]</p>
+<p>nvtpcie_ddrid_t nvtpcie_get_ddrid(nvtpcie_chipid_t loc_chipid, phys_addr_t loc_pa);</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>loc_chipid</td>
+<td>Local chip id</td>
+</tr>
+<tr>
+<td>loc_pa</td>
+<td>Local physical address</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DDR_ID_MAX</td>
+<td>Failure</td>
+</tr>
+<tr>
+<td>Other values</td>
+<td>DDR id</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nvtpcie_get_ddrid_map">nvtpcie_get_ddrid_map<a class="headerlink" href="#nvtpcie_get_ddrid_map" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Convert a specific DDR id to its chip id and the DDR index.</p>
+<p>[Syntax]</p>
+<p>int nvtpcie_get_ddrid_map(nvtpcie_ddrid_t ddrid, nvtpcie_chipid_t *out_chipid, nvtpcie_ddrid_t *out_ddridx);</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ddrid</td>
+<td>DDR id</td>
+</tr>
+<tr>
+<td>out_chipid</td>
+<td>Output chip id</td>
+</tr>
+<tr>
+<td>out_ddridx</td>
+<td>Output DDR index</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>-1</td>
+<td>Failure</td>
+</tr>
+</tbody>
+</table>
+<h3 id="misc">Misc.<a class="headerlink" href="#misc" title="Permanent link">&para;</a></h3>
+<h4 id="nvtpcie_get_my_chipid">nvtpcie_get_my_chipid<a class="headerlink" href="#nvtpcie_get_my_chipid" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Get the current chip id. (RC or EPn)</p>
+<p>[Syntax]</p>
+<p>nvtpcie_chipid_t nvtpcie_get_my_chipid(void);</p>
+<p>[Parameter]</p>
+<p>None</p>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chip id</td>
+<td>The chip id at the caller side</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nvtpcie_edma_copy">nvtpcie_edma_copy<a class="headerlink" href="#nvtpcie_edma_copy" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Copy data across PCIe using eDMA. The source and destination chip ids are assumed to be different.</p>
+<p>[Syntax]</p>
+<p>int nvtpcie_edma_copy(nvtpcie_chipid_t src_chipid, phys_addr_t src_pa, nvtpcie_chipid_t dst_chipid, phys_addr_t dst_pa, unsigned long len);</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>src_chipid</td>
+<td>Chip id of the source</td>
+</tr>
+<tr>
+<td>src_pa</td>
+<td>Physical address of the source</td>
+</tr>
+<tr>
+<td>dst_chipid</td>
+<td>Chip id of the destination</td>
+</tr>
+<tr>
+<td>dst_pa</td>
+<td>Physical address of the destination</td>
+</tr>
+<tr>
+<td>len</td>
+<td>Size to be copied</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>-1</td>
+<td>Failure</td>
+</tr>
+</tbody>
+</table>
+<h3 id="proc-interface">/proc interface<a class="headerlink" href="#proc-interface" title="Permanent link">&para;</a></h3>
+<p>A “/proc” interface is provided for debugging or dumping some information. To list all commands, you can “cat” the “/proc/nvt-pcie-lib/help” node. To trigger a command, please use “echo [your command] >” to the “/proc/nvt-pcie-lib/cmd” node. The below demonstrates how to use it.</p>
+<h4 id="list-all-commands">List all commands<a class="headerlink" href="#list-all-commands" title="Permanent link">&para;</a></h4>
+<pre><code>root@NVTEVM:/$ cat /proc/nvt-pcie-lib/help
+cmd_list:
+dump
+perf
+test
+version
+</code></pre>
+<h4 id="show-version">Show version<a class="headerlink" href="#show-version" title="Permanent link">&para;</a></h4>
+<pre><code>root@NVTEVM:/$ echo version &gt; /proc/nvt-pcie-lib/cmd
+[  190.162430] PROC_CMD: [version], size 8
+[  190.168264] nvt-pcie-lib: 0.0.16
+</code></pre>
+<h4 id="show-configurations">Show configurations<a class="headerlink" href="#show-configurations" title="Permanent link">&para;</a></h4>
+<pre><code>root@NVTEVM:/$ echo dump &gt; /proc/nvt-pcie-lib/cmd
+PROC_CMD: [dump], size 5
+
+rc_dumpmap
+              local_pa,               size,             name, ep_chipid, ep_pa
+[0] 0x0000000400000000, 0x0000000200000000,              mau,         1, 0x0000000000000000
+[1] 0x0000000620000000, 0x0000000010000000,              apb,         1, 0x00000002F0000000
+[2] 0x0000000000000000, 0x0000000000000000,           (null),         0, 0x0000000000000000
+[3] 0x0000000000000000, 0x0000000000000000,           (null),         0, 0x0000000000000000
+[4] 0x0000000000000000, 0x0000000000000000,           (null),         0, 0x0000000000000000
+[5] 0x0000000000000000, 0x0000000000000000,           (null),         0, 0x0000000000000000
+[6] 0x0000000000000000, 0x0000000000000000,           (null),         0, 0x0000000000000000
+[7] 0x0000000000000000, 0x0000000000000000,           (null),         0, 0x0000000000000000
+[8] 0x0000000000000000, 0x0000000000000000,           (null),         0, 0x0000000000000000
+[9] 0x0000000000000000, 0x0000000000000000,           (null),         0, 0x0000000000000000
+[10] 0x0000000000000000, 0x0000000000000000,           (null),         0, 0x0000000000000000
+[11] 0x0000000000000000, 0x0000000000000000,           (null),         0, 0x0000000000000000
+[12] 0x0000000000000000, 0x0000000000000000,           (null),         0, 0x0000000000000000
+[13] 0x0000000000000000, 0x0000000000000000,           (null),         0, 0x0000000000000000
+[14] 0x0000000000000000, 0x0000000000000000,           (null),         0, 0x0000000000000000
+[15] 0x0000000000000000, 0x0000000000000000,           (null),         0, 0x0000000000000000
+[16] 0x0000000000000000, 0x0000000000000000,           (null),         0, 0x0000000000000000
+[17] 0x0000000000000000, 0x0000000000000000,           (null),         0, 0x0000000000000000
+
+ep_upmap
+              local_pa,               size,             name, rc_pa
+[0] 0x0000000C00000000, 0x0000000200000000,              mau, 0x0000000000000000
+[1] 0x0000000E00000000, 0x0000000010000000,              apb, 0x00000002F0000000
+
+ddr_map
+       ddrid,   chipid,   ddridx,          chip_base,       size
+[0]        0,        0,        0, 0x0000000000000000, 0x40000000
+[1]        1,        0,        1, 0x0000000100000000, 0x40000000
+[2]        2,        1,        0, 0x0000000000000000, 0x40000000
+[3]        3,        1,        1, 0x0000000100000000, 0x40000000
+[4]        0,        0,        0, 0x0000000000000000, 0x00000000
+[5]        0,        0,        0, 0x0000000000000000, 0x00000000
+[6]        0,        0,        0, 0x0000000000000000, 0x00000000
+[7]        0,        0,        0, 0x0000000000000000, 0x00000000
+
+ep_allocmem
+   ep_chipid,        ep_local_pa,       size,          rc_map_pa,          rc_map_va
+[0]        1, 0x0000000018000000, 0x08000000, 0x0000000418000000, 0xFFFFFF8010000000
+[1]        0, 0x0000000000000000, 0x00000000, 0x0000000000000000, 0x0000000000000000
+[2]        0, 0x0000000000000000, 0x00000000, 0x0000000000000000, 0x0000000000000000
+[3]        0, 0x0000000000000000, 0x00000000, 0x0000000000000000, 0x0000000000000000
+[4]        0, 0x0000000000000000, 0x00000000, 0x0000000000000000, 0x0000000000000000
+[5]        0, 0x0000000000000000, 0x00000000, 0x0000000000000000, 0x0000000000000000
+[6]        0, 0x0000000000000000, 0x00000000, 0x0000000000000000, 0x0000000000000000
+[7]        0, 0x0000000000000000, 0x00000000, 0x0000000000000000, 0x0000000000000000
+
+dump va=FFFFFF8008D4D000, pa=2C100000 length=00000100 to console:
+2C100000 : 00000000 00000000 00000000 00000000  ...............
+2C100010 : 00000000 00000000 00000000 00000000  ...............
+2C100020 : 00000000 00000000 00000000 00000000  ...............
+2C100030 : 00000000 00000000 00000000 00000000  ...............
+2C100040 : 00000000 00000000 00000000 00000000  ...............
+2C100050 : 00000000 00000000 00000000 00000000  ...............
+2C100060 : 00000000 00000000 00000000 00000000  ...............
+2C100070 : 00000000 00000000 00000000 00000000  ...............
+2C100080 : 00000000 00000000 00000000 00000000  ...............
+2C100090 : 00000000 00000000 00000000 00000000  ...............
+2C1000A0 : 00000000 00000000 00000000 00000000  ...............
+2C1000B0 : 00000000 00000000 00000000 00000000  ...............
+2C1000C0 : 00000000 00000000 00000000 00000000  ...............
+2C1000D0 : 00000000 00000000 00000000 00000000  ...............
+2C1000E0 : 00000000 00000000 00000000 00000000  ...............
+2C1000F0 : 00000000 00000000 00000000 00000000  ...............
+
+
+nvtpcie_get_ep_count = 1
+</code></pre>
+<h4 id="run-a-self-test">Run a self-test<a class="headerlink" href="#run-a-self-test" title="Permanent link">&para;</a></h4>
+<p>Please note that a self-test may occupy system resources or conflict with other running services. Only run a self-test under a debug environment.</p>
+<pre><code>root@NVTEVM:/$ echo test &gt; /proc/nvt-pcie-lib/cmd
+PROC_CMD: [test], size 5
+
+nvtpcie_get_ddrid_map
+
+ddr_map
+       ddrid,   chipid,   ddridx,          chip_base,       size
+[0]        0,        0,        0, 0x0000000000000000, 0x40000000
+[1]        1,        0,        1, 0x0000000100000000, 0x40000000
+[2]        2,        1,        0, 0x0000000000000000, 0x40000000
+[3]        3,        1,        1, 0x0000000100000000, 0x40000000
+[4]        0,        0,        0, 0x0000000000000000, 0x00000000
+[5]        0,        0,        0, 0x0000000000000000, 0x00000000
+[6]        0,        0,        0, 0x0000000000000000, 0x00000000
+[7]        0,        0,        0, 0x0000000000000000, 0x00000000
+nvtpcie_get_ep_count = 1
+
+nvtpcie_get_ddrid test
+chipid 0, pa 0x0000000001110000 =&gt; ddrid 0
+chipid 0, pa 0x0000000042220000 =&gt; ddrid 8
+chipid 0, pa 0x00000002F0110084 =&gt; ddrid 8
+chipid 0, pa 0x0000000401110000 =&gt; ddrid 2
+chipid 0, pa 0x0000000442220000 =&gt; ddrid 8
+chipid 0, pa 0x0000000620110000 =&gt; ddrid 8
+chipid 1, pa 0x0000000001110000 =&gt; ddrid 2
+chipid 1, pa 0x0000000042220000 =&gt; ddrid 8
+chipid 1, pa 0x00000002F0110084 =&gt; ddrid 8
+chipid 1, pa 0x0000000C01110000 =&gt; ddrid 0
+chipid 1, pa 0x0000000C42220000 =&gt; ddrid 8
+chipid 1, pa 0x0000000E00110000 =&gt; ddrid 8
+
+nvtpcie_get_upstream_pa
+ep_chipid 1, rc_pa 0x0000000001110000, ep_ups_pa 0x0000000C01110000
+ep_chipid 1, rc_pa 0x0000000042220000, ep_ups_pa 0x0000000C42220000
+ep_chipid 1, rc_pa 0x00000002F0110084, ep_ups_pa 0x0000000E00110084
+
+nvtpcie_get_downstream_pa
+ep_chipid 1, ep_pa 0x0000000001110000, rc_down_pa 0x0000000401110000
+ep_chipid 1, ep_pa 0x0000000042220000, rc_down_pa 0x0000000442220000
+ep_chipid 1, ep_pa 0x00000002F0110084, rc_down_pa 0x0000000620110084
+_nvtpcie_reg_test pa 0x620110084
+org_val = 0x0
+new_val = 0x12345678
+chk_val = 0x0
+
+nvtpcie_get_pcie_addr
+     local: loc_chipid 0, tar_ddrid 0, tar_pa 0x0000000001110000, pcie_pa 0x0000000001110000
+downstream: loc_chipid 0, tar_ddrid 2, tar_pa 0x0000000001110000, pcie_pa 0x0000000401110000
+  upstream: loc_chipid 1, tar_ddrid 0, tar_pa 0x0000000001110000, pcie_pa 0x0000000C01110000
+
+nvtpcie_get_mapped_pa and nvtpcie_get_unmapped_pa
+
+nvtpcie_shmem_xxx test
+shmem pa 0x000000002C100000, va 0xFFFFFF8008D4D000, size 0x100000
+
+nvtpcie_alloc_epmem
+
+ep_allocmem
+   ep_chipid,        ep_local_pa,       size,          rc_map_pa,          rc_map_va
+[0]        1, 0x0000000018000000, 0x08000000, 0x0000000418000000, 0xFFFFFF8010000000
+[1]        0, 0x0000000000000000, 0x00000000, 0x0000000000000000, 0x0000000000000000
+[2]        0, 0x0000000000000000, 0x00000000, 0x0000000000000000, 0x0000000000000000
+[3]        0, 0x0000000000000000, 0x00000000, 0x0000000000000000, 0x0000000000000000
+[4]        0, 0x0000000000000000, 0x00000000, 0x0000000000000000, 0x0000000000000000
+[5]        0, 0x0000000000000000, 0x00000000, 0x0000000000000000, 0x0000000000000000
+[6]        0, 0x0000000000000000, 0x00000000, 0x0000000000000000, 0x0000000000000000
+[7]        0, 0x0000000000000000, 0x00000000, 0x0000000000000000, 0x0000000000000000
+alloc_epmem 1: ep_chipid 1, len 65536, p_rc_va 0xFFFFFF8010282000, ret_ep_pa 0x0000000018282000
+alloc_epmem 2: ep_chipid 1, len 65536, p_rc_va 0xFFFFFF8010292000, ret_ep_pa 0x0000000018292000
+alloc_epmem 3: ep_chipid 1, len 65536, p_rc_va 0xFFFFFF80102A2000, ret_ep_pa 0x00000000182A2000
+
+nvtpcie_downstream_active
+ep_chipid 1, is_active 1
+
+nvtpcie_edma_copy test
+edma_copy: chip 0 pa 0x0000000001110000 =&gt; chip 1 pa 0x0000000001110000
+edma_copy: chip 1 pa 0x0000000001110000 =&gt; chip 0 pa 0x0000000001110000
+edma test done
+root@NVTEVM:/$
+</code></pre>
+<h4 id="run-a-performance-test">Run a performance test<a class="headerlink" href="#run-a-performance-test" title="Permanent link">&para;</a></h4>
+<p>A series of performance tests will be performed sequentially. Each test is performed 10 times, and the average value will be shown at the end.</p>
+<pre><code>root@NVTEVM:/$ echo perf &gt; /proc/nvt-pcie-lib/cmd
+PROC_CMD: [perf], size 5
+
+[REMOTE READ (edma)]
+loop_num 10, 1048576 bytes, dur_us 1202
+loop_num 9, 1048576 bytes, dur_us 1199
+loop_num 8, 1048576 bytes, dur_us 1200
+loop_num 7, 1048576 bytes, dur_us 1199
+loop_num 6, 1048576 bytes, dur_us 1199
+loop_num 5, 1048576 bytes, dur_us 1200
+loop_num 4, 1048576 bytes, dur_us 1199
+loop_num 3, 1048576 bytes, dur_us 1199
+loop_num 2, 1048576 bytes, dur_us 1199
+loop_num 1, 1048576 bytes, dur_us 1199
+avg: 953250 KB/s (10485760 bytes / 11995 us)
+
+[REMOTE READ (memcpy_fromio)]
+loop_num 10, 1048576 bytes, dur_us 139336
+loop_num 9, 1048576 bytes, dur_us 139164
+loop_num 8, 1048576 bytes, dur_us 139908
+loop_num 7, 1048576 bytes, dur_us 140222
+loop_num 6, 1048576 bytes, dur_us 139864
+loop_num 5, 1048576 bytes, dur_us 139374
+loop_num 4, 1048576 bytes, dur_us 139845
+loop_num 3, 1048576 bytes, dur_us 140014
+loop_num 2, 1048576 bytes, dur_us 139935
+loop_num 1, 1048576 bytes, dur_us 140179
+avg: 7505 KB/s (10485760 bytes / 1397841 us)
+
+[LOCAL READ (memcpy_fromio)]
+loop_num 10, 1048576 bytes, dur_us 764
+loop_num 9, 1048576 bytes, dur_us 765
+loop_num 8, 1048576 bytes, dur_us 718
+loop_num 7, 1048576 bytes, dur_us 718
+loop_num 6, 1048576 bytes, dur_us 700
+loop_num 5, 1048576 bytes, dur_us 719
+loop_num 4, 1048576 bytes, dur_us 806
+loop_num 3, 1048576 bytes, dur_us 706
+loop_num 2, 1048576 bytes, dur_us 805
+loop_num 1, 1048576 bytes, dur_us 709
+avg: 1497965 KB/s (10485760 bytes / 7410 us)
+
+[REMOTE WRITE (edma)]
+loop_num 10, 1048576 bytes, dur_us 1179
+loop_num 9, 1048576 bytes, dur_us 1176
+loop_num 8, 1048576 bytes, dur_us 1176
+loop_num 7, 1048576 bytes, dur_us 1176
+loop_num 6, 1048576 bytes, dur_us 1176
+loop_num 5, 1048576 bytes, dur_us 1176
+loop_num 4, 1048576 bytes, dur_us 1175
+loop_num 3, 1048576 bytes, dur_us 1176
+loop_num 2, 1048576 bytes, dur_us 1176
+loop_num 1, 1048576 bytes, dur_us 1175
+avg: 953250 KB/s (10485760 bytes / 11761 us)
+
+[REMOTE WRITE (memcpy_toio)]
+loop_num 10, 1048576 bytes, dur_us 4298
+loop_num 9, 1048576 bytes, dur_us 4285
+loop_num 8, 1048576 bytes, dur_us 4288
+loop_num 7, 1048576 bytes, dur_us 4285
+loop_num 6, 1048576 bytes, dur_us 4285
+loop_num 5, 1048576 bytes, dur_us 4287
+loop_num 4, 1048576 bytes, dur_us 4285
+loop_num 3, 1048576 bytes, dur_us 4285
+loop_num 2, 1048576 bytes, dur_us 4300
+loop_num 1, 1048576 bytes, dur_us 4304
+avg: 249660 KB/s (10485760 bytes / 42902 us)
+
+[LOCAL WRITE (memcpy_toio)]
+loop_num 10, 1048576 bytes, dur_us 716
+loop_num 9, 1048576 bytes, dur_us 726
+loop_num 8, 1048576 bytes, dur_us 743
+loop_num 7, 1048576 bytes, dur_us 722
+loop_num 6, 1048576 bytes, dur_us 714
+loop_num 5, 1048576 bytes, dur_us 722
+loop_num 4, 1048576 bytes, dur_us 714
+loop_num 3, 1048576 bytes, dur_us 715
+loop_num 2, 1048576 bytes, dur_us 714
+loop_num 1, 1048576 bytes, dur_us 700
+avg: 1497965 KB/s (10485760 bytes / 7186 us)
+</code></pre>
+<h2 id="uboot-init-flow">uboot init flow<a class="headerlink" href="#uboot-init-flow" title="Permanent link">&para;</a></h2>
+<p>PCIe link and mapping are initialized in uboot phase. It is located at u-boot/board/novatek/nvt-na51090-a64/nvt_pcie/nvt_pcie_mapping.c. In most cases, you are not required to touch this file. However, if you need to understand how it works, below flow chart can give you a brief view of PCIe init:</p>
+<h2 id="trouble-shooting">Trouble shooting<a class="headerlink" href="#trouble-shooting" title="Permanent link">&para;</a></h2>
+<h3 id="which-driver-support-running-on-rc-and-controlling-hw-on-ep">Which driver support running on RC and controlling hw on EP?<a class="headerlink" href="#which-driver-support-running-on-rc-and-controlling-hw-on-ep" title="Permanent link">&para;</a></h3>
+<p>Ans: These system drivers can support: GPIO, USB host, pinctrl, clock, I2C, wdt, PWM, adc, uart, DDR arbiter, efuse, thermal, SATA. For HDAL related driver, please refer to HDAL documents.</p>
+<h3 id="i-concern-there-are-any-error-on-pcie-bus-if-there-any-way-to-observe-errors-below-transaction-layer">I concern there are any error on PCIe bus. If there any way to observe errors below transaction layer?<a class="headerlink" href="#i-concern-there-are-any-error-on-pcie-bus-if-there-any-way-to-observe-errors-below-transaction-layer" title="Permanent link">&para;</a></h3>
+<p>Ans: You can cat file pcie_sts under /proc/nvt_pcie.</p>
+<pre><code>root@NVTEVM:/proc/nvt_pcie$ cat pcie_sts
+[  448.049669]
+[  448.051302]
+[  448.051302]  Error count:
+[  448.055655] uncorr_error_cnt: 0
+[  448.058875] rx_error_cnt: 0
+[  448.061790]
+[  448.061790]  =====================
+[  448.066951] 0x2F08B301C: 0x  370004
+[  448.070535] 0x2F08B3018: 0x    1707
+[  448.074104]
+[  448.074104]  =====================
+[  448.079233]
+[  448.079233]  Test RAS D.E.S --- event count analysis function
+[  448.086643] Grp 0 :
+[  448.086651] 0 [EBUF Overflow            ]: 0x       0,
+[  448.088746] 1 [EBUF Under-run           ]: 0x       0,
+[  448.093978] 2 [Decode Error             ]: 0x       0,
+[  448.099194] 3 [Running Disparity Error  ]: 0x       0,
+[  448.104435] 4 [SKP OS Parity Error      ]: 0x       0,
+[  448.109649] 5 [SYNC Header Error        ]: 0x       0,
+[  448.114881] 6 [Rx Valid de-assertion    ]: 0x       0,
+[  448.120106]
+[  448.126899] Grp 1 :
+[  448.126904] 0 [Reserved                 ]: 0x       0,
+[  448.128998] 1 [Reserved                 ]: 0x       0,
+[  448.134228] 2 [Reserved                 ]: 0x       0,
+[  448.139443] 3 [Reserved                 ]: 0x       0,
+[  448.144683] 4 [Reserved                 ]: 0x       0,
+[  448.149912] 5 [Detect EI Infer          ]: 0x       0,
+[  448.155127] 6 [Receiver Error           ]: 0x       0,
+[  448.160368] 7 [Rx Recovery Request      ]: 0x       0,
+[  448.165584] 8 [N_FTS Timeout            ]: 0x       0,
+[  448.170814] 9 [Framing Error            ]: 0x       0,
+[  448.176029] 10 [Deskew Error             ]: 0x       0,
+[  448.181266]
+[  448.188132] Grp 2 :
+[  448.188137] 0 [BAD TLP                  ]: 0x       0,
+[  448.190247] 1 [LCRC Error               ]: 0x       0,
+[  448.195461] 2 [BAD DLLP                 ]: 0x       0,
+[  448.200701] 3 [Replay Number Rollover   ]: 0x       0,
+[  448.205916] 4 [Replay Timeout           ]: 0x       0,
+[  448.211146] 5 [Rx Nak DLLP              ]: 0x       0,
+[  448.216360] 6 [Tx Nak DLLP              ]: 0x       0,
+[  448.221600] 7 [Retry TLP                ]: 0x       0,
+[  448.226812]
+[  448.233607] Grp 3 :
+[  448.233612] 0 [FC Timeout               ]: 0x       0,
+[  448.235707] 1 [Poisoned TLP             ]: 0x       0,
+[  448.240948] 2 [ECRC Error               ]: 0x       0,
+[  448.246163] 3 [Unsupported Request      ]: 0x       0,
+[  448.251393] 4 [Completer Abort          ]: 0x       0,
+[  448.256608] 5 [Completion Timeout       ]: 0x       0,
+[  448.261846]
+</code></pre>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="NT9833x_Quick_Bringup_User_Guide_en.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Quick Bringup User Guide" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Quick Bringup User Guide
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../NT9833x_DVR_NVR_SDK_Quick_Start.html" class="md-footer__link md-footer__link--next" aria-label="Next: Quick Start" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Quick Start
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.highlight", "navigation.tabs"], "search": "../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.37e9125f.min.js"></script>
+      
+    
+  </body>
+</html>

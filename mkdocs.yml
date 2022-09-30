@@ -3,16 +3,22 @@ nav:
     #- Home: index.md
     - Software: 
        - CVAI:
-           - MD User Guide: NT9833X_MD_User_Guide_en.md
-           - IVE User Guide: NT9833X_IVE_User_Guide_en.md
+           - MD User Guide: Software/CVAI/NT9833X_MD_User_Guide_en.md
+           - IVE User Guide: Software/CVAI/NT9833X_IVE_User_Guide_en.md
+           - MD Tuning Guide: Software/CVAI/NT9833X_MD_Tuning_Guide_en.md
        - ISPQ:
-          - VPE IQ Tuning Guide: NT9833x_VPE_IQ_Tuning_Guide_en.md
-          - LCD IQ Tuning Guide: NT9833x_LCD_IQ_Tuning_Guide_en.md
+          - VPE IQ Tuning Guide: Software/ISP/NT9833x_VPE_IQ_Tuning_Guide_en.md
+          - LCD IQ Tuning Guide: Software/ISP/NT9833x_LCD_IQ_Tuning_Guide_en.md
+          - DI Tuning Guide: Software/ISP/NT9833x_DI_Tuning_Guide_en.md
        - MEDIA:
-          - HDAL hd_videodec: Novatek+HDAL+Design+Specification+-+hd_videodec.md
-          - HDAL hd_videoenc: Novatek+HDAL+Design+Specification+-+hd_videoenc.md
+          - Vendor ISP Programming Guide: Software/MEDIA/NT9833x_HDAL_Vendor_ISP_Programming_Guide_en.md
+          - Vendor Media Programming Guide: Software/MEDIA/NT9833x_HDAL_Vendor_Media_Programming_Guide_en.md
+          - Vendor PCie Programming Guide: Software/MEDIA/NT9833x_HDAL_Vendor_PCIe_Programming_Guide_en.md
        - OSDRV:
-          - Linux Programming Guide: NT9833x_SDK_Pure_Linux_Programming_Guide_en.md  
+          - Linux Programming Guide: Software/OSDRV/NT9833x_SDK_Pure_Linux_Programming_Guide_en.md 
+          - Quick Bringup User Guide: Software/OSDRV/NT9833x_Quick_Bringup_User_Guide_en.md 
+          - PCIe User Guide: Software/OSDRV/NT9833x_PCIe_User_Guide_en.md  
+       - Quick Start: Software/NT9833x_DVR_NVR_SDK_Quick_Start.md   
     - Hardware(Not Ready): 
        - Not Ready: 
           - not_ready - not_reay.md

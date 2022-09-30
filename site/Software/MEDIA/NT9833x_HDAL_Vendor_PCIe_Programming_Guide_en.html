@@ -1,0 +1,2285 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.3">
+    
+    
+      
+        <title>Vendor PCie Programming Guide - NT98336/NT98633 Documents</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7a952b86.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="NT98336/NT98633 Documents" class="md-header__button md-logo" aria-label="NT98336/NT98633 Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NT98336/NT98633 Documents
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Vendor PCie Programming Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../CVAI/NT9833X_MD_User_Guide_en.html" class="md-tabs__link md-tabs__link--active">
+        Software
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../not_ready - not_reay.md" class="md-tabs__link">
+        Hardware(Not Ready)
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../not_ready - not_reay.md" class="md-tabs__link">
+        For Reference(Not Ready)
+      </a>
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="NT98336/NT98633 Documents" class="md-nav__button md-logo" aria-label="NT98336/NT98633 Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    NT98336/NT98633 Documents
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          Software
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Software" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Software
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_1" type="checkbox" id="__nav_1_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_1">
+          CVAI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="CVAI" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          CVAI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CVAI/NT9833X_MD_User_Guide_en.html" class="md-nav__link">
+        MD User Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CVAI/NT9833X_IVE_User_Guide_en.html" class="md-nav__link">
+        IVE User Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CVAI/NT9833X_MD_Tuning_Guide_en.html" class="md-nav__link">
+        MD Tuning Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_2" type="checkbox" id="__nav_1_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_2">
+          ISPQ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="ISPQ" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          ISPQ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ISP/NT9833x_VPE_IQ_Tuning_Guide_en.html" class="md-nav__link">
+        VPE IQ Tuning Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ISP/NT9833x_LCD_IQ_Tuning_Guide_en.html" class="md-nav__link">
+        LCD IQ Tuning Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ISP/NT9833x_DI_Tuning_Guide_en.html" class="md-nav__link">
+        DI Tuning Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_3">
+          MEDIA
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MEDIA" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          MEDIA
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="NT9833x_HDAL_Vendor_ISP_Programming_Guide_en.html" class="md-nav__link">
+        Vendor ISP Programming Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="NT9833x_HDAL_Vendor_Media_Programming_Guide_en.html" class="md-nav__link">
+        Vendor Media Programming Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Vendor PCie Programming Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="NT9833x_HDAL_Vendor_PCIe_Programming_Guide_en.html" class="md-nav__link md-nav__link--active">
+        Vendor PCie Programming Guide
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameter-ids-and-data-structure-definition" class="md-nav__link">
+    Parameter IDs and data structure definition
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameter IDs and data structure definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vendor-pcie-function-and-data-structure-definition" class="md-nav__link">
+    Vendor PCIe function and data structure definition
+  </a>
+  
+    <nav class="md-nav" aria-label="Vendor PCIe function and data structure definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_rc_init" class="md-nav__link">
+    Function: vendor_pcie_rc_init
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_ep_init" class="md-nav__link">
+    Function: vendor_pcie_ep_init
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_rc_uninit" class="md-nav__link">
+    Function: vendor_pcie_rc_uninit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_ep_uninit" class="md-nav__link">
+    Function: vendor_pcie_ep_uninit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_get_chipid" class="md-nav__link">
+    Function: vendor_pcie_get_chipid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_get_shared_mem" class="md-nav__link">
+    Function: vendor_pcie_get_shared_mem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_get_ep_count" class="md-nav__link">
+    Function: vendor_pcie_get_ep_count
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_get_ddrid_map" class="md-nav__link">
+    Function: vendor_pcie_get_ddrid_map
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_mem_mmap" class="md-nav__link">
+    Function: vendor_pcie_mem_mmap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_mem_munmap" class="md-nav__link">
+    Function: vendor_pcie_mem_munmap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_get_upstream_pa" class="md-nav__link">
+    Function: vendor_pcie_get_upstream_pa
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_get_downstream_pa" class="md-nav__link">
+    Function: vendor_pcie_get_downstream_pa
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_rc_wakeup" class="md-nav__link">
+    Function: vendor_pcie_rc_wakeup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_ep_wakeup" class="md-nav__link">
+    Function: vendor_pcie_ep_wakeup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_rc_wait" class="md-nav__link">
+    Function: vendor_pcie_rc_wait
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_ep_wait" class="md-nav__link">
+    Function: vendor_pcie_ep_wait
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_rc_send" class="md-nav__link">
+    Function: vendor_pcie_rc_send
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_rc_recv" class="md-nav__link">
+    Function: vendor_pcie_rc_recv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_ep_send" class="md-nav__link">
+    Function: vendor_pcie_ep_send
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_ep_recv" class="md-nav__link">
+    Function: vendor_pcie_ep_recv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_gettime_us" class="md-nav__link">
+    Function: vendor_pcie_gettime_us
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pseudo-code-for-data-transfer" class="md-nav__link">
+    Pseudo code for Data Transfer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-change-buffer-size-for-pcie" class="md-nav__link">
+    How to change buffer size for PCIe
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_4">
+          OSDRV
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="OSDRV" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          OSDRV
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OSDRV/NT9833x_SDK_Pure_Linux_Programming_Guide_en.html" class="md-nav__link">
+        Linux Programming Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OSDRV/NT9833x_Quick_Bringup_User_Guide_en.html" class="md-nav__link">
+        Quick Bringup User Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OSDRV/NT9833x_PCIe_User_Guide_en.html" class="md-nav__link">
+        PCIe User Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NT9833x_DVR_NVR_SDK_Quick_Start.html" class="md-nav__link">
+        Quick Start
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Hardware(Not Ready)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Hardware(Not Ready)" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Hardware(Not Ready)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          Not Ready
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Not Ready" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Not Ready
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../not_ready - not_reay.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          For Reference(Not Ready)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="For Reference(Not Ready)" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          For Reference(Not Ready)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1">
+          Not Ready
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Not Ready" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Not Ready
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../not_ready - not_reay.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameter-ids-and-data-structure-definition" class="md-nav__link">
+    Parameter IDs and data structure definition
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameter IDs and data structure definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vendor-pcie-function-and-data-structure-definition" class="md-nav__link">
+    Vendor PCIe function and data structure definition
+  </a>
+  
+    <nav class="md-nav" aria-label="Vendor PCIe function and data structure definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_rc_init" class="md-nav__link">
+    Function: vendor_pcie_rc_init
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_ep_init" class="md-nav__link">
+    Function: vendor_pcie_ep_init
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_rc_uninit" class="md-nav__link">
+    Function: vendor_pcie_rc_uninit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_ep_uninit" class="md-nav__link">
+    Function: vendor_pcie_ep_uninit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_get_chipid" class="md-nav__link">
+    Function: vendor_pcie_get_chipid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_get_shared_mem" class="md-nav__link">
+    Function: vendor_pcie_get_shared_mem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_get_ep_count" class="md-nav__link">
+    Function: vendor_pcie_get_ep_count
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_get_ddrid_map" class="md-nav__link">
+    Function: vendor_pcie_get_ddrid_map
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_mem_mmap" class="md-nav__link">
+    Function: vendor_pcie_mem_mmap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_mem_munmap" class="md-nav__link">
+    Function: vendor_pcie_mem_munmap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_get_upstream_pa" class="md-nav__link">
+    Function: vendor_pcie_get_upstream_pa
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_get_downstream_pa" class="md-nav__link">
+    Function: vendor_pcie_get_downstream_pa
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_rc_wakeup" class="md-nav__link">
+    Function: vendor_pcie_rc_wakeup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_ep_wakeup" class="md-nav__link">
+    Function: vendor_pcie_ep_wakeup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_rc_wait" class="md-nav__link">
+    Function: vendor_pcie_rc_wait
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_ep_wait" class="md-nav__link">
+    Function: vendor_pcie_ep_wait
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_rc_send" class="md-nav__link">
+    Function: vendor_pcie_rc_send
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_rc_recv" class="md-nav__link">
+    Function: vendor_pcie_rc_recv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_ep_send" class="md-nav__link">
+    Function: vendor_pcie_ep_send
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_ep_recv" class="md-nav__link">
+    Function: vendor_pcie_ep_recv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-vendor_pcie_gettime_us" class="md-nav__link">
+    Function: vendor_pcie_gettime_us
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pseudo-code-for-data-transfer" class="md-nav__link">
+    Pseudo code for Data Transfer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-change-buffer-size-for-pcie" class="md-nav__link">
+    How to change buffer size for PCIe
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Vendor PCie Programming Guide</h1>
+
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>PCIE Bus connects RC to EPs. HDAL media flow could be centrally controlled by RC site. However, data could be transferred from RC to one EP, or from one EP to RC. Please refer to NT9833x_PCIe_User_Guide_en.doc to get some basic concepts about PCIe.</p>
+<p><img alt="" src="nvt_media/2c2d83f72f42fa3c0045a13b833faf11.png" /></p>
+<p>Fig 1. PCIE Bus diagram</p>
+<p>Some features about data-transfer between different chips are defined in this document. Data in shared memory could be transferred through PCIe. “Downstream” means data from RC (Root Complex) to EP (End Point). “Upstream” means data from EP to RC. Please refer to the following figure.</p>
+<p><img alt="" src="nvt_media/6690d078a5848dff599a38cdf396ed62.emf" /></p>
+<p>Fig 2. PCIe Proprietary</p>
+<h2 id="parameter-ids-and-data-structure-definition">Parameter IDs and data structure definition<a class="headerlink" href="#parameter-ids-and-data-structure-definition" title="Permanent link">&para;</a></h2>
+<h3 id="vendor-pcie-function-and-data-structure-definition">Vendor PCIe function and data structure definition<a class="headerlink" href="#vendor-pcie-function-and-data-structure-definition" title="Permanent link">&para;</a></h3>
+<h4 id="function-vendor_pcie_rc_init">Function: vendor_pcie_rc_init<a class="headerlink" href="#function-vendor_pcie_rc_init" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Initialize parameters in RC, such as buffers, and so on. Only be executed in RC.</p>
+<p>[Syntax]</p>
+<p>INT vendor_pcie_rc_init(void)</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>void</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>-1</td>
+<td>Failure</td>
+</tr>
+</tbody>
+</table>
+<h4 id="function-vendor_pcie_ep_init">Function: vendor_pcie_ep_init<a class="headerlink" href="#function-vendor_pcie_ep_init" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Initialize parameters in EP.</p>
+<p>[Syntax]</p>
+<p>INT vendor_pcie_ep_init(void)</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>void</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>-1</td>
+<td>Failure</td>
+</tr>
+</tbody>
+</table>
+<h4 id="function-vendor_pcie_rc_uninit">Function: vendor_pcie_rc_uninit<a class="headerlink" href="#function-vendor_pcie_rc_uninit" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Un-initialize parameters in RC.</p>
+<p>[Syntax]</p>
+<p>INT vendor_pcie_rc_init(void)</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>void</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>-1</td>
+<td>Failure</td>
+</tr>
+</tbody>
+</table>
+<h4 id="function-vendor_pcie_ep_uninit">Function: vendor_pcie_ep_uninit<a class="headerlink" href="#function-vendor_pcie_ep_uninit" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Un-nitialize parameters in EP.</p>
+<p>[Syntax]</p>
+<p>INT vendor_pcie_ep_uninit(void)</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>void</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>-1</td>
+<td>Failure</td>
+</tr>
+</tbody>
+</table>
+<h4 id="function-vendor_pcie_get_chipid">Function: vendor_pcie_get_chipid<a class="headerlink" href="#function-vendor_pcie_get_chipid" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Get self chipid. RC as 0.</p>
+<p>[Syntax]</p>
+<p>HD_RESULT vendor_pcie_get_chipid(unsigned int *p_id);</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p_id</td>
+<td>chip_id</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HD_OK</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>HD_ERR_NG</td>
+<td>Failure</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
+<h4 id="function-vendor_pcie_get_shared_mem">Function: vendor_pcie_get_shared_mem<a class="headerlink" href="#function-vendor_pcie_get_shared_mem" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Get a specific buffer that RC and EP could both access.</p>
+<p>[Syntax]</p>
+<p>HD_RESULT vendor_pcie_get_shared_mem(UINTPTR *p_shmem, unsigned long *size);</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p_shmem</td>
+<td>pointer to buffer</td>
+</tr>
+<tr>
+<td>size</td>
+<td>pointer to size</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HD_OK</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>HD_ERR_NG</td>
+<td>Failure</td>
+</tr>
+</tbody>
+</table>
+<h4 id="function-vendor_pcie_get_ep_count">Function: vendor_pcie_get_ep_count<a class="headerlink" href="#function-vendor_pcie_get_ep_count" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Get EP counts. If count is zero, it means only RC.</p>
+<p>[Syntax]</p>
+<p>INT vendor_pcie_get_ep_count(void);</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>void</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>count</td>
+<td>If 0, only RC.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="function-vendor_pcie_get_ddrid_map">Function: vendor_pcie_get_ddrid_map<a class="headerlink" href="#function-vendor_pcie_get_ddrid_map" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Input a ddr_id to lookup in which chip.</p>
+<p>[Syntax]</p>
+<p>HD_RESULT vendor_pcie_get_ddrid_map(unsigned int ddr_id, unsigned int *p_chipid, unsigned int *p_ddridx);</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ddr_id</td>
+<td>input ddr_id</td>
+</tr>
+<tr>
+<td>p_chipid</td>
+<td>output chip_id</td>
+</tr>
+<tr>
+<td>p_ddridx</td>
+<td>output ddr_idx</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HD_OK</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>HD_ERR_NG</td>
+<td>Failure</td>
+</tr>
+</tbody>
+</table>
+<h4 id="function-vendor_pcie_mem_mmap">Function: vendor_pcie_mem_mmap<a class="headerlink" href="#function-vendor_pcie_mem_mmap" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Get virtual address by inputing physical address with size.</p>
+<p>[Syntax]</p>
+<p>void *vendor_pcie_mem_mmap(UINTPTR phy_addr, UINT32 size);</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>phy_addr</td>
+<td>a physical address</td>
+</tr>
+<tr>
+<td>size</td>
+<td>mapping size</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>void *</td>
+<td>return a virtual address.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="function-vendor_pcie_mem_munmap">Function: vendor_pcie_mem_munmap<a class="headerlink" href="#function-vendor_pcie_mem_munmap" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Unmap vitual address with size.</p>
+<p>[Syntax]</p>
+<p>HD_RESULT vendor_pcie_mem_munmap(void *va_addr, UINT32 size);</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>va_addr</td>
+<td>a vitual address</td>
+</tr>
+<tr>
+<td>size</td>
+<td>mapping size</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HD_OK</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>HD_ERR_NG</td>
+<td>Failure</td>
+</tr>
+</tbody>
+</table>
+<h4 id="function-vendor_pcie_get_upstream_pa">Function: vendor_pcie_get_upstream_pa<a class="headerlink" href="#function-vendor_pcie_get_upstream_pa" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Input physical address in RC. It will be transferred to new physical address for EP to access.</p>
+<p>[Syntax]</p>
+<p>HD_RESULT vendor_pcie_get_upstream_pa(UINTPTR rc_pa, UINTPTR *ep_pa);</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rc_pa</td>
+<td>Input physical address in RC</td>
+</tr>
+<tr>
+<td>*ep_pa</td>
+<td>Output physical address for EP to access</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HD_OK</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>HD_ERR_NG</td>
+<td>Failure</td>
+</tr>
+</tbody>
+</table>
+<h4 id="function-vendor_pcie_get_downstream_pa">Function: vendor_pcie_get_downstream_pa<a class="headerlink" href="#function-vendor_pcie_get_downstream_pa" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Input physical address in EP. It will be transferred to new physical address for RC to access.</p>
+<p>[Syntax]</p>
+<p>HD_RESULT vendor_pcie_get_downstream_pa(UINTPTR ep_pa, UINTPTR *rc_pa);</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ep_pa</td>
+<td>Input physical address in EP</td>
+</tr>
+<tr>
+<td>*rc_pa</td>
+<td>Output physical address for RC to access</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HD_OK</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>HD_ERR_NG</td>
+<td>Failure</td>
+</tr>
+</tbody>
+</table>
+<h4 id="function-vendor_pcie_rc_wakeup">Function: vendor_pcie_rc_wakeup<a class="headerlink" href="#function-vendor_pcie_rc_wakeup" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>It is executed in RC, and it wakes up a specific EP.</p>
+<p>[Syntax]</p>
+<p>HD_RESULT vendor_pcie_rc_wakeup(INT ep_chipid);</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>INT</td>
+<td>ep_chipid</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HD_OK</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>HD_ERR_NG</td>
+<td>Failure</td>
+</tr>
+</tbody>
+</table>
+<h4 id="function-vendor_pcie_ep_wakeup">Function: vendor_pcie_ep_wakeup<a class="headerlink" href="#function-vendor_pcie_ep_wakeup" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>It is executed in EP, it wakes up RC.</p>
+<p>[Syntax]</p>
+<p>HD_RESULT vendor_pcie_ep_wakeup(void);</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>void</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HD_OK</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>HD_ERR_NG</td>
+<td>Failure</td>
+</tr>
+</tbody>
+</table>
+<h4 id="function-vendor_pcie_rc_wait">Function: vendor_pcie_rc_wait<a class="headerlink" href="#function-vendor_pcie_rc_wait" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>It is executed in RC, it waits for a specific EP.</p>
+<p>[Syntax]</p>
+<p>HD_RESULT vendor_pcie_rc_wakeup(INT ep_chipid);</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>INT</td>
+<td>ep_chipid</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HD_OK</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>HD_ERR_NG</td>
+<td>Failure</td>
+</tr>
+</tbody>
+</table>
+<h4 id="function-vendor_pcie_ep_wait">Function: vendor_pcie_ep_wait<a class="headerlink" href="#function-vendor_pcie_ep_wait" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>It is executed in EP, and it waits for RC.</p>
+<p>[Syntax]</p>
+<p>HD_RESULT vendor_pcie_ep_wakeup(void);</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>void</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HD_OK</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>HD_ERR_NG</td>
+<td>Failure</td>
+</tr>
+</tbody>
+</table>
+<h4 id="function-vendor_pcie_rc_send">Function: vendor_pcie_rc_send<a class="headerlink" href="#function-vendor_pcie_rc_send" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>RC sends some data to a specific EP by a specific channel. Also, set timeout interval in mini-seconds.</p>
+<p>[Syntax]</p>
+<p>HD_RESULT vendor_pcie_rc_send(INT ep_chipid, INT ep_chan_id, INT param_sz, VOID *p_param,INT timeout);</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ep_chipid</td>
+<td>a chip id of EP</td>
+</tr>
+<tr>
+<td>ep_chan_id</td>
+<td>a channel id of EP</td>
+</tr>
+<tr>
+<td>param_sz</td>
+<td>size of data</td>
+</tr>
+<tr>
+<td>p_param</td>
+<td>some parameters</td>
+</tr>
+<tr>
+<td>timeout</td>
+<td>timeout interval in ms</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HD_OK</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>HD_ERR_NG</td>
+<td>Failure</td>
+</tr>
+</tbody>
+</table>
+<h4 id="function-vendor_pcie_rc_recv">Function: vendor_pcie_rc_recv<a class="headerlink" href="#function-vendor_pcie_rc_recv" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>RC receives some data from a specific EP by a specific channel. Also, set timeout interval in mini-seconds.</p>
+<p>[Syntax]</p>
+<p>HD_RESULT vendor_pcie_rc_recv(INT ep_chipid, INT ep_chan_id, INT *param_sz, VOID *p_param,INT timeout);</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ep_chipid</td>
+<td>a chip id of EP</td>
+</tr>
+<tr>
+<td>ep_chan_id</td>
+<td>a channel id of EP</td>
+</tr>
+<tr>
+<td>*param_sz</td>
+<td>get size of data</td>
+</tr>
+<tr>
+<td>p_param</td>
+<td>some parameters</td>
+</tr>
+<tr>
+<td>timeout</td>
+<td>timeout interval in ms</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HD_OK</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>HD_ERR_NG</td>
+<td>Failure</td>
+</tr>
+</tbody>
+</table>
+<h4 id="function-vendor_pcie_ep_send">Function: vendor_pcie_ep_send<a class="headerlink" href="#function-vendor_pcie_ep_send" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>EP sends some data to the RC by a specific channel. Also, set timeout interval in mini-seconds.</p>
+<p>[Syntax]</p>
+<p>HD_RESULT vendor_pcie_ep_send(INT rc_chan_id, INT param_sz, VOID *p_param,INT timeout);</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rc_chan_id</td>
+<td>a channel id of RC</td>
+</tr>
+<tr>
+<td>param_sz</td>
+<td>size of data</td>
+</tr>
+<tr>
+<td>p_param</td>
+<td>some parameters</td>
+</tr>
+<tr>
+<td>timeout</td>
+<td>timeout interval in ms</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HD_OK</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>HD_ERR_NG</td>
+<td>Failure</td>
+</tr>
+</tbody>
+</table>
+<h4 id="function-vendor_pcie_ep_recv">Function: vendor_pcie_ep_recv<a class="headerlink" href="#function-vendor_pcie_ep_recv" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>EP receives some data from the RC by a specific channel. Also, set timeout interval in mini-seconds.</p>
+<p>[Syntax]</p>
+<p>HD_RESULT vendor_pcie_rc_recv(INT ep_chipid, INT ep_chan_id, INT *param_sz, VOID *p_param,INT timeout);</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ep_chipid</td>
+<td>a chip id of EP</td>
+</tr>
+<tr>
+<td>ep_chan_id</td>
+<td>a channel id of EP</td>
+</tr>
+<tr>
+<td>*param_sz</td>
+<td>get size of data</td>
+</tr>
+<tr>
+<td>p_param</td>
+<td>some parameters</td>
+</tr>
+<tr>
+<td>timeout</td>
+<td>timeout interval in ms</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HD_OK</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>HD_ERR_NG</td>
+<td>Failure</td>
+</tr>
+</tbody>
+</table>
+<h4 id="function-vendor_pcie_gettime_us">Function: vendor_pcie_gettime_us<a class="headerlink" href="#function-vendor_pcie_gettime_us" title="Permanent link">&para;</a></h4>
+<p>[Description]</p>
+<p>Get system time in us.</p>
+<p>[Syntax]</p>
+<p>unsigned long vendor_pcie_gettime_us(void);</p>
+<p>[Parameter]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>void</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<p>[Return Value]</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>unsigned long</td>
+<td>System time in micro-second.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h4>
+<p>A summary for API user shows as below. The functions in green rows are executed in RC only. The functions in yellow rows could be executed in RC/EPs.</p>
+<p><img alt="" src="nvt_media/56f1a793ea002524e208af30b37fd997.png" /></p>
+<h3 id="pseudo-code-for-data-transfer">Pseudo code for Data Transfer<a class="headerlink" href="#pseudo-code-for-data-transfer" title="Permanent link">&para;</a></h3>
+<p>The following figure shows pseudo code for data transfer freely. RC/EP could use wakeup/wait to transfer any data. It suggests that data is put in other buffer, just some messages are put in pcie shared memory to inform other users.</p>
+<p><img alt="" src="nvt_media/cd5e730eed31cddbacf6ae2fce202274.png" /></p>
+<h2 id="how-to-change-buffer-size-for-pcie">How to change buffer size for PCIe<a class="headerlink" href="#how-to-change-buffer-size-for-pcie" title="Permanent link">&para;</a></h2>
+<p>Find the nvt-mem-tbl.dtsi for wanted product.</p>
+<p>For example, configs/Linux/cfg_TEST_FPGA/nvt-mem-tbl.dtsi</p>
+<pre><code>    /* Linux system memory region*/
+    memory { device_type = &quot;memory&quot;; reg = &lt;0x0 0x00000000 0x0 0x08000000&gt;; };  
+...
+ nvt-pcie-lib-cfg {
+  compatible = &quot;nvt,nvt-pcie-lib&quot;;
+  rc_shm_size = &lt;0x0 0x00100000&gt;; /* [SIZE-H] [SIZE-L] */
+ #default size is 1MB. 
+  ep_alloc_mem = &lt;0x1 0x0 0x18000000 0x0 0x08000000 
+/* &lt; [CHIPID] [ADDR-H] [ADDR-L] [SIZE-H] [SIZE-L] */
+  &gt;;
+ }; 
+...
+
+
+</code></pre>
+<p>The default setting for using PCIe buffer shows as below,</p>
+<p><img alt="" src="nvt_media/7bd73ad277791ee68eb8cb68fc7b9f28.png" /></p>
+<p>User could change the size of each block when inserting kdrv_cc_event.ko. For example,</p>
+<p>“modprobe kdrv_cc_event.ko ai_buffer_size=0 pcie_xfer_size=80000”, set ai_buffer to 0KB, pcie_xfer_buffer to 512KB, then other_buffer will be 512KB.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="NT9833x_HDAL_Vendor_Media_Programming_Guide_en.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Vendor Media Programming Guide" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Vendor Media Programming Guide
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../OSDRV/NT9833x_SDK_Pure_Linux_Programming_Guide_en.html" class="md-footer__link md-footer__link--next" aria-label="Next: Linux Programming Guide" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Linux Programming Guide
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.highlight", "navigation.tabs"], "search": "../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.37e9125f.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,3273 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.3">
+    
+    
+      
+        <title>DI Tuning Guide - NT98336/NT98633 Documents</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7a952b86.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#overview" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="NT98336/NT98633 Documents" class="md-header__button md-logo" aria-label="NT98336/NT98633 Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NT98336/NT98633 Documents
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              DI Tuning Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../CVAI/NT9833X_MD_User_Guide_en.html" class="md-tabs__link md-tabs__link--active">
+        Software
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../not_ready - not_reay.md" class="md-tabs__link">
+        Hardware(Not Ready)
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../not_ready - not_reay.md" class="md-tabs__link">
+        For Reference(Not Ready)
+      </a>
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="NT98336/NT98633 Documents" class="md-nav__button md-logo" aria-label="NT98336/NT98633 Documents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    NT98336/NT98633 Documents
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          Software
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Software" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Software
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_1" type="checkbox" id="__nav_1_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_1">
+          CVAI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="CVAI" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          CVAI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CVAI/NT9833X_MD_User_Guide_en.html" class="md-nav__link">
+        MD User Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CVAI/NT9833X_IVE_User_Guide_en.html" class="md-nav__link">
+        IVE User Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CVAI/NT9833X_MD_Tuning_Guide_en.html" class="md-nav__link">
+        MD Tuning Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_2" type="checkbox" id="__nav_1_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_2">
+          ISPQ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="ISPQ" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          ISPQ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="NT9833x_VPE_IQ_Tuning_Guide_en.html" class="md-nav__link">
+        VPE IQ Tuning Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="NT9833x_LCD_IQ_Tuning_Guide_en.html" class="md-nav__link">
+        LCD IQ Tuning Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          DI Tuning Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="NT9833x_DI_Tuning_Guide_en.html" class="md-nav__link md-nav__link--active">
+        DI Tuning Guide
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-control" class="md-nav__link">
+    System Control
+  </a>
+  
+    <nav class="md-nav" aria-label="System Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameter-description" class="md-nav__link">
+    Parameter Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-interface" class="md-nav__link">
+    Setting Interface
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proc" class="md-nav__link">
+    Proc
+  </a>
+  
+    <nav class="md-nav" aria-label="Proc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdich_fd" class="md-nav__link">
+    /proc/videograph/di/ch_fd
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gmm" class="md-nav__link">
+    GMM
+  </a>
+  
+    <nav class="md-nav" aria-label="GMM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameter-description_1" class="md-nav__link">
+    Parameter Description
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameter Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#advance-description" class="md-nav__link">
+    Advance description:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-interface_1" class="md-nav__link">
+    Setting Interface
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proc_1" class="md-nav__link">
+    Proc
+  </a>
+  
+    <nav class="md-nav" aria-label="Proc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdigmmdump_info" class="md-nav__link">
+    /proc/videograph/di/gmm/dump_info
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdigmmenable" class="md-nav__link">
+    /proc/videograph/di/gmm/enable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdigmmalpha" class="md-nav__link">
+    /proc/videograph/di/gmm/alpha
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdigmmone_alpha" class="md-nav__link">
+    /proc/videograph/di/gmm/one_alpha
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdigmminit_val" class="md-nav__link">
+    /proc/videograph/di/gmm/init_val
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdigmmtb" class="md-nav__link">
+    /proc/videograph/di/gmm/tb
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdigmmsigma" class="md-nav__link">
+    /proc/videograph/di/gmm/sigma
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdigmmtg" class="md-nav__link">
+    /proc/videograph/di/gmm/tg
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdigmmprune" class="md-nav__link">
+    /proc/videograph/di/gmm/prune
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tmnr" class="md-nav__link">
+    TMNR
+  </a>
+  
+    <nav class="md-nav" aria-label="TMNR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameter-description_2" class="md-nav__link">
+    Parameter Description
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameter Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#advance-description_1" class="md-nav__link">
+    Advance description：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-interface_2" class="md-nav__link">
+    Setting Interface
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proc_2" class="md-nav__link">
+    Proc
+  </a>
+  
+    <nav class="md-nav" aria-label="Proc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#procvideographditmnrdump_info" class="md-nav__link">
+    /proc/videograph/di/tmnr/dump_info
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographditmnrenable" class="md-nav__link">
+    /proc/videograph/di/tmnr/enable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographditmnrtmnr_learn_en" class="md-nav__link">
+    /proc/videograph/di/tmnr/tmnr_learn_en
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographditmnrvar" class="md-nav__link">
+    /proc/videograph/di/tmnr/var
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographditmnrk" class="md-nav__link">
+    /proc/videograph/di/tmnr/k
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographditmnrauto_k" class="md-nav__link">
+    /proc/videograph/di/tmnr/auto_k
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographditmnrtrade_th" class="md-nav__link">
+    /proc/videograph/di/tmnr/trade_th
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographditmnrsupp_str" class="md-nav__link">
+    /proc/videograph/di/tmnr/supp_str
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographditmnrnf" class="md-nav__link">
+    /proc/videograph/di/tmnr/nf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographditmnrvar_offset" class="md-nav__link">
+    /proc/videograph/di/tmnr/var_offset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographditmnrmotion_var" class="md-nav__link">
+    /proc/videograph/di/tmnr/motion_var
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographditmnrmotion_th_mult" class="md-nav__link">
+    /proc/videograph/di/tmnr/motion_th_mult
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographditmnrtmnr_fcs" class="md-nav__link">
+    /proc/videograph/di/tmnr/tmnr_fcs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographditmnrdpr" class="md-nav__link">
+    /proc/videograph/di/tmnr/dpr
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#de-interlace-di" class="md-nav__link">
+    De-Interlace (DI)
+  </a>
+  
+    <nav class="md-nav" aria-label="De-Interlace (DI)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameter-description_3" class="md-nav__link">
+    Parameter Description
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameter Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#advance-desciption" class="md-nav__link">
+    Advance desciption
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-interface_3" class="md-nav__link">
+    Setting Interface
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proc_3" class="md-nav__link">
+    Proc
+  </a>
+  
+    <nav class="md-nav" aria-label="Proc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdididump_info" class="md-nav__link">
+    /proc/videograph/di/di/dump_info
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdidimotion_en" class="md-nav__link">
+    /proc/videograph/di/di/motion_en
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdidimd_th" class="md-nav__link">
+    /proc/videograph/di/di/md_th
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdidistrong_md" class="md-nav__link">
+    /proc/videograph/di/di/strong_md
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdidistrong_edge" class="md-nav__link">
+    /proc/videograph/di/di/strong_edge
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdidicorner_detect_en" class="md-nav__link">
+    /proc/videograph/di/di/corner_detect_en
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdidiline_admit" class="md-nav__link">
+    /proc/videograph/di/di/line_admit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdidiall_motion_static" class="md-nav__link">
+    /proc/videograph/di/di/all_motion_static
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdididi_gmm_motion_en" class="md-nav__link">
+    /proc/videograph/di/di/di_gmm_motion_en
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdidimmb_param" class="md-nav__link">
+    /proc/videograph/di/di/mmb_param
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdidimmb_scene_change" class="md-nav__link">
+    /proc/videograph/di/di/mmb_scene_change
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdidismb_param" class="md-nav__link">
+    /proc/videograph/di/di/smb_param
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdidiemb_param" class="md-nav__link">
+    /proc/videograph/di/di/emb_param
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdidilmb_param" class="md-nav__link">
+    /proc/videograph/di/di/lmb_param
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdidiela_th" class="md-nav__link">
+    /proc/videograph/di/di/ela_th
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdidirow_status_ctrl" class="md-nav__link">
+    /proc/videograph/di/di/row_status_ctrl
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#revision-history" class="md-nav__link">
+    Revision History
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_3">
+          MEDIA
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MEDIA" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          MEDIA
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MEDIA/NT9833x_HDAL_Vendor_ISP_Programming_Guide_en.html" class="md-nav__link">
+        Vendor ISP Programming Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MEDIA/NT9833x_HDAL_Vendor_Media_Programming_Guide_en.html" class="md-nav__link">
+        Vendor Media Programming Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MEDIA/NT9833x_HDAL_Vendor_PCIe_Programming_Guide_en.html" class="md-nav__link">
+        Vendor PCie Programming Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_4">
+          OSDRV
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="OSDRV" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          OSDRV
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OSDRV/NT9833x_SDK_Pure_Linux_Programming_Guide_en.html" class="md-nav__link">
+        Linux Programming Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OSDRV/NT9833x_Quick_Bringup_User_Guide_en.html" class="md-nav__link">
+        Quick Bringup User Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OSDRV/NT9833x_PCIe_User_Guide_en.html" class="md-nav__link">
+        PCIe User Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NT9833x_DVR_NVR_SDK_Quick_Start.html" class="md-nav__link">
+        Quick Start
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Hardware(Not Ready)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Hardware(Not Ready)" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Hardware(Not Ready)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          Not Ready
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Not Ready" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Not Ready
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../not_ready - not_reay.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          For Reference(Not Ready)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="For Reference(Not Ready)" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          For Reference(Not Ready)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1">
+          Not Ready
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Not Ready" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Not Ready
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../not_ready - not_reay.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-control" class="md-nav__link">
+    System Control
+  </a>
+  
+    <nav class="md-nav" aria-label="System Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameter-description" class="md-nav__link">
+    Parameter Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-interface" class="md-nav__link">
+    Setting Interface
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proc" class="md-nav__link">
+    Proc
+  </a>
+  
+    <nav class="md-nav" aria-label="Proc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdich_fd" class="md-nav__link">
+    /proc/videograph/di/ch_fd
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gmm" class="md-nav__link">
+    GMM
+  </a>
+  
+    <nav class="md-nav" aria-label="GMM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameter-description_1" class="md-nav__link">
+    Parameter Description
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameter Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#advance-description" class="md-nav__link">
+    Advance description:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-interface_1" class="md-nav__link">
+    Setting Interface
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proc_1" class="md-nav__link">
+    Proc
+  </a>
+  
+    <nav class="md-nav" aria-label="Proc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdigmmdump_info" class="md-nav__link">
+    /proc/videograph/di/gmm/dump_info
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdigmmenable" class="md-nav__link">
+    /proc/videograph/di/gmm/enable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdigmmalpha" class="md-nav__link">
+    /proc/videograph/di/gmm/alpha
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdigmmone_alpha" class="md-nav__link">
+    /proc/videograph/di/gmm/one_alpha
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdigmminit_val" class="md-nav__link">
+    /proc/videograph/di/gmm/init_val
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdigmmtb" class="md-nav__link">
+    /proc/videograph/di/gmm/tb
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdigmmsigma" class="md-nav__link">
+    /proc/videograph/di/gmm/sigma
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdigmmtg" class="md-nav__link">
+    /proc/videograph/di/gmm/tg
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdigmmprune" class="md-nav__link">
+    /proc/videograph/di/gmm/prune
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tmnr" class="md-nav__link">
+    TMNR
+  </a>
+  
+    <nav class="md-nav" aria-label="TMNR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameter-description_2" class="md-nav__link">
+    Parameter Description
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameter Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#advance-description_1" class="md-nav__link">
+    Advance description：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-interface_2" class="md-nav__link">
+    Setting Interface
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proc_2" class="md-nav__link">
+    Proc
+  </a>
+  
+    <nav class="md-nav" aria-label="Proc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#procvideographditmnrdump_info" class="md-nav__link">
+    /proc/videograph/di/tmnr/dump_info
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographditmnrenable" class="md-nav__link">
+    /proc/videograph/di/tmnr/enable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographditmnrtmnr_learn_en" class="md-nav__link">
+    /proc/videograph/di/tmnr/tmnr_learn_en
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographditmnrvar" class="md-nav__link">
+    /proc/videograph/di/tmnr/var
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographditmnrk" class="md-nav__link">
+    /proc/videograph/di/tmnr/k
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographditmnrauto_k" class="md-nav__link">
+    /proc/videograph/di/tmnr/auto_k
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographditmnrtrade_th" class="md-nav__link">
+    /proc/videograph/di/tmnr/trade_th
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographditmnrsupp_str" class="md-nav__link">
+    /proc/videograph/di/tmnr/supp_str
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographditmnrnf" class="md-nav__link">
+    /proc/videograph/di/tmnr/nf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographditmnrvar_offset" class="md-nav__link">
+    /proc/videograph/di/tmnr/var_offset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographditmnrmotion_var" class="md-nav__link">
+    /proc/videograph/di/tmnr/motion_var
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographditmnrmotion_th_mult" class="md-nav__link">
+    /proc/videograph/di/tmnr/motion_th_mult
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographditmnrtmnr_fcs" class="md-nav__link">
+    /proc/videograph/di/tmnr/tmnr_fcs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographditmnrdpr" class="md-nav__link">
+    /proc/videograph/di/tmnr/dpr
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#de-interlace-di" class="md-nav__link">
+    De-Interlace (DI)
+  </a>
+  
+    <nav class="md-nav" aria-label="De-Interlace (DI)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameter-description_3" class="md-nav__link">
+    Parameter Description
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameter Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#advance-desciption" class="md-nav__link">
+    Advance desciption
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-interface_3" class="md-nav__link">
+    Setting Interface
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proc_3" class="md-nav__link">
+    Proc
+  </a>
+  
+    <nav class="md-nav" aria-label="Proc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdididump_info" class="md-nav__link">
+    /proc/videograph/di/di/dump_info
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdidimotion_en" class="md-nav__link">
+    /proc/videograph/di/di/motion_en
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdidimd_th" class="md-nav__link">
+    /proc/videograph/di/di/md_th
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdidistrong_md" class="md-nav__link">
+    /proc/videograph/di/di/strong_md
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdidistrong_edge" class="md-nav__link">
+    /proc/videograph/di/di/strong_edge
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdidicorner_detect_en" class="md-nav__link">
+    /proc/videograph/di/di/corner_detect_en
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdidiline_admit" class="md-nav__link">
+    /proc/videograph/di/di/line_admit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdidiall_motion_static" class="md-nav__link">
+    /proc/videograph/di/di/all_motion_static
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdididi_gmm_motion_en" class="md-nav__link">
+    /proc/videograph/di/di/di_gmm_motion_en
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdidimmb_param" class="md-nav__link">
+    /proc/videograph/di/di/mmb_param
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdidimmb_scene_change" class="md-nav__link">
+    /proc/videograph/di/di/mmb_scene_change
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdidismb_param" class="md-nav__link">
+    /proc/videograph/di/di/smb_param
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdidiemb_param" class="md-nav__link">
+    /proc/videograph/di/di/emb_param
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdidilmb_param" class="md-nav__link">
+    /proc/videograph/di/di/lmb_param
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdidiela_th" class="md-nav__link">
+    /proc/videograph/di/di/ela_th
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procvideographdidirow_status_ctrl" class="md-nav__link">
+    /proc/videograph/di/di/row_status_ctrl
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#revision-history" class="md-nav__link">
+    Revision History
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>DI Tuning Guide</h1>
+
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>Interlace image use interlace format during capture, transmission and store. The capture time of neighbor field is not the same, the neighbor field can not be combined perfectly. Therefore, if using progressive scanning display to play interlance video, motion part in image will appears sawtooth phenomenon. For scene change condition, it will have ghost phenomenon that two scenes showing at the same time. It needs de-interlace to transform interlace image to progressive image to solve this problem.</p>
+<p><img alt="" src="media/86fefe8bd2d1a437b80bee52b0397c24.png" /></p>
+<p>Table 11 NT9833x Image Process Flow</p>
+<p>De-interlace Engine(DIE) is an independent D2D image process engine in YUV domain, the major function is to perform de-interlace(interlace transform to progressive) process. It includes the following three modules:</p>
+<ul>
+<li>Motion Detection Module (MD)</li>
+<li>Temporal Noise Reduction Module (TMNR)</li>
+<li>De-Interlace Module (De-Interlace (DI))</li>
+</ul>
+<h2 id="system-control">System Control<a class="headerlink" href="#system-control" title="Permanent link">&para;</a></h2>
+<h3 id="parameter-description">Parameter Description<a class="headerlink" href="#parameter-description" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Range</strong></th>
+<th><strong>Def</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ch_fd</td>
+<td></td>
+<td></td>
+<td>Video graph use ch_fd to represent the connected video engine of each channel. User can fine tune parameter of each video engine by setting ch_fd.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="setting-interface">Setting Interface<a class="headerlink" href="#setting-interface" title="Permanent link">&para;</a></h3>
+<h4 id="proc">Proc<a class="headerlink" href="#proc" title="Permanent link">&para;</a></h4>
+<p>Proc command designates the desired camera to be fine tuned by camera channel’s fd.</p>
+<h6 id="procvideographdich_fd">/proc/videograph/di/ch_fd<a class="headerlink" href="#procvideographdich_fd" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the current camera channel, and it only needs to set once, the following parameters will work on this channel.</p>
+<p>The following proc command will list all ch_fd of the current video engine.</p>
+<p><img alt="" src="media/76aff5e0a10519f1d10db92205f4d993.png" /></p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>echo [fd] > /proc/videograph/di/ch_fd</td>
+<td><strong>Fw Internal Pointer</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Read : cat /proc/videograph/di/ch_fd</p>
+<h2 id="gmm">GMM<a class="headerlink" href="#gmm" title="Permanent link">&para;</a></h2>
+<p>The motion detection module in DI module is not used for motion detection alarm; instead, it provides the motion detection information to DI algorithm to increase the interpolation accuracy of transforming interlace image to progressive image.</p>
+<h4 id="parameter-description_1">Parameter Description<a class="headerlink" href="#parameter-description_1" title="Permanent link">&para;</a></h4>
+<p>Table 31 MD Parameter List</p>
+<table>
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Range</strong></th>
+<th><strong>Def</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gmm_alpha</td>
+<td>0\~32767</td>
+<td>32</td>
+<td>Update speed of background model( fit model).</td>
+</tr>
+<tr>
+<td>gmm_one_min_alpha</td>
+<td>0\~32767</td>
+<td>32736</td>
+<td>Update speed of background model(non-fit model). Recommend value = 2\^15- gmm_alpha</td>
+</tr>
+<tr>
+<td>gmm_init_val</td>
+<td>0\~255</td>
+<td>7</td>
+<td>The restart learining weighting of the background model.</td>
+</tr>
+<tr>
+<td>gmm_tb</td>
+<td>0\~15</td>
+<td>9</td>
+<td>Evaluate the similar level with the current background model to decide whether it is foreground.</td>
+</tr>
+<tr>
+<td>gmm_sigma</td>
+<td>0\~31</td>
+<td>11</td>
+<td>The standard deviation for the newly generated model. It will influence the model tolerance.</td>
+</tr>
+<tr>
+<td>gmm_tg</td>
+<td>0\~15</td>
+<td>9</td>
+<td>Threshold for evaluating whether the model need to be updated.</td>
+</tr>
+<tr>
+<td>gmm_prune</td>
+<td>-217 \~ 217-1</td>
+<td>-8207</td>
+<td>prune = -(alpha * CT)*8191/256; weight attenuation value CT – complexity reduction prior, this is related to number of samples. CT = 8</td>
+</tr>
+</tbody>
+</table>
+<h6 id="advance-description">Advance description:<a class="headerlink" href="#advance-description" title="Permanent link">&para;</a></h6>
+<ul>
+<li><strong>gmm_alpha</strong>：update speed of background model<br />
+    If “gmm_alpha” set too large, it will easily to misjudge the motion object to background. For de-interlace application, it will result in fractured image. If “gmm_alpha” set too small, it will easily to misjudge tiny light/shadow change to motion object. For de-interlace application, it will result in blur image.<br />
+    For indoor(without light/shadow change) scene, the recommend value is 32. For other scenes with light/shadow change, it is recommend to properly increase this value(not larger than 327). For outdoor scene, due to the influence of light/shadow change need to be excluded, the recommend value is between 327\~1200.</li>
+<li><strong>gmm_sigma</strong>：The standard deviation of model. The parameter “gmm_tb” and “gmm_sigma” are used to decide the static model together. The larger the “gmm_sigma”, the more easily to be determined as static object.</li>
+<li><strong>gmm_tb</strong>：“gmm_sigma” and “gmm_tb” will influence the completion of motion detection. If the detected motion block of motion object is fractured(not continuous), it is recommend to properly increase “ gmm_tb”.</li>
+<li><strong>gmm_purne：</strong>The smaller(more negative) “gmm_purne”, the quicker learning speed of new model. However, for small motion, it will more easily to be misjudged to background. And it will also influence the motion detection sensitivity(the same as “gmm_alpha”), it is recommend to adopt default value, and using “gmm_alpha” to fine tune sensitivity.</li>
+</ul>
+<h3 id="setting-interface_1">Setting Interface<a class="headerlink" href="#setting-interface_1" title="Permanent link">&para;</a></h3>
+<h4 id="proc_1">Proc<a class="headerlink" href="#proc_1" title="Permanent link">&para;</a></h4>
+<h6 id="procvideographdigmmdump_info">/proc/videograph/di/gmm/dump_info<a class="headerlink" href="#procvideographdigmmdump_info" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read all GMM parameters of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write : Not Support</strong></p>
+<p><strong>Read : cat /proc/videograph/di/gmm/dump_info</strong></p>
+<p><strong>Output:</strong></p>
+<h6 id="procvideographdigmmenable">/proc/videograph/di/gmm/enable<a class="headerlink" href="#procvideographdigmmenable" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or witer the GMM enable status of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>echo [enable 0 \~ 1] > /proc/videograph/di/gmm/enable</strong></td>
+<td><strong>gmm_en</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read : cat /proc/videograph/di/gmm/enable</strong></p>
+<p><strong>Output:</strong></p>
+<h6 id="procvideographdigmmalpha">/proc/videograph/di/gmm/alpha<a class="headerlink" href="#procvideographdigmmalpha" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the GMM/alpha parameter of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>echo [alpha 0 \~ 32767] > /proc/videograph/di/gmm/alpha</strong></td>
+<td><strong>gmm_alpha</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read : cat /proc/videograph/di/gmm/alpha</strong></p>
+<p><strong>Output:</strong></p>
+<h6 id="procvideographdigmmone_alpha">/proc/videograph/di/gmm/one_alpha<a class="headerlink" href="#procvideographdigmmone_alpha" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the GMM parameter of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>echo [alpha 0 \~ 32767] > /proc/videograph/di/gmm/one_alpha</strong></td>
+<td><strong>gmm_one_min_alpha</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read : cat /proc/videograph/di/gmm/one_alpha</strong></p>
+<p><strong>Output:</strong></p>
+<h6 id="procvideographdigmminit_val">/proc/videograph/di/gmm/init_val<a class="headerlink" href="#procvideographdigmminit_val" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the GMM parameter of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>echo [value 0 \~ 255] > /proc/videograph/di/init_val</strong></td>
+<td><strong>gmm_init_val</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read : cat /proc/videograph/di/gmm/init_val</strong></p>
+<p><strong>Output:</strong></p>
+<h6 id="procvideographdigmmtb">/proc/videograph/di/gmm/tb<a class="headerlink" href="#procvideographdigmmtb" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the GMM/gmm_tb parameter of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>echo [tb 0 \~ 15] > /proc/videograph/di/gmm/tb</strong></td>
+<td><strong>gmm_tb</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read : cat /proc/videograph/di/gmm/tb</strong></p>
+<p><strong>Output:</strong></p>
+<h6 id="procvideographdigmmsigma">/proc/videograph/di/gmm/sigma<a class="headerlink" href="#procvideographdigmmsigma" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the GMM/sigma parameter of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>echo [sigma 0\~31] > /proc/videograph/di/gmm/sigma</strong></td>
+<td><strong>gmm_sigma</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read : cat /proc/videograph/di/gmm/sigma</strong></p>
+<p><strong>Output:</strong></p>
+<h6 id="procvideographdigmmtg">/proc/videograph/di/gmm/tg<a class="headerlink" href="#procvideographdigmmtg" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the GMM/gmm_tg parameter of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>echo [tg 0 \~ 15] > /proc/videograph/di/gmm/tg</strong></td>
+<td><strong>gmm_tg</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read : cat /proc/videograph/di/gmm/tg</strong></p>
+<p><strong>Output:</strong></p>
+<h6 id="procvideographdigmmprune">/proc/videograph/di/gmm/prune<a class="headerlink" href="#procvideographdigmmprune" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the GMM/gmm_prune parameter of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>echo [prune</strong> -131072 \~ 131071<strong>] > /proc/videograph/di/gmm/prune</strong></td>
+<td><strong>gmm_prune</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read : cat /proc/videograph/di/gmm/prune</strong></p>
+<p><strong>Output:</strong></p>
+<h2 id="tmnr">TMNR<a class="headerlink" href="#tmnr" title="Permanent link">&para;</a></h2>
+<p>This is temporal noise reduction module(abbreviation is TMNR). Although this function is temporal noise reduction, its major purpose is to increase the interpolation accuracy of transforming interlace image to progressive image. If user need to enhance the temporal denoise strength of video, it is recommend to use TMNR in VPE. Please note that the concept and parameter of DI/TMNR and VPE/TMNR is totally different.</p>
+<h3 id="parameter-description_2">Parameter Description<a class="headerlink" href="#parameter-description_2" title="Permanent link">&para;</a></h3>
+<p>Table 41 TMNR Parameter List</p>
+<table>
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Range</strong></th>
+<th><strong>Def</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tmnr_en</td>
+<td>0\~1</td>
+<td>1</td>
+<td>TMNR ON</td>
+</tr>
+<tr>
+<td>tmnr_learn_en</td>
+<td>0\~1</td>
+<td>1</td>
+<td>Enable internal TMNR library for automatically calculating noise level</td>
+</tr>
+<tr>
+<td>y_var</td>
+<td>0\~64</td>
+<td>20</td>
+<td>Luma pixel 3DNR strength</td>
+</tr>
+<tr>
+<td>cb_var</td>
+<td>0\~64</td>
+<td>12</td>
+<td>Cb pixel 3DNR strength Please refer to advance description.</td>
+</tr>
+<tr>
+<td>cr_var</td>
+<td>0\~64</td>
+<td>12</td>
+<td>Cr pixel 3DNR strength Please refer to advance description</td>
+</tr>
+<tr>
+<td>k</td>
+<td>1\~8</td>
+<td>3</td>
+<td>Adjust the threshold for determining motion object. Please refer to advance description.</td>
+</tr>
+<tr>
+<td>auto_k</td>
+<td>0\~1</td>
+<td>0</td>
+<td>Enable function for firmware automatically fine tune K.</td>
+</tr>
+<tr>
+<td>auto_k_hi</td>
+<td>2\~5</td>
+<td>5</td>
+<td>Automatically fine tune the upper limit of K.</td>
+</tr>
+<tr>
+<td>auto_k_lo</td>
+<td>1\~3</td>
+<td>2</td>
+<td>Automatically fine tune the lower limit of K.</td>
+</tr>
+<tr>
+<td>trade_thres</td>
+<td>0\~128</td>
+<td>64</td>
+<td>The blending weight of external var and internal var.</td>
+</tr>
+<tr>
+<td>suppress_strength</td>
+<td>2\~64</td>
+<td>24</td>
+<td>The maximum NR mask strength of static point.</td>
+</tr>
+<tr>
+<td>nf</td>
+<td>1\~6</td>
+<td>5</td>
+<td>The normalized parameter of variance of internal calculation. The larger the “nf”, the smaller the NR strength calculated by internal.</td>
+</tr>
+<tr>
+<td>var_offset</td>
+<td>0\~15</td>
+<td>2</td>
+<td>The maximum variance difference of neighbor block.</td>
+</tr>
+<tr>
+<td>motion_var</td>
+<td>1\~20</td>
+<td>8</td>
+<td>The variance of motion block. This value influence the temporal noise reduction strength of motion block. The recommend value is Y_var / 3.</td>
+</tr>
+<tr>
+<td>motion_th_mult</td>
+<td>1\~100</td>
+<td>3</td>
+<td>The threshold for determining whether it is motion block. The smaller the value, the more easily to be determined as motion block. The recommend value is 2\~3.</td>
+</tr>
+<tr>
+<td>tmnr_fcs_en</td>
+<td>0\~1</td>
+<td>0</td>
+<td>Enable temporal false color suppression function. Please refer to advance description.</td>
+</tr>
+<tr>
+<td>tmnr_fcs_th</td>
+<td>0\~255</td>
+<td>16</td>
+<td>Threshold for determining temporal false color.</td>
+</tr>
+<tr>
+<td>tmnr_fcs_weight</td>
+<td>0\~16</td>
+<td>8</td>
+<td>Strength of temporal false color suppression.</td>
+</tr>
+<tr>
+<td>dpr_en</td>
+<td>0\~1</td>
+<td>0</td>
+<td>TMNR temporal DPC ON/OFF</td>
+</tr>
+<tr>
+<td>dpr_motion_th</td>
+<td>0\~255</td>
+<td>64</td>
+<td>Threshold for determining whether it is temporal defect pixel. The smaller the “dpr_motion_th”, the more easily to be determined as temporal defect pixel.</td>
+</tr>
+<tr>
+<td>dpr_cnt_th</td>
+<td>0\~15</td>
+<td>1</td>
+<td>Threshold for determing temporal defect pixel, if the number of surrounding defect pixel is smaller than “dpr_cnt_th”, it is determined as defect pixel. The larger the value, the more easily to be determined as temporal defect pixel. The default value is 1, representing only deals with single defect pixel.</td>
+</tr>
+<tr>
+<td>dpr_mode</td>
+<td>0\~1</td>
+<td>0</td>
+<td>The defect mode of TMNR temporal defect pixel. 0: Temporal defect mode 1: Spatial defect mode</td>
+</tr>
+</tbody>
+</table>
+<h6 id="advance-description_1">Advance description：<a class="headerlink" href="#advance-description_1" title="Permanent link">&para;</a></h6>
+<ul>
+<li><strong>y_var, cb_var, cr_var:</strong> Noise Level set by external. The noise level set by external and calculate by internal will be blended by “trade_threshold”, and the blended noise level is the noise base to determine whether it is motion object. This parameter can also be considered as 3DNR strength.</li>
+<li><strong>k</strong>: The parameter to adjust threshold for determining motion object. The recommend value is 2\~3. The larger the k, the more easily to be determined as static object, the noise is more stable, but it might have ghost. On the contrary, the smaller the k, the more easily to be determined as motion object, but the noise is more obvious. If “auto_k” is enabled, this parameter is invalid.</li>
+<li><strong>auto_k, auto_k_lo, auto_k_hi</strong>: When noise is badly serious, this function could accelerate the speed to become noise stable. If enable this function, the firmware will automatically calculate “k”, the calculated “k” will be smaller than auto_k_hi and larger than auto_k_lo. It is recommend to enable “auto_k”, set “auto_k_hi” = 5 and “auto_k_low” = 2.</li>
+<li><strong>motion_var</strong>: The noise level of motion object. The larger the “motion_var”, the less noise of motion object, but it might have ghost. The recommend value is y_var/3, it should not larger than 20, and the default value is 5.</li>
+<li><strong>motion_th_mult</strong>: Threshold for determining whether it is motion object. The smaller the “motion_th_mult”, the more easily to be determined as motion object. The recommend value is 2-3.</li>
+<li><strong>tmnr_fcs_en</strong>: TMNR enable high frequency false color suppression funcrtion ON/OFF. Normally, it is recommend to set OFF, if camera has false color, then enable it. The false color phenomenon is as follows:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>FCS off</strong></th>
+<th><strong>FCS on</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="" src="media/5d97d7ec6ce6c04c51cbbd7fac4a4c14.png" /></td>
+<td><img alt="" src="media/739ad8dd14c71553c9ca374a7d25fdfd.png" /></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>tmnr_fcs_th</strong>: Threshold for determining whether it is high frequency false color, the default value is 10.</li>
+<li><strong>tmnr_fcs_weight:</strong> The strength of FCS. The larger the “tmnr_fcs_weight”, the stronger strength of FCS, but it might have color ghost. It is recommend smaller than 8 to avoid having color ghost.</li>
+</ul>
+<h3 id="setting-interface_2">Setting Interface<a class="headerlink" href="#setting-interface_2" title="Permanent link">&para;</a></h3>
+<h4 id="proc_2">Proc<a class="headerlink" href="#proc_2" title="Permanent link">&para;</a></h4>
+<h6 id="procvideographditmnrdump_info">/proc/videograph/di/tmnr/dump_info<a class="headerlink" href="#procvideographditmnrdump_info" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read all TMNR parameters of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write : Not Support</strong></p>
+<p><strong>Read : cat /proc/videograph/di/tmnr/dump_info</strong></p>
+<p><strong>Output:</strong></p>
+<h6 id="procvideographditmnrenable">/proc/videograph/di/tmnr/enable<a class="headerlink" href="#procvideographditmnrenable" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the TMNR/tmnr_en parameters of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>echo [enable 0 \~ 2] > /proc/videograph/di/tmnr/enable</strong></td>
+<td><strong>tmnr_en</strong> <strong>0: TMNR enabled by HDAL</strong> <strong>1: TMNR enable</strong> <strong>2: TMNR disable</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read : cat /proc/videograph/di/tmnr/enable</strong></p>
+<p><strong>Output:</strong></p>
+<h6 id="procvideographditmnrtmnr_learn_en">/proc/videograph/di/tmnr/tmnr_learn_en<a class="headerlink" href="#procvideographditmnrtmnr_learn_en" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the TMNR/tmnr_learn_en parameter of the current camera channel.</p>
+<p><strong>[Description]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>echo [tmnr_learn_en 0\~1] > /proc/videograph/di/tmnr/tmnr_learn_en</strong></td>
+<td><strong>tmnr_learn_en</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read : cat /proc/videograph/di/tmnr/tmnr_learn_en</strong></p>
+<p><strong>Output:</strong></p>
+<h6 id="procvideographditmnrvar">/proc/videograph/di/tmnr/var<a class="headerlink" href="#procvideographditmnrvar" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the TMNR/y, cb, cr var parameter of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>echo [y_var 0\~64] [cb_var 0\~64] [cr_var 0\~64] > /proc/videograph/di/tmnr/var</strong></td>
+<td><strong>y_var, cb_var, cr_var</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read : cat /proc/videograph/di/tmnr/var</strong></p>
+<p><strong>Output:</strong></p>
+<h6 id="procvideographditmnrk">/proc/videograph/di/tmnr/k<a class="headerlink" href="#procvideographditmnrk" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the TMNR/k parameter of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>echo [k 1\~8] > /proc/videograph/di/tmnr/k</strong></td>
+<td><strong>k</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read : cat /proc/videograph/di/tmnr/k</strong></p>
+<p><strong>Output:</strong></p>
+<h6 id="procvideographditmnrauto_k">/proc/videograph/di/tmnr/auto_k<a class="headerlink" href="#procvideographditmnrauto_k" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the TMNR/auto_k related parameter of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>echo [auto_k 0 \~ 1] [k_hi 1\~8] [k_lo 1\~8]> /proc/videograph/di/tmnr/auto_k</strong></td>
+<td><strong>auto_k, k_hi, k_lo</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read : cat /proc/videograph/di/tmnr/auto_k</strong></p>
+<p><strong>Output:</strong></p>
+<h6 id="procvideographditmnrtrade_th">/proc/videograph/di/tmnr/trade_th<a class="headerlink" href="#procvideographditmnrtrade_th" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the TMNR/trade_threshold parameter of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>echo [th 0 \~ 128] > /proc/videograph/di/tmnr/trade_th</strong></td>
+<td><strong>trade_threshold</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read : cat /proc/videograph/di/tmnr/trade_th</strong></p>
+<p><strong>Output:</strong></p>
+<h6 id="procvideographditmnrsupp_str">/proc/videograph/di/tmnr/supp_str<a class="headerlink" href="#procvideographditmnrsupp_str" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the TMNR/suppress_strength parameter of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>echo [str 2\~64] > /proc/videograph/di/tmnr/supp_str</strong></td>
+<td><strong>suppress_strength</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read : cat /proc/videograph/di/tmnr/supp_str</strong></p>
+<p><strong>Output:</strong></p>
+<h6 id="procvideographditmnrnf">/proc/videograph/di/tmnr/nf<a class="headerlink" href="#procvideographditmnrnf" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the TMNR/NF (Normalize Factor) parameter of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>echo [nf 1 \~ 6] > /proc/videograph/di/tmnr/nf</strong></td>
+<td><strong>nf</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read : cat /proc/videograph/di/tmnr/nf</strong></p>
+<p><strong>Output:</strong></p>
+<h6 id="procvideographditmnrvar_offset">/proc/videograph/di/tmnr/var_offset<a class="headerlink" href="#procvideographditmnrvar_offset" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the TMNR/var_offset parameter of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>echo [var_offset 0\~15] > /proc/videograph/di/tmnr/var_offset</strong></td>
+<td><strong>var_offset</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read : cat /proc/videograph/di/tmnr/var_offset</strong></p>
+<p><strong>Output:</strong></p>
+<h6 id="procvideographditmnrmotion_var">/proc/videograph/di/tmnr/motion_var<a class="headerlink" href="#procvideographditmnrmotion_var" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the TMNR/motion_var parameter of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>echo [motion_var 1 \~ 20] > /proc/videograph/di/tmnr/motion_var</strong></td>
+<td><strong>motion_var</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read : cat /proc/videograph/di/tmnr/motion_var</strong></p>
+<p><strong>Output:</strong></p>
+<h6 id="procvideographditmnrmotion_th_mult">/proc/videograph/di/tmnr/motion_th_mult<a class="headerlink" href="#procvideographditmnrmotion_th_mult" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the TMNR/motion_th_mult parameter of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>echo [motion_th_mult 0\~128] > /proc/videograph/di/tmnr/motion_th_mult</strong></td>
+<td><strong>motion_th_mult</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read : cat /proc/videograph/di/tmnr</strong>/<strong>motion_th_mult</strong></p>
+<p><strong>Output:</strong></p>
+<h6 id="procvideographditmnrtmnr_fcs">/proc/videograph/di/tmnr/tmnr_fcs<a class="headerlink" href="#procvideographditmnrtmnr_fcs" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the TMNR/FCS related parameter of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>echo [enable 0\~1] [fcs_th 0\~255] [fcs_weight 0\~16] > /proc/videograph/di/tmnr/tmnr_fcs</strong></td>
+<td><strong>tmnr_fcs_en,</strong>  <strong>tmnr_fcs_th,</strong>  <strong>tmnr_fcs_weight</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read : cat /proc/videograph/di/tmnr</strong>/<strong>tmnr_fcs</strong></p>
+<p><strong>Output:</strong></p>
+<h6 id="procvideographditmnrdpr">/proc/videograph/di/tmnr/dpr<a class="headerlink" href="#procvideographditmnrdpr" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or writer the TMNR/DPR related parameter of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>echo [dpr_en 0\~1] [motion_th 0\~255] [cnt_th 0\~16] [dpr_mode 0\~1] > /proc/videograph/di/tmnr/dpr</strong></td>
+<td><strong>dpr_en,</strong> <strong>dpr_motion_th,</strong>  <strong>dpr_cnt_th,</strong>  <strong>dpr_mode</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read : cat /proc/videograph/di/tmnr/dpr</strong></p>
+<p><strong>Output:</strong></p>
+<h2 id="de-interlace-di">De-Interlace (DI)<a class="headerlink" href="#de-interlace-di" title="Permanent link">&para;</a></h2>
+<p>The dynamic de-interlace method is to detect where is the motion object in the image and where is the static object in the image. For static block in the image using field de-interlace to get the completely resolution in vertical direction, and for motion block in the image using single field de-interlace to avoid sawtooth and ghost phenomenon. The following are common abnormal phenomenons which caused by de-interlace, it needs to adjust parameter to get the best image performance.</p>
+<p><img alt="" src="media/e86f5eea55d13f7ce03c7f967205cf9d.png" /></p>
+<p>Table 51 sawtooth phenomen caused by motion object misjudge to static object</p>
+<p><img alt="" src="media/699549446c042636780ae6b4de6d115a.png" /></p>
+<p>Table 52 resolution decreased phenomenon caused by static object misjudge to motion object</p>
+<h3 id="parameter-description_3">Parameter Description<a class="headerlink" href="#parameter-description_3" title="Permanent link">&para;</a></h3>
+<p>(The blue text is the part of the parameter difference between this module and the 9831x series, please pay special attention)</p>
+<p>Table 53 DI Parameter List</p>
+<table>
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Range</strong></th>
+<th><strong>Def</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>top_motion_en</td>
+<td>0\~1</td>
+<td>1</td>
+<td>Enable the motion detection of top field.</td>
+</tr>
+<tr>
+<td>bot_motion_en</td>
+<td>0\~1</td>
+<td>1</td>
+<td>Enable the motion detection of bottom field.</td>
+</tr>
+<tr>
+<td>auto_th_en</td>
+<td>0\~1</td>
+<td>1</td>
+<td>Based on Y to automatically generate “md_th”. If this function is enabled, the parameter “md_th” is invalid.</td>
+</tr>
+<tr>
+<td>strong_md_en</td>
+<td>0\~1</td>
+<td>1</td>
+<td>Enable “strong_md” function. If “md” is larger than “strong_md_th”, it is determined as motion block, no matter the motion block is continuous or not.</td>
+</tr>
+<tr>
+<td>mmb_en</td>
+<td>0\~1</td>
+<td>1</td>
+<td>Enable motion macro block(mmb) determine mechanism. Single mb is motion does not mean it is necessary mmb, it needs to be determined with other mb.</td>
+</tr>
+<tr>
+<td>smb_en</td>
+<td>0\~1</td>
+<td>1</td>
+<td>Enable static macro block(smb) determine mechanism. (The pixel in smb still has possibility to be motion)</td>
+</tr>
+<tr>
+<td>emb_en</td>
+<td>0\~1</td>
+<td>1</td>
+<td>Enable extend macro block(emb) determine mechanism, the smb will further perform emb to avoid fratured image.</td>
+</tr>
+<tr>
+<td>lmb_en</td>
+<td>0\~1</td>
+<td>1</td>
+<td>Enable line macro block(lmb) determine mechanism. (mb is texture in line form)</td>
+</tr>
+<tr>
+<td>pmmb_en</td>
+<td>0\~1</td>
+<td>1</td>
+<td>Enable pmmb detection, “tm_di” must be enable.</td>
+</tr>
+<tr>
+<td>corner_detect_en</td>
+<td>0\~1</td>
+<td>1</td>
+<td>Determine whether it is corner pixel, if it is corner pixel, replace the pixel with average of the upper pixel and lower pixel.</td>
+</tr>
+<tr>
+<td>di_gmm_motion_en</td>
+<td>0\~1</td>
+<td>1</td>
+<td>Reference gmm’s motion result. Motion = (DI motion || GMM motion)</td>
+</tr>
+<tr>
+<td>all_motion</td>
+<td>0\~1</td>
+<td>0</td>
+<td>Debug mode. Set all image as motion.</td>
+</tr>
+<tr>
+<td>all_static</td>
+<td>0\~1</td>
+<td>0</td>
+<td>Debug mode, set all image as static.</td>
+</tr>
+<tr>
+<td>strong_edge</td>
+<td>0\~255</td>
+<td>40</td>
+<td>Threshold for determining strong edge.</td>
+</tr>
+<tr>
+<td>strong_md_th</td>
+<td>0\~255</td>
+<td>40</td>
+<td>Threshold for determining strong motion. if (pixel diff > strong_md_th) => motion</td>
+</tr>
+<tr>
+<td>md_th</td>
+<td>0\~255</td>
+<td>10</td>
+<td>Threshold for determining whether pixel is motion.</td>
+</tr>
+<tr>
+<td>line_admit</td>
+<td>0\~15</td>
+<td>4</td>
+<td>Threshold for determining whether it is line pixel. If number of continuous similar point is larger than line_admit, it is determined as line pixel.</td>
+</tr>
+<tr>
+<td>lmb_th</td>
+<td>0\~255</td>
+<td>6</td>
+<td>Threshold for determining whether it is line mb. If line pixel in mb is larger than “lmb_th”, it is determined as line mb.</td>
+</tr>
+<tr>
+<td>mmb_th</td>
+<td>0\~255</td>
+<td>16</td>
+<td>Threshold for determining whether it is mmb. If larger than “mmb_th”, it is motion.</td>
+</tr>
+<tr>
+<td>smb_th</td>
+<td>0\~255</td>
+<td>4</td>
+<td>Threshold for determining whether it is smb. If larger than “smb_th”, it is static.</td>
+</tr>
+<tr>
+<td>emb_th</td>
+<td>0\~255</td>
+<td>8</td>
+<td>Threshold for determining whether it is emb. If larger than “emb_th”, it is extend mb.</td>
+</tr>
+<tr>
+<td>ela_h_th</td>
+<td>0\~255</td>
+<td>60</td>
+<td>The break point of edge strength weighting map. Please refer to advance description.</td>
+</tr>
+<tr>
+<td>ela_l_th</td>
+<td>0\~255</td>
+<td>20</td>
+<td>The break point of edge strength weighting map. Please refer to advance description.</td>
+</tr>
+<tr>
+<td>mmb_scene_change_en</td>
+<td>0\~1</td>
+<td>1</td>
+<td>Enable the scene change detection of mmb. When it is determined as scene changed, the algorithm will set all image as motion status to avoid fratured image.</td>
+</tr>
+<tr>
+<td>mmb_scene_change_th</td>
+<td>0\~2\^16-1</td>
+<td>1080</td>
+<td>Threshold for determining whether it is scene changed. When the number of mmb is larger than this threshold, it is determined as scene changed.</td>
+</tr>
+<tr>
+<td>ch0_row1_status_ctrl</td>
+<td>0\~3</td>
+<td>0</td>
+<td>Control with special treatment for first row in even field 2’b00 : Automatic processing by DI. 2’b01: Same as process that DI handle a still object 2’b10: Same as process that DI handle a motion object 2’b11: Fill it with black.</td>
+</tr>
+<tr>
+<td>ch1_row1_status_ctrl</td>
+<td>0\~3</td>
+<td>0</td>
+<td>Control with special treatment for first row in odd field 2’b00 : Automatic processing by DI. 2’b01: Same as process that DI handle a still object 2’b10: Same as process that DI handle a motion object 2’b11: Fill it with black.</td>
+</tr>
+<tr>
+<td>ch0_last_row_status_ctrl</td>
+<td>0\~3</td>
+<td>0</td>
+<td>Control with special treatment for last row in even field 2’b00 : Automatic processing by DI. 2’b01: Same as process that DI handle a still object 2’b10: Same as process that DI handle a motion object 2’b11: Fill it with black.</td>
+</tr>
+<tr>
+<td>ch1_last_row_status_ctrl</td>
+<td>0\~3</td>
+<td>0</td>
+<td>Control with special treatment for last row in odd field 2’b00 : Automatic processing by DI. 2’b01: Same as process that DI handle a still object 2’b10: Same as process that DI handle a motion object 2’b11: Fill it with black.</td>
+</tr>
+</tbody>
+</table>
+<h6 id="advance-desciption">Advance desciption<a class="headerlink" href="#advance-desciption" title="Permanent link">&para;</a></h6>
+<ul>
+<li>lmb_admit : When horizontal line in static object appears as broken line(uncontinuous line) or has uneven phenomenon, it is recommend to properly decrease this value.</li>
+<li>lmb_th : When horizontal line in static object appears as broken line(uncontinuous line) or has uneven phenomenon, it is recommend to properly decrease this value. This value should larger or equal to “line_admin”.</li>
+<li>mmb_th : When the edge of motion object easily has broken phenomenon, it might be the motion object edge be determined as static, properly decrease this value could improve this phenomenon.</li>
+<li>emb_th : When the motion small object(such as falling beans or high frequency thin line) has broken phenomenon, properly decrease this value could improve this phenomenon, increase the sensitivity of small object.</li>
+<li>smb _th : When static text(thin line) or trademark have discontinuous line or uneven phenomenon(caused by static point misjudge to motion point, and adopt interpolation result), properly decrease this value can let it more easily to be determined as static object.</li>
+<li>ela_h_th, ela_l_th: Based on Edge strength to decide use directional interpolation or average interpolation. The relationship please refer the following figure. Normally, it is recommend to use default value.</li>
+</ul>
+<h3 id="setting-interface_3">Setting Interface<a class="headerlink" href="#setting-interface_3" title="Permanent link">&para;</a></h3>
+<h4 id="proc_3">Proc<a class="headerlink" href="#proc_3" title="Permanent link">&para;</a></h4>
+<h6 id="procvideographdididump_info">/proc/videograph/di/di/dump_info<a class="headerlink" href="#procvideographdididump_info" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read all DIE parameters of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write : Not Support</strong></p>
+<p><strong>Read : cat /proc/videograph/di/di/dump_info</strong></p>
+<p><strong>Output:</strong></p>
+<h6 id="procvideographdidimotion_en">/proc/videograph/di/di/motion_en<a class="headerlink" href="#procvideographdidimotion_en" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the DI/top_motion_en, bot_motion_en parameter of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>echo [top_motion_en 0\~1] [bot_motion_en 0\~1] > /proc/videograph/di/di/motion_en</strong></td>
+<td><strong>top_motion_en, bot_motion_en</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read : cat /proc/videograph/di/di/motion_en</strong></p>
+<p><strong>Output:</strong></p>
+<h6 id="procvideographdidimd_th">/proc/videograph/di/di/md_th<a class="headerlink" href="#procvideographdidimd_th" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the DIE/md_th parameter of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>echo [auto_th_en 0 \~ 1] [md_th 0\~255]> /proc/videograph/di/di/md_th</strong></td>
+<td>auto_md_en, md_th ※ When “auto_md_en” is 1, “md_th” is not working.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read : cat /proc/videograph/di/di/md_th</strong></p>
+<p><strong>Output:</strong></p>
+<h6 id="procvideographdidistrong_md">/proc/videograph/di/di/strong_md<a class="headerlink" href="#procvideographdidistrong_md" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the DI/strong_md related parameters of the current channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>echo [strong_md_en 0 \~ 1] [strong_md_th 0\~255]> /proc/videograph/di/di/strong_md</strong></td>
+<td><strong>strong_md_en, strong_md_th</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read : cat /proc/videograph/di/di/strong_md</strong></p>
+<p><strong>Output:</strong></p>
+<h6 id="procvideographdidistrong_edge">/proc/videograph/di/di/strong_edge<a class="headerlink" href="#procvideographdidistrong_edge" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the DI/strong_edge parameter of the cuurent camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>echo [strong_edge 0\~255]> /proc/videograph/di/di/strong_edge</strong></td>
+<td><strong>strong_edge</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read : cat /proc/videograph/di/di/strong_edge</strong></p>
+<p><strong>Output:</strong></p>
+<h6 id="procvideographdidicorner_detect_en">/proc/videograph/di/di/corner_detect_en<a class="headerlink" href="#procvideographdidicorner_detect_en" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the DI/corner_detect_en parameter of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>echo [corner_det_en 0\~1]> /proc/videograph/di/di/corner_det_en</strong></td>
+<td><strong>corner_detect_en</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read : cat /proc/videograph/di/di/corner_det_en</strong></p>
+<p><strong>Output:</strong></p>
+<h6 id="procvideographdidiline_admit">/proc/videograph/di/di/line_admit<a class="headerlink" href="#procvideographdidiline_admit" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the DI/line_admit parameter of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>echo [line_admit 0\~15]> /proc/videograph/di/di/line_admit</strong></td>
+<td><strong>line_admit</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read : cat /proc/videograph/di/di/line_admit</strong></p>
+<p><strong>Output:</strong></p>
+<h6 id="procvideographdidiall_motion_static">/proc/videograph/di/di/all_motion_static<a class="headerlink" href="#procvideographdidiall_motion_static" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the DI/all_motion, all_static parameter of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>echo [all_motion 0\~1] [all_static 0\~1] > /proc/videograph/di/di/all_motion_static</strong></td>
+<td><strong>all_motion, all_static</strong> ※Should not be both set to 1.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read : cat /proc/videograph/di/di/all_motion_static</strong></p>
+<p><strong>Output:</strong></p>
+<h6 id="procvideographdididi_gmm_motion_en">/proc/videograph/di/di/di_gmm_motion_en<a class="headerlink" href="#procvideographdididi_gmm_motion_en" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the DI/di_gmm_motion_en of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>echo [enable 0\~1] > /proc/videograph/di/di/di_gmm_motion_en</strong></td>
+<td><strong>di_gmm_motion_en</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read : cat /proc/videograph/di/di/di_gmm_motion_en</strong></p>
+<p><strong>Output:</strong></p>
+<h6 id="procvideographdidimmb_param">/proc/videograph/di/di/mmb_param<a class="headerlink" href="#procvideographdidimmb_param" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the DI/mmb related parameter of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>echo [mmb_en 0\~1] [pmmb_en 0\~1] [mmb_th 0\~255] > /proc/videograph/di/di/mmb_param</strong></td>
+<td><strong>mmb_en,</strong>  <strong>pmmb_en,(mmb_en should be 1)</strong> <strong>mmb_th</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read : cat /proc/videograph/di/di/mmb_param</strong></p>
+<p><strong>Output:</strong></p>
+<h6 id="procvideographdidimmb_scene_change">/proc/videograph/di/di/mmb_scene_change<a class="headerlink" href="#procvideographdidimmb_scene_change" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the DI/mmb scene change related parameter of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>echo [scene_change_en 0\~1] [scene_change_th 0\~65535] > /proc/videograph/di/di/mmb_scene_change</strong></td>
+<td><strong>mmb_scene_change_en,</strong>  <strong>mmb_scene_change_th</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read : cat /proc/videograph/di/di/mmb_scene_change</strong></p>
+<p><strong>Output:</strong></p>
+<h6 id="procvideographdidismb_param">/proc/videograph/di/di/smb_param<a class="headerlink" href="#procvideographdidismb_param" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the DI/smb related parameter of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>echo [smb_en 0\~1] [smb_th 0\~255] > /proc/videograph/di/di/smb_param</strong></td>
+<td><strong>smb_en,</strong>  <strong>smb_th</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read : cat /proc/videograph/di/di/smb_param</strong></p>
+<p><strong>Output:</strong></p>
+<h6 id="procvideographdidiemb_param">/proc/videograph/di/di/emb_param<a class="headerlink" href="#procvideographdidiemb_param" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the DI/emb related parameter of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>echo [emb_en 0\~1] [emb_th 0\~255] > /proc/videograph/di/di/emb_param</strong></td>
+<td><strong>emb_en,</strong>  <strong>smb_th</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read : cat /proc/videograph/di/di/emb_param</strong></p>
+<p><strong>Output:</strong></p>
+<h6 id="procvideographdidilmb_param">/proc/videograph/di/di/lmb_param<a class="headerlink" href="#procvideographdidilmb_param" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the DIE/lmb related parameter of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>echo [lmb_en 0\~1] [lmb_th 0\~255] > /proc/videograph/di/di/lmb_param</strong></td>
+<td><strong>lmb_en,</strong>  <strong>lmb_th</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read : cat /proc/videograph/di/di/lmb_param</strong></p>
+<p><strong>Output:</strong></p>
+<h6 id="procvideographdidiela_th">/proc/videograph/di/di/ela_th<a class="headerlink" href="#procvideographdidiela_th" title="Permanent link">&para;</a></h6>
+<p><strong>[Description]</strong></p>
+<p>Read or write the DIE/ela_h_th, ela_l_th related parameter of the current camera channel.</p>
+<p><strong>[Command]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>Target Parameter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>echo [ela_hi 0\~255] [ela_lo 0\~255] > /proc/videograph/di/di/ela_th</strong></td>
+<td><strong>ela_h_th,</strong>  <strong>ela_l_th</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read : cat /proc/videograph/di/di/ela_th</strong></p>
+<p><strong>Output:</strong></p>
+<h6 id="procvideographdidirow_status_ctrl">/proc/videograph/di/di/row_status_ctrl<a class="headerlink" href="#procvideographdidirow_status_ctrl" title="Permanent link">&para;</a></h6>
+<p><strong>[描述]</strong></p>
+<p>Read or write the DEI/row1_status_ctrl, last_row_status_ctrl related parameter of the current camera channel.</p>
+<p><strong>[語法]</strong></p>
+<p><strong>Write :</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>proc command</strong></th>
+<th><strong>目標參數</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>echo [ch0_row1_status_ctrl 0\~3] [ch1_row1_status_ctrl 0\~3] [ch0_last_row_status_ctrl 0\~3] [ch1_last_row_status_ctrl 0\~3] > /proc/videograph/di/di/row_status_ctrl</strong></td>
+<td><strong>ch0_row1_status_ctrl,</strong>  <strong>ch1_row1_status_ctrl,</strong> <strong>ch0_last_row_status_ctrl,</strong> <strong>ch1_last_row_status_ctrl,</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read : cat /proc/videograph/di/di/row_status_ctrl</strong></p>
+<p><strong>Output:</strong></p>
+<h2 id="revision-history">Revision History<a class="headerlink" href="#revision-history" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th><strong>Version</strong></th>
+<th><strong>Date</strong></th>
+<th><strong>Advisor</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.1.0</td>
+<td>2021/01/20</td>
+<td>Allen Hsu</td>
+<td>First version.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="NT9833x_LCD_IQ_Tuning_Guide_en.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: LCD IQ Tuning Guide" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              LCD IQ Tuning Guide
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../MEDIA/NT9833x_HDAL_Vendor_ISP_Programming_Guide_en.html" class="md-footer__link md-footer__link--next" aria-label="Next: Vendor ISP Programming Guide" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Vendor ISP Programming Guide
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.highlight", "navigation.tabs"], "search": "../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.37e9125f.min.js"></script>
+      
+    
+  </body>
+</html>
