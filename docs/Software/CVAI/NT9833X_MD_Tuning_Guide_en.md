@@ -1,39 +1,44 @@
-## Ten Sets of MD Parameters
+## 1 Ten Sets of MD Parameters
 
-### Overview
+### 1.1 Overview
 
 We provide 10 sets of parameters of MD model for different sensitive degree (1\~10, and 10 means the most sensitive parameters set). MD with a more sensitive parameter set can produce results with a lower miss rate and higher false alarm.
 
-### Scene Test
+### 1.2 Scene Test
 
 The MD performance is evaluated using video tests and real-world tests.
 
--   Video test
-    -   Indoor
+ Video test
 
-        ![](media/cf7fb1bcd50880379cf5f337057cd5f3.png) ![](media/fa3b57af3537ee32723cd395febdee83.png)
+ Indoor
 
-        Shadow remove = 1 Shadow remove = 0
+![D:\\work6\\636\\fhtml\\NT9833X_MD_Tuning_Guide_en.files\\image002.jpg](nvt_media/33cff950b7d9d3fe5b5bbf5ea82a3920.jpg) ![D:\\work6\\636\\fhtml\\NT9833X_MD_Tuning_Guide_en.files\\image003.jpg](nvt_media/a2810a6449f3d775266ad9fb44dfdb02.jpg)
 
-    -   Stable moving scene
+Shadow remove = 1 Shadow remove = 0
 
-        ![](media/7c8f4195883ea1a70f6592030907b55a.png) ![](media/15120fac4f34212821d283e0f64dea85.png)
+ Stable moving scene
 
-    -   Outdoor
+![D:\\work6\\636\\fhtml\\NT9833X_MD_Tuning_Guide_en.files\\image004.jpg](nvt_media/60e02f7bce4fd3f68542444e14966052.jpg) ![D:\\work6\\636\\fhtml\\NT9833X_MD_Tuning_Guide_en.files\\image005.jpg](nvt_media/7cc35e24e2246ca7ecb52865866158b3.jpg)
 
-        ![](media/0e9d9f6f98ec522a1ca90e985fadf28e.png) ![](media/e261c4756bd3acc5ff3dfc1996f31e23.png)
+ Outdoor
 
-    -   Dramatic AE changes scene
+![D:\\work6\\636\\fhtml\\NT9833X_MD_Tuning_Guide_en.files\\image006.jpg](nvt_media/06d4123c837022e3a6c658859bf61265.jpg) ![D:\\work6\\636\\fhtml\\NT9833X_MD_Tuning_Guide_en.files\\image007.jpg](nvt_media/531e91186a49f1c1edaef4813ae1c071.jpg)
 
-        ![](media/9a3ca2f231ec57206321597120c1e8cf.png) ![](media/cacfc3d1f08fd74a17d1139f52eea0e7.png)
+ Dramatic AE changes scene
 
--   Real-world tests
-    -   Un-moving object. (e.g. a statue in the room)
-    -   Repetitively change of scenarios. (e.g. two images are played alternately every 15 seconds)
-    -   Progressive change of light in the scene.
-    -   Objects which keep moving in the scene.
+![D:\\work6\\636\\fhtml\\NT9833X_MD_Tuning_Guide_en.files\\image008.jpg](nvt_media/001645763d6e3ca39de83492e9230fe0.jpg) ![D:\\work6\\636\\fhtml\\NT9833X_MD_Tuning_Guide_en.files\\image009.jpg](nvt_media/d118cf34e4a64bea248dce8e019154ba.jpg)
 
-### Test Result
+ Real-world tests
+
+ Un-moving object. (e.g. a statue in the room)
+
+ Repetitively change of scenarios. (e.g. two images are played alternately every 15 seconds)
+
+ Progressive change of light in the scene.
+
+ Objects which keep moving in the scene.
+
+### 1.3 Test Result
 
 | sensitive | ALPHA | TB | SIGMA | Shadow remove |
 |-----------|-------|----|-------|---------------|
@@ -56,6 +61,7 @@ The MD performance is evaluated using video tests and real-world tests.
 | MODEL_UPDATE =0             |   |   |   |
 | TG=9                        |   |   |   |
 | PRUNE=ALPHA\*1.6            |   |   |   |
+|                             |   |   |   |
 
 | **Shadow remove = 0** |   |   |
 |-----------------------|---|---|
@@ -63,6 +69,7 @@ The MD performance is evaluated using video tests and real-world tests.
 | TEXT_DIFF_THRES=0     |   |   |
 | TEXT_THRES=50         |   |   |
 | TEXT_RATIO_THRES=127  |   |   |
+|                       |   |   |
 
 | **Shadow remove = 1** |   |   |
 |-----------------------|---|---|
@@ -70,20 +77,25 @@ The MD performance is evaluated using video tests and real-world tests.
 | TEXT_DIFF_THRES=50    |   |   |
 | TEXT_THRES=50         |   |   |
 | TEXT_RATIO_THRES=50   |   |   |
+|                       |   |   |
 
-### Tuning Suggestion
+### 1.4 Tuning Suggestion
 
--   In the case of dramatic light change or moving shadow, a higher *ALPHA* value is suggested to reduce the false alarm. However, the side effect is that a slowly moving object might be detected as background.
--   In the case of dark shadow, a higher *TB* value is suggested. The side effect is that the detected foreground of object might be broken.
--   If the result of motion detection is not stable, we suggest to adjust *TG* to get a more stable result.
+ In the case of dramatic light change or moving shadow, a higher *ALPHA* value is suggested to reduce the false alarm. However, the side effect is that a slowly moving object might be detected as background.
 
-### Scene Suggestion
+ In the case of dark shadow, a higher *TB* value is suggested. The side effect is that the detected foreground of object might be broken.
 
--   MD is not suitable for the moment when turning on or turning off the light. The results of MD should be skipped at this moment for about 10 seconds.
--   MD should be used with a fixed-camera which captures a stable scene. Once camera moves, MD might need more time to get a stable background model.
--   The size of a detected moving object should be larger than 1 micro-block (MB)
+ If the result of motion detection is not stable, we suggest to adjust *TG* to get a more stable result.
 
-## Revision History
+### 1.5 Scene Suggestion
+
+ MD is not suitable for the moment when turning on or turning off the light. The results of MD should be skipped at this moment for about 10 seconds.
+
+ MD should be used with a fixed-camera which captures a stable scene. Once camera moves, MD might need more time to get a stable background model.
+
+ The size of a detected moving object should be larger than 1 micro-block (MB)
+
+## 2 Revision History
 
 | **Revision** | **Date**   | **Author** | **Changes**                            |
 |--------------|------------|------------|----------------------------------------|

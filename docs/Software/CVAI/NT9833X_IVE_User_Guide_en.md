@@ -1,43 +1,48 @@
-## IVE Introduction
+## 1 IVE Introduction
 
-### **API List**
+### **1.1 API List**
 
-NVT_IVE_Filter : General filter function
+ NVT_IVE_Filter : General filter function
 
-NVT_IVE_Median : 3x3 Median filter function
+ NVT_IVE_Median : 3x3 Median filter function
 
-NVT_IVE_Min : 3x3 Min filter function
+ NVT_IVE_Min : 3x3 Min filter function
 
-NVT_IVE_Max : 3x3 Max filter function
+ NVT_IVE_Max : 3x3 Max filter function
 
-NVT_IVE_Sobel : 5x5 Sobel filter function
+ NVT_IVE_Sobel : 5x5 Sobel filter function
 
-NVT_IVE_Thresh : Image thresholding function
+ NVT_IVE_Thresh : Image thresholding function
 
-NVT_IVE_Dilate : Image dilate function
+ NVT_IVE_Dilate : Image dilate function
 
-NVT_IVE_Erode : Image erode function
+ NVT_IVE_Erode : Image erode function
 
-NVT_IVE_Integ : Integral image function
+ NVT_IVE_Integ : Integral image function
 
-NVT_IVE_Canny : Canny edge function
+ NVT_IVE_Canny : Canny edge function
 
-NVT_IVE_CSC : Color Space Conversion (CSC) function
+ NVT_IVE_CSC : Color Space Conversion (CSC) function
 
-NVT_IVE_Histo : Histogram function
+ NVT_IVE_Histo : Histogram function
 
-NVT_IVE_NCC : Normalized Cross Correlation (NCC) function
+ NVT_IVE_NCC : Normalized Cross Correlation (NCC) function
 
-## Flow
+## 2 Flow
 
 Using LibIVE, main flow as following flow chart
 
--   vendor_ive_init : Before running task, this function will open engine clock. Only need to execute this function once, do not execute repeatly.
--   vendor_ive_uninit : After running task, this function will close engine clock. Only need to execute this function once, do not execute repeatly.
+|   |                                                                                                                         |
+|---|-------------------------------------------------------------------------------------------------------------------------|
+|   | ![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image002.gif](nvt_media/a85ab5e5bbfa7ab468691b593deab98b.gif) |
 
-## API
+ vendor_ive_init : Before running task, this function will open engine clock. Only need to execute this function once, do not execute repeatly.
 
-### NVT_IVE_Filter
+ vendor_ive_uninit : After running task, this function will close engine clock. Only need to execute this function once, do not execute repeatly.
+
+## 3 API
+
+### 3.1 NVT_IVE_Filter
 
 【Description】
 
@@ -81,15 +86,15 @@ Library file: libvendor_cv.a
 
 【Notice】
 
--   Filter index number as following Figure 2.21
+ Filter index number as following Figure 2.21
 
-    ![](media/aefd3e2cb804f7244a3e06fd8d32515c.jpeg)
+![Snapshot326](nvt_media/3e49696a1d19a8c77e3675129d1a5f22.jpg)
 
 Figure 2.21
 
 u8Mask[0]\~ u8Mask[9] corresponds to index 0\~9
 
--   For image border pixels, mirror padding is applied in general filter process.
+ For image border pixels, mirror padding is applied in general filter process.
 
 【Sample】
 
@@ -97,10 +102,11 @@ hdal\\samples\\alg_ive_filter\\alg_ive_filter.c
 
 【Efficiency】
 
--   The execution time is proportional to the resolution of an image.
--   The execution time of NVT_IVE_Filter is 532 ![](media/96edb75d85413082e3f08d61b180e298.png)![](media/96edb75d85413082e3f08d61b180e298.png), estimated by a sample (image resolution 516x376).
+ The execution time is proportional to the resolution of an image.
 
-### NVT_IVE_Median
+ The execution time of NVT_IVE_Filter is 532 ![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image004.gif](nvt_media/dca0cba4e810fb0e2845ea089ac4d1bb.gif), estimated by a sample (image resolution 516x376).
+
+### 3.2 NVT_IVE_Median
 
 【Description】
 
@@ -137,7 +143,7 @@ Library file: libvendor_cv.a
 
 【Notice】
 
--   For image border pixels, mirror padding is applied in median filter process.
+ For image border pixels, mirror padding is applied in median filter process.
 
 【Sample】
 
@@ -145,10 +151,11 @@ hdal\\samples\\alg_ive_median\\alg_ive_median.c
 
 【Efficiency】
 
--   The execution time is proportional to the resolution of an image.
--   The execution time of NVT_IVE_Median is 540 ![](media/96edb75d85413082e3f08d61b180e298.png)![](media/96edb75d85413082e3f08d61b180e298.png), estimated by sample (image resolution 516x376).
+ The execution time is proportional to the resolution of an image.
 
-### NVT_IVE_Min
+ The execution time of NVT_IVE_Median is 540 ![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image004.gif](nvt_media/dca0cba4e810fb0e2845ea089ac4d1bb.gif), estimated by sample (image resolution 516x376).
+
+### 3.3 NVT_IVE_Min
 
 【Description】
 
@@ -185,7 +192,7 @@ Library file: libvendor_cv.a
 
 【Notice】
 
--   For image border pixels, mirror padding is applied in min filter process.
+ For image border pixels, mirror padding is applied in min filter process.
 
 【Sample】
 
@@ -193,10 +200,11 @@ hdal\\samples\\alg_ive_min\\alg_ive_min.c
 
 【Efficiency】
 
--   The execution time is proportional to the resolution of an image.
--   The execution time of NVT_IVE_Min is 536 ![](media/96edb75d85413082e3f08d61b180e298.png)![](media/96edb75d85413082e3f08d61b180e298.png), estimated by sample (image resolution 516x376).
+ The execution time is proportional to the resolution of an image.
 
-### NVT_IVE_Max
+ The execution time of NVT_IVE_Min is 536 ![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image005.gif](nvt_media/b34a165f035d3033868b6386e14261e4.gif), estimated by sample (image resolution 516x376).
+
+### 3.4 NVT_IVE_Max
 
 【Description】
 
@@ -233,7 +241,7 @@ Library file: libvendor_cv.a
 
 【Notice】
 
--   For image border pixels, mirror padding is applied in max filter process.
+ For image border pixels, mirror padding is applied in max filter process.
 
 【Sample】
 
@@ -241,10 +249,11 @@ hdal\\samples\\alg_ive_max\\alg_ive_max.c
 
 【Efficiency】
 
--   The execution time is proportional to the resolution of an image.
--   The execution time of NVT_IVE_Max is 541 ![](media/96edb75d85413082e3f08d61b180e298.png)![](media/96edb75d85413082e3f08d61b180e298.png), estimated by sample (image resolution 516x376).
+ The execution time is proportional to the resolution of an image.
 
-### NVT_IVE_Sobel
+ The execution time of NVT_IVE_Max is 541 ![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image006.gif](nvt_media/8fd256ccdccf59c105e045d0dafd0b2a.gif), estimated by sample (image resolution 516x376).
+
+### 3.5 NVT_IVE_Sobel
 
 【Description】
 
@@ -288,7 +297,7 @@ Library file: libvendor_cv.a
 
 【Notice】
 
--   User can set s8Mask for calculating gradient x, and the library will transpose and flip the mask for calculating gradient y. The mask index is shown as below:
+ User can set s8Mask for calculating gradient x, and the library will transpose and flip the mask for calculating gradient y. The mask index is shown as below:
 
 | 0  | 1  | 2  | 3  | 4  |
 |----|----|----|----|----|
@@ -297,7 +306,7 @@ Library file: libvendor_cv.a
 | 15 | 16 | 17 | 18 | 19 |
 | 20 | 21 | 22 | 23 | 24 |
 
--   User can set pstDst format as S16C1. If user set as S16C1, the output will be signed 8 bit gradient x/y packed format(gradient x signed 8bit + gradient y signed 8bit per pixel).
+ User can set pstDst format as S16C1. If user set as S16C1, the output will be signed 8 bit gradient x/y packed format(gradient x signed 8bit + gradient y signed 8bit per pixel).
 
 【Sample】
 
@@ -305,10 +314,11 @@ hdal\\samples\\alg_ive_sobel\\alg_ive_sobel.c
 
 【Efficiency】
 
--   The execution time is proportional to the resolution of an image.
--   The execution time of NVT_IVE_Sobel is 556 ![](media/96edb75d85413082e3f08d61b180e298.png)![](media/96edb75d85413082e3f08d61b180e298.png), estimated by sample (image resolution 516x376).
+ The execution time is proportional to the resolution of an image.
 
-### NVT_IVE_Thresh
+ The execution time of NVT_IVE_Sobel is 556 ![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image006.gif](nvt_media/8fd256ccdccf59c105e045d0dafd0b2a.gif), estimated by sample (image resolution 516x376).
+
+### 3.6 NVT_IVE_Thresh
 
 【Description】
 
@@ -352,15 +362,15 @@ Library file: libvendor_cv.a
 
 【Notice】
 
--   NVT_IVE_Thresh partitions image pixels into a 4bits image by LutThresh. The value of each output pixel could be 0-15. Each output pixel (U8C1) is the packed format by two neighbor pixel (LSB 4bit represent odd pixel, MSB 4bit represent even pixel).
+ NVT_IVE_Thresh partitions image pixels into a 4bits image by LutThresh. The value of each output pixel could be 0-15. Each output pixel (U8C1) is the packed format by two neighbor pixel (LSB 4bit represent odd pixel, MSB 4bit represent even pixel).
 
-    ![](media/60f2551073426dbe3d04139aeb915eee.png)
+![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image007.jpg](nvt_media/b2482e78476e3615e73bb205fb2c5b1f.jpg)
 
--   Packed output format is shown as:
+ Packed output format is shown as:
 
-    ![](media/3ee9681be6b91e15973f1e4098fbfd78.png)
+![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image008.gif](nvt_media/792a829b94c8d30e94e0bcef95c85be6.gif)
 
-    ![](media/28965d8239b5533b9e795df0b871ff21.png)
+![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image009.gif](nvt_media/c552d6b855f81348eb1ba8dd68eb460a.gif)
 
 【Sample】
 
@@ -368,10 +378,11 @@ hdal\\samples\\alg_ive_thresh\\alg_ive_thresh.c
 
 【Efficiency】
 
--   The execution time is proportional to the resolution of an image.
--   The execution time of NVT_IVE_Thresh is 500 ![](media/96edb75d85413082e3f08d61b180e298.png)![](media/96edb75d85413082e3f08d61b180e298.png), estimated by sample (image resolution 316x316).
+ The execution time is proportional to the resolution of an image.
 
-### NVT_IVE_Dilate
+ The execution time of NVT_IVE_Thresh is 500 ![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image010.gif](nvt_media/5da81c6d19b1313606cf60634f361f93.gif), estimated by sample (image resolution 316x316).
+
+### 3.7 NVT_IVE_Dilate
 
 【Description】
 
@@ -415,32 +426,33 @@ Library file: libvendor_cv.a
 
 【Notice】
 
--   The coefficients of structural element must be 0 or 1.
--   The 5x5 structural element is described by array **u8Mask** which contains 24 coefficients and the corresponding position in 2D space is
+ The coefficients of structural element must be 0 or 1.
 
-    ![](media/25272a9183466c5ddee306c2a33bca3a.jpeg)
+ The 5x5 structural element is described by array **u8Mask** which contains 24 coefficients and the corresponding position in 2D space is
 
-    Dilation uses a specified structural element to slide whole image and the process can be described as below
+![Snapshot325](nvt_media/d01d5d214aaa917a7dc46e000044e7aa.jpg)
 
-    *for each image pixel* **p** in input image **I**in {
+Dilation uses a specified structural element to slide whole image and the process can be described as below
 
-    *max =* **I**in(**p**)
+*for each image pixel* **p** in input image **I**in {
 
-    *for(i=0; i\<24; i++)* {
+*max =* **I**in(**p**)
 
-    *if(mask(i)==1 &&* **I**in*(***q***(i)) \> max)*
+*for(i=0; i\<24; i++)* {
 
-    *//* **q***(i)* is the corresponding pixel of coefficient *i*
+*if(mask(i)==1 &&* **I**in*(***q***(i)) \> max)*
 
-    *// max =* **I**in*(***q***(i))*
+*//* **q***(i)* is the corresponding pixel of coefficient *i*
 
-    }
+*// max =* **I**in*(***q***(i))*
 
-    **I**out*(***p***) = max*
+}
 
-    }
+**I**out*(***p***) = max*
 
--   For image border pixels, mirror padding is applied in dilation process.
+}
+
+ For image border pixels, mirror padding is applied in dilation process.
 
 【Sample】
 
@@ -448,10 +460,11 @@ hdal\\samples\\alg_ive_dilate\\alg_ive_dilate.c
 
 【Efficiency】
 
--   The execution time is proportional to the resolution of an image.
--   The execution time of NVT_IVE_Dilate is 346 ![](media/96edb75d85413082e3f08d61b180e298.png)![](media/96edb75d85413082e3f08d61b180e298.png), estimated by sample (image resolution 316x316).
+ The execution time is proportional to the resolution of an image.
 
-### NVT_IVE_Erode
+ The execution time of NVT_IVE_Dilate is 346 ![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image012.gif](nvt_media/3c4e7387e225ffc16083d1a2238f1ada.gif), estimated by sample (image resolution 316x316).
+
+### 3.8 NVT_IVE_Erode
 
 【Description】
 
@@ -495,32 +508,33 @@ Library file: libvendor_cv.a
 
 【Notice】
 
--   The coefficients of structural element must be 0 or 1.
--   The 5x5 structural element is described by array **u8Mask** which contains 24 coefficients and the corresponding position in 2D space is
+ The coefficients of structural element must be 0 or 1.
 
-    ![](media/25272a9183466c5ddee306c2a33bca3a.jpeg)
+ The 5x5 structural element is described by array **u8Mask** which contains 24 coefficients and the corresponding position in 2D space is
 
-    Erosion uses a specified structural element to slide whole image and the process can be described as below
+![Snapshot325](nvt_media/4aa63ecda42230a2c696a665ea01a0de.jpg)
 
-    *for each image pixel* **p** in input image **I**in {
+Erosion uses a specified structural element to slide whole image and the process can be described as below
 
-    *min =* **I**in(**p**)
+*for each image pixel* **p** in input image **I**in {
 
-    *for(i=0; i\<24; i++)* {
+*min =* **I**in(**p**)
 
-    *if(mask(i)==1 &&* **I**in*(***q***(i)) \< min)*
+*for(i=0; i\<24; i++)* {
 
-    *//* **q***(i)* is the corresponding pixel of coefficient *i*
+*if(mask(i)==1 &&* **I**in*(***q***(i)) \< min)*
 
-    *// min =* **I**in*(***q***(i))*
+*//* **q***(i)* is the corresponding pixel of coefficient *i*
 
-    }
+*// min =* **I**in*(***q***(i))*
 
-    **I**out*(***p***) = min*
+}
 
-    }
+**I**out*(***p***) = min*
 
--   For image border pixels, mirror padding is applied in erosion process.
+}
+
+ For image border pixels, mirror padding is applied in erosion process.
 
 【Sample】
 
@@ -528,16 +542,17 @@ hdal\\samples\\alg_ive_erode\\alg_ive_erode.c
 
 【Efficiency】
 
--   The execution time is proportional to the resolution of an image.
--   The execution time of NVT_IVE_Erode is 352 ![](media/96edb75d85413082e3f08d61b180e298.png)![](media/96edb75d85413082e3f08d61b180e298.png), estimated by sample (image resolution 316x316).
+ The execution time is proportional to the resolution of an image.
 
-### NVT_IVE_Integ
+ The execution time of NVT_IVE_Erode is 352 ![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image014.gif](nvt_media/9b2ce3348b728c5defeda5bc16fd24b1.gif), estimated by sample (image resolution 316x316).
+
+### 3.9 NVT_IVE_Integ
 
 【Description】
 
 This function calculates the sum of values in a rectangular subset of a grid:
 
-![](media/81c08cb8e8d15eaba4180350b3f8aea0.png)
+![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image015.gif](nvt_media/185d089ef64db021b64d6a4449bc0e57.gif)
 
 【Function】
 
@@ -586,18 +601,21 @@ Sample code : samples\\alg_ive_integral\\alg_ive_integral.c
 
 【Efficiency】
 
--   The execution time is proportional to the resolution of an image.
--   The execution time of NVT_IVE_Integral is 694 ![](media/96edb75d85413082e3f08d61b180e298.png)![](media/96edb75d85413082e3f08d61b180e298.png), estimated by sample (image resolution 316x316).
+ The execution time is proportional to the resolution of an image.
 
-### NVT_IVE_Canny
+ The execution time of NVT_IVE_Integral is 694 ![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image014.gif](nvt_media/9b2ce3348b728c5defeda5bc16fd24b1.gif), estimated by sample (image resolution 316x316).
+
+### 3.10 NVT_IVE_Canny
 
 【Description】
 
 NVT_IVE_Canny extract edges in a gray scale image by following steps
 
--   Image smoothing
--   Image gradient and gradient magnitude calculation
--   Non-maximun suppression
+ Image smoothing
+
+ Image gradient and gradient magnitude calculation
+
+ Non-maximun suppression
 
 【Function】
 
@@ -631,11 +649,11 @@ Library file: libvendor_cv.a
 
 【Notice】
 
--   The edge detection process uses a 7x7 kernel to smooth input image. The smoothing kernel is described by an array with 10 elements, **s8Mask**, and the corresponding position in 2D space is
+ The edge detection process uses a 7x7 kernel to smooth input image. The smoothing kernel is described by an array with 10 elements, **s8Mask**, and the corresponding position in 2D space is
 
-    ![](media/aefd3e2cb804f7244a3e06fd8d32515c.jpeg)
+![Snapshot326](nvt_media/5461ae63352095579b1cf3cc4ee93716.jpg)
 
-    The valid value range of **s8Mask** is [-15, 15].
+The valid value range of **s8Mask** is [-15, 15].
 
 【Sample】
 
@@ -643,10 +661,11 @@ hdal\\samples\\alg_ive_canny\\alg_ive_canny.c
 
 【Efficiency】
 
--   The execution time is proportional to the resolution of an image.
--   The execution time of NVT_IVE_Canny is 367 ![](media/96edb75d85413082e3f08d61b180e298.png)![](media/96edb75d85413082e3f08d61b180e298.png), estimated by sample (image resolution 316x316).
+ The execution time is proportional to the resolution of an image.
 
-### NVT_IVE_CSC
+ The execution time of NVT_IVE_Canny is 367 ![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image014.gif](nvt_media/9b2ce3348b728c5defeda5bc16fd24b1.gif), estimated by sample (image resolution 316x316).
+
+### 3.11 NVT_IVE_CSC
 
 【Description】
 
@@ -693,41 +712,41 @@ Library file: libvendor_cv.a
 
 【Notice】
 
--   Only support YUV420SP(NV12)/YVU420SP(NV21)/YUV422 input
+ Only support YUV420SP(NV12)/YVU420SP(NV21)/YUV422 input
 
-    YUV420SP(NV12):
+YUV420SP(NV12):
 
-![](media/1f3bf0e070494dd9a136450532a40caf.png)
+![在这里插入图片描述](nvt_media/b8418671fe76d58921d132317b749673.jpg)
 
 YVU420SP(NV21):
 
-![](media/f687e11db7a5df0db7fb0b9dd7a85500.png)
+![在这里插入图片描述](nvt_media/7472312a1dedac4eb3e3b520a5af1611.jpg)
 
 YUV422 support UYVY、YUYV、VYUY、YVYU 4 types.
 
-![](media/0dd0e24e1f64b611b5bee72eb42be6f1.png)
+![在这里插入图片描述](nvt_media/d24f6cb184db30245bf5edf2c71f2602.jpg)
 
--   Output format PLANAR/ PACKED as following figure
+ Output format PLANAR/ PACKED as following figure
 
 PLANAR:
 
-![](media/846733c9a935b2df4ac38a1675c8a8b9.png)
+![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image020.jpg](nvt_media/9dacababb8c4117e6b74fbe2ebce59b1.jpg)
 
 pstDst-\>u32Stride = width
 
 PACKED:
 
-![](media/5cfa9a7d1fc0d7df7b8275277d668921.png)
+![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image021.jpg](nvt_media/2dbbb3ab2a622047335c39c5ebcdf67b.jpg)
 
 pstDst-\>u32Stride = 3\*width
 
--   YUV2RGB : YUV-\>RGB -\>Gamma Correction
+ YUV2RGB : YUV-\>RGB -\>Gamma Correction
 
-    YUV2HSV : YUV -\>RGB -\>Gamma correction -\>HSV
+YUV2HSV : YUV -\>RGB -\>Gamma correction -\>HSV
 
-    YUV2LAB : YUV -\>RGB -\>Gamma correction -\>LAB
+YUV2LAB : YUV -\>RGB -\>Gamma correction -\>LAB
 
-    enRgbFmt should be set for all enCSCMode.
+enRgbFmt should be set for all enCSCMode.
 
 【Sample】
 
@@ -735,10 +754,11 @@ hdal\\samples\\alg_ive_csc\\alg_ive_csc.c
 
 【Efficiency】
 
--   The execution time is proportional to the resolution of an image.
--   The execution time of NVT_IVE_Canny is 569 ![](media/96edb75d85413082e3f08d61b180e298.png)![](media/96edb75d85413082e3f08d61b180e298.png), estimated by sample (image resolution 512x376).
+ The execution time is proportional to the resolution of an image.
 
-### NVT_IVE_Histo
+ The execution time of NVT_IVE_Canny is 569 ![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image022.gif](nvt_media/9335ab38a576c0d5415382a7a6296a69.gif), estimated by sample (image resolution 512x376).
+
+### 3.12 NVT_IVE_Histo
 
 【Description】
 
@@ -775,9 +795,9 @@ Library file: libvendor_cv.a
 
 【Notice】
 
--   Histogram output size = 256(bin) x 4(byte) = 1024(byte)
+ Histogram output size = 256(bin) x 4(byte) = 1024(byte)
 
-![](media/60329aaa2065427509b144dfbd0d531b.jpeg)
+![image006](nvt_media/15485167556b639b934f4548d8b37b59.jpg)
 
 【Sample】
 
@@ -785,22 +805,23 @@ hdal\\samples\\alg_ive_histo\\alg_ive_histo.c
 
 【Efficiency】
 
--   The execution time is proportional to the resolution of an image.
--   The execution time of NVT_IVE_Histo is 644 ![](media/96edb75d85413082e3f08d61b180e298.png)![](media/96edb75d85413082e3f08d61b180e298.png), estimated by a sample (image resolution 512x376).
+ The execution time is proportional to the resolution of an image.
 
-### NVT_IVE_NCC
+ The execution time of NVT_IVE_Histo is 644 ![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image022.gif](nvt_media/9335ab38a576c0d5415382a7a6296a69.gif), estimated by a sample (image resolution 512x376).
+
+### 3.13 NVT_IVE_NCC
 
 【Description】
 
 NVT_IVE_NCC can calculate normalized cross correlation. The formula is shown below:
 
-![](media/421ccb5d3ac334e3cba6465b6e9837c9.jpeg)
+![Snapshot330](nvt_media/31462b0fc5cf07610818ac5ba9be9d1d.jpg)
 
-![](media/ee3fed3563afcedd34bb449413f05000.png)
+![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image025.gif](nvt_media/c4c438201cf8eae173738e7b75fd6e7e.gif)
 
-![](media/06516cfd81d09143ff27ba10ca6f2af6.png)
+![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image026.gif](nvt_media/4c8c7570aa4d46c8ecbb491979d71382.gif)
 
-![](media/4cf20051a0f765692919b767c1c44b99.png)
+![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image027.gif](nvt_media/bb5c90b096c58305a845ded6e2c375b2.gif)
 
 【Function】
 
@@ -843,7 +864,7 @@ Library file: libvendor_cv.a
 
 【Notice】
 
--   After trigger NVT_IVE_NCC, calculation result is stored in pstDst.
+ After trigger NVT_IVE_NCC, calculation result is stored in pstDst.
 
 【Sample】
 
@@ -851,10 +872,11 @@ hdal\\samples\\alg_ive_ncc\\alg_ive_ncc.c
 
 【Efficiency】
 
--   The execution time is proportional to the resolution of an image.
--   The execution time of NVT_IVE_NCC is 537 ![](media/96edb75d85413082e3f08d61b180e298.png)![](media/96edb75d85413082e3f08d61b180e298.png), estimated by a sample (image resolution 512x376).
+ The execution time is proportional to the resolution of an image.
 
-## Error Code
+ The execution time of NVT_IVE_NCC is 537 ![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image022.gif](nvt_media/9335ab38a576c0d5415382a7a6296a69.gif), estimated by a sample (image resolution 512x376).
+
+## 4 Error Code
 
 | **Return value**   | **Description**                |
 |--------------------|--------------------------------|
@@ -868,9 +890,9 @@ hdal\\samples\\alg_ive_ncc\\alg_ive_ncc.c
 | LIB_IVE_ERR_UNLOCK | IVE hardware unlock failure    |
 | LIB_IVE_ERR_UNINIT | IVE hardware uninit failure    |
 
-## Revision History
+## 5 Revision History
 
-| **Revision** | **Date** | **Author** | **Changes**                                                                             |
-|--------------|----------|------------|-----------------------------------------------------------------------------------------|
-| 1.0          | 2022/5/9 | Ethan Wang | First Version.                                                                          |
-| 1.1          | 2022/8/2 | Ethan Wang | Add initialized & uninitialized IVE’s function. Update execution time of each function. |
+| **Revision** | **Date** | **Author** | **Changes**                                                                                   |
+|--------------|----------|------------|-----------------------------------------------------------------------------------------------|
+| 1.0          | 2022/5/9 | Ethan Wang | First Version.                                                                                |
+| 1.1          | 2022/8/2 | Ethan Wang | 1. Add initialized & uninitialized IVE’s function. 2. Update execution time of each function. |

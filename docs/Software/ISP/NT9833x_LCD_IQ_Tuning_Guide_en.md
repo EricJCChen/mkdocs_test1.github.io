@@ -1,25 +1,28 @@
-## Overview
+## 1 Overview
 
 LCD310 is the LCD controller of NT9833x. The following image processing modules are insided.
 
--   Y Gamma
--   YUV Adjustment
--   Local Contrast Enhance
--   Sharpen
+ Y Gamma
+
+ YUV Adjustment
+
+ Local Contrast Enhance
+
+ Sharpen
 
 ### 
 
-## IQ Tuning Guide
+## 2 IQ Tuning Guide
 
-### Y Gamma
+### 2.1 Y Gamma
 
 This feature is tone mapping and can be used to adjust the contrast, brightness and dynamic range of the image.
 
-#### Parameters
+#### 2.1.1 Parameters
 
 LCD310 Y Gamma divides the Y channel range from the darkest to the brightest and is equally divided into 16 blocks. Each block can be divided into up to 8 sub-blocks. The total number of all blocks must not exceed 32.
 
-![](media/346b3378ca8241642fcaa2a3fad124c3.png)
+![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image002.gif](nvt_media/7103bc75544b944c360b4b8673b56b4b.gif)
 
 | **Parameter**     | **Range** | **Def** | **Description**                                                                                                       |
 |-------------------|-----------|---------|-----------------------------------------------------------------------------------------------------------------------|
@@ -28,9 +31,11 @@ LCD310 Y Gamma divides the Y channel range from the darkest to the brightest and
 | **blk_split[16]** | 0\~3      | 0       | Block[x], Sub-block split 00 : no split. 01 : split to 2 sub-blocks 10 : split to 4 sub-blocks 11 : split to 8-blocks |
 | **Y_gm[32]**      | 0\~4095   |         | Gamma table                                                                                                           |
 
--   **gm_en:** Y gamma enable/disable
--   **blk_idx:** Sub-block index in each macro block. Corresponds to the index of the gamma table.
--   **blk_split:** Each block is divided into sub-blocks.
+ **gm_en:** Y gamma enable/disable
+
+ **blk_idx:** Sub-block index in each macro block. Corresponds to the index of the gamma table.
+
+ **blk_split:** Each block is divided into sub-blocks.
 
 **Ex. 1**：
 
@@ -80,7 +85,7 @@ blk_split[16] = {2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2};
 
 Y_gm[32] = {64, 128, 192, 256,320, 384, 448, 512, 768, 1024, 1280, 1536, 1792, 2048, 2304, 2560, 2816, 3072, 3328, 3584, 3648, 3712, 3776, 3840, 3904, 3968, 4032, 4095, 4095, 4095, 4095, 4095}; ※The last for value will be dummy.
 
-#### Tuning Interface
+#### 2.1.2 Tuning Interface
 
 ###### Proc Command:
 
@@ -90,35 +95,37 @@ echo 0 1 1 "80,128,176,224,256,304,336,368,528,688,832,1008,1344,1680,2016,2336"
 
 echo 0 1 2 "2640,2912,3152,3376,3552,3712,3776,3840,3872,3904,3936,3968,4000,4032,4064,4080" \> ygamma
 
-### YUV Adjustment
+### 2.2 YUV Adjustment
 
 This function includes adjustments for brightness, contrast, hue, saturation, etc., as follows:
 
--   Brightness:
-    -   Setting Interface： proc
+ Brightness:
 
-        **Read :** cat /proc/flcd310/brightness
+ Setting Interface： proc
 
-        **Write:** echo \<plane 0\> \<brightness -127\~127\> \> brightness
+**Read :** cat /proc/flcd310/brightness
+
+**Write:** echo \<plane 0\> \<brightness -127\~127\> \> brightness
 
 | Parameter  | Description                                                        |
 |------------|--------------------------------------------------------------------|
 | plane      | Image plane. Fixed to be 0 (Video plane)                           |
 | brightness | Brightness value. The larger value corressponds to brighter image. |
 
--   Result：
+ Result：
 
-| Brightness = 0   | ![](media/ac6ae99e24f15c554323381004c5fca4.jpeg) |
-|------------------|--------------------------------------------------|
-| Brightness = 25  | ![](media/1c25166fdf3b0be7fa9dbf321a6e80a6.jpeg) |
-| Brightness = -25 | ![](media/9ea3e312a741adc62ec02ca254df4bc5.jpeg) |
+| Brightness = 0   | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image003.jpg](nvt_media/20bcef3a644d0fb8ece9caa8d116a9db.jpg) |
+|------------------|------------------------------------------------------------------------------------------------------------------------------|
+| Brightness = 25  | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image004.jpg](nvt_media/44547d32ddf8f106b9cf12638002bcd6.jpg) |
+| Brightness = -25 | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image005.jpg](nvt_media/1f904fa812623b519ef3824cd3037657.jpg) |
 
--   Contrast: Map the image Y channel to adjust the image contrast.
-    -   Setting Interface： /proc/flcd310/contrast
+ Contrast: Map the image Y channel to adjust the image contrast.
 
-        **Read:** cat /proc/flcd310/contrast
+ Setting Interface： /proc/flcd310/contrast
 
-        **Write:** echo \<plane 0\~0\> \<contrast_ratio 0\~255\> \<contrast_mode 0\~2\> \> /proc/flcd310/contrast
+**Read:** cat /proc/flcd310/contrast
+
+**Write:** echo \<plane 0\~0\> \<contrast_ratio 0\~255\> \<contrast_mode 0\~2\> \> /proc/flcd310/contrast
 
 | Parameter      | Description                                                     |
 |----------------|-----------------------------------------------------------------|
@@ -126,31 +133,31 @@ This function includes adjustments for brightness, contrast, hue, saturation, et
 | contrast_ratio | Default = 128, The lager value corressponds to higher contrast. |
 | contrast_mode  | Mapping mode, explained as following:                           |
 
-| contrast_mode | mapping mode (contrast=150) | Feature                                                                                                              |
-|---------------|-----------------------------|----------------------------------------------------------------------------------------------------------------------|
-| 0             |                             | No loss of shadow details, loss of highlight detail Overall brightness may increase.                                 |
-| 1             |                             | Dark details and highlight details are likely to be loss. Overall brightness will not be changed.                    |
-| 2             |                             | No loss of detail in the highlights, details of the shadows and possible loss. The overall brightness may be dimmed. |
+| contrast_mode | mapping mode (contrast=150)                                                                                                  | Feature                                                                                                                  |
+|---------------|------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
+| 0             | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image006.jpg](nvt_media/72e8cd4e91c331d46c4cabd846066242.jpg) |  No loss of shadow details, loss of highlight detail  Overall brightness may increase.                                 |
+| 1             | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image007.jpg](nvt_media/d4471ba251b45b11c1c2297ccc2091fd.jpg) |  Dark details and highlight details are likely to be loss.  Overall brightness will not be changed.                    |
+| 2             | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image008.jpg](nvt_media/d6648e1c04f1a077c82688a7dcb5b813.jpg) |  No loss of detail in the highlights, details of the shadows and possible loss.  The overall brightness may be dimmed. |
 
--   Result：
+ Result：
 
-| contrast = 170 | ![](media/02e9d11276895ee689fe7770a95982b2.png) |
-|----------------|-------------------------------------------------|
-| Contrast = 80  | ![](media/b58e4950a24c4738dcbe1b1950709177.png) |
+| contrast = 170 | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image009.jpg](nvt_media/76c9543d65c03bb61ae8423265cc0d97.jpg) |
+|----------------|------------------------------------------------------------------------------------------------------------------------------|
+| Contrast = 80  | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image010.jpg](nvt_media/2bf3f7af9c53b46ab278c4e38f64fdf4.jpg) |
 
--   Hue:
+ Hue:
 
-    LCD310 divides the color picture into six blocks, which can adjust the hue and saturation for specific color blocks.
+LCD310 divides the color picture into six blocks, which can adjust the hue and saturation for specific color blocks.
 
 Index 0 \~ 5 respectively: Magenta, Red, Yellow, Green, Cyan, Blue.
 
-![](media/b0030b2ffde353ce294d613722c7ea5b.png)
+![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image011.gif](nvt_media/6e0ce3755b9741275c5a1084cf8b4660.gif)
 
--   Setting Interface: /proc/flcd310/hue
+ Setting Interface: /proc/flcd310/hue
 
-    **Read:** cat /proc/flcd310/hue
+**Read:** cat /proc/flcd310/hue
 
-    **Write:** echo \<plane 0\~0\> \<hue_sat state 0/1\> \<hue0 -45\~45\> \<hue1 -45\~45\> \<hue2 -45\~45\> \<hue3 -45\~45\> \<hue4 -45\~45\> \<hue5 -45\~45\> \> /proc/flcd310/hue
+**Write:** echo \<plane 0\~0\> \<hue_sat state 0/1\> \<hue0 -45\~45\> \<hue1 -45\~45\> \<hue2 -45\~45\> \<hue3 -45\~45\> \<hue4 -45\~45\> \<hue5 -45\~45\> \> /proc/flcd310/hue
 
 | Parameter     | Description                                                                                                                                                                                                                                                    |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -158,19 +165,19 @@ Index 0 \~ 5 respectively: Magenta, Red, Yellow, Green, Cyan, Blue.
 | hue_sat state | 1: enable, 0: diable hue saturation                                                                                                                                                                                                                            |
 | hue0\~5       | They are the rotation adjustment values of the following 6 large hue blocks. The preset value of 0 means no adjustment, and the positive/negative values are respectively inverse/clockwise rotation of the hue block. Magenta, Red, Yellow, Green, Cyan, Blue |
 
--   Saturation: Adjust the saturation of the picture.
+ Saturation: Adjust the saturation of the picture.
 
-    LCD310 divides the color picture into six blocks, which can adjust the hue and saturation for specific color blocks.
+LCD310 divides the color picture into six blocks, which can adjust the hue and saturation for specific color blocks.
 
-    Index 0 \~ 5 respectively: Magenta, Red, Yellow, Green, Cyan, Blue.
+Index 0 \~ 5 respectively: Magenta, Red, Yellow, Green, Cyan, Blue.
 
-![](media/2936a93cd3b1f3a55b33778c5c314d63.jpeg)
+![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image012.gif](nvt_media/dbf9e946c7ce8173569bfa5b1936fa9e.gif)
 
--   Setting Interface： /proc/flcd310/hue_sat
+ Setting Interface： /proc/flcd310/hue_sat
 
-    **Read:** cat /proc/flcd310/hue_sat
+**Read:** cat /proc/flcd310/hue_sat
 
-    **Write:** echo \<plane 0\~0\> \<hue_sat state 0/1\> \<hue_sat0\> \<hue_sat1\> \<hue_sat2\> \<hue_sat3\> \<hue_sat4\> \<hue_sat5\> \> /proc/flcd310/hue_sat
+**Write:** echo \<plane 0\~0\> \<hue_sat state 0/1\> \<hue_sat0\> \<hue_sat1\> \<hue_sat2\> \<hue_sat3\> \<hue_sat4\> \<hue_sat5\> \> /proc/flcd310/hue_sat
 
 | Parameter     | Description                                                                                                                                                                                 |
 |---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -178,14 +185,14 @@ Index 0 \~ 5 respectively: Magenta, Red, Yellow, Green, Cyan, Blue.
 | hue_sat state | 1: enable, 0: diable hue saturation                                                                                                                                                         |
 | hue_sat0\~5   | The saturation adjustment values of the following six color. Set to 128 to indicate no adjustment. The larger the value, the higher the saturation. Magenta, Red, Yellow, Green, Cyan, Blue |
 
--   Result：
+ Result：
 
-| hue_sat = 64  | ![](media/41b99b9fcc470d6bc6aec3ab8247febe.png)  |
-|---------------|--------------------------------------------------|
-| hue_sat = 128 | ![](media/ac6ae99e24f15c554323381004c5fca4.jpeg) |
-| hue_sat=164   | ![](media/5cc7458d951da088d1118901882e51f5.png)  |
+| hue_sat = 64  | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image013.jpg](nvt_media/b0db6653fd8c780a84f1c11afda6c93c.jpg) |
+|---------------|------------------------------------------------------------------------------------------------------------------------------|
+| hue_sat = 128 | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image014.jpg](nvt_media/0fbfbeda75bc0624ab5ad42ea19cac11.jpg) |
+| hue_sat=164   | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image015.jpg](nvt_media/5b09be041c3e42564a82937a405c0119.jpg) |
 
-### Local Contrast Enhance
+### 2.3 Local Contrast Enhance
 
 This feature enhances regional contrast.
 
@@ -201,21 +208,21 @@ Write: echo \<plane 0\~0\> \<ce_state 0/1\> \<strength 0\~1023\> \> /proc/flcd31
 | ce_state  | 1: enable, 0: diable                        |
 | strength  | The strength of local contrast enhancement. |
 
--   Result：
+ Result：
 
-| strength = 0  | ![](media/ccd8a7d40f48d30e70a07213ba3b18dd.png) |
-|---------------|-------------------------------------------------|
-| strength = 30 | ![](media/cc7084a53ea05aca075358ce5ffe588b.png) |
+| strength = 0  | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image016.jpg](nvt_media/4bebc5c74ee2c7e9e172143344305afa.jpg) |
+|---------------|------------------------------------------------------------------------------------------------------------------------------|
+| strength = 30 | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image017.jpg](nvt_media/2119d5f510acafdc3dddce15f1f2c87a.jpg) |
 
-### Sharpen
+### 2.4 Sharpen
 
 This function is an edge enhancement function that enhances the sharpness of the picture. Two-level sharpness enhancement core for reinforcement of thin and thick edges
 
--   Setting Interface: /proc/flcd310/sharpness
+ Setting Interface: /proc/flcd310/sharpness
 
-    **Read:** cat /proc/flcd310/sharpness
+**Read:** cat /proc/flcd310/sharpness
 
-    **Write:** echo \<plane 0\> \<enable 0/1\> \<hpf0_5x5_gain 0\~1024\> \<hpf1_5x5_gain 0\~1024\> \> /proc/flcd310/sharpness
+**Write:** echo \<plane 0\> \<enable 0/1\> \<hpf0_5x5_gain 0\~1024\> \<hpf1_5x5_gain 0\~1024\> \> /proc/flcd310/sharpness
 
 | Parameter     | Description                              |
 |---------------|------------------------------------------|
@@ -224,11 +231,11 @@ This function is an edge enhancement function that enhances the sharpness of the
 | hpf0_5x5_gain | Enhance strength of thick edge.          |
 | hpf1_5x5_gain | Enhance strength of thin edge.           |
 
--   Result：
+ Result：
 
-| Thin edge enhancement  | ![](media/1a7bba11f853159431ed379f2535563e.png) |
-|------------------------|-------------------------------------------------|
-| Thick edge enhancement | ![](media/9b0c2a74d2abc95fe606c9f66312568e.png) |
+| Thin edge enhancement  | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image018.jpg](nvt_media/ef89b56e8c7a326909a4310e09a08674.jpg) |
+|------------------------|------------------------------------------------------------------------------------------------------------------------------|
+| Thick edge enhancement | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image019.jpg](nvt_media/9333ac249bc2ce319eeb5cd71df4be4f.jpg) |
 
 ## Revision Historys
 

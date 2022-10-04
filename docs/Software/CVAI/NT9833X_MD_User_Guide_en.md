@@ -1,42 +1,42 @@
-## Introduction
+## 1 Introduction
 
-### Overview
+### 1.1 Overview
 
 The motion detection supports applications including global motion detection, sub-region motion detection, motion object detection and tamper detection.
 
-**Global motion detection**
+ **Global motion detection**
 
 By using a fixed camera, global motion detection issues alarm if the area of moving objects is larger than the user-defined threshold.
 
-![](media/254fa00f0da2cd987e8901bb4ba27a1b.png)
+![D:\\work6\\636\\fhtml\\NT9833X_MD_User_Guide_en.files\\image002.gif](nvt_media/402573d7ddb5ab9cf67ff173bdc2a307.gif)
 
 Figure 1 Global motion detection
 
-**Sub-region motion detection**
+ **Sub-region motion detection**
 
 By using a fixed camera, this function issues a sub-region motion alarm if the area of moving objects in the user-defined regions is larger than the user-defined threshold.
 
-![](media/6e83101c13b8c98f9af81d9b026da33e.png)
+![D:\\work6\\636\\fhtml\\NT9833X_MD_User_Guide_en.files\\image003.gif](nvt_media/ef4723d2898d0367530a02f60494145f.gif)
 
 Figure 2 Sub-region motion alarm
 
-**Motion objects detection**
+ **Motion objects detection**
 
 By using a fixed camera, it detects moving objects if their areas are larger than a user-defined threshold. It also reports the sizes and coordinates of detected moving objects.
 
-![](media/f0d7ea1995f794a8ed7d2bc5bc039dd1.png)
+![D:\\work6\\636\\fhtml\\NT9833X_MD_User_Guide_en.files\\image004.gif](nvt_media/c0de02ad3d8dfd3dee63b084184e71d1.gif)
 
 Figure 3 Motion objects detection
 
-**Tamper detection**
+ **Tamper detection**
 
 By using a fixed camera, it issues a tamper alarm if the occlusion area is larger than a user-defined area threshold.
 
-![](media/1aec192f78b9831e7cdd2e6bc53d3023.png)
+![D:\\work6\\636\\fhtml\\NT9833X_MD_User_Guide_en.files\\image005.jpg](nvt_media/47668080c467f11b81bcb464d9856212.jpg)
 
 Figure 4: Tamper Detection
 
-### Motion detection steps
+### 1.2 Motion detection steps
 
 The steps of motion detection functions are
 
@@ -46,36 +46,38 @@ Step. 2: Micro block (MB) map is used in motion detection. The size of each MB c
 
 Step. 3: Updating the background model by using current frame information.
 
-![](media/131a7b9026a26aacc63c319b6f9293fd.emf)
+![D:\\work6\\636\\fhtml\\NT9833X_MD_User_Guide_en.files\\image006.gif](nvt_media/b6a03746a9f2e830424ef691db40c762.gif)
 
 Figure 5. The flowchart of MD algoritm
 
-### Process Flow
+### 1.3 Process Flow
 
-![](media/a308dff91e88d382494120af519a0d0e.emf)
+![D:\\work6\\636\\fhtml\\NT9833X_MD_User_Guide_en.files\\image007.gif](nvt_media/c5a40d37e3ed5a4a5b8652d4912f00d2.gif)
 
 Figure 6. The process flow of MD
 
-### Parameters
+### 1.4 Parameters
 
 MD has two major parameter types, as listed below
 
--   The parameters of vendor MD are used to control MD hardware.
--   The parameters of libmd are used to control MD software application.
--   Please notice that the parameters of vendor MD should be set before setting the parameters of libmd.
+ The parameters of vendor MD are used to control MD hardware.
+
+ The parameters of libmd are used to control MD software application.
+
+ Please notice that the parameters of vendor MD should be set before setting the parameters of libmd.
 
 **  
 **
 
-#### Parameters of vendor MD
+#### 1.4.1 Parameters of vendor MD
 
--   VENDOR_MD_CTRL: trigger setting of MD hardware
+ VENDOR_MD_CTRL: trigger setting of MD hardware
 
 | Parameter      | Range | Comment            | Value            |
 |----------------|-------|--------------------|------------------|
 | engine_enabled |  0, 1 | HW trigger setting | 0: close 1: open |
 
--   VENDOR_MD_MDT_INFO: size information of MD hardware
+ VENDOR_MD_MDT_INFO: size information of MD hardware
 
 | Parameter     | Range    | Comment                                       | Value                                                                                                         |
 |---------------|----------|-----------------------------------------------|---------------------------------------------------------------------------------------------------------------|
@@ -86,7 +88,7 @@ MD has two major parameter types, as listed below
 | phy_mb_x_num  |          | The number of MB in the MB-map at x-direction | phy_width/ phy_mb_x_size                                                                                      |
 | phy_mb_y_num  |          | The number of MB in the MB-map at y-direction | phy_height/ phy_mb_y_size                                                                                     |
 
--   VENDOR_MD_MDT_PARAM_IDX: index of MD background model parameters
+ VENDOR_MD_MDT_PARAM_IDX: index of MD background model parameters
 
 | id                                       | Comment                                                         |
 |------------------------------------------|-----------------------------------------------------------------|
@@ -108,7 +110,7 @@ MD has two major parameter types, as listed below
 | VENDOR_MD_MDT_PARAM_LVL_TEXT_RATIO_THRES | Texture coverage ratio threshold at refine stage (only for MD1) |
 | VENDOR_MD_MDT_PARAM_LVL_GM_MD2_THRES     | Background threshold  (only for MD2)                            |
 
--   VENDOR_MD_MDT_PARAM: parameters of MD background model
+ VENDOR_MD_MDT_PARAM: parameters of MD background model
 
 | Parameter | Comment                    |
 |-----------|----------------------------|
@@ -117,7 +119,7 @@ MD has two major parameter types, as listed below
 | id        | VENDOR_MD_MDT_PARAM_IDX    |
 | value     | Parameter value            |
 
--   Value range of the VENDOR_MD_MDT_PARAM
+ Value range of the VENDOR_MD_MDT_PARAM
 
 | VENDOR_MD_MDT_PARAM_IDX                  | Range     | Comment                                                                                                                                                                                         | Value                                                      |
 |------------------------------------------|-----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------|
@@ -139,7 +141,7 @@ MD has two major parameter types, as listed below
 | VENDOR_MD_MDT_PARAM_LVL_TEXT_RATIO_THRES |  0\~127   | Texture coverage ratio threshold at refine stage (only for MD1)                                                                                                                                 | 127                                                        |
 | VENDOR_MD_MDT_PARAM_LVL_GM_MD2_THRES     |  0\~255   | Background threshold (only for MD2)                                                                                                                                                             | 10                                                         |
 
--   VENDOR_MD_MDT_MB_LEVEL: region setting of the background model
+ VENDOR_MD_MDT_MB_LEVEL: region setting of the background model
 
 | Parameter | Range          | Comment                                                                         |
 |-----------|----------------|---------------------------------------------------------------------------------|
@@ -149,7 +151,7 @@ MD has two major parameter types, as listed below
 | height    |  1\~max_height | height of the left upper corner of the region (physical plane, Unit: pixel)     |
 | level     |  0\~3          | The selective background model of the region                                    |
 
--   VENDOR_MD_TDT_PARAM_IDX: index of the tamper detection parameters
+ VENDOR_MD_TDT_PARAM_IDX: index of the tamper detection parameters
 
 | id                                 | Comment                                      |
 |------------------------------------|----------------------------------------------|
@@ -159,7 +161,7 @@ MD has two major parameter types, as listed below
 | VENDOR_MD_TDT_PARAM_AVG_TEX_THRES  | Luminance strength threshold                 |
 | VENDOR_MD_TDT_PARAM_AVG_WIN_THRES  | Coverage of low luminance strength threshold |
 
--   VENDOR_MD_MDT_PARAM: tamper detection parameters
+ VENDOR_MD_MDT_PARAM: tamper detection parameters
 
 | Parameter | Comment                 |
 |-----------|-------------------------|
@@ -167,7 +169,7 @@ MD has two major parameter types, as listed below
 | id        | VENDOR_MD_TDT_PARAM_IDX |
 | value     | Parameter value         |
 
--   Value range of the tamper detection parameters
+ Value range of the tamper detection parameters
 
 | VENDOR_MD_TDT_PARAM_IDX            | Range  | Comment                                      | Default                          |
 |------------------------------------|--------|----------------------------------------------|----------------------------------|
@@ -177,7 +179,7 @@ MD has two major parameter types, as listed below
 | VENDOR_MD_TDT_PARAM_AVG_TEX_THRES  | 0\~255 | Luminance strength threshold                 | 65                               |
 | VENDOR_MD_TDT_PARAM_AVG_WIN_THRES  | 0\~127 | Coverage of low luminance strength threshold | 100                              |
 
--   VENDOR_BUFFER : buffer information structure
+ VENDOR_BUFFER : buffer information structure
 
 | Parameter | Comment          |
 |-----------|------------------|
@@ -185,7 +187,7 @@ MD has two major parameter types, as listed below
 | size      | Buffer size      |
 | ddr_id    | DDR_IDX          |
 
--   VENDOR_MD_BUFFER: buffer information of MD hardware
+ VENDOR_MD_BUFFER: buffer information of MD hardware
 
 | Parameter    | Comment                                          |
 |--------------|--------------------------------------------------|
@@ -195,7 +197,7 @@ MD has two major parameter types, as listed below
 | event        | MD HWmotion bitmap buffer                        |
 | level        | MD HW selective background model buffer          |
 
--   VENDOR_MD_PARAM_ID: index of vendor_md function
+ VENDOR_MD_PARAM_ID: index of vendor_md function
 
 | id                               | Comment                                                                                                                                                                                                                                                            |
 |----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -208,9 +210,9 @@ MD has two major parameter types, as listed below
 | VENDOR_MD_RESULT_INFO            | MD HW result structure                                                                                                                                                                                                                                             |
 | VENDOR_MD_REASSIGN_BUFFERS       | MD reassign buffer API. When max MB num is larger than (1920/16, 1080/16) or want to shrink MD buffer size. Note: hdal default pool buffer size for MD is (120,67) and 8 channel. If you use reassign buffer, you should change the hdal default pool buffer size. |
 
-#### Parameters of libmd
+#### 1.4.2 Parameters of libmd
 
--   LIB_MD_AP_ENABLE: trigger setting of MD application:
+ LIB_MD_AP_ENABLE: trigger setting of MD application:
 
 | Parameter                    | Range | Comment                         |
 |------------------------------|-------|---------------------------------|
@@ -219,7 +221,7 @@ MD has two major parameter types, as listed below
 | md_obj_detect_en             | 0, 1  | Objects detection enable        |
 | md_postprocess_en            | 0, 1  | Motionbitmap postprocess enable |
 
--   LIB_MD_EVT_INFO: results of motion detection
+ LIB_MD_EVT_INFO: results of motion detection
 
 | Parameter | Comment                       |
 |-----------|-------------------------------|
@@ -227,7 +229,7 @@ MD has two major parameter types, as listed below
 | evt_sz    | MD HW event bimap buffer size |
 | timestamp | MD event timestamp            |
 
--   LIB_MD_MDT_INFO: size setting information of libmd
+ LIB_MD_MDT_INFO: size setting information of libmd
 
 | Parameter     | Range   | Comment                               | Default                                           |
 |---------------|---------|---------------------------------------|---------------------------------------------------|
@@ -243,13 +245,13 @@ MD has two major parameter types, as listed below
 | phy_mb_x_num  |         | Sensor_width/ phy_mb_x_size           | set the same as vendor_md                         |
 | phy_mb_y_num  |         | Sensor_height/ phy_mb_y_size          | set the same as vendor_md                         |
 
--   LIB_MD_AP_POSTPROCESS: post-process type of libmd event
+ LIB_MD_AP_POSTPROCESS: post-process type of libmd event
 
 | Parameter            | Range | Comment                  | Default                                                                                                                                                                      |
 |----------------------|-------|--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | evt_postprocess_type | 0\~7  | Motion event postprocess | 0: no 1: one erosion + two dilation 2: two dilation + one erosion 3: two dilation 4: one dilation 5: one erosion 6: one dilation + one erosion 7: one erosion + one dilation |
 
--   LIB_MD_AP_GLOBAL_MOTION_ALARM: parameters of global motion alarm detection
+ LIB_MD_AP_GLOBAL_MOTION_ALARM: parameters of global motion alarm detection
 
 | Parameter       | Range                     | Comment                                                                                                                                                                              |
 |-----------------|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -258,7 +260,7 @@ MD has two major parameter types, as listed below
 | p_cell_map      | 0, 1                      | The detection result will reference the buffer when the ref_cell_en=1.                                                                                                               |
 | cell_map_sz     | vp_mb_x_num\* vp_mb_y_num | The buffer size of the p_cell_map                                                                                                                                                    |
 
--   LIB_MD_AP_SUBREGION: parameters of specified sub-region structure
+ LIB_MD_AP_SUBREGION: parameters of specified sub-region structure
 
 | Parameter | Range         | Comment                                                                                                            |
 |-----------|---------------|--------------------------------------------------------------------------------------------------------------------|
@@ -269,20 +271,20 @@ MD has two major parameter types, as listed below
 | y_end     | 0\~mb_h_num-1 | y position of the right under corner of the region (virtual plane，Unit: macro block)                              |
 | alarm_th  | 0\~100        | Sub-region motion detection alarm area coverage ratio threshold (%). MD is more sensitive when the value is lower. |
 
--   LIB_MD_AP_SUBREGION_MOTION_ALARM: parameters of sub-region motion alarm detection
+ LIB_MD_AP_SUBREGION_MOTION_ALARM: parameters of sub-region motion alarm detection
 
 | Parameter      | Range | Comment                        |
 |----------------|-------|--------------------------------|
 | sub_region_num |  0\~4 | Specified sub-region number    |
 | sub_region     |  -    | Specified sub-region structure |
 
--   LIB_MD_AP_OBJ: size setting of minmum motion object
+ LIB_MD_AP_OBJ: size setting of minmum motion object
 
 | Parameter   | Range | Comment                                                    |
 |-------------|-------|------------------------------------------------------------|
 | object_size |  -    | Minimum size of detected moing objects (Unit: macro block) |
 
--   LIB_MD_AP_OBJ_INFO: information of motion objects
+ LIB_MD_AP_OBJ_INFO: information of motion objects
 
 | Parameter | Range        | Comment                                                                                      |
 |-----------|--------------|----------------------------------------------------------------------------------------------|
@@ -292,7 +294,7 @@ MD has two major parameter types, as listed below
 | end_y     | 0\~vp_height | y position of the right under corner of the motion object (virtual plane，Unit: macro block) |
 | label     | 0\~128       | Motion obect index                                                                           |
 
--   LIB_MD_MDT_RESULT_INFO: results information of the libmd
+ LIB_MD_MDT_RESULT_INFO: results information of the libmd
 
 | Parameter               | Range                         | Comment                                      | Value                |
 |-------------------------|-------------------------------|----------------------------------------------|----------------------|
@@ -303,7 +305,7 @@ MD has two major parameter types, as listed below
 | obj                     |  -                            | Motion object structure                      |                      |
 | vp_evt_info             |  -                            | Motion detection event map in the user plane |                      |
 
--   LIB_MD_PARAM_ID: index of libmd function
+ LIB_MD_PARAM_ID: index of libmd function
 
 | Parameter                                | Comment                                                                                                                                                                             |
 |------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -317,27 +319,34 @@ MD has two major parameter types, as listed below
 
 **Note:** The MD model can lean the stable change of scene, such as river or twinkle light. If the user want to detect this kind of events, the parameters can be set as following:
 
--   Model parameters
-    -   tg=3
-    -   tb=19
-    -   alpha = 1024
--   Refine process
-    -   lum_diff_th=75
-    -   tex_diff_th=50
-    -   tex_ratio_th=50
+ Model parameters
+
+ tg=3
+
+ tb=19
+
+ alpha = 1024
+
+ Refine process
+
+ lum_diff_th=75
+
+ tex_diff_th=50
+
+ tex_ratio_th=50
 
 **  
 **
 
-### Initilization of MD
+### 1.5 Initilization of MD
 
--   Vendor MD
+ Vendor MD
 
 The buffer of vender MD and HW internal parametesrs should be set by the API as following:
 
 **HD_RESULT md_init(void);**
 
--   Libmd
+ Libmd
 
 The buffer of libmd and software parametesrs should be set by the API as following:
 
@@ -345,9 +354,9 @@ The buffer of libmd and software parametesrs should be set by the API as followi
 
 **HD_RESULT lib_md_init(HD_PATH_ID path_id);** // libmd buffer setting shoule be set after HW MD size setting which set through motion_set_ap_param.
 
-### Parameters Setting of MD
+### 1.6 Parameters Setting of MD
 
--   Vendor MD
+ Vendor MD
 
 Vendor MD parameters should be set by the following API.
 
@@ -355,7 +364,7 @@ Vendor MD parameters should be set by the following API.
 
 The content of **VENDOR_MD_PARAM_ID** is list in the section1.4.1.
 
--   Libmd
+ Libmd
 
 The parameters of libmd should be set by the following API.
 
@@ -363,13 +372,13 @@ The parameters of libmd should be set by the following API.
 
 The content of **LIB_MD_PARAM_ID** is list in the section1.4.2.
 
-### Execution of MD
+### 1.7 Execution of MD
 
-#### vendor MD
+#### 1.7.1 vendor MD
 
 Vendor MD application should be set by the following API.
 
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // buffer and parameters intial setting
 HD_RESULT md_init(void); 
 // create md_thread
@@ -378,13 +387,13 @@ static void *md_thread(void *arg);
 ret = vendor_md_get(path_id, VENDOR_MD_MOTION_DETECT_INFO, &mdt_info);
 ret = vendor_md_set(path_id, VENDOR_MD_RESULT_INFO, &result_info);
 ret = vendor_md_get(path_id, VENDOR_MD_RESULT_INFO, &result_info); 
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#### libmd
+#### 1.7.2 libmd
 
 libmd application should be set by the following API.
 
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // buffer and parameters intial setting
 HD_RESULT motion_set_ap_param(UINT32 path_id);
 HD_RESULT lib_md_init(HD_PATH_ID path_id); 
@@ -395,135 +404,148 @@ ret = vendor_md_get(path_id, VENDOR_MD_RESULT_INFO, &result_info); //libmd proce
 vendor_md_get(path_id, VENDOR_MD_RESULT_INFO, &result_info)
 ret = lib_md_set(path_id, LIB_MD_MOTION_DETECT_INFO, &lib_md_info);
 ret = lib_md_get(path_id, LIB_MD_RESULT_INFO, &lib_md_rst);
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-### Requirement of MD
+### 1.8 Requirement of MD
 
--   MD funtions only be applied by CPU and HW.
+ MD funtions only be applied by CPU and HW.
 
-### Limitation of MD
+### 1.9 Limitation of MD
 
--   MD shoud be used in the fixed-camera. If camera has been moved, MD function might output a false alarm event.
--   MD function might output a false alarm event because of the zoom in/out of camera or the adjustment of auto white balance.
--   The size of moving object should be larger than 1 micro-block (MB)
+ MD shoud be used in the fixed-camera. If camera has been moved, MD function might output a false alarm event.
 
-### Test Flow of MD
+ MD function might output a false alarm event because of the zoom in/out of camera or the adjustment of auto white balance.
 
--   Check MD use in the fixed-camera scene
--   Check MD event bitmap to check MD flow
--   MD should be used after 3 frames to create initial background.
+ The size of moving object should be larger than 1 micro-block (MB)
 
-## Output
+### 1.10 Test Flow of MD
 
-### Get Output Results of MD
+ Check MD use in the fixed-camera scene
 
--   vendor MD
+ Check MD event bitmap to check MD flow
+
+ MD should be used after 3 frames to create initial background.
+
+## 2 Output
+
+### 2.1 Get Output Results of MD
+
+ vendor MD
 
 Vendor MD result should be set/got by the following API.
 
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ret = vendor_md_set(path_id, VENDOR_MD_RESULT_INFO, &result_info);
 ret = vendor_md_get(path_id, VENDOR_MD_RESULT_INFO, &result_info);
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The structure of MD hardware result lists as following.
 
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 typedef struct _VENDOR_MD_MDT_RESULT_INFO {
-	UINT8	  *p_evt_map;                           ///< motion detection bitmap, size is evt_sz
-	UINT32      evt_sz;						///< phy_mb_x_num*phy_mb_y_num MB
-	UINT8       tp_result;                             ///< tamper alarm 
-	UINT32	  timestamp;
+     UINT8       *p_evt_map;                           ///< motion detection bitmap, size is evt_sz
+     UINT32      evt_sz;                         ///< phy_mb_x_num*phy_mb_y_num MB
+     UINT8       tp_result;                             ///< tamper alarm 
+     UINT32      timestamp;
 } VENDOR_MD_MDT_RESULT_INFO;
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--   libmd
+ libmd
 
 libmd result should be set/got by the following API.
 
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 vendor_md_get(path_id, VENDOR_MD_RESULT_INFO, &result_info)
 ret = lib_md_set(path_id, LIB_MD_MOTION_DETECT_INFO, &lib_md_info);
 ret = lib_md_get(path_id, LIB_MD_RESULT_INFO, &lib_md_rst);
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 libmd result structure lists as following.
 
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 typedef struct _LIB_MD_MDT_RESULT_INFO {
-	UINT8         global_motion_alarm;				         ///< global motion alarm	
-	UINT32	    global_motion_alarm_num;		              ///< global motion alarm num
-	UINT32        sub_motion_alarm[LIB_MD_MAX_SUB_REGION_NUM]; ///< sub-region motion alarm
-	UINT32        obj_num;						         ///< detect object number (max=128)
-	LIB_MD_AP_OBJ_INFO	obj[LIB_MD_MAX_OBJ_NUM];               ///< detect object info
-	LIB_MD_EVT_INFO vp_evt_info;
+     UINT8         global_motion_alarm;                         ///< global motion alarm   
+     UINT32        global_motion_alarm_num;                     ///< global motion alarm num
+     UINT32        sub_motion_alarm[LIB_MD_MAX_SUB_REGION_NUM]; ///< sub-region motion alarm
+     UINT32        obj_num;                                    ///< detect object number (max=128)
+     LIB_MD_AP_OBJ_INFO  obj[LIB_MD_MAX_OBJ_NUM];               ///< detect object info
+     LIB_MD_EVT_INFO vp_evt_info;
 } LIB_MD_MDT_RESULT_INFO;
-
+ 
 typedef struct _LIB_MD_EVT_INFO {
-	UINT8	   *p_evt_map;					///< motion detection bitmap, size is evt_sz
-	UINT32       evt_sz;						///< mb_x_num*mb_y_num MB
-	UINT32	   timestamp;
+     UINT8        *p_evt_map;                    ///< motion detection bitmap, size is evt_sz
+     UINT32       evt_sz;                        ///< mb_x_num*mb_y_num MB
+     UINT32       timestamp;
 } LIB_MD_EVT_INFO;
-
+ 
 typedef struct _LIB_MD_AP_OBJ_INFO {
-	UINT32        start_x;				///< obj rectangle left upper x position (virtual pixel)  
-	UINT32        start_y;				///< obj rectangle left upper y position (virtual pixel)  
-	UINT32        end_x;					///< obj rectangle right down x position (virtual pixel)  
-	UINT32        end_y;					///< obj rectangle right down y position (virtual pixel)  
-	UINT32        label;					///< obj label
+     UINT32        start_x;                  ///< obj rectangle left upper x position (virtual pixel)  
+     UINT32        start_y;                  ///< obj rectangle left upper y position (virtual pixel)  
+     UINT32        end_x;                    ///< obj rectangle right down x position (virtual pixel)  
+     UINT32        end_y;                    ///< obj rectangle right down y position (virtual pixel)  
+     UINT32        label;                    ///< obj label
 } LIB_MD_AP_OBJ_INFO;
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-### Print Output Results of MD
+### 2.2 Print Output Results of MD
 
--   Output Result of Global Motion Detection
+ Output Result of Global Motion Detection
 
-    UART will print the results as following when motion area in the whole scene is larger than user-defined threshold.
+UART will print the results as following when motion area in the whole scene is larger than user-defined threshold.
 
-    **\> global motion alarm on ch(specified channel).**
+**\> global motion alarm on ch(specified channel).**
 
--   Output Result of Sub-region Motion Detection
+ Output Result of Sub-region Motion Detection
 
-    UART will print the results as following when the motion area in one or more sub-regions is larger than user-defined threshold.
+UART will print the results as following when the motion area in one or more sub-regions is larger than user-defined threshold.
 
-    **\> sub_region[specified region index] motion alarm on ch(specified channel).**
+**\> sub_region[specified region index] motion alarm on ch(specified channel).**
 
--   Output Result of Motion Object Detection
+ Output Result of Motion Object Detection
 
-    UART will print the results as following when motion objects area are larger than minimum object user-defined threshold.
+UART will print the results as following when motion objects area are larger than minimum object user-defined threshold.
 
-    **\> obj num:Motion object number and obj[object index]: start_xy=[left upper corner position of motion object], end_xy = [right under corner position of motion object], label = object label.**
+**\> obj num:Motion object number and obj[object index]: start_xy=[left upper corner position of motion object], end_xy = [right under corner position of motion object], label = object label.**
 
--   Output Result of Tamper Detection
+ Output Result of Tamper Detection
 
-    UART will print the results as following when occlusion area is larger than user-defined threshold.
+UART will print the results as following when occlusion area is larger than user-defined threshold.
 
-    **\> tamper_result:1 on ch(specified channel).**
+**\> tamper_result:1 on ch(specified channel).**
 
-### Limitation MD Hardware
+### 2.3 Limitation MD Hardware
 
--   Maximum sensor resolution is 3840x2160.
--   Maximum MB number of MD hardware are (mb_x_num, mb_y_num) = (256, 128) and minimum MB number of MD hardware are (mb_x_num, mb_y_num) = (2, 1).
--   In the Vcap flow, MD doesn’t support the scale function.
+ Maximum sensor resolution is 3840x2160.
 
-### Requirement of MD System
+ Maximum MB number of MD hardware are (mb_x_num, mb_y_num) = (256, 128) and minimum MB number of MD hardware are (mb_x_num, mb_y_num) = (2, 1).
 
--   The efficiency of MD function is associated with system loading. The ouput result of MD may be delayed when system is overloading.
+ In the Vcap flow, MD doesn’t support the scale function.
 
-### Tuning of MD Parameters
+### 2.4 Requirement of MD System
 
--   In the scene with the shortly changing of light, such as AE adjustment or turn-on and turn-off the light, please set the value of *alpha* higher. The side effect is that moving slowly object might be detected as background.
--   Please set **tb** to be higher for shadow. The side effect is that the detected forground of moving obeject might be broken. In this case, please also set “sigma” to be lower to fix the broken forground issue.
--   The distance between moving object and camera should be farer than 30 cm. If the moving objects is too close to the camera, there might cause the false alarm of shadow.
--   Please set lower **tb** when foreground luminance is similar background. However, the side effect is that the false alarm of shadow may be increase.
--   Please see section 1.5 when you need to detect stable motion case.
--   The MD function doesn’t support night view with IR-cut. In this case, there might be similar between background and foreground.
--   There is no motion event when MD is creating intial background model. Also, MD will need longer time to create initial backgroung model if there are some moving objects in the initial scene.
--   The size of moving object should be larger than 1 MB.
+ The efficiency of MD function is associated with system loading. The ouput result of MD may be delayed when system is overloading.
 
-## Q&A
+### 2.5 Tuning of MD Parameters
 
-1.  How to check vendor MD version?
+ In the scene with the shortly changing of light, such as AE adjustment or turn-on and turn-off the light, please set the value of *alpha* higher. The side effect is that moving slowly object might be detected as background.
+
+ Please set **tb** to be higher for shadow. The side effect is that the detected forground of moving obeject might be broken. In this case, please also set “sigma” to be lower to fix the broken forground issue.
+
+ The distance between moving object and camera should be farer than 30 cm. If the moving objects is too close to the camera, there might cause the false alarm of shadow.
+
+ Please set lower **tb** when foreground luminance is similar background. However, the side effect is that the false alarm of shadow may be increase.
+
+ Please see section 1.5 when you need to detect stable motion case.
+
+ The MD function doesn’t support night view with IR-cut. In this case, there might be similar between background and foreground.
+
+ There is no motion event when MD is creating intial background model. Also, MD will need longer time to create initial backgroung model if there are some moving objects in the initial scene.
+
+ The size of moving object should be larger than 1 MB.
+
+## 3 Q&A
+
+(1) How to check vendor MD version?
 
 Ans:
 
@@ -533,31 +555,35 @@ Execute AP
 
 cat /proc/hdal/flow
 
-1.  How to set the md sensitive?
+(2) How to set the md sensitive?
 
 Ans:
 
-1.  Use vendor_md_set API (the details describe in the 1.6 section and the section 1.4.1.
-2.  Tuning Guide document provide the tuning parameter suggestion. If any more question, please provide the video and parameters.
-3.  How to solve sensor resolution change error?
+I. Use vendor_md_set API (the details describe in the 1.6 section and the section 1.4.1.
+
+II. Tuning Guide document provide the tuning parameter suggestion. If any more question, please provide the video and parameters.
+
+(3) How to solve sensor resolution change error?
 
 Ans:
 
 If you want to chage sensor reolution, please vendor_md_unint & vendor_md_int at fisrt and you might see liveview_with_md_ctrl.c or liveview_with_md_resolution.c
 
-1.  How to check sensor interlace case?
+(4) How to check sensor interlace case?
 
 Ans:
 
 MD is field input. If input is interlace, please set the half of the sensor input height. You can see interlace case through command as following cat /proc/vcap316/vcap0/vg_info.
 
-1.  Check AD mode (960H and 720) case
+(5) Check AD mode (960H and 720) case
 
 Ans:
 
-1.  Check AD output is full frame.
-2.  MD input size is the same as the AD output size. phy_width andphy_height should be calculate by AD output (might not be the size of sensor). The size setting check by /proc/vcap316/vcap0/vg_info and vcap md (detal describe in question 6 ).
-3.  If any setting question of the vendor_md flow, please provide the log of vendor_md flow by the following command.
+I. Check AD output is full frame.
+
+II. MD input size is the same as the AD output size. phy_width andphy_height should be calculate by AD output (might not be the size of sensor). The size setting check by /proc/vcap316/vcap0/vg_info and vcap md (detal describe in question 6 ).
+
+(6) If any setting question of the vendor_md flow, please provide the log of vendor_md flow by the following command.
 
 Ans:
 
@@ -567,7 +593,7 @@ Execute AP
 
 cat /proc/hdal/flow
 
-1.  How to check vcap md setting
+(7) How to check vcap md setting
 
 Ans:
 
@@ -579,25 +605,27 @@ cat /proc/vcap316/vcap0/vcap0. CHIP /md/region
 
 cat /proc/vcap316/vcap0/vcap0. CHIP /md/param
 
-1.  How to solve the mb num \>(120,67)?
+(8) How to solve the mb num \>(120,67)?
 
 Ans:
 
-1.  modify hdal excel buffer size setting
-2.  open reassign_buffer
-3.  How to use the level setting ?
+I. modify hdal excel buffer size setting
+
+II. open reassign_buffer
+
+(9) How to use the level setting ?
 
 Ans:
 
 Each MB can be setted different level. Each level is mapping the set of background model. In nomal scene, all scene use the same level. In the scene which include both indoor and outdoor, you can set two level of the scene.
 
-1.  Where is the tamper sample code?
+(10) Where is the tamper sample code?
 
 Ans:
 
 tamper sample code is liveview_with_md.c.
 
-## Revision History
+## 4 Revision History
 
 | Revision | Date       | Author | Changes                                                       |
 |----------|------------|--------|---------------------------------------------------------------|

@@ -1,42 +1,45 @@
-## Overview
+## 1 Overview
 
-![](media/86fefe8bd2d1a437b80bee52b0397c24.png)
+![D:\\work6\\636\\fhtml\\NT9833x_VPE_IQ_Tuning_Guide_en.files\\image002.jpg](nvt_media/1599bba0c2ef16790df280262537a497.jpg)
 
 Figure 11 NT9833x Video Flow
 
 VPE is an independent image processing engine in YUV domain, and it performs some pre-processing process before LCD display or encoder to improve the image quality. The related modules are as follows:
 
--   Spatial Noise Reduction Module(SPNR, using MRNR method)
--   Tempoarl Noise Reduction Module(TMNR)
--   Sharpen Module(SHP)
--   Scaling Module(SCA)
+ Spatial Noise Reduction Module(SPNR, using MRNR method)
+
+ Tempoarl Noise Reduction Module(TMNR)
+
+ Sharpen Module(SHP)
+
+ Scaling Module(SCA)
 
 ※ The 9833x series has removed DCE and DCTG.
 
 ※ In the following description, the area shown in blue is the same module as the 9831x series but the parameters are different. Please pay special attention)
 
-![](media/5e398ecf4d2e1bbd08501c06913ddd4d.jpeg)
+![D:\\work6\\636\\fhtml\\NT9833x_VPE_IQ_Tuning_Guide_en.files\\image003.jpg](nvt_media/5088a5680d2a4af0baf6d75f3d8b2b57.jpg)
 
-![](media/e2a5a40194c5333a6a395e702ec2a728.jpeg)
+![D:\\work6\\636\\fhtml\\NT9833x_VPE_IQ_Tuning_Guide_en.files\\image004.jpg](nvt_media/020e27363a3940fae448c8c269b3d1b4.jpg)
 
 Figure 12 VPE Image Processing Flow
 
-## System Control
+## 2 System Control
 
 The processing sequence of Sharpen, SPNR(using MRNR method) and TMNR is changeable, and user can change the processing sequence depends on different camera charateristic to achieve the best image quality.
 
-### Parameter Description
+### 2.1 Parameter Description
 
 | **Parameter** | **Range** | **Def** | **Description**                                                                                                                                                                            |
 |---------------|-----------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ch_fd         |           |         | Video graph use ch_fd to represent the connected video engine of each channel. User can fine tune parameter of each video engine by setting ch_fd.                                         |
 | pipe_mode     | 0\~5      | 0       | Set module processing sequence. 0 : MRNR -\> TMNR -\> Sharpen 1 : MRNR-\> Sharpen -\> TMNR 2 : Sharpen -\> MRNR -\> TMNR 3 : SHP-\>TMNR-\>MRNR 4 : TMNR-\>MRNR-\>SHP 5 : TMNR-\>SHP-\>MRNR |
 
-### Setting Interface
+### 2.2 Setting Interface
 
-#### Proc
+#### 2.2.1 Proc
 
-###### /proc/videograph/vpe/ch_fd
+######  /proc/videograph/vpe/ch_fd
 
 **[Description]**
 
@@ -44,7 +47,7 @@ Read or write the current camera channel, and it only needs to set once, the fol
 
 The following proc command will list all ch_fd of the current video engine:
 
-![](media/f4c9736295f5ba46eb5432431c7b3e1f.png)
+![D:\\work6\\636\\fhtml\\NT9833x_VPE_IQ_Tuning_Guide_en.files\\image005.png](nvt_media/f4c9736295f5ba46eb5432431c7b3e1f.png)
 
 **[Command]**
 
@@ -56,7 +59,9 @@ The following proc command will list all ch_fd of the current video engine:
 
 Read : cat /proc/videograph/vpe/ch_fd
 
-###### /proc/videograph/vpe/pipe_mode
+**![文字方塊: Command : echo [fd] \> /proc/videograph/vpe/ch_fd Current channel = \<ch_fd\> ](nvt_media/99fd3611fb995573fe835d1d1848563f.png)**
+
+######  /proc/videograph/vpe/pipe_mode
 
 [Description]
 
@@ -72,27 +77,33 @@ Write :
 
 Read : cat /proc/videograph/vpe/pipe_mode
 
-## Spatial Noise Reduction
+![文字方塊: Command : echo [pipe_mode] \> /proc/videograph/vpe/pipe_mode Current pipe_mode = [pipe_mode] mode : 0 : MRNR-\> TMNR-\> SHP 1 : MRNR-\> SHP-\>TMNR 2 : SHP-\> MRNR -\> TMNR 3 : SHP-\>TMNR-\>MRNR 4 : TMNR-\>MRNR-\>SHP 5 : TMNR-\>SHP-\>MRNR ](nvt_media/b60ddb5bd5c87ad68312a618d4e8bfa9.png)
+
+## 3 Spatial Noise Reduction
 
 This is spatial noise reduction module(abbreviation is “SPNR”). It will divide the image into high frequency part and middle frequency part, performing noise reduction process respectively, then combine together to achieve the purpose of noise reduction and retain detail.
 
-### Overview
+### 3.1 Overview
 
 Major processing flow is as follows :
 
-![](media/4a3437da1eed12b046ae60cdc8bd7309.png)
+![D:\\work6\\636\\fhtml\\NT9833x_VPE_IQ_Tuning_Guide_en.files\\image008.png](nvt_media/8475d9387196abd53f061b2dd6ec9a83.png)
 
 Figure 31 The SPNR processing flow.
 
 Major processing flow :
 
-1.  Divide the input image into high frequency image and middle frequency image.
-2.  Determine and label whether the processing pixel is on the edge.
-3.  Perform edge smooth process on high frequency image and middle frequency image, respectively.
-4.  Perform flat region noise reduction process on middle frequency image.
-5.  Use high/middle frequency image which had performed noise reduction process to reconstruct image.
+1\. Divide the input image into high frequency image and middle frequency image.
 
-### Parameter Description
+2\. Determine and label whether the processing pixel is on the edge.
+
+3\. Perform edge smooth process on high frequency image and middle frequency image, respectively.
+
+4\. Perform flat region noise reduction process on middle frequency image.
+
+5\. Use high/middle frequency image which had performed noise reduction process to reconstruct image.
+
+### 3.2 Parameter Description
 
 (The blue text is the part of the parameter difference between this module and the 9831x series, please pay special attention)
 
@@ -111,13 +122,13 @@ Table 31 SPNR Parameter List
 
 **Advance description**:
 
--   edge_smoothing : When SPNR performs smooth process, it will calculate weighting sum of neighbor pixels along the edge direction, if the difference between the neighbor pixel and center pixel is larger than threshold, this neighbor pixel will not be used in the smooth process. The smooth process of Y/Cb/Cr are the same.
+ edge_smoothing : When SPNR performs smooth process, it will calculate weighting sum of neighbor pixels along the edge direction, if the difference between the neighbor pixel and center pixel is larger than threshold, this neighbor pixel will not be used in the smooth process. The smooth process of Y/Cb/Cr are the same.
 
-### Setting Interface
+### 3.3 Setting Interface
 
-#### Proc
+#### 3.3.1 Proc
 
-###### /proc/videograph/vpe/mrnr/dump_info
+######  /proc/videograph/vpe/mrnr/dump_info
 
 **[Description]**
 
@@ -129,9 +140,9 @@ Read all SPNR(using MRNR method) parameters of the current camera channel.
 
 **Read : cat /proc/videograph/vpe/mrnr/dump_info**
 
-**Output:**
+**Output: ![文字方塊: channel \<ch_no\> = enable/disable t_y_edge_detection[0][8] = t_y_edge_detection[0][0] ….[0][7] t_y_edge_detection[1][8] = t_y_edge_detection[1][0] ….[1][7] t_cb_edge_detection = t_cb_edge_detection t_cr_edge_detection = t_cr_edge_detection t_y_edge_smoothing[0][8] = t_y_edge_smoothing[0][0]……[0][7] t_y_edge_smoothing[1][8] = t_y_edge_smoothing[1][0]……[1][7] t_cb_edge_smoothing = t_cb_edge_smoothing t_cr_edge_smoothing = t_cr_edge_smoothing nr_strength_y[2] = nr_strength_y[0], nr_strength_y[0] nr_strength_c = nr_strength_c ](nvt_media/7f0d65355c9a286a0f90ccafd93bb559.png)**
 
-###### /proc/videograph/vpe/mrnr/mrnr_en
+######  /proc/videograph/vpe/mrnr/mrnr_en
 
 **[Description]**
 
@@ -147,9 +158,9 @@ Read or write the MRNR enable status of the current camera channel.
 
 **Read : cat /proc/videograph/vpe/mrnr/mrnr_en**
 
-**Output:**
+**Output: ![文字方塊: Command : echo [ch_en (0\~1)] \> /proc/videograph/vpe/mrnr/mrnr_en](nvt_media/9669ceeab31b05f5ff56ea15b1fc44be.png)**
 
-###### /proc/videograph/vpe/mrnr/t_xx_edge_det
+######  /proc/videograph/vpe/mrnr/t_xx_edge_det
 
 **[Description]**
 
@@ -178,7 +189,9 @@ Read or write edge_detection parameters.
 
 **Output :**
 
-###### /proc/videograph/vpe/mrnr/t_xx_edge_smooth
+**![文字方塊: Command : echo [t_y_edge_det[0][0] …….. [0][7] \> /proc/videograph/vpe/mrnr/ t_y_edge_det_1 echo [t_y_edge_det[1][0] …….. [0][7] \> /proc/videograph/vpe/mrnr/ t_y_edge_det_2 echo [t_cb_edge_det \> /proc/videograph/vpe/mrnr/ t_cb_edge_det echo [t_cr_edge_det \> /proc/videograph/vpe/mrnr/ t_cr_edge_det =============================================================== t_y_edge_det1 = t_y_edge_detection [0] [0] …………….[0][7] t_y_edge_det2 = t_y_edge_detection [1] [0]…………….. [0][7] t_cb_edge_det = t_cb_edge_detection t_cr_edge_det = t_cb_edge_detection  ](nvt_media/b829eaa2bd2404faf84bf1904a2ec6c7.png)**
+
+######  /proc/videograph/vpe/mrnr/t_xx_edge_smooth
 
 **[Description]**
 
@@ -207,7 +220,9 @@ cat /proc/videograph/vpe/mrnr/t_cr_edge_smooth
 
 **Output :**
 
-###### /proc/videograph/vpe/mrnr/nr_strength
+**![文字方塊: Command : echo [t_y_edge_smooth[0]] …….. [t_y_edge_smooth [7]] \> /proc/videograph/vpe/mrnr/t_y_edge_smooth_1 … =============================================================== t_y_edge_smooth1 = t_y_edge_smoothing[0][0] ……………. [0][7] t_y_edge_smooth1 = t_y_edge_smoothing [1][0]…………….. [0][7] t_cb_edge_smooth = t_cb_edge_smoothing t_cr_edge_smooth = t_cr_edge_smoothing ](nvt_media/0ca4863ff94ad9d96b7de66bc669764c.png)**
+
+######  /proc/videograph/vpe/mrnr/nr_strength
 
 **[Description]**
 
@@ -225,7 +240,9 @@ Read or write nr_strength parameters on Y/C channel.
 
 **Output :**
 
-#### Vendor API
+**![文字方塊: Command : echo [strength_y[0]] [strength_y [1]] [strength_c]] \> /proc/videograph/vpe/mrnr/nr_strength =============================================================== nr_strength_y = nr_strength_y[0], strength_y [1] nr_strength_c= nr_strength_c ](nvt_media/65bb53da5aaa5c2ba62dcae67f96ccb2.png)**
+
+#### 3.3.2 Vendor API
 
 **[Description]**
 
@@ -243,15 +260,19 @@ HD_RESULT vendor_video_set(HD_PATH_ID path_id, VENDOR_VIDEO_DN_2D, VENDOR_VIDEO_
 
 **[Definition]**
 
-## Temporal Noise Reduction (TMNR)
+**![文字方塊: typedef struct \_VENDOR_VIDEO_MRNR { 	UINT32 mrnr_en;  					///\< MRNR ON/OFF 	UINT32 t_y_edge_detection[2][8]; 	///\< Edge pixel detection threshold of Y{layer1\~layer2}, 0\~1023 	UINT32 t_cb_edge_detection; 		///\< Edge pixel detection threshold of Cb{layer2}, 0\~1023 	UINT32 t_cr_edge_detection; 		///\< Edge pixel detection threshold of Cr{layer2}, 0\~1023 	UINT32 t_y_edge_smoothing[2][8]; 	///\< Edge pixel smoothing threshold of Y: {layer1\~layer2}, 0\~255 	UINT32 t_cb_edge_smoothing; 		///\< Edge pixel smoothing threshold of Cb: {layer2}, 0\~255 	UINT32 t_cr_edge_smoothing;			///\< Edge pixel smoothing threshold of Cr: {layer2}, 0\~255 	UINT32 nr_strength_y[2]; 			///\< Strength of noise reduction of Y: {layer1\~layer2}, 0\~15 	UINT32 nr_strength_c; 				///\< Strength of noise reduction of CbCr: {layer2}, 0\~15 } VENDOR_VIDEO_PARAM_MRNR; ](nvt_media/8ac2f11e27d03da58ec3058c3127d951.png)**
+
+## 4 Temporal Noise Reduction (TMNR)
 
 This is temporal noise reduction module(abbreviation is “TMNR”). The major function is to eliminate temporal noise in the image.
 
-### Overview
+### 4.1 Overview
+
+![D:\\work6\\636\\fhtml\\NT9833x_VPE_IQ_Tuning_Guide_en.files\\image015.png](nvt_media/87f34cb9328d50cfae44dd8493fe3292.png)
 
 The concept of TMNR algorithm is to determine whether the pixel status is static(MotionLevel=0) or motion(MotionLevel=2) by Motion Detect module. The static region perform 3DNR to reduce the temporal noise, and the motion region will not perform 3DNR to prevent from having ghost, instead, it will perform 2DNR to reduce noise. The transition region between static region and motion region will combine the result of 2DNR and 3DNR by weighting.
 
-### Parameter description
+### 4.2 Parameter description
 
 (The blue text is the part of the parameter difference between this module and the 9831x series, please pay special attention)
 
@@ -302,41 +323,55 @@ Table 41 TMNR Parameter List
 
 **Advance Description:**
 
--   **tmnr_fcs_en:** Temporal de-false color ON/OFF. This function will eliminate color-flash phenomenon in high frequency region.
+ **tmnr_fcs_en:** Temporal de-false color ON/OFF. This function will eliminate color-flash phenomenon in high frequency region.
 
-| **FCS off**                                     | **FCS on**                                      |
-|-------------------------------------------------|-------------------------------------------------|
-| ![](media/5d97d7ec6ce6c04c51cbbd7fac4a4c14.png) | ![](media/739ad8dd14c71553c9ca374a7d25fdfd.png) |
+| **FCS off**                                                                                                                  | **FCS on**                                                                                                                   |
+|------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
+| ![D:\\work6\\636\\fhtml\\NT9833x_VPE_IQ_Tuning_Guide_en.files\\image016.jpg](nvt_media/db4ed44f17d61eaeb353b76c21cc6378.jpg) | ![D:\\work6\\636\\fhtml\\NT9833x_VPE_IQ_Tuning_Guide_en.files\\image017.jpg](nvt_media/2a6f568b43180c50dcb15146ae751fb5.jpg) |
 
--   **display_motion_map_en:**。
+**![D:\\work6\\636\\fhtml\\NT9833x_VPE_IQ_Tuning_Guide_en.files\\image018.png](nvt_media/7bfa6701d26e92648161d500b77fdf91.png)**
+
+ **display_motion_map_en:**。
 
 Motion region will label with red color, static region will label with black color, and transition region will label with white color.
 
-| Original image | Motion Map                                      |
-|----------------|-------------------------------------------------|
-|                | ![](media/f8c88e8b210fdbbc3a3bad1aa076d29b.png) |
+| Original image                                                                                                               | Motion Map                                                                                                                   |
+|------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
+| ![D:\\work6\\636\\fhtml\\NT9833x_VPE_IQ_Tuning_Guide_en.files\\image019.jpg](nvt_media/9f93745ac925137f221ce372adf02016.jpg) | ![D:\\work6\\636\\fhtml\\NT9833x_VPE_IQ_Tuning_Guide_en.files\\image020.jpg](nvt_media/b603c3bf34500bfee275761feaba313a.jpg) |
 
--   **Y_NOISE:** Block SAD is the summation of pixel difference between the previous frame and current frame at the same location. If the Block SAD is larger than K2\*NoiseSAD_STD(NoiseSAD_STD is the input parameter), it determines as motion region. If the Block SAD is smaller than K1\*NoiseSAD_STD, it determines as static region. If the Block SAD is larger than K1\*NoiseSAD_STD and smaller than K2\*NoiseSAD_STD, it determines as transition region.
+ **Y_NOISE:** Block SAD is the summation of pixel difference between the previous frame and current frame at the same location. If the Block SAD is larger than K2\*NoiseSAD_STD(NoiseSAD_STD is the input parameter), it determines as motion region. If the Block SAD is smaller than K1\*NoiseSAD_STD, it determines as static region. If the Block SAD is larger than K1\*NoiseSAD_STD and smaller than K2\*NoiseSAD_STD, it determines as transition region.
 
 As follows :
 
-![](media/f6e933b9951d28148772c67dcbb32146.png)
+![D:\\work6\\636\\fhtml\\NT9833x_VPE_IQ_Tuning_Guide_en.files\\image021.png](nvt_media/83d7951662b2f181b0798097fd4284cb.png)
 
--   Cb_NOISE, Cr_NOISE:
+ Cb_NOISE, Cr_NOISE:
 
-    Different from Y channel, the NoiseSAD of Cb/Cr channel has no relationship with detail. Therefore, it has no slope parameter.
+Different from Y channel, the NoiseSAD of Cb/Cr channel has no relationship with detail. Therefore, it has no slope parameter.
 
--   **lut_Y_3d_1_Th:** Weighting Lut for stage 1 3DNR on Y channel, the x-axis is delta difference of neighbor pixel, the y-axis is weighting. As the following figure, the larger the difference, the smaller the weighting. The smaller the difference, the larger the weighting. Then, based on each weighting to perform weighting sum.
--   **lut_Y_3d_2_Th:** Weighting Lut for Stage 2 3DNR on Y channel, the x-axis is difference of the reference point between the previous frame and current frame, the y-axis is weighting. As the following figure, those with smaller difference might be static region, and set smaller weighting, the output will close to the reference frame. On the contrast, those with larger difference might be motion region, and set larger weighting, the output will close to the current frame.
--   **lut_Y_2d_Th:** Weighting Lut of neighbor pixel for 2DNR on Y channel, the x-axis is difference, the y-axis is weighting. As the following figure, the larger the difference, the smaller the weighting. The smaller the difference, the larger the weighting. Then, based on each weighting to perform weighting sum.
--   **lut_c_3d_Th:** Suppression Level Lut for 3DNR on Cb/Cr channel, the x-axis is the difference of the reference point between the previous frame and current frame, the y-axis is the suppression level. The concept is the same with “**LUT_Y_3d_2_Th**”.
--   **lut_c_2d_Th:** Weighting Lut of neighbor pixel for 2DNR on Cb/Cr channel, the x-axis is difference, the y-axis is weighting. The concept is the same with “**lut_Y_2d_Th**”.
+![D:\\work6\\636\\fhtml\\NT9833x_VPE_IQ_Tuning_Guide_en.files\\image022.png](nvt_media/01f9aa5f01a49054f99327b31abe8322.png)
 
-### Setting Interface
+ **lut_Y_3d_1_Th:** Weighting Lut for stage 1 3DNR on Y channel, the x-axis is delta difference of neighbor pixel, the y-axis is weighting. As the following figure, the larger the difference, the smaller the weighting. The smaller the difference, the larger the weighting. Then, based on each weighting to perform weighting sum.
 
-#### Proc
+**![D:\\work6\\636\\fhtml\\NT9833x_VPE_IQ_Tuning_Guide_en.files\\image023.png](nvt_media/f68e3675eceee40f44ffc7949a1501a0.png)**
 
-###### /proc/videograph/vpe/tmnr/dump_info
+ **lut_Y_3d_2_Th:** Weighting Lut for Stage 2 3DNR on Y channel, the x-axis is difference of the reference point between the previous frame and current frame, the y-axis is weighting. As the following figure, those with smaller difference might be static region, and set smaller weighting, the output will close to the reference frame. On the contrast, those with larger difference might be motion region, and set larger weighting, the output will close to the current frame.
+
+**![D:\\work6\\636\\fhtml\\NT9833x_VPE_IQ_Tuning_Guide_en.files\\image024.png](nvt_media/9b4494cce2925bcf741b76ae71b0c9a9.png)**
+
+ **lut_Y_2d_Th:** Weighting Lut of neighbor pixel for 2DNR on Y channel, the x-axis is difference, the y-axis is weighting. As the following figure, the larger the difference, the smaller the weighting. The smaller the difference, the larger the weighting. Then, based on each weighting to perform weighting sum.
+
+**![D:\\work6\\636\\fhtml\\NT9833x_VPE_IQ_Tuning_Guide_en.files\\image025.png](nvt_media/d84a64c9ea020a4d2efd9b8ada43feaa.png)**
+
+ **lut_c_3d_Th:** Suppression Level Lut for 3DNR on Cb/Cr channel, the x-axis is the difference of the reference point between the previous frame and current frame, the y-axis is the suppression level. The concept is the same with “**LUT_Y_3d_2_Th**”.
+
+ **lut_c_2d_Th:** Weighting Lut of neighbor pixel for 2DNR on Cb/Cr channel, the x-axis is difference, the y-axis is weighting. The concept is the same with “**lut_Y_2d_Th**”.
+
+### 4.3 Setting Interface
+
+#### 4.3.1 Proc
+
+######  /proc/videograph/vpe/tmnr/dump_info
 
 **[Description]**
 
@@ -352,7 +387,9 @@ cat /proc/videograph/vpe/tmnr/dump_info
 
 **Output :**
 
-###### /proc/videograph/vpe/tmnr/ch_en_status
+**![文字方塊: luma_dn_en = luma_dn_en chroma_dn_en = chroma_dn_en tmnr_fcs_en = tmnr_fcs_en nt_str_y_3d = nt_str_y_3d nr_str_y_2d = nr_str_y_2d nr_str_c_3d = nr_str_c_3d nr_str_c_2d = nr_str_c_2d blur_str_y = blur_str_y center_wzero_y_2d_en = center_wzero_y_2d_en center_wzero_y_3d_en = center_wzero_y_3d_en small_vibrat_supp_y_en = small_vibrat_supp_y_en avoid_residue_th_y = avoid_residue_th_y avoid_residue_th_c = avoid_residue_th_c y_base[8] = y_base[0] ….. y_base[7] motion_level_th_y = motion_leve_tTh_y_k1, motion_level_th_y_k2 motion_level_th_c = motion_level_th_c_k1, motion_level_th_c_k2 y_coefa[8] = y_coefa[0] …y_coefa[7] y_coefb[8] = y_coefb[0] …y_coefb[7] y_std[8] = y_std[0] …y_std[7] cb_mean[8] = cb_mean[0] …. cb_mean[7] cb_std[8] = cb_std[0]……..cb_std[7] cr_mean[8] = cr_mean[0] …. cr_mean[7] cr_std[8] = cr_std[0]……..cr_std[7] lut_y_3d_1_th[4] = lut_y_3d_1_th[0]  ….. lut_y_3d_1_th[3] lut_y_3d_2_th[4] = lut_y_3d_2_th[0]  ….. lut_y_3d_2_th[3] lut_y_2d_th[4] = lut_y_2d_th[0]……lut_y_2d_th[3] lut_c_3d_th[4] = lut_c_3d_th[0]……. lut_c_3d_th[3] lut_c_2d_th[4] = lut_c_2d_th[0]…….. lut_c_2d_th[3] tmnr_fcs_str = tmnr_fcs_str tmnr_fcs_th = tmnr_fcs_th dithering_en = dithering_en dithering_bit_y = dithering_bit_y dithering_bit_u = dithering_bit_u dithering_bit_v = dithering_bit_v err_compensate = err_compensate ](nvt_media/e4e709af158ff840b8447d68e577185c.png)**
+
+######  /proc/videograph/vpe/tmnr/ch_en_status
 
 **[Description]**
 
@@ -372,7 +409,9 @@ Read or write the enable status of the current channel.
 
 **Output :**
 
-###### /proc/videograph/vpe/tmnr/nr_strength
+**![文字方塊: Command :  echo [luma_en] [chroma_en] [fcs_en] \> /proc/videograph/vpe/tmnr/ch_en_status =============================================================== luma_en = luma_dn_en chroma_en = chroma_dn_en fcs_en = tmnr_fcs_en ](nvt_media/67e256fd8254f24d9ace48b940ce9aab.png)**
+
+######  /proc/videograph/vpe/tmnr/nr_strength
 
 **[Description]**
 
@@ -392,7 +431,9 @@ Read or write the TMNR strength of the current channel.
 
 **Output :**
 
-###### /proc/videograph/vpe/tmnr/y_base
+**![文字方塊: Command :  echo [y_3d_str] [y_2d_str] [c_3d_str] [c_2d_str] \> /proc/videograph/vpe/tmnr//proc/videograph/vpe/tmnr/nr_strength =============================================================== nr_str_y_3d = nr_str_y_3d nr_str_y_2d = nr_str_y_2d nr_str_c_3d = nr_str_c_3d nr_str_c_2d = nr_str_c_2d ](nvt_media/dc781e076010f8281f587dd310071586.png)**
+
+######  /proc/videograph/vpe/tmnr/y_base
 
 **[Description]**
 
@@ -412,7 +453,9 @@ Read or write the base noise level of TMNR of the current channel.
 
 **Output :**
 
-###### /proc/videograph/vpe/tmnr/motion_level_th
+**![文字方塊: Command :  echo [y_base0] [y_base1]………[y_base7] \> /proc/videograph/vpe/tmnr/y_base =============================================================== TMNR Noise Y_base = y_base[0]…………y_base[7] ](nvt_media/f02f898843a75b3607bc5bb7c74aecc4.png)**
+
+######  /proc/videograph/vpe/tmnr/motion_level_th
 
 **[Description]**
 
@@ -432,7 +475,9 @@ Read or write the noise model parameters of TMNR of the current channel.
 
 **Output :**
 
-###### /proc/videograph/vpe/tmnr/y_coeffa
+**![文字方塊: Command :  echo [y_k1] [y_k2] [c_k1] [c_k2] \> /proc/videograph/vpe/tmnr/motion_level_th =============================================================== TMNR motion level th = motion_level_th_y_k1, motion_level_th_y_k2, motion_level_th_c_k1, motion_level_th_c_k2, ](nvt_media/d3b8d09ccc499f6b089f5281b30f46c1.png)**
+
+######  /proc/videograph/vpe/tmnr/y_coeffa
 
 **[Description]**
 
@@ -452,7 +497,9 @@ Read or write the noise model parameters of TMNR of the current channel.
 
 **Output :**
 
-###### /proc/videograph/vpe/tmnr/y_coeffb
+**![文字方塊: Command :  echo [y_coeffa0] [y_coeffa1]………[y_coeffa7] \> /proc/videograph/vpe/tmnr/y_coeffa =============================================================== TMNR Noise model y_coeffa = y_coeffa[0]…………y_coeffa[7] ](nvt_media/14724a2d4d8744c5205275f91b9f2549.png)**
+
+######  /proc/videograph/vpe/tmnr/y_coeffb
 
 **[Description]**
 
@@ -472,7 +519,9 @@ Read or write the noise model parameters of TMNR of the current channel.
 
 **Output :**
 
-###### /proc/videograph/vpe/tmnr/y_std
+**![文字方塊: Command :  echo [y_coeffb0] [y_coeffb1]………[y_coeffb7] \> /proc/videograph/vpe/tmnr/y_coeffb =============================================================== TMNR Noise model y_coeffb = y_coeffb[0]…………y_coeffb[7] ](nvt_media/c188d389eea73085ac3c5558411a1af0.png)**
+
+######  /proc/videograph/vpe/tmnr/y_std
 
 **[Description]**
 
@@ -492,7 +541,9 @@ Read or write the noise model parameters of TMNR of the current channel.
 
 **Output :**
 
-###### /proc/videograph/vpe/tmnr/cb_mean
+**![文字方塊: Command :  echo [y_std0] [y_std1]………[y_std7] \> /proc/videograph/vpe/tmnr/y_std =============================================================== TMNR Noise model y_std = y_std[0]…………y_std[7] ](nvt_media/36f776a61c6d6fab01123e235f6c08f0.png)**
+
+######  /proc/videograph/vpe/tmnr/cb_mean
 
 **[Description]**
 
@@ -512,7 +563,9 @@ Read or write the noise model parameters of TMNR of the current channel.
 
 **Output :**
 
-###### /proc/videograph/vpe/tmnr/cb_std
+**![文字方塊: Command :  echo [cb_mean0] [cb_mean1]………[cb_mean 7] \> /proc/videograph/vpe/tmnr/cb_mean =============================================================== TMNR Noise model cb_mean = cb_mean[0]…………cb_mean[7] ](nvt_media/899a1e0130017d1795d15862c6b9af63.png)**
+
+######  /proc/videograph/vpe/tmnr/cb_std
 
 **[Description]**
 
@@ -532,7 +585,9 @@ Read or write the noise model parameters of TMNR of the current channel.
 
 **Output :**
 
-###### /proc/videograph/vpe/tmnr/cr_mean
+**![文字方塊: Command :  echo [cb_std0] [cb_std1]………[cb_std7] \> /proc/videograph/vpe/tmnr/cb_std =============================================================== TMNR Noise model cb_std = cb_std[0]…………cb_std[7] ](nvt_media/129a1559ed7458fa6d2cb0f797994506.png)**
+
+######  /proc/videograph/vpe/tmnr/cr_mean
 
 **[Description]**
 
@@ -552,7 +607,9 @@ Read or write the noise model parameters of TMNR of the current channel.
 
 **Output :**
 
-###### /proc/videograph/vpe/tmnr/cr_std
+**![文字方塊: Command :  echo [cr_mean0] [cr_mean1]………[cr_std7] \> /proc/videograph/vpe/tmnr/cr_mean =============================================================== TMNR Noise model cr_mean = cr_mean[0]…………cr_mean[7] ](nvt_media/44bb49406a61e387c8140839b84b6fc1.png)**
+
+######  /proc/videograph/vpe/tmnr/cr_std
 
 **[Description]**
 
@@ -572,7 +629,9 @@ Read or write the noise model parameters of TMNR of the current channel.
 
 **Output :**
 
-###### /proc/videograph/vpe/tmnr/lut_y_3d_1_th
+**![文字方塊: Command :  echo [cr_std0] [cr_std1]………[cr_std7] \> /proc/videograph/vpe/tmnr/cr_std =============================================================== TMNR Noise model cr_std = cr_std[0]…………cr_std[7] ](nvt_media/63f45c3926d399f172234997bdd56a61.png)**
+
+######  /proc/videograph/vpe/tmnr/lut_y_3d_1_th
 
 **[Description]**
 
@@ -592,7 +651,9 @@ Read or write the 3D noise reduction parameters of TMNR of the current channel.
 
 **Output :**
 
-###### /proc/videograph/vpe/tmnr/lut_y_3d_2_th
+**![文字方塊: Command :  echo [th0] [th1] [th2] [th3] \> /proc/videograph/vpe/tmnr/lut_y_3d_1_th =============================================================== TMNR lut_y_3d_1_th = lut_y_3d_1_th[0]…th[3] ](nvt_media/5399e1599a7a25b2a73670abf1bcca25.png)**
+
+######  /proc/videograph/vpe/tmnr/lut_y_3d_2_th
 
 **[Description]**
 
@@ -612,7 +673,9 @@ Read or write the 3D noise reduction parameters of TMNR of the current channel.
 
 **Output :**
 
-###### /proc/videograph/vpe/tmnr/lut_y_2d_th
+**![文字方塊: Command :  echo [th0] [th1] [th2] [th3] \> /proc/videograph/vpe/tmnr/lut_y_3d_2_th =============================================================== TMNR lut_y_3d_2_th = lut_y_3d_2_th[0]…th[3] ](nvt_media/05be5cd8f0767329430f05b6fd6c6f17.png)**
+
+######  /proc/videograph/vpe/tmnr/lut_y_2d_th
 
 **[Description]**
 
@@ -632,7 +695,9 @@ cat /proc/videograph/vpe/tmnr/lut_y_2d_th
 
 **Output :**
 
-###### /proc/videograph/vpe/tmnr/lut_c_3d_th
+**![文字方塊: Command :  echo [th0] [th1] [th2] [th3] \> /proc/videograph/vpe/tmnr/lut_y_2d_th =============================================================== TMNR lut_y_2d_th = lut_y_2d_th[0]…th[3] ](nvt_media/a3cb93ad122056136e8c1a4c9cf4d153.png)**
+
+######  /proc/videograph/vpe/tmnr/lut_c_3d_th
 
 **[Description]**
 
@@ -652,7 +717,9 @@ Read or write the 3D noise reduction parameters of 3DNR of the current channel.
 
 **Output :**
 
-###### /proc/videograph/vpe/tmnr/lut_c_2d_th
+**![文字方塊: Command :  echo [th0] [th1] [th2] [th3] \> /proc/videograph/vpe/tmnr/lut_c_3d_th =============================================================== TMNR lut_c_3d_th = lut_c_3d_th[0]…th[3] ](nvt_media/a1458cdbf35cbdaf003860ae1b77ab4c.png)**
+
+######  /proc/videograph/vpe/tmnr/lut_c_2d_th
 
 **[Description]**
 
@@ -672,7 +739,9 @@ Read or write the 2D noise reduction parameters of TMNR of the current channel.
 
 **Output :**
 
-###### /proc/videograph/vpe/tmnr/fcs_str
+**![文字方塊: Command :  echo [th0] [th1] [th2] [th3] \> /proc/videograph/vpe/tmnr/lut_c_2d_th =============================================================== TMNR lut_c_3d_th = lut_c_2d_th[0]…th[3] ](nvt_media/18d13fb52472853ff8fa05f8923a8fa3.png)**
+
+######  /proc/videograph/vpe/tmnr/fcs_str
 
 **[Description]**
 
@@ -692,7 +761,9 @@ cat /proc/videograph/vpe/tmnr/fcs_str
 
 **Output :**
 
-###### /proc/videograph/vpe/tmnr/fcs_th
+**![文字方塊: Command :  echo [fcs_str (0\~15) ] \> /proc/videograph/vpe/tmnr/fcs_str =============================================================== TMNR FCS strength = tmnr_fcs_str ](nvt_media/0171186fe34c75bf4052c00962d7ac25.png)**
+
+######  /proc/videograph/vpe/tmnr/fcs_th
 
 **[Description]**
 
@@ -712,7 +783,9 @@ cat /proc/videograph/vpe/tmnr/fcs_th
 
 **Output :**
 
-###### /proc/videograph/vpe/tmnr/motion_map
+**![文字方塊: Command :  echo [fcs_th (0\~255) ] \> /proc/videograph/vpe/tmnr/fcs_th =============================================================== TMNR FCS th = tmnr_fcs_th ](nvt_media/135a14325b0852d3047faec783e24a7a.png)**
+
+######  /proc/videograph/vpe/tmnr/motion_map
 
 **[Description]**
 
@@ -732,7 +805,9 @@ cat /proc/videograph/vpe/tmnr/motion_map
 
 **Output :**
 
-###### /proc/videograph/vpe/tmnr/diff_blur_str
+**![文字方塊: Command :  echo [map_en (0\~1)] [map_idx (0\~4)] \> /proc/videograph/vpe/tmnr/motion_map =============================================================== TMNR motion_map :  map_en = display_motion_map_en  map_channel = motion_map_channel ](nvt_media/5df7f70519fa3956cc814f352a78fc34.png)**
+
+######  /proc/videograph/vpe/tmnr/diff_blur_str
 
 **[Description]**
 
@@ -752,7 +827,9 @@ cat /proc/videograph/vpe/tmnr/diff_blur_str
 
 **Output :**
 
-###### /proc/videograph/vpe/tmnr/avoid_residue_th
+**![文字方塊: Command :  echo [str (0\~2)] \> /proc/videograph/vpe/tmnr/diff_blur_str =============================================================== diff_blur_str = blur_str_y ](nvt_media/16f7a355e98146794a78e74b1d86d03b.png)**
+
+######  /proc/videograph/vpe/tmnr/avoid_residue_th
 
 **[Description]**
 
@@ -772,7 +849,9 @@ cat /proc/videograph/vpe/tmnr/avoid_residue_th
 
 **Output :**
 
-###### /proc/videograph/vpe/tmnr/dithering
+**![文字方塊: Command :  echo [avoid_residue_th_y (1\~4)] [avoid_residue_th_c (1\~4)] \> /proc/videograph/vpe/ avoid_residue_th =============================================================== avoid_residue_th_y= avoid_residue_th_y,  avoid_residue_th_c= avoid_residue_th_c ](nvt_media/a8769c02f9cf5e69b4f83f70b027b6b7.png)**
+
+######  /proc/videograph/vpe/tmnr/dithering
 
 **[Description]**
 
@@ -792,7 +871,9 @@ cat /proc/videograph/vpe/tmnr/ dithering
 
 **Output :**
 
-###### /proc/videograph/vpe/tmnr/err_compensate
+**![文字方塊: Command :  echo [dithering_en (0\~1)] [dithering_bit_y (0\~7)] [dithering_bit_u (0\~7)] [dithering_bit_v (0\~7)] \> /proc/videograph/vpe/tmnr/dithering =============================================================== dithering_en = dithering_en, dithering_bit_y = dithering_bit_y, dithering_bit_u = dithering_bit_u, dithering_bit_v = dithering_bit_v ](nvt_media/30d2b4f37bf445113901b50616654c60.png)**
+
+######  /proc/videograph/vpe/tmnr/err_compensate
 
 **[Description]**
 
@@ -812,7 +893,9 @@ cat /proc/videograph/vpe/tmnr/err_compensate
 
 **Output :**
 
-#### Vendor API
+**![文字方塊: Command :  echo [err_compensate (0\~1)] \> /proc/videograph/vpe/tmnr/err_compensate =============================================================== err_compensate = err_compensate ](nvt_media/17251ab5e8f1820a115850c7ad2592d8.png)**
+
+#### 4.3.2 Vendor API
 
 **[Description]**
 
@@ -830,17 +913,19 @@ HD_RESULT vendor_video_set(HD_PATH_ID path_id, VENDOR_VIDEO_DN_2D, VENDOR_VIDEO_
 
 **[Definition]**
 
-## Sharpen (SHP)
+**![文字方塊: typedef struct \_VENDOR_VIDEO_PARAM_TMNR_EXT { 	UINT32 tmnr_en;  		///\< 3DNR ON/OFF 	UINT32 luma_dn_en;  	///\< Y channel 3DNR ON/OFF 	UINT32 chroma_dn_en;  	///\< CbCr channel 3DNR ON/OFF 	UINT32 nr_str_y_3d; 	///\< Y channel temporal NR strength, 0\~32 	UINT32 nr_str_y_2d; 	///\< Y channel spatial NR strength, 0\~32 	UINT32 nr_str_c_3d; 	///\< CbCr channel temporal NR strength, 0\~32 	UINT32 nr_str_c_2d; 	///\< CbCr channel spatial NR strength, 0\~32 	UINT32 blur_str_y; 		///\< Difference Y image blurred strength (0: No blur, 1: low-strength blur, 2: high-strength blur) 	UINT32 center_wzero_y_2d_en; 	///\< Apply zero to center weight of Y spatial Bilateral filter 	UINT32 center_wzero_y_3d_en; 	///\< Apply zero to center weight of Y temporal Bilateral filter 	UINT32 small_vibrat_supp_y_en; 	///\< Y channel small vibration suppression ON/OF 	UINT32 avoid_residue_th_y; 		///\< 1\~4 	UINT32 avoid_residue_th_c; 		///\< 1\~4 	UINT32 display_motion_map_en; 	///\< Display motion level map ON/OFF 	UINT32 motion_map_channel; 		///\< Channel selection for motion level map display (0:Y, 1:Cb, 2:Cr) 	UINT32 motion_level_th_y_k1; 	///\< Y channel match level threshold 1 adjustment, 0\~32 	UINT32 motion_level_th_y_k2; 	///\< Y channel match level threshold 2 adjustment, 0\~32 AND K2 \> K1 	UINT32 motion_level_th_c_k1; 	///\< CbCr channel match level threshold 1 adjustment, 0\~32 	UINT32 motion_level_th_c_k2; 	///\< CbCr channel match level threshold 2 adjustment, 0\~32 AND K2 \> K1 	UINT32 lut_y_3d_1_th[4]; 		///\< LUT of Y channel 3d_1 filter, 0\~127 	UINT32 lut_y_3d_2_th[4]; 		///\< LUT of CbCr channel 3d filter, 0\~127 	UINT32 lut_y_2d_th[4]; 			///\< LUT of Y channel 2d filter, 0\~127 	UINT32 lut_c_3d_th[4]; 			///\< LUT of CbCr channel 3d filter, 0\~127 	UINT32 lut_c_2d_th[4]; 			///\< LUT of CbCr channel 2d filter, 0\~127 	UINT32 y_base[8]; 				///\< Y channel noise model parameter: base noise level, 0 \~16320 	UINT32 y_coefa[8]; 				///\< Y channel noise model parameter: slope of line, 0\~48, Regard 16 as slope 1.0 	UINT32 y_coefb[8]; 				///\< Y channel noise model parameter: intercept of line, 0 \~16320 	UINT32 y_std[8]; 				///\< Y channel noise model parameter: noise standard deviation, 0 \~16320 	UINT32 cb_mean[8]; 				///\< Cb channel noise model parameter: noise mean, 0 \~6375 	UINT32 cb_std[8]; 				///\< Cb channel nosie model parameter: noise standard deviation, 0 \~6375 	UINT32 cr_mean[8]; 				///\< Cr channel noise model parameter: noise mean, 0 \~6375 	UINT32 cr_std[8]; 				///\< Cr channel nosie model parameter: noise standard deviation, 0 \~6375 	UINT32 tmnr_fcs_en;  	        ///\< TMNR False Color Supression enable, \*\*chroma_dn_en shoulde be 1 	UINT32 tmnr_fcs_str;   			///\< TMNR_False Color Supression strength 	UINT32 tmnr_fcs_th;         	///\< TMNR False Color Supression threshold 	//new in nt98321 	UINT8 dithering_en;   			///\< source dithering switch. 0\~1. default  0 	UINT8 dithering_bit_y;			///\< Y-channel dithering range. 0\~3. default 2 	UINT8 dithering_bit_u;			///\< U-channel dithering range. 0\~3. default 1 	UINT8 dithering_bit_v;			///\< V-channel dithering range. 0\~3. default 1 	UINT8 err_compensate;			///\< err compensation method option. 0\~1. default 1 } VENDOR_VIDEO_PARAM_TMNR_EXT; ](nvt_media/911c84065cbc8748860780afb494c9e2.png)**
+
+## 5 Sharpen (SHP)
 
 This is texture enhancement module.
 
-### Overview
+### 5.1 Overview
 
 This algorithm adopts inverse gamma information and after gamma information to perform texture enhancement, respectively, to improve the enhancement strength not smooth problem of the bright/dark region. Besides, it adopts 3x3 and 5x5 filter to enhance thin edge and thick edge, repectively, to take care of the detail and contrast of image. Calculating “Edge Weight” to determine this is detail region or flat region(thinner edge) and automatically adjusting weighting of detail enhancement result and flat region enhancement result to take care of texture enhancement and avoid noise enhancement. The “Halo clip” is used to control the overshootong phenomenon caused by edge enhancement.
 
 The major flow please refer to the following figure:
 
-![](media/48e6124f5cfb8ffe61c1c7f84e11fecb.png)
+![D:\\work6\\636\\fhtml\\NT9833x_VPE_IQ_Tuning_Guide_en.files\\image051.png](nvt_media/a6436fe39543d1b44cb09617bb74d4f0.png)
 
 Parameter Description
 
@@ -864,13 +949,16 @@ Table 51 SHP Parameter List
 
 **Advance description**
 
--   **noise_level, noise_curve[17]:**
+ **noise_level, noise_curve[17]:**
 
-    noise_level = noise_level + NoiseofPixel, wherein the NoiseofPixel is the y-axis of noise_curve.
+noise_level = noise_level + NoiseofPixel, wherein the NoiseofPixel is the y-axis of noise_curve.
 
-    The noise_curve may depend on the pixel brightness to set the noise size, respectively. Normally, human eyes are less sensitive to the noise in high bright region; thus, it can set small value to increase the edge enhancement strength to enhance detail. It is recommend to use the following default value. If user want to adjust the noise size at all Y range(0-255), it just needs to adjust noise_level.
+The noise_curve may depend on the pixel brightness to set the noise size, respectively. Normally, human eyes are less sensitive to the noise in high bright region; thus, it can set small value to increase the edge enhancement strength to enhance detail. It is recommend to use the following default value. If user want to adjust the noise size at all Y range(0-255), it just needs to adjust noise_level.
 
-![](media/bf0ce7acd928bcb8e947b31a8321cc75.png)
+| Noise |
+|-------|
+
+![D:\\work6\\636\\fhtml\\NT9833x_VPE_IQ_Tuning_Guide_en.files\\image052.png](nvt_media/70b45a15982bc459d6f5fed6034217e7.png)
 
 Default value:
 
@@ -878,19 +966,19 @@ Default value:
 
 noise_curve[17] ={50,50,50,48,47,44,39,38,37,36,35,35,35,35,35,35,35}
 
--   More strengthen on detail in bright region to avoid enhancing noise.
+ More strengthen on detail in bright region to avoid enhancing noise.
 
-    **edge_weight_src_sel** =1
+**edge_weight_src_sel** =1
 
-    noise_curve[17] = {0, 38, 46, 51, 54, 57, 59, 61, 62, 62, 62, 62, 62, 62, 62, 62, 62}
+noise_curve[17] = {0, 38, 46, 51, 54, 57, 59, 61, 62, 62, 62, 62, 62, 62, 62, 62, 62}
 
-    -   More strengthen on detail in dark region to enhance thin detail, but the noise in dark region will be enhanced, either.
+ More strengthen on detail in dark region to enhance thin detail, but the noise in dark region will be enhanced, either.
 
-### Setting Interface
+### 5.2 Setting Interface
 
-#### Proc
+#### 5.2.1 Proc
 
-###### /proc/videograph/vpe/sharpen/dump_info
+######  /proc/videograph/vpe/sharpen/dump_info
 
 **[Description]**
 
@@ -902,7 +990,9 @@ Read all Sharpen parameters of the current camera channel.
 
 Read : cat /proc/videograph/vpe/sharpen/dump_info
 
-###### /proc/videograph/vpe/sharpen/sharp_en
+**![文字方塊: Current channel = \<ch_no\> edge_weight_src_sel = edge_weight_src_sel edge_weight_th = edge_weight_th edge_weight_gain = edge_weight_gain noise_level = noise_level noise_curve[17] = noise_curve[0] ………. noise_curve[16] blend_inv_gamma = blend_inv_gamma edge_sharp_str1 = edge_sharp_str1 edge_sharp_str2 = edge_sharp_str2 flat_sharp_str = flat_sharp_str coring_th = coring_th bright_halo_clip = bright_halo_clip dark_halo_clip = dark_halo_clip ](nvt_media/1399c74d248e480b6db09b49fef4789b.png)**
+
+######  /proc/videograph/vpe/sharpen/sharp_en
 
 **[Description]**
 
@@ -922,7 +1012,9 @@ Read or write the enable status of the cuurent channel.
 
 **Output :**
 
-###### /proc/videograph/vpe/sharpen/edge_weight_src_sel
+**![文字方塊: Command :  echo [ sharp_en (0\~1) ] \> /proc/videograph/vpe/sharpen/sharp_en =============================================================== sharpen_en = sharpen_en ](nvt_media/1399c74d248e480b6db09b49fef4789b.png)**
+
+######  /proc/videograph/vpe/sharpen/edge_weight_src_sel
 
 **[Description]**
 
@@ -942,7 +1034,9 @@ cat /proc/videograph/vpe/sharpen/edge_weight_src_sel
 
 **Output :**
 
-###### /proc/videograph/vpe/sharpen/edge_weigt_gain
+**![文字方塊: Command :  echo [src_sel (0 \~ 1)] \> /proc/videograph/vpe/sharpen/edge_weight_src_sel =============================================================== edge_weight_src_sel = edge_weight_src_sel 0: after gamma 1: before gamma ](nvt_media/1399c74d248e480b6db09b49fef4789b.png)**
+
+######  /proc/videograph/vpe/sharpen/edge_weigt_gain
 
 **[Description]**
 
@@ -962,7 +1056,9 @@ cat /proc/videograph/vpe/sharpen/edge_weight_gain
 
 **Output :**
 
-###### /proc/videograph/vpe/sharpen/edge_weight_th
+**![文字方塊: Command :  echo [gain (0\~255)] \> /proc/videograph/vpe/sharpen/edge_weight_gain =============================================================== edge_weight_gain = edge_weight_gain ](nvt_media/1399c74d248e480b6db09b49fef4789b.png)**
+
+######  /proc/videograph/vpe/sharpen/edge_weight_th
 
 **[Description]**
 
@@ -982,7 +1078,9 @@ cat /proc/videograph/vpe/sharpen/edge_weight_th
 
 **Output :**
 
-###### /proc/videograph/vpe/sharpen/blend_inv_gamma
+**![文字方塊: Command :  echo [th (0\~255)] \> /proc/videograph/vpe/sharpen/edge_weight_th =============================================================== edge_weight_th = edge_weight_th ](nvt_media/1399c74d248e480b6db09b49fef4789b.png)**
+
+######  /proc/videograph/vpe/sharpen/blend_inv_gamma
 
 **[Description]**
 
@@ -1002,7 +1100,9 @@ cat /proc/videograph/vpe/sharpen/blend_inv_gamma
 
 **Output :**
 
-###### /proc/videograph/vpe/sharpen/edge_sharp_str
+**![文字方塊: Command :  echo [th (0\~128) \> /proc/videograph/vpe/sharpen/blend_inv_gamma =============================================================== blend_inv_gamma = blend_inv_gamma ](nvt_media/1399c74d248e480b6db09b49fef4789b.png)**
+
+######  /proc/videograph/vpe/sharpen/edge_sharp_str
 
 **[Description]**
 
@@ -1022,7 +1122,9 @@ cat /proc/videograph/vpe/sharpen/edge_sharp_str
 
 **Output :**
 
-###### /proc/videograph/vpe/sharpen/flat_sharp_str
+**![文字方塊: Command :  echo [str1 (0\~255)] [str2 (0\~255)] \> /proc/videograph/vpe/sharpen/edge_sharp_str =============================================================== sharp_str1 = edge_sharp_str1 sharp_str2 = edge_sharp_str2 ](nvt_media/1399c74d248e480b6db09b49fef4789b.png)**
+
+######  /proc/videograph/vpe/sharpen/flat_sharp_str
 
 **[Description]**
 
@@ -1042,7 +1144,9 @@ cat /proc/videograph/vpe/sharpen/flat_sharp_str
 
 **Output :**
 
-###### /proc/videograph/vpe/sharpen/coring_th
+**![文字方塊: Command :  echo [str (0\~255)] \> /proc/videograph/vpe/sharpen/flat_sharp_str =============================================================== flat_sharp_str = flat_sharp_str ](nvt_media/1399c74d248e480b6db09b49fef4789b.png)**
+
+######  /proc/videograph/vpe/sharpen/coring_th
 
 **[Description]**
 
@@ -1062,7 +1166,9 @@ cat /proc/videograph/vpe/sharpen/coring_th
 
 **Output :**
 
-###### /proc/videograph/vpe/sharpen/halo_clip
+**![文字方塊: Command :  echo [coring_th (0\~255)] \> /proc/videograph/vpe/sharpen/coring_th =============================================================== coring_th = coring_th ](nvt_media/1399c74d248e480b6db09b49fef4789b.png)**
+
+######  /proc/videograph/vpe/sharpen/halo_clip
 
 **[Description]**
 
@@ -1082,7 +1188,9 @@ cat /proc/videograph/vpe/sharpen/halo_clip
 
 **Output :**
 
-###### /proc/videograph/vpe/sharpen/noise_curve
+**![文字方塊: Command :  echo [bright_clip (0\~128)] [dark_clip(0\~128)] \> /proc/videograph/vpe/sharpen/halo_clip =============================================================== Bright_halo_clip = bright_halo_clip Dark_halo_clip = dark_halo_clip ](nvt_media/1399c74d248e480b6db09b49fef4789b.png)**
+
+######  /proc/videograph/vpe/sharpen/noise_curve
 
 **[Description]**
 
@@ -1102,7 +1210,9 @@ cat /proc/videograph/vpe/sharpen/noise_curve
 
 **Output :**
 
-#### Vendor API
+**![文字方塊: Command :  echo [noise_curve[0] (0\~255)]…. [noise_curve [16] (0\~255)] \> /proc/videograph/vpe/sharpen/noise_curve =============================================================== noise_curve = noise_curve[0] ……….noise_curve[16] ](nvt_media/1399c74d248e480b6db09b49fef4789b.png)**
+
+#### 5.2.2 Vendor API
 
 **[Description]**
 
@@ -1120,19 +1230,21 @@ HD_RESULT vendor_video_set(HD_PATH_ID path_id, VENDOR_VIDEO_SHARP, VENDOR_VIDEO_
 
 **[定義]**
 
-## Edge Smoothing (ES)
+**![文字方塊: typedef struct \_VENDOR_VIDEO_PARAM_SHARP { 	UINT32 sharp_en;  			///\< Sharpness ON/OFF 	UINT32 edge_weight_src_sel; ///\< Select source of edge weight calculation, 0\~1 	UINT32 edge_weight_th; 		///\< Edge weight coring threshold, 0\~255 	UINT32 edge_weight_gain; 	///\< Edge weight gain, 0\~255 	UINT32 noise_level; 		///\< Noise Level, 0\~255 	UINT32 noise_curve[17]; 	///\< 17 control points of noise modulation curve, 0\~255 	UINT32 blend_inv_gamma; 	///\< Blending ratio of HPF results, 0\~128 	UINT32 edge_sharp_str1; 	///\< Sharpen strength1 of edge region, 0\~255 	UINT32 edge_sharp_str2; 	///\< Sharpen strength2 of edge region, 0\~255 	UINT32 flat_sharp_str; 		///\< Sharpen strength of flat region,0\~255 	UINT32 coring_th; 			///\< Coring threshold, 0\~255 	UINT32 bright_halo_clip; 	///\< Bright halo clip ratio, 0\~255 	UINT32 dark_halo_clip; 		///\< Dark halo clip ratio, 0\~255 } VENDOR_VIDEO_PARAM_SHARP; ](nvt_media/a1aaae7db64b05d189b5fc1895788fe5.png)**
+
+## 6 Edge Smoothing (ES)
 
 This module is edge smoothing. The main function is to eliminate aliasing in the picture to improve the smoothness of the picture.
 
-### Overview
+### 6.1 Overview
 
 The characteristics of this algorithm are to effectively smooth the edges of the input image, correct the jaggedness in the edge area of the input image, and avoid the Sharpen module to enhance the degree of jaggedness in the image edge again. The algorithm divides the input image into edge area and detail area, calculates the direction of the edge on the edge area, and then performs LPF convolution adaptively along the edge direction to smooth the edge of the image. The Edge Mask can be adjusted to avoid high-frequency areas being blurred due to smoothing.
 
 Please refer to the following figure for the main process:
 
-![](media/c4e9611f70c36554d09f2043fd951e2c.png)
+![D:\\work6\\636\\fhtml\\NT9833x_VPE_IQ_Tuning_Guide_en.files\\image055.png](nvt_media/10ba98fec01dc20bb52c0fb5df1baae8.png)
 
-### Parameter Description
+### 6.2 Parameter Description
 
 Table 61 ES Parameter List
 
@@ -1148,17 +1260,17 @@ Table 61 ES Parameter List
 
 **Advance description:**
 
--   **edge_smooth_y_edeng_th_lo, edge_smooth_y_edeng_th_hi, edge_smooth_y_ew_lo, edge_smooth_y_ew_hi:** The strength of edge smooth is controlled by the edge energy intensity of the input image, where edge_smooth_y_edeng_th_hi and edge_smooth_y_edeng_th_lo are the ranges that set the edge area and the detail area, and edge_smooth_y_ew_hi and edge_smooth_y_ew_lo set the smoothness strength of the edge area and detail area. The larger the number, the stronger of the smoothness.
+ **edge_smooth_y_edeng_th_lo, edge_smooth_y_edeng_th_hi, edge_smooth_y_ew_lo, edge_smooth_y_ew_hi:** The strength of edge smooth is controlled by the edge energy intensity of the input image, where edge_smooth_y_edeng_th_hi and edge_smooth_y_edeng_th_lo are the ranges that set the edge area and the detail area, and edge_smooth_y_ew_hi and edge_smooth_y_ew_lo set the smoothness strength of the edge area and detail area. The larger the number, the stronger of the smoothness.
 
 The relationship between the edge area and the detail area is a continuous linear change, and the corresponding relationship is shown in the following figure:
 
-![](media/e19085f81dcaf1d27069bb8195a10a91.png)
+![D:\\work6\\636\\fhtml\\NT9833x_VPE_IQ_Tuning_Guide_en.files\\image056.png](nvt_media/4700b650bca0d1c37b481f28e5b9024e.png)
 
-### Setting Interface
+### 6.3 Setting Interface
 
-#### Proc
+#### 6.3.1 Proc
 
-###### /proc/videograph/vpe/es/param
+######  /proc/videograph/vpe/es/param
 
 **[Description]**
 
@@ -1170,7 +1282,9 @@ Read all edge smoothing parameters of the current camera channel.
 
 Read : cat /proc/videograph/vpe/es/param
 
-###### /proc/videograph/vpe/es/edge_smooth_en
+**![文字方塊: fd(0x00000000) edge_smooth_en              = edge_smooth_en            edge_smooth_out_sel         = edge_smooth_out_sel       edge_smooth_y_edeng_th_lo   = edge_smooth_y_edeng_th_lo edge_smooth_y_edeng_th_hi   = edge_smooth_y_edeng_th_hi edge_smooth_y_ew_lo         = edge_smooth_y_ew_lo       edge_smooth_y_ew_hi         = edge_smooth_y_ew_hi       edge_smooth_y_edi_th        = edge_smooth_y_edi_th      edge_smooth_y_ds_str         = edge_smooth_y_ds_str ](nvt_media/2e36a31d084d8f92e6f64f536c96d5b0.png)**
+
+######  /proc/videograph/vpe/es/edge_smooth_en
 
 **[Description]**
 
@@ -1184,7 +1298,7 @@ Set the edge smooth switch of the current camera channel.
 |------------------------------------------------------------------------|----------------------|
 | echo [edge_smooth_en (0\~1)] \> /proc/videograph/vpe/es/edge_smooth_en | **edge_smooth_en**   |
 
-###### /proc/videograph/vpe/es/edge_smooth_out_sel
+######  /proc/videograph/vpe/es/edge_smooth_out_sel
 
 **[Description]**
 
@@ -1204,7 +1318,9 @@ cat /proc/videograph/vpe/es/edge_smooth_out_sel
 
 **Output :**
 
-###### /proc/videograph/vpe/es/edge_smooth_th
+**![文字方塊: Command :  echo [edge_smooth_out_sel (0\~1)] \> /proc/videograph/vpe/es/edge_smooth_out_sel =============================================================== edge_smooth_out_sel  = edge_smooth_out_sel ](nvt_media/2e36a31d084d8f92e6f64f536c96d5b0.png)**
+
+######  /proc/videograph/vpe/es/edge_smooth_th
 
 **[Description]**
 
@@ -1224,7 +1340,9 @@ cat /proc/videograph/vpe/es/edge_smooth_th
 
 **Output :**
 
-###### /proc/videograph/vpe/es/edge_smooth_y_edi_th
+**![文字方塊: Command :  echo [y_edeng_th_lo (0\~255)] [y_edeng_th_hi (0\~255)] [y_ew_lo (0\~255)] [y_ew_hi (0\~255)] \> /proc/videograph/vpe/es/edge_smooth_th =============================================================== y_edeng_th_l = edge_smooth_y_edeng_th_l y_edeng_th_hi = edge_smooth_y_edeng_th_hi y_ew_lo = edge_smooth_y_ew_lo y_ew_hi = edge_smooth_y_ew_hi ](nvt_media/2e36a31d084d8f92e6f64f536c96d5b0.png)**
+
+######  /proc/videograph/vpe/es/edge_smooth_y_edi_th
 
 **[Description]**
 
@@ -1244,7 +1362,9 @@ cat /proc/videograph/vpe/es/edge_smooth_y_edi_th
 
 **Output :**
 
-###### /proc/videograph/vpe/es/edge_smooth_y_ds_str
+**![文字方塊: Command :  echo [edge_smooth_y_edi_th (0\~63)] \> /proc/videograph/vpe/es/edge_smooth_ds_str =============================================================== edge_smooth_y_edi_th = edge_smooth_y_edi_th ](nvt_media/2e36a31d084d8f92e6f64f536c96d5b0.png)**
+
+######  /proc/videograph/vpe/es/edge_smooth_y_ds_str
 
 **[Description]**
 
@@ -1264,7 +1384,9 @@ cat /proc/videograph/vpe/es/edge_smooth_y_ds_str
 
 **Output :**
 
-#### Vendor API
+**![文字方塊: Command :  echo [edge_smooth_y_ds_str (0\~7)] \> /proc/videograph/vpe/es/edge_smooth_y_ds_str =============================================================== edge_smooth_y_ds_str = edge_smooth_y_ds_str ](nvt_media/1399c74d248e480b6db09b49fef4789b.png)**
+
+#### 6.3.2 Vendor API
 
 **[Description]**
 
@@ -1282,15 +1404,17 @@ HD_RESULT vendor_video_set(HD_PATH_ID path_id, VENDOR_VIDEO_EDGE_SMOOTH, VENDOR_
 
 **[Definition]**
 
-## Scaling (SCA)
+**![文字方塊: typedef struct \_VENDOR_VIDEO_PARAM_EDGE_SMOOTH { 	UINT8 edge_smooth_en; 			// Edge smooth enable, ON/OFF 	UINT8 edge_smooth_y_edeng_th_lo;	// luma layer edge energy low threshold, 0\~255 	UINT8 edge_smooth_y_edeng_th_hi;	// luma layer edge energy high threshold, 0\~255 	UINT8 edge_smooth_y_ew_lo;		// luma layer edge weighting curve low value, 0\~32 	UINT8 edge_smooth_y_ew_hi;		// luma layer edge weighting curve high value, 0\~32 	UINT8 edge_smooth_y_edi_th;		// luma layer edge mask threshold, 0\~63 	UINT8 edge_smooth_y_ds_str;       // luma layer edge directed smoothing filter strength, 0 \~ 7 } VENDOR_VIDEO_PARAM_EDGE_SMOOTH; ](nvt_media/a1aaae7db64b05d189b5fc1895788fe5.png)**
+
+## 7 Scaling (SCA)
 
 Inupt/Output low pass filter process with different resolution. The recommend maximum scaling down ratio is 8, and the recommend maximum scaling up ratio is 8.
 
-### Overview
+### 7.1 Overview
 
 This is image scaling module, the major concept is interpolation and smooth process.
 
-### Parameter Description
+### 7.2 Parameter Description
 
 Table 71 SCA Parameter List
 
@@ -1307,7 +1431,7 @@ Table 71 SCA Parameter List
 
 **Advance description:**
 
--   **sca_ceffH_0\~3, sca_ceffV_0\~3:** LPF coefficients in horizontal direction and vertical direction. User can adjust LPF coefficients to fine tune sawtooth phenomenon in oblique line caused by scaling.
+ **sca_ceffH_0\~3, sca_ceffV_0\~3:** LPF coefficients in horizontal direction and vertical direction. User can adjust LPF coefficients to fine tune sawtooth phenomenon in oblique line caused by scaling.
 
 Table 72 Scaler Low pass filter default parameter list
 
@@ -1331,11 +1455,11 @@ Table 72 Scaler Low pass filter default parameter list
 | **6x \< R ≦ 7x**      | 6          | 9          | 11         | 12         | 6          | 9          | 11         | 12         |
 | **7x \< R**           | 6          | 9          | 11         | 12         | 6          | 9          | 11         | 12         |
 
-### Setting Interface
+### 7.3 Setting Interface
 
-#### Proc
+#### 7.3.1 Proc
 
-###### /proc/videograph/vpe/sca/param
+######  /proc/videograph/vpe/sca/param
 
 **[Description]**
 
@@ -1347,7 +1471,9 @@ Read all SCA parameters of the cuurent scaling ratio
 
 Read : cat /proc/videograph/vpe/sca/param
 
-###### /proc/videograph/vpe/sca/ctrl_param
+**![文字方塊: fd(0x00000000) sca_y_luma_algo_en = 0 sca_x_luma_algo_en = 0 sca_y_chroma_algo_en = 0 sca_x_chroma_algo_en = 0 sca_map_sel = 0 sca_1x_param = { 0, 0, 0, 64, 0, 0, 0, 64 } sca_1.25x_param = { 0, 0, 0, 64, 0, 0, 0, 64 } … ](nvt_media/2e36a31d084d8f92e6f64f536c96d5b0.png)**
+
+######  /proc/videograph/vpe/sca/ctrl_param
 
 **[Description]**
 
@@ -1363,7 +1489,7 @@ Set SCA controlling parameter for specific ratio.
 
 Read : Not support
 
-###### /proc/videograph/vpe/sca/lpf_param
+######  /proc/videograph/vpe/sca/lpf_param
 
 **[Description]**
 
@@ -1379,7 +1505,7 @@ Set SCA low pass filter parameter for specific ratio.
 
 Read : Not support
 
-###### /proc/videograph/vpe/sca/yuv_range
+######  /proc/videograph/vpe/sca/yuv_range
 
 **[Description]**
 
@@ -1401,7 +1527,9 @@ cat /proc/videograph/vpe/sca/yuv_range
 
 **Output :**
 
-#### Vendor API
+**![文字方塊: Command :  echo \< fd range \>(0:bypass, 2:TV, 3:PC, 255:diable) =============================================================== fd(0x40000000) yuv range = 0 fd(0x40000001) yuv range = 0 fd(0x40000002) yuv range = 0 fd(0x40000003) yuv range = 0 ](nvt_media/1399c74d248e480b6db09b49fef4789b.png)**
+
+#### 7.3.2 Vendor API
 
 **[Description]**
 
@@ -1419,13 +1547,18 @@ HD_RESULT vendor_video_set(HD_PATH_ID path_id, VENDOR_VIDEO_SCA, VENDOR_VIDEO_PA
 
 **[Definition]**
 
-## Distortion Correction Engine (DCE)
+| typedef struct \_VENDOR_VIDEO_PARMA_SCA_CTRL {  INT32 sca_ceffH[4]; ///\< LPF coefficient in horizontal direction  INT32 sca_ceffV[4]; ///\< LPF coefficient in vertical direction } VENDOR_VIDEO_PARMA_SCA_CTRL;   typedef struct \_VENDOR_VIDEO_PARAM_SCA_SET {  UINT8 sca_y_luma_algo_en; ///\< Algorithm select for vertical luma scaler  UINT8 sca_x_luma_algo_en; ///\< Algorithm select for horizontal luma scaler  UINT8 sca_y_chroma_algo_en; ///\< Algorithm select for vertical chroma scaler  UINT8 sca_x_chroma_algo_en; ///\< Algorithm select for horizontal chroma scaler  UINT8 sca_map_sel; ///\< Scaler source mapping format select  VENDOR_VIDEO_PARMA_SCA_CTRL sca_1000x_param; ///\< scaling parameter for scaling ratio 1.00x  VENDOR_VIDEO_PARMA_SCA_CTRL sca_1250x_param; ///\< scaling parameter for scaling ratio 1.25x  VENDOR_VIDEO_PARMA_SCA_CTRL sca_1500x_param; ///\< scaling parameter for scaling ratio 1.50x  VENDOR_VIDEO_PARMA_SCA_CTRL sca_1750x_param; ///\< scaling parameter for scaling ratio 1.75x  VENDOR_VIDEO_PARMA_SCA_CTRL sca_2000x_param; ///\< scaling parameter for scaling ratio 2.00x  VENDOR_VIDEO_PARMA_SCA_CTRL sca_2250x_param; ///\< scaling parameter for scaling ratio 2.25x  VENDOR_VIDEO_PARMA_SCA_CTRL sca_2500x_param; ///\< scaling parameter for scaling ratio 2.50x  VENDOR_VIDEO_PARMA_SCA_CTRL sca_2750x_param; ///\< scaling parameter for scaling ratio 2.75x  VENDOR_VIDEO_PARMA_SCA_CTRL sca_3000x_param; ///\< scaling parameter for scaling ratio 3.00x  VENDOR_VIDEO_PARMA_SCA_CTRL sca_3250x_param; ///\< scaling parameter for scaling ratio 3.25x  VENDOR_VIDEO_PARMA_SCA_CTRL sca_3500x_param; ///\< scaling parameter for scaling ratio 3.50x  VENDOR_VIDEO_PARMA_SCA_CTRL sca_3750x_param; ///\< scaling parameter for scaling ratio 3.75x  VENDOR_VIDEO_PARMA_SCA_CTRL sca_4000x_param; ///\< scaling parameter for scaling ratio 4.00x  VENDOR_VIDEO_PARMA_SCA_CTRL sca_5000x_param; ///\< scaling parameter for scaling ratio 5.00x  VENDOR_VIDEO_PARMA_SCA_CTRL sca_6000x_param; ///\< scaling parameter for scaling ratio 6.00x  VENDOR_VIDEO_PARMA_SCA_CTRL sca_7000x_param; ///\< scaling parameter for scaling ratio 7.00x  VENDOR_VIDEO_PARMA_SCA_CTRL sca_8000x_param; ///\< scaling parameter for scaling ratio 8.00x } VENDOR_VIDEO_PARAM_SCA_SET; |
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-### Overview
+**![D:\\work6\\636\\fhtml\\NT9833x_VPE_IQ_Tuning_Guide_en.files\\image058.png](nvt_media/ae5f5e71ece85b49ba6a576186173fdb.png)**
+
+## 8 Distortion Correction Engine (DCE)
+
+### 8.1 Overview
 
 This is lens distortion calibration module, it can perform calibration on wide-angle lens and fish-eye lens.
 
-### DCE Parameter Description
+### 8.2 DCE Parameter Description
 
 Table 81 DCE Parameter List
 
@@ -1457,7 +1590,7 @@ Table 81 DCE Parameter List
 
 Adjust geo_fov_gain, the left side is 1024, the right side is 1320, you can observe the increase in the field of view on the right side.
 
-![](media/eba9c06255b7fd67274077ba6d250382.png) ![](media/bf25b70960f0f4add2e66ac0374e018d.png)
+![new_fovgain1024](nvt_media/6de22848b71a3f0d1da90f393dc23f0d.jpg) ![new_fovgain1320](nvt_media/21baa6d65c13071cf29b98d99c5237fd.jpg)
 
 **[Note 2]**
 
@@ -1469,13 +1602,13 @@ Ri represents the radius of each point of the input (before correction) image.
 
 Ro represents the radius of each point of the output (corrected) image.
 
-RoMax represents the longest distance from the center of the output image to the four corners. If the center of the image falls at 1/2 of the width and height, the four corners are all equal, and they are the longest distances. ![](media/8f6cabb3344adc6e4088795a6d3e49ed.png)![](media/00c44bcf31b3c0896221ffeb1715b606.png)![](media/8a3c7024a6db1b2414cc55aa7bec7efa.emf)
+RoMax represents the longest distance from the center of the output image to the four corners. If the center of the image falls at 1/2 of the width and height, the four corners are all equal, and they are the longest distances. ![D:\\work6\\636\\fhtml\\NT9833x_VPE_IQ_Tuning_Guide_en.files\\image061.png](nvt_media/3a30cdfc1ab08bbde11cddd1eec3154e.png)![D:\\work6\\636\\fhtml\\NT9833x_VPE_IQ_Tuning_Guide_en.files\\image062.png](nvt_media/7000d36e49ba39547a936e2d0d03c141.png)![D:\\work6\\636\\fhtml\\NT9833x_VPE_IQ_Tuning_Guide_en.files\\image063.png](nvt_media/40921a6520b1b11f70166d86f254627f.png)
 
-### Setting Interface
+### 8.3 Setting Interface
 
-#### Proc
+#### 8.3.1 Proc
 
-###### /proc/videograph/vpe/dce/dump_info
+######  /proc/videograph/vpe/dce/dump_info
 
 **[Description]**
 
@@ -1487,7 +1620,12 @@ Read all DCE parameters at the current camera channel.
 
 Read : cat /proc/videograph/vpe/dce/dump_info
 
-###### /proc/videograph/vpe/dce/ch_en
+| dce_en = 0 dce_mode = 1 lut2d_sz = 3 lut2d_vaddr = 0x0000000000000000 lut2d_paddr = 0x0 lsb_rand = 0 fovbound = 1 boundy = 512 boundu = 512 boundv = 512 cent_x_s = 720 cent_y_s = 720 xdist = 4095 ydist = 4095 normfact = 0 normbit = 0 fovgain = 1024 hfact = 745654 vfact = 745654 xofs_i = 0 xofs_f = 0 yofs_i = 0 yofs_f = 0 geo_lut[i]=0 geo_lut[i]=0 geo_lut[i]=0 geo_lut[i]=0 geo_lut[i]=0  geo_lut[i]=0 geo_lut[i]=0 geo_lut[i]=0 geo_lut[i]=0 geo_lut[i]=0  geo_lut[i]=0 geo_lut[i]=0 geo_lut[i]=0 geo_lut[i]=0 geo_lut[i]=0  geo_lut[i]=0 geo_lut[i]=0 geo_lut[i]=0 geo_lut[i]=0 geo_lut[i]=0  geo_lut[i]=0 geo_lut[i]=0 geo_lut[i]=0 geo_lut[i]=0 geo_lut[i]=0  geo_lut[i]=0 geo_lut[i]=0 geo_lut[i]=0 geo_lut[i]=0 geo_lut[i]=0  geo_lut[i]=0 geo_lut[i]=0 geo_lut[i]=0 geo_lut[i]=0 geo_lut[i]=0  geo_lut[i]=0 geo_lut[i]=0 geo_lut[i]=0 geo_lut[i]=0 geo_lut[i]=0  geo_lut[i]=0 geo_lut[i]=0 geo_lut[i]=0 geo_lut[i]=0 geo_lut[i]=0  geo_lut[i]=0 geo_lut[i]=0 geo_lut[i]=0 geo_lut[i]=0 geo_lut[i]=0  geo_lut[i]=0 geo_lut[i]=0 geo_lut[i]=0 geo_lut[i]=0 geo_lut[i]=0  geo_lut[i]=0 geo_lut[i]=0 geo_lut[i]=0 geo_lut[i]=0 geo_lut[i]=0  geo_lut[i]=0 geo_lut[i]=0 geo_lut[i]=0 geo_lut[i]=0 geo_lut[i]=0   |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+**![D:\\work6\\636\\fhtml\\NT9833x_VPE_IQ_Tuning_Guide_en.files\\image064.png](nvt_media/d4b52a725364f62a1de0bf5d161fe1e0.png)**
+
+######  /proc/videograph/vpe/dce/ch_en
 
 **[Description]**
 
@@ -1507,7 +1645,12 @@ Read or write the enable status of the current channel.
 
 **Output :**
 
-#### Vendor API
+| dc_en = 0 |
+|-----------|
+
+**![D:\\work6\\636\\fhtml\\NT9833x_VPE_IQ_Tuning_Guide_en.files\\image065.png](nvt_media/6cac8aba677fca21da10b367eff3c611.png)**
+
+#### 8.3.2 Vendor API
 
 **[Description]**
 
@@ -1525,9 +1668,19 @@ HD_RESULT c(HD_PATH_ID path_id, VENDOR\_ VENDOR_VIDEOPROC_DEWARP_INFO, VENDOR_DE
 
 **[Define]**
 
-## DC Table Generator(DCTG)
+| typedef struct \_VENDOR_DEWARP_CTRL {  BOOL dc_enable;  BOOL dctg_enable; } VENDOR_DEWARP_CTRL;   typedef enum \_VENDOR_DEWARP_MODE {  VENDOR_DEWARP_DEWARP_MODE_GDC = 0,  VENDOR_DEWARP_DEWARP_MODE_2DLUT = 1,  ENUM_DUMMY4WORD(VENDOR_DEWARP_DEWARP_MODE) } VENDOR_DEWARP_MODE;   typedef struct \_VENDOR_DEWARP_DGC_PARM {  INT32 cent_x_s; ///\< Lens center of x axis (signed)  INT32 cent_y_s; ///\< Lens center of y axis (signed)  UINT32 lens_r; ///\< Radius of Lens  UINT32 xdist; ///\< X input distance factor, for oval shape modeling  UINT32 ydist; ///\< Y input distance factor, for oval shape modeling  UINT8 normfact; ///\< Radius normalization factor (u1.7)  UINT8 normbit; ///\< Radius normalization shift bit  UINT16 geo_lut[VENDOR_GEO_LUT_X]; ///\< GDC look-up table } VENDOR_DEWARP_DGC_PARM;   typedef struct \_VENDOR_DEWARP_2DLUT_PARM {  UINT8 lut2d_sz; ///\< Size selection of 2D look-up table, 0:9x9, 3:65x65  UINT32 hfact; ///\< Horizontal scaling factor for 2DLut scaling up (u0.24)  UINT32 vfact; ///\< Vertical scaling factor for 2DLut scaling up (u0.24)  UINT8 xofs_i; ///\< 2DLUT x offset, integer part  UINT32 xofs_f; ///\< 2DLUT x offset, fraction part  UINT8 yofs_i; ///\< 2DLUT y offset, integer part  UINT32 yofs_f; ///\< 2DLUT xy offset, fraction part } VENDOR_DEWARP_2DLUT_PARM;   typedef struct \_VENDOR_DEWARP_FOV_PARM {  UINT8 fovbound; ///\< FOV boundary process method selection  UINT16 boundy; ///\< Bound value for Y component (u8.2)  UINT16 boundu; ///\< Bound value for U component (u8.2)  UINT16 boundv; ///\< Bound value for V component (u8.2)  UINT16 fovgain; ///\< Scale down factor for FOV preservation (u2.10) } VENDOR_DEWARP_FOV_PARM;     |
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-### Overview
+**![D:\\work6\\636\\fhtml\\NT9833x_VPE_IQ_Tuning_Guide_en.files\\image066.png](nvt_media/9e19cee274ea1ec4cc3a0b5753c93fff.png)**
+
+| typedef struct \_VENDOR_DEWARP_INFO {  VENDOR_DEWARP_MODE mode;  VENDOR_DEWARP_DGC_PARM dgc;  VENDOR_DEWARP_2DLUT_PARM lut2d;  VENDOR_DEWARP_FOV_PARM fov; } VENDOR_DEWARP_INFO;   typedef struct \_VENDOR_DEWARP_2DLUT_TABLE {  UINT32 tbl[VENDOR_GEO_LUT]; } VENDOR_DEWARP_2DLUT_TABLE;   |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+**![D:\\work6\\636\\fhtml\\NT9833x_VPE_IQ_Tuning_Guide_en.files\\image067.png](nvt_media/15374bfaef31c51f612620427a855c23.png)**
+
+## 9 DC Table Generator(DCTG)
+
+### 9.1 Overview
 
 For perspective projection application, in order to increase the convenience of usage, DCTG module let user to set the desired angle and size with an instinct way to generate DCTG parameters automatically. Whenever this function is enabled, manual set DCE 2D-LUT function will be invalid.
 
@@ -1551,9 +1704,9 @@ Define the rotate angle of FOV by phi_st/phi_ed, and then rotate to FOV location
 
 Define the top/bottom angle of FOV by theta_st/theta_ed, and then rotate to FOV location by rot_z.
 
-![](media/cd0b976666f1953455c6d14398ba0a66.png)![](media/26d92d917ee155e047f26e92b20be608.png)
+![D:\\work6\\636\\fhtml\\NT9833x_VPE_IQ_Tuning_Guide_en.files\\image068.jpg](nvt_media/86047f4dd5ef741ee58f96cc2094d6da.jpg)![D:\\work6\\636\\fhtml\\NT9833x_VPE_IQ_Tuning_Guide_en.files\\image069.jpg](nvt_media/1da3e32077e21db5aef398201b613acb.jpg)
 
-### Parameter Description
+### 9.2 Parameter Description
 
 Table 91 DCTG parameter list
 
@@ -1574,17 +1727,19 @@ Table 91 DCTG parameter list
 
 **Advance description:**
 
--   **lens_r:** The valid radius of fish-eye device.
--   **lens_x_st :** The start x position of fish-eye lens at the source image, the unit is pixel.
--   **lens_y_st :** The start y position of fish-eye lens at the source image, the unit is pixel.
+ **lens_r:** The valid radius of fish-eye device.
 
-    ![](media/95ec8c69aa74ea93bef7c47133f014f4.png)
+ **lens_x_st :** The start x position of fish-eye lens at the source image, the unit is pixel.
 
-### Setting Interface
+ **lens_y_st :** The start y position of fish-eye lens at the source image, the unit is pixel.
 
-#### Proc
+![D:\\work6\\636\\fhtml\\NT9833x_VPE_IQ_Tuning_Guide_en.files\\image070.png](nvt_media/d237e1a8454ec69370f890dc71d9003b.png)![D:\\work6\\636\\fhtml\\NT9833x_VPE_IQ_Tuning_Guide_en.files\\image071.png](nvt_media/4c47d678bf07cc408dd746e0531cb441.png)
 
-###### /proc/videograph/vpe/dctg/dump_info
+### 9.3 Setting Interface
+
+#### 9.3.1 Proc
+
+######  /proc/videograph/vpe/dctg/dump_info
 
 **[Description]**
 
@@ -1596,7 +1751,12 @@ Read all dctg parameters of the current channel.
 
 Read : cat /proc/videograph/vpe/dctg/dump_info
 
-###### /proc/videograph/vpe/dctg/ch_en
+| fd(0x00000000) dctg_en = 0 mount_type = 1 lut2d_sz = 3 lens_r = 540 lens_x_st = 0(0) lens_y_st = 0(0) theta_st = 45(51471) theda_ed = 90(102943) phi_st = -40(-45753) phi_ed = 40(45752) rot_z = 0 rot_y = 0 |
+|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+**![D:\\work6\\636\\fhtml\\NT9833x_VPE_IQ_Tuning_Guide_en.files\\image072.png](nvt_media/7e3bf02cd3de82dd942e15f04c88fbc2.png)**
+
+######  /proc/videograph/vpe/dctg/ch_en
 
 **[Description]**
 
@@ -1616,7 +1776,12 @@ cat /proc/videograph/vpe/dctg/ch_en
 
 **Output :**
 
-###### /proc/videograph/vpe/dctg/phi
+| dctg_en = 1 |
+|-------------|
+
+**![D:\\work6\\636\\fhtml\\NT9833x_VPE_IQ_Tuning_Guide_en.files\\image065.png](nvt_media/6cac8aba677fca21da10b367eff3c611.png)**
+
+######  /proc/videograph/vpe/dctg/phi
 
 **[Description]**
 
@@ -1636,7 +1801,12 @@ cat /proc/videograph/vpe/dctg/phi
 
 **Output :**
 
-###### /proc/videograph/vpe/dctg/rot
+| echo \<st\> \<ed\> (range -360\~360) phi_st degree= -40 phi_ed degree = 40 |
+|----------------------------------------------------------------------------|
+
+**![D:\\work6\\636\\fhtml\\NT9833x_VPE_IQ_Tuning_Guide_en.files\\image073.png](nvt_media/0edeec32c1b388384e6439ff66edb05e.png)**
+
+######  /proc/videograph/vpe/dctg/rot
 
 **[Description]**
 
@@ -1646,9 +1816,9 @@ Set Z-axis and Y-zxis rotate radian.
 
 **Write :**
 
-| **proc command**                              | **Target Parameter**                                                       |
-|-----------------------------------------------|----------------------------------------------------------------------------|
-| echo [z] [y] \> /prc/videograph/vpe/dctg/rot  | z: Z-axis rotate radian. y: Y-zxis rotate radian ※angle range: -360 \~ 360 |
+| **proc command**                               | **Target Parameter**                                                       |
+|------------------------------------------------|----------------------------------------------------------------------------|
+| echo [z] [y] \> /prc/videograph/vpe/dctg/rot   | z: Z-axis rotate radian. y: Y-zxis rotate radian ※angle range: -360 \~ 360 |
 
 **Read :**
 
@@ -1656,7 +1826,12 @@ cat /proc/videograph/vpe/dctg/rot
 
 **Output :**
 
-###### /proc/videograph/vpe/dctg/theta
+| echo \<z\> \<y\> (range -360\~360) rot_z degree = 0 rot_y degree = 0 |
+|----------------------------------------------------------------------|
+
+![D:\\work6\\636\\fhtml\\NT9833x_VPE_IQ_Tuning_Guide_en.files\\image073.png](nvt_media/0edeec32c1b388384e6439ff66edb05e.png)
+
+######  /proc/videograph/vpe/dctg/theta
 
 **[Description]**
 
@@ -1666,9 +1841,9 @@ Set FOV theta start radian.
 
 **Write :**
 
-| **proc command**                                  | **目標參數**                                                                    |
-|---------------------------------------------------|---------------------------------------------------------------------------------|
-| echo [st] [ed] \> /prc/videograph/vpe/dctg/theta  | st: FOV theta start radian. ed : FOV theta end radian ※angle range: -180 \~ 180 |
+| **proc command**                                   | **目標參數**                                                                    |
+|----------------------------------------------------|---------------------------------------------------------------------------------|
+| echo [st] [ed] \> /prc/videograph/vpe/dctg/theta   | st: FOV theta start radian. ed : FOV theta end radian ※angle range: -180 \~ 180 |
 
 **Read :**
 
@@ -1676,7 +1851,12 @@ cat /proc/videograph/vpe/dctg/theta
 
 **Output :**
 
-#### Vendor API
+| echo \<st\> \<ed\> (range -180\~180) theta_st degree = 45 theda_ed degree = 90 |
+|--------------------------------------------------------------------------------|
+
+**![D:\\work6\\636\\fhtml\\NT9833x_VPE_IQ_Tuning_Guide_en.files\\image073.png](nvt_media/0edeec32c1b388384e6439ff66edb05e.png)**
+
+#### 9.3.2 Vendor API
 
 **[Description]**
 
@@ -1694,7 +1874,12 @@ HD_RESULT vendor_videoproc_set(HD_PATH_ID path_id, VENDOR_VIDEOPROC_DEWARP_DCTG_
 
 **[Define]**
 
-## Revise History
+| typedef struct \_VENDOR_DEWARP_CTRL {  BOOL dc_enable;  BOOL dctg_enable; } VENDOR_DEWARP_CTRL;   typedef struct \_VENDOR_DEWARP_DCTG_INFO {  VENDOR_DEWARP_DCTG_MODE mode;  VENDOR_DEWARP_DCTG_LENS_PARM lens;  VENDOR_DEWARP_DCTG_FOV_PARM fov; } VENDOR_DEWARP_DCTG_INFO;   typedef enum \_VENDOR_DEWARP_DCTG_MODE {  VENDOR_DEWARP_DCTG_MODE_90 = 0,  VENDOR_DEWARP_DCTG_MODE_360 = 1,  ENUM_DUMMY4WORD(VENDOR_DEWARP_DCTG_MODE) } VENDOR_DEWARP_DCTG_MODE;   typedef struct \_VENDOR_DEWARP_DCTG_LENS_PARM {  UINT8 mount_type; ///\< Camera mount type. 0:Ceiling mount, 1:Floor mount  UINT8 lut2d_sz; ///\< Size selection of 2D look-up table, 0:9x9, 3:65x65, should the same with DCE setting.  UINT32 lens_r; ///\< Radius of Lens  UINT32 lens_x_st; ///\< Lens start x position at a source image  UINT32 lens_y_st; ///\< Lens start y position at a source image } VENDOR_DEWARP_DCTG_LENS_PARM;   typedef struct \_VENDOR_DEWARP_DCTG_FOV_PARM {  INT32 theta_st; ///\< FOV theta start radian (s4.16) Range: -\*pi \~ \*pi  INT32 theta_ed; ///\< FOV theta end radian (s4.16) Range: -\*pi \~ \*pi  INT32 phi_st; ///\< FOV phi start radian (s4.16) Range: -2\*pi \~ 2\*pi  INT32 phi_ed; ///\< FOV phi end radian (s4.16) Range: -2\*pi \~ 2\*pi  INT32 rot_z; ///\< Z-axis rotate radian (s4.16) Range: -2\*pi \~ 2\*pi  INT32 rot_y; ///\< Y-axis rotate radian (s4.16) Range: -2\*pi \~ 2\*pi } VENDOR_DEWARP_DCTG_FOV_PARM;   |
+|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+**![D:\\work6\\636\\fhtml\\NT9833x_VPE_IQ_Tuning_Guide_en.files\\image074.png](nvt_media/637e06271fbeade1cc0b680c437ec481.png)**
+
+## 10 Revise History
 
 | **Version** | **Date**   | **Advisor** | **Description**                    |
 |-------------|------------|-------------|------------------------------------|
