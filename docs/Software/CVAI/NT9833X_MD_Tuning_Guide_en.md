@@ -12,21 +12,21 @@ The MD performance is evaluated using video tests and real-world tests.
 
  Indoor
 
-![D:\\work6\\636\\fhtml\\NT9833X_MD_Tuning_Guide_en.files\\image002.jpg](nvt_media/33cff950b7d9d3fe5b5bbf5ea82a3920.jpg) ![D:\\work6\\636\\fhtml\\NT9833X_MD_Tuning_Guide_en.files\\image003.jpg](nvt_media/a2810a6449f3d775266ad9fb44dfdb02.jpg)
+![D:\\work6\\636\\fhtml\\NT9833X_MD_Tuning_Guide_en.files\\image003.jpg](nvt_media/9f1e60a14652a69f8aa65b3584e0613a.jpg) ![D:\\work6\\636\\fhtml\\NT9833X_MD_Tuning_Guide_en.files\\image004.jpg](nvt_media/9a6e20f6fac9131210f0fa4ca7b37c07.jpg)
 
 Shadow remove = 1 Shadow remove = 0
 
  Stable moving scene
 
-![D:\\work6\\636\\fhtml\\NT9833X_MD_Tuning_Guide_en.files\\image004.jpg](nvt_media/60e02f7bce4fd3f68542444e14966052.jpg) ![D:\\work6\\636\\fhtml\\NT9833X_MD_Tuning_Guide_en.files\\image005.jpg](nvt_media/7cc35e24e2246ca7ecb52865866158b3.jpg)
+![D:\\work6\\636\\fhtml\\NT9833X_MD_Tuning_Guide_en.files\\image005.jpg](nvt_media/c3a90911a9d692525a51c230414c3cfc.jpg) ![D:\\work6\\636\\fhtml\\NT9833X_MD_Tuning_Guide_en.files\\image006.jpg](nvt_media/1ba66b3019b6863bd53dd41be6888712.jpg)
 
  Outdoor
 
-![D:\\work6\\636\\fhtml\\NT9833X_MD_Tuning_Guide_en.files\\image006.jpg](nvt_media/06d4123c837022e3a6c658859bf61265.jpg) ![D:\\work6\\636\\fhtml\\NT9833X_MD_Tuning_Guide_en.files\\image007.jpg](nvt_media/531e91186a49f1c1edaef4813ae1c071.jpg)
+![D:\\work6\\636\\fhtml\\NT9833X_MD_Tuning_Guide_en.files\\image007.jpg](nvt_media/bf992ed5dac54ac0b11624504123d8fe.jpg) ![D:\\work6\\636\\fhtml\\NT9833X_MD_Tuning_Guide_en.files\\image008.jpg](nvt_media/abe4dcdcc40c2fa2cdcb97d974cdaac0.jpg)
 
  Dramatic AE changes scene
 
-![D:\\work6\\636\\fhtml\\NT9833X_MD_Tuning_Guide_en.files\\image008.jpg](nvt_media/001645763d6e3ca39de83492e9230fe0.jpg) ![D:\\work6\\636\\fhtml\\NT9833X_MD_Tuning_Guide_en.files\\image009.jpg](nvt_media/d118cf34e4a64bea248dce8e019154ba.jpg)
+![D:\\work6\\636\\fhtml\\NT9833X_MD_Tuning_Guide_en.files\\image009.jpg](nvt_media/321549c1e3723373eaaa0bbb6d3a63b7.jpg) ![D:\\work6\\636\\fhtml\\NT9833X_MD_Tuning_Guide_en.files\\image010.jpg](nvt_media/4144060babd72acb6ac8780cbc639a5e.jpg)
 
  Real-world tests
 

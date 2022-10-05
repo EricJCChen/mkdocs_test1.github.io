@@ -32,9 +32,9 @@
 
 Using LibIVE, main flow as following flow chart
 
-|   |                                                                                                                         |
-|---|-------------------------------------------------------------------------------------------------------------------------|
-|   | ![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image002.gif](nvt_media/a85ab5e5bbfa7ab468691b593deab98b.gif) |
+|   |                                                                                                  |
+|---|--------------------------------------------------------------------------------------------------|
+|   | ![vendor_ive_init,vendor_ive_uninit,LibIVE APIs](nvt_media/74764964dd2d7844a0a192e616a8f14e.gif) |
 
  vendor_ive_init : Before running task, this function will open engine clock. Only need to execute this function once, do not execute repeatly.
 
@@ -104,7 +104,7 @@ hdal\\samples\\alg_ive_filter\\alg_ive_filter.c
 
  The execution time is proportional to the resolution of an image.
 
- The execution time of NVT_IVE_Filter is 532 ![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image004.gif](nvt_media/dca0cba4e810fb0e2845ea089ac4d1bb.gif), estimated by a sample (image resolution 516x376).
+ The execution time of NVT_IVE_Filter is 532 ![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image005.gif](nvt_media/dca0cba4e810fb0e2845ea089ac4d1bb.gif), estimated by a sample (image resolution 516x376).
 
 ### 3.2 NVT_IVE_Median
 
@@ -153,7 +153,7 @@ hdal\\samples\\alg_ive_median\\alg_ive_median.c
 
  The execution time is proportional to the resolution of an image.
 
- The execution time of NVT_IVE_Median is 540 ![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image004.gif](nvt_media/dca0cba4e810fb0e2845ea089ac4d1bb.gif), estimated by sample (image resolution 516x376).
+ The execution time of NVT_IVE_Median is 540 ![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image005.gif](nvt_media/dca0cba4e810fb0e2845ea089ac4d1bb.gif), estimated by sample (image resolution 516x376).
 
 ### 3.3 NVT_IVE_Min
 
@@ -202,7 +202,7 @@ hdal\\samples\\alg_ive_min\\alg_ive_min.c
 
  The execution time is proportional to the resolution of an image.
 
- The execution time of NVT_IVE_Min is 536 ![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image005.gif](nvt_media/b34a165f035d3033868b6386e14261e4.gif), estimated by sample (image resolution 516x376).
+ The execution time of NVT_IVE_Min is 536 ![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image005.gif](nvt_media/dca0cba4e810fb0e2845ea089ac4d1bb.gif), estimated by sample (image resolution 516x376).
 
 ### 3.4 NVT_IVE_Max
 
@@ -251,7 +251,7 @@ hdal\\samples\\alg_ive_max\\alg_ive_max.c
 
  The execution time is proportional to the resolution of an image.
 
- The execution time of NVT_IVE_Max is 541 ![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image006.gif](nvt_media/8fd256ccdccf59c105e045d0dafd0b2a.gif), estimated by sample (image resolution 516x376).
+ The execution time of NVT_IVE_Max is 541 ![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image005.gif](nvt_media/dca0cba4e810fb0e2845ea089ac4d1bb.gif), estimated by sample (image resolution 516x376).
 
 ### 3.5 NVT_IVE_Sobel
 
@@ -316,7 +316,7 @@ hdal\\samples\\alg_ive_sobel\\alg_ive_sobel.c
 
  The execution time is proportional to the resolution of an image.
 
- The execution time of NVT_IVE_Sobel is 556 ![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image006.gif](nvt_media/8fd256ccdccf59c105e045d0dafd0b2a.gif), estimated by sample (image resolution 516x376).
+ The execution time of NVT_IVE_Sobel is 556 ![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image005.gif](nvt_media/dca0cba4e810fb0e2845ea089ac4d1bb.gif), estimated by sample (image resolution 516x376).
 
 ### 3.6 NVT_IVE_Thresh
 
@@ -364,13 +364,13 @@ Library file: libvendor_cv.a
 
  NVT_IVE_Thresh partitions image pixels into a 4bits image by LutThresh. The value of each output pixel could be 0-15. Each output pixel (U8C1) is the packed format by two neighbor pixel (LSB 4bit represent odd pixel, MSB 4bit represent even pixel).
 
-![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image007.jpg](nvt_media/b2482e78476e3615e73bb205fb2c5b1f.jpg)
+![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image006.jpg](nvt_media/b2482e78476e3615e73bb205fb2c5b1f.jpg)
 
  Packed output format is shown as:
 
-![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image008.gif](nvt_media/792a829b94c8d30e94e0bcef95c85be6.gif)
+![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image007.gif](nvt_media/ca79928e3bc69938f8aec9ccfa60a740.gif)
 
-![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image009.gif](nvt_media/c552d6b855f81348eb1ba8dd68eb460a.gif)
+![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image008.gif](nvt_media/12685768642ed867a96742003aba0753.gif)
 
 【Sample】
 
@@ -380,7 +380,7 @@ hdal\\samples\\alg_ive_thresh\\alg_ive_thresh.c
 
  The execution time is proportional to the resolution of an image.
 
- The execution time of NVT_IVE_Thresh is 500 ![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image010.gif](nvt_media/5da81c6d19b1313606cf60634f361f93.gif), estimated by sample (image resolution 316x316).
+ The execution time of NVT_IVE_Thresh is 500 ![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image005.gif](nvt_media/dca0cba4e810fb0e2845ea089ac4d1bb.gif), estimated by sample (image resolution 316x316).
 
 ### 3.7 NVT_IVE_Dilate
 
@@ -462,7 +462,7 @@ hdal\\samples\\alg_ive_dilate\\alg_ive_dilate.c
 
  The execution time is proportional to the resolution of an image.
 
- The execution time of NVT_IVE_Dilate is 346 ![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image012.gif](nvt_media/3c4e7387e225ffc16083d1a2238f1ada.gif), estimated by sample (image resolution 316x316).
+ The execution time of NVT_IVE_Dilate is 346 ![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image005.gif](nvt_media/dca0cba4e810fb0e2845ea089ac4d1bb.gif), estimated by sample (image resolution 316x316).
 
 ### 3.8 NVT_IVE_Erode
 
@@ -544,7 +544,7 @@ hdal\\samples\\alg_ive_erode\\alg_ive_erode.c
 
  The execution time is proportional to the resolution of an image.
 
- The execution time of NVT_IVE_Erode is 352 ![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image014.gif](nvt_media/9b2ce3348b728c5defeda5bc16fd24b1.gif), estimated by sample (image resolution 316x316).
+ The execution time of NVT_IVE_Erode is 352 ![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image005.gif](nvt_media/dca0cba4e810fb0e2845ea089ac4d1bb.gif), estimated by sample (image resolution 316x316).
 
 ### 3.9 NVT_IVE_Integ
 
@@ -552,7 +552,7 @@ hdal\\samples\\alg_ive_erode\\alg_ive_erode.c
 
 This function calculates the sum of values in a rectangular subset of a grid:
 
-![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image015.gif](nvt_media/185d089ef64db021b64d6a4449bc0e57.gif)
+![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image011.gif](nvt_media/c0dcc7fb0cd3da737187366b388d0973.gif)
 
 【Function】
 
@@ -603,7 +603,7 @@ Sample code : samples\\alg_ive_integral\\alg_ive_integral.c
 
  The execution time is proportional to the resolution of an image.
 
- The execution time of NVT_IVE_Integral is 694 ![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image014.gif](nvt_media/9b2ce3348b728c5defeda5bc16fd24b1.gif), estimated by sample (image resolution 316x316).
+ The execution time of NVT_IVE_Integral is 694 ![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image005.gif](nvt_media/dca0cba4e810fb0e2845ea089ac4d1bb.gif), estimated by sample (image resolution 316x316).
 
 ### 3.10 NVT_IVE_Canny
 
@@ -651,7 +651,7 @@ Library file: libvendor_cv.a
 
  The edge detection process uses a 7x7 kernel to smooth input image. The smoothing kernel is described by an array with 10 elements, **s8Mask**, and the corresponding position in 2D space is
 
-![Snapshot326](nvt_media/5461ae63352095579b1cf3cc4ee93716.jpg)
+![Snapshot326](nvt_media/419db8a3b99a6347448e6de4bf17c7f8.jpg)
 
 The valid value range of **s8Mask** is [-15, 15].
 
@@ -663,7 +663,7 @@ hdal\\samples\\alg_ive_canny\\alg_ive_canny.c
 
  The execution time is proportional to the resolution of an image.
 
- The execution time of NVT_IVE_Canny is 367 ![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image014.gif](nvt_media/9b2ce3348b728c5defeda5bc16fd24b1.gif), estimated by sample (image resolution 316x316).
+ The execution time of NVT_IVE_Canny is 367 ![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image005.gif](nvt_media/dca0cba4e810fb0e2845ea089ac4d1bb.gif), estimated by sample (image resolution 316x316).
 
 ### 3.11 NVT_IVE_CSC
 
@@ -716,27 +716,27 @@ Library file: libvendor_cv.a
 
 YUV420SP(NV12):
 
-![在这里插入图片描述](nvt_media/b8418671fe76d58921d132317b749673.jpg)
+![在这里插入图片描述](nvt_media/8c443a7c2e56308d68ce85dcb4b723d0.jpg)
 
 YVU420SP(NV21):
 
-![在这里插入图片描述](nvt_media/7472312a1dedac4eb3e3b520a5af1611.jpg)
+![在这里插入图片描述](nvt_media/fd10b9c126679454998e694edd018b92.jpg)
 
 YUV422 support UYVY、YUYV、VYUY、YVYU 4 types.
 
-![在这里插入图片描述](nvt_media/d24f6cb184db30245bf5edf2c71f2602.jpg)
+![在这里插入图片描述](nvt_media/d79d3dfa0bfbf5ca882b53584c36a07c.jpg)
 
  Output format PLANAR/ PACKED as following figure
 
 PLANAR:
 
-![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image020.jpg](nvt_media/9dacababb8c4117e6b74fbe2ebce59b1.jpg)
+![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image016.jpg](nvt_media/bcef0bfda4a7c2709bd7fecd428be3b6.jpg)
 
 pstDst-\>u32Stride = width
 
 PACKED:
 
-![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image021.jpg](nvt_media/2dbbb3ab2a622047335c39c5ebcdf67b.jpg)
+![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image017.jpg](nvt_media/2dbbb3ab2a622047335c39c5ebcdf67b.jpg)
 
 pstDst-\>u32Stride = 3\*width
 
@@ -756,7 +756,7 @@ hdal\\samples\\alg_ive_csc\\alg_ive_csc.c
 
  The execution time is proportional to the resolution of an image.
 
- The execution time of NVT_IVE_Canny is 569 ![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image022.gif](nvt_media/9335ab38a576c0d5415382a7a6296a69.gif), estimated by sample (image resolution 512x376).
+ The execution time of NVT_IVE_Canny is 569 ![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image005.gif](nvt_media/dca0cba4e810fb0e2845ea089ac4d1bb.gif), estimated by sample (image resolution 512x376).
 
 ### 3.12 NVT_IVE_Histo
 
@@ -797,7 +797,7 @@ Library file: libvendor_cv.a
 
  Histogram output size = 256(bin) x 4(byte) = 1024(byte)
 
-![image006](nvt_media/15485167556b639b934f4548d8b37b59.jpg)
+![image006](nvt_media/ae8b11f6e66bc55dea594c3fa7a165be.jpg)
 
 【Sample】
 
@@ -807,7 +807,7 @@ hdal\\samples\\alg_ive_histo\\alg_ive_histo.c
 
  The execution time is proportional to the resolution of an image.
 
- The execution time of NVT_IVE_Histo is 644 ![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image022.gif](nvt_media/9335ab38a576c0d5415382a7a6296a69.gif), estimated by a sample (image resolution 512x376).
+ The execution time of NVT_IVE_Histo is 644 ![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image005.gif](nvt_media/dca0cba4e810fb0e2845ea089ac4d1bb.gif), estimated by a sample (image resolution 512x376).
 
 ### 3.13 NVT_IVE_NCC
 
@@ -815,13 +815,13 @@ hdal\\samples\\alg_ive_histo\\alg_ive_histo.c
 
 NVT_IVE_NCC can calculate normalized cross correlation. The formula is shown below:
 
-![Snapshot330](nvt_media/31462b0fc5cf07610818ac5ba9be9d1d.jpg)
+![Snapshot330](nvt_media/c95d8b422addd706488d2bf34e359277.jpg)
 
-![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image025.gif](nvt_media/c4c438201cf8eae173738e7b75fd6e7e.gif)
+![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image020.gif](nvt_media/55f94cf111066cd7d44e46fde387b81e.gif)
 
-![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image026.gif](nvt_media/4c8c7570aa4d46c8ecbb491979d71382.gif)
+![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image021.gif](nvt_media/798ad2d15fd7ec556a8dd7b82c41bcde.gif)
 
-![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image027.gif](nvt_media/bb5c90b096c58305a845ded6e2c375b2.gif)
+![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image022.gif](nvt_media/342e5be72b607777efba1ed5d0e3acab.gif)
 
 【Function】
 
@@ -874,7 +874,7 @@ hdal\\samples\\alg_ive_ncc\\alg_ive_ncc.c
 
  The execution time is proportional to the resolution of an image.
 
- The execution time of NVT_IVE_NCC is 537 ![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image022.gif](nvt_media/9335ab38a576c0d5415382a7a6296a69.gif), estimated by a sample (image resolution 512x376).
+ The execution time of NVT_IVE_NCC is 537 ![D:\\work6\\636\\fhtml\\NT9833X_IVE_User_Guide_en.files\\image005.gif](nvt_media/dca0cba4e810fb0e2845ea089ac4d1bb.gif), estimated by a sample (image resolution 512x376).
 
 ## 4 Error Code
 

@@ -22,7 +22,7 @@ This feature is tone mapping and can be used to adjust the contrast, brightness 
 
 LCD310 Y Gamma divides the Y channel range from the darkest to the brightest and is equally divided into 16 blocks. Each block can be divided into up to 8 sub-blocks. The total number of all blocks must not exceed 32.
 
-![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image002.gif](nvt_media/7103bc75544b944c360b4b8673b56b4b.gif)
+![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image003.gif](nvt_media/439d27bea6af8dabb1bd0018e2e84b2b.gif)
 
 | **Parameter**     | **Range** | **Def** | **Description**                                                                                                       |
 |-------------------|-----------|---------|-----------------------------------------------------------------------------------------------------------------------|
@@ -114,10 +114,10 @@ This function includes adjustments for brightness, contrast, hue, saturation, et
 
  Result：
 
-| Brightness = 0   | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image003.jpg](nvt_media/20bcef3a644d0fb8ece9caa8d116a9db.jpg) |
+| Brightness = 0   | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image004.jpg](nvt_media/20bcef3a644d0fb8ece9caa8d116a9db.jpg) |
 |------------------|------------------------------------------------------------------------------------------------------------------------------|
-| Brightness = 25  | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image004.jpg](nvt_media/44547d32ddf8f106b9cf12638002bcd6.jpg) |
-| Brightness = -25 | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image005.jpg](nvt_media/1f904fa812623b519ef3824cd3037657.jpg) |
+| Brightness = 25  | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image005.jpg](nvt_media/44547d32ddf8f106b9cf12638002bcd6.jpg) |
+| Brightness = -25 | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image006.jpg](nvt_media/1f904fa812623b519ef3824cd3037657.jpg) |
 
  Contrast: Map the image Y channel to adjust the image contrast.
 
@@ -135,15 +135,15 @@ This function includes adjustments for brightness, contrast, hue, saturation, et
 
 | contrast_mode | mapping mode (contrast=150)                                                                                                  | Feature                                                                                                                  |
 |---------------|------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
-| 0             | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image006.jpg](nvt_media/72e8cd4e91c331d46c4cabd846066242.jpg) |  No loss of shadow details, loss of highlight detail  Overall brightness may increase.                                 |
-| 1             | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image007.jpg](nvt_media/d4471ba251b45b11c1c2297ccc2091fd.jpg) |  Dark details and highlight details are likely to be loss.  Overall brightness will not be changed.                    |
-| 2             | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image008.jpg](nvt_media/d6648e1c04f1a077c82688a7dcb5b813.jpg) |  No loss of detail in the highlights, details of the shadows and possible loss.  The overall brightness may be dimmed. |
+| 0             | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image007.jpg](nvt_media/72e8cd4e91c331d46c4cabd846066242.jpg) |  No loss of shadow details, loss of highlight detail  Overall brightness may increase.                                 |
+| 1             | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image008.jpg](nvt_media/d4471ba251b45b11c1c2297ccc2091fd.jpg) |  Dark details and highlight details are likely to be loss.  Overall brightness will not be changed.                    |
+| 2             | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image009.jpg](nvt_media/d6648e1c04f1a077c82688a7dcb5b813.jpg) |  No loss of detail in the highlights, details of the shadows and possible loss.  The overall brightness may be dimmed. |
 
  Result：
 
-| contrast = 170 | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image009.jpg](nvt_media/76c9543d65c03bb61ae8423265cc0d97.jpg) |
+| contrast = 170 | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image010.jpg](nvt_media/76c9543d65c03bb61ae8423265cc0d97.jpg) |
 |----------------|------------------------------------------------------------------------------------------------------------------------------|
-| Contrast = 80  | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image010.jpg](nvt_media/2bf3f7af9c53b46ab278c4e38f64fdf4.jpg) |
+| Contrast = 80  | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image011.jpg](nvt_media/2bf3f7af9c53b46ab278c4e38f64fdf4.jpg) |
 
  Hue:
 
@@ -151,7 +151,7 @@ LCD310 divides the color picture into six blocks, which can adjust the hue and s
 
 Index 0 \~ 5 respectively: Magenta, Red, Yellow, Green, Cyan, Blue.
 
-![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image011.gif](nvt_media/6e0ce3755b9741275c5a1084cf8b4660.gif)
+![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image012.gif](nvt_media/b2da2d76f90833bab0ef06121bd5238b.gif)
 
  Setting Interface: /proc/flcd310/hue
 
@@ -171,7 +171,7 @@ LCD310 divides the color picture into six blocks, which can adjust the hue and s
 
 Index 0 \~ 5 respectively: Magenta, Red, Yellow, Green, Cyan, Blue.
 
-![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image012.gif](nvt_media/dbf9e946c7ce8173569bfa5b1936fa9e.gif)
+![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image013.gif](nvt_media/69c2e73c1cdb046b484bd6a25f641d57.gif)
 
  Setting Interface： /proc/flcd310/hue_sat
 
@@ -187,10 +187,10 @@ Index 0 \~ 5 respectively: Magenta, Red, Yellow, Green, Cyan, Blue.
 
  Result：
 
-| hue_sat = 64  | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image013.jpg](nvt_media/b0db6653fd8c780a84f1c11afda6c93c.jpg) |
+| hue_sat = 64  | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image014.jpg](nvt_media/b0db6653fd8c780a84f1c11afda6c93c.jpg) |
 |---------------|------------------------------------------------------------------------------------------------------------------------------|
-| hue_sat = 128 | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image014.jpg](nvt_media/0fbfbeda75bc0624ab5ad42ea19cac11.jpg) |
-| hue_sat=164   | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image015.jpg](nvt_media/5b09be041c3e42564a82937a405c0119.jpg) |
+| hue_sat = 128 | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image015.jpg](nvt_media/0fbfbeda75bc0624ab5ad42ea19cac11.jpg) |
+| hue_sat=164   | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image016.jpg](nvt_media/81e22035382c62f36f7ff9bfb7691c11.jpg) |
 
 ### 2.3 Local Contrast Enhance
 
@@ -210,9 +210,9 @@ Write: echo \<plane 0\~0\> \<ce_state 0/1\> \<strength 0\~1023\> \> /proc/flcd31
 
  Result：
 
-| strength = 0  | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image016.jpg](nvt_media/4bebc5c74ee2c7e9e172143344305afa.jpg) |
+| strength = 0  | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image017.jpg](nvt_media/4bebc5c74ee2c7e9e172143344305afa.jpg) |
 |---------------|------------------------------------------------------------------------------------------------------------------------------|
-| strength = 30 | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image017.jpg](nvt_media/2119d5f510acafdc3dddce15f1f2c87a.jpg) |
+| strength = 30 | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image018.jpg](nvt_media/2119d5f510acafdc3dddce15f1f2c87a.jpg) |
 
 ### 2.4 Sharpen
 
@@ -233,9 +233,9 @@ This function is an edge enhancement function that enhances the sharpness of the
 
  Result：
 
-| Thin edge enhancement  | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image018.jpg](nvt_media/ef89b56e8c7a326909a4310e09a08674.jpg) |
+| Thin edge enhancement  | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image019.jpg](nvt_media/ef89b56e8c7a326909a4310e09a08674.jpg) |
 |------------------------|------------------------------------------------------------------------------------------------------------------------------|
-| Thick edge enhancement | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image019.jpg](nvt_media/9333ac249bc2ce319eeb5cd71df4be4f.jpg) |
+| Thick edge enhancement | ![D:\\work6\\636\\fhtml\\NT9833x_LCD_IQ_Tuning_Guide_en.files\\image020.jpg](nvt_media/9333ac249bc2ce319eeb5cd71df4be4f.jpg) |
 
 ## Revision Historys
 

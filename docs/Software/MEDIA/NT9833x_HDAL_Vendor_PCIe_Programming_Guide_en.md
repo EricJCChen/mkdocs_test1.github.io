@@ -1,22 +1,24 @@
-## Introduction
+## 1 Introduction
 
 PCIE Bus connects RC to EPs. HDAL media flow could be centrally controlled by RC site. However, data could be transferred from RC to one EP, or from one EP to RC. Please refer to NT9833x_PCIe_User_Guide_en.doc to get some basic concepts about PCIe.
 
-![](nvt_media/2c2d83f72f42fa3c0045a13b833faf11.png)
+![D:\\work6\\636\\fhtml\\NT9833x_HDAL_Vendor_PCIe_Programming_Guide_en.files\\image003.jpg](nvt_media/70b0500f0e1b415b13123803b40110bf.jpg)
 
 Fig 1. PCIE Bus diagram
 
 Some features about data-transfer between different chips are defined in this document. Data in shared memory could be transferred through PCIe. “Downstream” means data from RC (Root Complex) to EP (End Point). “Upstream” means data from EP to RC. Please refer to the following figure.
 
-![](nvt_media/6690d078a5848dff599a38cdf396ed62.emf)
+|   |                                                                                                                                             |
+|---|---------------------------------------------------------------------------------------------------------------------------------------------|
+|   | ![D:\\work6\\636\\fhtml\\NT9833x_HDAL_Vendor_PCIe_Programming_Guide_en.files\\image004.gif](nvt_media/0a4100fd4582d81190d379e4818e8394.gif) |
 
 Fig 2. PCIe Proprietary
 
-## Parameter IDs and data structure definition
+## 2 Parameter IDs and data structure definition
 
-### Vendor PCIe function and data structure definition
+### 2.1 Vendor PCIe function and data structure definition
 
-#### Function: vendor_pcie_rc_init
+#### 2.1.1 Function: vendor_pcie_rc_init
 
 [Description]
 
@@ -39,7 +41,7 @@ INT vendor_pcie_rc_init(void)
 | 0     | Success     |
 | -1    | Failure     |
 
-#### Function: vendor_pcie_ep_init
+#### 2.1.2 Function: vendor_pcie_ep_init
 
 [Description]
 
@@ -62,7 +64,7 @@ INT vendor_pcie_ep_init(void)
 | 0     | Success     |
 | -1    | Failure     |
 
-#### Function: vendor_pcie_rc_uninit
+#### 2.1.3 Function: vendor_pcie_rc_uninit
 
 [Description]
 
@@ -85,7 +87,7 @@ INT vendor_pcie_rc_init(void)
 | 0     | Success     |
 | -1    | Failure     |
 
-#### Function: vendor_pcie_ep_uninit
+#### 2.1.4 Function: vendor_pcie_ep_uninit
 
 [Description]
 
@@ -108,7 +110,7 @@ INT vendor_pcie_ep_uninit(void)
 | 0     | Success     |
 | -1    | Failure     |
 
-#### Function: vendor_pcie_get_chipid
+#### 2.1.5 Function: vendor_pcie_get_chipid
 
 [Description]
 
@@ -133,7 +135,7 @@ HD_RESULT vendor_pcie_get_chipid(unsigned int \*p_id);
 
 #### 
 
-#### Function: vendor_pcie_get_shared_mem
+#### 2.1.6 Function: vendor_pcie_get_shared_mem
 
 [Description]
 
@@ -157,7 +159,7 @@ HD_RESULT vendor_pcie_get_shared_mem(UINTPTR \*p_shmem, unsigned long \*size);
 | HD_OK     | Success     |
 | HD_ERR_NG | Failure     |
 
-#### Function: vendor_pcie_get_ep_count
+#### 2.1.7 Function: vendor_pcie_get_ep_count
 
 [Description]
 
@@ -179,7 +181,7 @@ INT vendor_pcie_get_ep_count(void);
 |-------|----------------|
 | count | If 0, only RC. |
 
-#### Function: vendor_pcie_get_ddrid_map
+#### 2.1.8 Function: vendor_pcie_get_ddrid_map
 
 [Description]
 
@@ -204,7 +206,7 @@ HD_RESULT vendor_pcie_get_ddrid_map(unsigned int ddr_id, unsigned int \*p_chipid
 | HD_OK     | Success     |
 | HD_ERR_NG | Failure     |
 
-#### Function: vendor_pcie_mem_mmap
+#### 2.1.9 Function: vendor_pcie_mem_mmap
 
 [Description]
 
@@ -227,7 +229,7 @@ void \*vendor_pcie_mem_mmap(UINTPTR phy_addr, UINT32 size);
 |---------|---------------------------|
 | void \* | return a virtual address. |
 
-#### Function: vendor_pcie_mem_munmap
+#### 2.1.10 Function: vendor_pcie_mem_munmap
 
 [Description]
 
@@ -251,7 +253,7 @@ HD_RESULT vendor_pcie_mem_munmap(void \*va_addr, UINT32 size);
 | HD_OK     | Success     |
 | HD_ERR_NG | Failure     |
 
-#### Function: vendor_pcie_get_upstream_pa
+#### 2.1.11 Function: vendor_pcie_get_upstream_pa
 
 [Description]
 
@@ -275,7 +277,7 @@ HD_RESULT vendor_pcie_get_upstream_pa(UINTPTR rc_pa, UINTPTR \*ep_pa);
 | HD_OK     | Success     |
 | HD_ERR_NG | Failure     |
 
-#### Function: vendor_pcie_get_downstream_pa
+#### 2.1.12 Function: vendor_pcie_get_downstream_pa
 
 [Description]
 
@@ -299,7 +301,7 @@ HD_RESULT vendor_pcie_get_downstream_pa(UINTPTR ep_pa, UINTPTR \*rc_pa);
 | HD_OK     | Success     |
 | HD_ERR_NG | Failure     |
 
-#### Function: vendor_pcie_rc_wakeup
+#### 2.1.13 Function: vendor_pcie_rc_wakeup
 
 [Description]
 
@@ -322,7 +324,7 @@ HD_RESULT vendor_pcie_rc_wakeup(INT ep_chipid);
 | HD_OK     | Success     |
 | HD_ERR_NG | Failure     |
 
-#### Function: vendor_pcie_ep_wakeup
+#### 2.1.14 Function: vendor_pcie_ep_wakeup
 
 [Description]
 
@@ -345,7 +347,7 @@ HD_RESULT vendor_pcie_ep_wakeup(void);
 | HD_OK     | Success     |
 | HD_ERR_NG | Failure     |
 
-#### Function: vendor_pcie_rc_wait
+#### 2.1.15 Function: vendor_pcie_rc_wait
 
 [Description]
 
@@ -368,7 +370,7 @@ HD_RESULT vendor_pcie_rc_wakeup(INT ep_chipid);
 | HD_OK     | Success     |
 | HD_ERR_NG | Failure     |
 
-#### Function: vendor_pcie_ep_wait
+#### 2.1.16 Function: vendor_pcie_ep_wait
 
 [Description]
 
@@ -391,7 +393,7 @@ HD_RESULT vendor_pcie_ep_wakeup(void);
 | HD_OK     | Success     |
 | HD_ERR_NG | Failure     |
 
-#### Function: vendor_pcie_rc_send
+#### 2.1.17 Function: vendor_pcie_rc_send
 
 [Description]
 
@@ -418,7 +420,7 @@ HD_RESULT vendor_pcie_rc_send(INT ep_chipid, INT ep_chan_id, INT param_sz, VOID 
 | HD_OK     | Success     |
 | HD_ERR_NG | Failure     |
 
-#### Function: vendor_pcie_rc_recv
+#### 2.1.18 Function: vendor_pcie_rc_recv
 
 [Description]
 
@@ -445,7 +447,7 @@ HD_RESULT vendor_pcie_rc_recv(INT ep_chipid, INT ep_chan_id, INT \*param_sz, VOI
 | HD_OK     | Success     |
 | HD_ERR_NG | Failure     |
 
-#### Function: vendor_pcie_ep_send
+#### 2.1.19 Function: vendor_pcie_ep_send
 
 [Description]
 
@@ -471,7 +473,7 @@ HD_RESULT vendor_pcie_ep_send(INT rc_chan_id, INT param_sz, VOID \*p_param,INT t
 | HD_OK     | Success     |
 | HD_ERR_NG | Failure     |
 
-#### Function: vendor_pcie_ep_recv
+#### 2.1.20 Function: vendor_pcie_ep_recv
 
 [Description]
 
@@ -498,7 +500,7 @@ HD_RESULT vendor_pcie_rc_recv(INT ep_chipid, INT ep_chan_id, INT \*param_sz, VOI
 | HD_OK     | Success     |
 | HD_ERR_NG | Failure     |
 
-#### Function: vendor_pcie_gettime_us
+#### 2.1.21 Function: vendor_pcie_gettime_us
 
 [Description]
 
@@ -520,44 +522,44 @@ unsigned long vendor_pcie_gettime_us(void);
 |---------------|------------------------------|
 | unsigned long | System time in micro-second. |
 
-#### Summary
+#### 2.1.22 Summary
 
 A summary for API user shows as below. The functions in green rows are executed in RC only. The functions in yellow rows could be executed in RC/EPs.
 
-![](nvt_media/56f1a793ea002524e208af30b37fd997.png)
+![D:\\work6\\636\\fhtml\\NT9833x_HDAL_Vendor_PCIe_Programming_Guide_en.files\\image005.jpg](nvt_media/8bf59a89edd72139c3c5e9f25a353c34.jpg)
 
-### Pseudo code for Data Transfer
+### 2.2 Pseudo code for Data Transfer
 
 The following figure shows pseudo code for data transfer freely. RC/EP could use wakeup/wait to transfer any data. It suggests that data is put in other buffer, just some messages are put in pcie shared memory to inform other users.
 
-![](nvt_media/cd5e730eed31cddbacf6ae2fce202274.png)
+![D:\\work6\\636\\fhtml\\NT9833x_HDAL_Vendor_PCIe_Programming_Guide_en.files\\image006.jpg](nvt_media/3358b0dc3d483ba39efef09f4ad3b36c.jpg)
 
-## How to change buffer size for PCIe
+## 3 How to change buffer size for PCIe
 
 Find the nvt-mem-tbl.dtsi for wanted product.
 
 For example, configs/Linux/cfg_TEST_FPGA/nvt-mem-tbl.dtsi
 
-```
-	/* Linux system memory region*/
-	memory { device_type = "memory"; reg = <0x0 0x00000000 0x0 0x08000000>; };	
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  /* Linux system memory region*/
+  memory { device_type = "memory"; reg = <0x0 0x00000000 0x0 0x08000000>; }; 
 ...
  nvt-pcie-lib-cfg {
-  compatible = "nvt,nvt-pcie-lib";
-  rc_shm_size = <0x0 0x00100000>; /* [SIZE-H] [SIZE-L] */
+ compatible = "nvt,nvt-pcie-lib";
+ rc_shm_size = <0x0 0x00100000>; /* [SIZE-H] [SIZE-L] */
  #default size is 1MB. 
-  ep_alloc_mem = <0x1 0x0 0x18000000 0x0 0x08000000 
+ ep_alloc_mem = <0x1 0x0 0x18000000 0x0 0x08000000 
 /* < [CHIPID] [ADDR-H] [ADDR-L] [SIZE-H] [SIZE-L] */
-  >;
+ >;
  }; 
 ...
-
-	
-```
+ 
+  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The default setting for using PCIe buffer shows as below,
 
-![](nvt_media/7bd73ad277791ee68eb8cb68fc7b9f28.png)
+![D:\\work6\\636\\fhtml\\NT9833x_HDAL_Vendor_PCIe_Programming_Guide_en.files\\image007.jpg](nvt_media/90b5cac6de268cb00b20c0fe4404da47.jpg)
 
 User could change the size of each block when inserting kdrv_cc_event.ko. For example,
 

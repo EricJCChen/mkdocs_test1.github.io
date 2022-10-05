@@ -1,8 +1,8 @@
-## Introduction
+## 1 Introduction
 
 Vendor API is an extended library for HDAL. Some features dedicated for the specific IC will not list in the HDAL API but in vendor API. Please refer to this document to know the detail.
 
-## Parameter IDs and data structure definition
+## 2 Parameter IDs and data structure definition
 
 **Videocap**
 
@@ -10,85 +10,143 @@ Vendor API is an extended library for HDAL. Some features dedicated for the spec
 
 **Videodec**
 
--   VENDOR_VIDEODEC_PARAM_JPEG_WORK_BUFFER
-    -   support set/get with i/o path
-    -   using VENDOR_VIDEODEC_JPEG_WORK_BUFFER struct
--   VENDOR_VIDEODEC_PARAM_FREE_JPEG_WORK_BUFFER
-    -   support set with i/o path
-    -   using VENDOR_VIDEODEC_JPEG_WORK_BUFFER struct
--   VENDOR_VIDEODEC_PARAM_SUB_YUV_RATIO
-    -   support set/get with i/o path
-    -   using VENDOR_VIDEODEC_SUB_YUV struct
--   VENDOR_VIDEODEC_PARAM_QP_CONFIG
-    -   support set/get with i/o path
-    -   using VENDOR_VIDEODEC_QP_CONFIG struct
--   VENDOR_VIDEODEC_PARAM_H26X_OUT
-    -   support set/get with i/o path
-    -   using VENDOR_VIDEODEC_H26X_OUT struct
--   VENDOR_VIDEODEC_PARAM_SYSCAPS
-    -   support get with i/o path
-    -   using VENDOR_VIDEODEC_SYSCAPS struct
+ VENDOR_VIDEODEC_PARAM_JPEG_WORK_BUFFER
+
+ support set/get with i/o path
+
+ using VENDOR_VIDEODEC_JPEG_WORK_BUFFER struct
+
+ VENDOR_VIDEODEC_PARAM_FREE_JPEG_WORK_BUFFER
+
+ support set with i/o path
+
+ using VENDOR_VIDEODEC_JPEG_WORK_BUFFER struct
+
+ VENDOR_VIDEODEC_PARAM_SUB_YUV_RATIO
+
+ support set/get with i/o path
+
+ using VENDOR_VIDEODEC_SUB_YUV struct
+
+ VENDOR_VIDEODEC_PARAM_QP_CONFIG
+
+ support set/get with i/o path
+
+ using VENDOR_VIDEODEC_QP_CONFIG struct
+
+ VENDOR_VIDEODEC_PARAM_H26X_OUT
+
+ support set/get with i/o path
+
+ using VENDOR_VIDEODEC_H26X_OUT struct
+
+ VENDOR_VIDEODEC_PARAM_SYSCAPS
+
+ support get with i/o path
+
+ using VENDOR_VIDEODEC_SYSCAPS struct
 
 **Videoenc**
 
--   VENDOR_VIDEOENC_PARAM_OSG_SEL
-    -   support get/set with i/o path
-    -   using VENDOR_VIDEOENC_OSG struct
--   VENDOR_VIDEOENC_PARAM_MIN_COMPRESS_RATIO
-    -   support get/set with i/o path
-    -   using VENDOR_VDOENC_MIN_COMPRESS_RATIO struct
+ VENDOR_VIDEOENC_PARAM_OSG_SEL
+
+ support get/set with i/o path
+
+ using VENDOR_VIDEOENC_OSG struct
+
+ VENDOR_VIDEOENC_PARAM_MIN_COMPRESS_RATIO
+
+ support get/set with i/o path
+
+ using VENDOR_VDOENC_MIN_COMPRESS_RATIO struct
 
 **Videoout**
 
--   VENDOR_VIDEOOUT_PARAM_WRITEBACK
-    -   support get/set with i/o path
-    -   using VENDOR_VIDEOOUT_WRITEBACK struct
--   VENDOR_VIDEOOUT_PARAM_WIN_LAYER_ATTR,
-    -   support get/set with i/o path
-    -   using VENDOR_VIDEOOUT_WIN_LAYER_ATTR struct
--   VENDOR_VIDEOOUT_PARAM_MODE
-    -   support get/set with i/o path
-    -   using VENDOR_VIDEOOUT_MODE struct
+ VENDOR_VIDEOOUT_PARAM_WRITEBACK
+
+ support get/set with i/o path
+
+ using VENDOR_VIDEOOUT_WRITEBACK struct
+
+ VENDOR_VIDEOOUT_PARAM_WIN_LAYER_ATTR,
+
+ support get/set with i/o path
+
+ using VENDOR_VIDEOOUT_WIN_LAYER_ATTR struct
+
+ VENDOR_VIDEOOUT_PARAM_MODE
+
+ support get/set with i/o path
+
+ using VENDOR_VIDEOOUT_MODE struct
 
 **Videoprocess**
 
--   VENDOR_VIDEOPROC_STATUS
-    -   support set with i/o path
-    -   using VENDOR_VDOPROC_STATUS struct
--   VENDOR_VIDEOPROC_USER_FLAG
-    -   support set with i/o path
-    -   using UINT32 struct
--   VENDOR_VIDEOPROC_SUB_RATIO_THLD
-    -   support set/get with i/o path
-    -   using VENDOR_VDOPROC_SUB_RATIO_THLD struct
--   VENDOR_VIDEOPROC_USR_INIT_FRAME
-    -   support set with i/o path
-    -   using VENDOR_VDOPROC_USR_INIT_FRAME_INFO struct
+ VENDOR_VIDEOPROC_STATUS
+
+ support set with i/o path
+
+ using VENDOR_VDOPROC_STATUS struct
+
+ VENDOR_VIDEOPROC_USER_FLAG
+
+ support set with i/o path
+
+ using UINT32 struct
+
+ VENDOR_VIDEOPROC_SUB_RATIO_THLD
+
+ support set/get with i/o path
+
+ using VENDOR_VDOPROC_SUB_RATIO_THLD struct
+
+ VENDOR_VIDEOPROC_USR_INIT_FRAME
+
+ support set with i/o path
+
+ using VENDOR_VDOPROC_USR_INIT_FRAME_INFO struct
 
 **Audioio**
 
--   VENDOR_UNDERRUN_CNT
-    -   support get with i/o path
-    -   using VENDOR_AUDIOIO_UNDERRUN_CONFIG struct
--   VENDOR_AUDIOIO_PARAM_SYSCAPS
-    -   support get with i/o path
-    -   using VENDOR_AUDIOIO_PARAM_SYSCAPS struct
--   VENDOR_AUDIOIO_STATUS
-    -   support get with i/o path
-    -   using VENDOR_AUDIOIO_STATUS struct
--   VENDOR_AUDIOIO_INIT_CFG
-    -   support set/get with i/o path
-    -   using VENDOR_AUDIOIO_INIT_I2S_CFG struct
--   VENDOR_AUDIOIO_AOUT_LB_DEV_ID
-    -   support get with i/o path
-    -   using VENDOR_AUDIOIO_AOUT_LB_DEV_INFO struct
--   VENDOR_AUDIOIO_SYNC_TIME
-    -   support set with i/o path
-    -   using VENDOR_AUDIOIO_SYNC_TIME_INFO struct
+ VENDOR_UNDERRUN_CNT
 
-### Videocap function and data structure definition
+ support get with i/o path
 
-#### Function: vendor_videocap_get
+ using VENDOR_AUDIOIO_UNDERRUN_CONFIG struct
+
+ VENDOR_AUDIOIO_PARAM_SYSCAPS
+
+ support get with i/o path
+
+ using VENDOR_AUDIOIO_PARAM_SYSCAPS struct
+
+ VENDOR_AUDIOIO_STATUS
+
+ support get with i/o path
+
+ using VENDOR_AUDIOIO_STATUS struct
+
+ VENDOR_AUDIOIO_INIT_CFG
+
+ support set/get with i/o path
+
+ using VENDOR_AUDIOIO_INIT_I2S_CFG struct
+
+ VENDOR_AUDIOIO_AOUT_LB_DEV_ID
+
+ support get with i/o path
+
+ using VENDOR_AUDIOIO_AOUT_LB_DEV_INFO struct
+
+ VENDOR_AUDIOIO_SYNC_TIME
+
+ support set with i/o path
+
+ using VENDOR_AUDIOIO_SYNC_TIME_INFO struct
+
+### 2.1 Videocap function and data structure definition
+
+#### 2.1.1 Function: vendor_videocap_get
 
 [Description]
 
@@ -114,7 +172,7 @@ HD_RESULT vendor_videocap_get (HD_PATH_ID path_id, VENDOR_VIDEOENC_PARAM_ID id, 
 | HD_ERR_NG          | Failure                    |
 | HD_ERR_NOT_SUPPORT | Not support this parameter |
 
-#### Function: vendor_videocap_set
+#### 2.1.2 Function: vendor_videocap_set
 
 [Description]
 
@@ -140,7 +198,7 @@ HD_RESULT vendor_videocap_set (HD_PATH_ID path_id, VENDOR_VIDEOENC_PARAM_ID id, 
 | HD_ERR_NG          | Failure                    |
 | HD_ERR_NOT_SUPPORT | Not support this parameter |
 
-#### Function: vendor_videocap_push_in_buf
+#### 2.1.3 Function: vendor_videocap_push_in_buf
 
 [Description]
 
@@ -173,7 +231,7 @@ HD_RESULT vendor_videocap_push_in_buf(HD_PATH_ID path_id, HD_VIDEO_FRAME\* p_vid
 | HD_ERR_PARAM | Wrong input settings                      |
 | HD_ERR_NOBUF | Not enough buffer for outputting yuv data |
 
-#### Function: vendor_videocap_pull_out_buf
+#### 2.1.4 Function: vendor_videocap_pull_out_buf
 
 [Description]
 
@@ -204,7 +262,7 @@ HD_RESULT vendor_videocap_pull_out_buf(HD_PATH_ID path_id, HD_VIDEO_FRAME\* p_vi
 | HD_ERR_SYS      | Vcap module is not ready              |
 | HD_ERR_FAIL     | this job is failed from vcap driver   |
 
-#### Structure: VENDOR_VIDEOCAP_CROPCTRL_INFO
+#### 2.1.5 Structure: VENDOR_VIDEOCAP_CROPCTRL_INFO
 
 [Description]
 
@@ -222,7 +280,7 @@ Support an option to apply crop information.
 | open-\>set-\>get |
 |------------------|
 
-#### Structure: VENDOR_VIDEOCAP_SYSCAPS
+#### 2.1.6 Structure: VENDOR_VIDEOCAP_SYSCAPS
 
 [Description]
 
@@ -243,9 +301,9 @@ Get videocap system capability information through user-specified type/mode.
 | open-\> get |
 |-------------|
 
-### Videodec function and data structure definition
+### 2.2 Videodec function and data structure definition
 
-#### Function: vendor_videodec_get
+#### 2.2.1 Function: vendor_videodec_get
 
 [Description]
 
@@ -271,7 +329,7 @@ HD_RESULT vendor_videodec_get (HD_PATH_ID path_id, VENDOR_VIDEODEC_PARAM_ID id, 
 | HD_ERR_NG          | Failure                    |
 | HD_ERR_NOT_SUPPORT | Not support this parameter |
 
-#### Function: vendor_videodec_set
+#### 2.2.2 Function: vendor_videodec_set
 
 [Description]
 
@@ -297,19 +355,19 @@ HD_RESULT vendor_videodec_set (HD_PATH_ID path_id, VENDOR_VIDEODEC_PARAM_ID id, 
 | HD_ERR_NG          | Failure                    |
 | HD_ERR_NOT_SUPPORT | Not support this parameter |
 
-#### Structure: VENDOR_VIDEODEC_JPEG_WORK_BUFFER
+#### 2.2.3 Structure: VENDOR_VIDEODEC_JPEG_WORK_BUFFER
 
 [Description]
 
 This function is not supported on NT9833x.
 
-#### Structure: VENDOR_VIDEODEC_FREE_JPEG_WORK_BUFFER
+#### 2.2.4 Structure: VENDOR_VIDEODEC_FREE_JPEG_WORK_BUFFER
 
 [Description]
 
 This function is not supported on NT9833x.
 
-#### Structure: VENDOR_VIDEODEC_SUB_YUV
+#### 2.2.5 Structure: VENDOR_VIDEODEC_SUB_YUV
 
 [Description]
 
@@ -326,7 +384,7 @@ Set/get videodec sub-yuv ratio.
 | set / get |
 |-----------|
 
-#### Structure: VENDOR_VIDEODEC_QP_CONFIG
+#### 2.2.6 Structure: VENDOR_VIDEODEC_QP_CONFIG
 
 [Description]
 
@@ -343,7 +401,7 @@ Set/get videodec qp value configuration.
 | set / get |
 |-----------|
 
-#### Structure: VENDOR_VIDEODEC_H26X_OUT
+#### 2.2.7 Structure: VENDOR_VIDEODEC_H26X_OUT
 
 [Description]
 
@@ -361,7 +419,7 @@ Set/get videodec H.26x output format configuration.
 | set / get |
 |-----------|
 
-#### Structure: VENDOR_VIDEODEC_SYSCAPS
+#### 2.2.8 Structure: VENDOR_VIDEODEC_SYSCAPS
 
 [Description]
 
@@ -386,9 +444,9 @@ Get videodec system capability information through user-specified type/mode.
 | get |
 |-----|
 
-### Videoenc function and data structure definition
+### 2.3 Videoenc function and data structure definition
 
-#### Function: vendor_videoenc_get
+#### 2.3.1 Function: vendor_videoenc_get
 
 [Description]
 
@@ -414,7 +472,7 @@ HD_RESULT vendor_videoenc_get (HD_PATH_ID path_id, VENDOR_VIDEOENC_PARAM_ID id, 
 | HD_ERR_NG          | Failure                    |
 | HD_ERR_NOT_SUPPORT | Not support this parameter |
 
-#### Function: vendor_videoenc_set
+#### 2.3.2 Function: vendor_videoenc_set
 
 [Description]
 
@@ -440,7 +498,7 @@ HD_RESULT vendor_videoenc_set (HD_PATH_ID path_id, VENDOR_VIDEOENC_PARAM_ID id, 
 | HD_ERR_NG          | Failure                    |
 | HD_ERR_NOT_SUPPORT | Not support this parameter |
 
-#### Structure: VENDOR_VIDEOENC_OSG
+#### 2.3.3 Structure: VENDOR_VIDEOENC_OSG
 
 [Description]
 
@@ -457,7 +515,7 @@ Support an option to choose internal or external OSG
 | stop -\> close -\> open -\> set -\> start  |
 |--------------------------------------------|
 
-#### Structure: VENDOR_VIDEOENC_MIN_COMPRESS_RATIO
+#### 2.3.4 Structure: VENDOR_VIDEOENC_MIN_COMPRESS_RATIO
 
 [Description]
 
@@ -465,17 +523,17 @@ Set initial compress ratio for different QP
 
 [Parameter]
 
-| Value      | Description                                        |
-|------------|----------------------------------------------------|
-| codec_type | select the codec by HD_VIDEO_CODEC type            |
-| qp_ratio   | Set the qp ratio by VENDOR_VIDEOENC_QP_RATIO type  |
+| Value      | Description                                       |
+|------------|---------------------------------------------------|
+| codec_type | select the codec by HD_VIDEO_CODEC type           |
+| qp_ratio   | Set the qp ratio by VENDOR_VIDEOENC_QP_RATIO type |
 
 [Apply Require]
 
 | stop -\> close -\> open -\> set -\> start  |
 |--------------------------------------------|
 
-#### Structure: VENDOR_JPEGENC_PARAM_RATE_CONTROL
+#### 2.3.5 Structure: VENDOR_JPEGENC_PARAM_RATE_CONTROL
 
 [Description]
 
@@ -498,7 +556,7 @@ JPEG rate control parameters
 | stop -\> close -\> open -\> set / get -\> start  |
 |--------------------------------------------------|
 
-#### Structure: VENDOR_VIDEOENC_SYSCAPS
+#### 2.3.6 Structure: VENDOR_VIDEOENC_SYSCAPS
 
 [Description]
 
@@ -519,9 +577,9 @@ Get videoenc system capability information through user-specified codec type
 | stop -\> close -\> open -\> get -\> start  |
 |--------------------------------------------|
 
-### Videoout function and data structure definition
+### 2.4 Videoout function and data structure definition
 
-#### Function: vendor_videoout_get
+#### 2.4.1 Function: vendor_videoout_get
 
 [Description]
 
@@ -547,7 +605,7 @@ HD_RESULT vendor_videoout_get (HD_PATH_ID path_id, VENDOR_VIDEOOUT_PARAM_ID id, 
 | HD_ERR_NG  | Failure                       |
 | HD_ERR_SYS | Operating system call failure |
 
-#### Function: vendor_videoout_set
+#### 2.4.2 Function: vendor_videoout_set
 
 [Description]
 
@@ -573,7 +631,7 @@ HD_RESULT vendor_videoout_set (HD_PATH_ID path_id, VENDOR_VIDEOOUT_PARAM_ID id, 
 | HD_ERR_NG  | Failure                       |
 | HD_ERR_SYS | Operating system call failure |
 
-#### Structure: VENDOR_VIDEOOUT_WRITEBACK
+#### 2.4.3 Structure: VENDOR_VIDEOOUT_WRITEBACK
 
 [Description]
 
@@ -597,7 +655,7 @@ Duplicate videoout0 image to dst_lcd_id
 | stop -\> close -\> open -\> set  |
 |----------------------------------|
 
-#### Structure: VENDOR_VIDEOOUT_WIN_LAYER_ATTR
+#### 2.4.4 Structure: VENDOR_VIDEOOUT_WIN_LAYER_ATTR
 
 [Description]
 
@@ -614,7 +672,7 @@ Set win order
 | stop -\> close -\> open -\> set  |
 |----------------------------------|
 
-#### Structure: VENDOR_VIDEOOUT_MODE
+#### 2.4.5 Structure: VENDOR_VIDEOOUT_MODE
 
 [Description]
 
@@ -633,7 +691,7 @@ Set videoout mode for special mode:1440x900/1680x1050/1920x1200
 | stop -\> close -\> open -\> set  |
 |----------------------------------|
 
-#### Structure: VENDOR_VIDEOOUT_EDID
+#### 2.4.6 Structure: VENDOR_VIDEOOUT_EDID
 
 [Description]
 
@@ -651,7 +709,7 @@ Get videoout support edid value
 | open -\> get  |
 |---------------|
 
-#### Structure: VENDOR_VIDEOOUT_EDID_CAP
+#### 2.4.7 Structure: VENDOR_VIDEOOUT_EDID_CAP
 
 [Description]
 
@@ -676,7 +734,7 @@ Get monitor edid data
 | open -\> get  |
 |---------------|
 
-#### Structure: VENDOR_VIDEOOUT_SYSCAPS
+#### 2.4.8 Structure: VENDOR_VIDEOOUT_SYSCAPS
 
 [Description]
 
@@ -697,9 +755,9 @@ Get videoout system capability information through user-specified lcd_id.
 | open-\> get |
 |-------------|
 
-### Videoprocess function and data structure definition
+### 2.5 Videoprocess function and data structure definition
 
-#### Function: vendor_videoproc_get
+#### 2.5.1 Function: vendor_videoproc_get
 
 [Description]
 
@@ -725,7 +783,7 @@ HD_RESULT vendor_videoproc_get (HD_PATH_ID path_id, VENDOR_VIDEOPROC_PARAM_ID id
 | HD_ERR_NG          | Failure                    |
 | HD_ERR_NOT_SUPPORT | Not support this parameter |
 
-#### Function: vendor_videoproc_set
+#### 2.5.2 Function: vendor_videoproc_set
 
 [Description]
 
@@ -751,7 +809,7 @@ HD_RESULT vendor_videoproc_set (HD_PATH_ID path_id, VENDOR_VIDEOPROC_PARAM_ID id
 | HD_ERR_NG          | Failure                    |
 | HD_ERR_NOT_SUPPORT | Not support this parameter |
 
-#### Structure: VENDOR_VDOPROC_STATUS
+#### 2.5.3 Structure: VENDOR_VDOPROC_STATUS
 
 [Description]
 
@@ -768,7 +826,7 @@ Get vproc available input buffer count
 | open -\> get |
 |--------------|
 
-#### Structure: VENDOR_VDOPROC_SUB_RATIO_THLD
+#### 2.5.4 Structure: VENDOR_VDOPROC_SUB_RATIO_THLD
 
 [Description]
 
@@ -786,7 +844,7 @@ Get/set sub-yuv ratio threshold for vproc unit.
 | open -\> get -\> set |
 |----------------------|
 
-#### Structure: VENDOR_VIDEOPROC_USR_INIT_FRAME_INFO
+#### 2.5.5 Structure: VENDOR_VIDEOPROC_USR_INIT_FRAME_INFO
 
 [Description]
 
@@ -800,7 +858,7 @@ This is used for playback feature, the frame is shown before decoder has started
 |-------|-------------------------|
 | image | The pre-specified frame |
 
-#### vendor_videoprocess_pull_in_buf
+#### 2.5.6 vendor_videoprocess_pull_in_buf
 
 [Description]
 
@@ -825,7 +883,7 @@ HD_RESULT vendor_videoproc_pull_in_buf(HD_PATH_ID path_id, HD_VIDEO_FRAME\* p_vi
 | HD_OK     | Success     |
 | HD_ERR_NG | Failure     |
 
-#### vendor_videoprocess_release_in_buf
+#### 2.5.7 vendor_videoprocess_release_in_buf
 
 [Description]
 
@@ -849,7 +907,7 @@ HD_RESULT vendor_videoproc_release_in_buf(HD_PATH_ID path_id, HD_VIDEO_FRAME\* p
 | HD_OK     | Success     |
 | HD_ERR_NG | Failure     |
 
-#### Structure: VENDOR_DEWARP_2DLUT_TABLE
+#### 2.5.8 Structure: VENDOR_DEWARP_2DLUT_TABLE
 
 [Description]
 
@@ -868,17 +926,17 @@ More details of 2D_lut and dctg, please refer to Chapter 3.
 | open -\> get -\> set |
 |----------------------|
 
-![](nvt_media/ba9c9130fd2bcab9def544a89b44fb00.jpeg) ![](nvt_media/6316b5b9bcefd2a24a638a312c632049.png)
+![D:\\work6\\636\\fhtml\\NT9833x_HDAL_Vendor_Media_Programming_Guide_en.files\\image003.gif](nvt_media/b662c91a180df9b19610b4012a6a0f65.gif)![D:\\work6\\636\\fhtml\\NT9833x_HDAL_Vendor_Media_Programming_Guide_en.files\\image004.jpg](nvt_media/270b8353c823780bc71740da6efe1ca3.jpg) ![D:\\work6\\636\\fhtml\\NT9833x_HDAL_Vendor_Media_Programming_Guide_en.files\\image005.jpg](nvt_media/c8d888d3d3bceaaf84ab1cfacc449f91.jpg)
 
 2D_lut example.
 
-#### Structure: VENDOR_DEWARP_MODE
+#### 2.5.9 Structure: VENDOR_DEWARP_MODE
 
 [Description]
 
 Not used now.
 
-#### Structure: VENDOR_DEWARP_DGC_PARM
+#### 2.5.10 Structure: VENDOR_DEWARP_DGC_PARM
 
 [Description]
 
@@ -899,7 +957,7 @@ Gdc information. (DGC is a typo). User should get this information from vpe modu
 
 More details of gdc parameters, please refer to Chapter 3.
 
-#### Structure: VENDOR_DEWARP_2DLUT_PARM
+#### 2.5.11 Structure: VENDOR_DEWARP_2DLUT_PARM
 
 [Description]
 
@@ -917,13 +975,13 @@ More details of gdc parameters, please refer to Chapter 3.
 | yofs_i   | 2D-lut y offset (integer)       |
 | yofs_f   | 2D-lut y offset (fraction)      |
 
-#### Structure: VENDOR_DEWARP_FOV_PARM
+#### 2.5.12 Structure: VENDOR_DEWARP_FOV_PARM
 
 [Description]
 
 Fov parameters. Not used now.
 
-#### Structure: VENDOR_DEWARP_INFO
+#### 2.5.13 Structure: VENDOR_DEWARP_INFO
 
 [Description]
 
@@ -943,7 +1001,7 @@ Dewarp paramters.
 | open -\> get -\> set |
 |----------------------|
 
-#### Structure: VENDOR_DEWARP_DCTG_MODE
+#### 2.5.14 Structure: VENDOR_DEWARP_DCTG_MODE
 
 [Description]
 
@@ -956,7 +1014,7 @@ Set VENDOR_DEWARP_DCTG_MODE_360, when doing 2D_lut.
 | VENDOR_DEWARP_DCTG_MODE_90  | Do DCTG     |
 | VENDOR_DEWARP_DCTG_MODE_360 | Do 2D_lut   |
 
-#### Structure: VENDOR_DEWARP_DCTG_LENS_PARM
+#### 2.5.15 Structure: VENDOR_DEWARP_DCTG_LENS_PARM
 
 [Description]
 
@@ -974,13 +1032,13 @@ DCTG lens parameters.
 
 lut2d_sz in VENDOR_DEWARP_DCTG_LENS_PARM should be equal to lut2d_sz in VENDOR_DEWARP_2DLUT_PARM.
 
-#### Structure: VENDOR_DEWARP_DCTG_FOV_PARM
+#### 2.5.16 Structure: VENDOR_DEWARP_DCTG_FOV_PARM
 
 [Description]
 
 Not used now.
 
-#### Structure: VENDOR_DEWARP_DCTG_INFO
+#### 2.5.17 Structure: VENDOR_DEWARP_DCTG_INFO
 
 [Description]
 
@@ -999,7 +1057,7 @@ DCTG information.
 | open -\> get -\> set |
 |----------------------|
 
-#### Structure: VENDOR_DEWARP_CTRL
+#### 2.5.18 Structure: VENDOR_DEWARP_CTRL
 
 [Description]
 
@@ -1021,9 +1079,9 @@ The difference between 2D_lut and dctg, please refer to Chapter 3.
 
 Sample codes: liveview_with_dewarp.c and playback_with_dewarp.c show how the setting works.
 
-### Audioio function and data structure definition
+### 2.6 Audioio function and data structure definition
 
-#### Function: vendor_audioio_get
+#### 2.6.1 Function: vendor_audioio_get
 
 [Description]
 
@@ -1050,7 +1108,7 @@ HD_RESULT vendor_audioio_get (HD_PATH_ID path_id, VENDOR_AUDIOIO_PARAM_ID id, VO
 | HD_ERR_NOT_SUPPORT | Not support this parameter |
 | HD_ERR_PATH        | Invalid path id            |
 
-#### Function: vendor_audioio_set
+#### 2.6.2 Function: vendor_audioio_set
 
 [Description]
 
@@ -1076,7 +1134,7 @@ HD_RESULT vendor_audioio_set (HD_PATH_ID path_id, VENDOR_AUDIOIO_PARAM_ID id, VO
 | HD_ERR_NG          | Failure                    |
 | HD_ERR_NOT_SUPPORT | Not support this parameter |
 
-#### Function: vendor_audioio_set_livesound
+#### 2.6.3 Function: vendor_audioio_set_livesound
 
 [Description]
 
@@ -1104,7 +1162,7 @@ HD_RESULT vendor_audioio_set_livesound(HD_PATH_ID acap_path_id, HD_PATH_ID aout_
 | HD_ERR_PATH | Wrong pathid                          |
 | HD_ERR_NG   | Fail to send command to lower driver. |
 
-#### Structure: VENDOR_AUDIOIO_UNDERRUN_CONFIG
+#### 2.6.4 Structure: VENDOR_AUDIOIO_UNDERRUN_CONFIG
 
 [Description]
 
@@ -1125,11 +1183,11 @@ VENDOR_AUDIOIO_STATUS_INFO is an alias of this structure.
 | open -\> get |
 |--------------|
 
-#### Structure: VENDOR_AUDIOIO_STATUS_INFO
+#### 2.6.5 Structure: VENDOR_AUDIOIO_STATUS_INFO
 
 VENDOR_AUDIOIO_STATUS_INFO is an alias of VENDOR_AUDIOIO_UNDERRUN_CONFIG. Please refer to 2.6.4 for details.
 
-#### Structure: VENDOR_AUDIOIO_AOUT_LB_DEV_INFO
+#### 2.6.6 Structure: VENDOR_AUDIOIO_AOUT_LB_DEV_INFO
 
 [Description]
 
@@ -1146,7 +1204,7 @@ The structure fills the loopback HDAL dev_id of the calling path(audioout path).
 | open -\> get |
 |--------------|
 
-#### Structure: VENDOR_AUDIOIO_SYNC_TIME_INFO
+#### 2.6.7 Structure: VENDOR_AUDIOIO_SYNC_TIME_INFO
 
 [Description]
 
@@ -1163,9 +1221,9 @@ Fill this structure to specify the target channel for synchronize time of output
 | open -\> set |
 |--------------|
 
-### Gfx function and data structe definition
+### 2.7 Gfx function and data structe definition
 
-#### Structure: VENDOR_GFX_SYSCAPS
+#### 2.7.1 Structure: VENDOR_GFX_SYSCAPS
 
 [Description]
 
@@ -1180,7 +1238,7 @@ Get gfx system capability information.
 | max_dim     | get max input /output dimension |
 | image_align | get align limitation            |
 
-#### Function: vendor_gfx_get_syscaps
+#### 2.7.2 Function: vendor_gfx_get_syscaps
 
 [Description]
 
@@ -1204,9 +1262,9 @@ HD_RESULT vendor_gfx_get_syscaps(VENDOR_GFX_SYSCAPS \*p_param)
 | HD_ERR_NG          | Failure                    |
 | HD_ERR_NOT_SUPPORT | Not support this parameter |
 
-### Vendor common function and data structe definition
+### 2.8 Vendor common function and data structe definition
 
-#### Function: vendor_common_mem_get_block_with_name
+#### 2.8.1 Function: vendor_common_mem_get_block_with_name
 
 [Description]
 
@@ -1232,7 +1290,7 @@ HD_COMMON_MEM_VB_BLK vendor_common_mem_get_block_with_name(HD_COMMON_MEM_POOL_TY
 | HD_COMMON_MEM_VB_BLK         | Success     |
 | HD_COMMON_MEM_VB_INVALID_BLK | Failure     |
 
-#### Function: vendor_common_clear_pool_blk
+#### 2.8.2 Function: vendor_common_clear_pool_blk
 
 [Description]
 
@@ -1257,13 +1315,13 @@ HD_RESULT vendor_common_clear_pool_blk(HD_COMMON_MEM_POOL_TYPE pool_type, INT dd
 | HD_ERR_NG  | Failure to find pool by type |
 | HD_ERR_SYS | Failure to free all blk      |
 
-### Distortion Correction Engine (DCE)
+### 2.9 Distortion Correction Engine (DCE)
 
-#### Overview
+#### 2.9.1 Overview
 
 This is lens distortion calibration module, it can perform calibration on wide-angle lens and fish-eye lens.
 
-#### DCE Parameter Description
+#### 2.9.2 DCE Parameter Description
 
 | Parameter | Range       | Default | Description                                                                                                                                                                                                                                                                 |
 |-----------|-------------|---------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -1288,11 +1346,11 @@ This is lens distortion calibration module, it can perform calibration on wide-a
 | yofs_i    | 0\~127      | 0       | 2DLut y offset, integer part. It is recommend to set 0, if user need to adjust the DCE performance, user need to change the 2DLUT value.                                                                                                                                    |
 | yofs_f    | 0\~224-1    | 0       | 2DLut y offset, fraction part. It is recommend to set 0, if user need to adjust the DCE performance, user need to change the 2DLUT value.                                                                                                                                   |
 
-### DC Table Generator
+### 2.10 DC Table Generator
 
 For perspective projection application, in order to increase the convenience of usage, DCTG module let user to set the desired angle and size with an instinct way to generate DCE parameters automatically.
 
-#### Overview
+#### 2.10.1 Overview
 
 DCTG generate DCE 2D-LUT for perspective projection. Whenever this function is enabled, manual set DCE 2D-LUT function will be invalid.
 
@@ -1312,9 +1370,9 @@ Define the rotate angle of FOV by phi_st/phi_ed, and then rotate to FOV location
 
 Define the top/bottom angle of FOV by theta_st/theta_ed, and then rotate to FOV location by rot_z.
 
-![](nvt_media/cd0b976666f1953455c6d14398ba0a66.png)![](nvt_media/26d92d917ee155e047f26e92b20be608.png)
+![D:\\work6\\636\\fhtml\\NT9833x_HDAL_Vendor_Media_Programming_Guide_en.files\\image006.jpg](nvt_media/16f27c2b5615de951415edfb69ebe04c.jpg)![D:\\work6\\636\\fhtml\\NT9833x_HDAL_Vendor_Media_Programming_Guide_en.files\\image007.jpg](nvt_media/1e896ec21bcd2ed387774aef387aa98d.jpg)
 
-#### DCTG Parameter Description
+#### 2.10.2 DCTG Parameter Description
 
 | Parameter  | Range                               | Default | Description                                                                                                                             |
 |------------|-------------------------------------|---------|-----------------------------------------------------------------------------------------------------------------------------------------|
@@ -1331,8 +1389,10 @@ Define the top/bottom angle of FOV by theta_st/theta_ed, and then rotate to FOV 
 | rot_z      | s4.16 -220 \~ 220-1                 | 0       | Z-axis rotate radian. (-2\*pi \~ 2\*pi)                                                                                                 |
 | rot_y      | s4.16 -220 \~ 220-1                 | 0       | Y-zxis rotate radian. (-2\*pi \~ 2\*pi)                                                                                                 |
 
-#### Advance description:
+#### 2.10.3 Advance description:
 
--   **lens_r:** The valid radius of fish-eye device
--   **lens_x\_**st : The start x position of fish-eye lens at the source image, the unit is pixel.
--   **lens_y_st :** The start y position of fish-eye lens at the source image, the unit is pixel. ![](nvt_media/95ec8c69aa74ea93bef7c47133f014f4.png)
+ **lens_r:** The valid radius of fish-eye device
+
+ **lens_x\_**st : The start x position of fish-eye lens at the source image, the unit is pixel.
+
+ **lens_y_st :** The start y position of fish-eye lens at the source image, the unit is pixel. ![D:\\work6\\636\\fhtml\\NT9833x_HDAL_Vendor_Media_Programming_Guide_en.files\\image008.gif](nvt_media/3808678f2e50439e1dc221d828a3bf5d.gif)

@@ -46,7 +46,7 @@ You will get the folder tree as below:
 
 ### 2.3 System Board Connection
 
-![D:\\work6\\636\\fhtml\\NT9833x_DVR_NVR_SDK_Quick_Start.files\\image002.jpg](nvt_media/85ff9924040871dc0933eb670c2039b1.jpg)
+![D:\\work6\\636\\fhtml\\NT9833x_DVR_NVR_SDK_Quick_Start.files\\image003.jpg](nvt_media/85ff9924040871dc0933eb670c2039b1.jpg)
 
 1\. 12V input
 
@@ -84,9 +84,9 @@ Please refer to *NT9833x_Quick_Bringup_User_Guide_en.pdf* for detail information
 
 The 98633 board is different from the 98336 board, please refer to the below figure or refer to *NT98633_NVR_EVB_User Guide_V1.0.pdf* to setup the hardware environment.
 
-![D:\\work6\\636\\fhtml\\NT9833x_DVR_NVR_SDK_Quick_Start.files\\image003.png](nvt_media/957fb7ab0ac6be253c494ae5a17748ef.png)
+![D:\\work6\\636\\fhtml\\NT9833x_DVR_NVR_SDK_Quick_Start.files\\image004.png](nvt_media/957fb7ab0ac6be253c494ae5a17748ef.png)
 
-![D:\\work6\\636\\fhtml\\NT9833x_DVR_NVR_SDK_Quick_Start.files\\image004.jpg](nvt_media/0a843c4c042bfce2f78478e1d84200d8.jpg)
+![D:\\work6\\636\\fhtml\\NT9833x_DVR_NVR_SDK_Quick_Start.files\\image005.jpg](nvt_media/0a843c4c042bfce2f78478e1d84200d8.jpg)
 
 ## 3 Environment Setup
 
@@ -274,7 +274,7 @@ make pack_clean -\> Remove nvtpack image
 
 After “*make all*”, you can get the images in *“na51090_linux_sdk/output”*. And to try the images, you can select the jumper setting in EVB to enter FW upgrade mode first, and then use the following tool “*FwUpgrade.exe*” to burn the images into the flash memory.
 
-![D:\\work6\\636\\fhtml\\NT9833x_DVR_NVR_SDK_Quick_Start.files\\image005.jpg](nvt_media/0b18db23c16d74408ff1e005cb30cb46.jpg)
+![D:\\work6\\636\\fhtml\\NT9833x_DVR_NVR_SDK_Quick_Start.files\\image006.jpg](nvt_media/0b18db23c16d74408ff1e005cb30cb46.jpg)
 
 The all-in-one image (\\na51090_linux_sdk\\output\\packed\\FW98336A.bin) is packed by the description in \\na51090_linux_sdk\\configs\\Linux\\cfg_XXX\\nvt-nvtpack.dtsi:
 
@@ -299,7 +299,7 @@ For more information about the firmware upgrade tool, you can refer to the docum
 
 The following figure shows the booting sequence of NT9833x SDK. When the NT9833x system is powered on, the embedded ROM code is executed. The ROM code loads the loader code from the flash into the embedded SRAM and then executes the loader. The loader initializes DDR and loads FDT, ATF, OPTEE(optional) and uboot from the flash into DDR and jump into ATF. The ATF runs the arm trusted firmware and boot OPTEE(optional) and then jump into the uboot. The uboot initializes the basic hardware and loads linux image from the flash into DDR, and then bring up the linux kernel. Two stages during the linux bring up: the vg_boot.sh add the device modules into the linux kernel and the module_init initiates the external devices, such as AD, audio and the displayer.
 
-![D:\\work6\\636\\fhtml\\NT9833x_DVR_NVR_SDK_Quick_Start.files\\image006.jpg](nvt_media/f8ca21621e52c54d182bf2194b506ba3.jpg)
+![D:\\work6\\636\\fhtml\\NT9833x_DVR_NVR_SDK_Quick_Start.files\\image007.jpg](nvt_media/f8ca21621e52c54d182bf2194b506ba3.jpg)
 
 ### 4.2 vg_boot.sh
 
@@ -314,7 +314,7 @@ The vg_boot.sh insert the device modules into the linux kernel and finally run t
 
 The main functions of *module_init.c* are the buffer management and the external devices handling. The following figure shows the program flow of *module_init.c*.
 
-![D:\\work6\\636\\fhtml\\NT9833x_DVR_NVR_SDK_Quick_Start.files\\image007.jpg](nvt_media/e40f0842e2e684698f2781e4bca16f66.jpg)
+![D:\\work6\\636\\fhtml\\NT9833x_DVR_NVR_SDK_Quick_Start.files\\image008.jpg](nvt_media/e40f0842e2e684698f2781e4bca16f66.jpg)
 
 #### 4.3.1 Memory Pool Setup
 
@@ -325,15 +325,15 @@ The main functions of *module_init.c* are the buffer management and the external
 
 And about the memory pool placement in HDAL, you can use *DVR_XXX.xls* to calculate the pool size, and then copy the results into the *cfg_DVR_XXX.dts*.
 
-![D:\\work6\\636\\fhtml\\NT9833x_DVR_NVR_SDK_Quick_Start.files\\image008.jpg](nvt_media/573e479e7832824386719fc281441fd2.jpg)
+![D:\\work6\\636\\fhtml\\NT9833x_DVR_NVR_SDK_Quick_Start.files\\image009.jpg](nvt_media/573e479e7832824386719fc281441fd2.jpg)
 
 The HDAL memory is used in the HDAL and the module drivers. The following figure shows three scenarios for using the HDAL memory.
 
-![D:\\work6\\636\\fhtml\\NT9833x_DVR_NVR_SDK_Quick_Start.files\\image009.jpg](nvt_media/40d4ac5bb77f8e28e8743840a445abf4.jpg)
+![D:\\work6\\636\\fhtml\\NT9833x_DVR_NVR_SDK_Quick_Start.files\\image010.jpg](nvt_media/40d4ac5bb77f8e28e8743840a445abf4.jpg)
 
 The *assign_pool_addr()* in *module_init.c* will assign the physical address to each pool, and the memory placement will be as:
 
-![D:\\work6\\636\\fhtml\\NT9833x_DVR_NVR_SDK_Quick_Start.files\\image010.jpg](nvt_media/92a0f2d78ed97fdf0657aa7e36507ba6.jpg)
+![D:\\work6\\636\\fhtml\\NT9833x_DVR_NVR_SDK_Quick_Start.files\\image011.jpg](nvt_media/92a0f2d78ed97fdf0657aa7e36507ba6.jpg)
 
 #### 4.3.2 Video Output Setup
 
@@ -431,14 +431,14 @@ For more information, please refer to the document “*Novatek HDAL Programmer's
 
 Stream Flow:
 
-![D:\\work6\\636\\fhtml\\NT9833x_DVR_NVR_SDK_Quick_Start.files\\image011.jpg](nvt_media/d5b74ffb2aa37e99c1614be5ceb795c9.jpg)
+![D:\\work6\\636\\fhtml\\NT9833x_DVR_NVR_SDK_Quick_Start.files\\image012.jpg](nvt_media/d5b74ffb2aa37e99c1614be5ceb795c9.jpg)
 
 | root@NVTEVM:\~\$ **cat /proc/videograph/graph** entity (jobs) pool name (done buffers/max buffers) ----------------------------------------------------------- vcap0_0_4_0 (4) (enc_cap_out_ddr0, --, --, --) (0/4)  -\>\*kflow_osg_0_0_10 (0) (enc_cap_out_ddr0, --, --, --) (0/0)  -\>h26xenc_0_0_0 (0) (enc_out_ddr0, --, --, --) (0/4)  -\>dataout_0_0_0 (0) |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 Sample code flow:
 
-![D:\\work6\\636\\fhtml\\NT9833x_DVR_NVR_SDK_Quick_Start.files\\image012.png](nvt_media/2b56a44a0ce5ac5e18bbf296ec727dcd.png)
+![D:\\work6\\636\\fhtml\\NT9833x_DVR_NVR_SDK_Quick_Start.files\\image013.png](nvt_media/2b56a44a0ce5ac5e18bbf296ec727dcd.png)
 
 1\. Initiate the HDAL.
 
@@ -516,7 +516,7 @@ Sample code flow:
 
 Stream flow:
 
-![D:\\work6\\636\\fhtml\\NT9833x_DVR_NVR_SDK_Quick_Start.files\\image013.jpg](nvt_media/10c31dc9f9faf8fd10cfbc114f4fd154.jpg)
+![D:\\work6\\636\\fhtml\\NT9833x_DVR_NVR_SDK_Quick_Start.files\\image014.jpg](nvt_media/10c31dc9f9faf8fd10cfbc114f4fd154.jpg)
 
 | root@NVTEVM:\~\$ **cat /proc/videograph/graph** entity (jobs) pool name (done buffers/max buffers) ----------------------------------------------------------- vcap0_0_4_0 (4) (enc_cap_out_ddr0, --, --, --) (0/4)  -\>\*kflow_osg_0_0_10 (0) (enc_cap_out_ddr0, --, --, --) (0/0)  -\>h26xenc_0_0_0 (0) (enc_out_ddr0, --, --, --) (0/4)  -\>dataout_0_0_0 (1)   root@NVTEVM:\~\$ **cat /proc/hdal/flow** ...  hd_videoenc_set(IN_STAMP_IMG):  path_id(0x22008201)  pxlfmt(0x21101555) dim(400,100) ddr(0) pa(0x1655a000) hd_videoenc_set(IN_STAMP_ATTR):  path_id(0x22008201)  type(0) alpha(7) pos(0,0)  gcac_en(0) gcac_w(64) gcac_h(32)  pa(0x1655a000) ddr(0)  ... |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -554,7 +554,7 @@ The sample code flow is the same as the “*encode_with_nr.c*”, except for the
 
 Stream flow:
 
-![D:\\work6\\636\\fhtml\\NT9833x_DVR_NVR_SDK_Quick_Start.files\\image014.jpg](nvt_media/a418f1695cff2c02487cb0dd87d009d9.jpg)
+![D:\\work6\\636\\fhtml\\NT9833x_DVR_NVR_SDK_Quick_Start.files\\image015.jpg](nvt_media/a418f1695cff2c02487cb0dd87d009d9.jpg)
 
 | root@NVTEVM:\~\$ **cat /proc/videograph/graph** entity (jobs) pool name (done buffers/max buffers) ----------------------------------------------------------- vcap0_0_4_0 (4) (enc_cap_out_ddr0, --, --, --) (0/4)  -\>\*kflow_osg_0_0_10 (0) (enc_cap_out_ddr0, --, --, --) (0/0)  -\>h26xenc_0_0_0 (0) (enc_out_ddr0, --, --, --) (0/4)  -\>dataout_0_0_0 (1)   root@NVTEVM:\~\$ **cat /proc/hdal/flow** ... hd_videoenc_set(IN_MASK_ATTR):  path_id(0x2200e201)  type(0x1) alpha(128) color(0)  pos0(0,0) pos1(64,0) pos2(64,32) pos3(0,32) hd_videoenc_start:  path_id(0x2200e201) ... hd_videoenc_set(IN_MOSAIC_ATTR):  path_id(0x2200e601)  type(0x1) alpha(256) blk_wh(32,32)  pos0(240,135) pos1(368,135) pos2(368,263) pos3(240,263) hd_videoenc_start:  path_id(0x2200e601) ... |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -592,14 +592,14 @@ The sample code flow is the same as the “*encode_with_nr.c*”, except for the
 
 The stream flow of the sample code “*liveview_1div_to_4div.c*”:
 
-![D:\\work6\\636\\fhtml\\NT9833x_DVR_NVR_SDK_Quick_Start.files\\image015.jpg](nvt_media/e4105436efb74df58f16383ccf090878.jpg)
+![D:\\work6\\636\\fhtml\\NT9833x_DVR_NVR_SDK_Quick_Start.files\\image016.jpg](nvt_media/e4105436efb74df58f16383ccf090878.jpg)
 
 | root@NVTEVM:\~\$ **cat /proc/videograph/graph** entity (jobs) pool name (done buffers/max buffers) ----------------------------------------------------------- vcap0_0_4_0 (3) (disp0_cap_out_ddr0, --, --, --) (0/4)  -\>kflow_vpe_0_0_0 (0) (disp0_in_ddr0, --, --, --) (0/3)  -\>\*kflow_osg_0_0_0 (0) (disp0_in_ddr0, --, --, --) (0/0)  -\>lcd0vg_0_0_0 (2) vcap0_0_6_0 (3) (disp0_cap_out_ddr0, --, --, --) (0/4)  -\>kflow_vpe_0_0_1 (0) (disp0_in_ddr0, --, --, --) (0/3) vcap0_0_0_0 (3) (disp0_cap_out_ddr0, --, --, --) (0/4)  -\>kflow_vpe_0_0_2 (0) (disp0_in_ddr0, --, --, --) (0/3) vcap0_0_2_0 (3) (disp0_cap_out_ddr0, --, --, --) (0/4)  -\>kflow_vpe_0_0_3 (0) (disp0_in_ddr0, --, --, --) (0/3) |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 Sample code flow:
 
-![D:\\work6\\636\\fhtml\\NT9833x_DVR_NVR_SDK_Quick_Start.files\\image016.png](nvt_media/b7ad50db990302675cabbf7cf8c5f5fc.png)
+![D:\\work6\\636\\fhtml\\NT9833x_DVR_NVR_SDK_Quick_Start.files\\image017.png](nvt_media/b7ad50db990302675cabbf7cf8c5f5fc.png)
 
 1\. Initiate the HDAL.
 
@@ -674,14 +674,14 @@ Sample code flow:
 
 The stream flow of the sample code “*playback_1div_to_4div.c*”:
 
-![D:\\work6\\636\\fhtml\\NT9833x_DVR_NVR_SDK_Quick_Start.files\\image017.jpg](nvt_media/2847265d48d26eb03cdbfe6aaf47ec77.jpg)
+![D:\\work6\\636\\fhtml\\NT9833x_DVR_NVR_SDK_Quick_Start.files\\image018.jpg](nvt_media/2847265d48d26eb03cdbfe6aaf47ec77.jpg)
 
 | root@NVTEVM:\~\$ **cat /proc/videograph/graph** entity (jobs) pool name (done buffers/max buffers) ----------------------------------------------------------- datain_0_0_0 (1) (disp_dec_in_ddr0, --, --, --) (5/8)  -\>decode_0_0_0 (1) (disp_dec_out_ddr0, disp_dec_out_ratio_ddr0, --, --) (2/3)  -\>kflow_vpe_0_0_0 (0) (disp0_in_ddr0, --, --, --) (0/3)  -\>\*kflow_osg_0_0_0 (0) (disp0_in_ddr0, --, --, --) (0/0)  -\>lcd0vg_0_0_0 (2) datain_0_0_1 (0) (disp_dec_in_ddr0, --, --, --) (5/8)  -\>decode_0_0_1 (1) (disp_dec_out_ddr0, disp_dec_out_ratio_ddr0, --, --) (2/3)  -\>kflow_vpe_0_0_1 (0) (disp0_in_ddr0, --, --, --) (0/3) datain_0_0_2 (0) (disp_dec_in_ddr0, --, --, --) (5/8)  -\>decode_0_0_2 (1) (disp_dec_out_ddr0, disp_dec_out_ratio_ddr0, --, --) (2/3)  -\>kflow_vpe_0_0_2 (0) (disp0_in_ddr0, --, --, --) (0/3) datain_0_0_3 (0) (disp_dec_in_ddr0, --, --, --) (5/8)  -\>decode_0_0_3 (1) (disp_dec_out_ddr0, disp_dec_out_ratio_ddr0, --, --) (2/3)  -\>kflow_vpe_0_0_3 (0) (disp0_in_ddr0, --, --, --) (0/3) |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 Sample code flow:
 
-![D:\\work6\\636\\fhtml\\NT9833x_DVR_NVR_SDK_Quick_Start.files\\image018.png](nvt_media/1b32ed82a375f85adf158a1d245ca301.png)
+![D:\\work6\\636\\fhtml\\NT9833x_DVR_NVR_SDK_Quick_Start.files\\image019.png](nvt_media/1b32ed82a375f85adf158a1d245ca301.png)
 
 1\. Initiate the HDAL.
 
@@ -771,14 +771,14 @@ Sample code flow:
 
 The stream flow of the sample code “*display_to_encode.c*”:
 
-![D:\\work6\\636\\fhtml\\NT9833x_DVR_NVR_SDK_Quick_Start.files\\image019.jpg](nvt_media/62a8015bbb2a3848fc6ca210bd837e62.jpg)
+![D:\\work6\\636\\fhtml\\NT9833x_DVR_NVR_SDK_Quick_Start.files\\image020.jpg](nvt_media/93da28623f522226620b04df9d2534f0.jpg)
 
 | root@NVTEVM:\~\$ **cat /proc/videograph/graph** entity (jobs) pool name (done buffers/max buffers) ----------------------------------------------------------- vcap0_0_4_0 (2) (disp0_cap_out_ddr0, --, --, --) (1/4)  -\>kflow_vpe_0_0_0 (0) (disp0_in_ddr0, --, --, --) (0/3)  -\>\*kflow_osg_0_0_0 (0) (disp0_in_ddr0, --, --, --) (0/0)  -\>lcd0vg_0_0_0 (2)  -\>kflow_vpe_0_0_4 (0) (enc_scl_out_ddr0, --, --, --) (0/4)  -\>\*kflow_osg_0_0_10 (0)(enc_scl_out_ddr0, --, --, --) (0/0)  -\>h26xenc_0_0_0 (0) (enc_out_ddr0, --, --, --) (0/4)  -\>dataout_0_0_0 (1) vcap0_0_6_0 (3) (disp0_cap_out_ddr0, --, --, --) (0/4)  -\>kflow_vpe_0_0_1 (0) (disp0_in_ddr0, --, --, --) (0/3) vcap0_0_0_0 (3) (disp0_cap_out_ddr0, --, --, --) (0/4)  -\>kflow_vpe_0_0_2 (0) (disp0_in_ddr0, --, --, --) (0/3) vcap0_0_2_0 (3) (disp0_cap_out_ddr0, --, --, --) (0/4)  -\>kflow_vpe_0_0_3 (0) (disp0_in_ddr0, --, --, --) (0/3) |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 Sample code flow:
 
-![D:\\work6\\636\\fhtml\\NT9833x_DVR_NVR_SDK_Quick_Start.files\\image020.png](nvt_media/7c4e05717ecfc666ba5a57c10dd67a7b.png)
+![D:\\work6\\636\\fhtml\\NT9833x_DVR_NVR_SDK_Quick_Start.files\\image021.png](nvt_media/7c4e05717ecfc666ba5a57c10dd67a7b.png)
 
 1\. Initiate the HDAL.
 

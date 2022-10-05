@@ -8,7 +8,7 @@ The motion detection supports applications including global motion detection, su
 
 By using a fixed camera, global motion detection issues alarm if the area of moving objects is larger than the user-defined threshold.
 
-![D:\\work6\\636\\fhtml\\NT9833X_MD_User_Guide_en.files\\image002.gif](nvt_media/402573d7ddb5ab9cf67ff173bdc2a307.gif)
+![D:\\work6\\636\\fhtml\\NT9833X_MD_User_Guide_en.files\\image003.gif](nvt_media/402573d7ddb5ab9cf67ff173bdc2a307.gif)
 
 Figure 1 Global motion detection
 
@@ -16,7 +16,7 @@ Figure 1 Global motion detection
 
 By using a fixed camera, this function issues a sub-region motion alarm if the area of moving objects in the user-defined regions is larger than the user-defined threshold.
 
-![D:\\work6\\636\\fhtml\\NT9833X_MD_User_Guide_en.files\\image003.gif](nvt_media/ef4723d2898d0367530a02f60494145f.gif)
+![D:\\work6\\636\\fhtml\\NT9833X_MD_User_Guide_en.files\\image004.gif](nvt_media/ef4723d2898d0367530a02f60494145f.gif)
 
 Figure 2 Sub-region motion alarm
 
@@ -24,7 +24,7 @@ Figure 2 Sub-region motion alarm
 
 By using a fixed camera, it detects moving objects if their areas are larger than a user-defined threshold. It also reports the sizes and coordinates of detected moving objects.
 
-![D:\\work6\\636\\fhtml\\NT9833X_MD_User_Guide_en.files\\image004.gif](nvt_media/c0de02ad3d8dfd3dee63b084184e71d1.gif)
+![D:\\work6\\636\\fhtml\\NT9833X_MD_User_Guide_en.files\\image005.gif](nvt_media/c0de02ad3d8dfd3dee63b084184e71d1.gif)
 
 Figure 3 Motion objects detection
 
@@ -32,7 +32,7 @@ Figure 3 Motion objects detection
 
 By using a fixed camera, it issues a tamper alarm if the occlusion area is larger than a user-defined area threshold.
 
-![D:\\work6\\636\\fhtml\\NT9833X_MD_User_Guide_en.files\\image005.jpg](nvt_media/47668080c467f11b81bcb464d9856212.jpg)
+![D:\\work6\\636\\fhtml\\NT9833X_MD_User_Guide_en.files\\image006.jpg](nvt_media/47668080c467f11b81bcb464d9856212.jpg)
 
 Figure 4: Tamper Detection
 
@@ -46,13 +46,13 @@ Step. 2: Micro block (MB) map is used in motion detection. The size of each MB c
 
 Step. 3: Updating the background model by using current frame information.
 
-![D:\\work6\\636\\fhtml\\NT9833X_MD_User_Guide_en.files\\image006.gif](nvt_media/b6a03746a9f2e830424ef691db40c762.gif)
+![D:\\work6\\636\\fhtml\\NT9833X_MD_User_Guide_en.files\\image007.gif](nvt_media/b6a03746a9f2e830424ef691db40c762.gif)
 
 Figure 5. The flowchart of MD algoritm
 
 ### 1.3 Process Flow
 
-![D:\\work6\\636\\fhtml\\NT9833X_MD_User_Guide_en.files\\image007.gif](nvt_media/c5a40d37e3ed5a4a5b8652d4912f00d2.gif)
+![D:\\work6\\636\\fhtml\\NT9833X_MD_User_Guide_en.files\\image008.gif](nvt_media/c5a40d37e3ed5a4a5b8652d4912f00d2.gif)
 
 Figure 6. The process flow of MD
 
@@ -465,10 +465,10 @@ libmd result structure lists as following.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 typedef struct _LIB_MD_MDT_RESULT_INFO {
      UINT8         global_motion_alarm;                         ///< global motion alarm   
-     UINT32        global_motion_alarm_num;                     ///< global motion alarm num
+     UINT32        global_motion_alarm_num;                     ///< global motion alarm num
      UINT32        sub_motion_alarm[LIB_MD_MAX_SUB_REGION_NUM]; ///< sub-region motion alarm
      UINT32        obj_num;                                    ///< detect object number (max=128)
-     LIB_MD_AP_OBJ_INFO  obj[LIB_MD_MAX_OBJ_NUM];               ///< detect object info
+     LIB_MD_AP_OBJ_INFO  obj[LIB_MD_MAX_OBJ_NUM];               ///< detect object info
      LIB_MD_EVT_INFO vp_evt_info;
 } LIB_MD_MDT_RESULT_INFO;
  
@@ -480,7 +480,7 @@ typedef struct _LIB_MD_EVT_INFO {
  
 typedef struct _LIB_MD_AP_OBJ_INFO {
      UINT32        start_x;                  ///< obj rectangle left upper x position (virtual pixel)  
-     UINT32        start_y;                  ///< obj rectangle left upper y position (virtual pixel)  
+     UINT32        start_y;                  ///< obj rectangle left upper y position (virtual pixel)  
      UINT32        end_x;                    ///< obj rectangle right down x position (virtual pixel)  
      UINT32        end_y;                    ///< obj rectangle right down y position (virtual pixel)  
      UINT32        label;                    ///< obj label

@@ -2,6 +2,7 @@ site_name: NT98336/NT98633 Documents
 nav:
     #- Home: index.md
     - Software: 
+       - Quick Start: Software/NT9833x_DVR_NVR_SDK_Quick_Start.md  
        - CVAI:
            - MD User Guide: Software/CVAI/NT9833X_MD_User_Guide_en.md
            - IVE User Guide: Software/CVAI/NT9833X_IVE_User_Guide_en.md
@@ -17,8 +18,7 @@ nav:
        - OSDRV:
           - Linux Programming Guide: Software/OSDRV/NT9833x_SDK_Pure_Linux_Programming_Guide_en.md 
           - Quick Bringup User Guide: Software/OSDRV/NT9833x_Quick_Bringup_User_Guide_en.md 
-          - PCIe User Guide: Software/OSDRV/NT9833x_PCIe_User_Guide_en.md  
-       - Quick Start: Software/NT9833x_DVR_NVR_SDK_Quick_Start.md   
+          - PCIe User Guide: Software/OSDRV/NT9833x_PCIe_User_Guide_en.md   
     - Hardware(Not Ready): 
        - Not Ready: 
           - not_ready - not_reay.md
@@ -28,9 +28,16 @@ nav:
 theme:
   name: material
   highlightjs: true 
+  language: en
+  font:
+    text: Roboto
+    code: Roboto Mono
   features:
     - search.highlight
     - navigation.tabs
+    - content.code.annotate
+    - navigation.indexes
+    - toc.follow
 markdown_extensions:
     - smarty
     - toc:

@@ -1,10 +1,10 @@
-## Introduction
+## 1 Introduction
 
-## Vendor_ad Function Parameter IDs and data structure definition
+## 2 Vendor_ad Function Parameter IDs and data structure definition
 
-### Function Definition
+### 2.1 Function Definition
 
-#### vendor_ad_init
+#### 2.1.1 vendor_ad_init
 
 [Description]
 
@@ -27,7 +27,7 @@ HD_RESULT vendor_ad_init(CHAR \*ad_dev_name)
 | HD_OK      | Success                     |
 | HD_ERR_SYS | Open ad device file failure |
 
-#### vendor_ad_uninit
+#### 2.1.2 vendor_ad_uninit
 
 [Description]
 
@@ -50,7 +50,7 @@ HD_RESULT vendor_ad_uninit(VOID)
 | HD_OK     | Success     |
 | HD_ERR_NG | Failure     |
 
-#### vendor_ad_get
+#### 2.1.3 vendor_ad_get
 
 [Description]
 
@@ -75,36 +75,53 @@ HD_RESULT vendor_ad_get(VENDOR_AD_PARAM_ID id, void \*p_param);
 | HD_ERR_NG          | Failure                    |
 | HD_ERR_NOT_SUPPORT | Not support this parameter |
 
-#### vendor_ad_set
+#### 2.1.4 vendor_ad_set
 
 [Description]
 
 Not support
 
-### Parameters IDs and data structure definition
+### 2.2 Parameters IDs and data structure definition
 
 The function vendor_ad_get provides the following parameter IDs:
 
--   VENDOR_AD_PARAM_TP28XX_DEVICE_INFO
-    -   support get with tp28xx device info
-    -   using VENDOR_AD_TP28XX_DEVICE_INFO struct
--   VENDOR_AD_PARAM_TP28XX_DEVICE_NORM
-    -   support get with tp28xx device norm
-    -   using VENDOR_AD_TP28XX_DEVICE_NORM struct
--   VENDOR_AD_PARAM_TP28XX_DEVICE_LOSS
-    -   support get with tp28xx device loss
-    -   using VENDOR_AD_TP28XX_DEVICE_LOSS struct
--   VENDOR_AD_PARAM_NVP61XX_DEVICE_INFO
-    -   support get with nvp61xx device info
-    -   using VENDOR_AD_NVP61XX_DEVICE_INFO struct
--   VENDOR_AD_PARAM\_ NVP61XX_DEVICE_NORM
-    -   support get with nvp61xx device norm
-    -   using VENDOR_AD\_ NVP61XX_DEVICE_NORM struct
--   VENDOR_AD_PARAM_NVP61XX_DEVICE_LOSS
-    -   support get with nvp61xx device loss
-    -   using VENDOR_AD_NVP61XX_DEVICE_LOSS struct
+ VENDOR_AD_PARAM_TP28XX_DEVICE_INFO
 
-#### VENDOR_AD_TP28XX_DEVICE_INFO
+ support get with tp28xx device info
+
+ using VENDOR_AD_TP28XX_DEVICE_INFO struct
+
+ VENDOR_AD_PARAM_TP28XX_DEVICE_NORM
+
+ support get with tp28xx device norm
+
+ using VENDOR_AD_TP28XX_DEVICE_NORM struct
+
+ VENDOR_AD_PARAM_TP28XX_DEVICE_LOSS
+
+ support get with tp28xx device loss
+
+ using VENDOR_AD_TP28XX_DEVICE_LOSS struct
+
+ VENDOR_AD_PARAM_NVP61XX_DEVICE_INFO
+
+ support get with nvp61xx device info
+
+ using VENDOR_AD_NVP61XX_DEVICE_INFO struct
+
+ VENDOR_AD_PARAM\_ NVP61XX_DEVICE_NORM
+
+ support get with nvp61xx device norm
+
+ using VENDOR_AD\_ NVP61XX_DEVICE_NORM struct
+
+ VENDOR_AD_PARAM_NVP61XX_DEVICE_LOSS
+
+ support get with nvp61xx device loss
+
+ using VENDOR_AD_NVP61XX_DEVICE_LOSS struct
+
+#### 2.2.1 VENDOR_AD_TP28XX_DEVICE_INFO
 
 [Description]
 
@@ -131,7 +148,7 @@ Get tp28xx device information
 | vin.vi         | Backend vi index of this vcap                                   |
 | vin.ch         | Backend ch index of this vi, vin grab via this vi channel       |
 
-#### VENDOR_AD_TP28XX_VIDEO_NORM
+#### 2.2.2 VENDOR_AD_TP28XX_VIDEO_NORM
 
 [Description]
 
@@ -154,7 +171,7 @@ Get tp28xx video norm
 | out_data_latch | channel output data latch mode                                  |
 | out_horiz_dup  | channel output horizontal pixel duplicate mode                  |
 
-#### VENDOR_AD_TP28XX_VIDEO_LOSS
+#### 2.2.3 VENDOR_AD_TP28XX_VIDEO_LOSS
 
 [Description]
 
@@ -168,7 +185,7 @@ Get tp28xx video loss
 | ch      | channel index          |
 | is_lost | 1: is_lost, 0:present  |
 
-#### VENDOR_AD_NVP61XX_DEVICE_INFO
+#### 2.2.4 VENDOR_AD_NVP61XX_DEVICE_INFO
 
 [Description]
 
@@ -195,7 +212,7 @@ Get nvp61xx device information
 | vin.vi         | Backend vi index of this vcap                                   |
 | vin.ch         | Backend ch index of this vi, vin grab via this vi channel       |
 
-#### VENDOR_AD_NVP61XX_VIDEO_NORM
+#### 2.2.5 VENDOR_AD_NVP61XX_VIDEO_NORM
 
 [Description]
 
@@ -218,7 +235,7 @@ Get nvp61xx video norm
 | out_data_latch | channel output data latch mode                                  |
 | out_horiz_dup  | channel output horizontal pixel duplicate mode                  |
 
-#### VENDOR_AD_NVP61XX_VIDEO_LOSS
+#### 2.2.6 VENDOR_AD_NVP61XX_VIDEO_LOSS
 
 [Description]
 
@@ -232,7 +249,7 @@ Get nvp61xx video loss
 | ch      | channel index          |
 | is_lost | 1: is_lost, 0:present  |
 
-## Vendor_video Function Parameter IDs and Data structure definition
+## 3 Vendor_video Function Parameter IDs and Data structure definition
 
 Please refer to document NT9833x_HDAL_Vendor_Media_Programming_Guide_en.doc.
 

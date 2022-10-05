@@ -1,3 +1,19 @@
+## 1 Overview
+
+Interlace image use interlace format during capture, transmission and store. The capture time of neighbor field is not the same, the neighbor field can not be combined perfectly. Therefore, if using progressive scanning display to play interlance video, motion part in image will appears sawtooth phenomenon. For scene change condition, it will have ghost phenomenon that two scenes showing at the same time. It needs de-interlace to transform interlace image to progressive image to solve this problem.
+
+![D:\\work6\\636\\fhtml\\NT9833x_DI_Tuning_Guide_en.files\\image003.png](nvt_media/33be6c62de37a601d886a15503618e45.png)
+
+Table 11 NT9833x Image Process Flow
+
+De-interlace Engine(DIE) is an independent D2D image process engine in YUV domain, the major function is to perform de-interlace(interlace transform to progressive) process. It includes the following three modules:
+
+ Motion Detection Module (MD)
+
+ Temporal Noise Reduction Module (TMNR)
+
+ De-Interlace Module (De-Interlace (DI))
+
 ## System Control
 
 ### 1.1 Parameter Description
@@ -20,7 +36,7 @@ Read or write the current camera channel, and it only needs to set once, the fol
 
 The following proc command will list all ch_fd of the current video engine.
 
-![D:\\work6\\636\\fhtml\\NT9833x_DI_Tuning_Guide_en.files\\image003.png](nvt_media/76aff5e0a10519f1d10db92205f4d993.png)
+![456](nvt_media/76aff5e0a10519f1d10db92205f4d993.png)
 
 **[Command]**
 
@@ -32,7 +48,7 @@ The following proc command will list all ch_fd of the current video engine.
 
 Read : cat /proc/videograph/di/ch_fd
 
-**![文字方塊: Command : echo [fd] \> /proc/videograph/di/ch_fd Current channel = ch_fd ](nvt_media/2908b0054f8994b811ea259059987363.png)**
+**![Command : echo [fd] \> /proc/videograph/di/ch_fd Current channel = ch_fd ](nvt_media/0940f5b1b187986353c6b94ae6a9095e.png)**
 
 ## 2 GMM
 
@@ -80,7 +96,7 @@ Read all GMM parameters of the current camera channel.
 
 **Read : cat /proc/videograph/di/gmm/dump_info**
 
-**Output: ![文字方塊: gmm_alpha = … gmm_one_min_alpha = gmm_init_val = gmm_tb = gmm_sigma = gmm_tg = gmm_prune = ](nvt_media/025cf3094f23e0f923a4b53486680cf8.png)**
+**Output: ![gmm_alpha = … gmm_one_min_alpha = gmm_init_val = gmm_tb = gmm_sigma = gmm_tg = gmm_prune = ](nvt_media/be0edcd4ee86542e5f5027a035f2a177.png)**
 
 ######  /proc/videograph/di/gmm/enable
 
@@ -98,7 +114,7 @@ Read or witer the GMM enable status of the current camera channel.
 
 **Read : cat /proc/videograph/di/gmm/enable**
 
-**Output: ![文字方塊: Command : echo [enable 0\~1] \> /proc/videograph/di/gmm/enable channel \<ch_no\> = gmm_en ](nvt_media/5839dec46b55b4dfe46ad71063d323d6.png)**
+**Output: ![Command : echo [enable 0\~1] \> /proc/videograph/di/gmm/enable channel \<ch_no\> = gmm_en ](nvt_media/1765b4909c84a9b8160e46528a1e3fb7.png)**
 
 ######  /proc/videograph/di/gmm/alpha
 
@@ -116,7 +132,7 @@ Read or write the GMM/alpha parameter of the current camera channel.
 
 **Read : cat /proc/videograph/di/gmm/alpha**
 
-**Output: ![文字方塊: Command : echo [alpha 0\~32767] \> /proc/videograph/di/gmm/alpha gmm_alpha = gmm_alpha ](nvt_media/75b1f637d8157c80819daf498de42f28.png)**
+**Output: ![Command : echo [alpha 0\~32767] \> /proc/videograph/di/gmm/alpha gmm_alpha = gmm_alpha ](nvt_media/60986f046a67cbfeba947eaac8d5cb6c.png)**
 
 ######  /proc/videograph/di/gmm/one_alpha
 
@@ -134,7 +150,7 @@ Read or write the GMM parameter of the current camera channel.
 
 **Read : cat /proc/videograph/di/gmm/one_alpha**
 
-**Output: ![文字方塊: Command : echo [alpha 0 \~ 32767] \> /proc/videograph/di/gmm/one_alpha gmm_one_min_alpha = gmm_one_min_alpha ](nvt_media/d30c7982ca60400f098e351f1a718a82.png)**
+**Output: ![Command : echo [alpha 0 \~ 32767] \> /proc/videograph/di/gmm/one_alpha gmm_one_min_alpha = gmm_one_min_alpha ](nvt_media/c8eb4f3165e47afb5b07cfb5dbc1de2b.png)**
 
 ######  /proc/videograph/di/gmm/init_val
 
@@ -152,7 +168,7 @@ Read or write the GMM parameter of the current camera channel.
 
 **Read : cat /proc/videograph/di/gmm/init_val**
 
-**Output: ![文字方塊: Command: echo [value 0 \~ 255] \> /proc/videograph/di/init_val gmm_init_val = gmm_init_val ](nvt_media/2a1ae062d6732e0fee393d9cc77631e7.png)**
+**Output: ![Command: echo [value 0 \~ 255] \> /proc/videograph/di/init_val gmm_init_val = gmm_init_val ](nvt_media/16338cd5be8686ad389ff8ef52a6a8ee.png)**
 
 ######  /proc/videograph/di/gmm/tb
 
@@ -170,7 +186,7 @@ Read or write the GMM/gmm_tb parameter of the current camera channel.
 
 **Read : cat /proc/videograph/di/gmm/tb**
 
-**Output: ![文字方塊: Command : echo [tb 0 \~ 15] \> /proc/videograph/di/gmm/tb gmm_tb = gmm_tb ](nvt_media/15046c9be18238463572d0ebeb8c4333.png)**
+**Output: ![Command : echo [tb 0 \~ 15] \> /proc/videograph/di/gmm/tb gmm_tb = gmm_tb ](nvt_media/98633a5fd1c76197a2188c0cac4c8c80.png)**
 
 ######  /proc/videograph/di/gmm/sigma
 
@@ -188,7 +204,7 @@ Read or write the GMM/sigma parameter of the current camera channel.
 
 **Read : cat /proc/videograph/di/gmm/sigma**
 
-**Output: ![文字方塊: Command : echo [sigma 0\~31] \> /proc/videograph/di/gmm/sigma gmm_sigma = gmm_sigma ](nvt_media/22bfd47a9e659cbed19349e646e48ee7.png)**
+**Output: ![Command : echo [sigma 0\~31] \> /proc/videograph/di/gmm/sigma gmm_sigma = gmm_sigma ](nvt_media/c7cda5f28d162ac8599b8203a4fc5ee9.png)**
 
 ######  /proc/videograph/di/gmm/tg
 
@@ -206,7 +222,7 @@ Read or write the GMM/gmm_tg parameter of the current camera channel.
 
 **Read : cat /proc/videograph/di/gmm/tg**
 
-**Output: ![文字方塊: Command : echo [tg 0\~15] \> /proc/videograph/di/gmm/tg gmm_tg = gmm_tg ](nvt_media/d911454b607d1206dece42d28c44ee4f.png)**
+**Output: ![Command : echo [tg 0\~15] \> /proc/videograph/di/gmm/tg gmm_tg = gmm_tg ](nvt_media/2765ef8fdc9426a41c75ce468c894e3a.png)**
 
 ######  /proc/videograph/di/gmm/prune
 
@@ -224,7 +240,7 @@ Read or write the GMM/gmm_prune parameter of the current camera channel.
 
 **Read : cat /proc/videograph/di/gmm/prune**
 
-**Output: ![文字方塊: Command : echo [prune -131072\~131071] \> /proc/videograph/di/gmm/prune gmm_prune = gmm_prune ](nvt_media/921a037e16fe097e0ad25931ef364171.png)**
+**Output: ![Command : echo [prune -131072\~131071] \> /proc/videograph/di/gmm/prune gmm_prune = gmm_prune ](nvt_media/29926b7ec54d3162fc70cfb2cffcdaf7.png)**
 
 ## 3 TMNR
 
@@ -275,7 +291,7 @@ Table 41 TMNR Parameter List
 
 | **FCS off**                                                                                                              | **FCS on**                                                                                                               |
 |--------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
-| ![D:\\work6\\636\\fhtml\\NT9833x_DI_Tuning_Guide_en.files\\image014.jpg](nvt_media/d5fe0036f1421470bfbf544ad01595ff.jpg) | ![D:\\work6\\636\\fhtml\\NT9833x_DI_Tuning_Guide_en.files\\image015.jpg](nvt_media/838d008222761d45adf66d5562b4120d.jpg) |
+| ![D:\\work6\\636\\fhtml\\NT9833x_DI_Tuning_Guide_en.files\\image015.jpg](nvt_media/d5fe0036f1421470bfbf544ad01595ff.jpg) | ![D:\\work6\\636\\fhtml\\NT9833x_DI_Tuning_Guide_en.files\\image016.jpg](nvt_media/fedd3bec9158cb4bcd19708535a9ef8f.jpg) |
 
  **tmnr_fcs_th**: Threshold for determining whether it is high frequency false color, the default value is 10.
 
@@ -297,7 +313,7 @@ Read all TMNR parameters of the current camera channel.
 
 **Read : cat /proc/videograph/di/tmnr/dump_info**
 
-**Output: ![文字方塊: tmnr_learn_en =  y_var =  cb_var =  cr_var =  k =  auto_k =  k_hi =  k_lo =  trade_thres =  suppress_strength =   nf =  var_offset =  td_gmm_motion_th =  motion_var =  motion_th_mult =  tmnr_fcs_th =  tmnr_fcs_weight =  tmnr_fcs_en =  dpr_motion_th =  dpr_cnt_th =  dpr_mode = ](nvt_media/9a24a54b7976ad1258425229780cd878.png)**
+**Output: ![tmnr_learn_en =  y_var =  cb_var =  cr_var =  k =  auto_k =  k_hi =  k_lo =  trade_thres =  suppress_strength =   nf =  var_offset =  td_gmm_motion_th =  motion_var =  motion_th_mult =  tmnr_fcs_th =  tmnr_fcs_weight =  tmnr_fcs_en =  dpr_motion_th =  dpr_cnt_th =  dpr_mode = ](nvt_media/5dff5d7bc51bc92b48aca38ca9c0b4d4.png)**
 
 ######  /proc/videograph/di/tmnr/enable
 
@@ -315,7 +331,7 @@ Read or write the TMNR/tmnr_en parameters of the current camera channel.
 
 **Read : cat /proc/videograph/di/tmnr/enable**
 
-**Output: ![文字方塊: Command : echo [enable 0\~2] \> /proc/videograph/di/tmnr/enable 0: TMNR enabled by HDAL 1: TMNR enable 2: TMNR disable tmnr_en = tmnr_en ](nvt_media/0f663cff56bed7bb38340acfa54f2b99.png)**
+**Output: ![Command : echo [enable 0\~2] \> /proc/videograph/di/tmnr/enable 0: TMNR enabled by HDAL 1: TMNR enable 2: TMNR disable tmnr_en = tmnr_en ](nvt_media/d0b54e495815e44fa4c3c5034f823041.png)**
 
 ######  /proc/videograph/di/tmnr/tmnr_learn_en
 
@@ -333,7 +349,7 @@ Read or write the TMNR/tmnr_learn_en parameter of the current camera channel.
 
 **Read : cat /proc/videograph/di/tmnr/tmnr_learn_en**
 
-**Output: ![文字方塊: Command : echo [tmnr_learn_en 0\~1] \> /proc/videograph/di/tmnr/tmnr_learn_en tmnr_learn_en = tmnr_learn_en ](nvt_media/8ee6662a00afa513c9b2a51c7f0fa9b7.png)**
+**Output: ![Command : echo [tmnr_learn_en 0\~1] \> /proc/videograph/di/tmnr/tmnr_learn_en tmnr_learn_en = tmnr_learn_en ](nvt_media/e6de6dfca01d42e7de9994682ccd4f30.png)**
 
 ######  /proc/videograph/di/tmnr/var
 
@@ -351,7 +367,7 @@ Read or write the TMNR/y, cb, cr var parameter of the current camera channel.
 
 **Read : cat /proc/videograph/di/tmnr/var**
 
-**Output: ![文字方塊: Command : echo [y_var 0\~64] [cb_var 0\~64] [cr_var 0\~64] \> /proc/videograph/di/tmnr/var Y_var = y_var Cb_var = cb_var Cr_var = cr_var ](nvt_media/f808a5bd6c23b1012856ba901bbeb70a.png)**
+**Output: ![Command : echo [y_var 0\~64] [cb_var 0\~64] [cr_var 0\~64] \> /proc/videograph/di/tmnr/var Y_var = y_var Cb_var = cb_var Cr_var = cr_var ](nvt_media/f07449c66ae9b469f1a33e599cd1de55.png)**
 
 ######  /proc/videograph/di/tmnr/k
 
@@ -369,7 +385,7 @@ Read or write the TMNR/k parameter of the current camera channel.
 
 **Read : cat /proc/videograph/di/tmnr/k**
 
-**Output: ![文字方塊: Command : echo [k 1\~8] \> /proc/videograph/di/tmnr/k k = k ](nvt_media/9004747c9056fd63e0f5dd8c1d9b73da.png)**
+**Output: ![Command : echo [k 1\~8] \> /proc/videograph/di/tmnr/k k = k ](nvt_media/cfe118349b67d7b3c9630163f2f53552.png)**
 
 ######  /proc/videograph/di/tmnr/auto_k
 
@@ -387,7 +403,7 @@ Read or write the TMNR/auto_k related parameter of the current camera channel.
 
 **Read : cat /proc/videograph/di/tmnr/auto_k**
 
-**Output: ![文字方塊: Command : echo [auto_k 0\~1] [k_hi 1\~8] [k_lo 1\~8]\> /proc/videograph/di/tmnr/auto_k auto_k = auto_k k_hi = k_hi k_lo = k_lo ](nvt_media/ab72147ebc0f3d5a19d19af91207ea39.png)**
+**Output: ![Command : echo [auto_k 0\~1] [k_hi 1\~8] [k_lo 1\~8]\> /proc/videograph/di/tmnr/auto_k auto_k = auto_k k_hi = k_hi k_lo = k_lo ](nvt_media/9cd66209949b9183c04dccd4204b2717.png)**
 
 ######  /proc/videograph/di/tmnr/trade_th
 
@@ -405,7 +421,7 @@ Read or write the TMNR/trade_threshold parameter of the current camera channel.
 
 **Read : cat /proc/videograph/di/tmnr/trade_th**
 
-**Output: ![文字方塊: Command : echo [th 0\~128] \> /proc/videograph/di/tmnr/trade_th trade_threshold = trade_threshold ](nvt_media/d2e3c59fd9c8fc78892042d4912c6d7e.png)**
+**Output: ![Command : echo [th 0\~128] \> /proc/videograph/di/tmnr/trade_th trade_threshold = trade_threshold ](nvt_media/a64db87a0395b2848da690747afbe3cd.png)**
 
 ######  /proc/videograph/di/tmnr/supp_str
 
@@ -423,7 +439,7 @@ Read or write the TMNR/suppress_strength parameter of the current camera channel
 
 **Read : cat /proc/videograph/di/tmnr/supp_str**
 
-**Output: ![文字方塊: Command : echo [str 2\~64] \> /proc/videograph/di/tmnr/supp_str suppress_strength = suppress_strength ](nvt_media/06045a15d3d0479660fcc0cca8b634b4.png)**
+**Output: ![Command : echo [str 2\~64] \> /proc/videograph/di/tmnr/supp_str suppress_strength = suppress_strength ](nvt_media/1f3ca44fdfa846d816178e0d62454144.png)**
 
 ######  /proc/videograph/di/tmnr/nf
 
@@ -441,7 +457,7 @@ Read or write the TMNR/NF (Normalize Factor) parameter of the current camera cha
 
 **Read : cat /proc/videograph/di/tmnr/nf**
 
-**Output: ![文字方塊: Command : echo [nf 1 \~ 6] \> /proc/videograph/di/tmnr/nf NF = nf ](nvt_media/f1e368cb45faf293dd598356fcb6551f.png)**
+**Output: ![Command : echo [nf 1 \~ 6] \> /proc/videograph/di/tmnr/nf NF = nf ](nvt_media/0e53339a9fcedbd97a5dcbce96ad9beb.png)**
 
 ######  /proc/videograph/di/tmnr/var_offset
 
@@ -459,7 +475,7 @@ Read or write the TMNR/var_offset parameter of the current camera channel.
 
 **Read : cat /proc/videograph/di/tmnr/var_offset**
 
-**Output: ![文字方塊: Command : echo [var_offset 0\~15] \> /proc/videograph/di/tmnr/var_offset var_offset = var_offset ](nvt_media/1a3e24efb2cea3e9fbed466b6b725051.png)**
+**Output: ![Command : echo [var_offset 0\~15] \> /proc/videograph/di/tmnr/var_offset var_offset = var_offset ](nvt_media/df3e4b3c016a6cd8690384990a40f4fa.png)**
 
 ######  /proc/videograph/di/tmnr/motion_var
 
@@ -477,7 +493,7 @@ Read or write the TMNR/motion_var parameter of the current camera channel.
 
 **Read : cat /proc/videograph/di/tmnr/motion_var**
 
-**Output: ![文字方塊: Command : echo [motion_var 1\~20] \> /proc/videograph/di/tmnr/motion_var motion_var = motion_var ](nvt_media/e614dce05a72a164db6acac53d135c93.png)**
+**Output: ![Command : echo [motion_var 1\~20] \> /proc/videograph/di/tmnr/motion_var motion_var = motion_var ](nvt_media/7369c4ff04def97579f0509bba09754b.png)**
 
 ######  /proc/videograph/di/tmnr/motion_th_mult
 
@@ -495,7 +511,7 @@ Read or write the TMNR/motion_th_mult parameter of the current camera channel.
 
 **Read : cat /proc/videograph/di/tmnr**/**motion_th_mult**
 
-**Output: ![文字方塊: Command : echo [motion_th_mult 0 \~ 128] \> /proc/videograph/di/tmnr/motion_th_mult motion_th_mult = motion_th_mult ](nvt_media/e5a7150477547b9bffa92b994cc0ddec.png)**
+**Output: ![Command : echo [motion_th_mult 0 \~ 128] \> /proc/videograph/di/tmnr/motion_th_mult motion_th_mult = motion_th_mult ](nvt_media/cca0b48fced8e4dc2f6a3afeae52290c.png)**
 
 ######  /proc/videograph/di/tmnr/tmnr_fcs
 
@@ -513,7 +529,7 @@ Read or write the TMNR/FCS related parameter of the current camera channel.
 
 **Read : cat /proc/videograph/di/tmnr**/**tmnr_fcs**
 
-**Output: ![文字方塊: Command : echo [enable 0\~1] [fcs_th 0\~255] [fcs_weight 0\~16] \> /proc/videograph/di/tmnr/tmnr_fcs tmnr_fcs_en = tmnr_fcs_en tmnr_fcs_th = tmnr_fcs_th tmnr_fcs_weight = tmnr_fcs_weight ](nvt_media/db41c2709351cb23422a34b2e007a2a6.png)**
+**Output: ![Command : echo [enable 0\~1] [fcs_th 0\~255] [fcs_weight 0\~16] \> /proc/videograph/di/tmnr/tmnr_fcs tmnr_fcs_en = tmnr_fcs_en tmnr_fcs_th = tmnr_fcs_th tmnr_fcs_weight = tmnr_fcs_weight ](nvt_media/66bf04f5f382e35bbba1b7fc7a778db8.png)**
 
 ######  /proc/videograph/di/tmnr/dpr
 
@@ -531,17 +547,17 @@ Read or writer the TMNR/DPR related parameter of the current camera channel.
 
 **Read : cat /proc/videograph/di/tmnr/dpr**
 
-**Output: ![文字方塊: Command : echo [dpr_en 0\~1] [motion_th 0\~255] [cnt_th 0\~16] [dpr_mode 0\~1] \> /proc/videograph/di/tmnr/dpr dpr_en = dpr_en dpr_motion_th = dpr_motion_th dpr_cnt_th = dpr_cnt_th dpr_mode = dpr_mode ](nvt_media/f4c49131063c319d382d41d1926fd795.png)**
+**Output: ![Command : echo [dpr_en 0\~1] [motion_th 0\~255] [cnt_th 0\~16] [dpr_mode 0\~1] \> /proc/videograph/di/tmnr/dpr dpr_en = dpr_en dpr_motion_th = dpr_motion_th dpr_cnt_th = dpr_cnt_th dpr_mode = dpr_mode ](nvt_media/da23096dbd3b17b51a4aeacb33812f46.png)**
 
 ## 4 De-Interlace (DI)
 
 The dynamic de-interlace method is to detect where is the motion object in the image and where is the static object in the image. For static block in the image using field de-interlace to get the completely resolution in vertical direction, and for motion block in the image using single field de-interlace to avoid sawtooth and ghost phenomenon. The following are common abnormal phenomenons which caused by de-interlace, it needs to adjust parameter to get the best image performance.
 
-![D:\\work6\\636\\fhtml\\NT9833x_DI_Tuning_Guide_en.files\\image030.png](nvt_media/ab0eed5465141e70a8b0d346600285fb.png)
+![D:\\work6\\636\\fhtml\\NT9833x_DI_Tuning_Guide_en.files\\image031.png](nvt_media/8ab41dd1dffb373a820faccdbc726ad7.png)
 
 Table 51 sawtooth phenomen caused by motion object misjudge to static object
 
-![D:\\work6\\636\\fhtml\\NT9833x_DI_Tuning_Guide_en.files\\image031.png](nvt_media/362bafa9259337d7c3a8ed4226842437.png)
+![D:\\work6\\636\\fhtml\\NT9833x_DI_Tuning_Guide_en.files\\image032.png](nvt_media/d4da09d0fdffead5e43ef62dea192ecd.png)
 
 Table 52 resolution decreased phenomenon caused by static object misjudge to motion object
 
@@ -597,7 +613,7 @@ Table 53 DI Parameter List
 
  ela_h_th, ela_l_th: Based on Edge strength to decide use directional interpolation or average interpolation. The relationship please refer the following figure. Normally, it is recommend to use default value.
 
-![D:\\work6\\636\\fhtml\\NT9833x_DI_Tuning_Guide_en.files\\image032.png](nvt_media/d88486b46b3e25edc03856b579f8ac03.png)
+![D:\\work6\\636\\fhtml\\NT9833x_DI_Tuning_Guide_en.files\\image033.png](nvt_media/c8eb22080573b0b1eabbb3f83ca447b0.png)
 
 ### 4.2 Setting Interface
 
@@ -615,7 +631,7 @@ Read all DIE parameters of the current camera channel.
 
 **Read : cat /proc/videograph/di/di/dump_info**
 
-**Output: ![文字方塊: top_motion_en =  bot_motion_en =  auto_th_en =  strong_md_en =  mmb_en =  smb_en =  emb_en =  lmb_en =  pmmb_en =  corner_detect_en =  di_gmm_motion_en =  mmb_scene_change_en =  mmb_scene_change_th =  all_motion =  all_static =  strong_edge =  strong_md_th =  md_th =  line_admit =  mmb_th =  smb_th =  emb_th =  lmb_th =  ela_h_th =  ela_l_th = ch0_row1_status_ctrl= ch1_row1_status_ctrl= ch0_last_row_status_ctrl= ch0_last_row_status_ctrl= ](nvt_media/73cc7a7b4cbff9f8dcf2ad5f567c5ea7.png)**
+**Output: ![top_motion_en =  bot_motion_en =  auto_th_en =  strong_md_en =  mmb_en =  smb_en =  emb_en =  lmb_en =  pmmb_en =  corner_detect_en =  di_gmm_motion_en =  mmb_scene_change_en =  mmb_scene_change_th =  all_motion =  all_static =  strong_edge =  strong_md_th =  md_th =  line_admit =  mmb_th =  smb_th =  emb_th =  lmb_th =  ela_h_th =  ela_l_th = ch0_row1_status_ctrl= ch1_row1_status_ctrl= ch0_last_row_status_ctrl= ch0_last_row_status_ctrl= ](nvt_media/745c07eb03601af24a380a7a54820698.png)**
 
 ######  /proc/videograph/di/di/motion_en
 
@@ -633,7 +649,7 @@ Read or write the DI/top_motion_en, bot_motion_en parameter of the current camer
 
 **Read : cat /proc/videograph/di/di/motion_en**
 
-**Output: ![文字方塊: Command: echo [top_motion_en 0\~1] [bot_motion_en 0\~1] \> /proc/videograph/di/di/motion_en top_motion_en = top_motion_en bot_motion_en = bot_motion_en ](nvt_media/aef72cc0a9bac542ebd73da9c506ab49.png)**
+**Output: ![Command: echo [top_motion_en 0\~1] [bot_motion_en 0\~1] \> /proc/videograph/di/di/motion_en top_motion_en = top_motion_en bot_motion_en = bot_motion_en ](nvt_media/9db2b72a61c2821ec405a250a5286d8d.png)**
 
 ######  /proc/videograph/di/di/md_th
 
@@ -651,7 +667,7 @@ Read or write the DIE/md_th parameter of the current camera channel.
 
 **Read : cat /proc/videograph/di/di/md_th**
 
-**Output: ![文字方塊: Command : echo [auto_th_en 0 \~ 1] [md_th 0\~255]\> /proc/videograph/di/di/md_th auto_th_en = auto_th_en md_th = md_th ](nvt_media/bb47e818feb59d6a2925f75d82ea9493.png)**
+**Output: ![Command : echo [auto_th_en 0 \~ 1] [md_th 0\~255]\> /proc/videograph/di/di/md_th auto_th_en = auto_th_en md_th = md_th ](nvt_media/67b8a73123f3f00eb34b2a81ceb1ec8f.png)**
 
 ######  /proc/videograph/di/di/strong_md
 
@@ -669,7 +685,7 @@ Read or write the DI/strong_md related parameters of the current channel.
 
 **Read : cat /proc/videograph/di/di/strong_md**
 
-**Output: ![文字方塊: Command : echo [strong_md_en 0 \~ 1] [strong_md_th 0\~255]\> /proc/videograph/di/di/strong_md strong_md_en = strong_md_en strong_md_th = strong_md_th ](nvt_media/0e33416c6dd1bce19a60a5c5952b3349.png)**
+**Output: ![Command : echo [strong_md_en 0 \~ 1] [strong_md_th 0\~255]\> /proc/videograph/di/di/strong_md strong_md_en = strong_md_en strong_md_th = strong_md_th ](nvt_media/1f333f32261e857563bca46b1dedee0c.png)**
 
 ######  /proc/videograph/di/di/strong_edge
 
@@ -687,7 +703,7 @@ Read or write the DI/strong_edge parameter of the cuurent camera channel.
 
 **Read : cat /proc/videograph/di/di/strong_edge**
 
-**Output: ![文字方塊: Command : echo [strong_edge 0\~255]\> /proc/videograph/di/di/strong_edge strong_edge = strong_edge ](nvt_media/d49ca677c656859817b3d5e167763d15.png)**
+**Output: ![Command : echo [strong_edge 0\~255]\> /proc/videograph/di/di/strong_edge strong_edge = strong_edge ](nvt_media/5cfc99ef9ed5c3661c30b8d4dd8f6846.png)**
 
 ######  /proc/videograph/di/di/corner_detect_en
 
@@ -705,7 +721,7 @@ Read or write the DI/corner_detect_en parameter of the current camera channel.
 
 **Read : cat /proc/videograph/di/di/corner_det_en**
 
-**Output: ![文字方塊: Command : echo [corner_det_en 0\~1]\> /proc/videograph/di/di/corner_det_en corner_detect_en = corner_detect_en  ](nvt_media/95c651bc2f5bb5d8d51ddaa7ec1cbef5.png)**
+**Output: ![Command : echo [corner_det_en 0\~1]\> /proc/videograph/di/di/corner_det_en corner_detect_en = corner_detect_en  ](nvt_media/c27c3726e5dc0304b72c799d8dd1dfc9.png)**
 
 ######  /proc/videograph/di/di/line_admit
 
@@ -723,7 +739,7 @@ Read or write the DI/line_admit parameter of the current camera channel.
 
 **Read : cat /proc/videograph/di/di/line_admit**
 
-**Output: ![文字方塊: Command : echo [line_admit 0\~15]\> /proc/videograph/di/di/line_admit line_admit = line_admit ](nvt_media/35e99c986117309aa54df20f1f928793.png)**
+**Output: ![Command : echo [line_admit 0\~15]\> /proc/videograph/di/di/line_admit line_admit = line_admit ](nvt_media/ab17fe49c958257f204603ea78cce7ba.png)**
 
 ######  /proc/videograph/di/di/all_motion_static
 
@@ -741,7 +757,7 @@ Read or write the DI/all_motion, all_static parameter of the current camera chan
 
 **Read : cat /proc/videograph/di/di/all_motion_static**
 
-**Output: ![文字方塊: Command : echo [all_motion 0\~1] [all_static 0\~1] \> /proc/videograph/di/di/all_motion_static all_motion = all_motion  all_static = all_static  ](nvt_media/75586f6ef139d86cfcacbaa2ceb1fd19.png)**
+**Output: ![Command : echo [all_motion 0\~1] [all_static 0\~1] \> /proc/videograph/di/di/all_motion_static all_motion = all_motion  all_static = all_static  ](nvt_media/a7e480a60cbf123b1144e22fd474b0d4.png)**
 
 ######  /proc/videograph/di/di/di_gmm_motion_en
 
@@ -759,7 +775,7 @@ Read or write the DI/di_gmm_motion_en of the current camera channel.
 
 **Read : cat /proc/videograph/di/di/di_gmm_motion_en**
 
-**Output: ![文字方塊: Command : echo [enable 0\~1] \> /proc/videograph/di/di/di_gmm_motion_en di_gmm_motion_en = di_gmm_motion_en ](nvt_media/c747d602035487ce92a1acdc2c5c2e3d.png)**
+**Output: ![Command : echo [enable 0\~1] \> /proc/videograph/di/di/di_gmm_motion_en di_gmm_motion_en = di_gmm_motion_en ](nvt_media/40b4ee24a889c77b3154b0c4234b2a0e.png)**
 
 ######  /proc/videograph/di/di/mmb_param
 
@@ -777,7 +793,7 @@ Read or write the DI/mmb related parameter of the current camera channel.
 
 **Read : cat /proc/videograph/di/di/mmb_param**
 
-**Output: ![文字方塊: Command : echo [mmb_en 0\~1] [pmmb_en 0\~1] [mmb_th 0\~255] \> /proc/videograph/di/di/mmb_param mmb_en = mmb_en pmmb_en = pmmb_en  mmb_th = mmb_th  ](nvt_media/6128bdcc944846b23b17b1edbd577019.png)**
+**Output: ![Command : echo [mmb_en 0\~1] [pmmb_en 0\~1] [mmb_th 0\~255] \> /proc/videograph/di/di/mmb_param mmb_en = mmb_en pmmb_en = pmmb_en  mmb_th = mmb_th  ](nvt_media/a1d25ee9644d3fe528cd0495577f3a35.png)**
 
 ######  /proc/videograph/di/di/mmb_scene_change
 
@@ -795,7 +811,7 @@ Read or write the DI/mmb scene change related parameter of the current camera ch
 
 **Read : cat /proc/videograph/di/di/mmb_scene_change**
 
-**Output: ![文字方塊: Command : echo [scene_change_en 0\~1] [scene_change_th 0\~65535] \> /proc/videograph/di/di/mmb_scene_change mmb_scene_change_en = mmb_scene_change_en mmb_scene_change_th = mmb_scene_change_th ](nvt_media/428224485bf0422c3e0219efdeffec0d.png)**
+**Output: ![Command : echo [scene_change_en 0\~1] [scene_change_th 0\~65535] \> /proc/videograph/di/di/mmb_scene_change mmb_scene_change_en = mmb_scene_change_en mmb_scene_change_th = mmb_scene_change_th ](nvt_media/959476f8c21f64c8ee0b049a9e470dad.png)**
 
 ######  /proc/videograph/di/di/smb_param
 
@@ -813,7 +829,7 @@ Read or write the DI/smb related parameter of the current camera channel.
 
 **Read : cat /proc/videograph/di/di/smb_param**
 
-**Output: ![文字方塊: Command : echo [smb_en 0\~1] [smb_th 0\~255] \> /proc/videograph/di/di/smb_param smb_en = smb_en smb_th = smb_th  ](nvt_media/1aeb39cf6b38cd16d623efeeadb3797e.png)**
+**Output: ![Command : echo [smb_en 0\~1] [smb_th 0\~255] \> /proc/videograph/di/di/smb_param smb_en = smb_en smb_th = smb_th  ](nvt_media/187fd558f5e5097954b63ba655b59cfa.png)**
 
 ######  /proc/videograph/di/di/emb_param
 
@@ -831,7 +847,7 @@ Read or write the DI/emb related parameter of the current camera channel.
 
 **Read : cat /proc/videograph/di/di/emb_param**
 
-**Output: ![文字方塊: Command : echo [emb_en 0\~1] [emb_th 0\~255] \> /proc/videograph/di/di/emb_param emb_en = emb_en emb_th = emb_th  ](nvt_media/461a0a4a5b32b360e28bb73373505cde.png)**
+**Output: ![Command : echo [emb_en 0\~1] [emb_th 0\~255] \> /proc/videograph/di/di/emb_param emb_en = emb_en emb_th = emb_th  ](nvt_media/bd551a07ba464a94b57fce858a6334fb.png)**
 
 ######  /proc/videograph/di/di/lmb_param
 
@@ -849,7 +865,7 @@ Read or write the DIE/lmb related parameter of the current camera channel.
 
 **Read : cat /proc/videograph/di/di/lmb_param**
 
-**Output: ![文字方塊: Command : echo [lmb_en 0\~1] [lmb_th 0\~255] \> /proc/videograph/di/di/lmb_param lmb_en = lmb_en lmb_th = lmb_th  ](nvt_media/ce0f86c7b083eb16d4009e041fe4e52e.png)**
+**Output: ![Command : echo [lmb_en 0\~1] [lmb_th 0\~255] \> /proc/videograph/di/di/lmb_param lmb_en = lmb_en lmb_th = lmb_th  ](nvt_media/325636f1a06e7c2965127229a56edd09.png)**
 
 ######  /proc/videograph/di/di/ela_th
 
@@ -867,7 +883,7 @@ Read or write the DIE/ela_h_th, ela_l_th related parameter of the current camera
 
 **Read : cat /proc/videograph/di/di/ela_th**
 
-**Output: ![文字方塊: Command : echo [ela_hi 0\~255] [ela_lo 0\~255] \> /proc/videograph/di/di/ela_th ela_h_th = ela_h_th ela_l_th = ela_l_th  ](nvt_media/37e95702deec8bbb56dcafb1e9194d17.png)**
+**Output: ![Command : echo [ela_hi 0\~255] [ela_lo 0\~255] \> /proc/videograph/di/di/ela_th ela_h_th = ela_h_th ela_l_th = ela_l_th  ](nvt_media/842453cd5f99ec70b9fb7f0c2d0327c5.png)**
 
 ######  /proc/videograph/di/di/row_status_ctrl
 
@@ -885,7 +901,7 @@ Read or write the DEI/row1_status_ctrl, last_row_status_ctrl related parameter o
 
 **Read : cat /proc/videograph/di/di/row_status_ctrl**
 
-**Output: ![文字方塊: Command : echo [ch0_row1_status_ctrl 0\~3] [ch1_row1_status_ctrl 0\~3] [ch0_last_row_status_ctrl 0\~3] [ch1_last_row_status_ctrl 0\~3] \> /proc/videograph/di/di/row_status_ctrl ch0_row1_status_ctrl = ch0_row1_status_ctrl ch1_row1_status_ctrl = ch1_row1_status_ctrl ch0_last_row_status_ctrl = ch0_last_row_status_ctrl ch1_last_row_status_ctrl = ch1_last_row_status_ctrl 0 : Automatic processing by DI. 1: Same as process that DI handle a still object 2: Same as process that DI handle a motion object 3: Fill it with black. ](nvt_media/8f3d89a9b1622585dccaeae4917832cd.png)**
+**Output: ![Command : echo [ch0_row1_status_ctrl 0\~3] [ch1_row1_status_ctrl 0\~3] [ch0_last_row_status_ctrl 0\~3] [ch1_last_row_status_ctrl 0\~3] \> /proc/videograph/di/di/row_status_ctrl ch0_row1_status_ctrl = ch0_row1_status_ctrl ch1_row1_status_ctrl = ch1_row1_status_ctrl ch0_last_row_status_ctrl = ch0_last_row_status_ctrl ch1_last_row_status_ctrl = ch1_last_row_status_ctrl 0 : Automatic processing by DI. 1: Same as process that DI handle a still object 2: Same as process that DI handle a motion object 3: Fill it with black. ](nvt_media/33541889e4e7486e7ce4ba00513c2953.png)**
 
 ## 5 Revision History
 

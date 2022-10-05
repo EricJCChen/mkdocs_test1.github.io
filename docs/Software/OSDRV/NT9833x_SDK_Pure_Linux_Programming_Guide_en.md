@@ -1,40 +1,40 @@
-## Development Environment
+## 1 Development Environment
 
-### VirtualBox/Ubuntu OS installation
+### 1.1 VirtualBox/Ubuntu OS installation
 
 This section will introduce how to install Ubuntu on Windows OS, ignore this section if your environment is under single OS. Please download from VirtualBox official website (<https://www.virtualbox.org/wiki/Downloads>) and follow below instructions to install.
 
-![](nvt_media/a5bf81ab8a4b612dc9953edd11edca59.png)
+![D:\\work6\\636\\fhtml\\NT9833x_SDK_Pure_Linux_Programming_Guide_en.files\\image003.jpg](nvt_media/70879c48ad4ba5a86023c399c1fbe17a.jpg)
 
-![](nvt_media/6e2c47de66c39fcccf7719647635880e.png)
+![D:\\work6\\636\\fhtml\\NT9833x_SDK_Pure_Linux_Programming_Guide_en.files\\image004.jpg](nvt_media/94f23d177aa4c6acd24817df2d3fa7bc.jpg)
 
 This step will install device driver, please select “Install”:
 
-![](nvt_media/6e2c47de66c39fcccf7719647635880e.png)
+![D:\\work6\\636\\fhtml\\NT9833x_SDK_Pure_Linux_Programming_Guide_en.files\\image005.jpg](nvt_media/61fa54e5afe0358faa2b4b5c390da0cc.jpg)
 
 Create virtual machine (Version: Ubuntu 64-Bit):
 
-![](nvt_media/e0e933e83e13a8300d17b044a2a48f64.png)
+![D:\\work6\\636\\fhtml\\NT9833x_SDK_Pure_Linux_Programming_Guide_en.files\\image006.jpg](nvt_media/7c3cc786c247cd28126231219ae96f66.jpg)
 
 Select virtual machine memory size:
 
-![](nvt_media/adce68603227ba98efce02fda498533e.png)
+![D:\\work6\\636\\fhtml\\NT9833x_SDK_Pure_Linux_Programming_Guide_en.files\\image007.jpg](nvt_media/a2206d853d5ca91f684a6a5be190b4fd.jpg)
 
 Create virtual machine (If you have an existed Ubuntu image, you can select “Use an existing virtual hard disk file”):
 
-![](nvt_media/02a95fae328d3862a79290bd0f1fc99c.png)
+![D:\\work6\\636\\fhtml\\NT9833x_SDK_Pure_Linux_Programming_Guide_en.files\\image008.jpg](nvt_media/2c2ec05e96e604b9ec4a384c6c0bae20.jpg)
 
 To configure virtual disk space (At least 40GB size):
 
-![](nvt_media/7657e8d645a160fe2e2624811db85261.png)
+![D:\\work6\\636\\fhtml\\NT9833x_SDK_Pure_Linux_Programming_Guide_en.files\\image009.jpg](nvt_media/cd8160ed71950e1b1d640aad1c0780c2.jpg)
 
 Select Optical drive and using Ubuntu ISO (Ubuntu 12.04/14.04/16.04/18.04 64-bit) startup:
 
-![](nvt_media/6326d642de29a398af8f8e99fa0f85d7.png)
+![D:\\work6\\636\\fhtml\\NT9833x_SDK_Pure_Linux_Programming_Guide_en.files\\image010.jpg](nvt_media/2c96163260d35d94e4365ff1a03e4194.jpg)
 
-![](nvt_media/99c5cc07596e4e3c2dbef4fa945bfe42.png)
+![D:\\work6\\636\\fhtml\\NT9833x_SDK_Pure_Linux_Programming_Guide_en.files\\image011.jpg](nvt_media/4df20009c73825d34398a35b001290c8.jpg)
 
-### Linux environment setup
+### 1.2 Linux environment setup
 
 In order to prevent some complaints in the SDK compilation of the 32 Bits OS, we will use 64 Bits Ubuntu OS as our development environment. The first of all, you should install an Ubuntu based server or Ubuntu on VirtualBox which is introduced in previous section, please download the image from ([http://releases.ubuntu.com/](http://releases.ubuntu.com/12.04.5/)) to get Ubuntu 12.04/14.04/16.04/18.04 Desktop AMD64 version ISO image and use the following instructions to install necessary Ubuntu packages.
 
@@ -90,16 +90,21 @@ Or
 
 Besides, the openssh-server is used to provide Windows Host PC connected to Linux server and remote building the Linux SDK, and the Samba server is to provide client get Linux SDK image from Linux server.
 
--   \$ apt-get install openssh-server
--   \$ apt-get install samba
--   \$ vim /etc/samba/smb.conf
--   Please reference to related Samba configuration as below: <https://help.ubuntu.com/12.04/serverguide/samba-fileserver.html>
+ \$ apt-get install openssh-server
+
+ \$ apt-get install samba
+
+ \$ vim /etc/samba/smb.conf
+
+ Please reference to related Samba configuration as below: <https://help.ubuntu.com/12.04/serverguide/samba-fileserver.html>
 
 Windows Host PC will also need Teraterm or putty to connect to Target board UART2 port with 115200/8/1/n configuration.
 
+![D:\\work6\\636\\fhtml\\NT9833x_SDK_Pure_Linux_Programming_Guide_en.files\\image012.png](nvt_media/7bc32b69bd41149cf23dbfe587de1aa3.png)
+
 Figure 1-1 Linux Development Environment
 
-### How to install NT9833x Linux SDK
+### 1.3 How to install NT9833x Linux SDK
 
 Using the following instructions to decompress SDK pack under Linux:
 
@@ -127,7 +132,7 @@ You will get the folder tree as below:
 
 └── aarch64-ca53-linux-uclibcgnueabihf-8.4.tar.bz2
 
-### How to install Cross compiler
+### 1.4 How to install Cross compiler
 
 We support both glibc and uclibc cross compiler toolchain, please choose and install it by using below instructions:
 
@@ -142,9 +147,9 @@ or
 **  
 **
 
-## Introduction to Compilation
+## 2 Introduction to Compilation
 
-### Environment setup
+### 2.1 Environment setup
 
 Before each opened a new Terminal window needs to do compiler environment setting, the relevant variables set up, please follow the below instructions to finish it.
 
@@ -152,7 +157,7 @@ Before each opened a new Terminal window needs to do compiler environment settin
 
 \$ source build/envsetup.sh
 
-### Compilation
+### 2.2 Compilation
 
 Please do a complete compilation for first time.
 
@@ -192,7 +197,7 @@ It will generate the images under na51090_linux_sdk/output after the compilation
 
 \| \`-- rootfs_1.rw.ubifs.bin rootfs overlay
 
-### Top level Makefile
+### 2.3 Top level Makefile
 
 na51090_linux_sdk folder has a top level Makefile, it supports many of the make command, such as “make linux” is to compile linux-kernel, “make uboot” can compile u-boot, “make rootfs” can compile root-fs ... and so on, you can use “make help” to find what its commands are supported. Please use top level Makefile to do SDK compilation to avoid some link error occurred. Its help description is as follows:
 
@@ -284,7 +289,7 @@ make pack_clean -\> Remove nvtpack image
 
 =====================================================
 
-### Project configuration
+### 2.4 Project configuration
 
 We provide the following file to control functionalities enable or disable, please refer to the below procedures to configure.
 
@@ -292,11 +297,11 @@ Check model type:
 
 \$ get_stuff_for_environment
 
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ======================================== NVT Setting ======================================== NVT_PRJCFG_MODEL_CFG = /home/user1/na51090_linux_sdk/configs/Linux/cfg_xxx_NAND_EVB/ModelConfig.mk
 NVT_PRJCFG_CFG = Linux
 NVT_PRJCFG_MODEL_MK =
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The ModelConfig.mk will be generated from configs/cfg_gen/nvt-info.dtsi
 
@@ -308,143 +313,143 @@ Enable/disable function:
 
 To find Linux related options:
 
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /*
- * Novatek Ltd. BSP part of dts
- */
-
+ * Novatek Ltd. BSP part of dts
+ */
+ 
 / {
-        nvt_info {                                              /* Get from ModelConfig.txt */
-                BIN_NAME = "FW98336A";
-                BIN_NAME_T = "FW98336T";
-                /* EMBMEM_BLK_SIZE, Normally, 2KPageNand=0x20000, 512PageNand=0x4000, SPI=0x10000 */
-                EMBMEM_BLK_SIZE = "0x20000";
-
-                /*
-                 * [EMBMEM]
-                 * EMBMEM_NONE
-                 * EMBMEM_NAND
-                 * EMBMEM_SPI_NOR
-                 * EMBMEM_SPI_NAND
-                 * EMBMEM_EMMC
-                 */
-                EMBMEM = " EMBMEM_SPI_NAND";
-                /*
-                 * ======= Linux common =========
-                 * application/external
-                 */
-                NVT_CFG_APP_EXTERNAL = "dhd_priv";
-                /* application include list */
-                NVT_CFG_APP = "";
-                /* rootfs etc folder */
-                NVT_ROOTFS_ETC = "";
-                /* strip executable binary and library files: yes/no */
-                NVT_BINARY_FILE_STRIP = "yes";
-                /* Using customized kernel config */
-                NVT_CFG_KERNEL_CFG = "";
-                /* Using customized uboot config */
-                NVT_CFG_UBOOT_CFG = "";
-
-                /*
-                 * ======= Linux for different code setting =========
-                 * [NVT_LINUX_SMP]
-                 * NVT_LINUX_SMP_ON
-                 * NVT_LINUX_SMP_OFF
-                 */
-                NVT_LINUX_SMP = "NVT_LINUX_SMP_ON";
-
-                /*
-                 * [NVT_DEFAULT_NETWORK_BOOT_PROTOCOL]
-                 * NVT_DEFAULT_NETWORK_BOOT_PROTOCOL_DHCP_SERVER
-                 * NVT_DEFAULT_NETWORK_BOOT_PROTOCOL_DHCP_CLIENT
-                 * NVT_DEFAULT_NETWORK_BOOT_PROTOCOL_STATIC_IP
-                 */
-                NVT_DEFAULT_NETWORK_BOOT_PROTOCOL = "NVT_DEFAULT_NETWORK_BOOT_PROTOCOL_STATIC_IP";
-
-                /*
-                 * [NVT_ROOTFS_TYPE]
-                 * NVT_ROOTFS_TYPE_NAND_UBI
-                 * NVT_ROOTFS_TYPE_NAND_SQUASH
-                 * NVT_ROOTFS_TYPE_NAND_JFFS2
-                 * NVT_ROOTFS_TYPE_NOR_SQUASH
-                 * NVT_ROOTFS_TYPE_NOR_JFFS2
-                 * NVT_ROOTFS_TYPE_RAMDISK
-                 * NVT_ROOTFS_TYPE_EMMC
-                 * NVT_ROOTFS_TYPE_NAND_SQUASH_NEW
-                 */
-                NVT_ROOTFS_TYPE = "NVT_ROOTFS_TYPE_RAMDISK";
-
-                /*
-                 * [NVT_ETHERNET]
-                 * NVT_ETHERNET_NONE
-                 * NVT_ETHERNET_EQOS
-                 */
-                NVT_ETHERNET = "NVT_ETHERNET_EQOS";
-
-                /*
-                 * [NVT_SDIO_WIFI]: Remember to update root-fs/rootfs/etc/init.d/S05_Net
-                 * NVT_SDIO_WIFI_NONE
-                 * NVT_SDIO_WIFI_RTK
-                 * NVT_SDIO_WIFI_BRCM
-                 * NVT_SDIO_WIFI_NVT
-                 */
-                NVT_SDIO_WIFI = "NVT_SDIO_WIFI_NONE";
-
-                /*
-                 * [NVT_USB_WIFI]
-                 * NVT_USB_WIFI_NONE
-                 */
-                NVT_USB_WIFI = "NVT_USB_WIFI_NONE";
-
-                /*
-                 * [NVT_USB_4G]
-                 * NVT_USB_4G_NONE
-                 */
-                NVT_USB_4G = "NVT_USB_4G_NONE";
-
-                /*
-                 * [WIFI_RTK_MDL]  : sub item for NVT_SDIO_WIFI_RTK
-                 * WIFI_RTK_MDL_NONE
-                 * WIFI_RTK_MDL_8189
-                 */
-                WIFI_RTK_MDL = "WIFI_RTK_MDL_8189";
-
-                /*
-                 * [WIFI_BRCM_MDL]  : sub item for NVT_SDIO_WIFI_BRCM
-                 * WIFI_BRCM_MDL_43438a1_ampk6212axtal26
-                 * WIFI_BRCM_MDL_43455c0_ampk6255c0
-                 */
-                WIFI_BRCM_MDL = "WIFI_BRCM_MDL_43438a1_ampk6212axtal26";
-
-                /*
-                 * [WIFI_NVT_MDL]  : sub item for NVT_SDIO_WIFI_NVT
-                 * WIFI_NVT_MDL_18202
-                 * WIFI_NVT_MDL_18211
-                 */
-                WIFI_NVT_MDL = "WIFI_NVT_MDL_18211";
-
-                /*
-                 * [NVT_CURL_SSL]
-                 * NVT_CURL_SSL_OPENSSL
-                 * NVT_CURL_SSL_WOLFSSL
-                 */
-                NVT_CURL_SSL = "NVT_CURL_SSL_OPENSSL";
-
-                /*
-                 * [NVT_UBOOT_ENV_IN_STORG_SUPPORT]
-                 * NVT_UBOOT_ENV_IN_STORG_SUPPORT_NAND
-                 * NVT_UBOOT_ENV_IN_STORG_SUPPORT_NOR
-                 * NVT_UBOOT_ENV_IN_STORG_SUPPORT_MMC
-                 * NVT_UBOOT_ENV_IN_STORG_SUPPORT_OFF
-                 */
-                NVT_UBOOT_ENV_IN_STORG_SUPPORT = "NVT_UBOOT_ENV_IN_STORG_SUPPORT_OFF";
-        };
+        nvt_info {                                              /* Get from ModelConfig.txt */
+                BIN_NAME = "FW98336A";
+                BIN_NAME_T = "FW98336T";
+                /* EMBMEM_BLK_SIZE, Normally, 2KPageNand=0x20000, 512PageNand=0x4000, SPI=0x10000 */
+                EMBMEM_BLK_SIZE = "0x20000";
+ 
+                /*
+                 * [EMBMEM]
+                 * EMBMEM_NONE
+                 * EMBMEM_NAND
+                 * EMBMEM_SPI_NOR
+                 * EMBMEM_SPI_NAND
+                 * EMBMEM_EMMC
+                 */
+                EMBMEM = " EMBMEM_SPI_NAND";
+                /*
+                 * ======= Linux common =========
+                 * application/external
+                 */
+                NVT_CFG_APP_EXTERNAL = "dhd_priv";
+                /* application include list */
+                NVT_CFG_APP = "";
+                /* rootfs etc folder */
+                NVT_ROOTFS_ETC = "";
+                /* strip executable binary and library files: yes/no */
+                NVT_BINARY_FILE_STRIP = "yes";
+                /* Using customized kernel config */
+                NVT_CFG_KERNEL_CFG = "";
+                /* Using customized uboot config */
+                NVT_CFG_UBOOT_CFG = "";
+ 
+                /*
+                 * ======= Linux for different code setting =========
+                 * [NVT_LINUX_SMP]
+                 * NVT_LINUX_SMP_ON
+                 * NVT_LINUX_SMP_OFF
+                 */
+                NVT_LINUX_SMP = "NVT_LINUX_SMP_ON";
+ 
+                /*
+                 * [NVT_DEFAULT_NETWORK_BOOT_PROTOCOL]
+                 * NVT_DEFAULT_NETWORK_BOOT_PROTOCOL_DHCP_SERVER
+                 * NVT_DEFAULT_NETWORK_BOOT_PROTOCOL_DHCP_CLIENT
+                 * NVT_DEFAULT_NETWORK_BOOT_PROTOCOL_STATIC_IP
+                 */
+                NVT_DEFAULT_NETWORK_BOOT_PROTOCOL = "NVT_DEFAULT_NETWORK_BOOT_PROTOCOL_STATIC_IP";
+ 
+                /*
+                 * [NVT_ROOTFS_TYPE]
+                 * NVT_ROOTFS_TYPE_NAND_UBI
+                 * NVT_ROOTFS_TYPE_NAND_SQUASH
+                 * NVT_ROOTFS_TYPE_NAND_JFFS2
+                 * NVT_ROOTFS_TYPE_NOR_SQUASH
+                 * NVT_ROOTFS_TYPE_NOR_JFFS2
+                 * NVT_ROOTFS_TYPE_RAMDISK
+                 * NVT_ROOTFS_TYPE_EMMC
+                 * NVT_ROOTFS_TYPE_NAND_SQUASH_NEW
+                 */
+                NVT_ROOTFS_TYPE = "NVT_ROOTFS_TYPE_RAMDISK";
+ 
+                /*
+                 * [NVT_ETHERNET]
+                 * NVT_ETHERNET_NONE
+                 * NVT_ETHERNET_EQOS
+                 */
+                NVT_ETHERNET = "NVT_ETHERNET_EQOS";
+ 
+                /*
+                 * [NVT_SDIO_WIFI]: Remember to update root-fs/rootfs/etc/init.d/S05_Net
+                 * NVT_SDIO_WIFI_NONE
+                 * NVT_SDIO_WIFI_RTK
+                 * NVT_SDIO_WIFI_BRCM
+                 * NVT_SDIO_WIFI_NVT
+                 */
+                NVT_SDIO_WIFI = "NVT_SDIO_WIFI_NONE";
+ 
+                /*
+                 * [NVT_USB_WIFI]
+                 * NVT_USB_WIFI_NONE
+                 */
+                NVT_USB_WIFI = "NVT_USB_WIFI_NONE";
+ 
+                /*
+                 * [NVT_USB_4G]
+                 * NVT_USB_4G_NONE
+                 */
+                NVT_USB_4G = "NVT_USB_4G_NONE";
+ 
+                /*
+                 * [WIFI_RTK_MDL]  : sub item for NVT_SDIO_WIFI_RTK
+                 * WIFI_RTK_MDL_NONE
+                 * WIFI_RTK_MDL_8189
+                 */
+                WIFI_RTK_MDL = "WIFI_RTK_MDL_8189";
+ 
+                /*
+                 * [WIFI_BRCM_MDL]  : sub item for NVT_SDIO_WIFI_BRCM
+                 * WIFI_BRCM_MDL_43438a1_ampk6212axtal26
+                 * WIFI_BRCM_MDL_43455c0_ampk6255c0
+                 */
+                WIFI_BRCM_MDL = "WIFI_BRCM_MDL_43438a1_ampk6212axtal26";
+ 
+                /*
+                 * [WIFI_NVT_MDL]  : sub item for NVT_SDIO_WIFI_NVT
+                 * WIFI_NVT_MDL_18202
+                 * WIFI_NVT_MDL_18211
+                 */
+                WIFI_NVT_MDL = "WIFI_NVT_MDL_18211";
+ 
+                /*
+                 * [NVT_CURL_SSL]
+                 * NVT_CURL_SSL_OPENSSL
+                 * NVT_CURL_SSL_WOLFSSL
+                 */
+                NVT_CURL_SSL = "NVT_CURL_SSL_OPENSSL";
+ 
+                /*
+                 * [NVT_UBOOT_ENV_IN_STORG_SUPPORT]
+                 * NVT_UBOOT_ENV_IN_STORG_SUPPORT_NAND
+                 * NVT_UBOOT_ENV_IN_STORG_SUPPORT_NOR
+                 * NVT_UBOOT_ENV_IN_STORG_SUPPORT_MMC
+                 * NVT_UBOOT_ENV_IN_STORG_SUPPORT_OFF
+                 */
+                NVT_UBOOT_ENV_IN_STORG_SUPPORT = "NVT_UBOOT_ENV_IN_STORG_SUPPORT_OFF";
+        };
 };
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-## Build U-boot
+## 3 Build U-boot
 
-### Compilation
+### 3.1 Compilation
 
 The Uboot source code is placed on “na51090_linux_sdk/u-boot”, typing “make uboot” can be used to compile Uboot, and we provide two images are u-boot.bin(non-compressed) and u-boot.lz.bin(compressed) under na51090_linux_sdk/output.
 
@@ -464,7 +469,7 @@ U-boot clean build:
 
 \$ make uboot_clean
 
-### User customization
+### 3.2 User customization
 
 The uboot have two config files will have different configured properties. One is for common function, the other is for the low level setting.
 
@@ -472,17 +477,17 @@ The low level setting can modify this file “include/configs/nvt-na51090-evb-a6
 
 e.g. Uboot passed to Linux’s cmdline can be changed with this variable
 
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #define CONFIG_USE_BOOTARGS
-#define CONFIG_BOOTARGS_COMMON      "earlycon=nvt_serial,0x2f0280000 rootwait console=ttyS0,115200 debug_boot_weak_hash  "
-#define CONFIG_BOOTARGS               CONFIG_BOOTARGS_COMMON "root=/dev/ram0 rootfstype=ramfs rdinit=/linuxrc "
-```
+#define CONFIG_BOOTARGS_COMMON      "earlycon=nvt_serial,0x2f0280000 rootwait console=ttyS0,115200 debug_boot_weak_hash  "
+#define CONFIG_BOOTARGS               CONFIG_BOOTARGS_COMMON "root=/dev/ram0 rootfstype=ramfs rdinit=/linuxrc "
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Please reference to “SDK_UBoot_Programming_Guide_en” for more details.
 
-## Build Kernel Code
+## 4 Build Kernel Code
 
-### Compilation
+### 4.1 Compilation
 
 The Linux kernel source code is placed on “na51090_linux_sdk/linux-kernel”, typing “make linux” can be used to compile Linux kernel, and the image name is Image.bin under na51090_linux_sdk.
 
@@ -494,9 +499,9 @@ Linux clean build:
 
 \$ make linux_clean
 
-### System configuration
+### 4.2 System configuration
 
-#### Menu configuration
+#### 4.2.1 Menu configuration
 
 Top Makefile is already integrated the formal Linux menuconfig, to use the following instruction can do the function selection. Please avoid using formal Linux “make menuconfig” under linux-kernel directly; it will cause error because the important variables are not set correctly.
 
@@ -506,8 +511,9 @@ Choose “Save” after finished function selection; it can generate a new *.con
 
 NA51090 SDK provides two Kernel configuration file under “na51090_linux_sdk/BSP/linux-kernel/arch/arm64/configs/”, one is for the debug mode, and the other is for the release mode.
 
--   na51090_XXX_defconfig_debug, the debug mode will enable most of the functions for the development stage
--   na51090_XXX_defconfig_release, the release mode will only enable boot necessary parts.
+ na51090_XXX_defconfig_debug, the debug mode will enable most of the functions for the development stage
+
+ na51090_XXX_defconfig_release, the release mode will only enable boot necessary parts.
 
 Edit Top Makefile to switch the configuration file:
 
@@ -515,7 +521,7 @@ Edit Top Makefile to switch the configuration file:
 
 \$ vi Makefile
 
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## kernel & modules
 CUSTBOARDCONFIG := $(strip $(shell echo $(NVT_PRJCFG_MODEL_CFG) | grep NVT_CFG_KERNEL_CFG | awk -F'=' '{print $$NF;}'))
 ifeq ($(EMBMEM), EMBMEM_SPI_NOR)
@@ -528,15 +534,17 @@ else
 #BOARDCONFIG := $(shell if [ ! -z $(NVT_CFG_KERNEL_CFG) ]; then echo $(NVT_CFG_KERNEL_CFG); else echo $(SDK_CODENAME)_evb_defconfig_debug; fi)
 BOARDCONFIG := $(shell if [ ! -z $(NVT_CFG_KERNEL_CFG) ]; then echo $(NVT_CFG_KERNEL_CFG); else echo $(SDK_CODENAME)_evb_defconfig_release; fi)
 endif
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-![](nvt_media/e36b302211e7e6d0f4be738f29f1800f.png)
+![D:\\work6\\636\\fhtml\\NT9833x_SDK_Pure_Linux_Programming_Guide_en.files\\image013.jpg](nvt_media/8476fc08ca4efb087af1b55cd9db9f73.jpg)
 
 Figure 4-1 Menu configuration
 
-#### Device tree
+#### 4.2.2 Device tree
 
 The device tree can be generated by dtc(device tree compiler) tool as below, you can find the \*.dtsi in “na51090_linux_sdk/configs/cfg_xxx” and users can set command “make cfg” at “na51090_linux_sdk/”. Config items detail description put at na51090_linux_sdk/configs/doc. It can be used to compile device tree, and we will output image nvt-evb.dtb under na51090_linux_sdk/output.
+
+![D:\\work6\\636\\fhtml\\NT9833x_SDK_Pure_Linux_Programming_Guide_en.files\\image014.png](nvt_media/53ea2021db5eb938dc9e402d6c3d1038.png)
 
 The merge method is Union, for example:
 
@@ -544,160 +552,162 @@ configs/cfg_gen/nvt-basic.dtsi
 
 User can modify CPU clock-frequency from 1200000000(1.2GHz) to 1000000000(1GHz), or 1100000000(1.1GHz), or 1300000000(1.3GHz), or 1350000000(1.35GHz), and compiler again. Users can use new image to boot at new CPU clock-frequency.
 
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #include <dt-bindings/gpio/gpio.h>
 #include <dt-bindings/interrupt-controller/arm-gic.h>
-
+ 
 / {
-	model = "Novatek NA51090";
-	compatible = "novatek,na51090", "nvt,ca53";
-	interrupt-parent = <&gic>;
-	#address-cells = <2>;
-	#size-cells = <2>;
-
-
-	psci {
-		compatible = "arm,psci-0.2";
-		method = "smc";
-	};
-
-	cpus {
-		#address-cells = <2>;
-		#size-cells = <0>;
-
-		cpu0: cpu@0 {
-			device_type = "cpu";
-			compatible = "arm,cortex-a53", "arm,armv8";
-			reg = <0x0 0x0>;
-			next-level-cache = <&A53_L2>;
-			clock-frequency = <1200000000>;
-			enable-method = "psci";
-		};
-		
-		cpu1: cpu@1 {
-			device_type = "cpu";
-			compatible = "arm,cortex-a53", "arm,armv8";
-			reg = <0x0 0x1>;
-			next-level-cache = <&A53_L2>;
-			clock-frequency = <1200000000>;
-			enable-method = "psci";
-		};
-
-		cpu2: cpu@2 {
-			device_type = "cpu";
-			compatible = "arm,cortex-a53", "arm,armv8";
-			reg = <0x0 0x2>;
-			next-level-cache = <&A53_L2>;
-			clock-frequency = <1200000000>;
-			enable-method = "psci";
-		};
-
-		cpu3: cpu@3 {
-			device_type = "cpu";
-			compatible = "arm,cortex-a53", "arm,armv8";
-			reg = <0x0 0x3>;
-			next-level-cache = <&A53_L2>;
-			clock-frequency = <1200000000>;
-			enable-method = "psci";
-		};
-		
-
-		A53_L2: l2-cache0 {
-			compatible = "cache";
-		};
-	};
-      …
-```
+     model = "Novatek NA51090";
+     compatible = "novatek,na51090", "nvt,ca53";
+     interrupt-parent = <&gic>;
+     #address-cells = <2>;
+     #size-cells = <2>;
+ 
+ 
+     psci {
+         compatible = "arm,psci-0.2";
+         method = "smc";
+     };
+ 
+     cpus {
+         #address-cells = <2>;
+         #size-cells = <0>;
+ 
+         cpu0: cpu@0 {
+              device_type = "cpu";
+              compatible = "arm,cortex-a53", "arm,armv8";
+              reg = <0x0 0x0>;
+              next-level-cache = <&A53_L2>;
+              clock-frequency = <1200000000>;
+              enable-method = "psci";
+         };
+         
+         cpu1: cpu@1 {
+              device_type = "cpu";
+              compatible = "arm,cortex-a53", "arm,armv8";
+              reg = <0x0 0x1>;
+              next-level-cache = <&A53_L2>;
+              clock-frequency = <1200000000>;
+              enable-method = "psci";
+         };
+ 
+         cpu2: cpu@2 {
+              device_type = "cpu";
+              compatible = "arm,cortex-a53", "arm,armv8";
+              reg = <0x0 0x2>;
+              next-level-cache = <&A53_L2>;
+              clock-frequency = <1200000000>;
+              enable-method = "psci";
+         };
+ 
+         cpu3: cpu@3 {
+              device_type = "cpu";
+              compatible = "arm,cortex-a53", "arm,armv8";
+              reg = <0x0 0x3>;
+              next-level-cache = <&A53_L2>;
+              clock-frequency = <1200000000>;
+              enable-method = "psci";
+         };
+         
+ 
+         A53_L2: l2-cache0 {
+              compatible = "cache";
+         };
+     };
+      …
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 configs/cfg_gen/nvt-peri.dtsi
 
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #include <dt-bindings/gpio/nvt-gpio.h>
 #include "nvt-basic.dtsi"
-
+ 
 / {
-	chosen {
-		bootargs = " ";
-		stdout-path = "serial0:115200n8";
-	};
+     chosen {
+         bootargs = " ";
+         stdout-path = "serial0:115200n8";
+     };
+ 
+     aliases {
+         serial0 = &uart0;
+         serial1 = &uart1;
+         serial2 = &uart2;
+         serial3 = &uart3;
+         serial4 = &uart4;
+         mmc0 = &mmc0;  /* Fixed to mmcblk0 for sdio1 */
+     };
+ 
+     uart0: uart@f0280000 {
+         compatible = "ns16550a";
+         reg = <0x2 0xf0280000 0x0 0x1000>;
+         interrupts = <GIC_SPI 43 IRQ_TYPE_LEVEL_HIGH>;
+         baud = <115200>;
+         reg-shift = <2>;
+         reg-io-width = <4>;
+         no-loopback-test = <1>;
+         clock-frequency = <24000000>;
+         rx_trig_level = <3>;
+         hw_flowctrl = <0>;
+     };
+ 
+     uart1: uart@f0290000 {
+         compatible = "ns16550a";
+         reg = <0x2 0xf0290000 0x0 0x1000>;
+         interrupts = <GIC_SPI 44 IRQ_TYPE_LEVEL_HIGH>;
+         baud = <115200>;
+         reg-shift = <2>;
+         reg-io-width = <4>;
+         no-loopback-test = <1>;
+         clock-frequency = <48000000>;
+         rx_trig_level = <3>;
+         hw_flowctrl = <0>;
+     };
+ 
+     uart2: uart@f02a0000 {
+         compatible = "ns16550a";
+         reg = <0x2 0xf02a0000 0x0 0x1000>;
+         interrupts = <GIC_SPI 45 IRQ_TYPE_LEVEL_HIGH>;
+         baud = <115200>;
+         reg-shift = <2>;
+         reg-io-width = <4>;
+         no-loopback-test = <1>;
+         clock-frequency = <48000000>;
+         rx_trig_level = <3>;
+     };
+ 
+     uart3: uart@f02b0000 {
+         compatible = "ns16550a";
+         reg = <0x2 0xf02b0000 0x0 0x1000>;
+         interrupts = <GIC_SPI 38 IRQ_TYPE_LEVEL_HIGH>;
+         baud = <115200>;
+         reg-shift = <2>;
+         reg-io-width = <4>;
+         no-loopback-test = <1>;
+         clock-frequency = <48000000>;
+         rx_trig_level = <3>;
+     };
+ 
+     uart4: uart@f02c0000 {
+         compatible = "ns16550a";
+         reg = <0x2 0xf02c0000 0x0 0x1000>;
+         interrupts = <GIC_SPI 47 IRQ_TYPE_LEVEL_HIGH>;
+         baud = <115200>;
+         reg-shift = <2>;
+         reg-io-width = <4>;
+         no-loopback-test = <1>;
+         clock-frequency = <48000000>;
+         rx_trig_level = <3>;
+     };
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-	aliases {
-		serial0 = &uart0;
-		serial1 = &uart1;
-		serial2 = &uart2;
-		serial3 = &uart3;
-		serial4 = &uart4;
-		mmc0 = &mmc0;	/* Fixed to mmcblk0 for sdio1 */
-	};
-
-	uart0: uart@f0280000 {
-		compatible = "ns16550a";
-		reg = <0x2 0xf0280000 0x0 0x1000>;
-		interrupts = <GIC_SPI 43 IRQ_TYPE_LEVEL_HIGH>;
-		baud = <115200>;
-		reg-shift = <2>;
-		reg-io-width = <4>;
-		no-loopback-test = <1>;
-		clock-frequency = <24000000>;
-		rx_trig_level = <3>;
-		hw_flowctrl = <0>;
-	};
-
-	uart1: uart@f0290000 {
-		compatible = "ns16550a";
-		reg = <0x2 0xf0290000 0x0 0x1000>;
-		interrupts = <GIC_SPI 44 IRQ_TYPE_LEVEL_HIGH>;
-		baud = <115200>;
-		reg-shift = <2>;
-		reg-io-width = <4>;
-		no-loopback-test = <1>;
-		clock-frequency = <48000000>;
-		rx_trig_level = <3>;
-		hw_flowctrl = <0>;
-	};
-
-	uart2: uart@f02a0000 {
-		compatible = "ns16550a";
-		reg = <0x2 0xf02a0000 0x0 0x1000>;
-		interrupts = <GIC_SPI 45 IRQ_TYPE_LEVEL_HIGH>;
-		baud = <115200>;
-		reg-shift = <2>;
-		reg-io-width = <4>;
-		no-loopback-test = <1>;
-		clock-frequency = <48000000>;
-		rx_trig_level = <3>;
-	};
-
-	uart3: uart@f02b0000 {
-		compatible = "ns16550a";
-		reg = <0x2 0xf02b0000 0x0 0x1000>;
-		interrupts = <GIC_SPI 38 IRQ_TYPE_LEVEL_HIGH>;
-		baud = <115200>;
-		reg-shift = <2>;
-		reg-io-width = <4>;
-		no-loopback-test = <1>;
-		clock-frequency = <48000000>;
-		rx_trig_level = <3>;
-	};
-
-	uart4: uart@f02c0000 {
-		compatible = "ns16550a";
-		reg = <0x2 0xf02c0000 0x0 0x1000>;
-		interrupts = <GIC_SPI 47 IRQ_TYPE_LEVEL_HIGH>;
-		baud = <115200>;
-		reg-shift = <2>;
-		reg-io-width = <4>;
-		no-loopback-test = <1>;
-		clock-frequency = <48000000>;
-		rx_trig_level = <3>;
-	};
-```
-
-#### Partition table
+#### 4.2.3 Partition table
 
 The Nand/EMMC driver of kernel will do for the set partition initialization process as shown below, Uboot will read the partition info(nvt-storage-partition.dtsi) from dts, and then the Kernel also read it from dts to do basic initialization.
 
 If you want to change flash partition size or add a partition, please configure device tree nvt-storage-partition.dtsi and build dtb image, burn into flash or load to dram again(default address at 0x1f00000).
+
+![D:\\work6\\636\\fhtml\\NT9833x_SDK_Pure_Linux_Programming_Guide_en.files\\image015.png](nvt_media/14197eb867cad2d0a3eb93d85c6758cc.png)
 
 Figure 4-2 Partition initialization
 
@@ -705,27 +715,27 @@ SPI NAND partition example:
 
 nvt-storage-partition.dtsi for flash partition
 
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 &nand {
-	partition_loader {      label = "loader";       reg = <0x0 0x0000000 0x0 0x40000>; }; /* Fixed */
-	partition_fdt {	        label = "fdt";	        reg = <0x0 0x40000   0x0 0x40000>; }; /* Fixed */
-	partition_fdt.restore {	label = "fdt.restore";	reg = <0x0 0x80000   0x0 0x40000>; }; /* Fixed */
-	partition_atf {         label = "atf";          reg = <0x0 0x0C0000  0x0 0x40000>; };
-	partition_uboot {       label = "uboot";        reg = <0x0 0x100000  0x0 0x1C0000>; };
-	partition_uenv {        label = "uenv";         reg = <0x0 0x2C0000  0x0 0x40000>; };
-	partition_kernel {      label = "kernel";       reg = <0x0 0x300000  0x0 0x0500000>; };
-	partition_rootfs {      label = "rootfs";       reg = <0x0 0x800000  0x0 0x5100000>; };
-	partition_rootfs1 {     label = "rootfs1";      reg = <0x0 0x5900000 0x0 0x2700000>; };
+     partition_loader {      label = "loader";       reg = <0x0 0x0000000 0x0 0x40000>; }; /* Fixed */
+     partition_fdt {             label = "fdt";            reg = <0x0 0x40000   0x0 0x40000>; }; /* Fixed */
+     partition_fdt.restore {  label = "fdt.restore";   reg = <0x0 0x80000   0x0 0x40000>; }; /* Fixed */
+     partition_atf {         label = "atf";          reg = <0x0 0x0C0000  0x0 0x40000>; };
+     partition_uboot {       label = "uboot";        reg = <0x0 0x100000  0x0 0x1C0000>; };
+     partition_uenv {        label = "uenv";         reg = <0x0 0x2C0000  0x0 0x40000>; };
+     partition_kernel {      label = "kernel";       reg = <0x0 0x300000  0x0 0x0500000>; };
+     partition_rootfs {      label = "rootfs";       reg = <0x0 0x800000  0x0 0x5100000>; };
+     partition_rootfs1 {     label = "rootfs1";      reg = <0x0 0x5900000 0x0 0x2700000>; };
 };
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you want to change the partition size or add a partition, please configure it from the dts info. If users want to add user partition such as app1, users can add such as follow:
 
-```
-partition_app1 {  	label = "app1";          reg = <0x0 start_addr 0x0 size>; };
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+partition_app1 {    label = "app1";          reg = <0x0 start_addr 0x0 size>; };
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-### Debug
+### 4.3 Debug
 
 To debug the Kernel, you will need System.map or objects for the debug symbol loading, please get them from “linux-kernel/” as shown below:
 
@@ -798,11 +808,11 @@ Rebuild all; this binary will contain debug symbol information.
 **  
 **
 
-## Build Kernel Modules
+## 5 Build Kernel Modules
 
 In addition to build-in drivers, Linux had also provided an external load mode called Kernel module, can be loaded by “modprobe” or “insmod”. The below will introduce to build-in modules and the out-of-tree modules.
 
-### Build-in module compilation
+### 5.1 Build-in module compilation
 
 Typing “make modules” under na51090_linux_sdk can do build-in modules compilation and install path is root-fs/rootfs/lib/modules/{KER_VER}/kernel/.
 
@@ -810,7 +820,7 @@ Typing “make modules” under na51090_linux_sdk can do build-in modules compil
 
 \$ make modules
 
-### Out-of-Tree module compilation
+### 5.2 Out-of-Tree module compilation
 
 This folder under “na51090_linux_sdk/code” provides NVT platform drivers, typing “make supplement” to do the Out-of Tree modules compilation as below. And the modules will be installed on na51090_linux_sdk/BSP/root-fs/rootfs/lib/modules/{KER_VER}/extra/.
 
@@ -822,7 +832,7 @@ Linux Out-of-Tree driver module clean build:
 
 \$ make driver_clean
 
-### HDAL
+### 5.3 HDAL
 
 HDAL is the hardware abstraction layer driver and sample code, this one can be used to build proprietary driver modules, such as video process, video capture and video codec…etc. We provide the following instructions to build.
 
@@ -837,21 +847,21 @@ Please refer to the other documents for details.
 **  
 **
 
-### Installation
+### 5.4 Installation
 
 The modules can be installed by “modprobe” or “insmod/rmmod” to install or uninstall, besides the modprobe will also install related modules automatically.
 
 Example:
 
-1.  modprobe (Only needs the module name)
+1\. modprobe (Only needs the module name)
 
-    modprobe ehci-hcd
+modprobe ehci-hcd
 
-1.  insmod/rmmod (This method needs a full path)
+2\. insmod/rmmod (This method needs a full path)
 
-    insmod /lib/modules/{KER_VER}/extra/crypto/cryptodev-linux/cryptodev.ko
+insmod /lib/modules/{KER_VER}/extra/crypto/cryptodev-linux/cryptodev.ko
 
-## Build tools
+## 6 Build tools
 
 This folder will integrate some Linux open source tools as the following description:
 
@@ -879,7 +889,7 @@ iozone - IO r/w performance testing
 
 VDBench - CPU/io performance testing
 
-### Compilation
+### 6.1 Compilation
 
 To select the tools what you want: mtd-utils, memtester, bonnie, ethtool, gdb, htop, netperf, iperf and procps and running below instructions:
 
@@ -895,27 +905,29 @@ Tools clean build:
 
 \$ make clean
 
-### Installation
+### 6.2 Installation
 
 \$ make install
 
 The tools will be installed on “na51090_linux_sdk/BSP/root-fs”.
 
-## Build root-fs
+## 7 Build root-fs
 
-### Introduction
+### 7.1 Introduction
 
 The root file system will be mounted by Linux kernel, the first process of the kernel is /sbin/init (PID=1). We provide several root file systems support for selection, the following are the summary features:
 
--   UBIFS: readable/writable file system, support Nor and Nand flash, fast mounting speed, best bad block management and better IO performance. Suitable for low memory size and large flash size use condition.
+ UBIFS: readable/writable file system, support Nor and Nand flash, fast mounting speed, best bad block management and better IO performance. Suitable for low memory size and large flash size use condition.
 
-    We have a detail introduction in OSDRV/NT9833x_UBI_Filesystem_User_Guide_en.doc
+We have a detail introduction in OSDRV/NT9833x_UBI_Filesystem_User_Guide_en.doc
 
--   Squashfs: read-only file system, high compression rate. Suitable for small size flash and readonly use condition.
--   JFFS2: It is a log-structured file system which can support Nand and Nor flash devices. Providing zlib, lzo and rtime compression methods. Suitable for small flash size and readable/writable use condition.
--   RAMDISK: To provide a ram based file system.
+ Squashfs: read-only file system, high compression rate. Suitable for small size flash and readonly use condition.
 
-### Configuration
+ JFFS2: It is a log-structured file system which can support Nand and Nor flash devices. Providing zlib, lzo and rtime compression methods. Suitable for small flash size and readable/writable use condition.
+
+ RAMDISK: To provide a ram based file system.
+
+### 7.2 Configuration
 
 The root file system will generate Nand flash type image format, we support squashfs and ubifs, please follow the Nand flash specification to modify the parameters:
 
@@ -925,27 +937,29 @@ The root file system will generate Nand flash type image format, we support squa
 
 To find below lines:
 
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 W = 1024
 SP = 128 * 1024
 SL = 124 * 1024
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 According the Nand flash to modify the parameters:
 
--   W is the entire flash chip Physical eraseblocks numbers
--   SP is the Size of block page
--   SL= (Size of block -2) \* Size of page.
+ W is the entire flash chip Physical eraseblocks numbers
 
-    e.g.
+ SP is the Size of block page
 
-    128MB Nand flash = 1024 eraseblocks = 1024 \* 128KB
+ SL= (Size of block -2) \* Size of page.
 
-    W = 1024
+e.g.
 
-    SP = 64 \* 2048 = 128 \* 1024
+128MB Nand flash = 1024 eraseblocks = 1024 \* 128KB
 
-    SL = (64 – 2) \* 2048 = 124 \* 1024
+W = 1024
+
+SP = 64 \* 2048 = 128 \* 1024
+
+SL = (64 – 2) \* 2048 = 124 \* 1024
 
 \$ vi mtd_cfg.txt
 
@@ -953,86 +967,99 @@ We can support two mtd_cfg.txt in BSP/root-fs/ and configs/cfg_gen, the build to
 
 To find below lines:
 
-```
-ROOTFS_UBI_SUB_PAGE_SIZE=2048			## Same as page size
-ROOTFS_UBI_PAGE_SIZE=2048			## Nand page size
-ROOTFS_UBI_ERASE_BLK_SIZE=126976		## (64-2) * Page size=126976
-ROOTFS_UBI_MAX_LEB_COUNT=361			## Size = UBI_MAX_LEB_COUNT * UBI_BLK_SIZE; It's calculated by "python ubi_max_leb.py Bytes"
-ROOTFS_UBI_RW_MAX_LEB_COUNT=258			## Size = UBI_MAX_LEB_COUNT * UBI_BLK_SIZE; It's calculated by "python ubi_max_leb.py Bytes"
-ROOTFS_UBI_BLK_SIZE="128KiB"			## UBIFS Nand flash block size (KiB)
-ROOTFS_UBI_COMPRESS_MODE="lzo"			## UBIFS compression type: "lzo", "favor_lzo", "zlib" "none"
-
-ROOTFS_SQ_COMPRESS_MODE="xz"			## Squashfs compression type: "gzip", "lzo" and "xz"
-ROOTFS_SQ_BLK_SIZE="128K"			## Squashfs Nand flash block size (KiB): e.g. spinand: 128K, spinor: 64K
-
-ROOTFS_JFFS2_COMPRESS_MODE="lzo"		## jffs2 compression type: "lzo" "zlib" "rtime"
-ROOTFS_JFFS2_SIZE=0x3200000			## jffs2 partition size: get from /proc/mtd
-ROOTFS_JFFS2_RW_SIZE=0x2500000			## jffs2 partition size: get from /proc/mtd
-ROOTFS_JFFS2_BLK_SIZE="128KiB"			## jffs2 block size (KiB): spinand: 128KiB, spinor: 64KiB
-ROOTFS_JFFS2_PAGE_SIZE="2048"			## jffs2 page size (Bytes): only used by nand, nor flash can be ignored.
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ROOTFS_UBI_SUB_PAGE_SIZE=2048          ## Same as page size
+ROOTFS_UBI_PAGE_SIZE=2048              ## Nand page size
+ROOTFS_UBI_ERASE_BLK_SIZE=126976       ## (64-2) * Page size=126976
+ROOTFS_UBI_MAX_LEB_COUNT=361           ## Size = UBI_MAX_LEB_COUNT * UBI_BLK_SIZE; It's calculated by "python ubi_max_leb.py Bytes"
+ROOTFS_UBI_RW_MAX_LEB_COUNT=258             ## Size = UBI_MAX_LEB_COUNT * UBI_BLK_SIZE; It's calculated by "python ubi_max_leb.py Bytes"
+ROOTFS_UBI_BLK_SIZE="128KiB"           ## UBIFS Nand flash block size (KiB)
+ROOTFS_UBI_COMPRESS_MODE="lzo"              ## UBIFS compression type: "lzo", "favor_lzo", "zlib" "none"
+ 
+ROOTFS_SQ_COMPRESS_MODE="xz"           ## Squashfs compression type: "gzip", "lzo" and "xz"
+ROOTFS_SQ_BLK_SIZE="128K"              ## Squashfs Nand flash block size (KiB): e.g. spinand: 128K, spinor: 64K
+ 
+ROOTFS_JFFS2_COMPRESS_MODE="lzo"       ## jffs2 compression type: "lzo" "zlib" "rtime"
+ROOTFS_JFFS2_SIZE=0x3200000            ## jffs2 partition size: get from /proc/mtd
+ROOTFS_JFFS2_RW_SIZE=0x2500000              ## jffs2 partition size: get from /proc/mtd
+ROOTFS_JFFS2_BLK_SIZE="128KiB"              ## jffs2 block size (KiB): spinand: 128KiB, spinor: 64KiB
+ROOTFS_JFFS2_PAGE_SIZE="2048"          ## jffs2 page size (Bytes): only used by nand, nor flash can be ignored.
+ 
 ROOTFS_EXT4_SIZE=$(shell printf "%d\n" 0x0A000000)
 ROOTFS_FAT_CACHE_SIZE=$(shell printf "%d\n" 0x0A000000)
-
+ 
 #APPFS
 ROOTFS_JFFS2_APP_SIZE=0x01E0000
 ROOTFS_JFFS2_APP_NOR_SIZE=0x0E20000
 ROOTFS_UBI_APP_MAX_LEB_COUNT=231
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The necessary parameters need to be modified as below description:
 
--   ROOTFS_UBI_SUB_PAGE_SIZE: The sub-page size of the Nand flash
--   ROOTFS_UBI_PAGE_SIZE: The page size of the Nand flash
--   ROOTFS_UBI_ERASE_BLK_SIZE: (Nand flash block size – 2) \* Page size
--   ROOTFS_UBI_MAX_LEB_COUNT: Use ubi_max_leb.py to calculate it
+ ROOTFS_UBI_SUB_PAGE_SIZE: The sub-page size of the Nand flash
 
-    \$ Usage: ubi_max_leb.py PartitionSize (Bytes)
+ ROOTFS_UBI_PAGE_SIZE: The page size of the Nand flash
 
--   ROOTFS_UBI_RW_MAX_LEB_COUNT: Use ubi_max_leb.py to calculate it
+ ROOTFS_UBI_ERASE_BLK_SIZE: (Nand flash block size – 2) \* Page size
 
-    \$ Usage: ubi_max_leb.py PartitionSize (Bytes)
+ ROOTFS_UBI_MAX_LEB_COUNT: Use ubi_max_leb.py to calculate it
 
--   ROOTFS_UBI_BLK_SIZE: Nand flash block size
--   ROOTFS_UBI_COMPRESS_MODE: Compression method = LZO
--   ROOTFS_SQ_COMPRESS_MODE: Squashfs compression mode
--   ROOTFS_SQ_BLK_SIZE: Squashfs nand flsh block size
--   ROOTFS_JFFS2_COMPRESS_MODE: jffs2 compression type: "lzo" "zlib" "rtime"
--   ROOTFS_JFFS2_SIZE: Rootfs partition size
--   ROOTFS_EXT4_SIZE: EMMC boot partition size
--   ROOTFS_FAT_CACHE_SIZE: EMMC boot FAT partition size (Optional)
--   ROOTFS_JFFS2_APP_SIZE: The size of the app partition in nand flash
--   ROOTFS_JFFS2_APP_NOR_SIZE: The size of the app partition in nor flash
--   ROOTFS_UBI_APP_MAX_LEB_COUNT: The ubi image size in app partition (Use ubi_max_leb.py to calculate it)
+\$ Usage: ubi_max_leb.py PartitionSize (Bytes)
+
+ ROOTFS_UBI_RW_MAX_LEB_COUNT: Use ubi_max_leb.py to calculate it
+
+\$ Usage: ubi_max_leb.py PartitionSize (Bytes)
+
+ ROOTFS_UBI_BLK_SIZE: Nand flash block size
+
+ ROOTFS_UBI_COMPRESS_MODE: Compression method = LZO
+
+ ROOTFS_SQ_COMPRESS_MODE: Squashfs compression mode
+
+ ROOTFS_SQ_BLK_SIZE: Squashfs nand flsh block size
+
+ ROOTFS_JFFS2_COMPRESS_MODE: jffs2 compression type: "lzo" "zlib" "rtime"
+
+ ROOTFS_JFFS2_SIZE: Rootfs partition size
+
+ ROOTFS_EXT4_SIZE: EMMC boot partition size
+
+ ROOTFS_FAT_CACHE_SIZE: EMMC boot FAT partition size (Optional)
+
+ ROOTFS_JFFS2_APP_SIZE: The size of the app partition in nand flash
+
+ ROOTFS_JFFS2_APP_NOR_SIZE: The size of the app partition in nor flash
+
+ ROOTFS_UBI_APP_MAX_LEB_COUNT: The ubi image size in app partition (Use ubi_max_leb.py to calculate it)
 
 You can modify the ubi mount parameters with your requirement, e.g.
 
-![](nvt_media/03021b0c071ddc20fc99fd1e7b40fecb.png)
+![D:\\work6\\636\\fhtml\\NT9833x_SDK_Pure_Linux_Programming_Guide_en.files\\image016.jpg](nvt_media/5fa9a1ce4a44c2531e17a1be357a1870.jpg)
 
 BSP/root-fs/ubi_max_leb.py
 
-```
-def get_ubifs_max_leb(partition_size):          #Unit: Bytes
-        P = partition_size/SP
-        BR = math.ceil(30 * W/float(1024))      ## Sync with kernel
-        B = max(BB, BR)
-
-        ubi_overhead = (( B - BB + 4 ) * SP + O * ( P - B - 4 ))/float(SP)
-        ubi_overhead = math.ceil(ubi_overhead)
-        ubi_overhead = math.floor(((P - ubi_overhead) * SP) / float(SL))
-	  if ubi_overhead < 0:
-		return -1
-	  else:
-		return (ubi_overhead - 1)
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+def get_ubifs_max_leb(partition_size):          #Unit: Bytes
+        P = partition_size/SP
+        BR = math.ceil(30 * W/float(1024))      ## Sync with kernel
+        B = max(BB, BR)
+ 
+        ubi_overhead = (( B - BB + 4 ) * SP + O * ( P - B - 4 ))/float(SP)
+        ubi_overhead = math.ceil(ubi_overhead)
+        ubi_overhead = math.floor(((P - ubi_overhead) * SP) / float(SL))
+       if ubi_overhead < 0:
+         return -1
+       else:
+         return (ubi_overhead - 1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Note: linux menuconfig Maximum expected bad eraseblock count per 1024 eraseblocks value “30” must be the same with ubi_max_leb.py value “30”. This parameter will affect the bad block management, please reserve enough blocks(e.g. 10, 20) per 1024 erase blocks.
 
-### Modify flash filesystem partition size
+### 7.3 Modify flash filesystem partition size
 
 Users must check mtd config definiton in configs/cfg_gen/mtd_cfg.txt, the parameters: ROOTFS_UBI_MAX_LEB_COUNT, ROOTFS_UBI_RW_MAX_LEB_COUNT and ROOTFS_UBI_APP_MAX_LEB_COUNT value must use ubi_max_leb.py to calculate.
 
-### Compilation
+### 7.4 Compilation
 
 Using “make rootfs” instruction to generate rootfs bin, the image type can be selected by nvt-info.dtsi in configs folder. They can be produced into “na51090_linux_sdk/output/rootfs.ubifs.bin”, “na51090_linux_sdk/output/rootfs.squash.bin” and “na51090_linux_sdk/output/rootfs.jffs2.bin” separately. The command “mr” also can be used to compile rootfs if you are not in na51090_linux_sdk root folder.
 
@@ -1056,9 +1083,9 @@ This command will remove busybox tools, kernel modules…etc., please follow bel
 
 \$ make rootfs
 
-### Folder description
+### 7.5 Folder description
 
--   **Architecture**
+ **Architecture**
 
 | Folder                  | Description                                                                                             |
 |-------------------------|---------------------------------------------------------------------------------------------------------|
@@ -1079,15 +1106,15 @@ This command will remove busybox tools, kernel modules…etc., please follow bel
 | usr                     | User libraries, binaries                                                                                |
 | var                     | Service log message, including kernel, application, web server default folder(/var/www) and service…etc |
 
--   **/etc/passwd**
+ **/etc/passwd**
 
-    This file can setup user account environment, below is to introduce how to enable login password.
+This file can setup user account environment, below is to introduce how to enable login password.
 
-    \$ vi /etc/inittab
+\$ vi /etc/inittab
 
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ::respawn:-/bin/login
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Replace “::respawn:-/bin/login -f root” with “::respawn:-/bin/login” as below
 
@@ -1095,43 +1122,45 @@ Fill in the red part with the encryption password which can be generated by open
 
 \$ vi /etc/passwd
 
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 root:EncryptionCode:0:0:root:/root:/bin/sh
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Openssl generation:
 
 \$ openssl passwd -crypt YourPWD
 
--   **/etc/init.d**
+ **/etc/init.d**
 
-    System will execute the following shell scripts according sequence.
+System will execute the following shell scripts according sequence.
 
-    rcS -\> S00_PreReady -\> S05_Net -\> S10_SysInit -\> S10_hdal_init -\> S99_Sysctl
+rcS -\> S00_PreReady -\> S05_Net -\> S10_SysInit -\> S10_hdal_init -\> S99_Sysctl
 
-    Moreover, power off will execute deinitialization process as below.
+Moreover, power off will execute deinitialization process as below.
 
-    rcK -\> K00_Sys -\> K99_Sys
+rcK -\> K00_Sys -\> K99_Sys
 
--   **/etc/sysctl.conf**
+ **/etc/sysctl.conf**
 
-    This file is handle sysctl parameters setup.
+This file is handle sysctl parameters setup.
 
-### UBIFS
+### 7.6 UBIFS
 
 The UBIFS is our default rootfs format, UBIFS (Unsorted Block Image File System) was originally called JFFS3, is JFFS2 next generation version. The main capabilities are faster mounting, quicker access to large files, and improved write speeds. UBIFS also preserves or improves upon JFFS2's on-the-fly compression, recoverability and power fail tolerance, and data compression allows zlib or LZO. The filename is UBI.IMG after compilation.
 
-### Squashfs
+### 7.7 Squashfs
 
 Squashfs is a read-only file system which can support gzip, lzo and xz compression modes. The main features are high compression rate, stores full 32bits uid/gids and creation time, support block size up to 1Mbytes. The filename is SQ_ROOTFS.IMG after compilation.
 
-### Jffs2
+### 7.8 Jffs2
 
 JFFS2 was developed by Red Hat, based on the work started in the original JFFS by Axis Communications, AB, it is a readable and writable file system. JFFS2 will scan rootfs partition during mounting; the mount time depends on the rootfs size. The main features are listed as below:
 
--   Support compression mode
--   Mounting time will be affected by flash size
--   Not support all Nand flash devices with HW ecc, please refer to Linux driver application note
+ Support compression mode
+
+ Mounting time will be affected by flash size
+
+ Not support all Nand flash devices with HW ecc, please refer to Linux driver application note
 
 The filename is rootfs.jffs2.bin after compilation.
 
@@ -1149,15 +1178,15 @@ File systems
 
 For the uboot configuration to choose root file system type, please refer to the UBoot_Programing_Guide.
 
-### HDAL sample code
+### 7.9 HDAL sample code
 
 We will pack one partition named DVR_xxx.bin is under na51090_linux_sdk/configs/Linux/cfg_xxx/nvt-nvtpack.dtsi partition_name = "app" field. You could modify the partition size and recalculate the related parameters to fill in the nvt -storage-partition.dtsi partition_app field.
 
 Please refer to 7.2 for mtd_cfg.txt description.
 
-## Build App
+## 8 Build App
 
-### Compilation
+### 8.1 Compilation
 
 NVT platform needs the necessary applications to perform the requested actions, please using below instructions to compile (This part doesn’t provide source code).
 
@@ -1171,7 +1200,7 @@ We have fine-tuned some functions and the fpu related setting, please add \$(PLA
 
 e.g.
 
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 nvt02854@oaalnx13:~/na51090_linux_sdk/na51090_linux_sdk$ get_stuff_for_environment
 ======================================== NVT Setting ========================================
 NVT_PRJCFG_CFG = Linux
@@ -1221,11 +1250,11 @@ OBJDUMP = /opt/ivot/aarch64-ca53-linux-uclibcgnueabihf-8.4/usr/bin/aarch64-ca53-
 PATH = /opt/CEVA-ToolBox/V17/XM4/CEVA-XM4:/opt/ivot/aarch64-ca53-linux-uclibcgnueabihf-8.4/usr/bin:/opt/utility/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/snap/bin:.
 LD_LIBRARY_PATH = /opt/ivot/aarch64-ca53-linux-uclibcgnueabihf-8.4/usr/local/lib
 =============================================================================================
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-## Build Libraries
+## 9 Build Libraries
 
-### Compilation
+### 9.1 Compilation
 
 na51090_linux_sdk provides some proprietary libraries and header files for the product customization (this part doesn’t involve source code, we only provide you \*.so), please according the following instruction to compile it.
 
@@ -1239,9 +1268,9 @@ Libraries clean build:
 
 Please execute “source build/envsetup.sh” firstly when you start to build it. Please reference to Application Note for the other details.
 
-## Build busybox
+## 10 Build busybox
 
-### Compilation
+### 10.1 Compilation
 
 Busybox can provide rootfs necessary tools, using below instruction can compile it. And the tools will be installed to na51090_linux_sdk/BSP/root-fs.
 
@@ -1253,7 +1282,7 @@ mybusybox clean build:
 
 \$ make busybox_clean
 
-### Menu configuration
+### 10.2 Menu configuration
 
 SDK will provide two busybox configuration files, one is normal version (busybox_cfg_normal), and the other is minimized version (busybox_cfg_small). Edit Top Makefile can change the busybox configuration, the default is normal version.
 
@@ -1263,10 +1292,10 @@ Edit Top Makefile to switch the configuration file:
 
 \$ vi Makefile
 
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 BUSYBOX_CFG:=busybox_cfg_full
 #BUSYBOX_CFG:=busybox_cfg_small
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Below instruction can handle busybox features selection:
 
@@ -1274,11 +1303,11 @@ Below instruction can handle busybox features selection:
 
 Choose “Exit/Save” after you finished function selection, it can generate new .config for the Busybox compilation usage.
 
-![](nvt_media/fb5c8eaae93338b9fce9fd722829ae20.png)
+![D:\\work6\\636\\fhtml\\NT9833x_SDK_Pure_Linux_Programming_Guide_en.files\\image017.jpg](nvt_media/12b4aed032f9ac2fd2c5dc1da40027cb.jpg)
 
-## Build sample code
+## 11 Build sample code
 
-### Compilation
+### 11.1 Compilation
 
 The device driver testing applications will be used to test NVT peripheral devices; the following instructions can compile it. And it will be installed to na51090_linux_sdk/BSP/root-fs.
 
@@ -1290,49 +1319,49 @@ Driver test clean build:
 
 \$ make sample_clean
 
-## Update Firmware
+## 12 Update Firmware
 
 We provide two OS version nvtpack image could be used, one is Linux version will be generate by Linux version nvtpack tool, the images will be generated under the output folder. Another is Windows vesion nvtpack tool, the following section can get more clearly description.
 
-### Linux version nvtpack for all-in-one image
+### 12.1 Linux version nvtpack for all-in-one image
 
 The nvt-nvtpack.dtsi is used to control what kinds of images want to be involved, and which files will be packed by all-in-one tool. If source_file = "", it means we don’t want to pack this image into all-in-one image. If id1 … source_file = "nvt-evb.bin", it means nvt-evb.bin file will pack into all-in-one image partition 1, partition setting we can reference nvt-storage-partition.dtsi file.
 
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 nvtpack {
-	ver = "NVTPACK_FW_INI_16072017"; /* Fixed */
-	method = <1>; /* Fixed */
-	index {
-			id0 { partition_name = "loader";      source_file = ""; }; /* Fixed */
-			id1 { partition_name = "fdt";         source_file = "nvt-all.bin"; }; /* Fixed */
-			id2 { partition_name = "fdt.restore"; source_file = "";	}; /* Fixed */
-			id3 { partition_name = "atf";         source_file = "atf.bin"; };
-			id4 { partition_name = "uboot";	      source_file = "u-boot.bin"; };
-			id5 { partition_name = "uenv";	      source_file = ""; };
-			id6 { partition_name = "kernel";      source_file = "Image.bin"; };
-			id7 { partition_name = "rootfs";      source_file = "rootfs.ramdisk.bin"; };
-			id8 { partition_name = "rootfs1";     source_file = "rootfs_1.rw.ubifs.bin"; };
-	};
+     ver = "NVTPACK_FW_INI_16072017"; /* Fixed */
+     method = <1>; /* Fixed */
+     index {
+              id0 { partition_name = "loader";      source_file = ""; }; /* Fixed */
+              id1 { partition_name = "fdt";         source_file = "nvt-all.bin"; }; /* Fixed */
+              id2 { partition_name = "fdt.restore"; source_file = "";     }; /* Fixed */
+              id3 { partition_name = "atf";         source_file = "atf.bin"; };
+              id4 { partition_name = "uboot";          source_file = "u-boot.bin"; };
+              id5 { partition_name = "uenv";           source_file = ""; };
+              id6 { partition_name = "kernel";      source_file = "Image.bin"; };
+              id7 { partition_name = "rootfs";      source_file = "rootfs.ramdisk.bin"; };
+              id8 { partition_name = "rootfs1";     source_file = "rootfs_1.rw.ubifs.bin"; };
+     };
 };
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Using “make all” or “make pack” can generate the packed image is under output/packed/FW(SOC).bin.
 
-### Update Firmware
+### 12.2 Update Firmware
 
 Insert SD card including All-in-One bin to the target board and power on can update firmware.
 
-### Update Loader
+### 12.3 Update Loader
 
 For a blank Nand flash, you need to burn loader (LD98336A.bin), by first SD card format (be sure to format), and then immediately put LD98336A.bin, then placed all in one bin (FW98336A.bin).
 
-## Power on
+## 13 Power on
 
-### How to power on
+### 13.1 How to power on
 
 To follow update steps to burn the desired Image, remove SD card can boot up directly.
 
-## Debug
+## 14 Debug
 
 The following list provides comparison and classification of the debugging tools.
 
@@ -1345,7 +1374,7 @@ The following list provides comparison and classification of the debugging tools
 | kmemleak | Kernel debug    | To analyze if Linux kernel has memory leak issue.                                  |
 | OPENOCD  | Kernel debug    | To debug/ trace kernel or uboot                                                    |
 
-### Coredump
+### 14.1 Coredump
 
 Provide analytical application error log, the application does not properly terminated, it generates a file in /var/log. It can record the program name, PID and time, can be loaded for analysis through a cross compiler. You should build it with debug mode when you start application analysis.
 
@@ -1355,20 +1384,20 @@ The following is related setting:
 
 \$ vi etc/profile
 
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## coredump setting
 echo 1 > /proc/sys/kernel/core_uses_pid
 ulimit -c unlimited
 echo "/var/log/core-%e-%p-%t" > /proc/sys/kernel/core_pattern
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If the user wants to store the dump file in SD card or USB disk, linux will check the file permission, fat can not support linux permission, please format to ext4 filesystem.
 
-### Messages
+### 14.2 Messages
 
 The boot log of the Linux will be stored in /var/log/messages, this file can involve Kernel and user space app. If the kernel crash occurred, please provide this file for the further analysis.
 
-### GDB
+### 14.3 GDB
 
 GDB (GNU Project Debugger) can support Remote and Target mode to debug AP.
 
@@ -1380,6 +1409,8 @@ Target mode gdb/gdbserver can be generated by the following command:
 
 The connection diagram as shown below, Figure 13-1:
 
+![D:\\work6\\636\\fhtml\\NT9833x_SDK_Pure_Linux_Programming_Guide_en.files\\image018.png](nvt_media/b2299750dd227048966a7947296cb303.png)
+
 Figure 14-1 Target debug connection
 
 Remote mode can debug user space application through GDB server, and the connection architecture as below. Linux server is x86_64 compile server, target board is the EVB, they can be connected by serial or TCP/IP. Linux server will use cross compiler toolchain GDB to debug target board AP, this AP must be enabled debug symbol, and target board also needs to execute gdbserver which can be find in toolchain.
@@ -1387,6 +1418,8 @@ Remote mode can debug user space application through GDB server, and the connect
 The serial connection can connect USB-to-Serial cable to target board USB port, and check if there is /dev/ttyUSB0 existed.
 
 TCP/IP connection can use Wi-Fi or Ethernet, install necessary drivers and confirm whether it can ping to server.
+
+![D:\\work6\\636\\fhtml\\NT9833x_SDK_Pure_Linux_Programming_Guide_en.files\\image019.png](nvt_media/54522c0a06349fa93caff203eb13fec2.png)
 
 Figure 14-2 Remote debug connection
 
@@ -1398,7 +1431,7 @@ GDB server needs to be executed on EVB.
 
 And then, running below procedures can debug your AP.
 
-1.  Target Board
+1\. Target Board
 
 target \> gdbserver comm prog [args...]
 
@@ -1412,7 +1445,7 @@ Net:
 
 target \> gdbserver Host \_IP:1234 hello_world
 
-1.  Linux Server
+2\. Linux Server
 
 Serial:
 
@@ -1436,20 +1469,20 @@ In addition to command mode debug you also can use DDD, it is a framework on top
 
 \$ sudo ddd --debugger aarch64-ca53-linux-uclibc-gdb
 
-### Printk
+### 14.4 Printk
 
 Linux provides seven levels of Log printk available in the following table:
 
-| **Level**    | **Description**                  | **Usage**  |
-|--------------|----------------------------------|------------|
-| KERN_EMERG   | system is unusable               | pr_emerg   |
-| KERN_ALERT   | action must be taken immediately | pr_alert   |
-| KERN_CRIT    | critical conditions              | pr_crit    |
-| KERN_ERR     | error conditions                 | pr_err     |
-| KERN_WARNING | warning conditions               | pr_warning |
-| KERN_NOTICE  | normal but significant condition | pr_notice  |
-| KERN_INFO    | Informational                    | pr_info    |
-| KERN_DEBUG   | debug-level messages             | pr_debug   |
+| **Level**        | **Description**                  | **Usage**  |
+|------------------|----------------------------------|------------|
+| (0) KERN_EMERG   | system is unusable               | pr_emerg   |
+| (1) KERN_ALERT   | action must be taken immediately | pr_alert   |
+| (2) KERN_CRIT    | critical conditions              | pr_crit    |
+| (3) KERN_ERR     | error conditions                 | pr_err     |
+| (4) KERN_WARNING | warning conditions               | pr_warning |
+| (5) KERN_NOTICE  | normal but significant condition | pr_notice  |
+| (6) KERN_INFO    | Informational                    | pr_info    |
+| (7) KERN_DEBUG   | debug-level messages             | pr_debug   |
 
 Above the printk level is used to decide whether or not to print the message console, the below instruction can show you the printk level, current representative of the level of the boot to be printed, default is the default level, minimum is the lowest possible print level, boot-time-default is boot stage log:
 
@@ -1464,7 +1497,7 @@ Yīncǐ, yào gǎibiàn shūchū jíbié ràng suǒyǒu xùnxí dōu kěyǐ yìn
 
 root@NVTEVM:\~\$ echo 8 \> /proc/sys/kernel/printk
 
-### Kmemleak
+### 14.5 Kmemleak
 
 Linux Kmemleak is provided for detecting a memory leak tool, it will record detect report in /sys/kernel/debug/kmemleak, to use this function as long as enable the "Kernel Hacking", "Kernel Memory Leak Detector" (CONFIG_DEBUG_KMEMLEAK) in the kernel option, and configure the "Maximum kmemleak early log entires" with 1200.
 
@@ -1484,11 +1517,11 @@ Check the resules:
 
 root@NVTEVM:\~\$ cat /sys/kernel/debug/kmemleak
 
-## FAQ
+## 15 FAQ
 
 This section will list frequently problems.
 
-### Toolchain can’t be found
+### 15.1 Toolchain can’t be found
 
 We have two toolchains to build overall SDK, one is for itron, another is for Linux.
 
@@ -1496,7 +1529,7 @@ First, please use below command to check your environment setting.
 
 \$ get_stuff_for_environment
 
-### Operation not permitted
+### 15.2 Operation not permitted
 
 The SDK installation path should be under your home folder, you should use the same owner to decompressing and building, otherwise you will get “*operation not permitted*” related message.
 
@@ -1504,7 +1537,7 @@ Please use below command to check permission and owner.
 
 \$ ls -al YOUR_FOLDER
 
-### Linux kernel uImage can’t be generated
+### 15.3 Linux kernel uImage can’t be generated
 
 This is because our default setting is lz4 compression format, you should follow section 1.2 to check lz4 tool is installed.
 
