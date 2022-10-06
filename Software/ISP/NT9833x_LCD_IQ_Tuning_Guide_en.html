@@ -1120,25 +1120,25 @@
 <tbody>
 <tr>
 <td><strong>gm_en</strong></td>
-<td>0\~1</td>
+<td>0~1</td>
 <td>1</td>
 <td>enable Y gamma</td>
 </tr>
 <tr>
 <td><strong>blk_idx[16]</strong></td>
-<td>0\~31</td>
+<td>0~31</td>
 <td>0</td>
 <td>Block first index</td>
 </tr>
 <tr>
 <td><strong>blk_split[16]</strong></td>
-<td>0\~3</td>
+<td>0~3</td>
 <td>0</td>
 <td>Block[x], Sub-block split 00 : no split. 01 : split to 2 sub-blocks 10 : split to 4 sub-blocks 11 : split to 8-blocks</td>
 </tr>
 <tr>
 <td><strong>Y_gm[32]</strong></td>
-<td>0\~4095</td>
+<td>0~4095</td>
 <td></td>
 <td>Gamma table</td>
 </tr>
@@ -1153,7 +1153,7 @@
 <p>Block2 is divided into 8 sub-block</p>
 <p>Block3 is divided into 8 sub-block</p>
 <p>Total Block no:</p>
-<p>8 + 8 + 2 + 2 + 12(Block4\~15)</p>
+<p>8 + 8 + 2 + 2 + 12(Block4~15)</p>
 <p>= 32</p>
 <p>The parameter settings are as follows：</p>
 <p>blk_idx[16] = {0, 8, 16, 18, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31};</p>
@@ -1165,7 +1165,7 @@
 <p>Block14 is divided into 4 sub-block</p>
 <p>Block15 is divided into 4 sub-block</p>
 <p>Total block no:</p>
-<p>4 + 4 + 12(Block2\~13) + 4 + 4</p>
+<p>4 + 4 + 12(Block2~13) + 4 + 4</p>
 <p>= 28 //※not necessary to equal to 32</p>
 <p>The parameter settings are as follows：</p>
 <p>blk_idx[16] = {0, 4, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 24};</p>
@@ -1173,15 +1173,15 @@
 <p>Y_gm[32] = {64, 128, 192, 256,320, 384, 448, 512, 768, 1024, 1280, 1536, 1792, 2048, 2304, 2560, 2816, 3072, 3328, 3584, 3648, 3712, 3776, 3840, 3904, 3968, 4032, 4095, 4095, 4095, 4095, 4095}; ※The last for value will be dummy.</p>
 <h4 id="212-tuning-interface">2.1.2 Tuning Interface<a class="headerlink" href="#212-tuning-interface" title="Permanent link">&para;</a></h4>
 <h6 id="proc-command">Proc Command:<a class="headerlink" href="#proc-command" title="Permanent link">&para;</a></h6>
-<p>echo 0 1 0 &ldquo;0x300,0x108,0x10a,0xc,0xd,0xe,0xf,0x10,0x11,0x12,0x13,0x14,0x15,0x116,0x218,0x21c&rdquo; > ygamma</p>
-<p>echo 0 1 1 &ldquo;80,128,176,224,256,304,336,368,528,688,832,1008,1344,1680,2016,2336&rdquo; > ygamma</p>
-<p>echo 0 1 2 &ldquo;2640,2912,3152,3376,3552,3712,3776,3840,3872,3904,3936,3968,4000,4032,4064,4080&rdquo; > ygamma</p>
+<p>echo 0 1 0 &ldquo;0x300,0x108,0x10a,0xc,0xd,0xe,0xf,0x10,0x11,0x12,0x13,0x14,0x15,0x116,0x218,0x21c&rdquo; &gt; ygamma</p>
+<p>echo 0 1 1 &ldquo;80,128,176,224,256,304,336,368,528,688,832,1008,1344,1680,2016,2336&rdquo; &gt; ygamma</p>
+<p>echo 0 1 2 &ldquo;2640,2912,3152,3376,3552,3712,3776,3840,3872,3904,3936,3968,4000,4032,4064,4080&rdquo; &gt; ygamma</p>
 <h3 id="22-yuv-adjustment">2.2 YUV Adjustment<a class="headerlink" href="#22-yuv-adjustment" title="Permanent link">&para;</a></h3>
 <p>This function includes adjustments for brightness, contrast, hue, saturation, etc., as follows:</p>
 <p> Brightness:</p>
 <p> Setting Interface： proc</p>
 <p><strong>Read :</strong> cat /proc/flcd310/brightness</p>
-<p><strong>Write:</strong> echo \&lt;plane 0> \&lt;brightness -127\~127> > brightness</p>
+<p><strong>Write:</strong> echo &lt;plane 0&gt; &lt;brightness -127~127&gt; &gt; brightness</p>
 <table>
 <thead>
 <tr>
@@ -1222,7 +1222,7 @@
 <p> Contrast: Map the image Y channel to adjust the image contrast.</p>
 <p> Setting Interface： /proc/flcd310/contrast</p>
 <p><strong>Read:</strong> cat /proc/flcd310/contrast</p>
-<p><strong>Write:</strong> echo \&lt;plane 0\~0> \&lt;contrast_ratio 0\~255> \&lt;contrast_mode 0\~2> > /proc/flcd310/contrast</p>
+<p><strong>Write:</strong> echo &lt;plane 0~0&gt; &lt;contrast_ratio 0~255&gt; &lt;contrast_mode 0~2&gt; &gt; /proc/flcd310/contrast</p>
 <table>
 <thead>
 <tr>
@@ -1288,11 +1288,11 @@
 </table>
 <p> Hue:</p>
 <p>LCD310 divides the color picture into six blocks, which can adjust the hue and saturation for specific color blocks.</p>
-<p>Index 0 \~ 5 respectively: Magenta, Red, Yellow, Green, Cyan, Blue.</p>
+<p>Index 0 ~ 5 respectively: Magenta, Red, Yellow, Green, Cyan, Blue.</p>
 <p><img alt="D:\work6\636\fhtml\NT9833x_LCD_IQ_Tuning_Guide_en.files\image012.gif" src="nvt_media/b2da2d76f90833bab0ef06121bd5238b.gif" /></p>
 <p> Setting Interface: /proc/flcd310/hue</p>
 <p><strong>Read:</strong> cat /proc/flcd310/hue</p>
-<p><strong>Write:</strong> echo \&lt;plane 0\~0> \&lt;hue_sat state 0/1> \&lt;hue0 -45\~45> \&lt;hue1 -45\~45> \&lt;hue2 -45\~45> \&lt;hue3 -45\~45> \&lt;hue4 -45\~45> \&lt;hue5 -45\~45> > /proc/flcd310/hue</p>
+<p><strong>Write:</strong> echo &lt;plane 0~0&gt; &lt;hue_sat state 0/1&gt; &lt;hue0 -45~45&gt; &lt;hue1 -45~45&gt; &lt;hue2 -45~45&gt; &lt;hue3 -45~45&gt; &lt;hue4 -45~45&gt; &lt;hue5 -45~45&gt; &gt; /proc/flcd310/hue</p>
 <table>
 <thead>
 <tr>
@@ -1310,18 +1310,18 @@
 <td>1: enable, 0: diable hue saturation</td>
 </tr>
 <tr>
-<td>hue0\~5</td>
+<td>hue0~5</td>
 <td>They are the rotation adjustment values of the following 6 large hue blocks. The preset value of 0 means no adjustment, and the positive/negative values are respectively inverse/clockwise rotation of the hue block. Magenta, Red, Yellow, Green, Cyan, Blue</td>
 </tr>
 </tbody>
 </table>
 <p> Saturation: Adjust the saturation of the picture.</p>
 <p>LCD310 divides the color picture into six blocks, which can adjust the hue and saturation for specific color blocks.</p>
-<p>Index 0 \~ 5 respectively: Magenta, Red, Yellow, Green, Cyan, Blue.</p>
+<p>Index 0 ~ 5 respectively: Magenta, Red, Yellow, Green, Cyan, Blue.</p>
 <p><img alt="D:\work6\636\fhtml\NT9833x_LCD_IQ_Tuning_Guide_en.files\image013.gif" src="nvt_media/69c2e73c1cdb046b484bd6a25f641d57.gif" /></p>
 <p> Setting Interface： /proc/flcd310/hue_sat</p>
 <p><strong>Read:</strong> cat /proc/flcd310/hue_sat</p>
-<p><strong>Write:</strong> echo \&lt;plane 0\~0> \&lt;hue_sat state 0/1> \&lt;hue_sat0> \&lt;hue_sat1> \&lt;hue_sat2> \&lt;hue_sat3> \&lt;hue_sat4> \&lt;hue_sat5> > /proc/flcd310/hue_sat</p>
+<p><strong>Write:</strong> echo &lt;plane 0~0&gt; &lt;hue_sat state 0/1&gt; &lt;hue_sat0&gt; &lt;hue_sat1&gt; &lt;hue_sat2&gt; &lt;hue_sat3&gt; &lt;hue_sat4&gt; &lt;hue_sat5&gt; &gt; /proc/flcd310/hue_sat</p>
 <table>
 <thead>
 <tr>
@@ -1339,7 +1339,7 @@
 <td>1: enable, 0: diable hue saturation</td>
 </tr>
 <tr>
-<td>hue_sat0\~5</td>
+<td>hue_sat0~5</td>
 <td>The saturation adjustment values of the following six color. Set to 128 to indicate no adjustment. The larger the value, the higher the saturation. Magenta, Red, Yellow, Green, Cyan, Blue</td>
 </tr>
 </tbody>
@@ -1367,7 +1367,7 @@
 <p>This feature enhances regional contrast.</p>
 <p>Setting Interface： /proc/flcd310/ce</p>
 <p>Read: cat /proc/flcd310/ce</p>
-<p>Write: echo \&lt;plane 0\~0> \&lt;ce_state 0/1> \&lt;strength 0\~1023> > /proc/flcd310/ ce</p>
+<p>Write: echo &lt;plane 0~0&gt; &lt;ce_state 0/1&gt; &lt;strength 0~1023&gt; &gt; /proc/flcd310/ ce</p>
 <table>
 <thead>
 <tr>
@@ -1409,7 +1409,7 @@
 <p>This function is an edge enhancement function that enhances the sharpness of the picture. Two-level sharpness enhancement core for reinforcement of thin and thick edges</p>
 <p> Setting Interface: /proc/flcd310/sharpness</p>
 <p><strong>Read:</strong> cat /proc/flcd310/sharpness</p>
-<p><strong>Write:</strong> echo \&lt;plane 0> \&lt;enable 0/1> \&lt;hpf0_5x5_gain 0\~1024> \&lt;hpf1_5x5_gain 0\~1024> > /proc/flcd310/sharpness</p>
+<p><strong>Write:</strong> echo &lt;plane 0&gt; &lt;enable 0/1&gt; &lt;hpf0_5x5_gain 0~1024&gt; &lt;hpf1_5x5_gain 0~1024&gt; &gt; /proc/flcd310/sharpness</p>
 <table>
 <thead>
 <tr>

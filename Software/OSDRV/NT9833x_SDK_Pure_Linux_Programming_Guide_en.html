@@ -1988,41 +1988,41 @@
 <h3 id="12-linux-environment-setup">1.2 Linux environment setup<a class="headerlink" href="#12-linux-environment-setup" title="Permanent link">&para;</a></h3>
 <p>In order to prevent some complaints in the SDK compilation of the 32 Bits OS, we will use 64 Bits Ubuntu OS as our development environment. The first of all, you should install an Ubuntu based server or Ubuntu on VirtualBox which is introduced in previous section, please download the image from (<a href="http://releases.ubuntu.com/12.04.5/">http://releases.ubuntu.com/</a>) to get Ubuntu 12.04/14.04/16.04/18.04 Desktop AMD64 version ISO image and use the following instructions to install necessary Ubuntu packages.</p>
 <p><strong>Ubuntu 12.04:</strong></p>
-<p>\$ sudo apt-get install bc build-essential libc6-dev libncurses5-dev libgl1-mesa-dev g++-multilib mingw32 tofrodos ia32-libs uboot-mkimage zlib1g-dev mtd-utils vim squashfs-tools gawk cmake cmake-data libstdc++6 device-tree-compiler android-tools-fsutils texinfo libssl-dev python3-crypto python3-pyelftools python3-pycrypto</p>
-<p>\$ sudo add-apt-repository ppa:nathan-renniewaldock/ppa</p>
-<p>\$ sudo apt-get update</p>
-<p>\$ sudo apt-get install liblz4-tool</p>
+<p>$ sudo apt-get install bc build-essential libc6-dev libncurses5-dev libgl1-mesa-dev g++-multilib mingw32 tofrodos ia32-libs uboot-mkimage zlib1g-dev mtd-utils vim squashfs-tools gawk cmake cmake-data libstdc++6 device-tree-compiler android-tools-fsutils texinfo libssl-dev python3-crypto python3-pyelftools python3-pycrypto</p>
+<p>$ sudo add-apt-repository ppa:nathan-renniewaldock/ppa</p>
+<p>$ sudo apt-get update</p>
+<p>$ sudo apt-get install liblz4-tool</p>
 <p>To install make-4.1 (<strong>This will replace your original /bin/make tool</strong>):</p>
 <p>Download <a href="https://ftp.gnu.org/gnu/make/make-4.1.tar.bz2">https://ftp.gnu.org/gnu/make/make-4.1.tar.bz2</a></p>
-<p>\$ tar -jxvf make-4.1.tar.bz2</p>
-<p>\$ cd make-4.1; ./configure; make -j4</p>
-<p>\$ make install</p>
+<p>$ tar -jxvf make-4.1.tar.bz2</p>
+<p>$ cd make-4.1; ./configure; make -j4</p>
+<p>$ make install</p>
 <p><strong>Ubuntu 14.04:</strong></p>
-<p>\$ sudo apt-get install bc build-essential libc6-dev lib32ncurses5 libncurses5-dev libncurses5:i386 libgl1-mesa-dev g++-multilib mingw32 tofrodos lib32z1 lib32bz2-1.0 u-boot-tools zlib1g-dev bison libbison-dev flex mtd-utils vim squashfs-tools gawk cmake cmake-data liblz4-tool libmpc3 libstdc++6 device-tree-compiler android-tools-fsutils texinfo libssl-dev python3-crypto python3-pyelftools python3-pycrypto</p>
+<p>$ sudo apt-get install bc build-essential libc6-dev lib32ncurses5 libncurses5-dev libncurses5:i386 libgl1-mesa-dev g++-multilib mingw32 tofrodos lib32z1 lib32bz2-1.0 u-boot-tools zlib1g-dev bison libbison-dev flex mtd-utils vim squashfs-tools gawk cmake cmake-data liblz4-tool libmpc3 libstdc++6 device-tree-compiler android-tools-fsutils texinfo libssl-dev python3-crypto python3-pyelftools python3-pycrypto</p>
 <p>To install make-4.1 (<strong>This will replace your original /bin/make tool</strong>):</p>
 <p>Download <a href="https://ftp.gnu.org/gnu/make/make-4.1.tar.bz2">https://ftp.gnu.org/gnu/make/make-4.1.tar.bz2</a></p>
-<p>\$ tar -jxvf make-4.1.tar.bz2</p>
-<p>\$ cd make-4.1; ./configure; make -j4</p>
-<p>\$ make install</p>
+<p>$ tar -jxvf make-4.1.tar.bz2</p>
+<p>$ cd make-4.1; ./configure; make -j4</p>
+<p>$ make install</p>
 <p><strong>Ubuntu 16.04:</strong></p>
-<p>\$ sudo apt-get install bc build-essential libc6-dev lib32ncurses5 libncurses5-dev libncurses5:i386 libgl1-mesa-dev g++-multilib mingw-w64 tofrodos lib32z1 u-boot-tools zlib1g-dev bison libbison-dev flex mtd-utils vim squashfs-tools gawk cmake cmake-data liblz4-tool libmpc3 libstdc++6 device-tree-compiler android-tools-fsutils texinfo libssl-dev python3-crypto python3-pyelftools python3-pycrypto</p>
+<p>$ sudo apt-get install bc build-essential libc6-dev lib32ncurses5 libncurses5-dev libncurses5:i386 libgl1-mesa-dev g++-multilib mingw-w64 tofrodos lib32z1 u-boot-tools zlib1g-dev bison libbison-dev flex mtd-utils vim squashfs-tools gawk cmake cmake-data liblz4-tool libmpc3 libstdc++6 device-tree-compiler android-tools-fsutils texinfo libssl-dev python3-crypto python3-pyelftools python3-pycrypto</p>
 <p><strong>Ubuntu 18.04:</strong></p>
-<p>\$ sudo apt-get install bc build-essential libc6-dev lib32ncurses5 libncurses5-dev libncurses5:i386 libgl1-mesa-dev g++-multilib mingw-w64 tofrodos lib32z1 u-boot-tools zlib1g-dev bison libbison-dev flex mtd-utils vim squashfs-tools gawk cmake cmake-data liblz4-tool libmpc3 libstdc++6 device-tree-compiler android-tools-fsutils texinfo libssl-dev python3-crypto python3-pyelftools python3-pycrypto</p>
+<p>$ sudo apt-get install bc build-essential libc6-dev lib32ncurses5 libncurses5-dev libncurses5:i386 libgl1-mesa-dev g++-multilib mingw-w64 tofrodos lib32z1 u-boot-tools zlib1g-dev bison libbison-dev flex mtd-utils vim squashfs-tools gawk cmake cmake-data liblz4-tool libmpc3 libstdc++6 device-tree-compiler android-tools-fsutils texinfo libssl-dev python3-crypto python3-pyelftools python3-pycrypto</p>
 <p>Ubuntu default shell is dash, please reconfigure the default shell with bash:</p>
-<p>\$ sudo dpkg-reconfigure dash, and choose “No” in the window</p>
+<p>$ sudo dpkg-reconfigure dash, and choose “No” in the window</p>
 <p>Or</p>
-<p>\$ sudo rm /bin/sh &amp;&amp; sudo ln -s /bin/bash /bin/sh</p>
+<p>$ sudo rm /bin/sh &amp;&amp; sudo ln -s /bin/bash /bin/sh</p>
 <p>Besides, the openssh-server is used to provide Windows Host PC connected to Linux server and remote building the Linux SDK, and the Samba server is to provide client get Linux SDK image from Linux server.</p>
-<p> \$ apt-get install openssh-server</p>
-<p> \$ apt-get install samba</p>
-<p> \$ vim /etc/samba/smb.conf</p>
+<p> $ apt-get install openssh-server</p>
+<p> $ apt-get install samba</p>
+<p> $ vim /etc/samba/smb.conf</p>
 <p> Please reference to related Samba configuration as below: <a href="https://help.ubuntu.com/12.04/serverguide/samba-fileserver.html">https://help.ubuntu.com/12.04/serverguide/samba-fileserver.html</a></p>
 <p>Windows Host PC will also need Teraterm or putty to connect to Target board UART2 port with 115200/8/1/n configuration.</p>
 <p><img alt="D:\work6\636\fhtml\NT9833x_SDK_Pure_Linux_Programming_Guide_en.files\image012.png" src="nvt_media/7bc32b69bd41149cf23dbfe587de1aa3.png" /></p>
 <p>Figure 1-1 Linux Development Environment</p>
 <h3 id="13-how-to-install-nt9833x-linux-sdk">1.3 How to install NT9833x Linux SDK<a class="headerlink" href="#13-how-to-install-nt9833x-linux-sdk" title="Permanent link">&para;</a></h3>
 <p>Using the following instructions to decompress SDK pack under Linux:</p>
-<p>\$ tar -jxvf na51090_linux_sdk_{version}.tar.bz2</p>
+<p>$ tar -jxvf na51090_linux_sdk_{version}.tar.bz2</p>
 <p>You will get the folder tree as below:</p>
 <p>├── na51090_linux_sdk Used to put unpacked SDK source code</p>
 <p>├── BSP Including linux, busybox, uboot and rootfs source</p>
@@ -2036,25 +2036,25 @@
 <p>└── aarch64-ca53-linux-uclibcgnueabihf-8.4.tar.bz2</p>
 <h3 id="14-how-to-install-cross-compiler">1.4 How to install Cross compiler<a class="headerlink" href="#14-how-to-install-cross-compiler" title="Permanent link">&para;</a></h3>
 <p>We support both glibc and uclibc cross compiler toolchain, please choose and install it by using below instructions:</p>
-<p>\$ cd toolchain</p>
-<p>\$ sudo tar -jxvf aarch64-ca53-linux-gnueabihf-8.4.tar.bz2 -C /opt</p>
+<p>$ cd toolchain</p>
+<p>$ sudo tar -jxvf aarch64-ca53-linux-gnueabihf-8.4.tar.bz2 -C /opt</p>
 <p>or</p>
-<p>\$ sudo tar -jxvf aarch64-ca53-linux-uclibcgnueabihf-8.4.tar.bz2 -C /opt</p>
+<p>$ sudo tar -jxvf aarch64-ca53-linux-uclibcgnueabihf-8.4.tar.bz2 -C /opt</p>
 <p><strong><br />
 </strong></p>
 <h2 id="2-introduction-to-compilation">2 Introduction to Compilation<a class="headerlink" href="#2-introduction-to-compilation" title="Permanent link">&para;</a></h2>
 <h3 id="21-environment-setup">2.1 Environment setup<a class="headerlink" href="#21-environment-setup" title="Permanent link">&para;</a></h3>
 <p>Before each opened a new Terminal window needs to do compiler environment setting, the relevant variables set up, please follow the below instructions to finish it.</p>
-<p>\$ cd na51090_linux_sdk/</p>
-<p>\$ source build/envsetup.sh</p>
+<p>$ cd na51090_linux_sdk/</p>
+<p>$ source build/envsetup.sh</p>
 <h3 id="22-compilation">2.2 Compilation<a class="headerlink" href="#22-compilation" title="Permanent link">&para;</a></h3>
 <p>Please do a complete compilation for first time.</p>
 <p>Select your model:</p>
-<p>\$ lunch</p>
+<p>$ lunch</p>
 <p>List your nvt build setting:</p>
-<p>\$ get_stuff_for_environment</p>
+<p>$ get_stuff_for_environment</p>
 <p>Build overall system:</p>
-<p>\$ make all</p>
+<p>$ make all</p>
 <p>It will generate the images under na51090_linux_sdk/output after the compilation. The details are listed as below.</p>
 <p>|&ndash; na51090_linux_sdk Put unpacked source code and image</p>
 <p>| |&ndash; Makefile Top level Makefile</p>
@@ -2069,62 +2069,62 @@
 <p>| `&ndash; rootfs_1.rw.ubifs.bin rootfs overlay</p>
 <h3 id="23-top-level-makefile">2.3 Top level Makefile<a class="headerlink" href="#23-top-level-makefile" title="Permanent link">&para;</a></h3>
 <p>na51090_linux_sdk folder has a top level Makefile, it supports many of the make command, such as “make linux” is to compile linux-kernel, “make uboot” can compile u-boot, “make rootfs” can compile root-fs &hellip; and so on, you can use “make help” to find what its commands are supported. Please use top level Makefile to do SDK compilation to avoid some link error occurred. Its help description is as follows:</p>
-<p>\$ make help</p>
+<p>$ make help</p>
 <p>=====================================================</p>
-<p>make help -> show make command info</p>
-<p>make all -> build all</p>
-<p>make linux -> build linux-kernel</p>
-<p>make linuxram -> build linux-kernel with ramdisk support</p>
-<p>make modules -> build built-in kernel modules</p>
-<p>make driver -> build NVT linux driver modules</p>
-<p>make atf -> build ARM trusted firmware</p>
-<p>make uboot -> build loader(uboot)</p>
-<p>make optee_os -> build OPTEE kernel</p>
-<p>make optee_client -> build OPTEE client</p>
-<p>make library -> build library</p>
-<p>make busybox -> build busybox</p>
-<p>make rootfs -> build rootfs</p>
-<p>make app -> build applications</p>
-<p>make tools -> build tools</p>
-<p>make sample -> build sample code</p>
-<p>make post -> run postprocessing script</p>
-<p>make pack -> Generate nvtpack image and preburn images</p>
-<p>make publish -> remove some sources for publish</p>
+<p>make help -&gt; show make command info</p>
+<p>make all -&gt; build all</p>
+<p>make linux -&gt; build linux-kernel</p>
+<p>make linuxram -&gt; build linux-kernel with ramdisk support</p>
+<p>make modules -&gt; build built-in kernel modules</p>
+<p>make driver -&gt; build NVT linux driver modules</p>
+<p>make atf -&gt; build ARM trusted firmware</p>
+<p>make uboot -&gt; build loader(uboot)</p>
+<p>make optee_os -&gt; build OPTEE kernel</p>
+<p>make optee_client -&gt; build OPTEE client</p>
+<p>make library -&gt; build library</p>
+<p>make busybox -&gt; build busybox</p>
+<p>make rootfs -&gt; build rootfs</p>
+<p>make app -&gt; build applications</p>
+<p>make tools -&gt; build tools</p>
+<p>make sample -&gt; build sample code</p>
+<p>make post -&gt; run postprocessing script</p>
+<p>make pack -&gt; Generate nvtpack image and preburn images</p>
+<p>make publish -&gt; remove some sources for publish</p>
 <p>=====================================================</p>
-<p>make linux_config -> config linux-kernel</p>
-<p>make linux_config_gcov-> modify kernel config for code coverage tool</p>
-<p>make uboot_config -> config uboot</p>
-<p>make busybox_config -> config busybox</p>
-<p>make linux_header -> generate linux-kernel out of tree headers</p>
+<p>make linux_config -&gt; config linux-kernel</p>
+<p>make linux_config_gcov-&gt; modify kernel config for code coverage tool</p>
+<p>make uboot_config -&gt; config uboot</p>
+<p>make busybox_config -&gt; config busybox</p>
+<p>make linux_header -&gt; generate linux-kernel out of tree headers</p>
 <p>=====================================================</p>
-<p>make clean -> clean all</p>
-<p>make linux_clean -> clean linux-kernel &amp; built-in kernel modules</p>
-<p>make driver_clean -> clean NVT linux driver modules</p>
-<p>make atf_clean -> clean ARM trusted firmware</p>
-<p>make uboot_clean -> clean loader(uboot)</p>
-<p>make optee_os_clean -> clean optee kernel</p>
-<p>make optee_client_clean -> clean optee client application</p>
-<p>make library_clean -> clean library</p>
-<p>make busybox_clean -> clean busybox</p>
-<p>make rootfs_clean -> clean rootfs</p>
-<p>make app_clean -> clean applications</p>
-<p>make tools_clean -> clean tools</p>
-<p>make sample_clean -> clean sample code</p>
-<p>make post_clean -> run postprocessing clean script</p>
-<p>make pack_clean -> Remove nvtpack image</p>
+<p>make clean -&gt; clean all</p>
+<p>make linux_clean -&gt; clean linux-kernel &amp; built-in kernel modules</p>
+<p>make driver_clean -&gt; clean NVT linux driver modules</p>
+<p>make atf_clean -&gt; clean ARM trusted firmware</p>
+<p>make uboot_clean -&gt; clean loader(uboot)</p>
+<p>make optee_os_clean -&gt; clean optee kernel</p>
+<p>make optee_client_clean -&gt; clean optee client application</p>
+<p>make library_clean -&gt; clean library</p>
+<p>make busybox_clean -&gt; clean busybox</p>
+<p>make rootfs_clean -&gt; clean rootfs</p>
+<p>make app_clean -&gt; clean applications</p>
+<p>make tools_clean -&gt; clean tools</p>
+<p>make sample_clean -&gt; clean sample code</p>
+<p>make post_clean -&gt; run postprocessing clean script</p>
+<p>make pack_clean -&gt; Remove nvtpack image</p>
 <p>=====================================================</p>
 <h3 id="24-project-configuration">2.4 Project configuration<a class="headerlink" href="#24-project-configuration" title="Permanent link">&para;</a></h3>
 <p>We provide the following file to control functionalities enable or disable, please refer to the below procedures to configure.</p>
 <p>Check model type:</p>
-<p>\$ get_stuff_for_environment</p>
+<p>$ get_stuff_for_environment</p>
 <pre><code>======================================== NVT Setting ======================================== NVT_PRJCFG_MODEL_CFG = /home/user1/na51090_linux_sdk/configs/Linux/cfg_xxx_NAND_EVB/ModelConfig.mk
 NVT_PRJCFG_CFG = Linux
 NVT_PRJCFG_MODEL_MK =
 </code></pre>
 <p>The ModelConfig.mk will be generated from configs/cfg_gen/nvt-info.dtsi</p>
 <p>Enable/disable function:</p>
-<p>\$ cd na51090_linux_sdk/</p>
-<p>\$ vi configs/cfg_gen/nvt-info.dtsi</p>
+<p>$ cd na51090_linux_sdk/</p>
+<p>$ vi configs/cfg_gen/nvt-info.dtsi</p>
 <p>To find Linux related options:</p>
 <pre><code>/*
  * Novatek Ltd. BSP part of dts
@@ -2262,13 +2262,13 @@ NVT_PRJCFG_MODEL_MK =
 <h3 id="31-compilation">3.1 Compilation<a class="headerlink" href="#31-compilation" title="Permanent link">&para;</a></h3>
 <p>The Uboot source code is placed on “na51090_linux_sdk/u-boot”, typing “make uboot” can be used to compile Uboot, and we provide two images are u-boot.bin(non-compressed) and u-boot.lz.bin(compressed) under na51090_linux_sdk/output.</p>
 <p>U-boot build:</p>
-<p>\$ cd na51090_linux_sdk/</p>
-<p>\$ make uboot</p>
+<p>$ cd na51090_linux_sdk/</p>
+<p>$ make uboot</p>
 <p>U-boot config:</p>
-<p>\$ cd na51090_linux_sdk/</p>
-<p>\$ make uboot_config</p>
+<p>$ cd na51090_linux_sdk/</p>
+<p>$ make uboot_config</p>
 <p>U-boot clean build:</p>
-<p>\$ make uboot_clean</p>
+<p>$ make uboot_clean</p>
 <h3 id="32-user-customization">3.2 User customization<a class="headerlink" href="#32-user-customization" title="Permanent link">&para;</a></h3>
 <p>The uboot have two config files will have different configured properties. One is for common function, the other is for the low level setting.</p>
 <p>The low level setting can modify this file “include/configs/nvt-na51090-evb-a64.h” directly when you have request for the Uboot related configuration.</p>
@@ -2281,21 +2281,21 @@ NVT_PRJCFG_MODEL_MK =
 <h2 id="4-build-kernel-code">4 Build Kernel Code<a class="headerlink" href="#4-build-kernel-code" title="Permanent link">&para;</a></h2>
 <h3 id="41-compilation">4.1 Compilation<a class="headerlink" href="#41-compilation" title="Permanent link">&para;</a></h3>
 <p>The Linux kernel source code is placed on “na51090_linux_sdk/linux-kernel”, typing “make linux” can be used to compile Linux kernel, and the image name is Image.bin under na51090_linux_sdk.</p>
-<p>\$ cd na51090_linux_sdk/</p>
-<p>\$ make linux</p>
+<p>$ cd na51090_linux_sdk/</p>
+<p>$ make linux</p>
 <p>Linux clean build:</p>
-<p>\$ make linux_clean</p>
+<p>$ make linux_clean</p>
 <h3 id="42-system-configuration">4.2 System configuration<a class="headerlink" href="#42-system-configuration" title="Permanent link">&para;</a></h3>
 <h4 id="421-menu-configuration">4.2.1 Menu configuration<a class="headerlink" href="#421-menu-configuration" title="Permanent link">&para;</a></h4>
 <p>Top Makefile is already integrated the formal Linux menuconfig, to use the following instruction can do the function selection. Please avoid using formal Linux “make menuconfig” under linux-kernel directly; it will cause error because the important variables are not set correctly.</p>
-<p>\$ make linux_config</p>
+<p>$ make linux_config</p>
 <p>Choose “Save” after finished function selection; it can generate a new <em>.config</em> for the Linux compilation usage.</p>
 <p>NA51090 SDK provides two Kernel configuration file under “na51090_linux_sdk/BSP/linux-kernel/arch/arm64/configs/”, one is for the debug mode, and the other is for the release mode.</p>
 <p> na51090_XXX_defconfig_debug, the debug mode will enable most of the functions for the development stage</p>
 <p> na51090_XXX_defconfig_release, the release mode will only enable boot necessary parts.</p>
 <p>Edit Top Makefile to switch the configuration file:</p>
-<p>\$ cd na51090_linux_sdk/</p>
-<p>\$ vi Makefile</p>
+<p>$ cd na51090_linux_sdk/</p>
+<p>$ vi Makefile</p>
 <pre><code>## kernel &amp; modules
 CUSTBOARDCONFIG := $(strip $(shell echo $(NVT_PRJCFG_MODEL_CFG) | grep NVT_CFG_KERNEL_CFG | awk -F'=' '{print $$NF;}'))
 ifeq ($(EMBMEM), EMBMEM_SPI_NOR)
@@ -2512,9 +2512,9 @@ endif
 <p>| |&ndash; vmlinux</p>
 <p>| `&ndash; vmlinux.o</p>
 <p>To add more debug information, we can turn on CONFIG_DEBUG_INFO option before compiling Linux kernel as below.</p>
-<p>“Kernel Hacking > Compile-time checks and compiler options > Compile the kernel with debug info”</p>
-<p>\$ cd na51090_linux_sdk/</p>
-<p>\$ make linux_config</p>
+<p>“Kernel Hacking &gt; Compile-time checks and compiler options &gt; Compile the kernel with debug info”</p>
+<p>$ cd na51090_linux_sdk/</p>
+<p>$ make linux_config</p>
 <p>Rebuild all; this binary will contain debug symbol information.</p>
 <p>|&ndash; linux-kernel</p>
 <p>| |&ndash; vmlinux</p>
@@ -2524,19 +2524,19 @@ endif
 <p>In addition to build-in drivers, Linux had also provided an external load mode called Kernel module, can be loaded by “modprobe” or “insmod”. The below will introduce to build-in modules and the out-of-tree modules.</p>
 <h3 id="51-build-in-module-compilation">5.1 Build-in module compilation<a class="headerlink" href="#51-build-in-module-compilation" title="Permanent link">&para;</a></h3>
 <p>Typing “make modules” under na51090_linux_sdk can do build-in modules compilation and install path is root-fs/rootfs/lib/modules/{KER_VER}/kernel/.</p>
-<p>\$ cd na51090_linux_sdk/</p>
-<p>\$ make modules</p>
+<p>$ cd na51090_linux_sdk/</p>
+<p>$ make modules</p>
 <h3 id="52-out-of-tree-module-compilation">5.2 Out-of-Tree module compilation<a class="headerlink" href="#52-out-of-tree-module-compilation" title="Permanent link">&para;</a></h3>
 <p>This folder under “na51090_linux_sdk/code” provides NVT platform drivers, typing “make supplement” to do the Out-of Tree modules compilation as below. And the modules will be installed on na51090_linux_sdk/BSP/root-fs/rootfs/lib/modules/{KER_VER}/extra/.</p>
-<p>\$ cd na51090_linux_sdk/</p>
-<p>\$ make driver</p>
+<p>$ cd na51090_linux_sdk/</p>
+<p>$ make driver</p>
 <p>Linux Out-of-Tree driver module clean build:</p>
-<p>\$ make driver_clean</p>
+<p>$ make driver_clean</p>
 <h3 id="53-hdal">5.3 HDAL<a class="headerlink" href="#53-hdal" title="Permanent link">&para;</a></h3>
 <p>HDAL is the hardware abstraction layer driver and sample code, this one can be used to build proprietary driver modules, such as video process, video capture and video codec…etc. We provide the following instructions to build.</p>
-<p>\$ make hdal</p>
+<p>$ make hdal</p>
 <p>Clean build:</p>
-<p>\$ make hdal_clean</p>
+<p>$ make hdal_clean</p>
 <p>Please refer to the other documents for details.</p>
 <p><strong><br />
 </strong></p>
@@ -2564,13 +2564,13 @@ endif
 <h3 id="61-compilation">6.1 Compilation<a class="headerlink" href="#61-compilation" title="Permanent link">&para;</a></h3>
 <p>To select the tools what you want: mtd-utils, memtester, bonnie, ethtool, gdb, htop, netperf, iperf and procps and running below instructions:</p>
 <p>e.g.</p>
-<p>\$ cd na51090_linux_sdk/</p>
-<p>\$ cd tools/</p>
-<p>\$ make stress</p>
+<p>$ cd na51090_linux_sdk/</p>
+<p>$ cd tools/</p>
+<p>$ make stress</p>
 <p>Tools clean build:</p>
-<p>\$ make clean</p>
+<p>$ make clean</p>
 <h3 id="62-installation">6.2 Installation<a class="headerlink" href="#62-installation" title="Permanent link">&para;</a></h3>
-<p>\$ make install</p>
+<p>$ make install</p>
 <p>The tools will be installed on “na51090_linux_sdk/BSP/root-fs”.</p>
 <h2 id="7-build-root-fs">7 Build root-fs<a class="headerlink" href="#7-build-root-fs" title="Permanent link">&para;</a></h2>
 <h3 id="71-introduction">7.1 Introduction<a class="headerlink" href="#71-introduction" title="Permanent link">&para;</a></h3>
@@ -2582,8 +2582,8 @@ endif
 <p> RAMDISK: To provide a ram based file system.</p>
 <h3 id="72-configuration">7.2 Configuration<a class="headerlink" href="#72-configuration" title="Permanent link">&para;</a></h3>
 <p>The root file system will generate Nand flash type image format, we support squashfs and ubifs, please follow the Nand flash specification to modify the parameters:</p>
-<p>\$ cd na51090_linux_sdk/BSP/root-fs/</p>
-<p>\$ vi ubi_max_leb.py</p>
+<p>$ cd na51090_linux_sdk/BSP/root-fs/</p>
+<p>$ vi ubi_max_leb.py</p>
 <p>To find below lines:</p>
 <pre><code>W = 1024
 SP = 128 * 1024
@@ -2598,7 +2598,7 @@ SL = 124 * 1024
 <p>W = 1024</p>
 <p>SP = 64 * 2048 = 128 * 1024</p>
 <p>SL = (64 – 2) * 2048 = 124 * 1024</p>
-<p>\$ vi mtd_cfg.txt</p>
+<p>$ vi mtd_cfg.txt</p>
 <p>We can support two mtd_cfg.txt in BSP/root-fs/ and configs/cfg_gen, the build tool will search configs/cfg_gen/mtd_cfg.txt firstly, and the second is BSP/root-fs/mtd_cfg.txt.</p>
 <p>To find below lines:</p>
 <pre><code>ROOTFS_UBI_SUB_PAGE_SIZE=2048          ## Same as page size
@@ -2631,9 +2631,9 @@ ROOTFS_UBI_APP_MAX_LEB_COUNT=231
 <p> ROOTFS_UBI_PAGE_SIZE: The page size of the Nand flash</p>
 <p> ROOTFS_UBI_ERASE_BLK_SIZE: (Nand flash block size – 2) * Page size</p>
 <p> ROOTFS_UBI_MAX_LEB_COUNT: Use ubi_max_leb.py to calculate it</p>
-<p>\$ Usage: ubi_max_leb.py PartitionSize (Bytes)</p>
+<p>$ Usage: ubi_max_leb.py PartitionSize (Bytes)</p>
 <p> ROOTFS_UBI_RW_MAX_LEB_COUNT: Use ubi_max_leb.py to calculate it</p>
-<p>\$ Usage: ubi_max_leb.py PartitionSize (Bytes)</p>
+<p>$ Usage: ubi_max_leb.py PartitionSize (Bytes)</p>
 <p> ROOTFS_UBI_BLK_SIZE: Nand flash block size</p>
 <p> ROOTFS_UBI_COMPRESS_MODE: Compression method = LZO</p>
 <p> ROOTFS_SQ_COMPRESS_MODE: Squashfs compression mode</p>
@@ -2666,16 +2666,16 @@ ROOTFS_UBI_APP_MAX_LEB_COUNT=231
 <p>Users must check mtd config definiton in configs/cfg_gen/mtd_cfg.txt, the parameters: ROOTFS_UBI_MAX_LEB_COUNT, ROOTFS_UBI_RW_MAX_LEB_COUNT and ROOTFS_UBI_APP_MAX_LEB_COUNT value must use ubi_max_leb.py to calculate.</p>
 <h3 id="74-compilation">7.4 Compilation<a class="headerlink" href="#74-compilation" title="Permanent link">&para;</a></h3>
 <p>Using “make rootfs” instruction to generate rootfs bin, the image type can be selected by nvt-info.dtsi in configs folder. They can be produced into “na51090_linux_sdk/output/rootfs.ubifs.bin”, “na51090_linux_sdk/output/rootfs.squash.bin” and “na51090_linux_sdk/output/rootfs.jffs2.bin” separately. The command “mr” also can be used to compile rootfs if you are not in na51090_linux_sdk root folder.</p>
-<p>\$ cd na51090_linux_sdk/</p>
-<p>\$ source build/envsetup.sh</p>
-<p>\$ make rootfs</p>
+<p>$ cd na51090_linux_sdk/</p>
+<p>$ source build/envsetup.sh</p>
+<p>$ make rootfs</p>
 <p>Rootfs clean build:</p>
-<p>\$ make rootfs_clean</p>
+<p>$ make rootfs_clean</p>
 <p>This command will remove busybox tools, kernel modules…etc., please follow below procedure to generate rootfs image:</p>
-<p>\$ make busybox</p>
-<p>\$ make app (\$ make library if necessary)</p>
-<p>\$ make hdal</p>
-<p>\$ make rootfs</p>
+<p>$ make busybox</p>
+<p>$ make app ($ make library if necessary)</p>
+<p>$ make hdal</p>
+<p>$ make rootfs</p>
 <h3 id="75-folder-description">7.5 Folder description<a class="headerlink" href="#75-folder-description" title="Permanent link">&para;</a></h3>
 <p> <strong>Architecture</strong></p>
 <table>
@@ -2703,7 +2703,7 @@ ROOTFS_UBI_APP_MAX_LEB_COUNT=231
 <td>User home directories</td>
 </tr>
 <tr>
-<td>init -> bin/busybox</td>
+<td>init -&gt; bin/busybox</td>
 <td>It is used to kernel boot necessary init process, for the initial environment setup.</td>
 </tr>
 <tr>
@@ -2711,7 +2711,7 @@ ROOTFS_UBI_APP_MAX_LEB_COUNT=231
 <td>Standard system libraries</td>
 </tr>
 <tr>
-<td>linuxrc -> bin/busybox</td>
+<td>linuxrc -&gt; bin/busybox</td>
 <td></td>
 </tr>
 <tr>
@@ -2754,21 +2754,21 @@ ROOTFS_UBI_APP_MAX_LEB_COUNT=231
 </table>
 <p> <strong>/etc/passwd</strong></p>
 <p>This file can setup user account environment, below is to introduce how to enable login password.</p>
-<p>\$ vi /etc/inittab</p>
+<p>$ vi /etc/inittab</p>
 <pre><code>::respawn:-/bin/login
 </code></pre>
 <p>Replace “::respawn:-/bin/login -f root” with “::respawn:-/bin/login” as below</p>
 <p>Fill in the red part with the encryption password which can be generated by openssl tool:</p>
-<p>\$ vi /etc/passwd</p>
+<p>$ vi /etc/passwd</p>
 <pre><code>root:EncryptionCode:0:0:root:/root:/bin/sh
 </code></pre>
 <p>Openssl generation:</p>
-<p>\$ openssl passwd -crypt YourPWD</p>
+<p>$ openssl passwd -crypt YourPWD</p>
 <p> <strong>/etc/init.d</strong></p>
 <p>System will execute the following shell scripts according sequence.</p>
-<p>rcS -> S00_PreReady -> S05_Net -> S10_SysInit -> S10_hdal_init -> S99_Sysctl</p>
+<p>rcS -&gt; S00_PreReady -&gt; S05_Net -&gt; S10_SysInit -&gt; S10_hdal_init -&gt; S99_Sysctl</p>
 <p>Moreover, power off will execute deinitialization process as below.</p>
-<p>rcK -> K00_Sys -> K99_Sys</p>
+<p>rcK -&gt; K00_Sys -&gt; K99_Sys</p>
 <p> <strong>/etc/sysctl.conf</strong></p>
 <p>This file is handle sysctl parameters setup.</p>
 <h3 id="76-ubifs">7.6 UBIFS<a class="headerlink" href="#76-ubifs" title="Permanent link">&para;</a></h3>
@@ -2783,10 +2783,10 @@ ROOTFS_UBI_APP_MAX_LEB_COUNT=231
 <p>The filename is rootfs.jffs2.bin after compilation.</p>
 <p>For the kernel configuration to add jffs2 support, you must add below configurations:</p>
 <p>File systems</p>
-<p>-> Miscellaneous filesystems</p>
-<p>-> [*] Journalling Flash File System v2 (JFFS2) support</p>
-<p>-> [*] Advanced compression options for JFFS2</p>
-<p>-> [*] JFFS2 LZO compression support</p>
+<p>-&gt; Miscellaneous filesystems</p>
+<p>-&gt; [*] Journalling Flash File System v2 (JFFS2) support</p>
+<p>-&gt; [*] Advanced compression options for JFFS2</p>
+<p>-&gt; [*] JFFS2 LZO compression support</p>
 <p>For the uboot configuration to choose root file system type, please refer to the UBoot_Programing_Guide.</p>
 <h3 id="79-hdal-sample-code">7.9 HDAL sample code<a class="headerlink" href="#79-hdal-sample-code" title="Permanent link">&para;</a></h3>
 <p>We will pack one partition named DVR_xxx.bin is under na51090_linux_sdk/configs/Linux/cfg_xxx/nvt-nvtpack.dtsi partition_name = &ldquo;app&rdquo; field. You could modify the partition size and recalculate the related parameters to fill in the nvt -storage-partition.dtsi partition_app field.</p>
@@ -2794,10 +2794,10 @@ ROOTFS_UBI_APP_MAX_LEB_COUNT=231
 <h2 id="8-build-app">8 Build App<a class="headerlink" href="#8-build-app" title="Permanent link">&para;</a></h2>
 <h3 id="81-compilation">8.1 Compilation<a class="headerlink" href="#81-compilation" title="Permanent link">&para;</a></h3>
 <p>NVT platform needs the necessary applications to perform the requested actions, please using below instructions to compile (This part doesn’t provide source code).</p>
-<p>\$ cd na51090_linux_sdk/code/application</p>
-<p>\$ make install</p>
+<p>$ cd na51090_linux_sdk/code/application</p>
+<p>$ make install</p>
 <p>Please execute “source build/envsetup.sh” firstly when you start to build it. Please reference to Application Note for the other details.</p>
-<p>We have fine-tuned some functions and the fpu related setting, please add \$(PLATFORM_CFLAGS) to your Makefile to get more performance.</p>
+<p>We have fine-tuned some functions and the fpu related setting, please add $(PLATFORM_CFLAGS) to your Makefile to get more performance.</p>
 <p>e.g.</p>
 <pre><code>nvt02854@oaalnx13:~/na51090_linux_sdk/na51090_linux_sdk$ get_stuff_for_environment
 ======================================== NVT Setting ========================================
@@ -2852,37 +2852,37 @@ LD_LIBRARY_PATH = /opt/ivot/aarch64-ca53-linux-uclibcgnueabihf-8.4/usr/local/lib
 <h2 id="9-build-libraries">9 Build Libraries<a class="headerlink" href="#9-build-libraries" title="Permanent link">&para;</a></h2>
 <h3 id="91-compilation">9.1 Compilation<a class="headerlink" href="#91-compilation" title="Permanent link">&para;</a></h3>
 <p>na51090_linux_sdk provides some proprietary libraries and header files for the product customization (this part doesn’t involve source code, we only provide you *.so), please according the following instruction to compile it.</p>
-<p>\$ cd na51090_linux_sdk/</p>
-<p>\$ make library</p>
+<p>$ cd na51090_linux_sdk/</p>
+<p>$ make library</p>
 <p>Libraries clean build:</p>
-<p>\$ make library_clean</p>
+<p>$ make library_clean</p>
 <p>Please execute “source build/envsetup.sh” firstly when you start to build it. Please reference to Application Note for the other details.</p>
 <h2 id="10-build-busybox">10 Build busybox<a class="headerlink" href="#10-build-busybox" title="Permanent link">&para;</a></h2>
 <h3 id="101-compilation">10.1 Compilation<a class="headerlink" href="#101-compilation" title="Permanent link">&para;</a></h3>
 <p>Busybox can provide rootfs necessary tools, using below instruction can compile it. And the tools will be installed to na51090_linux_sdk/BSP/root-fs.</p>
-<p>\$ cd na51090_linux_sdk/</p>
-<p>\$ make busybox</p>
+<p>$ cd na51090_linux_sdk/</p>
+<p>$ make busybox</p>
 <p>mybusybox clean build:</p>
-<p>\$ make busybox_clean</p>
+<p>$ make busybox_clean</p>
 <h3 id="102-menu-configuration">10.2 Menu configuration<a class="headerlink" href="#102-menu-configuration" title="Permanent link">&para;</a></h3>
 <p>SDK will provide two busybox configuration files, one is normal version (busybox_cfg_normal), and the other is minimized version (busybox_cfg_small). Edit Top Makefile can change the busybox configuration, the default is normal version.</p>
 <p>Edit Top Makefile to switch the configuration file:</p>
-<p>\$ cd na51090_linux_sdk/</p>
-<p>\$ vi Makefile</p>
+<p>$ cd na51090_linux_sdk/</p>
+<p>$ vi Makefile</p>
 <pre><code>BUSYBOX_CFG:=busybox_cfg_full
 #BUSYBOX_CFG:=busybox_cfg_small
 </code></pre>
 <p>Below instruction can handle busybox features selection:</p>
-<p>\$ make busybox_config</p>
+<p>$ make busybox_config</p>
 <p>Choose “Exit/Save” after you finished function selection, it can generate new .config for the Busybox compilation usage.</p>
 <p><img alt="D:\work6\636\fhtml\NT9833x_SDK_Pure_Linux_Programming_Guide_en.files\image017.jpg" src="nvt_media/12b4aed032f9ac2fd2c5dc1da40027cb.jpg" /></p>
 <h2 id="11-build-sample-code">11 Build sample code<a class="headerlink" href="#11-build-sample-code" title="Permanent link">&para;</a></h2>
 <h3 id="111-compilation">11.1 Compilation<a class="headerlink" href="#111-compilation" title="Permanent link">&para;</a></h3>
 <p>The device driver testing applications will be used to test NVT peripheral devices; the following instructions can compile it. And it will be installed to na51090_linux_sdk/BSP/root-fs.</p>
-<p>\$ cd na51090_linux_sdk/</p>
-<p>\$ make sample</p>
+<p>$ cd na51090_linux_sdk/</p>
+<p>$ make sample</p>
 <p>Driver test clean build:</p>
-<p>\$ make sample_clean</p>
+<p>$ make sample_clean</p>
 <h2 id="12-update-firmware">12 Update Firmware<a class="headerlink" href="#12-update-firmware" title="Permanent link">&para;</a></h2>
 <p>We provide two OS version nvtpack image could be used, one is Linux version will be generate by Linux version nvtpack tool, the images will be generated under the output folder. Another is Windows vesion nvtpack tool, the following section can get more clearly description.</p>
 <h3 id="121-linux-version-nvtpack-for-all-in-one-image">12.1 Linux version nvtpack for all-in-one image<a class="headerlink" href="#121-linux-version-nvtpack-for-all-in-one-image" title="Permanent link">&para;</a></h3>
@@ -2957,8 +2957,8 @@ LD_LIBRARY_PATH = /opt/ivot/aarch64-ca53-linux-uclibcgnueabihf-8.4/usr/local/lib
 <h3 id="141-coredump">14.1 Coredump<a class="headerlink" href="#141-coredump" title="Permanent link">&para;</a></h3>
 <p>Provide analytical application error log, the application does not properly terminated, it generates a file in /var/log. It can record the program name, PID and time, can be loaded for analysis through a cross compiler. You should build it with debug mode when you start application analysis.</p>
 <p>The following is related setting:</p>
-<p>\$ cd na51090_linux_sdk/root-fs/rootfs/</p>
-<p>\$ vi etc/profile</p>
+<p>$ cd na51090_linux_sdk/root-fs/rootfs/</p>
+<p>$ vi etc/profile</p>
 <pre><code>## coredump setting
 echo 1 &gt; /proc/sys/kernel/core_uses_pid
 ulimit -c unlimited
@@ -2970,8 +2970,8 @@ echo &quot;/var/log/core-%e-%p-%t&quot; &gt; /proc/sys/kernel/core_pattern
 <h3 id="143-gdb">14.3 GDB<a class="headerlink" href="#143-gdb" title="Permanent link">&para;</a></h3>
 <p>GDB (GNU Project Debugger) can support Remote and Target mode to debug AP.</p>
 <p>Target mode gdb/gdbserver can be generated by the following command:</p>
-<p>\$ cd na51090_linux_sdk/tools</p>
-<p>\$ make gdb</p>
+<p>$ cd na51090_linux_sdk/tools</p>
+<p>$ make gdb</p>
 <p>The connection diagram as shown below, Figure 13-1:</p>
 <p><img alt="D:\work6\636\fhtml\NT9833x_SDK_Pure_Linux_Programming_Guide_en.files\image018.png" src="nvt_media/b2299750dd227048966a7947296cb303.png" /></p>
 <p>Figure 14-1 Target debug connection</p>
@@ -2981,28 +2981,28 @@ echo &quot;/var/log/core-%e-%p-%t&quot; &gt; /proc/sys/kernel/core_pattern
 <p><img alt="D:\work6\636\fhtml\NT9833x_SDK_Pure_Linux_Programming_Guide_en.files\image019.png" src="nvt_media/54522c0a06349fa93caff203eb13fec2.png" /></p>
 <p>Figure 14-2 Remote debug connection</p>
 <p>GDB server needs to be executed on EVB.</p>
-<p>\$ cp tools/__install/bin/gdbserver root-fs/rootfs/bin/</p>
-<p>\$ cp tools/__install/bin/gdb root-fs/rootfs/bin/</p>
+<p>$ cp tools/__install/bin/gdbserver root-fs/rootfs/bin/</p>
+<p>$ cp tools/__install/bin/gdb root-fs/rootfs/bin/</p>
 <p>And then, running below procedures can debug your AP.</p>
 <p>1. Target Board</p>
-<p>target > gdbserver comm prog [args&hellip;]</p>
+<p>target &gt; gdbserver comm prog [args&hellip;]</p>
 <p>The gdbserver doesn’t loading debug symbol, all of the symbols will be loaded by the Linux server cross compiler gdb. It can reduce memory space in this way.</p>
 <p>Serial:</p>
-<p>target > gdbserver /dev/ttyUSB0 hello_world</p>
+<p>target &gt; gdbserver /dev/ttyUSB0 hello_world</p>
 <p>Net:</p>
-<p>target > gdbserver Host _IP:1234 hello_world</p>
+<p>target &gt; gdbserver Host _IP:1234 hello_world</p>
 <p>2. Linux Server</p>
 <p>Serial:</p>
-<p>Server > {CROSS_COMPILE}-gdb hello_world</p>
-<p>Server > set remotebaud 115200</p>
-<p>Server > target remote /dev/ttyUSB0</p>
+<p>Server &gt; {CROSS_COMPILE}-gdb hello_world</p>
+<p>Server &gt; set remotebaud 115200</p>
+<p>Server &gt; target remote /dev/ttyUSB0</p>
 <p>Net:</p>
-<p>Server > {CROSS_COMPILE}-gdb hello_world</p>
-<p>Server > target remote localhost:1234</p>
+<p>Server &gt; {CROSS_COMPILE}-gdb hello_world</p>
+<p>Server &gt; target remote localhost:1234</p>
 <p>Reference to below link can show you how to use command debug your AP: <a href="http://sourceware.org/gdb/current/onlinedocs/gdb/index.html">http://sourceware.org/gdb/current/onlinedocs/gdb/index.html</a></p>
 <p>In addition to command mode debug you also can use DDD, it is a framework on top of GDB debug visualization software, you can install and use by below command:</p>
-<p>\$ sudo apt-get install ddd</p>
-<p>\$ sudo ddd &ndash;debugger aarch64-ca53-linux-uclibc-gdb</p>
+<p>$ sudo apt-get install ddd</p>
+<p>$ sudo ddd &ndash;debugger aarch64-ca53-linux-uclibc-gdb</p>
 <h3 id="144-printk">14.4 Printk<a class="headerlink" href="#144-printk" title="Permanent link">&para;</a></h3>
 <p>Linux provides seven levels of Log printk available in the following table:</p>
 <table>
@@ -3057,36 +3057,36 @@ echo &quot;/var/log/core-%e-%p-%t&quot; &gt; /proc/sys/kernel/core_pattern
 </tbody>
 </table>
 <p>Above the printk level is used to decide whether or not to print the message console, the below instruction can show you the printk level, current representative of the level of the boot to be printed, default is the default level, minimum is the lowest possible print level, boot-time-default is boot stage log:</p>
-<p>root@NVTEVM:\~\$ cat /proc/sys/kernel/printk</p>
+<p>root@NVTEVM:~$ cat /proc/sys/kernel/printk</p>
 <p>7 4 1 7</p>
 <p>current default minimum boot-time-default</p>
 <p>Kernel will compare the printed message log level, if the value is less than the current will be printed out. Therefore, to change the output level so that all messages are printed out can use this command:Kernel huì qù bǐjiào yìn chū xùnxí de log level, rúguǒ xiǎoyú current de zhí jiù huì yìn chūlái.<br />
 Yīncǐ, yào gǎibiàn shūchū jíbié ràng suǒyǒu xùnxí dōu kěyǐ yìn chūlái kěyǐ yòng dǐxia fāngshì:您是不是要查： <a href="javascript:void(0)">Linux除了<em>Built</em>-in的Driver之外,還有提供外部載入的方式稱之為Kernel module,可透過insmod或是modprobe做載入,底下分為build-in module與out-of-tree module做編譯介紹。</a></p>
-<p>root@NVTEVM:\~\$ echo 8 > /proc/sys/kernel/printk</p>
+<p>root@NVTEVM:~$ echo 8 &gt; /proc/sys/kernel/printk</p>
 <h3 id="145-kmemleak">14.5 Kmemleak<a class="headerlink" href="#145-kmemleak" title="Permanent link">&para;</a></h3>
 <p>Linux Kmemleak is provided for detecting a memory leak tool, it will record detect report in /sys/kernel/debug/kmemleak, to use this function as long as enable the &ldquo;Kernel Hacking&rdquo;, &ldquo;Kernel Memory Leak Detector&rdquo; (CONFIG_DEBUG_KMEMLEAK) in the kernel option, and configure the &ldquo;Maximum kmemleak early log entires&rdquo; with 1200.</p>
 <p>Clear current record:</p>
-<p>root@NVTEVM:\~\$ echo clear > /sys/kernel/debug/kmemleak</p>
+<p>root@NVTEVM:~$ echo clear &gt; /sys/kernel/debug/kmemleak</p>
 <p>Testing your driver:</p>
-<p>root@NVTEVM:\~\$ insert YourModule.ko</p>
+<p>root@NVTEVM:~$ insert YourModule.ko</p>
 <p>Scan:</p>
-<p>root@NVTEVM:\~\$ echo scan > /sys/kernel/debug/kmemleak</p>
+<p>root@NVTEVM:~$ echo scan &gt; /sys/kernel/debug/kmemleak</p>
 <p>Check the resules:</p>
-<p>root@NVTEVM:\~\$ cat /sys/kernel/debug/kmemleak</p>
+<p>root@NVTEVM:~$ cat /sys/kernel/debug/kmemleak</p>
 <h2 id="15-faq">15 FAQ<a class="headerlink" href="#15-faq" title="Permanent link">&para;</a></h2>
 <p>This section will list frequently problems.</p>
 <h3 id="151-toolchain-cant-be-found">15.1 Toolchain can’t be found<a class="headerlink" href="#151-toolchain-cant-be-found" title="Permanent link">&para;</a></h3>
 <p>We have two toolchains to build overall SDK, one is for itron, another is for Linux.</p>
 <p>First, please use below command to check your environment setting.</p>
-<p>\$ get_stuff_for_environment</p>
+<p>$ get_stuff_for_environment</p>
 <h3 id="152-operation-not-permitted">15.2 Operation not permitted<a class="headerlink" href="#152-operation-not-permitted" title="Permanent link">&para;</a></h3>
 <p>The SDK installation path should be under your home folder, you should use the same owner to decompressing and building, otherwise you will get “<em>operation not permitted</em>” related message.</p>
 <p>Please use below command to check permission and owner.</p>
-<p>\$ ls -al YOUR_FOLDER</p>
+<p>$ ls -al YOUR_FOLDER</p>
 <h3 id="153-linux-kernel-uimage-cant-be-generated">15.3 Linux kernel uImage can’t be generated<a class="headerlink" href="#153-linux-kernel-uimage-cant-be-generated" title="Permanent link">&para;</a></h3>
 <p>This is because our default setting is lz4 compression format, you should follow section 1.2 to check lz4 tool is installed.</p>
 <p>Try to use lz4 command to check your compiling environment.</p>
-<p>\$ lz4</p>
+<p>$ lz4</p>
 
 
 
