@@ -28,6 +28,10 @@ nav:
 theme:
   name: material
   highlightjs: true 
+  language: en
+  font:
+    text: Roboto
+    code: Roboto Mono
   features:
     - search.highlight
     - navigation.tabs

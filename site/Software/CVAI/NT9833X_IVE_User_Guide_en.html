@@ -1263,7 +1263,7 @@
 <td>pstSrc</td>
 <td>U8C1</td>
 <td>4 byte</td>
-<td>16x16\~16383x8191</td>
+<td>16x16~16383x8191</td>
 </tr>
 <tr>
 <td>pstDst</td>
@@ -1286,7 +1286,7 @@
 <tr>
 <td>u8Mask[10]</td>
 <td>UINT8</td>
-<td>General filter Mask, range : 0\~15</td>
+<td>General filter Mask, range : 0~15</td>
 </tr>
 </tbody>
 </table>
@@ -1316,7 +1316,7 @@
 <p> Filter index number as following Figure 2.21</p>
 <p><img alt="Snapshot326" src="nvt_media/3e49696a1d19a8c77e3675129d1a5f22.jpg" /></p>
 <p>Figure 2.21</p>
-<p>u8Mask[0]\~ u8Mask[9] corresponds to index 0\~9</p>
+<p>u8Mask[0]~ u8Mask[9] corresponds to index 0~9</p>
 <p> For image border pixels, mirror padding is applied in general filter process.</p>
 <p>【Sample】</p>
 <p>hdal\samples\alg_ive_filter\alg_ive_filter.c</p>
@@ -1364,7 +1364,7 @@
 <td>pstSrc</td>
 <td>U8C1</td>
 <td>4 byte</td>
-<td>16x16\~16383x8191</td>
+<td>16x16~16383x8191</td>
 </tr>
 <tr>
 <td>pstDst</td>
@@ -1444,7 +1444,7 @@
 <td>pstSrc</td>
 <td>U8C1</td>
 <td>4 byte</td>
-<td>16x16\~16383x8191</td>
+<td>16x16~16383x8191</td>
 </tr>
 <tr>
 <td>pstDst</td>
@@ -1524,7 +1524,7 @@
 <td>pstSrc</td>
 <td>U8C1</td>
 <td>4 byte</td>
-<td>16x16\~16383x8191</td>
+<td>16x16~16383x8191</td>
 </tr>
 <tr>
 <td>pstDst</td>
@@ -1609,13 +1609,13 @@
 <td>pstSrc</td>
 <td>U8C1</td>
 <td>4 byte</td>
-<td>16x16\~16383x8191</td>
+<td>16x16~16383x8191</td>
 </tr>
 <tr>
 <td>pstDst</td>
 <td>S16C1</td>
 <td>4 byte</td>
-<td>16x16\~16383x8191</td>
+<td>16x16~16383x8191</td>
 </tr>
 </tbody>
 </table>
@@ -1632,7 +1632,7 @@
 <tr>
 <td>s8Mask[25]</td>
 <td>S8</td>
-<td>Edge filter Mask, range : -15\~15</td>
+<td>Edge filter Mask, range : -15~15</td>
 </tr>
 </tbody>
 </table>
@@ -1753,7 +1753,7 @@
 <td>pstSrc</td>
 <td>U8C1</td>
 <td>4 byte</td>
-<td>64x64\~1920x1080</td>
+<td>64x64~1920x1080</td>
 </tr>
 <tr>
 <td>pstDst</td>
@@ -1859,7 +1859,7 @@
 <td>pstSrc</td>
 <td>U8C1</td>
 <td>4 byte</td>
-<td>16x16\~16383x8191</td>
+<td>16x16~16383x8191</td>
 </tr>
 <tr>
 <td>pstDst</td>
@@ -1915,8 +1915,8 @@
 <p>Dilation uses a specified structural element to slide whole image and the process can be described as below</p>
 <p><em>for each image pixel</em> <strong>p</strong> in input image <strong>I</strong>in {</p>
 <p><em>max =</em> <strong>I</strong>in(<strong>p</strong>)</p>
-<p><em>for(i=0; i\&lt;24; i++)</em> {</p>
-<p><em>if(mask(i)==1 &amp;&amp;</em> <strong>I</strong>in<em>(</em><strong>q</strong><em>(i)) > max)</em></p>
+<p><em>for(i=0; i&lt;24; i++)</em> {</p>
+<p><em>if(mask(i)==1 &amp;&amp;</em> <strong>I</strong>in<em>(</em><strong>q</strong><em>(i)) &gt; max)</em></p>
 <p><em>//</em> <strong>q</strong><em>(i)</em> is the corresponding pixel of coefficient <em>i</em></p>
 <p><em>// max =</em> <strong>I</strong>in<em>(</em><strong>q</strong><em>(i))</em></p>
 <p>}</p>
@@ -1974,7 +1974,7 @@
 <td>pstSrc</td>
 <td>U8C1</td>
 <td>4 byte</td>
-<td>16x16\~16383x8191</td>
+<td>16x16~16383x8191</td>
 </tr>
 <tr>
 <td>pstDst</td>
@@ -2030,8 +2030,8 @@
 <p>Erosion uses a specified structural element to slide whole image and the process can be described as below</p>
 <p><em>for each image pixel</em> <strong>p</strong> in input image <strong>I</strong>in {</p>
 <p><em>min =</em> <strong>I</strong>in(<strong>p</strong>)</p>
-<p><em>for(i=0; i\&lt;24; i++)</em> {</p>
-<p><em>if(mask(i)==1 &amp;&amp;</em> <strong>I</strong>in<em>(</em><strong>q</strong><em>(i)) \&lt; min)</em></p>
+<p><em>for(i=0; i&lt;24; i++)</em> {</p>
+<p><em>if(mask(i)==1 &amp;&amp;</em> <strong>I</strong>in<em>(</em><strong>q</strong><em>(i)) &lt; min)</em></p>
 <p><em>//</em> <strong>q</strong><em>(i)</em> is the corresponding pixel of coefficient <em>i</em></p>
 <p><em>// min =</em> <strong>I</strong>in<em>(</em><strong>q</strong><em>(i))</em></p>
 <p>}</p>
@@ -2090,7 +2090,7 @@
 <td>pstSrc</td>
 <td>U8C1</td>
 <td>4 byte</td>
-<td>16x16\~1920x8191</td>
+<td>16x16~1920x8191</td>
 </tr>
 <tr>
 <td>pstDst</td>
@@ -2200,7 +2200,7 @@
 <td>pstSrc</td>
 <td>U8C1</td>
 <td>4 byte</td>
-<td>16x16\~16383x8191</td>
+<td>16x16~16383x8191</td>
 </tr>
 <tr>
 <td>pstDst</td>
@@ -2287,7 +2287,7 @@
 <td>pstSrc</td>
 <td>U8C1</td>
 <td>4 byte</td>
-<td>16x16\~4096x8191</td>
+<td>16x16~4096x8191</td>
 </tr>
 <tr>
 <td>pstDst</td>
@@ -2362,13 +2362,13 @@
 <p> Output format PLANAR/ PACKED as following figure</p>
 <p>PLANAR:</p>
 <p><img alt="D:\work6\636\fhtml\NT9833X_IVE_User_Guide_en.files\image016.jpg" src="nvt_media/bcef0bfda4a7c2709bd7fecd428be3b6.jpg" /></p>
-<p>pstDst->u32Stride = width</p>
+<p>pstDst-&gt;u32Stride = width</p>
 <p>PACKED:</p>
 <p><img alt="D:\work6\636\fhtml\NT9833X_IVE_User_Guide_en.files\image017.jpg" src="nvt_media/2dbbb3ab2a622047335c39c5ebcdf67b.jpg" /></p>
-<p>pstDst->u32Stride = 3*width</p>
-<p> YUV2RGB : YUV->RGB ->Gamma Correction</p>
-<p>YUV2HSV : YUV ->RGB ->Gamma correction ->HSV</p>
-<p>YUV2LAB : YUV ->RGB ->Gamma correction ->LAB</p>
+<p>pstDst-&gt;u32Stride = 3*width</p>
+<p> YUV2RGB : YUV-&gt;RGB -&gt;Gamma Correction</p>
+<p>YUV2HSV : YUV -&gt;RGB -&gt;Gamma correction -&gt;HSV</p>
+<p>YUV2LAB : YUV -&gt;RGB -&gt;Gamma correction -&gt;LAB</p>
 <p>enRgbFmt should be set for all enCSCMode.</p>
 <p>【Sample】</p>
 <p>hdal\samples\alg_ive_csc\alg_ive_csc.c</p>
@@ -2416,7 +2416,7 @@
 <td>pstSrc</td>
 <td>U8C1</td>
 <td>4 byte</td>
-<td>64x64\~1920x1080</td>
+<td>64x64~1920x1080</td>
 </tr>
 <tr>
 <td>pstDst</td>
@@ -2506,7 +2506,7 @@
 <td>pstSrc1</td>
 <td>U8C1</td>
 <td>4 byte</td>
-<td>32x32\~1920x1080</td>
+<td>32x32~1920x1080</td>
 </tr>
 <tr>
 <td>pstSrc2</td>

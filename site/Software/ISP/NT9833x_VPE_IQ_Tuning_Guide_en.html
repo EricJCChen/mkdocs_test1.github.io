@@ -2699,9 +2699,9 @@
 </tr>
 <tr>
 <td>pipe_mode</td>
-<td>0\~5</td>
+<td>0~5</td>
 <td>0</td>
-<td>Set module processing sequence. 0 : MRNR -> TMNR -> Sharpen 1 : MRNR-> Sharpen -> TMNR 2 : Sharpen -> MRNR -> TMNR 3 : SHP->TMNR->MRNR 4 : TMNR->MRNR->SHP 5 : TMNR->SHP->MRNR</td>
+<td>Set module processing sequence. 0 : MRNR -&gt; TMNR -&gt; Sharpen 1 : MRNR-&gt; Sharpen -&gt; TMNR 2 : Sharpen -&gt; MRNR -&gt; TMNR 3 : SHP-&gt;TMNR-&gt;MRNR 4 : TMNR-&gt;MRNR-&gt;SHP 5 : TMNR-&gt;SHP-&gt;MRNR</td>
 </tr>
 </tbody>
 </table>
@@ -2723,13 +2723,13 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [fd ] > /proc/videograph/vpe/ch_fd</td>
+<td>echo [fd ] &gt; /proc/videograph/vpe/ch_fd</td>
 <td><strong>Fw Internal Pointer</strong></td>
 </tr>
 </tbody>
 </table>
 <p>Read : cat /proc/videograph/vpe/ch_fd</p>
-<p><strong><img alt="Command : echo [fd] > /proc/videograph/vpe/ch_fd Current channel = \&lt;ch_fd> " src="nvt_media/345f6fd54a7fb4c49c6fac5ef0c31540.png" /></strong></p>
+<p><strong><img alt="Command : echo [fd] &gt; /proc/videograph/vpe/ch_fd Current channel = &lt;ch_fd&gt; " src="nvt_media/345f6fd54a7fb4c49c6fac5ef0c31540.png" /></strong></p>
 <h6 id="procvideographvpepipe_mode"> /proc/videograph/vpe/pipe_mode<a class="headerlink" href="#procvideographvpepipe_mode" title="Permanent link">&para;</a></h6>
 <p>[Description]</p>
 <p>Read or write the execsuting sequence of SHP, MRNR and TMNR.</p>
@@ -2744,13 +2744,13 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [pipe_mode ] > /proc/videograph/vpe/pipe_mode</td>
+<td>echo [pipe_mode ] &gt; /proc/videograph/vpe/pipe_mode</td>
 <td><strong>src_ppo_idx</strong>  <strong>mrnr_ppi_idx</strong>  <strong>mrnr_ppo_idx</strong>  <strong>tmnr_ppi_idx</strong>  <strong>tmnr_ppo_idx</strong>  <strong>shp_ppi_idx</strong>  <strong>shp_ppo_idx</strong>  <strong>sca_ppi_idx</strong></td>
 </tr>
 </tbody>
 </table>
 <p>Read : cat /proc/videograph/vpe/pipe_mode</p>
-<p><img alt="Command : echo [pipe_mode] > /proc/videograph/vpe/pipe_mode Current pipe_mode = [pipe_mode] mode : 0 : MRNR-> TMNR-> SHP 1 : MRNR-> SHP->TMNR 2 : SHP-> MRNR -> TMNR 3 : SHP->TMNR->MRNR 4 : TMNR->MRNR->SHP 5 : TMNR->SHP->MRNR " src="nvt_media/4c5b91599a24bfa0f3ec9af7994ca086.png" /></p>
+<p><img alt="Command : echo [pipe_mode] &gt; /proc/videograph/vpe/pipe_mode Current pipe_mode = [pipe_mode] mode : 0 : MRNR-&gt; TMNR-&gt; SHP 1 : MRNR-&gt; SHP-&gt;TMNR 2 : SHP-&gt; MRNR -&gt; TMNR 3 : SHP-&gt;TMNR-&gt;MRNR 4 : TMNR-&gt;MRNR-&gt;SHP 5 : TMNR-&gt;SHP-&gt;MRNR " src="nvt_media/4c5b91599a24bfa0f3ec9af7994ca086.png" /></p>
 <h2 id="3-spatial-noise-reduction">3 Spatial Noise Reduction<a class="headerlink" href="#3-spatial-noise-reduction" title="Permanent link">&para;</a></h2>
 <p>This is spatial noise reduction module(abbreviation is “SPNR”). It will divide the image into high frequency part and middle frequency part, performing noise reduction process respectively, then combine together to achieve the purpose of noise reduction and retain detail.</p>
 <h3 id="31-overview">3.1 Overview<a class="headerlink" href="#31-overview" title="Permanent link">&para;</a></h3>
@@ -2778,49 +2778,49 @@
 <tbody>
 <tr>
 <td>t_y_edge_detection [2][8]</td>
-<td>0\~1023</td>
+<td>0~1023</td>
 <td>161,322,483,447, 419,320,195,130, 108,215,308,272, 246,185,125,100</td>
-<td>Y threshold for determining whether the current processing pixel is on the edge.  It has eight thresholds mapping to pixel brightness from dark to bright, respectively. [0][0\~7] is the threshold from dark to bright for high frequency image. [1][0\~7] is the threshold from dark to bright for middle frequency image.</td>
+<td>Y threshold for determining whether the current processing pixel is on the edge.  It has eight thresholds mapping to pixel brightness from dark to bright, respectively. [0][0~7] is the threshold from dark to bright for high frequency image. [1][0~7] is the threshold from dark to bright for middle frequency image.</td>
 </tr>
 <tr>
 <td>t_cb_edge_detection</td>
-<td>0\~1023</td>
+<td>0~1023</td>
 <td>0,249</td>
 <td>Cb threshold for determining whether the current processing pixel is on the edge. Only works in middle frequency image.</td>
 </tr>
 <tr>
 <td>t_cr_edge_detection [2]</td>
-<td>0\~1023</td>
+<td>0~1023</td>
 <td>0,249</td>
 <td>Cr threshold for determining whether the current processing pixel is on the edge. Only works in middle frequency image.</td>
 </tr>
 <tr>
 <td>t_y_edge_smoothing[2][8]</td>
-<td>0\~255</td>
+<td>0~255</td>
 <td>66,132,161,149, 140,107,80,53, 44,88,103,91, 82,62,51,41</td>
-<td>Y threshold for determining whether it will perform smooth process.  It has eight thresholds mapping to pixel brightness from dark to bright, respectively. [0][0\~7] is the threshold from dark to bright for high frequency image. [1][0\~7] is the threshold from dark to bright for middle frequency image.</td>
+<td>Y threshold for determining whether it will perform smooth process.  It has eight thresholds mapping to pixel brightness from dark to bright, respectively. [0][0~7] is the threshold from dark to bright for high frequency image. [1][0~7] is the threshold from dark to bright for middle frequency image.</td>
 </tr>
 <tr>
 <td>t_cb_edge_smoothing [2]</td>
-<td>0\~255</td>
+<td>0~255</td>
 <td>0,153</td>
 <td>Cb threshold for determining whether it will perform smooth process. Only works in middle frequency image.</td>
 </tr>
 <tr>
 <td>t_cr_edge_smoothing [2]</td>
-<td>0\~255</td>
+<td>0~255</td>
 <td>0,153</td>
 <td>Cr threshold for determining whether it will perform smooth process. Only works in middle frequency image.</td>
 </tr>
 <tr>
 <td>nr_strength_y[2]</td>
-<td>0\~15</td>
+<td>0~15</td>
 <td>{0, 0}</td>
 <td>The denoise strength of spatial domain on Y channel. [0] is denoise strength for high frequency image. [1] is denoise strength for middle frequency image.</td>
 </tr>
 <tr>
 <td>nr_strength_c</td>
-<td>0\~15</td>
+<td>0~15</td>
 <td>{0, 10}</td>
 <td>The denoise strength of spatial domain on Cb/Cr channel. Only works in middle frequency image.</td>
 </tr>
@@ -2836,7 +2836,7 @@
 <p><strong>[Command]</strong></p>
 <p><strong>Write : Not support.</strong></p>
 <p><strong>Read : cat /proc/videograph/vpe/mrnr/dump_info</strong></p>
-<p><strong>Output: <img alt="channel \&lt;ch_no> = enable/disable t_y_edge_detection[0][8] = t_y_edge_detection[0][0] ….[0][7] t_y_edge_detection[1][8] = t_y_edge_detection[1][0] ….[1][7] t_cb_edge_detection = t_cb_edge_detection t_cr_edge_detection = t_cr_edge_detection t_y_edge_smoothing[0][8] = t_y_edge_smoothing[0][0]……[0][7] t_y_edge_smoothing[1][8] = t_y_edge_smoothing[1][0]……[1][7] t_cb_edge_smoothing = t_cb_edge_smoothing t_cr_edge_smoothing = t_cr_edge_smoothing nr_strength_y[2] = nr_strength_y[0], nr_strength_y[0] nr_strength_c = nr_strength_c " src="nvt_media/d72297f41ad766983c7c4d1cdfc3d07f.png" /></strong></p>
+<p><strong>Output: <img alt="channel &lt;ch_no&gt; = enable/disable t_y_edge_detection[0][8] = t_y_edge_detection[0][0] ….[0][7] t_y_edge_detection[1][8] = t_y_edge_detection[1][0] ….[1][7] t_cb_edge_detection = t_cb_edge_detection t_cr_edge_detection = t_cr_edge_detection t_y_edge_smoothing[0][8] = t_y_edge_smoothing[0][0]……[0][7] t_y_edge_smoothing[1][8] = t_y_edge_smoothing[1][0]……[1][7] t_cb_edge_smoothing = t_cb_edge_smoothing t_cr_edge_smoothing = t_cr_edge_smoothing nr_strength_y[2] = nr_strength_y[0], nr_strength_y[0] nr_strength_c = nr_strength_c " src="nvt_media/d72297f41ad766983c7c4d1cdfc3d07f.png" /></strong></p>
 <h6 id="procvideographvpemrnrmrnr_en"> /proc/videograph/vpe/mrnr/mrnr_en<a class="headerlink" href="#procvideographvpemrnrmrnr_en" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the MRNR enable status of the current camera channel.</p>
@@ -2851,13 +2851,13 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>echo [mrnr_en (0\~1)] > /proc/videograph/vpe/mrnr/mrnr_en</strong></td>
+<td><strong>echo [mrnr_en (0~1)] &gt; /proc/videograph/vpe/mrnr/mrnr_en</strong></td>
 <td><strong>mrnr_en</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read : cat /proc/videograph/vpe/mrnr/mrnr_en</strong></p>
-<p><strong>Output: <img alt="Command : echo [ch_en (0\~1)] > /proc/videograph/vpe/mrnr/mrnr_en" src="nvt_media/985a39377df0412dabf995f72202fec8.png" /></strong></p>
+<p><strong>Output: <img alt="Command : echo [ch_en (0~1)] &gt; /proc/videograph/vpe/mrnr/mrnr_en" src="nvt_media/985a39377df0412dabf995f72202fec8.png" /></strong></p>
 <h6 id="procvideographvpemrnrt_xx_edge_det"> /proc/videograph/vpe/mrnr/t_xx_edge_det<a class="headerlink" href="#procvideographvpemrnrt_xx_edge_det" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write edge_detection parameters.</p>
@@ -2872,20 +2872,20 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [t_y_edge_det[0][0] …..[0][7]] > /proc/videograph/vpe/mrnr/ t_y_edge_det_1</td>
-<td><strong>t_y_edge_detection[0\~7]</strong></td>
+<td>echo [t_y_edge_det[0][0] …..[0][7]] &gt; /proc/videograph/vpe/mrnr/ t_y_edge_det_1</td>
+<td><strong>t_y_edge_detection[0~7]</strong></td>
 </tr>
 <tr>
-<td>echo [t_y_edge_det[1][0] …..[1][7]] > /proc/videograph/vpe/mrnr/ t_y_edge_det_2</td>
-<td><strong>t_y_edge_detection[8\~15]</strong></td>
+<td>echo [t_y_edge_det[1][0] …..[1][7]] &gt; /proc/videograph/vpe/mrnr/ t_y_edge_det_2</td>
+<td><strong>t_y_edge_detection[8~15]</strong></td>
 </tr>
 <tr>
-<td>echo [t_cb_edge_det] > /proc/videograph/vpe/mrnr/ t_cb_edge_det</td>
-<td><strong>t_cb_edge_detection[0\~1]</strong></td>
+<td>echo [t_cb_edge_det] &gt; /proc/videograph/vpe/mrnr/ t_cb_edge_det</td>
+<td><strong>t_cb_edge_detection[0~1]</strong></td>
 </tr>
 <tr>
-<td>echo [t_cr_edge_det] > /proc/videograph/vpe/mrnr/ t_cr_edge_det</td>
-<td><strong>t_cr_edge_detection[0\~1]</strong></td>
+<td>echo [t_cr_edge_det] &gt; /proc/videograph/vpe/mrnr/ t_cr_edge_det</td>
+<td><strong>t_cr_edge_detection[0~1]</strong></td>
 </tr>
 </tbody>
 </table>
@@ -2895,7 +2895,7 @@
 <p><strong>cat /proc/videograph/vpe/mrnr/</strong>t_cb_edge_det_1</p>
 <p><strong>cat /proc/videograph/vpe/mrnr/</strong>t_cr_edge_det_1</p>
 <p><strong>Output :</strong></p>
-<p><strong>![Command : echo [t_y_edge_det[0][0] …….. [0][7] > /proc/videograph/vpe/mrnr/ t_y_edge_det_1 echo [t_y_edge_det[1][0] …….. [0][7] > /proc/videograph/vpe/mrnr/ t_y_edge_det_2 echo [t_cb_edge_det > /proc/videograph/vpe/mrnr/ t_cb_edge_det echo <a href="nvt_media/e0b1e0451304b8e493b50d457dedaf15.png">t_cr_edge_det > /proc/videograph/vpe/mrnr/ t_cr_edge_det =============================================================== t_y_edge_det1 = t_y_edge_detection [0] [0] …………….[0][7] t_y_edge_det2 = t_y_edge_detection [1] [0]…………….. [0][7] t_cb_edge_det = t_cb_edge_detection t_cr_edge_det = t_cb_edge_detection  </a></strong></p>
+<p><strong>![Command : echo [t_y_edge_det[0][0] …….. [0][7] &gt; /proc/videograph/vpe/mrnr/ t_y_edge_det_1 echo [t_y_edge_det[1][0] …….. [0][7] &gt; /proc/videograph/vpe/mrnr/ t_y_edge_det_2 echo [t_cb_edge_det &gt; /proc/videograph/vpe/mrnr/ t_cb_edge_det echo <a href="nvt_media/e0b1e0451304b8e493b50d457dedaf15.png">t_cr_edge_det &gt; /proc/videograph/vpe/mrnr/ t_cr_edge_det =============================================================== t_y_edge_det1 = t_y_edge_detection [0] [0] …………….[0][7] t_y_edge_det2 = t_y_edge_detection [1] [0]…………….. [0][7] t_cb_edge_det = t_cb_edge_detection t_cr_edge_det = t_cb_edge_detection  </a></strong></p>
 <h6 id="procvideographvpemrnrt_xx_edge_smooth"> /proc/videograph/vpe/mrnr/t_xx_edge_smooth<a class="headerlink" href="#procvideographvpemrnrt_xx_edge_smooth" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write edge_smoothing parameters.</p>
@@ -2910,20 +2910,20 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [t_y_edge_smooth[0][0]] ……..[t_y_edge_smooth [0][7]] > /proc/videograph/vpe/mrnr/ t_y_edge_smooth_1</td>
-<td><strong>t_y_edge_ smoothing[0\~7]</strong></td>
+<td>echo [t_y_edge_smooth[0][0]] ……..[t_y_edge_smooth [0][7]] &gt; /proc/videograph/vpe/mrnr/ t_y_edge_smooth_1</td>
+<td><strong>t_y_edge_ smoothing[0~7]</strong></td>
 </tr>
 <tr>
-<td>echo [t_y_edge_smooth[1][0] …….. [t_y_edge_smooth[1] [7]] > /proc/videograph/vpe/mrnr/t_y_edge_smooth_2</td>
-<td><strong>t_y_edge_ smoothing[8\~16]</strong></td>
+<td>echo [t_y_edge_smooth[1][0] …….. [t_y_edge_smooth[1] [7]] &gt; /proc/videograph/vpe/mrnr/t_y_edge_smooth_2</td>
+<td><strong>t_y_edge_ smoothing[8~16]</strong></td>
 </tr>
 <tr>
-<td>echo [t_cb_edge_smooth] > /proc/videograph/vpe/mrnr/ t_cb_edge_smooth</td>
-<td><strong>t_cb_edge_smoothing[0\~1]</strong></td>
+<td>echo [t_cb_edge_smooth] &gt; /proc/videograph/vpe/mrnr/ t_cb_edge_smooth</td>
+<td><strong>t_cb_edge_smoothing[0~1]</strong></td>
 </tr>
 <tr>
-<td>echo [t_cr_edge_smooth] > /proc/videograph/vpe/mrnr/ t_cr_edge_smooth</td>
-<td><strong>t_cr_edge_ smoothing[0\~1]</strong></td>
+<td>echo [t_cr_edge_smooth] &gt; /proc/videograph/vpe/mrnr/ t_cr_edge_smooth</td>
+<td><strong>t_cr_edge_ smoothing[0~1]</strong></td>
 </tr>
 </tbody>
 </table>
@@ -2933,7 +2933,7 @@
 <p>cat /proc/videograph/vpe/mrnr/t_cb_edge_smooth</p>
 <p>cat /proc/videograph/vpe/mrnr/t_cr_edge_smooth</p>
 <p><strong>Output :</strong></p>
-<p><strong><img alt="Command : echo [t_y_edge_smooth[0]] …….. [t_y_edge_smooth [7]] > /proc/videograph/vpe/mrnr/t_y_edge_smooth_1 … =============================================================== t_y_edge_smooth1 = t_y_edge_smoothing[0][0] ……………. [0][7] t_y_edge_smooth1 = t_y_edge_smoothing [1][0]…………….. [0][7] t_cb_edge_smooth = t_cb_edge_smoothing t_cr_edge_smooth = t_cr_edge_smoothing " src="nvt_media/e6b93d0cdf2689ae83987edb20c0f6a1.png" /></strong></p>
+<p><strong><img alt="Command : echo [t_y_edge_smooth[0]] …….. [t_y_edge_smooth [7]] &gt; /proc/videograph/vpe/mrnr/t_y_edge_smooth_1 … =============================================================== t_y_edge_smooth1 = t_y_edge_smoothing[0][0] ……………. [0][7] t_y_edge_smooth1 = t_y_edge_smoothing [1][0]…………….. [0][7] t_cb_edge_smooth = t_cb_edge_smoothing t_cr_edge_smooth = t_cr_edge_smoothing " src="nvt_media/e6b93d0cdf2689ae83987edb20c0f6a1.png" /></strong></p>
 <h6 id="procvideographvpemrnrnr_strength"> /proc/videograph/vpe/mrnr/nr_strength<a class="headerlink" href="#procvideographvpemrnrnr_strength" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write nr_strength parameters on Y/C channel.</p>
@@ -2948,14 +2948,14 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [strength_y[0]] [strength_y [1]] [strength_c] > /proc/videograph/vpe/mrnr/nr_strength</td>
-<td><strong>nr_strength_y[0\~1], nr_strength_c</strong></td>
+<td>echo [strength_y[0]] [strength_y [1]] [strength_c] &gt; /proc/videograph/vpe/mrnr/nr_strength</td>
+<td><strong>nr_strength_y[0~1], nr_strength_c</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read : cat /proc/videograph/vpe/mrnr/ nr_strength</strong></p>
 <p><strong>Output :</strong></p>
-<p><strong>![Command : echo [strength_y[0]] [strength_y [1]] [strength_c]] > /proc/videograph/vpe/mrnr/nr_strength =============================================================== nr_strength_y = nr_strength_y[0], strength_y [1] nr_strength_c= nr_strength_c ](nvt_media/15a98e5805343f50ff484410334beebe.png)</strong></p>
+<p><strong>![Command : echo [strength_y[0]] [strength_y [1]] [strength_c]] &gt; /proc/videograph/vpe/mrnr/nr_strength =============================================================== nr_strength_y = nr_strength_y[0], strength_y [1] nr_strength_c= nr_strength_c ](nvt_media/15a98e5805343f50ff484410334beebe.png)</strong></p>
 <h4 id="332-vendor-api">3.3.2 Vendor API<a class="headerlink" href="#332-vendor-api" title="Permanent link">&para;</a></h4>
 <p><strong>[Description]</strong></p>
 <p>Get and set the 2DNR parameters corresponding to current path_id.</p>
@@ -2965,7 +2965,7 @@
 <p><strong>Set：</strong></p>
 <p>HD_RESULT vendor_video_set(HD_PATH_ID path_id, VENDOR_VIDEO_DN_2D, VENDOR_VIDEO_PARAM_MRNR *p_param);</p>
 <p><strong>[Definition]</strong></p>
-<p><strong><img alt="typedef struct _VENDOR_VIDEO_MRNR {    UINT32 mrnr_en;                     ///\&lt; MRNR ON/OFF   UINT32 t_y_edge_detection[2][8];    ///\&lt; Edge pixel detection threshold of Y{layer1\~layer2}, 0\~1023  UINT32 t_cb_edge_detection;         ///\&lt; Edge pixel detection threshold of Cb{layer2}, 0\~1023     UINT32 t_cr_edge_detection;         ///\&lt; Edge pixel detection threshold of Cr{layer2}, 0\~1023     UINT32 t_y_edge_smoothing[2][8];    ///\&lt; Edge pixel smoothing threshold of Y: {layer1\~layer2}, 0\~255     UINT32 t_cb_edge_smoothing;         ///\&lt; Edge pixel smoothing threshold of Cb: {layer2}, 0\~255    UINT32 t_cr_edge_smoothing;         ///\&lt; Edge pixel smoothing threshold of Cr: {layer2}, 0\~255    UINT32 nr_strength_y[2];            ///\&lt; Strength of noise reduction of Y: {layer1\~layer2}, 0\~15     UINT32 nr_strength_c;               ///\&lt; Strength of noise reduction of CbCr: {layer2}, 0\~15 } VENDOR_VIDEO_PARAM_MRNR; " src="nvt_media/4fa5602c7f38e0c8590485b95e1c6a99.png" /></strong></p>
+<p><strong><img alt="typedef struct _VENDOR_VIDEO_MRNR {    UINT32 mrnr_en;                     ///&lt; MRNR ON/OFF   UINT32 t_y_edge_detection[2][8];    ///&lt; Edge pixel detection threshold of Y{layer1~layer2}, 0~1023  UINT32 t_cb_edge_detection;         ///&lt; Edge pixel detection threshold of Cb{layer2}, 0~1023     UINT32 t_cr_edge_detection;         ///&lt; Edge pixel detection threshold of Cr{layer2}, 0~1023     UINT32 t_y_edge_smoothing[2][8];    ///&lt; Edge pixel smoothing threshold of Y: {layer1~layer2}, 0~255     UINT32 t_cb_edge_smoothing;         ///&lt; Edge pixel smoothing threshold of Cb: {layer2}, 0~255    UINT32 t_cr_edge_smoothing;         ///&lt; Edge pixel smoothing threshold of Cr: {layer2}, 0~255    UINT32 nr_strength_y[2];            ///&lt; Strength of noise reduction of Y: {layer1~layer2}, 0~15     UINT32 nr_strength_c;               ///&lt; Strength of noise reduction of CbCr: {layer2}, 0~15 } VENDOR_VIDEO_PARAM_MRNR; " src="nvt_media/4fa5602c7f38e0c8590485b95e1c6a99.png" /></strong></p>
 <h2 id="4-temporal-noise-reduction-tmnr">4 Temporal Noise Reduction (TMNR)<a class="headerlink" href="#4-temporal-noise-reduction-tmnr" title="Permanent link">&para;</a></h2>
 <p>This is temporal noise reduction module(abbreviation is “TMNR”). The major function is to eliminate temporal noise in the image.</p>
 <h3 id="41-overview">4.1 Overview<a class="headerlink" href="#41-overview" title="Permanent link">&para;</a></h3>
@@ -2986,241 +2986,241 @@
 <tbody>
 <tr>
 <td><strong>tmnr_en</strong></td>
-<td>0\~1</td>
+<td>0~1</td>
 <td>1</td>
 <td>TMNR ON/OFF</td>
 </tr>
 <tr>
 <td><strong>luma_dn_en</strong></td>
-<td>0\~1</td>
+<td>0~1</td>
 <td>1</td>
 <td>Y channel TMNR ON/OFF</td>
 </tr>
 <tr>
 <td><strong>chroma_dn_en</strong></td>
-<td>0\~1</td>
+<td>0~1</td>
 <td>1</td>
 <td>Cb/Cr channel TMNR ON/OFF</td>
 </tr>
 <tr>
 <td><strong>tmnr_fcs_en</strong></td>
-<td>0\~1</td>
+<td>0~1</td>
 <td>0</td>
 <td>Temporal de-false color function ON/OFF It only works when “chroma_dn_en” is set to 1. Please refer to advance description.</td>
 </tr>
 <tr>
 <td><strong>nr_str_y_3d</strong></td>
-<td>0\~32</td>
+<td>0~32</td>
 <td>8</td>
 <td>Y channel temporal NR strength</td>
 </tr>
 <tr>
 <td><strong>nr_str_y_2d</strong></td>
-<td>0\~32</td>
+<td>0~32</td>
 <td>16</td>
 <td>Y channel spatial NR strength of motion object</td>
 </tr>
 <tr>
 <td><strong>nr_str _c_3d</strong></td>
-<td>0\~32</td>
+<td>0~32</td>
 <td>16</td>
 <td>Cb/Cr channel temporal NR strength</td>
 </tr>
 <tr>
 <td><strong>nr_str _c_2d</strong></td>
-<td>0\~32</td>
+<td>0~32</td>
 <td>16</td>
 <td>Cb/Cr channel spatial NR strength of motion object</td>
 </tr>
 <tr>
 <td><strong>blur_str_y</strong></td>
-<td>0\~2</td>
+<td>0~2</td>
 <td>1</td>
 <td>Y image blurred strength 0: No blur 1: low-strength blur 2: high-strength blur ※It is recommend to set enable, if the executing sequence of 3DNR is after Sharpness; otherwise, it is recommend to set disable. For DVR/NVR application, due to in most case the front-end camera had perfomed sharpen process, it is recommend to set 1.</td>
 </tr>
 <tr>
 <td><strong>center_wzero_y_2d_en</strong></td>
-<td>0\~1</td>
+<td>0~1</td>
 <td>1</td>
 <td>Set to enable represents when performing the 2DNR, the weighting of center point is 0. It will increase NR strength, but might lose detail. Due to 2DNR only works on motion region, the detail loss is not obvious, it is recommend to fix enable.</td>
 </tr>
 <tr>
 <td><strong>center_wzero_y_3d_en</strong></td>
-<td>0\~1</td>
+<td>0~1</td>
 <td>1</td>
 <td>Set to enable represents when performing 3DNR, the weighting of center point is 0. It is recommend to fix enable.</td>
 </tr>
 <tr>
 <td><strong>small_vibrat_supp_y_en</strong></td>
-<td>0\~1</td>
+<td>0~1</td>
 <td>0</td>
 <td>Y channel small vibration suppresiioon ON/OFF. This function will enhance suppression on small vibration noise to make the image more stable. However, it also causes slower ghost removal. It is recommend to enable at normal luminance, and disable at dark luminance.</td>
 </tr>
 <tr>
 <td><strong>avoid_residue_th_y</strong></td>
-<td>1\~4</td>
+<td>1~4</td>
 <td>2</td>
 <td>Upper threshold for Y channel small noise putting back. If <strong>err_compensate</strong> = 0, bigger this value will cause smaller temporal noise. On the other hand, if err_compensate = 1, bigger this value will cause bigger temporal noise.</td>
 </tr>
 <tr>
 <td><strong>avoid_residue_th_c</strong></td>
-<td>1\~4</td>
+<td>1~4</td>
 <td>1</td>
 <td>Upper threshold for Vb/Cr channel small noise putting back. If <strong>err_compensate</strong> = 0, bigger this value will cause smaller temporal noise. On the other hand, if err_compensate = 1, bigger this value will cause bigger temporal noise.</td>
 </tr>
 <tr>
 <td><strong>display_motion_map_en</strong></td>
-<td>0\~1</td>
+<td>0~1</td>
 <td>0</td>
 <td>Debug mode. Show motion detection result on the image to assist to judge the correctness of motion detect parameters. Please refer to advance description.</td>
 </tr>
 <tr>
 <td><strong>motion_map_channel</strong></td>
-<td>0\~4</td>
+<td>0~4</td>
 <td>0</td>
 <td>Select debug signal channel. 0: Y channel 1: Cb channel 2: Cr channel 3: temporal de-false color Cb channel 4: temporal de-false color Cr channel</td>
 </tr>
 <tr>
 <td><strong>y_base[8]</strong></td>
-<td>0\~16320</td>
+<td>0~16320</td>
 <td>{146,147,107,110,102,104,104,104}</td>
 <td>y_base[0]-[7] are NoiseSAD mapping to pixel brightness from dark to bright. When performing 2DNR, the internal algorithm will automatically fine tune strength based on y_base. The larger the y_base, the stronger strength of 2DNR of motion object. It is recommend to increase y_base as sensor gain increases.</td>
 </tr>
 <tr>
 <td><strong>motion_level_th_y_k1</strong></td>
-<td>0\~32</td>
+<td>0~32</td>
 <td>8</td>
 <td>Threshold (motion_level_th_y_k1*Y_NOISE) for determining transition region on Y channel. Y_NOISE please refer to advance description.</td>
 </tr>
 <tr>
 <td><strong>motion_level_th_y_k2</strong></td>
-<td>0\~32</td>
+<td>0~32</td>
 <td>8</td>
 <td>Threshold (motion_level_th_y_k2*Y_NOISE) for determining motion region on Y channel.  K2 must larger or equal to K1.</td>
 </tr>
 <tr>
 <td><strong>y_coefa[8]</strong></td>
-<td>0\~48</td>
+<td>0~48</td>
 <td>{0,0,0,0,0,0,0,0}</td>
 <td>The slope of NoiseSAD from flat region to detail region on Y channel. y_coefa[0]-[7] mapping to pixel brightness from dark to bright.</td>
 </tr>
 <tr>
 <td><strong>y_coefb[8]</strong></td>
-<td>0\~16320</td>
+<td>0~16320</td>
 <td>{27,27,20,12,7,10,10,10}</td>
 <td>NoiseSAD of flat region on Y channel. y_coefb[0]-[7] mapping to pixel brightness from dark to bright.</td>
 </tr>
 <tr>
 <td><strong>y_std[8]</strong></td>
-<td>0\~16320</td>
+<td>0~16320</td>
 <td>{20,70,70,70,70,50,28,18}</td>
 <td>The standard deviation of NoiseSAD on Y channel. y_std[0]-[7] mapping to pixel brightness from dark to bright.</td>
 </tr>
 <tr>
 <td><strong>motion_level_th_c_k1</strong></td>
-<td>0\~32</td>
+<td>0~32</td>
 <td>8</td>
 <td>Threshold for determining transition region on Cb/Cr channel.</td>
 </tr>
 <tr>
 <td><strong>motion_level_th_c_k2</strong></td>
-<td>0\~32</td>
+<td>0~32</td>
 <td>8</td>
 <td>Threshold for determining motion region on Cb/Cr channel, K2 must larger or equal to K1.</td>
 </tr>
 <tr>
 <td><strong>cb_mean[8]</strong></td>
-<td>0\~6375</td>
+<td>0~6375</td>
 <td>{33,33,34,32,29,28,28,28}</td>
 <td>The NoiseSAD mean value on Cb channel. cb_mean[0]-[7] mapping to pixel brightness from dark to bright.</td>
 </tr>
 <tr>
 <td><strong>cb_std[8]</strong></td>
-<td>0\~6375</td>
+<td>0~6375</td>
 <td>{10,9,10,10,9,9,9,9}</td>
 <td>The standard deviation of NoiseSAD on Cb channel. cb_std[0]-[7] mapping to pixel brightness from dark to bright.</td>
 </tr>
 <tr>
 <td><strong>cr_mean[8]</strong></td>
-<td>0\~6375</td>
+<td>0~6375</td>
 <td>{23,23,25,23,20,20,21,21}</td>
 <td>The NoiseSAD mean value on Cr channel. cr_mean[0]-[7] mapping to pixel brightness from dark to bright.</td>
 </tr>
 <tr>
 <td><strong>cr_std[8]</strong></td>
-<td>0\~6375</td>
+<td>0~6375</td>
 <td>{7,7,8,7,7,77,7}</td>
 <td>The standard deviation of NoiseSAD on Cr channel. cr_std[0]-[7] mapping to pixel brightness from dark to bright.</td>
 </tr>
 <tr>
 <td><strong>lut_y_3d_1_Th[4]</strong></td>
-<td>0\~127</td>
+<td>0~127</td>
 <td>{11,33,55,77}</td>
 <td>Lut of Y channel 3D_1 filter Please refer to advance description.</td>
 </tr>
 <tr>
 <td><strong>lut_y _3d_2_Th[4]</strong></td>
-<td>0\~127</td>
+<td>0~127</td>
 <td>{40,14,7,3}</td>
 <td>Lut of Y channel 3D_2 filter Please refer to advance description.</td>
 </tr>
 <tr>
 <td><strong>lut_y_2d_Th[4]</strong></td>
-<td>0\~127</td>
+<td>0~127</td>
 <td>{11,33,55,77}</td>
 <td>Lut of Y channel 2D filter Please refer to advance description.</td>
 </tr>
 <tr>
 <td><strong>lut_c_3d_Th[4]</strong></td>
-<td>0\~127</td>
+<td>0~127</td>
 <td>{37,19,11,7}</td>
 <td>Lut of Cb/Cr channel 3D filter Please refer to advance description.</td>
 </tr>
 <tr>
 <td><strong>lut_c_2d_Th[4]</strong></td>
-<td>0\~127</td>
+<td>0~127</td>
 <td>{11,33,55,77}</td>
 <td>Lut of Cb/Cr channel 2D filter Please refer to advance description.</td>
 </tr>
 <tr>
 <td><strong>tmnr_fcs_str</strong></td>
-<td>0\~15</td>
+<td>0~15</td>
 <td>4</td>
 <td>The strength of temporal de-false color function.</td>
 </tr>
 <tr>
 <td><strong>tmnr_fcs_th</strong></td>
-<td>0\~255</td>
+<td>0~255</td>
 <td>32</td>
 <td>Threshold for the difference between the previous frame and the current frame to determine whether it is false color.</td>
 </tr>
 <tr>
 <td><strong>dithering_en</strong></td>
-<td>0\~1</td>
+<td>0~1</td>
 <td>1</td>
 <td>Dithering enable. This function can be used to eliminate slight power noise or flicker phenomenon.</td>
 </tr>
 <tr>
 <td><strong>dithering_bit_y</strong></td>
-<td>0\~3</td>
+<td>0~3</td>
 <td>2</td>
 <td>Y channel random bit number. The higher the value, the stronger the ability to eliminate the power noiser and filcker phenomenon, but the picture may appear larger fine noise.</td>
 </tr>
 <tr>
 <td><strong>dithering_bit_u</strong></td>
-<td>0\~3</td>
+<td>0~3</td>
 <td>1</td>
 <td>U channel random bit number. The higher the value, the stronger the ability to eliminate the power noiser and filcker phenomenon, but the picture may appear larger fine noise.</td>
 </tr>
 <tr>
 <td><strong>dithering_bit_v</strong></td>
-<td>0\~3</td>
+<td>0~3</td>
 <td>1</td>
 <td>V channel random bit number. The higher the value, the stronger the ability to eliminate the power noiser and filcker phenomenon, but the picture may appear larger fine noise.</td>
 </tr>
 <tr>
 <td><strong>err_compensate</strong></td>
-<td>0\~1</td>
+<td>0~1</td>
 <td>1</td>
 <td>YC Compression error compensation.  0: Antiflicker mode. (Larger anti-flicker effect) 1: Compensation mode. (Data Compression Error Compensation)</td>
 </tr>
@@ -3298,7 +3298,7 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [luma_en] [chroma_en] [fcs_en] > /proc/videograph/vpe/tmnr/ch_en_status</td>
+<td>echo [luma_en] [chroma_en] [fcs_en] &gt; /proc/videograph/vpe/tmnr/ch_en_status</td>
 <td><strong>luma_dn_en</strong> <strong>chroma_dn_en</strong> <strong>tmnr_fcs_en</strong></td>
 </tr>
 </tbody>
@@ -3306,7 +3306,7 @@
 <p><strong>Read :</strong></p>
 <p><strong>cat /proc/videograph/vpe/tmnr/ch_en_status</strong></p>
 <p><strong>Output :</strong></p>
-<p><strong><img alt="Command :  echo [luma_en] [chroma_en] [fcs_en] > /proc/videograph/vpe/tmnr/ch_en_status =============================================================== luma_en = luma_dn_en chroma_en = chroma_dn_en fcs_en = tmnr_fcs_en " src="nvt_media/09550c83b4f1fedadfdcf65260205a45.png" /></strong></p>
+<p><strong><img alt="Command :  echo [luma_en] [chroma_en] [fcs_en] &gt; /proc/videograph/vpe/tmnr/ch_en_status =============================================================== luma_en = luma_dn_en chroma_en = chroma_dn_en fcs_en = tmnr_fcs_en " src="nvt_media/09550c83b4f1fedadfdcf65260205a45.png" /></strong></p>
 <h6 id="procvideographvpetmnrnr_strength"> /proc/videograph/vpe/tmnr/nr_strength<a class="headerlink" href="#procvideographvpetmnrnr_strength" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the TMNR strength of the current channel.</p>
@@ -3321,7 +3321,7 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [y_3d_str] [y_2d_str] [c_3d_str] [c_2d_str] > /proc/videograph/vpe/tmnr/nr_strength</td>
+<td>echo [y_3d_str] [y_2d_str] [c_3d_str] [c_2d_str] &gt; /proc/videograph/vpe/tmnr/nr_strength</td>
 <td><strong>nr_str_y_3d, nr_str_y_2d</strong> <strong>nr_str_c_3d, nr_str_c_2d</strong></td>
 </tr>
 </tbody>
@@ -3329,7 +3329,7 @@
 <p><strong>Read :</strong></p>
 <p><strong>cat /proc/videograph/vpe/tmnr/nr_strength</strong></p>
 <p><strong>Output :</strong></p>
-<p><strong><img alt="Command :  echo [y_3d_str] [y_2d_str] [c_3d_str] [c_2d_str] > /proc/videograph/vpe/tmnr//proc/videograph/vpe/tmnr/nr_strength =============================================================== nr_str_y_3d = nr_str_y_3d nr_str_y_2d = nr_str_y_2d nr_str_c_3d = nr_str_c_3d nr_str_c_2d = nr_str_c_2d " src="nvt_media/768d595e9fecf97fde36194a105d3f88.png" /></strong></p>
+<p><strong><img alt="Command :  echo [y_3d_str] [y_2d_str] [c_3d_str] [c_2d_str] &gt; /proc/videograph/vpe/tmnr//proc/videograph/vpe/tmnr/nr_strength =============================================================== nr_str_y_3d = nr_str_y_3d nr_str_y_2d = nr_str_y_2d nr_str_c_3d = nr_str_c_3d nr_str_c_2d = nr_str_c_2d " src="nvt_media/768d595e9fecf97fde36194a105d3f88.png" /></strong></p>
 <h6 id="procvideographvpetmnry_base"> /proc/videograph/vpe/tmnr/y_base<a class="headerlink" href="#procvideographvpetmnry_base" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the base noise level of TMNR of the current channel.</p>
@@ -3344,15 +3344,15 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [y_base0] [y_base1]………[y_base7] > /proc/videograph/vpe/tmnr/y_base</td>
-<td><strong>y_base[0]\~[7]</strong></td>
+<td>echo [y_base0] [y_base1]………[y_base7] &gt; /proc/videograph/vpe/tmnr/y_base</td>
+<td><strong>y_base[0]~[7]</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read :</strong></p>
 <p><strong>cat /proc/videograph/vpe/tmnr/y_base</strong></p>
 <p><strong>Output :</strong></p>
-<p><strong><img alt="Command :  echo [y_base0] [y_base1]………[y_base7] > /proc/videograph/vpe/tmnr/y_base =============================================================== TMNR Noise Y_base = y_base[0]…………y_base[7] " src="nvt_media/6bd128e5bedf990cf5d42712c8c0285a.png" /></strong></p>
+<p><strong><img alt="Command :  echo [y_base0] [y_base1]………[y_base7] &gt; /proc/videograph/vpe/tmnr/y_base =============================================================== TMNR Noise Y_base = y_base[0]…………y_base[7] " src="nvt_media/6bd128e5bedf990cf5d42712c8c0285a.png" /></strong></p>
 <h6 id="procvideographvpetmnrmotion_level_th"> /proc/videograph/vpe/tmnr/motion_level_th<a class="headerlink" href="#procvideographvpetmnrmotion_level_th" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the noise model parameters of TMNR of the current channel.</p>
@@ -3367,7 +3367,7 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [y_k1] [y_k2] [c_k1] [c_k2] > /proc/videograph/vpe/tmnr/motion_level_th</td>
+<td>echo [y_k1] [y_k2] [c_k1] [c_k2] &gt; /proc/videograph/vpe/tmnr/motion_level_th</td>
 <td><strong>motion_level_th_y_k1</strong> <strong>motion_level_th_y_k2</strong> <strong>motion_level_th_c_k1</strong> <strong>motion_level_th_c_k2</strong></td>
 </tr>
 </tbody>
@@ -3375,7 +3375,7 @@
 <p><strong>Read :</strong></p>
 <p><strong>cat /proc/videograph/vpe/tmnr/motion_level_th</strong></p>
 <p><strong>Output :</strong></p>
-<p><strong><img alt="Command :  echo [y_k1] [y_k2] [c_k1] [c_k2] > /proc/videograph/vpe/tmnr/motion_level_th =============================================================== TMNR motion level th = motion_level_th_y_k1, motion_level_th_y_k2, motion_level_th_c_k1, motion_level_th_c_k2, " src="nvt_media/c55fc3fe19d9561d486f55e5d3ba2109.png" /></strong></p>
+<p><strong><img alt="Command :  echo [y_k1] [y_k2] [c_k1] [c_k2] &gt; /proc/videograph/vpe/tmnr/motion_level_th =============================================================== TMNR motion level th = motion_level_th_y_k1, motion_level_th_y_k2, motion_level_th_c_k1, motion_level_th_c_k2, " src="nvt_media/c55fc3fe19d9561d486f55e5d3ba2109.png" /></strong></p>
 <h6 id="procvideographvpetmnry_coeffa"> /proc/videograph/vpe/tmnr/y_coeffa<a class="headerlink" href="#procvideographvpetmnry_coeffa" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the noise model parameters of TMNR of the current channel.</p>
@@ -3390,15 +3390,15 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [y_coeffa0] [y_coeffa1]………[y_coeffa7] > /proc/videograph/vpe/tmnr/y_coeffa</td>
-<td><strong>y_coeffa[0]\~[7]</strong></td>
+<td>echo [y_coeffa0] [y_coeffa1]………[y_coeffa7] &gt; /proc/videograph/vpe/tmnr/y_coeffa</td>
+<td><strong>y_coeffa[0]~[7]</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read :</strong></p>
 <p><strong>cat /proc/videograph/vpe/tmnr/y_coeffa</strong></p>
 <p><strong>Output :</strong></p>
-<p><strong><img alt="Command :  echo [y_coeffa0] [y_coeffa1]………[y_coeffa7] > /proc/videograph/vpe/tmnr/y_coeffa =============================================================== TMNR Noise model y_coeffa = y_coeffa[0]…………y_coeffa[7] " src="nvt_media/75e98476c139374c62e0f49db46cc1f9.png" /></strong></p>
+<p><strong><img alt="Command :  echo [y_coeffa0] [y_coeffa1]………[y_coeffa7] &gt; /proc/videograph/vpe/tmnr/y_coeffa =============================================================== TMNR Noise model y_coeffa = y_coeffa[0]…………y_coeffa[7] " src="nvt_media/75e98476c139374c62e0f49db46cc1f9.png" /></strong></p>
 <h6 id="procvideographvpetmnry_coeffb"> /proc/videograph/vpe/tmnr/y_coeffb<a class="headerlink" href="#procvideographvpetmnry_coeffb" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the noise model parameters of TMNR of the current channel.</p>
@@ -3413,15 +3413,15 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [y_coeffb0] [y_coeffb1]………[y_coeffb7] > /proc/videograph/vpe/tmnr/y_coeffb</td>
-<td><strong>y_coeffb[0]\~[7]</strong></td>
+<td>echo [y_coeffb0] [y_coeffb1]………[y_coeffb7] &gt; /proc/videograph/vpe/tmnr/y_coeffb</td>
+<td><strong>y_coeffb[0]~[7]</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read :</strong></p>
 <p><strong>cat /proc/videograph/vpe/tmnr/y_coeffb</strong></p>
 <p><strong>Output :</strong></p>
-<p><strong><img alt="Command :  echo [y_coeffb0] [y_coeffb1]………[y_coeffb7] > /proc/videograph/vpe/tmnr/y_coeffb =============================================================== TMNR Noise model y_coeffb = y_coeffb[0]…………y_coeffb[7] " src="nvt_media/fddca35ec34f6d020253b4d4b6bcc376.png" /></strong></p>
+<p><strong><img alt="Command :  echo [y_coeffb0] [y_coeffb1]………[y_coeffb7] &gt; /proc/videograph/vpe/tmnr/y_coeffb =============================================================== TMNR Noise model y_coeffb = y_coeffb[0]…………y_coeffb[7] " src="nvt_media/fddca35ec34f6d020253b4d4b6bcc376.png" /></strong></p>
 <h6 id="procvideographvpetmnry_std"> /proc/videograph/vpe/tmnr/y_std<a class="headerlink" href="#procvideographvpetmnry_std" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the noise model parameters of TMNR of the current channel.</p>
@@ -3436,15 +3436,15 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [y_std0] [y_std1]………[y_std7] > /proc/videograph/vpe/tmnr/y_std</td>
-<td><strong>y_std[0]\~[7]</strong></td>
+<td>echo [y_std0] [y_std1]………[y_std7] &gt; /proc/videograph/vpe/tmnr/y_std</td>
+<td><strong>y_std[0]~[7]</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read :</strong></p>
 <p><strong>cat /proc/videograph/vpe/tmnr/y_std</strong></p>
 <p><strong>Output :</strong></p>
-<p><strong><img alt="Command :  echo [y_std0] [y_std1]………[y_std7] > /proc/videograph/vpe/tmnr/y_std =============================================================== TMNR Noise model y_std = y_std[0]…………y_std[7] " src="nvt_media/80c6f7df342b9d65e32d57d00279244a.png" /></strong></p>
+<p><strong><img alt="Command :  echo [y_std0] [y_std1]………[y_std7] &gt; /proc/videograph/vpe/tmnr/y_std =============================================================== TMNR Noise model y_std = y_std[0]…………y_std[7] " src="nvt_media/80c6f7df342b9d65e32d57d00279244a.png" /></strong></p>
 <h6 id="procvideographvpetmnrcb_mean"> /proc/videograph/vpe/tmnr/cb_mean<a class="headerlink" href="#procvideographvpetmnrcb_mean" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the noise model parameters of TMNR of the current channel.</p>
@@ -3459,15 +3459,15 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [cb_mean0] [cb_mean1]………[cb_mean 7] > /proc/videograph/vpe/tmnr/cb_mean</td>
-<td><strong>cb_mean[0]\~[7]</strong></td>
+<td>echo [cb_mean0] [cb_mean1]………[cb_mean 7] &gt; /proc/videograph/vpe/tmnr/cb_mean</td>
+<td><strong>cb_mean[0]~[7]</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read :</strong></p>
 <p><strong>cat /proc/videograph/vpe/tmnr/cb_mean</strong></p>
 <p><strong>Output :</strong></p>
-<p><strong><img alt="Command :  echo [cb_mean0] [cb_mean1]………[cb_mean 7] > /proc/videograph/vpe/tmnr/cb_mean =============================================================== TMNR Noise model cb_mean = cb_mean[0]…………cb_mean[7] " src="nvt_media/10e901a3ca1db84914ad37d7c2b97524.png" /></strong></p>
+<p><strong><img alt="Command :  echo [cb_mean0] [cb_mean1]………[cb_mean 7] &gt; /proc/videograph/vpe/tmnr/cb_mean =============================================================== TMNR Noise model cb_mean = cb_mean[0]…………cb_mean[7] " src="nvt_media/10e901a3ca1db84914ad37d7c2b97524.png" /></strong></p>
 <h6 id="procvideographvpetmnrcb_std"> /proc/videograph/vpe/tmnr/cb_std<a class="headerlink" href="#procvideographvpetmnrcb_std" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the noise model parameters of TMNR of the current channel.</p>
@@ -3482,15 +3482,15 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [cb_std0] [cb_std1]………[cb_std7] > /proc/videograph/vpe/tmnr/cb_std</td>
-<td><strong>cb_std[0]\~[7]</strong></td>
+<td>echo [cb_std0] [cb_std1]………[cb_std7] &gt; /proc/videograph/vpe/tmnr/cb_std</td>
+<td><strong>cb_std[0]~[7]</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read :</strong></p>
 <p><strong>cat /proc/videograph/vpe/tmnr/cb_std</strong></p>
 <p><strong>Output :</strong></p>
-<p><strong><img alt="Command :  echo [cb_std0] [cb_std1]………[cb_std7] > /proc/videograph/vpe/tmnr/cb_std =============================================================== TMNR Noise model cb_std = cb_std[0]…………cb_std[7] " src="nvt_media/69ce186d9a745f704f8ba93d426ddaca.png" /></strong></p>
+<p><strong><img alt="Command :  echo [cb_std0] [cb_std1]………[cb_std7] &gt; /proc/videograph/vpe/tmnr/cb_std =============================================================== TMNR Noise model cb_std = cb_std[0]…………cb_std[7] " src="nvt_media/69ce186d9a745f704f8ba93d426ddaca.png" /></strong></p>
 <h6 id="procvideographvpetmnrcr_mean"> /proc/videograph/vpe/tmnr/cr_mean<a class="headerlink" href="#procvideographvpetmnrcr_mean" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the noise model parameters of TMNR of the current channel.</p>
@@ -3505,15 +3505,15 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [cr_mean0] [cr_mean1]………[cr_std7] > /proc/videograph/vpe/tmnr/cr_mean</td>
-<td><strong>cr_std[0]\~[7]</strong></td>
+<td>echo [cr_mean0] [cr_mean1]………[cr_std7] &gt; /proc/videograph/vpe/tmnr/cr_mean</td>
+<td><strong>cr_std[0]~[7]</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read :</strong></p>
 <p><strong>cat /proc/videograph/vpe/tmnr/cr_mean</strong></p>
 <p><strong>Output :</strong></p>
-<p><strong><img alt="Command :  echo [cr_mean0] [cr_mean1]………[cr_std7] > /proc/videograph/vpe/tmnr/cr_mean =============================================================== TMNR Noise model cr_mean = cr_mean[0]…………cr_mean[7] " src="nvt_media/6fe2dc9d7b3e3837c606ed4b459e1a52.png" /></strong></p>
+<p><strong><img alt="Command :  echo [cr_mean0] [cr_mean1]………[cr_std7] &gt; /proc/videograph/vpe/tmnr/cr_mean =============================================================== TMNR Noise model cr_mean = cr_mean[0]…………cr_mean[7] " src="nvt_media/6fe2dc9d7b3e3837c606ed4b459e1a52.png" /></strong></p>
 <h6 id="procvideographvpetmnrcr_std"> /proc/videograph/vpe/tmnr/cr_std<a class="headerlink" href="#procvideographvpetmnrcr_std" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the noise model parameters of TMNR of the current channel.</p>
@@ -3528,15 +3528,15 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [cr_std0] [cr_std1]………[cr_std7] ] > /proc/videograph/vpe/tmnr/cr_std</td>
-<td><strong>cr_std[0]\~[7]</strong></td>
+<td>echo [cr_std0] [cr_std1]………[cr_std7] ] &gt; /proc/videograph/vpe/tmnr/cr_std</td>
+<td><strong>cr_std[0]~[7]</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read :</strong></p>
 <p><strong>cat /proc/videograph/vpe/tmnr/cr_std</strong></p>
 <p><strong>Output :</strong></p>
-<p><strong><img alt="Command :  echo [cr_std0] [cr_std1]………[cr_std7] > /proc/videograph/vpe/tmnr/cr_std =============================================================== TMNR Noise model cr_std = cr_std[0]…………cr_std[7] " src="nvt_media/c628d64edc2fc04822c91d63d7e103c0.png" /></strong></p>
+<p><strong><img alt="Command :  echo [cr_std0] [cr_std1]………[cr_std7] &gt; /proc/videograph/vpe/tmnr/cr_std =============================================================== TMNR Noise model cr_std = cr_std[0]…………cr_std[7] " src="nvt_media/c628d64edc2fc04822c91d63d7e103c0.png" /></strong></p>
 <h6 id="procvideographvpetmnrlut_y_3d_1_th"> /proc/videograph/vpe/tmnr/lut_y_3d_1_th<a class="headerlink" href="#procvideographvpetmnrlut_y_3d_1_th" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the 3D noise reduction parameters of TMNR of the current channel.</p>
@@ -3551,15 +3551,15 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [th0] [th1] [th2] [th3] > /proc/videograph/vpe/tmnr/lut_y_3d_1_th</td>
-<td><strong>lut_y_3d_1_th[0]\~[3]</strong></td>
+<td>echo [th0] [th1] [th2] [th3] &gt; /proc/videograph/vpe/tmnr/lut_y_3d_1_th</td>
+<td><strong>lut_y_3d_1_th[0]~[3]</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read :</strong></p>
 <p><strong>cat /proc/videograph/vpe/tmnr/lut_y_3d_1_th</strong></p>
 <p><strong>Output :</strong></p>
-<p><strong><img alt="Command :  echo [th0] [th1] [th2] [th3] > /proc/videograph/vpe/tmnr/lut_y_3d_1_th =============================================================== TMNR lut_y_3d_1_th = lut_y_3d_1_th[0]…th[3] " src="nvt_media/268c93946a69a0fd76057af14ca3795f.png" /></strong></p>
+<p><strong><img alt="Command :  echo [th0] [th1] [th2] [th3] &gt; /proc/videograph/vpe/tmnr/lut_y_3d_1_th =============================================================== TMNR lut_y_3d_1_th = lut_y_3d_1_th[0]…th[3] " src="nvt_media/268c93946a69a0fd76057af14ca3795f.png" /></strong></p>
 <h6 id="procvideographvpetmnrlut_y_3d_2_th"> /proc/videograph/vpe/tmnr/lut_y_3d_2_th<a class="headerlink" href="#procvideographvpetmnrlut_y_3d_2_th" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the 3D noise reduction parameters of TMNR of the current channel.</p>
@@ -3574,15 +3574,15 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [th0] [th1] [th2] [th3] > /proc/videograph/vpe/tmnr/lut_y_3d_2_th</td>
-<td><strong>lut_y_3d_2_th[0]\~[3]</strong></td>
+<td>echo [th0] [th1] [th2] [th3] &gt; /proc/videograph/vpe/tmnr/lut_y_3d_2_th</td>
+<td><strong>lut_y_3d_2_th[0]~[3]</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read :</strong></p>
 <p><strong>cat /proc/videograph/vpe/tmnr/lut_y_3d_2_th</strong></p>
 <p><strong>Output :</strong></p>
-<p><strong><img alt="Command :  echo [th0] [th1] [th2] [th3] > /proc/videograph/vpe/tmnr/lut_y_3d_2_th =============================================================== TMNR lut_y_3d_2_th = lut_y_3d_2_th[0]…th[3] " src="nvt_media/e25cd97631a24b547eacbcb025197722.png" /></strong></p>
+<p><strong><img alt="Command :  echo [th0] [th1] [th2] [th3] &gt; /proc/videograph/vpe/tmnr/lut_y_3d_2_th =============================================================== TMNR lut_y_3d_2_th = lut_y_3d_2_th[0]…th[3] " src="nvt_media/e25cd97631a24b547eacbcb025197722.png" /></strong></p>
 <h6 id="procvideographvpetmnrlut_y_2d_th"> /proc/videograph/vpe/tmnr/lut_y_2d_th<a class="headerlink" href="#procvideographvpetmnrlut_y_2d_th" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the 2D noise reduction parameters of TMNR of the current channel.</p>
@@ -3597,15 +3597,15 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [th0] [th1] [th2] [th3] > /proc/videograph/vpe/tmnr/lut_y_2d_th</td>
-<td><strong>lut_y_2d_th[0]\~[3]</strong></td>
+<td>echo [th0] [th1] [th2] [th3] &gt; /proc/videograph/vpe/tmnr/lut_y_2d_th</td>
+<td><strong>lut_y_2d_th[0]~[3]</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read :</strong></p>
 <p>cat /proc/videograph/vpe/tmnr/lut_y_2d_th</p>
 <p><strong>Output :</strong></p>
-<p><strong><img alt="Command :  echo [th0] [th1] [th2] [th3] > /proc/videograph/vpe/tmnr/lut_y_2d_th =============================================================== TMNR lut_y_2d_th = lut_y_2d_th[0]…th[3] " src="nvt_media/9dbbc459ee42388fde5bc5915241bebc.png" /></strong></p>
+<p><strong><img alt="Command :  echo [th0] [th1] [th2] [th3] &gt; /proc/videograph/vpe/tmnr/lut_y_2d_th =============================================================== TMNR lut_y_2d_th = lut_y_2d_th[0]…th[3] " src="nvt_media/9dbbc459ee42388fde5bc5915241bebc.png" /></strong></p>
 <h6 id="procvideographvpetmnrlut_c_3d_th"> /proc/videograph/vpe/tmnr/lut_c_3d_th<a class="headerlink" href="#procvideographvpetmnrlut_c_3d_th" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the 3D noise reduction parameters of 3DNR of the current channel.</p>
@@ -3620,15 +3620,15 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [th0] [th1] [th2] [th3] > /proc/videograph/vpe/tmnr/lut_c_3d_th</td>
-<td><strong>lut_c_3d_th[0]\~[3]</strong></td>
+<td>echo [th0] [th1] [th2] [th3] &gt; /proc/videograph/vpe/tmnr/lut_c_3d_th</td>
+<td><strong>lut_c_3d_th[0]~[3]</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read :</strong></p>
 <p><strong>cat /proc/videograph/vpe/tmnr/lut_c_3d_th</strong></p>
 <p><strong>Output :</strong></p>
-<p><strong><img alt="Command :  echo [th0] [th1] [th2] [th3] > /proc/videograph/vpe/tmnr/lut_c_3d_th =============================================================== TMNR lut_c_3d_th = lut_c_3d_th[0]…th[3] " src="nvt_media/22f6a72b3c99a043f1f28953e24c0675.png" /></strong></p>
+<p><strong><img alt="Command :  echo [th0] [th1] [th2] [th3] &gt; /proc/videograph/vpe/tmnr/lut_c_3d_th =============================================================== TMNR lut_c_3d_th = lut_c_3d_th[0]…th[3] " src="nvt_media/22f6a72b3c99a043f1f28953e24c0675.png" /></strong></p>
 <h6 id="procvideographvpetmnrlut_c_2d_th"> /proc/videograph/vpe/tmnr/lut_c_2d_th<a class="headerlink" href="#procvideographvpetmnrlut_c_2d_th" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the 2D noise reduction parameters of TMNR of the current channel.</p>
@@ -3643,15 +3643,15 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [th0] [th1] [th2] [th3] > /proc/videograph/vpe/tmnr/lut_c_2d_th</td>
-<td><strong>lut_c_2d_th[0]\~[3]</strong></td>
+<td>echo [th0] [th1] [th2] [th3] &gt; /proc/videograph/vpe/tmnr/lut_c_2d_th</td>
+<td><strong>lut_c_2d_th[0]~[3]</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read :</strong></p>
 <p><strong>cat /proc/videograph/vpe/tmnr/lut_c_2d_th</strong></p>
 <p><strong>Output :</strong></p>
-<p><strong><img alt="Command :  echo [th0] [th1] [th2] [th3] > /proc/videograph/vpe/tmnr/lut_c_2d_th =============================================================== TMNR lut_c_3d_th = lut_c_2d_th[0]…th[3] " src="nvt_media/eccd84ba96ee7b0cd3deb28f70561a46.png" /></strong></p>
+<p><strong><img alt="Command :  echo [th0] [th1] [th2] [th3] &gt; /proc/videograph/vpe/tmnr/lut_c_2d_th =============================================================== TMNR lut_c_3d_th = lut_c_2d_th[0]…th[3] " src="nvt_media/eccd84ba96ee7b0cd3deb28f70561a46.png" /></strong></p>
 <h6 id="procvideographvpetmnrfcs_str"> /proc/videograph/vpe/tmnr/fcs_str<a class="headerlink" href="#procvideographvpetmnrfcs_str" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the false color suppression strength of TMNR of the current channel.</p>
@@ -3666,7 +3666,7 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [fcs_str (0\~15) ] > /proc/videograph/vpe/tmnr/fcs_str</td>
+<td>echo [fcs_str (0~15) ] &gt; /proc/videograph/vpe/tmnr/fcs_str</td>
 <td><strong>tmnr_fcs_str</strong></td>
 </tr>
 </tbody>
@@ -3674,7 +3674,7 @@
 <p><strong>Read :</strong></p>
 <p>cat /proc/videograph/vpe/tmnr/fcs_str</p>
 <p><strong>Output :</strong></p>
-<p><strong><img alt="Command :  echo [fcs_str (0\~15) ] > /proc/videograph/vpe/tmnr/fcs_str =============================================================== TMNR FCS strength = tmnr_fcs_str " src="nvt_media/ecfc3523ee584744cb422354ec4dc999.png" /></strong></p>
+<p><strong><img alt="Command :  echo [fcs_str (0~15) ] &gt; /proc/videograph/vpe/tmnr/fcs_str =============================================================== TMNR FCS strength = tmnr_fcs_str " src="nvt_media/ecfc3523ee584744cb422354ec4dc999.png" /></strong></p>
 <h6 id="procvideographvpetmnrfcs_th"> /proc/videograph/vpe/tmnr/fcs_th<a class="headerlink" href="#procvideographvpetmnrfcs_th" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the threshold for determining whether it is false color of TMNR of the current channel.</p>
@@ -3689,7 +3689,7 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [fcs_th (0\~255) ] > /proc/videograph/vpe/tmnr/fcs_th</td>
+<td>echo [fcs_th (0~255) ] &gt; /proc/videograph/vpe/tmnr/fcs_th</td>
 <td><strong>tmnr_fcs_th</strong></td>
 </tr>
 </tbody>
@@ -3697,7 +3697,7 @@
 <p><strong>Read :</strong></p>
 <p>cat /proc/videograph/vpe/tmnr/fcs_th</p>
 <p><strong>Output :</strong></p>
-<p><strong><img alt="Command :  echo [fcs_th (0\~255) ] > /proc/videograph/vpe/tmnr/fcs_th =============================================================== TMNR FCS th = tmnr_fcs_th " src="nvt_media/37fc49a81c70f3b107ddef170784c675.png" /></strong></p>
+<p><strong><img alt="Command :  echo [fcs_th (0~255) ] &gt; /proc/videograph/vpe/tmnr/fcs_th =============================================================== TMNR FCS th = tmnr_fcs_th " src="nvt_media/37fc49a81c70f3b107ddef170784c675.png" /></strong></p>
 <h6 id="procvideographvpetmnrmotion_map"> /proc/videograph/vpe/tmnr/motion_map<a class="headerlink" href="#procvideographvpetmnrmotion_map" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the motion map of TMNR of the current channel.</p>
@@ -3712,7 +3712,7 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [map_en (0\~1)] > [map_idx] > /proc/videograph/vpe/tmnr/motion_map map_en: 0: display_motion_map_en = 0 1: display_motion_map_en = 1 map_idx :  0: motion_map_channel=Y  1: motion_map_channel=Cb  2: motion_map_channel=Cr 3: motion_map_channel=FCS_Cb 4: motion_map_channel=FCS_Cr</td>
+<td>echo [map_en (0~1)] &gt; [map_idx] &gt; /proc/videograph/vpe/tmnr/motion_map map_en: 0: display_motion_map_en = 0 1: display_motion_map_en = 1 map_idx :  0: motion_map_channel=Y  1: motion_map_channel=Cb  2: motion_map_channel=Cr 3: motion_map_channel=FCS_Cb 4: motion_map_channel=FCS_Cr</td>
 <td><strong>display_motion_map_en,</strong> <strong>motion_map_channel</strong></td>
 </tr>
 </tbody>
@@ -3720,7 +3720,7 @@
 <p><strong>Read :</strong></p>
 <p>cat /proc/videograph/vpe/tmnr/motion_map</p>
 <p><strong>Output :</strong></p>
-<p><strong><img alt="Command :  echo [map_en (0\~1)] [map_idx (0\~4)] > /proc/videograph/vpe/tmnr/motion_map =============================================================== TMNR motion_map :  map_en = display_motion_map_en  map_channel = motion_map_channel " src="nvt_media/be17015b01c8659ef32e7043afbd1aa8.png" /></strong></p>
+<p><strong><img alt="Command :  echo [map_en (0~1)] [map_idx (0~4)] &gt; /proc/videograph/vpe/tmnr/motion_map =============================================================== TMNR motion_map :  map_en = display_motion_map_en  map_channel = motion_map_channel " src="nvt_media/be17015b01c8659ef32e7043afbd1aa8.png" /></strong></p>
 <h6 id="procvideographvpetmnrdiff_blur_str"> /proc/videograph/vpe/tmnr/diff_blur_str<a class="headerlink" href="#procvideographvpetmnrdiff_blur_str" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the Diff. image blur strength of TMNR of the current channel.</p>
@@ -3735,7 +3735,7 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [str (0\~2)] > /proc/videograph/vpe/tmnr/diff_blur_str str: blur strength 0 \~2</td>
+<td>echo [str (0~2)] &gt; /proc/videograph/vpe/tmnr/diff_blur_str str: blur strength 0 ~2</td>
 <td><strong>blur_str_y</strong></td>
 </tr>
 </tbody>
@@ -3743,7 +3743,7 @@
 <p><strong>Read :</strong></p>
 <p>cat /proc/videograph/vpe/tmnr/diff_blur_str</p>
 <p><strong>Output :</strong></p>
-<p><strong><img alt="Command :  echo [str (0\~2)] > /proc/videograph/vpe/tmnr/diff_blur_str =============================================================== diff_blur_str = blur_str_y " src="nvt_media/19c2dd23da8cd8be55ee8a7219499f88.png" /></strong></p>
+<p><strong><img alt="Command :  echo [str (0~2)] &gt; /proc/videograph/vpe/tmnr/diff_blur_str =============================================================== diff_blur_str = blur_str_y " src="nvt_media/19c2dd23da8cd8be55ee8a7219499f88.png" /></strong></p>
 <h6 id="procvideographvpetmnravoid_residue_th"> /proc/videograph/vpe/tmnr/avoid_residue_th<a class="headerlink" href="#procvideographvpetmnravoid_residue_th" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the Diff. image blur strength of TMNR of the current channel.</p>
@@ -3758,7 +3758,7 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [avoid_residue_th_y (1\~4)] [avoid_residue_th_c (1\~4)] > /proc/videograph/vpe/tmnr/avoid_residue_th</td>
+<td>echo [avoid_residue_th_y (1~4)] [avoid_residue_th_c (1~4)] &gt; /proc/videograph/vpe/tmnr/avoid_residue_th</td>
 <td><strong>avoid_residue_th_y, avoid_residue_th_c</strong></td>
 </tr>
 </tbody>
@@ -3766,7 +3766,7 @@
 <p><strong>Read :</strong></p>
 <p>cat /proc/videograph/vpe/tmnr/avoid_residue_th</p>
 <p><strong>Output :</strong></p>
-<p><strong><img alt="Command :  echo [avoid_residue_th_y (1\~4)] [avoid_residue_th_c (1\~4)] > /proc/videograph/vpe/ avoid_residue_th =============================================================== avoid_residue_th_y= avoid_residue_th_y,  avoid_residue_th_c= avoid_residue_th_c " src="nvt_media/6350b2166fe44c45d51e8e99746f6264.png" /></strong></p>
+<p><strong><img alt="Command :  echo [avoid_residue_th_y (1~4)] [avoid_residue_th_c (1~4)] &gt; /proc/videograph/vpe/ avoid_residue_th =============================================================== avoid_residue_th_y= avoid_residue_th_y,  avoid_residue_th_c= avoid_residue_th_c " src="nvt_media/6350b2166fe44c45d51e8e99746f6264.png" /></strong></p>
 <h6 id="procvideographvpetmnrdithering"> /proc/videograph/vpe/tmnr/dithering<a class="headerlink" href="#procvideographvpetmnrdithering" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the dithering relative parameters of the current channel.</p>
@@ -3781,7 +3781,7 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [dithering_en (0\~1)] [dithering_bit_y (0\~7)] [dithering_bit_u (0\~7)] [dithering_bit_v (0\~7)] > /proc/videograph/vpe/tmnr/dithering</td>
+<td>echo [dithering_en (0~1)] [dithering_bit_y (0~7)] [dithering_bit_u (0~7)] [dithering_bit_v (0~7)] &gt; /proc/videograph/vpe/tmnr/dithering</td>
 <td><strong>dithering_en</strong> <strong>dithering_bit_y</strong> <strong>dithering_bit_u</strong> <strong>dithering_bit_v</strong></td>
 </tr>
 </tbody>
@@ -3789,7 +3789,7 @@
 <p><strong>Read :</strong></p>
 <p>cat /proc/videograph/vpe/tmnr/ dithering</p>
 <p><strong>Output :</strong></p>
-<p><strong><img alt="Command :  echo [dithering_en (0\~1)] [dithering_bit_y (0\~7)] [dithering_bit_u (0\~7)] [dithering_bit_v (0\~7)] > /proc/videograph/vpe/tmnr/dithering =============================================================== dithering_en = dithering_en, dithering_bit_y = dithering_bit_y, dithering_bit_u = dithering_bit_u, dithering_bit_v = dithering_bit_v " src="nvt_media/53a52c65628da411d953d26a30f9965a.png" /></strong></p>
+<p><strong><img alt="Command :  echo [dithering_en (0~1)] [dithering_bit_y (0~7)] [dithering_bit_u (0~7)] [dithering_bit_v (0~7)] &gt; /proc/videograph/vpe/tmnr/dithering =============================================================== dithering_en = dithering_en, dithering_bit_y = dithering_bit_y, dithering_bit_u = dithering_bit_u, dithering_bit_v = dithering_bit_v " src="nvt_media/53a52c65628da411d953d26a30f9965a.png" /></strong></p>
 <h6 id="procvideographvpetmnrerr_compensate"> /proc/videograph/vpe/tmnr/err_compensate<a class="headerlink" href="#procvideographvpetmnrerr_compensate" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the err_compensate parameter of the current channel.</p>
@@ -3804,7 +3804,7 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [err_compensate (0\~1)] > /proc/videograph/vpe/tmnr/err_compensate</td>
+<td>echo [err_compensate (0~1)] &gt; /proc/videograph/vpe/tmnr/err_compensate</td>
 <td><strong>err_compensate</strong></td>
 </tr>
 </tbody>
@@ -3812,7 +3812,7 @@
 <p><strong>Read :</strong></p>
 <p>cat /proc/videograph/vpe/tmnr/err_compensate</p>
 <p><strong>Output :</strong></p>
-<p><strong><img alt="Command :  echo [err_compensate (0\~1)] > /proc/videograph/vpe/tmnr/err_compensate =============================================================== err_compensate = err_compensate " src="nvt_media/0686819ca931732fdfd5750de0ac9201.png" /></strong></p>
+<p><strong><img alt="Command :  echo [err_compensate (0~1)] &gt; /proc/videograph/vpe/tmnr/err_compensate =============================================================== err_compensate = err_compensate " src="nvt_media/0686819ca931732fdfd5750de0ac9201.png" /></strong></p>
 <h4 id="432-vendor-api">4.3.2 Vendor API<a class="headerlink" href="#432-vendor-api" title="Permanent link">&para;</a></h4>
 <p><strong>[Description]</strong></p>
 <p>Get and set the TMNR parameters corresponding to current path_id.</p>
@@ -3822,7 +3822,7 @@
 <p><strong>Set：</strong></p>
 <p>HD_RESULT vendor_video_set(HD_PATH_ID path_id, VENDOR_VIDEO_DN_2D, VENDOR_VIDEO_PARAM_TMNR_EXT *p_param);</p>
 <p><strong>[Definition]</strong></p>
-<p><strong><img alt="typedef struct _VENDOR_VIDEO_PARAM_TMNR_EXT {  UINT32 tmnr_en;         ///\&lt; 3DNR ON/OFF   UINT32 luma_dn_en;      ///\&lt; Y channel 3DNR ON/OFF     UINT32 chroma_dn_en;    ///\&lt; CbCr channel 3DNR ON/OFF  UINT32 nr_str_y_3d;     ///\&lt; Y channel temporal NR strength, 0\~32     UINT32 nr_str_y_2d;     ///\&lt; Y channel spatial NR strength, 0\~32  UINT32 nr_str_c_3d;     ///\&lt; CbCr channel temporal NR strength, 0\~32  UINT32 nr_str_c_2d;     ///\&lt; CbCr channel spatial NR strength, 0\~32   UINT32 blur_str_y;      ///\&lt; Difference Y image blurred strength (0: No blur, 1: low-strength blur, 2: high-strength blur)     UINT32 center_wzero_y_2d_en;    ///\&lt; Apply zero to center weight of Y spatial Bilateral filter     UINT32 center_wzero_y_3d_en;    ///\&lt; Apply zero to center weight of Y temporal Bilateral filter    UINT32 small_vibrat_supp_y_en;  ///\&lt; Y channel small vibration suppression ON/OF   UINT32 avoid_residue_th_y;      ///\&lt; 1\~4  UINT32 avoid_residue_th_c;      ///\&lt; 1\~4  UINT32 display_motion_map_en;   ///\&lt; Display motion level map ON/OFF   UINT32 motion_map_channel;      ///\&lt; Channel selection for motion level map display (0:Y, 1:Cb, 2:Cr)  UINT32 motion_level_th_y_k1;    ///\&lt; Y channel match level threshold 1 adjustment, 0\~32   UINT32 motion_level_th_y_k2;    ///\&lt; Y channel match level threshold 2 adjustment, 0\~32 AND K2 > K1  UINT32 motion_level_th_c_k1;    ///\&lt; CbCr channel match level threshold 1 adjustment, 0\~32    UINT32 motion_level_th_c_k2;    ///\&lt; CbCr channel match level threshold 2 adjustment, 0\~32 AND K2 > K1   UINT32 lut_y_3d_1_th[4];        ///\&lt; LUT of Y channel 3d_1 filter, 0\~127  UINT32 lut_y_3d_2_th[4];        ///\&lt; LUT of CbCr channel 3d filter, 0\~127     UINT32 lut_y_2d_th[4];          ///\&lt; LUT of Y channel 2d filter, 0\~127    UINT32 lut_c_3d_th[4];          ///\&lt; LUT of CbCr channel 3d filter, 0\~127     UINT32 lut_c_2d_th[4];          ///\&lt; LUT of CbCr channel 2d filter, 0\~127     UINT32 y_base[8];               ///\&lt; Y channel noise model parameter: base noise level, 0 \~16320  UINT32 y_coefa[8];              ///\&lt; Y channel noise model parameter: slope of line, 0\~48, Regard 16 as slope 1.0     UINT32 y_coefb[8];              ///\&lt; Y channel noise model parameter: intercept of line, 0 \~16320     UINT32 y_std[8];                ///\&lt; Y channel noise model parameter: noise standard deviation, 0 \~16320  UINT32 cb_mean[8];              ///\&lt; Cb channel noise model parameter: noise mean, 0 \~6375    UINT32 cb_std[8];               ///\&lt; Cb channel nosie model parameter: noise standard deviation, 0 \~6375  UINT32 cr_mean[8];              ///\&lt; Cr channel noise model parameter: noise mean, 0 \~6375    UINT32 cr_std[8];               ///\&lt; Cr channel nosie model parameter: noise standard deviation, 0 \~6375  UINT32 tmnr_fcs_en;             ///\&lt; TMNR False Color Supression enable, **chroma_dn_en shoulde be 1     UINT32 tmnr_fcs_str;            ///\&lt; TMNR_False Color Supression strength  UINT32 tmnr_fcs_th;             ///\&lt; TMNR False Color Supression threshold     //new in nt98321    UINT8 dithering_en;             ///\&lt; source dithering switch. 0\~1. default  0     UINT8 dithering_bit_y;          ///\&lt; Y-channel dithering range. 0\~3. default 2    UINT8 dithering_bit_u;          ///\&lt; U-channel dithering range. 0\~3. default 1    UINT8 dithering_bit_v;          ///\&lt; V-channel dithering range. 0\~3. default 1    UINT8 err_compensate;           ///\&lt; err compensation method option. 0\~1. default 1 } VENDOR_VIDEO_PARAM_TMNR_EXT; " src="nvt_media/467058e8b66afda80edc56cadd2f178c.png" /></strong></p>
+<p><strong><img alt="typedef struct _VENDOR_VIDEO_PARAM_TMNR_EXT {  UINT32 tmnr_en;         ///&lt; 3DNR ON/OFF   UINT32 luma_dn_en;      ///&lt; Y channel 3DNR ON/OFF     UINT32 chroma_dn_en;    ///&lt; CbCr channel 3DNR ON/OFF  UINT32 nr_str_y_3d;     ///&lt; Y channel temporal NR strength, 0~32     UINT32 nr_str_y_2d;     ///&lt; Y channel spatial NR strength, 0~32  UINT32 nr_str_c_3d;     ///&lt; CbCr channel temporal NR strength, 0~32  UINT32 nr_str_c_2d;     ///&lt; CbCr channel spatial NR strength, 0~32   UINT32 blur_str_y;      ///&lt; Difference Y image blurred strength (0: No blur, 1: low-strength blur, 2: high-strength blur)     UINT32 center_wzero_y_2d_en;    ///&lt; Apply zero to center weight of Y spatial Bilateral filter     UINT32 center_wzero_y_3d_en;    ///&lt; Apply zero to center weight of Y temporal Bilateral filter    UINT32 small_vibrat_supp_y_en;  ///&lt; Y channel small vibration suppression ON/OF   UINT32 avoid_residue_th_y;      ///&lt; 1~4  UINT32 avoid_residue_th_c;      ///&lt; 1~4  UINT32 display_motion_map_en;   ///&lt; Display motion level map ON/OFF   UINT32 motion_map_channel;      ///&lt; Channel selection for motion level map display (0:Y, 1:Cb, 2:Cr)  UINT32 motion_level_th_y_k1;    ///&lt; Y channel match level threshold 1 adjustment, 0~32   UINT32 motion_level_th_y_k2;    ///&lt; Y channel match level threshold 2 adjustment, 0~32 AND K2 &gt; K1  UINT32 motion_level_th_c_k1;    ///&lt; CbCr channel match level threshold 1 adjustment, 0~32    UINT32 motion_level_th_c_k2;    ///&lt; CbCr channel match level threshold 2 adjustment, 0~32 AND K2 &gt; K1   UINT32 lut_y_3d_1_th[4];        ///&lt; LUT of Y channel 3d_1 filter, 0~127  UINT32 lut_y_3d_2_th[4];        ///&lt; LUT of CbCr channel 3d filter, 0~127     UINT32 lut_y_2d_th[4];          ///&lt; LUT of Y channel 2d filter, 0~127    UINT32 lut_c_3d_th[4];          ///&lt; LUT of CbCr channel 3d filter, 0~127     UINT32 lut_c_2d_th[4];          ///&lt; LUT of CbCr channel 2d filter, 0~127     UINT32 y_base[8];               ///&lt; Y channel noise model parameter: base noise level, 0 ~16320  UINT32 y_coefa[8];              ///&lt; Y channel noise model parameter: slope of line, 0~48, Regard 16 as slope 1.0     UINT32 y_coefb[8];              ///&lt; Y channel noise model parameter: intercept of line, 0 ~16320     UINT32 y_std[8];                ///&lt; Y channel noise model parameter: noise standard deviation, 0 ~16320  UINT32 cb_mean[8];              ///&lt; Cb channel noise model parameter: noise mean, 0 ~6375    UINT32 cb_std[8];               ///&lt; Cb channel nosie model parameter: noise standard deviation, 0 ~6375  UINT32 cr_mean[8];              ///&lt; Cr channel noise model parameter: noise mean, 0 ~6375    UINT32 cr_std[8];               ///&lt; Cr channel nosie model parameter: noise standard deviation, 0 ~6375  UINT32 tmnr_fcs_en;             ///&lt; TMNR False Color Supression enable, **chroma_dn_en shoulde be 1     UINT32 tmnr_fcs_str;            ///&lt; TMNR_False Color Supression strength  UINT32 tmnr_fcs_th;             ///&lt; TMNR False Color Supression threshold     //new in nt98321    UINT8 dithering_en;             ///&lt; source dithering switch. 0~1. default  0     UINT8 dithering_bit_y;          ///&lt; Y-channel dithering range. 0~3. default 2    UINT8 dithering_bit_u;          ///&lt; U-channel dithering range. 0~3. default 1    UINT8 dithering_bit_v;          ///&lt; V-channel dithering range. 0~3. default 1    UINT8 err_compensate;           ///&lt; err compensation method option. 0~1. default 1 } VENDOR_VIDEO_PARAM_TMNR_EXT; " src="nvt_media/467058e8b66afda80edc56cadd2f178c.png" /></strong></p>
 <h2 id="5-sharpen-shp">5 Sharpen (SHP)<a class="headerlink" href="#5-sharpen-shp" title="Permanent link">&para;</a></h2>
 <p>This is texture enhancement module.</p>
 <h3 id="51-overview">5.1 Overview<a class="headerlink" href="#51-overview" title="Permanent link">&para;</a></h3>
@@ -3843,79 +3843,79 @@
 <tbody>
 <tr>
 <td><strong>sharpen_en</strong></td>
-<td>0\~1</td>
+<td>0~1</td>
 <td>0</td>
 <td>Edge enhance ON/OFF</td>
 </tr>
 <tr>
 <td><strong>edge_weight_src_sel</strong></td>
-<td>0\~1</td>
+<td>0~1</td>
 <td>0</td>
 <td>Select the image source to calculate “Edge Weight ”.  0: after gamma, 1: inverse gamma. Please refer to description.</td>
 </tr>
 <tr>
 <td><strong>edge_weight_th</strong></td>
-<td>0\~255</td>
+<td>0~255</td>
 <td>2</td>
 <td>Threshold for calculating “Edge Weight”, those smaller than threshold will be considered as flat region, and the output all adopt flat region enhancement result.</td>
 </tr>
 <tr>
 <td><strong>edge_weight_gain</strong></td>
-<td>0\~255</td>
+<td>0~255</td>
 <td>175</td>
 <td>Adjust the weighting of detail enhancement result and flat region(thin edge) enhancement result. Based on the setting of “noise_level+noise_curve” to adjust EdgeWeight for different pixel brightness. The larger the Edge Weight, the larger weighting of detail enhancement result, repersenting the edge enhance is more stronger(more noise). In the contrast, the smaller the edge weight, the larger weighting of flat region enhancement result, representing the edge enhancement is less stronger.</td>
 </tr>
 <tr>
 <td><strong>noise_level</strong></td>
-<td>0\~255</td>
+<td>0~255</td>
 <td>25</td>
 <td>Please refer to advance description.</td>
 </tr>
 <tr>
 <td><strong>noise_curve[17]</strong></td>
-<td>0\~255</td>
+<td>0~255</td>
 <td>{50, 50, 50, 48, 47, 44, 39, 38, 37, 36, 35, 35, 35, 35, 35, 35, 35}</td>
 <td>Please refer to advance description.</td>
 </tr>
 <tr>
 <td><strong>blend_inv_gamma</strong></td>
-<td>0\~128</td>
+<td>0~128</td>
 <td>64</td>
 <td>The blending weight of inverse gamma edge enhancement result and after gamma edge enhancement result. This parameter is equal to adjust the ratio of edge enhancement between bright region and dark region, let the edge enhancement level of bright region and dark region is more even. The larger the value, the stronger strength of bright region enhancement, but the weaker strength of dark region enhancement.</td>
 </tr>
 <tr>
 <td><strong>edge_sharp_str1</strong></td>
-<td>0\~255</td>
+<td>0~255</td>
 <td>25</td>
 <td>Adjust the strength of thin edge enhancement</td>
 </tr>
 <tr>
 <td><strong>edge_sharp_str2</strong></td>
-<td>0\~255</td>
+<td>0~255</td>
 <td>10</td>
 <td>Adjust the strength of thick edge enhancement</td>
 </tr>
 <tr>
 <td><strong>flat_sharp_str</strong></td>
-<td>0\~255</td>
+<td>0~255</td>
 <td>0</td>
 <td>Adjust the strength of flat region(thin detail) enhancement.</td>
 </tr>
 <tr>
 <td><strong>coring_th</strong></td>
-<td>0\~255</td>
+<td>0~255</td>
 <td>0</td>
 <td>Threshold for determing whether to perform enhancement. For those edge value smaller than threshold, they will not perform edge enhancement to avoid enhancing noise.</td>
 </tr>
 <tr>
 <td><strong>bright_halo_clip</strong></td>
-<td>0\~128</td>
+<td>0~128</td>
 <td>32</td>
 <td>Remove bright halo edge caused by edge enhancement. The smaller the “bright_halo_clip”, the less bright halo edge, but the sharpness might be decreased.</td>
 </tr>
 <tr>
 <td><strong>dark_halo_clip</strong></td>
-<td>0\~128</td>
+<td>0~128</td>
 <td>96</td>
 <td>Remove dark halo edge caused by edge enhancement. The smaller the “dark_halo_clip”, the less dark halo edge, but the sharpness might be decreased.</td>
 </tr>
@@ -3942,7 +3942,7 @@
 <p><strong>[Command]</strong></p>
 <p><strong>Write : Not support.</strong></p>
 <p>Read : cat /proc/videograph/vpe/sharpen/dump_info</p>
-<p><strong><img alt="Current channel = \&lt;ch_no> edge_weight_src_sel = edge_weight_src_sel edge_weight_th = edge_weight_th edge_weight_gain = edge_weight_gain noise_level = noise_level noise_curve[17] = noise_curve[0] ………. noise_curve[16] blend_inv_gamma = blend_inv_gamma edge_sharp_str1 = edge_sharp_str1 edge_sharp_str2 = edge_sharp_str2 flat_sharp_str = flat_sharp_str coring_th = coring_th bright_halo_clip = bright_halo_clip dark_halo_clip = dark_halo_clip " src="nvt_media/bca0689a84fdcebf8f8dc924d453900c.png" /></strong></p>
+<p><strong><img alt="Current channel = &lt;ch_no&gt; edge_weight_src_sel = edge_weight_src_sel edge_weight_th = edge_weight_th edge_weight_gain = edge_weight_gain noise_level = noise_level noise_curve[17] = noise_curve[0] ………. noise_curve[16] blend_inv_gamma = blend_inv_gamma edge_sharp_str1 = edge_sharp_str1 edge_sharp_str2 = edge_sharp_str2 flat_sharp_str = flat_sharp_str coring_th = coring_th bright_halo_clip = bright_halo_clip dark_halo_clip = dark_halo_clip " src="nvt_media/bca0689a84fdcebf8f8dc924d453900c.png" /></strong></p>
 <h6 id="procvideographvpesharpensharp_en"> /proc/videograph/vpe/sharpen/sharp_en<a class="headerlink" href="#procvideographvpesharpensharp_en" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the enable status of the cuurent channel.</p>
@@ -3957,7 +3957,7 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [ sharp_en (0\~1) ] > /proc/videograph/vpe/sharpen/sharp_en</td>
+<td>echo [ sharp_en (0~1) ] &gt; /proc/videograph/vpe/sharpen/sharp_en</td>
 <td><strong>sharpen_en</strong></td>
 </tr>
 </tbody>
@@ -3965,7 +3965,7 @@
 <p><strong>Read :</strong></p>
 <p><strong>cat /proc/videograph/vpe/sharpen/shp_en</strong></p>
 <p><strong>Output :</strong></p>
-<p><strong><img alt="Command :  echo [ sharp_en (0\~1) ] > /proc/videograph/vpe/sharpen/sharp_en =============================================================== sharpen_en = sharpen_en " src="nvt_media/39b984a3c4b6f21084a3a2d6d517721a.png" /></strong></p>
+<p><strong><img alt="Command :  echo [ sharp_en (0~1) ] &gt; /proc/videograph/vpe/sharpen/sharp_en =============================================================== sharpen_en = sharpen_en " src="nvt_media/39b984a3c4b6f21084a3a2d6d517721a.png" /></strong></p>
 <h6 id="procvideographvpesharpenedge_weight_src_sel"> /proc/videograph/vpe/sharpen/edge_weight_src_sel<a class="headerlink" href="#procvideographvpesharpenedge_weight_src_sel" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the sharpen parameter of the current channel.</p>
@@ -3980,7 +3980,7 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [src_sel (0 \~ 1) ] > /proc/videograph/vpe/sharpen/edge_weight_src_sel</td>
+<td>echo [src_sel (0 ~ 1) ] &gt; /proc/videograph/vpe/sharpen/edge_weight_src_sel</td>
 <td><strong>edge_weight_src_sel</strong></td>
 </tr>
 </tbody>
@@ -3988,7 +3988,7 @@
 <p><strong>Read :</strong></p>
 <p>cat /proc/videograph/vpe/sharpen/edge_weight_src_sel</p>
 <p><strong>Output :</strong></p>
-<p><strong><img alt="Command :  echo [src_sel (0 \~ 1)] > /proc/videograph/vpe/sharpen/edge_weight_src_sel =============================================================== edge_weight_src_sel = edge_weight_src_sel 0: after gamma 1: before gamma " src="nvt_media/8464e715393461b16e4bfac013244441.png" /></strong></p>
+<p><strong><img alt="Command :  echo [src_sel (0 ~ 1)] &gt; /proc/videograph/vpe/sharpen/edge_weight_src_sel =============================================================== edge_weight_src_sel = edge_weight_src_sel 0: after gamma 1: before gamma " src="nvt_media/8464e715393461b16e4bfac013244441.png" /></strong></p>
 <h6 id="procvideographvpesharpenedge_weigt_gain"> /proc/videograph/vpe/sharpen/edge_weigt_gain<a class="headerlink" href="#procvideographvpesharpenedge_weigt_gain" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the sharpen parameter of the current channel.</p>
@@ -4003,7 +4003,7 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [gain (0\~255) ] > /proc/videograph/vpe/sharpen/edge_weight_gain</td>
+<td>echo [gain (0~255) ] &gt; /proc/videograph/vpe/sharpen/edge_weight_gain</td>
 <td><strong>edge_weight_gain</strong></td>
 </tr>
 </tbody>
@@ -4011,7 +4011,7 @@
 <p><strong>Read :</strong></p>
 <p>cat /proc/videograph/vpe/sharpen/edge_weight_gain</p>
 <p><strong>Output :</strong></p>
-<p><strong><img alt="Command :  echo [gain (0\~255)] > /proc/videograph/vpe/sharpen/edge_weight_gain =============================================================== edge_weight_gain = edge_weight_gain " src="nvt_media/69e0da18d64e10c56145bd154a4fa4d1.png" /></strong></p>
+<p><strong><img alt="Command :  echo [gain (0~255)] &gt; /proc/videograph/vpe/sharpen/edge_weight_gain =============================================================== edge_weight_gain = edge_weight_gain " src="nvt_media/69e0da18d64e10c56145bd154a4fa4d1.png" /></strong></p>
 <h6 id="procvideographvpesharpenedge_weight_th"> /proc/videograph/vpe/sharpen/edge_weight_th<a class="headerlink" href="#procvideographvpesharpenedge_weight_th" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the sharpen parameter of the current channel.</p>
@@ -4026,7 +4026,7 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [th (0\~255) ] > /proc/videograph/vpe/sharpen/edge_weight_th</td>
+<td>echo [th (0~255) ] &gt; /proc/videograph/vpe/sharpen/edge_weight_th</td>
 <td><strong>edge_weight_th</strong></td>
 </tr>
 </tbody>
@@ -4034,7 +4034,7 @@
 <p><strong>Read :</strong></p>
 <p>cat /proc/videograph/vpe/sharpen/edge_weight_th</p>
 <p><strong>Output :</strong></p>
-<p><strong><img alt="Command :  echo [th (0\~255)] > /proc/videograph/vpe/sharpen/edge_weight_th =============================================================== edge_weight_th = edge_weight_th " src="nvt_media/9ab62ba186600909f4692b1389707f2d.png" /></strong></p>
+<p><strong><img alt="Command :  echo [th (0~255)] &gt; /proc/videograph/vpe/sharpen/edge_weight_th =============================================================== edge_weight_th = edge_weight_th " src="nvt_media/9ab62ba186600909f4692b1389707f2d.png" /></strong></p>
 <h6 id="procvideographvpesharpenblend_inv_gamma"> /proc/videograph/vpe/sharpen/blend_inv_gamma<a class="headerlink" href="#procvideographvpesharpenblend_inv_gamma" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the sharpen parameter of the current channel.</p>
@@ -4049,7 +4049,7 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [th (0\~128) ] > /proc/videograph/vpe/sharpen/blend_inv_gamma</td>
+<td>echo [th (0~128) ] &gt; /proc/videograph/vpe/sharpen/blend_inv_gamma</td>
 <td><strong>blend_inv_gamma</strong></td>
 </tr>
 </tbody>
@@ -4057,7 +4057,7 @@
 <p><strong>Read :</strong></p>
 <p>cat /proc/videograph/vpe/sharpen/blend_inv_gamma</p>
 <p><strong>Output :</strong></p>
-<p><strong>![Command :  echo <a href="nvt_media/f07b48c5091375215b9c384c54d31479.png">th (0\~128) > /proc/videograph/vpe/sharpen/blend_inv_gamma =============================================================== blend_inv_gamma = blend_inv_gamma </a></strong></p>
+<p><strong>![Command :  echo <a href="nvt_media/f07b48c5091375215b9c384c54d31479.png">th (0~128) &gt; /proc/videograph/vpe/sharpen/blend_inv_gamma =============================================================== blend_inv_gamma = blend_inv_gamma </a></strong></p>
 <h6 id="procvideographvpesharpenedge_sharp_str"> /proc/videograph/vpe/sharpen/edge_sharp_str<a class="headerlink" href="#procvideographvpesharpenedge_sharp_str" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the sharpen parameter of the current channel.</p>
@@ -4072,7 +4072,7 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [str1 (0\~255)] [str2 (0\~255)] > /proc/videograph/vpe/sharpen/edge_sharp_str</td>
+<td>echo [str1 (0~255)] [str2 (0~255)] &gt; /proc/videograph/vpe/sharpen/edge_sharp_str</td>
 <td><strong>edge_sharp_str1</strong> <strong>edge_sharp_str2</strong></td>
 </tr>
 </tbody>
@@ -4080,7 +4080,7 @@
 <p><strong>Read :</strong></p>
 <p>cat /proc/videograph/vpe/sharpen/edge_sharp_str</p>
 <p><strong>Output :</strong></p>
-<p><strong><img alt="Command :  echo [str1 (0\~255)] [str2 (0\~255)] > /proc/videograph/vpe/sharpen/edge_sharp_str =============================================================== sharp_str1 = edge_sharp_str1 sharp_str2 = edge_sharp_str2 " src="nvt_media/f527ca6cdd978c92644a1649219bfa15.png" /></strong></p>
+<p><strong><img alt="Command :  echo [str1 (0~255)] [str2 (0~255)] &gt; /proc/videograph/vpe/sharpen/edge_sharp_str =============================================================== sharp_str1 = edge_sharp_str1 sharp_str2 = edge_sharp_str2 " src="nvt_media/f527ca6cdd978c92644a1649219bfa15.png" /></strong></p>
 <h6 id="procvideographvpesharpenflat_sharp_str"> /proc/videograph/vpe/sharpen/flat_sharp_str<a class="headerlink" href="#procvideographvpesharpenflat_sharp_str" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the sharpen parameter of the current channel.</p>
@@ -4095,7 +4095,7 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [str (0\~255)] > /proc/videograph/vpe/sharpen/flat_sharp_str</td>
+<td>echo [str (0~255)] &gt; /proc/videograph/vpe/sharpen/flat_sharp_str</td>
 <td><strong>flat_sharp_str</strong></td>
 </tr>
 </tbody>
@@ -4103,7 +4103,7 @@
 <p><strong>Read :</strong></p>
 <p>cat /proc/videograph/vpe/sharpen/flat_sharp_str</p>
 <p><strong>Output :</strong></p>
-<p><strong><img alt="Command :  echo [str (0\~255)] > /proc/videograph/vpe/sharpen/flat_sharp_str =============================================================== flat_sharp_str = flat_sharp_str " src="nvt_media/8d4317b3b413193dbfb83accac1061d2.png" /></strong></p>
+<p><strong><img alt="Command :  echo [str (0~255)] &gt; /proc/videograph/vpe/sharpen/flat_sharp_str =============================================================== flat_sharp_str = flat_sharp_str " src="nvt_media/8d4317b3b413193dbfb83accac1061d2.png" /></strong></p>
 <h6 id="procvideographvpesharpencoring_th"> /proc/videograph/vpe/sharpen/coring_th<a class="headerlink" href="#procvideographvpesharpencoring_th" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the sharpen parameter of the current channel.</p>
@@ -4118,7 +4118,7 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [coring_th (0\~255)] > /proc/videograph/vpe/sharpen/coring_th</td>
+<td>echo [coring_th (0~255)] &gt; /proc/videograph/vpe/sharpen/coring_th</td>
 <td><strong>coring_th</strong></td>
 </tr>
 </tbody>
@@ -4126,7 +4126,7 @@
 <p><strong>Read :</strong></p>
 <p>cat /proc/videograph/vpe/sharpen/coring_th</p>
 <p><strong>Output :</strong></p>
-<p><strong><img alt="Command :  echo [coring_th (0\~255)] > /proc/videograph/vpe/sharpen/coring_th =============================================================== coring_th = coring_th " src="nvt_media/6e9656ee40f7e27c925db4f6f1bd1578.png" /></strong></p>
+<p><strong><img alt="Command :  echo [coring_th (0~255)] &gt; /proc/videograph/vpe/sharpen/coring_th =============================================================== coring_th = coring_th " src="nvt_media/6e9656ee40f7e27c925db4f6f1bd1578.png" /></strong></p>
 <h6 id="procvideographvpesharpenhalo_clip"> /proc/videograph/vpe/sharpen/halo_clip<a class="headerlink" href="#procvideographvpesharpenhalo_clip" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the sharpen parameter of the current channel.</p>
@@ -4141,7 +4141,7 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [bright_clip (0\~128)] [dark_clip(0\~128)] > /proc/videograph/vpe/sharpen/halo_clip</td>
+<td>echo [bright_clip (0~128)] [dark_clip(0~128)] &gt; /proc/videograph/vpe/sharpen/halo_clip</td>
 <td><strong>bright_halo_clip</strong> <strong>drak_halo_clip</strong></td>
 </tr>
 </tbody>
@@ -4149,7 +4149,7 @@
 <p><strong>Read :</strong></p>
 <p>cat /proc/videograph/vpe/sharpen/halo_clip</p>
 <p><strong>Output :</strong></p>
-<p><strong><img alt="Command :  echo [bright_clip (0\~128)] [dark_clip(0\~128)] > /proc/videograph/vpe/sharpen/halo_clip =============================================================== Bright_halo_clip = bright_halo_clip Dark_halo_clip = dark_halo_clip " src="nvt_media/bdfab9ed3520a910e37dafe38db53c2c.png" /></strong></p>
+<p><strong><img alt="Command :  echo [bright_clip (0~128)] [dark_clip(0~128)] &gt; /proc/videograph/vpe/sharpen/halo_clip =============================================================== Bright_halo_clip = bright_halo_clip Dark_halo_clip = dark_halo_clip " src="nvt_media/bdfab9ed3520a910e37dafe38db53c2c.png" /></strong></p>
 <h6 id="procvideographvpesharpennoise_curve"> /proc/videograph/vpe/sharpen/noise_curve<a class="headerlink" href="#procvideographvpesharpennoise_curve" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the sharpen parameter of the current channel.</p>
@@ -4164,7 +4164,7 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [noise_curve[0] (0\~255)]…. [noise_curve [16] (0\~255)] > /proc/videograph/vpe/sharpen/noise_curve</td>
+<td>echo [noise_curve[0] (0~255)]…. [noise_curve [16] (0~255)] &gt; /proc/videograph/vpe/sharpen/noise_curve</td>
 <td><strong>noise_curve[17]</strong></td>
 </tr>
 </tbody>
@@ -4172,7 +4172,7 @@
 <p><strong>Read :</strong></p>
 <p>cat /proc/videograph/vpe/sharpen/noise_curve</p>
 <p><strong>Output :</strong></p>
-<p><strong><img alt="Command :  echo [noise_curve[0] (0\~255)]…. [noise_curve [16] (0\~255)] > /proc/videograph/vpe/sharpen/noise_curve =============================================================== noise_curve = noise_curve[0] ……….noise_curve[16] " src="nvt_media/a4d1c9eed73e939c6fedeef38a58741f.png" /></strong></p>
+<p><strong><img alt="Command :  echo [noise_curve[0] (0~255)]…. [noise_curve [16] (0~255)] &gt; /proc/videograph/vpe/sharpen/noise_curve =============================================================== noise_curve = noise_curve[0] ……….noise_curve[16] " src="nvt_media/a4d1c9eed73e939c6fedeef38a58741f.png" /></strong></p>
 <h4 id="522-vendor-api">5.2.2 Vendor API<a class="headerlink" href="#522-vendor-api" title="Permanent link">&para;</a></h4>
 <p><strong>[Description]</strong></p>
 <p>Get and set the sharpen parameters corresponding to current path_id.</p>
@@ -4182,7 +4182,7 @@
 <p><strong>Set：</strong></p>
 <p>HD_RESULT vendor_video_set(HD_PATH_ID path_id, VENDOR_VIDEO_SHARP, VENDOR_VIDEO_PARAM_SHARP *p_param);</p>
 <p><strong>[定義]</strong></p>
-<p><strong><img alt="typedef struct _VENDOR_VIDEO_PARAM_SHARP {     UINT32 sharp_en;            ///\&lt; Sharpness ON/OFF  UINT32 edge_weight_src_sel; ///\&lt; Select source of edge weight calculation, 0\~1    UINT32 edge_weight_th;      ///\&lt; Edge weight coring threshold, 0\~255  UINT32 edge_weight_gain;    ///\&lt; Edge weight gain, 0\~255  UINT32 noise_level;         ///\&lt; Noise Level, 0\~255   UINT32 noise_curve[17];     ///\&lt; 17 control points of noise modulation curve, 0\~255   UINT32 blend_inv_gamma;     ///\&lt; Blending ratio of HPF results, 0\~128     UINT32 edge_sharp_str1;     ///\&lt; Sharpen strength1 of edge region, 0\~255  UINT32 edge_sharp_str2;     ///\&lt; Sharpen strength2 of edge region, 0\~255  UINT32 flat_sharp_str;      ///\&lt; Sharpen strength of flat region,0\~255    UINT32 coring_th;           ///\&lt; Coring threshold, 0\~255  UINT32 bright_halo_clip;    ///\&lt; Bright halo clip ratio, 0\~255    UINT32 dark_halo_clip;      ///\&lt; Dark halo clip ratio, 0\~255 } VENDOR_VIDEO_PARAM_SHARP; " src="nvt_media/9f694946460e815026a0616e4c81de0f.png" /></strong></p>
+<p><strong><img alt="typedef struct _VENDOR_VIDEO_PARAM_SHARP {     UINT32 sharp_en;            ///&lt; Sharpness ON/OFF  UINT32 edge_weight_src_sel; ///&lt; Select source of edge weight calculation, 0~1    UINT32 edge_weight_th;      ///&lt; Edge weight coring threshold, 0~255  UINT32 edge_weight_gain;    ///&lt; Edge weight gain, 0~255  UINT32 noise_level;         ///&lt; Noise Level, 0~255   UINT32 noise_curve[17];     ///&lt; 17 control points of noise modulation curve, 0~255   UINT32 blend_inv_gamma;     ///&lt; Blending ratio of HPF results, 0~128     UINT32 edge_sharp_str1;     ///&lt; Sharpen strength1 of edge region, 0~255  UINT32 edge_sharp_str2;     ///&lt; Sharpen strength2 of edge region, 0~255  UINT32 flat_sharp_str;      ///&lt; Sharpen strength of flat region,0~255    UINT32 coring_th;           ///&lt; Coring threshold, 0~255  UINT32 bright_halo_clip;    ///&lt; Bright halo clip ratio, 0~255    UINT32 dark_halo_clip;      ///&lt; Dark halo clip ratio, 0~255 } VENDOR_VIDEO_PARAM_SHARP; " src="nvt_media/9f694946460e815026a0616e4c81de0f.png" /></strong></p>
 <h2 id="6-edge-smoothing-es">6 Edge Smoothing (ES)<a class="headerlink" href="#6-edge-smoothing-es" title="Permanent link">&para;</a></h2>
 <p>This module is edge smoothing. The main function is to eliminate aliasing in the picture to improve the smoothness of the picture.</p>
 <h3 id="61-overview">6.1 Overview<a class="headerlink" href="#61-overview" title="Permanent link">&para;</a></h3>
@@ -4203,43 +4203,43 @@
 <tbody>
 <tr>
 <td><strong>edge_smooth_en</strong></td>
-<td>0\~1</td>
+<td>0~1</td>
 <td>0</td>
 <td>Edge smooth enable</td>
 </tr>
 <tr>
 <td><strong>edge_smooth_y_edeng_th_lo</strong></td>
-<td>0\~255</td>
+<td>0~255</td>
 <td>10</td>
 <td>Adjust the strength threshold of detail areas in the picture Please refer to the advanced instructions</td>
 </tr>
 <tr>
 <td><strong>edge_smooth_y_edeng_th_hi</strong></td>
-<td>0\~255</td>
+<td>0~255</td>
 <td>70</td>
 <td>Adjust the strength threshold of the edge area in the picture Please refer to the advanced instructions</td>
 </tr>
 <tr>
 <td><strong>edge_smooth_y_ew_lo</strong></td>
-<td>0\~255</td>
+<td>0~255</td>
 <td>2</td>
 <td>Adjust the smoothing strength weight of detail areas in the picture Please refer to the advanced instructions</td>
 </tr>
 <tr>
 <td><strong>edge_smooth_y_ew_hi</strong></td>
-<td>0\~255</td>
+<td>0~255</td>
 <td>32</td>
 <td>Adjust the suppression threshold for the smoothing of high-frequency areas in the picture. The larger the value, the easier it is to determine and smooth the high-frequency area. Therefore, the larger the value, the smoother the high-frequency area, and the smaller the value, the clearer the high-frequency area</td>
 </tr>
 <tr>
 <td><strong>edge_smooth_y_edi_th</strong></td>
-<td>0\~63</td>
+<td>0~63</td>
 <td>31</td>
 <td>Suppresses the strength of smoothing in the high-frequency region. The larger the value, the stronger the smoothing in the high-frequency region.</td>
 </tr>
 <tr>
 <td><strong>edge_smooth_y_ds_str</strong></td>
-<td>0\~7</td>
+<td>0~7</td>
 <td>5</td>
 <td>Adjust the strength of the smoothing filter in the picture. The larger the value, the stronger the smoothing degree.</td>
 </tr>
@@ -4272,7 +4272,7 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [edge_smooth_en (0\~1)] > /proc/videograph/vpe/es/edge_smooth_en</td>
+<td>echo [edge_smooth_en (0~1)] &gt; /proc/videograph/vpe/es/edge_smooth_en</td>
 <td><strong>edge_smooth_en</strong></td>
 </tr>
 </tbody>
@@ -4291,7 +4291,7 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [edge_smooth_out_sel (0\~1)] > /proc/videograph/vpe/es/edge_smooth_out_sel</td>
+<td>echo [edge_smooth_out_sel (0~1)] &gt; /proc/videograph/vpe/es/edge_smooth_out_sel</td>
 <td><strong>edge_smooth_out_sel</strong></td>
 </tr>
 </tbody>
@@ -4299,7 +4299,7 @@
 <p><strong>Read :</strong></p>
 <p>cat /proc/videograph/vpe/es/edge_smooth_out_sel</p>
 <p><strong>Output :</strong></p>
-<p><strong><img alt="Command :  echo [edge_smooth_out_sel (0\~1)] > /proc/videograph/vpe/es/edge_smooth_out_sel =============================================================== edge_smooth_out_sel  = edge_smooth_out_sel " src="nvt_media/035b8c77c7a72b3943aab22b95dde0d1.png" /></strong></p>
+<p><strong><img alt="Command :  echo [edge_smooth_out_sel (0~1)] &gt; /proc/videograph/vpe/es/edge_smooth_out_sel =============================================================== edge_smooth_out_sel  = edge_smooth_out_sel " src="nvt_media/035b8c77c7a72b3943aab22b95dde0d1.png" /></strong></p>
 <h6 id="procvideographvpeesedge_smooth_th"> /proc/videograph/vpe/es/edge_smooth_th<a class="headerlink" href="#procvideographvpeesedge_smooth_th" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Set the edge smooth related threshold of the current camera channel.</p>
@@ -4314,7 +4314,7 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [y_edeng_th_lo (0\~255)] [y_edeng_th_hi (0\~255)] [y_ew_lo (0\~255)] [y_ew_hi (0\~255)] > /proc/videograph/vpe/es/edge_smooth_th</td>
+<td>echo [y_edeng_th_lo (0~255)] [y_edeng_th_hi (0~255)] [y_ew_lo (0~255)] [y_ew_hi (0~255)] &gt; /proc/videograph/vpe/es/edge_smooth_th</td>
 <td><strong>edge_smooth_y_edeng_th_l</strong> <strong>edge_smooth_y_edeng_th_hi</strong> <strong>edge_smooth_y_ew_lo</strong> <strong>edge_smooth_y_ew_hi</strong></td>
 </tr>
 </tbody>
@@ -4322,7 +4322,7 @@
 <p><strong>Read :</strong></p>
 <p>cat /proc/videograph/vpe/es/edge_smooth_th</p>
 <p><strong>Output :</strong></p>
-<p><strong><img alt="Command :  echo [y_edeng_th_lo (0\~255)] [y_edeng_th_hi (0\~255)] [y_ew_lo (0\~255)] [y_ew_hi (0\~255)] > /proc/videograph/vpe/es/edge_smooth_th =============================================================== y_edeng_th_l = edge_smooth_y_edeng_th_l y_edeng_th_hi = edge_smooth_y_edeng_th_hi y_ew_lo = edge_smooth_y_ew_lo y_ew_hi = edge_smooth_y_ew_hi " src="nvt_media/ae9290b3936e08f5a1d1014acf15c75e.png" /></strong></p>
+<p><strong><img alt="Command :  echo [y_edeng_th_lo (0~255)] [y_edeng_th_hi (0~255)] [y_ew_lo (0~255)] [y_ew_hi (0~255)] &gt; /proc/videograph/vpe/es/edge_smooth_th =============================================================== y_edeng_th_l = edge_smooth_y_edeng_th_l y_edeng_th_hi = edge_smooth_y_edeng_th_hi y_ew_lo = edge_smooth_y_ew_lo y_ew_hi = edge_smooth_y_ew_hi " src="nvt_media/ae9290b3936e08f5a1d1014acf15c75e.png" /></strong></p>
 <h6 id="procvideographvpeesedge_smooth_y_edi_th"> /proc/videograph/vpe/es/edge_smooth_y_edi_th<a class="headerlink" href="#procvideographvpeesedge_smooth_y_edi_th" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Set the edge smooth mask related parameters of the current camera channel.</p>
@@ -4337,7 +4337,7 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [edge_smooth_y_edi_th (0\~63)] > /proc/videograph/vpe/es/edge_smooth_y_edi_th</td>
+<td>echo [edge_smooth_y_edi_th (0~63)] &gt; /proc/videograph/vpe/es/edge_smooth_y_edi_th</td>
 <td><strong>edge_smooth_y_edi_th</strong></td>
 </tr>
 </tbody>
@@ -4345,7 +4345,7 @@
 <p><strong>Read :</strong></p>
 <p>cat /proc/videograph/vpe/es/edge_smooth_y_edi_th</p>
 <p><strong>Output :</strong></p>
-<p><strong><img alt="Command :  echo [edge_smooth_y_edi_th (0\~63)] > /proc/videograph/vpe/es/edge_smooth_ds_str =============================================================== edge_smooth_y_edi_th = edge_smooth_y_edi_th " src="nvt_media/db9dcd7b8c84f1e36c14c94f5c733929.png" /></strong></p>
+<p><strong><img alt="Command :  echo [edge_smooth_y_edi_th (0~63)] &gt; /proc/videograph/vpe/es/edge_smooth_ds_str =============================================================== edge_smooth_y_edi_th = edge_smooth_y_edi_th " src="nvt_media/db9dcd7b8c84f1e36c14c94f5c733929.png" /></strong></p>
 <h6 id="procvideographvpeesedge_smooth_y_ds_str"> /proc/videograph/vpe/es/edge_smooth_y_ds_str<a class="headerlink" href="#procvideographvpeesedge_smooth_y_ds_str" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Sets the filter strength of the edge smooth of the current camera channel.</p>
@@ -4360,7 +4360,7 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [edge_smooth_y_ds_str (0\~7)] > /proc/videograph/vpe/es/edge_smooth_y_ds_str</td>
+<td>echo [edge_smooth_y_ds_str (0~7)] &gt; /proc/videograph/vpe/es/edge_smooth_y_ds_str</td>
 <td><strong>edge_smooth_y_ds_str</strong></td>
 </tr>
 </tbody>
@@ -4368,7 +4368,7 @@
 <p><strong>Read :</strong></p>
 <p>cat /proc/videograph/vpe/es/edge_smooth_y_ds_str</p>
 <p><strong>Output :</strong></p>
-<p><strong><img alt="Command :  echo [edge_smooth_y_ds_str (0\~7)] > /proc/videograph/vpe/es/edge_smooth_y_ds_str =============================================================== edge_smooth_y_ds_str = edge_smooth_y_ds_str " src="nvt_media/eb98a68438be272a7239b5cbc605448c.png" /></strong></p>
+<p><strong><img alt="Command :  echo [edge_smooth_y_ds_str (0~7)] &gt; /proc/videograph/vpe/es/edge_smooth_y_ds_str =============================================================== edge_smooth_y_ds_str = edge_smooth_y_ds_str " src="nvt_media/eb98a68438be272a7239b5cbc605448c.png" /></strong></p>
 <h4 id="632-vendor-api">6.3.2 Vendor API<a class="headerlink" href="#632-vendor-api" title="Permanent link">&para;</a></h4>
 <p><strong>[Description]</strong></p>
 <p>Get and set the edge smooth parameters corresponding to current path_id.</p>
@@ -4378,7 +4378,7 @@
 <p><strong>Set：</strong></p>
 <p>HD_RESULT vendor_video_set(HD_PATH_ID path_id, VENDOR_VIDEO_EDGE_SMOOTH, VENDOR_VIDEO_PARAM_SHARP *p_param);</p>
 <p><strong>[Definition]</strong></p>
-<p><strong><img alt="typedef struct _VENDOR_VIDEO_PARAM_EDGE_SMOOTH {   UINT8 edge_smooth_en;           // Edge smooth enable, ON/OFF   UINT8 edge_smooth_y_edeng_th_lo;    // luma layer edge energy low threshold, 0\~255     UINT8 edge_smooth_y_edeng_th_hi;    // luma layer edge energy high threshold, 0\~255    UINT8 edge_smooth_y_ew_lo;      // luma layer edge weighting curve low value, 0\~32     UINT8 edge_smooth_y_ew_hi;      // luma layer edge weighting curve high value, 0\~32    UINT8 edge_smooth_y_edi_th;     // luma layer edge mask threshold, 0\~63    UINT8 edge_smooth_y_ds_str;       // luma layer edge directed smoothing filter strength, 0 \~ 7 } VENDOR_VIDEO_PARAM_EDGE_SMOOTH; " src="nvt_media/ca49968ce025beff2b943ebab91ae871.png" /></strong></p>
+<p><strong><img alt="typedef struct _VENDOR_VIDEO_PARAM_EDGE_SMOOTH {   UINT8 edge_smooth_en;           // Edge smooth enable, ON/OFF   UINT8 edge_smooth_y_edeng_th_lo;    // luma layer edge energy low threshold, 0~255     UINT8 edge_smooth_y_edeng_th_hi;    // luma layer edge energy high threshold, 0~255    UINT8 edge_smooth_y_ew_lo;      // luma layer edge weighting curve low value, 0~32     UINT8 edge_smooth_y_ew_hi;      // luma layer edge weighting curve high value, 0~32    UINT8 edge_smooth_y_edi_th;     // luma layer edge mask threshold, 0~63    UINT8 edge_smooth_y_ds_str;       // luma layer edge directed smoothing filter strength, 0 ~ 7 } VENDOR_VIDEO_PARAM_EDGE_SMOOTH; " src="nvt_media/ca49968ce025beff2b943ebab91ae871.png" /></strong></p>
 <h2 id="7-scaling-sca">7 Scaling (SCA)<a class="headerlink" href="#7-scaling-sca" title="Permanent link">&para;</a></h2>
 <p>Inupt/Output low pass filter process with different resolution. The recommend maximum scaling down ratio is 8, and the recommend maximum scaling up ratio is 8.</p>
 <h3 id="71-overview">7.1 Overview<a class="headerlink" href="#71-overview" title="Permanent link">&para;</a></h3>
@@ -4397,56 +4397,56 @@
 <tbody>
 <tr>
 <td><strong>sca_y_luma_algo_en</strong></td>
-<td>0\~3</td>
+<td>0~3</td>
 <td>0</td>
 <td>Algorithm select for vertical luma scaler. 0: judge by HW algorithm 1: select the nearest point on the left side 2: select the left side point and perform low pass filter process 3: the same as option 0 It is recommend to set 0.</td>
 </tr>
 <tr>
 <td><strong>sca_x_luma_algo_en</strong></td>
-<td>0\~3</td>
+<td>0~3</td>
 <td>0</td>
 <td>Algorithm select for horizontal luma scaler. 0: judge by HW algorithm 1: select the nearest point on the left side 2: select the left side point and perform low pass filter process 3: the same as option 0 It is recommend to set 0.</td>
 </tr>
 <tr>
 <td><strong>sca_y_chroma_algo_en</strong></td>
-<td>0\~3</td>
+<td>0~3</td>
 <td>0</td>
 <td>Algorithm select for vertical chroma scaler. 0: judge by HW algorithm 1: select the nearest point on the left side 2: bilinear interpolation 3: average It is recommend to set 0.</td>
 </tr>
 <tr>
 <td><strong>sca_x_chroma_algo_en</strong></td>
-<td>0\~3</td>
+<td>0~3</td>
 <td>0</td>
 <td>Algorithm select for horizontal chroma scaler. 0: judge by HW algorithm 1: select the nearest point on the left side 2: bilinear interpolation 3: average It is recommend to set 0.</td>
 </tr>
 <tr>
 <td><strong>sca_map_sel</strong></td>
-<td>0\~1</td>
+<td>0~1</td>
 <td>0</td>
 <td>Select scaler source mapping format.  0: without 0.5 pixel distance shift(start from the 0th pixel of image image) 1: with 0.5 pixel distance shift(start from the 0.5th pixel of image image) If set to 1, when the size of input image and output image is the same or the size is multiple of 2, the scaling performance of output image will similar to perform low pass filter. It is recommend to set 0.</td>
 </tr>
 <tr>
-<td><strong>sca_ceffH_0\~3</strong></td>
-<td>-128\~127</td>
+<td><strong>sca_ceffH_0~3</strong></td>
+<td>-128~127</td>
 <td>[0, 0, 0, 64]</td>
-<td>LPF coefficient in horizontal direction. Please refer to advance description. ※The software limit range is between -128\~127, to reduce memory usage.</td>
+<td>LPF coefficient in horizontal direction. Please refer to advance description. ※The software limit range is between -128~127, to reduce memory usage.</td>
 </tr>
 <tr>
-<td><strong>sca_ceffv_0\~3</strong></td>
-<td>-128\~127</td>
+<td><strong>sca_ceffv_0~3</strong></td>
+<td>-128~127</td>
 <td>[0, 0, 0, 64]</td>
-<td>LPF coefficient in vertical direction. Please refer to advance description. ※The software limit range is between -128\~127, to reduce memory usage.</td>
+<td>LPF coefficient in vertical direction. Please refer to advance description. ※The software limit range is between -128~127, to reduce memory usage.</td>
 </tr>
 <tr>
 <td><strong>des_drt</strong></td>
 <td>0, 2,3</td>
 <td>0</td>
-<td>YUV domain transform 0: bypass 2: PC level to TV level (Y: 16\~235 / C:16\~240) 3: TV level to PC level (Y: 0\~235 C:0\~255) 255: decide by job parameter of AP rather than driver (default value is 255, other settings are used for debug)</td>
+<td>YUV domain transform 0: bypass 2: PC level to TV level (Y: 16~235 / C:16~240) 3: TV level to PC level (Y: 0~235 C:0~255) 255: decide by job parameter of AP rather than driver (default value is 255, other settings are used for debug)</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Advance description:</strong></p>
-<p> <strong>sca_ceffH_0\~3, sca_ceffV_0\~3:</strong> LPF coefficients in horizontal direction and vertical direction. User can adjust LPF coefficients to fine tune sawtooth phenomenon in oblique line caused by scaling.</p>
+<p> <strong>sca_ceffH_0~3, sca_ceffV_0~3:</strong> LPF coefficients in horizontal direction and vertical direction. User can adjust LPF coefficients to fine tune sawtooth phenomenon in oblique line caused by scaling.</p>
 <p>Table 72 Scaler Low pass filter default parameter list</p>
 <table>
 <thead>
@@ -4475,7 +4475,7 @@
 <td>64</td>
 </tr>
 <tr>
-<td><strong>1 \&lt; R ≦ 1.25x</strong></td>
+<td><strong>1 &lt; R ≦ 1.25x</strong></td>
 <td>0</td>
 <td>0</td>
 <td>3</td>
@@ -4486,7 +4486,7 @@
 <td>58</td>
 </tr>
 <tr>
-<td><strong>1.25 \&lt; R ≦ 1.5x</strong></td>
+<td><strong>1.25 &lt; R ≦ 1.5x</strong></td>
 <td>0</td>
 <td>0</td>
 <td>7</td>
@@ -4497,7 +4497,7 @@
 <td>50</td>
 </tr>
 <tr>
-<td><strong>1.5 \&lt; R ≦ 1.75x</strong></td>
+<td><strong>1.5 &lt; R ≦ 1.75x</strong></td>
 <td>0</td>
 <td>0</td>
 <td>11</td>
@@ -4508,7 +4508,7 @@
 <td>42</td>
 </tr>
 <tr>
-<td><strong>1.75 \&lt; R ≦ 2x</strong></td>
+<td><strong>1.75 &lt; R ≦ 2x</strong></td>
 <td>0</td>
 <td>1</td>
 <td>13</td>
@@ -4519,7 +4519,7 @@
 <td>36</td>
 </tr>
 <tr>
-<td><strong>2 \&lt; R ≦ 2.25x</strong></td>
+<td><strong>2 &lt; R ≦ 2.25x</strong></td>
 <td>0</td>
 <td>1</td>
 <td>15</td>
@@ -4530,7 +4530,7 @@
 <td>32</td>
 </tr>
 <tr>
-<td><strong>2.25 \&lt; R ≦ 2.5x</strong></td>
+<td><strong>2.25 &lt; R ≦ 2.5x</strong></td>
 <td>0</td>
 <td>2</td>
 <td>15</td>
@@ -4541,7 +4541,7 @@
 <td>30</td>
 </tr>
 <tr>
-<td><strong>2.5 \&lt; R ≦ 2.75x</strong></td>
+<td><strong>2.5 &lt; R ≦ 2.75x</strong></td>
 <td>0</td>
 <td>3</td>
 <td>15</td>
@@ -4552,7 +4552,7 @@
 <td>28</td>
 </tr>
 <tr>
-<td><strong>2.75 \&lt; R ≦ 3x</strong></td>
+<td><strong>2.75 &lt; R ≦ 3x</strong></td>
 <td>0</td>
 <td>4</td>
 <td>15</td>
@@ -4563,7 +4563,7 @@
 <td>26</td>
 </tr>
 <tr>
-<td><strong>3 \&lt; R ≦ 3.25x</strong></td>
+<td><strong>3 &lt; R ≦ 3.25x</strong></td>
 <td>1</td>
 <td>4</td>
 <td>15</td>
@@ -4574,7 +4574,7 @@
 <td>24</td>
 </tr>
 <tr>
-<td><strong>3.25 \&lt; R ≦ 3.5x</strong></td>
+<td><strong>3.25 &lt; R ≦ 3.5x</strong></td>
 <td>1</td>
 <td>5</td>
 <td>15</td>
@@ -4585,7 +4585,7 @@
 <td>22</td>
 </tr>
 <tr>
-<td><strong>3.5 \&lt; R ≦ 3.75x</strong></td>
+<td><strong>3.5 &lt; R ≦ 3.75x</strong></td>
 <td>2</td>
 <td>7</td>
 <td>14</td>
@@ -4596,7 +4596,7 @@
 <td>18</td>
 </tr>
 <tr>
-<td><strong>3.75 \&lt; R ≦ 4x</strong></td>
+<td><strong>3.75 &lt; R ≦ 4x</strong></td>
 <td>3</td>
 <td>8</td>
 <td>13</td>
@@ -4607,7 +4607,7 @@
 <td>16</td>
 </tr>
 <tr>
-<td><strong>4 \&lt; R ≦ 5x</strong></td>
+<td><strong>4 &lt; R ≦ 5x</strong></td>
 <td>4</td>
 <td>8</td>
 <td>13</td>
@@ -4618,7 +4618,7 @@
 <td>14</td>
 </tr>
 <tr>
-<td><strong>5 \&lt; R ≦ 6x</strong></td>
+<td><strong>5 &lt; R ≦ 6x</strong></td>
 <td>4</td>
 <td>9</td>
 <td>12</td>
@@ -4629,7 +4629,7 @@
 <td>14</td>
 </tr>
 <tr>
-<td><strong>6x \&lt; R ≦ 7x</strong></td>
+<td><strong>6x &lt; R ≦ 7x</strong></td>
 <td>6</td>
 <td>9</td>
 <td>11</td>
@@ -4640,7 +4640,7 @@
 <td>12</td>
 </tr>
 <tr>
-<td><strong>7x \&lt; R</strong></td>
+<td><strong>7x &lt; R</strong></td>
 <td>6</td>
 <td>9</td>
 <td>11</td>
@@ -4675,7 +4675,7 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [sca_luma_algo (0\~3)] [sca_chroma_algo (0\~3)] [sca_map_sel (0\~1)] > /proc/videograph/vpe/sca/ctrl_param</td>
+<td>echo [sca_luma_algo (0~3)] [sca_chroma_algo (0~3)] [sca_map_sel (0~1)] &gt; /proc/videograph/vpe/sca/ctrl_param</td>
 <td>index: Target ratio The command “sca_luma_algo” set parameters “sca_y_luma_algo_en” and “sca_x_luma_algo_en” at the same time. The command “sca_chroma_algo” set parameters “sca_y_chroma_algo_en” and “sca_x_chroma_algo_en” at the same time. The command “sca_map_sel” set “sca_map_sel” parameter.</td>
 </tr>
 </tbody>
@@ -4695,8 +4695,8 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [index (0\~16)] [coeffH[0]] [coeffH[1]] [coeffH[2]] ]coeffH[3]] [coeffV[0]] [coeffV[1]] [coeffV[2]] [coeffV[3]] (-128 \~ 127) > /proc/videograph/vpe/sca/lpf_param</td>
-<td>index: Target ratio coeffH : sca_ceffH[4] coeffV: sca_ceffV[4] ※The software limit range is between -128\~127, to reduce memory usage.</td>
+<td>echo [index (0~16)] [coeffH[0]] [coeffH[1]] [coeffH[2]] ]coeffH[3]] [coeffV[0]] [coeffV[1]] [coeffV[2]] [coeffV[3]] (-128 ~ 127) &gt; /proc/videograph/vpe/sca/lpf_param</td>
+<td>index: Target ratio coeffH : sca_ceffH[4] coeffV: sca_ceffV[4] ※The software limit range is between -128~127, to reduce memory usage.</td>
 </tr>
 </tbody>
 </table>
@@ -4716,7 +4716,7 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [fd range] > /proc/videograph/vpe/sca /yuv_range yuv_range: 0, 2, 3, 255 (disable) ※disable represent AP directly control parameters</td>
+<td>echo [fd range] &gt; /proc/videograph/vpe/sca /yuv_range yuv_range: 0, 2, 3, 255 (disable) ※disable represent AP directly control parameters</td>
 <td><strong>des_drt</strong></td>
 </tr>
 </tbody>
@@ -4724,7 +4724,7 @@
 <p><strong>Read :</strong></p>
 <p>cat /proc/videograph/vpe/sca/yuv_range</p>
 <p><strong>Output :</strong></p>
-<p><strong><img alt="Command :  echo \&lt; fd range >(0:bypass, 2:TV, 3:PC, 255:diable) =============================================================== fd(0x40000000) yuv range = 0 fd(0x40000001) yuv range = 0 fd(0x40000002) yuv range = 0 fd(0x40000003) yuv range = 0 " src="nvt_media/dd96c32670e64e25844a3bdab5783b22.png" /></strong></p>
+<p><strong><img alt="Command :  echo &lt; fd range &gt;(0:bypass, 2:TV, 3:PC, 255:diable) =============================================================== fd(0x40000000) yuv range = 0 fd(0x40000001) yuv range = 0 fd(0x40000002) yuv range = 0 fd(0x40000003) yuv range = 0 " src="nvt_media/dd96c32670e64e25844a3bdab5783b22.png" /></strong></p>
 <h4 id="732-vendor-api">7.3.2 Vendor API<a class="headerlink" href="#732-vendor-api" title="Permanent link">&para;</a></h4>
 <p><strong>[Description]</strong></p>
 <p>Get and set the scaling parameters corresponding to current path_id.</p>
@@ -4734,7 +4734,7 @@
 <p><strong>Set：</strong></p>
 <p>HD_RESULT vendor_video_set(HD_PATH_ID path_id, VENDOR_VIDEO_SCA, VENDOR_VIDEO_PARAM_SCA_SET *p_param);</p>
 <p><strong>[Definition]</strong></p>
-<p><strong><img alt="typedef struct _VENDOR_VIDEO_PARMA_SCA_CTRL {  INT32 sca_ceffH[4];                 ///\&lt; LPF coefficient in horizontal direction   INT32 sca_ceffV[4];                 ///\&lt; LPF coefficient in vertical direction } VENDOR_VIDEO_PARMA_SCA_CTRL; typedef struct _VENDOR_VIDEO_PARAM_SCA_SET {    UINT8 sca_y_luma_algo_en;           ///\&lt; Algorithm select for vertical luma scaler     UINT8 sca_x_luma_algo_en;           ///\&lt; Algorithm select for horizontal luma scaler   UINT8 sca_y_chroma_algo_en;         ///\&lt; Algorithm select for vertical chroma scaler   UINT8 sca_x_chroma_algo_en;         ///\&lt; Algorithm select for horizontal chroma scaler     UINT8 sca_map_sel;                  ///\&lt; Scaler source mapping format select   VENDOR_VIDEO_PARMA_SCA_CTRL sca_1000x_param;  ///\&lt; scaling parameter for scaling ratio 1.00x   VENDOR_VIDEO_PARMA_SCA_CTRL sca_1250x_param;  ///\&lt; scaling parameter for scaling ratio 1.25x   VENDOR_VIDEO_PARMA_SCA_CTRL sca_1500x_param;  ///\&lt; scaling parameter for scaling ratio 1.50x   VENDOR_VIDEO_PARMA_SCA_CTRL sca_1750x_param;  ///\&lt; scaling parameter for scaling ratio 1.75x   VENDOR_VIDEO_PARMA_SCA_CTRL sca_2000x_param;  ///\&lt; scaling parameter for scaling ratio 2.00x   VENDOR_VIDEO_PARMA_SCA_CTRL sca_2250x_param;  ///\&lt; scaling parameter for scaling ratio 2.25x   VENDOR_VIDEO_PARMA_SCA_CTRL sca_2500x_param;  ///\&lt; scaling parameter for scaling ratio 2.50x   VENDOR_VIDEO_PARMA_SCA_CTRL sca_2750x_param;  ///\&lt; scaling parameter for scaling ratio 2.75x   VENDOR_VIDEO_PARMA_SCA_CTRL sca_3000x_param;  ///\&lt; scaling parameter for scaling ratio 3.00x   VENDOR_VIDEO_PARMA_SCA_CTRL sca_3250x_param;  ///\&lt; scaling parameter for scaling ratio 3.25x   VENDOR_VIDEO_PARMA_SCA_CTRL sca_3500x_param;  ///\&lt; scaling parameter for scaling ratio 3.50x   VENDOR_VIDEO_PARMA_SCA_CTRL sca_3750x_param;  ///\&lt; scaling parameter for scaling ratio 3.75x   VENDOR_VIDEO_PARMA_SCA_CTRL sca_4000x_param;  ///\&lt; scaling parameter for scaling ratio 4.00x   VENDOR_VIDEO_PARMA_SCA_CTRL sca_5000x_param;  ///\&lt; scaling parameter for scaling ratio 5.00x   VENDOR_VIDEO_PARMA_SCA_CTRL sca_6000x_param;  ///\&lt; scaling parameter for scaling ratio 6.00x   VENDOR_VIDEO_PARMA_SCA_CTRL sca_7000x_param;  ///\&lt; scaling parameter for scaling ratio 7.00x   VENDOR_VIDEO_PARMA_SCA_CTRL sca_8000x_param;  ///\&lt; scaling parameter for scaling ratio 8.00x } VENDOR_VIDEO_PARAM_SCA_SET; " src="nvt_media/a77683f007884f902d5afafec7a83b40.png" /></strong></p>
+<p><strong><img alt="typedef struct _VENDOR_VIDEO_PARMA_SCA_CTRL {  INT32 sca_ceffH[4];                 ///&lt; LPF coefficient in horizontal direction   INT32 sca_ceffV[4];                 ///&lt; LPF coefficient in vertical direction } VENDOR_VIDEO_PARMA_SCA_CTRL; typedef struct _VENDOR_VIDEO_PARAM_SCA_SET {    UINT8 sca_y_luma_algo_en;           ///&lt; Algorithm select for vertical luma scaler     UINT8 sca_x_luma_algo_en;           ///&lt; Algorithm select for horizontal luma scaler   UINT8 sca_y_chroma_algo_en;         ///&lt; Algorithm select for vertical chroma scaler   UINT8 sca_x_chroma_algo_en;         ///&lt; Algorithm select for horizontal chroma scaler     UINT8 sca_map_sel;                  ///&lt; Scaler source mapping format select   VENDOR_VIDEO_PARMA_SCA_CTRL sca_1000x_param;  ///&lt; scaling parameter for scaling ratio 1.00x   VENDOR_VIDEO_PARMA_SCA_CTRL sca_1250x_param;  ///&lt; scaling parameter for scaling ratio 1.25x   VENDOR_VIDEO_PARMA_SCA_CTRL sca_1500x_param;  ///&lt; scaling parameter for scaling ratio 1.50x   VENDOR_VIDEO_PARMA_SCA_CTRL sca_1750x_param;  ///&lt; scaling parameter for scaling ratio 1.75x   VENDOR_VIDEO_PARMA_SCA_CTRL sca_2000x_param;  ///&lt; scaling parameter for scaling ratio 2.00x   VENDOR_VIDEO_PARMA_SCA_CTRL sca_2250x_param;  ///&lt; scaling parameter for scaling ratio 2.25x   VENDOR_VIDEO_PARMA_SCA_CTRL sca_2500x_param;  ///&lt; scaling parameter for scaling ratio 2.50x   VENDOR_VIDEO_PARMA_SCA_CTRL sca_2750x_param;  ///&lt; scaling parameter for scaling ratio 2.75x   VENDOR_VIDEO_PARMA_SCA_CTRL sca_3000x_param;  ///&lt; scaling parameter for scaling ratio 3.00x   VENDOR_VIDEO_PARMA_SCA_CTRL sca_3250x_param;  ///&lt; scaling parameter for scaling ratio 3.25x   VENDOR_VIDEO_PARMA_SCA_CTRL sca_3500x_param;  ///&lt; scaling parameter for scaling ratio 3.50x   VENDOR_VIDEO_PARMA_SCA_CTRL sca_3750x_param;  ///&lt; scaling parameter for scaling ratio 3.75x   VENDOR_VIDEO_PARMA_SCA_CTRL sca_4000x_param;  ///&lt; scaling parameter for scaling ratio 4.00x   VENDOR_VIDEO_PARMA_SCA_CTRL sca_5000x_param;  ///&lt; scaling parameter for scaling ratio 5.00x   VENDOR_VIDEO_PARMA_SCA_CTRL sca_6000x_param;  ///&lt; scaling parameter for scaling ratio 6.00x   VENDOR_VIDEO_PARMA_SCA_CTRL sca_7000x_param;  ///&lt; scaling parameter for scaling ratio 7.00x   VENDOR_VIDEO_PARMA_SCA_CTRL sca_8000x_param;  ///&lt; scaling parameter for scaling ratio 8.00x } VENDOR_VIDEO_PARAM_SCA_SET; " src="nvt_media/a77683f007884f902d5afafec7a83b40.png" /></strong></p>
 <h2 id="8-distortion-correction-engine-dce">8 Distortion Correction Engine (DCE)<a class="headerlink" href="#8-distortion-correction-engine-dce" title="Permanent link">&para;</a></h2>
 <h3 id="81-overview">8.1 Overview<a class="headerlink" href="#81-overview" title="Permanent link">&para;</a></h3>
 <p>This is lens distortion calibration module, it can perform calibration on wide-angle lens and fish-eye lens.</p>
@@ -4752,43 +4752,43 @@
 <tbody>
 <tr>
 <td><strong>dce_mode</strong></td>
-<td>0\~1</td>
+<td>0~1</td>
 <td>0</td>
 <td>Select distortion function 0: GDC lens calibration 1: 2DLUT self-define XY coordinate distortion</td>
 </tr>
 <tr>
 <td><strong>lut2d_sz</strong></td>
-<td>0\~5</td>
+<td>0~5</td>
 <td>0</td>
 <td>Size selection of 2D look-up table. The larger the size, the more precision to describe distortion. 0: 9x9 3: 65x65 4: 129x129 5: 257x257</td>
 </tr>
 <tr>
 <td><strong>lsb_rand</strong></td>
-<td>0\~1</td>
+<td>0~1</td>
 <td>0</td>
-<td>LSB 2 bit random generation for internal 10 bit->8 bit image. 0: fixed fill 0 1: random generate 0\~3</td>
+<td>LSB 2 bit random generation for internal 10 bit-&gt;8 bit image. 0: fixed fill 0 1: random generate 0~3</td>
 </tr>
 <tr>
 <td><strong>fovbound</strong></td>
-<td>0\~1</td>
+<td>0~1</td>
 <td>0</td>
 <td>FOV boundary process method selection. When the distortion result can not fill the total output image, select different way to proceed the exceed range. 0: Replace out of boundary pixels with duplicate nearest pixel 1: Replace out of boundary pixels with bound pixels</td>
 </tr>
 <tr>
 <td><strong>boundy</strong></td>
-<td>0\~1023</td>
+<td>0~1023</td>
 <td>0</td>
 <td>Bound value for Y component(u8.2)</td>
 </tr>
 <tr>
 <td><strong>boundu</strong></td>
-<td>0\~1023</td>
+<td>0~1023</td>
 <td>0</td>
 <td>Bound value for U component(u8.2)</td>
 </tr>
 <tr>
 <td><strong>boundv</strong></td>
-<td>0\~1023</td>
+<td>0~1023</td>
 <td>0</td>
 <td>Bound value for V component(u8.2)</td>
 </tr>
@@ -4806,73 +4806,73 @@
 </tr>
 <tr>
 <td><strong>xdist</strong></td>
-<td>0\~4095</td>
+<td>0~4095</td>
 <td>0</td>
 <td>X input distance factor, for oval shape modeling. It is recommend to set 4095, which is suitable for most situation.</td>
 </tr>
 <tr>
 <td><strong>ydist</strong></td>
-<td>0\~4095</td>
+<td>0~4095</td>
 <td>0</td>
 <td>Y input distance factor, for oval shape modeling. It is recommend to set 4095, which is suitable for most situation.</td>
 </tr>
 <tr>
 <td><strong>geo_lut</strong></td>
-<td>0\~65535</td>
+<td>0~65535</td>
 <td>0</td>
 <td>The GEO deformation gain table, a total of 65 points, indicates the magnification of each pixel in the image at a different distance from the deformation center (magnification = 65535 * input radius / output radius), the gainbase is 65535, please refer to Note 2 for the gain table example.  Value range：[0, 65535]。</td>
 </tr>
 <tr>
 <td><strong>normfact</strong></td>
-<td>0\~255</td>
+<td>0~255</td>
 <td>128</td>
-<td>Radius normalization factor. Normfact = 1 \&lt;\&lt; (normbit + 7) / R2</td>
+<td>Radius normalization factor. Normfact = 1 &lt;&lt; (normbit + 7) / R2</td>
 </tr>
 <tr>
 <td><strong>normbit</strong></td>
-<td>0\~31</td>
+<td>0~31</td>
 <td>31</td>
 <td>Radius normalization shift bit. R2 = (width/2)2+(height/2)2 The total bit number of R2 is normbit. Example: 9602+5402 = 1213200 (21 bits)</td>
 </tr>
 <tr>
 <td><strong>fovgain</strong></td>
-<td>0\~4095</td>
+<td>0~4095</td>
 <td>0</td>
 <td>Adjust the scaling ratio of the final distortion coordinate to preserve FOV. Scale down factor for FOV preservation. Due to it will effect the calibration performance, it is recommend to set 1024.</td>
 </tr>
 <tr>
 <td><strong>hfact</strong></td>
-<td>0 \~ 224 -1</td>
+<td>0 ~ 224 -1</td>
 <td>0</td>
-<td>Horizontal scaling factor for 2DLut scaling up(u0.24). ((2DLUT horizontal pixel number – 1) \&lt;\&lt; 24) / (width – 1)</td>
+<td>Horizontal scaling factor for 2DLut scaling up(u0.24). ((2DLUT horizontal pixel number – 1) &lt;&lt; 24) / (width – 1)</td>
 </tr>
 <tr>
 <td><strong>vfact</strong></td>
-<td>0 \~ 224 -1</td>
+<td>0 ~ 224 -1</td>
 <td>0</td>
-<td>Vertical scaling factor for 2DLut scaling up(u0.24). ((2DLUT vertical pixel number – 1) \&lt;\&lt; 24) / (height – 1)</td>
+<td>Vertical scaling factor for 2DLut scaling up(u0.24). ((2DLUT vertical pixel number – 1) &lt;&lt; 24) / (height – 1)</td>
 </tr>
 <tr>
 <td><strong>xofs_i</strong></td>
-<td>0\~127</td>
+<td>0~127</td>
 <td>0</td>
 <td>2DLut x offset, integer part. It is recommend to set 0, if user need to adjust the DCE performance, user need to change the 2DLUT value.</td>
 </tr>
 <tr>
 <td><strong>xofs_f</strong></td>
-<td>0\~224-1</td>
+<td>0~224-1</td>
 <td>0</td>
 <td>2DLut x offset, fraction part. It is recommend to set 0, if user need to adjust the DCE performance, user need to change the 2DLUT value.</td>
 </tr>
 <tr>
 <td><strong>yofs_i</strong></td>
-<td>0\~127</td>
+<td>0~127</td>
 <td>0</td>
 <td>2DLut y offset, integer part. It is recommend to set 0, if user need to adjust the DCE performance, user need to change the 2DLUT value.</td>
 </tr>
 <tr>
 <td><strong>yofs_f</strong></td>
-<td>0\~224-1</td>
+<td>0~224-1</td>
 <td>0</td>
 <td>2DLut y offset, fraction part. It is recommend to set 0, if user need to adjust the DCE performance, user need to change the 2DLUT value.</td>
 </tr>
@@ -4910,7 +4910,7 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [ dc_en 0\~1 ] > /proc/videograph/vpe/dce/ch_en</td>
+<td>echo [ dc_en 0~1 ] &gt; /proc/videograph/vpe/dce/ch_en</td>
 <td><strong>dc_en</strong></td>
 </tr>
 </tbody>
@@ -4928,7 +4928,7 @@
 <p>Set：</p>
 <p>HD_RESULT c(HD_PATH_ID path_id, VENDOR_ VENDOR_VIDEOPROC_DEWARP_INFO, VENDOR_DEWARP_INFO *p_param);</p>
 <p><strong>[Define]</strong></p>
-<p><strong><img alt="typedef struct _VENDOR_DEWARP_CTRL {   BOOL dc_enable;     BOOL dctg_enable; } VENDOR_DEWARP_CTRL; typedef enum _VENDOR_DEWARP_MODE {     VENDOR_DEWARP_DEWARP_MODE_GDC   = 0,    VENDOR_DEWARP_DEWARP_MODE_2DLUT = 1,    ENUM_DUMMY4WORD(VENDOR_DEWARP_DEWARP_MODE) } VENDOR_DEWARP_MODE; typedef struct _VENDOR_DEWARP_DGC_PARM {  INT32 cent_x_s;     ///\&lt; Lens center of x axis (signed)    INT32 cent_y_s;     ///\&lt; Lens center of y axis (signed)    UINT32 lens_r;      ///\&lt; Radius of Lens    UINT32 xdist;       ///\&lt; X input distance factor, for oval shape modeling  UINT32 ydist;       ///\&lt; Y input distance factor, for oval shape modeling  UINT8 normfact;     ///\&lt; Radius normalization factor (u1.7)    UINT8 normbit;           ///\&lt; Radius normalization shift bit   UINT16 geo_lut[VENDOR_GEO_LUT_X]; ///\&lt; GDC look-up table } VENDOR_DEWARP_DGC_PARM; typedef struct _VENDOR_DEWARP_2DLUT_PARM {     UINT8 lut2d_sz;     ///\&lt; Size selection of 2D look-up table, 0:9x9, 3:65x65    UINT32 hfact;       ///\&lt; Horizontal scaling factor for 2DLut scaling up (u0.24)    UINT32 vfact;       ///\&lt; Vertical scaling factor for 2DLut scaling up (u0.24)  UINT8 xofs_i;       ///\&lt; 2DLUT x offset, integer part  UINT32 xofs_f;      ///\&lt; 2DLUT x offset, fraction part     UINT8 yofs_i;       ///\&lt; 2DLUT y offset, integer part  UINT32 yofs_f;      ///\&lt; 2DLUT xy offset, fraction part } VENDOR_DEWARP_2DLUT_PARM; typedef struct _VENDOR_DEWARP_FOV_PARM {  UINT8 fovbound;     ///\&lt; FOV boundary process method selection     UINT16 boundy;      ///\&lt; Bound value for Y component (u8.2)    UINT16 boundu;      ///\&lt; Bound value for U component (u8.2)    UINT16 boundv;      ///\&lt; Bound value for V component (u8.2)    UINT16 fovgain;     ///\&lt; Scale down factor for FOV preservation (u2.10) } VENDOR_DEWARP_FOV_PARM;  " src="nvt_media/0be8effdc1c24786da737cc7c600c61c.png" /></strong></p>
+<p><strong><img alt="typedef struct _VENDOR_DEWARP_CTRL {   BOOL dc_enable;     BOOL dctg_enable; } VENDOR_DEWARP_CTRL; typedef enum _VENDOR_DEWARP_MODE {     VENDOR_DEWARP_DEWARP_MODE_GDC   = 0,    VENDOR_DEWARP_DEWARP_MODE_2DLUT = 1,    ENUM_DUMMY4WORD(VENDOR_DEWARP_DEWARP_MODE) } VENDOR_DEWARP_MODE; typedef struct _VENDOR_DEWARP_DGC_PARM {  INT32 cent_x_s;     ///&lt; Lens center of x axis (signed)    INT32 cent_y_s;     ///&lt; Lens center of y axis (signed)    UINT32 lens_r;      ///&lt; Radius of Lens    UINT32 xdist;       ///&lt; X input distance factor, for oval shape modeling  UINT32 ydist;       ///&lt; Y input distance factor, for oval shape modeling  UINT8 normfact;     ///&lt; Radius normalization factor (u1.7)    UINT8 normbit;           ///&lt; Radius normalization shift bit   UINT16 geo_lut[VENDOR_GEO_LUT_X]; ///&lt; GDC look-up table } VENDOR_DEWARP_DGC_PARM; typedef struct _VENDOR_DEWARP_2DLUT_PARM {     UINT8 lut2d_sz;     ///&lt; Size selection of 2D look-up table, 0:9x9, 3:65x65    UINT32 hfact;       ///&lt; Horizontal scaling factor for 2DLut scaling up (u0.24)    UINT32 vfact;       ///&lt; Vertical scaling factor for 2DLut scaling up (u0.24)  UINT8 xofs_i;       ///&lt; 2DLUT x offset, integer part  UINT32 xofs_f;      ///&lt; 2DLUT x offset, fraction part     UINT8 yofs_i;       ///&lt; 2DLUT y offset, integer part  UINT32 yofs_f;      ///&lt; 2DLUT xy offset, fraction part } VENDOR_DEWARP_2DLUT_PARM; typedef struct _VENDOR_DEWARP_FOV_PARM {  UINT8 fovbound;     ///&lt; FOV boundary process method selection     UINT16 boundy;      ///&lt; Bound value for Y component (u8.2)    UINT16 boundu;      ///&lt; Bound value for U component (u8.2)    UINT16 boundv;      ///&lt; Bound value for V component (u8.2)    UINT16 fovgain;     ///&lt; Scale down factor for FOV preservation (u2.10) } VENDOR_DEWARP_FOV_PARM;  " src="nvt_media/0be8effdc1c24786da737cc7c600c61c.png" /></strong></p>
 <p><strong><img alt="typedef struct _VENDOR_DEWARP_INFO {   VENDOR_DEWARP_MODE mode;    VENDOR_DEWARP_DGC_PARM dgc;     VENDOR_DEWARP_2DLUT_PARM lut2d;     VENDOR_DEWARP_FOV_PARM fov; } VENDOR_DEWARP_INFO; typedef struct _VENDOR_DEWARP_2DLUT_TABLE {  UINT32 tbl[VENDOR_GEO_LUT]; } VENDOR_DEWARP_2DLUT_TABLE; " src="nvt_media/1202e370cb47177ad86d4bf2626ea70a.png" /></strong></p>
 <h2 id="9-dc-table-generatordctg">9 DC Table Generator(DCTG)<a class="headerlink" href="#9-dc-table-generatordctg" title="Permanent link">&para;</a></h2>
 <h3 id="91-overview">9.1 Overview<a class="headerlink" href="#91-overview" title="Permanent link">&para;</a></h3>
@@ -4964,7 +4964,7 @@
 </tr>
 <tr>
 <td><strong>mount_type</strong></td>
-<td>0\~1</td>
+<td>0~1</td>
 <td>0</td>
 <td>Camera mount type.  0: Ceiling mount 1: Floor mount</td>
 </tr>
@@ -4976,55 +4976,55 @@
 </tr>
 <tr>
 <td><strong>lens_r</strong></td>
-<td>0\~215-1</td>
+<td>0~215-1</td>
 <td>0</td>
 <td>Valid radius of fish-eye lens, the unit is pixel. Please refer to advance description.</td>
 </tr>
 <tr>
 <td><strong>lens_x_st</strong></td>
-<td>0\~214-1</td>
+<td>0~214-1</td>
 <td>0</td>
 <td>The start x position of fish-eye lens at the source image, the unit is pixel.</td>
 </tr>
 <tr>
 <td><strong>lens_y_st</strong></td>
-<td>0\~214-1</td>
+<td>0~214-1</td>
 <td>0</td>
 <td>The start y position of fish-eye lens at the source image, the unit is pixel.</td>
 </tr>
 <tr>
 <td><strong>theta_st</strong></td>
-<td>-180 \~ 180 (-*pi \~ *pi)</td>
+<td>-180 ~ 180 (-*pi ~ *pi)</td>
 <td>0</td>
 <td>FOV theta start radian.</td>
 </tr>
 <tr>
 <td><strong>theta_ed</strong></td>
-<td>-180 \~ 180 (-*pi \~ *pi)</td>
+<td>-180 ~ 180 (-*pi ~ *pi)</td>
 <td>0</td>
-<td>FOV theta end radian. theta_end > theta_st: normal image theta_end \&lt; theta_st: flip image</td>
+<td>FOV theta end radian. theta_end &gt; theta_st: normal image theta_end &lt; theta_st: flip image</td>
 </tr>
 <tr>
 <td><strong>phi_st</strong></td>
-<td>-360 \~ 360 (-2*pi \~ 2*pi)</td>
+<td>-360 ~ 360 (-2*pi ~ 2*pi)</td>
 <td>0</td>
 <td>OV phi start radian.</td>
 </tr>
 <tr>
 <td><strong>phi_ed</strong></td>
-<td>-360 \~ 360 (-2*pi \~ 2*pi)</td>
+<td>-360 ~ 360 (-2*pi ~ 2*pi)</td>
 <td>0</td>
-<td>FOV phi end radian. (-2*pi \~ 2*pi) phi_end > theta_st: normal image phi_end \&lt; theta_st: flip image</td>
+<td>FOV phi end radian. (-2*pi ~ 2*pi) phi_end &gt; theta_st: normal image phi_end &lt; theta_st: flip image</td>
 </tr>
 <tr>
 <td><strong>rot_z</strong></td>
-<td>-360 \~ 360 (-2*pi \~ 2*pi)</td>
+<td>-360 ~ 360 (-2*pi ~ 2*pi)</td>
 <td>0</td>
 <td>Z-axis rotate radian</td>
 </tr>
 <tr>
 <td><strong>rot_y</strong></td>
-<td>-360 \~ 360 (-2*pi \~ 2*pi)</td>
+<td>-360 ~ 360 (-2*pi ~ 2*pi)</td>
 <td>0</td>
 <td>Y-zxis rotate radian.</td>
 </tr>
@@ -5058,7 +5058,7 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [dctg_en] > /proc/videograph/vpe/dctg/ch_en</td>
+<td>echo [dctg_en] &gt; /proc/videograph/vpe/dctg/ch_en</td>
 <td>dctg_en: dctg enable</td>
 </tr>
 </tbody>
@@ -5081,15 +5081,15 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [st] [ed] > /proc/videograph/vpe/dctg/phi</td>
-<td>st: FOV phi start radian ed : FOV phi end radian ※angle range: -360 \~ 360</td>
+<td>echo [st] [ed] &gt; /proc/videograph/vpe/dctg/phi</td>
+<td>st: FOV phi start radian ed : FOV phi end radian ※angle range: -360 ~ 360</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read :</strong></p>
 <p>cat /proc/videograph/vpe/dctg/phi</p>
 <p><strong>Output :</strong></p>
-<p><strong><img alt="echo \&lt;st> \&lt;ed> (range -360\~360) phi_st degree= -40 phi_ed degree = 40 " src="nvt_media/ea58221f210cfb74b09a5af3d91aca69.png" /></strong></p>
+<p><strong><img alt="echo &lt;st&gt; &lt;ed&gt; (range -360~360) phi_st degree= -40 phi_ed degree = 40 " src="nvt_media/ea58221f210cfb74b09a5af3d91aca69.png" /></strong></p>
 <h6 id="procvideographvpedctgrot"> /proc/videograph/vpe/dctg/rot<a class="headerlink" href="#procvideographvpedctgrot" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Set Z-axis and Y-zxis rotate radian.</p>
@@ -5104,15 +5104,15 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [z] [y] > /prc/videograph/vpe/dctg/rot</td>
-<td>z: Z-axis rotate radian. y: Y-zxis rotate radian ※angle range: -360 \~ 360</td>
+<td>echo [z] [y] &gt; /prc/videograph/vpe/dctg/rot</td>
+<td>z: Z-axis rotate radian. y: Y-zxis rotate radian ※angle range: -360 ~ 360</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read :</strong></p>
 <p>cat /proc/videograph/vpe/dctg/rot</p>
 <p><strong>Output :</strong></p>
-<p><img alt="echo \&lt;z> \&lt;y> (range -360\~360) rot_z degree = 0 rot_y degree = 0 " src="nvt_media/2925a2e61149c3eadb44cf346ef11f7f.png" /></p>
+<p><img alt="echo &lt;z&gt; &lt;y&gt; (range -360~360) rot_z degree = 0 rot_y degree = 0 " src="nvt_media/2925a2e61149c3eadb44cf346ef11f7f.png" /></p>
 <h6 id="procvideographvpedctgtheta"> /proc/videograph/vpe/dctg/theta<a class="headerlink" href="#procvideographvpedctgtheta" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Set FOV theta start radian.</p>
@@ -5127,15 +5127,15 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [st] [ed] > /prc/videograph/vpe/dctg/theta</td>
-<td>st: FOV theta start radian. ed : FOV theta end radian ※angle range: -180 \~ 180</td>
+<td>echo [st] [ed] &gt; /prc/videograph/vpe/dctg/theta</td>
+<td>st: FOV theta start radian. ed : FOV theta end radian ※angle range: -180 ~ 180</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read :</strong></p>
 <p>cat /proc/videograph/vpe/dctg/theta</p>
 <p><strong>Output :</strong></p>
-<p><strong><img alt="echo \&lt;st> \&lt;ed> (range -180\~180) theta_st degree = 45 theda_ed degree = 90 " src="nvt_media/52fb171188e2cb0d40603ed763586c35.png" /></strong></p>
+<p><strong><img alt="echo &lt;st&gt; &lt;ed&gt; (range -180~180) theta_st degree = 45 theda_ed degree = 90 " src="nvt_media/52fb171188e2cb0d40603ed763586c35.png" /></strong></p>
 <h4 id="932-vendor-api">9.3.2 Vendor API<a class="headerlink" href="#932-vendor-api" title="Permanent link">&para;</a></h4>
 <p><strong>[Description]</strong></p>
 <p>Get and set the dctg parameters corresponding to current path_id.</p>
@@ -5145,7 +5145,7 @@
 <p>Set：</p>
 <p>HD_RESULT vendor_videoproc_set(HD_PATH_ID path_id, VENDOR_VIDEOPROC_DEWARP_DCTG_INFO, VENDOR_DEWARP_DCTG_INFO *p_param);</p>
 <p><strong>[Define]</strong></p>
-<p><strong><img alt="typedef struct _VENDOR_DEWARP_CTRL {   BOOL dc_enable;     BOOL dctg_enable; } VENDOR_DEWARP_CTRL; typedef struct _VENDOR_DEWARP_DCTG_INFO {         VENDOR_DEWARP_DCTG_MODE mode;         VENDOR_DEWARP_DCTG_LENS_PARM lens;         VENDOR_DEWARP_DCTG_FOV_PARM fov; } VENDOR_DEWARP_DCTG_INFO; typedef enum _VENDOR_DEWARP_DCTG_MODE {    VENDOR_DEWARP_DCTG_MODE_90  = 0,    VENDOR_DEWARP_DCTG_MODE_360 = 1,    ENUM_DUMMY4WORD(VENDOR_DEWARP_DCTG_MODE) } VENDOR_DEWARP_DCTG_MODE; typedef struct _VENDOR_DEWARP_DCTG_LENS_PARM {         UINT8 mount_type;         ///\&lt; Camera mount type. 0:Ceiling mount, 1:Floor mount         UINT8 lut2d_sz;         ///\&lt; Size selection of 2D look-up table, 0:9x9, 3:65x65, should the same with DCE setting.         UINT32 lens_r;          ///\&lt; Radius of Lens         UINT32 lens_x_st;     ///\&lt; Lens start x position at a source image         UINT32 lens_y_st;     ///\&lt; Lens start y position at a source image } VENDOR_DEWARP_DCTG_LENS_PARM; typedef struct _VENDOR_DEWARP_DCTG_FOV_PARM {         INT32 theta_st;           ///\&lt; FOV theta start radian (s4.16) Range: -*pi \~ *pi         INT32 theta_ed;          ///\&lt; FOV theta end radian (s4.16) Range: -*pi \~ *pi         INT32 phi_st;                  ///\&lt; FOV phi start radian (s4.16) Range: -2*pi \~ 2*pi         INT32 phi_ed;                ///\&lt; FOV phi end radian (s4.16) Range: -2*pi \~ 2*pi         INT32 rot_z;               ///\&lt; Z-axis rotate radian (s4.16) Range: -2*pi \~ 2*pi         INT32 rot_y;                   ///\&lt; Y-axis rotate radian (s4.16) Range: -2*pi \~ 2*pi } VENDOR_DEWARP_DCTG_FOV_PARM; " src="nvt_media/09c7efa7cceba6a16dadc74f01901739.png" /></strong></p>
+<p><strong><img alt="typedef struct _VENDOR_DEWARP_CTRL {   BOOL dc_enable;     BOOL dctg_enable; } VENDOR_DEWARP_CTRL; typedef struct _VENDOR_DEWARP_DCTG_INFO {         VENDOR_DEWARP_DCTG_MODE mode;         VENDOR_DEWARP_DCTG_LENS_PARM lens;         VENDOR_DEWARP_DCTG_FOV_PARM fov; } VENDOR_DEWARP_DCTG_INFO; typedef enum _VENDOR_DEWARP_DCTG_MODE {    VENDOR_DEWARP_DCTG_MODE_90  = 0,    VENDOR_DEWARP_DCTG_MODE_360 = 1,    ENUM_DUMMY4WORD(VENDOR_DEWARP_DCTG_MODE) } VENDOR_DEWARP_DCTG_MODE; typedef struct _VENDOR_DEWARP_DCTG_LENS_PARM {         UINT8 mount_type;         ///&lt; Camera mount type. 0:Ceiling mount, 1:Floor mount         UINT8 lut2d_sz;         ///&lt; Size selection of 2D look-up table, 0:9x9, 3:65x65, should the same with DCE setting.         UINT32 lens_r;          ///&lt; Radius of Lens         UINT32 lens_x_st;     ///&lt; Lens start x position at a source image         UINT32 lens_y_st;     ///&lt; Lens start y position at a source image } VENDOR_DEWARP_DCTG_LENS_PARM; typedef struct _VENDOR_DEWARP_DCTG_FOV_PARM {         INT32 theta_st;           ///&lt; FOV theta start radian (s4.16) Range: -*pi ~ *pi         INT32 theta_ed;          ///&lt; FOV theta end radian (s4.16) Range: -*pi ~ *pi         INT32 phi_st;                  ///&lt; FOV phi start radian (s4.16) Range: -2*pi ~ 2*pi         INT32 phi_ed;                ///&lt; FOV phi end radian (s4.16) Range: -2*pi ~ 2*pi         INT32 rot_z;               ///&lt; Z-axis rotate radian (s4.16) Range: -2*pi ~ 2*pi         INT32 rot_y;                   ///&lt; Y-axis rotate radian (s4.16) Range: -2*pi ~ 2*pi } VENDOR_DEWARP_DCTG_FOV_PARM; " src="nvt_media/09c7efa7cceba6a16dadc74f01901739.png" /></strong></p>
 <h2 id="10-revise-history">10 Revise History<a class="headerlink" href="#10-revise-history" title="Permanent link">&para;</a></h2>
 <table>
 <thead>

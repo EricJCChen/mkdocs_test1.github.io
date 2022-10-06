@@ -1974,13 +1974,13 @@
 </thead>
 <tbody>
 <tr>
-<td>echo [fd] > /proc/videograph/di/ch_fd</td>
+<td>echo [fd] &gt; /proc/videograph/di/ch_fd</td>
 <td><strong>Fw Internal Pointer</strong></td>
 </tr>
 </tbody>
 </table>
 <p>Read : cat /proc/videograph/di/ch_fd</p>
-<p><strong><img alt="Command : echo [fd] > /proc/videograph/di/ch_fd Current channel = ch_fd " src="nvt_media/0940f5b1b187986353c6b94ae6a9095e.png" /></strong></p>
+<p><strong><img alt="Command : echo [fd] &gt; /proc/videograph/di/ch_fd Current channel = ch_fd " src="nvt_media/0940f5b1b187986353c6b94ae6a9095e.png" /></strong></p>
 <h2 id="2-gmm">2 GMM<a class="headerlink" href="#2-gmm" title="Permanent link">&para;</a></h2>
 <p>The motion detection module in DI module is not used for motion detection alarm; instead, it provides the motion detection information to DI algorithm to increase the interpolation accuracy of transforming interlace image to progressive image.</p>
 <h4 id="211-parameter-description">2.1.1 Parameter Description<a class="headerlink" href="#211-parameter-description" title="Permanent link">&para;</a></h4>
@@ -1997,43 +1997,43 @@
 <tbody>
 <tr>
 <td>gmm_alpha</td>
-<td>0\~32767</td>
+<td>0~32767</td>
 <td>32</td>
 <td>Update speed of background model( fit model).</td>
 </tr>
 <tr>
 <td>gmm_one_min_alpha</td>
-<td>0\~32767</td>
+<td>0~32767</td>
 <td>32736</td>
-<td>Update speed of background model(non-fit model). Recommend value = 2\^15- gmm_alpha</td>
+<td>Update speed of background model(non-fit model). Recommend value = 2^15- gmm_alpha</td>
 </tr>
 <tr>
 <td>gmm_init_val</td>
-<td>0\~255</td>
+<td>0~255</td>
 <td>7</td>
 <td>The restart learining weighting of the background model.</td>
 </tr>
 <tr>
 <td>gmm_tb</td>
-<td>0\~15</td>
+<td>0~15</td>
 <td>9</td>
 <td>Evaluate the similar level with the current background model to decide whether it is foreground.</td>
 </tr>
 <tr>
 <td>gmm_sigma</td>
-<td>0\~31</td>
+<td>0~31</td>
 <td>11</td>
 <td>The standard deviation for the newly generated model. It will influence the model tolerance.</td>
 </tr>
 <tr>
 <td>gmm_tg</td>
-<td>0\~15</td>
+<td>0~15</td>
 <td>9</td>
 <td>Threshold for evaluating whether the model need to be updated.</td>
 </tr>
 <tr>
 <td>gmm_prune</td>
-<td>-217 \~ 217-1</td>
+<td>-217 ~ 217-1</td>
 <td>-8207</td>
 <td>prune = -(alpha * CT)*8191/256; weight attenuation value CT – complexity reduction prior, this is related to number of samples. CT = 8</td>
 </tr>
@@ -2042,7 +2042,7 @@
 <h6 id="advance-description"> Advance description:<a class="headerlink" href="#advance-description" title="Permanent link">&para;</a></h6>
 <p> <strong>gmm_alpha</strong>：update speed of background model<br />
 If “gmm_alpha” set too large, it will easily to misjudge the motion object to background. For de-interlace application, it will result in fractured image. If “gmm_alpha” set too small, it will easily to misjudge tiny light/shadow change to motion object. For de-interlace application, it will result in blur image.<br />
-For indoor(without light/shadow change) scene, the recommend value is 32. For other scenes with light/shadow change, it is recommend to properly increase this value(not larger than 327). For outdoor scene, due to the influence of light/shadow change need to be excluded, the recommend value is between 327\~1200.</p>
+For indoor(without light/shadow change) scene, the recommend value is 32. For other scenes with light/shadow change, it is recommend to properly increase this value(not larger than 327). For outdoor scene, due to the influence of light/shadow change need to be excluded, the recommend value is between 327~1200.</p>
 <p> <strong>gmm_sigma</strong>：The standard deviation of model. The parameter “gmm_tb” and “gmm_sigma” are used to decide the static model together. The larger the “gmm_sigma”, the more easily to be determined as static object.</p>
 <p> <strong>gmm_tb</strong>：“gmm_sigma” and “gmm_tb” will influence the completion of motion detection. If the detected motion block of motion object is fractured(not continuous), it is recommend to properly increase “ gmm_tb”.</p>
 <p> <strong>gmm_purne：</strong>The smaller(more negative) “gmm_purne”, the quicker learning speed of new model. However, for small motion, it will more easily to be misjudged to background. And it will also influence the motion detection sensitivity(the same as “gmm_alpha”), it is recommend to adopt default value, and using “gmm_alpha” to fine tune sensitivity.</p>
@@ -2069,13 +2069,13 @@ For indoor(without light/shadow change) scene, the recommend value is 32. For ot
 </thead>
 <tbody>
 <tr>
-<td><strong>echo [enable 0 \~ 1] > /proc/videograph/di/gmm/enable</strong></td>
+<td><strong>echo [enable 0 ~ 1] &gt; /proc/videograph/di/gmm/enable</strong></td>
 <td><strong>gmm_en</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read : cat /proc/videograph/di/gmm/enable</strong></p>
-<p><strong>Output: <img alt="Command : echo [enable 0\~1] > /proc/videograph/di/gmm/enable channel \&lt;ch_no> = gmm_en " src="nvt_media/1765b4909c84a9b8160e46528a1e3fb7.png" /></strong></p>
+<p><strong>Output: <img alt="Command : echo [enable 0~1] &gt; /proc/videograph/di/gmm/enable channel &lt;ch_no&gt; = gmm_en " src="nvt_media/1765b4909c84a9b8160e46528a1e3fb7.png" /></strong></p>
 <h6 id="procvideographdigmmalpha"> /proc/videograph/di/gmm/alpha<a class="headerlink" href="#procvideographdigmmalpha" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the GMM/alpha parameter of the current camera channel.</p>
@@ -2090,13 +2090,13 @@ For indoor(without light/shadow change) scene, the recommend value is 32. For ot
 </thead>
 <tbody>
 <tr>
-<td><strong>echo [alpha 0 \~ 32767] > /proc/videograph/di/gmm/alpha</strong></td>
+<td><strong>echo [alpha 0 ~ 32767] &gt; /proc/videograph/di/gmm/alpha</strong></td>
 <td><strong>gmm_alpha</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read : cat /proc/videograph/di/gmm/alpha</strong></p>
-<p><strong>Output: <img alt="Command : echo [alpha 0\~32767] > /proc/videograph/di/gmm/alpha gmm_alpha = gmm_alpha " src="nvt_media/60986f046a67cbfeba947eaac8d5cb6c.png" /></strong></p>
+<p><strong>Output: <img alt="Command : echo [alpha 0~32767] &gt; /proc/videograph/di/gmm/alpha gmm_alpha = gmm_alpha " src="nvt_media/60986f046a67cbfeba947eaac8d5cb6c.png" /></strong></p>
 <h6 id="procvideographdigmmone_alpha"> /proc/videograph/di/gmm/one_alpha<a class="headerlink" href="#procvideographdigmmone_alpha" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the GMM parameter of the current camera channel.</p>
@@ -2111,13 +2111,13 @@ For indoor(without light/shadow change) scene, the recommend value is 32. For ot
 </thead>
 <tbody>
 <tr>
-<td><strong>echo [alpha 0 \~ 32767] > /proc/videograph/di/gmm/one_alpha</strong></td>
+<td><strong>echo [alpha 0 ~ 32767] &gt; /proc/videograph/di/gmm/one_alpha</strong></td>
 <td><strong>gmm_one_min_alpha</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read : cat /proc/videograph/di/gmm/one_alpha</strong></p>
-<p><strong>Output: <img alt="Command : echo [alpha 0 \~ 32767] > /proc/videograph/di/gmm/one_alpha gmm_one_min_alpha = gmm_one_min_alpha " src="nvt_media/c8eb4f3165e47afb5b07cfb5dbc1de2b.png" /></strong></p>
+<p><strong>Output: <img alt="Command : echo [alpha 0 ~ 32767] &gt; /proc/videograph/di/gmm/one_alpha gmm_one_min_alpha = gmm_one_min_alpha " src="nvt_media/c8eb4f3165e47afb5b07cfb5dbc1de2b.png" /></strong></p>
 <h6 id="procvideographdigmminit_val"> /proc/videograph/di/gmm/init_val<a class="headerlink" href="#procvideographdigmminit_val" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the GMM parameter of the current camera channel.</p>
@@ -2132,13 +2132,13 @@ For indoor(without light/shadow change) scene, the recommend value is 32. For ot
 </thead>
 <tbody>
 <tr>
-<td><strong>echo [value 0 \~ 255] > /proc/videograph/di/init_val</strong></td>
+<td><strong>echo [value 0 ~ 255] &gt; /proc/videograph/di/init_val</strong></td>
 <td><strong>gmm_init_val</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read : cat /proc/videograph/di/gmm/init_val</strong></p>
-<p><strong>Output: <img alt="Command: echo [value 0 \~ 255] > /proc/videograph/di/init_val gmm_init_val = gmm_init_val " src="nvt_media/16338cd5be8686ad389ff8ef52a6a8ee.png" /></strong></p>
+<p><strong>Output: <img alt="Command: echo [value 0 ~ 255] &gt; /proc/videograph/di/init_val gmm_init_val = gmm_init_val " src="nvt_media/16338cd5be8686ad389ff8ef52a6a8ee.png" /></strong></p>
 <h6 id="procvideographdigmmtb"> /proc/videograph/di/gmm/tb<a class="headerlink" href="#procvideographdigmmtb" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the GMM/gmm_tb parameter of the current camera channel.</p>
@@ -2153,13 +2153,13 @@ For indoor(without light/shadow change) scene, the recommend value is 32. For ot
 </thead>
 <tbody>
 <tr>
-<td><strong>echo [tb 0 \~ 15] > /proc/videograph/di/gmm/tb</strong></td>
+<td><strong>echo [tb 0 ~ 15] &gt; /proc/videograph/di/gmm/tb</strong></td>
 <td><strong>gmm_tb</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read : cat /proc/videograph/di/gmm/tb</strong></p>
-<p><strong>Output: <img alt="Command : echo [tb 0 \~ 15] > /proc/videograph/di/gmm/tb gmm_tb = gmm_tb " src="nvt_media/98633a5fd1c76197a2188c0cac4c8c80.png" /></strong></p>
+<p><strong>Output: <img alt="Command : echo [tb 0 ~ 15] &gt; /proc/videograph/di/gmm/tb gmm_tb = gmm_tb " src="nvt_media/98633a5fd1c76197a2188c0cac4c8c80.png" /></strong></p>
 <h6 id="procvideographdigmmsigma"> /proc/videograph/di/gmm/sigma<a class="headerlink" href="#procvideographdigmmsigma" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the GMM/sigma parameter of the current camera channel.</p>
@@ -2174,13 +2174,13 @@ For indoor(without light/shadow change) scene, the recommend value is 32. For ot
 </thead>
 <tbody>
 <tr>
-<td><strong>echo [sigma 0\~31] > /proc/videograph/di/gmm/sigma</strong></td>
+<td><strong>echo [sigma 0~31] &gt; /proc/videograph/di/gmm/sigma</strong></td>
 <td><strong>gmm_sigma</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read : cat /proc/videograph/di/gmm/sigma</strong></p>
-<p><strong>Output: <img alt="Command : echo [sigma 0\~31] > /proc/videograph/di/gmm/sigma gmm_sigma = gmm_sigma " src="nvt_media/c7cda5f28d162ac8599b8203a4fc5ee9.png" /></strong></p>
+<p><strong>Output: <img alt="Command : echo [sigma 0~31] &gt; /proc/videograph/di/gmm/sigma gmm_sigma = gmm_sigma " src="nvt_media/c7cda5f28d162ac8599b8203a4fc5ee9.png" /></strong></p>
 <h6 id="procvideographdigmmtg"> /proc/videograph/di/gmm/tg<a class="headerlink" href="#procvideographdigmmtg" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the GMM/gmm_tg parameter of the current camera channel.</p>
@@ -2195,13 +2195,13 @@ For indoor(without light/shadow change) scene, the recommend value is 32. For ot
 </thead>
 <tbody>
 <tr>
-<td><strong>echo [tg 0 \~ 15] > /proc/videograph/di/gmm/tg</strong></td>
+<td><strong>echo [tg 0 ~ 15] &gt; /proc/videograph/di/gmm/tg</strong></td>
 <td><strong>gmm_tg</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read : cat /proc/videograph/di/gmm/tg</strong></p>
-<p><strong>Output: <img alt="Command : echo [tg 0\~15] > /proc/videograph/di/gmm/tg gmm_tg = gmm_tg " src="nvt_media/2765ef8fdc9426a41c75ce468c894e3a.png" /></strong></p>
+<p><strong>Output: <img alt="Command : echo [tg 0~15] &gt; /proc/videograph/di/gmm/tg gmm_tg = gmm_tg " src="nvt_media/2765ef8fdc9426a41c75ce468c894e3a.png" /></strong></p>
 <h6 id="procvideographdigmmprune"> /proc/videograph/di/gmm/prune<a class="headerlink" href="#procvideographdigmmprune" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the GMM/gmm_prune parameter of the current camera channel.</p>
@@ -2216,13 +2216,13 @@ For indoor(without light/shadow change) scene, the recommend value is 32. For ot
 </thead>
 <tbody>
 <tr>
-<td><strong>echo [prune</strong> -131072 \~ 131071<strong>] > /proc/videograph/di/gmm/prune</strong></td>
+<td><strong>echo [prune</strong> -131072 ~ 131071<strong>] &gt; /proc/videograph/di/gmm/prune</strong></td>
 <td><strong>gmm_prune</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read : cat /proc/videograph/di/gmm/prune</strong></p>
-<p><strong>Output: <img alt="Command : echo [prune -131072\~131071] > /proc/videograph/di/gmm/prune gmm_prune = gmm_prune " src="nvt_media/29926b7ec54d3162fc70cfb2cffcdaf7.png" /></strong></p>
+<p><strong>Output: <img alt="Command : echo [prune -131072~131071] &gt; /proc/videograph/di/gmm/prune gmm_prune = gmm_prune " src="nvt_media/29926b7ec54d3162fc70cfb2cffcdaf7.png" /></strong></p>
 <h2 id="3-tmnr">3 TMNR<a class="headerlink" href="#3-tmnr" title="Permanent link">&para;</a></h2>
 <p>This is temporal noise reduction module(abbreviation is TMNR). Although this function is temporal noise reduction, its major purpose is to increase the interpolation accuracy of transforming interlace image to progressive image. If user need to enhance the temporal denoise strength of video, it is recommend to use TMNR in VPE. Please note that the concept and parameter of DI/TMNR and VPE/TMNR is totally different.</p>
 <h3 id="31-parameter-description">3.1 Parameter Description<a class="headerlink" href="#31-parameter-description" title="Permanent link">&para;</a></h3>
@@ -2239,133 +2239,133 @@ For indoor(without light/shadow change) scene, the recommend value is 32. For ot
 <tbody>
 <tr>
 <td>tmnr_en</td>
-<td>0\~1</td>
+<td>0~1</td>
 <td>1</td>
 <td>TMNR ON</td>
 </tr>
 <tr>
 <td>tmnr_learn_en</td>
-<td>0\~1</td>
+<td>0~1</td>
 <td>1</td>
 <td>Enable internal TMNR library for automatically calculating noise level</td>
 </tr>
 <tr>
 <td>y_var</td>
-<td>0\~64</td>
+<td>0~64</td>
 <td>20</td>
 <td>Luma pixel 3DNR strength</td>
 </tr>
 <tr>
 <td>cb_var</td>
-<td>0\~64</td>
+<td>0~64</td>
 <td>12</td>
 <td>Cb pixel 3DNR strength Please refer to advance description.</td>
 </tr>
 <tr>
 <td>cr_var</td>
-<td>0\~64</td>
+<td>0~64</td>
 <td>12</td>
 <td>Cr pixel 3DNR strength Please refer to advance description</td>
 </tr>
 <tr>
 <td>k</td>
-<td>1\~8</td>
+<td>1~8</td>
 <td>3</td>
 <td>Adjust the threshold for determining motion object. Please refer to advance description.</td>
 </tr>
 <tr>
 <td>auto_k</td>
-<td>0\~1</td>
+<td>0~1</td>
 <td>0</td>
 <td>Enable function for firmware automatically fine tune K.</td>
 </tr>
 <tr>
 <td>auto_k_hi</td>
-<td>2\~5</td>
+<td>2~5</td>
 <td>5</td>
 <td>Automatically fine tune the upper limit of K.</td>
 </tr>
 <tr>
 <td>auto_k_lo</td>
-<td>1\~3</td>
+<td>1~3</td>
 <td>2</td>
 <td>Automatically fine tune the lower limit of K.</td>
 </tr>
 <tr>
 <td>trade_thres</td>
-<td>0\~128</td>
+<td>0~128</td>
 <td>64</td>
 <td>The blending weight of external var and internal var.</td>
 </tr>
 <tr>
 <td>suppress_strength</td>
-<td>2\~64</td>
+<td>2~64</td>
 <td>24</td>
 <td>The maximum NR mask strength of static point.</td>
 </tr>
 <tr>
 <td>nf</td>
-<td>1\~6</td>
+<td>1~6</td>
 <td>5</td>
 <td>The normalized parameter of variance of internal calculation. The larger the “nf”, the smaller the NR strength calculated by internal.</td>
 </tr>
 <tr>
 <td>var_offset</td>
-<td>0\~15</td>
+<td>0~15</td>
 <td>2</td>
 <td>The maximum variance difference of neighbor block.</td>
 </tr>
 <tr>
 <td>motion_var</td>
-<td>1\~20</td>
+<td>1~20</td>
 <td>8</td>
 <td>The variance of motion block. This value influence the temporal noise reduction strength of motion block. The recommend value is Y_var / 3.</td>
 </tr>
 <tr>
 <td>motion_th_mult</td>
-<td>1\~100</td>
+<td>1~100</td>
 <td>3</td>
-<td>The threshold for determining whether it is motion block. The smaller the value, the more easily to be determined as motion block. The recommend value is 2\~3.</td>
+<td>The threshold for determining whether it is motion block. The smaller the value, the more easily to be determined as motion block. The recommend value is 2~3.</td>
 </tr>
 <tr>
 <td>tmnr_fcs_en</td>
-<td>0\~1</td>
+<td>0~1</td>
 <td>0</td>
 <td>Enable temporal false color suppression function. Please refer to advance description.</td>
 </tr>
 <tr>
 <td>tmnr_fcs_th</td>
-<td>0\~255</td>
+<td>0~255</td>
 <td>16</td>
 <td>Threshold for determining temporal false color.</td>
 </tr>
 <tr>
 <td>tmnr_fcs_weight</td>
-<td>0\~16</td>
+<td>0~16</td>
 <td>8</td>
 <td>Strength of temporal false color suppression.</td>
 </tr>
 <tr>
 <td>dpr_en</td>
-<td>0\~1</td>
+<td>0~1</td>
 <td>0</td>
 <td>TMNR temporal DPC ON/OFF</td>
 </tr>
 <tr>
 <td>dpr_motion_th</td>
-<td>0\~255</td>
+<td>0~255</td>
 <td>64</td>
 <td>Threshold for determining whether it is temporal defect pixel. The smaller the “dpr_motion_th”, the more easily to be determined as temporal defect pixel.</td>
 </tr>
 <tr>
 <td>dpr_cnt_th</td>
-<td>0\~15</td>
+<td>0~15</td>
 <td>1</td>
 <td>Threshold for determing temporal defect pixel, if the number of surrounding defect pixel is smaller than “dpr_cnt_th”, it is determined as defect pixel. The larger the value, the more easily to be determined as temporal defect pixel. The default value is 1, representing only deals with single defect pixel.</td>
 </tr>
 <tr>
 <td>dpr_mode</td>
-<td>0\~1</td>
+<td>0~1</td>
 <td>0</td>
 <td>The defect mode of TMNR temporal defect pixel. 0: Temporal defect mode 1: Spatial defect mode</td>
 </tr>
@@ -2373,7 +2373,7 @@ For indoor(without light/shadow change) scene, the recommend value is 32. For ot
 </table>
 <h6 id="advance-description_1"> Advance description：<a class="headerlink" href="#advance-description_1" title="Permanent link">&para;</a></h6>
 <p> <strong>y_var, cb_var, cr_var:</strong> Noise Level set by external. The noise level set by external and calculate by internal will be blended by “trade_threshold”, and the blended noise level is the noise base to determine whether it is motion object. This parameter can also be considered as 3DNR strength.</p>
-<p> <strong>k</strong>: The parameter to adjust threshold for determining motion object. The recommend value is 2\~3. The larger the k, the more easily to be determined as static object, the noise is more stable, but it might have ghost. On the contrary, the smaller the k, the more easily to be determined as motion object, but the noise is more obvious. If “auto_k” is enabled, this parameter is invalid.</p>
+<p> <strong>k</strong>: The parameter to adjust threshold for determining motion object. The recommend value is 2~3. The larger the k, the more easily to be determined as static object, the noise is more stable, but it might have ghost. On the contrary, the smaller the k, the more easily to be determined as motion object, but the noise is more obvious. If “auto_k” is enabled, this parameter is invalid.</p>
 <p> <strong>auto_k, auto_k_lo, auto_k_hi</strong>: When noise is badly serious, this function could accelerate the speed to become noise stable. If enable this function, the firmware will automatically calculate “k”, the calculated “k” will be smaller than auto_k_hi and larger than auto_k_lo. It is recommend to enable “auto_k”, set “auto_k_hi” = 5 and “auto_k_low” = 2.</p>
 <p> <strong>motion_var</strong>: The noise level of motion object. The larger the “motion_var”, the less noise of motion object, but it might have ghost. The recommend value is y_var/3, it should not larger than 20, and the default value is 5.</p>
 <p> <strong>motion_th_mult</strong>: Threshold for determining whether it is motion object. The smaller the “motion_th_mult”, the more easily to be determined as motion object. The recommend value is 2-3.</p>
@@ -2417,13 +2417,13 @@ For indoor(without light/shadow change) scene, the recommend value is 32. For ot
 </thead>
 <tbody>
 <tr>
-<td><strong>echo [enable 0 \~ 2] > /proc/videograph/di/tmnr/enable</strong></td>
+<td><strong>echo [enable 0 ~ 2] &gt; /proc/videograph/di/tmnr/enable</strong></td>
 <td><strong>tmnr_en</strong> <strong>0: TMNR enabled by HDAL</strong> <strong>1: TMNR enable</strong> <strong>2: TMNR disable</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read : cat /proc/videograph/di/tmnr/enable</strong></p>
-<p><strong>Output: <img alt="Command : echo [enable 0\~2] > /proc/videograph/di/tmnr/enable 0: TMNR enabled by HDAL 1: TMNR enable 2: TMNR disable tmnr_en = tmnr_en " src="nvt_media/d0b54e495815e44fa4c3c5034f823041.png" /></strong></p>
+<p><strong>Output: <img alt="Command : echo [enable 0~2] &gt; /proc/videograph/di/tmnr/enable 0: TMNR enabled by HDAL 1: TMNR enable 2: TMNR disable tmnr_en = tmnr_en " src="nvt_media/d0b54e495815e44fa4c3c5034f823041.png" /></strong></p>
 <h6 id="procvideographditmnrtmnr_learn_en"> /proc/videograph/di/tmnr/tmnr_learn_en<a class="headerlink" href="#procvideographditmnrtmnr_learn_en" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the TMNR/tmnr_learn_en parameter of the current camera channel.</p>
@@ -2438,13 +2438,13 @@ For indoor(without light/shadow change) scene, the recommend value is 32. For ot
 </thead>
 <tbody>
 <tr>
-<td><strong>echo [tmnr_learn_en 0\~1] > /proc/videograph/di/tmnr/tmnr_learn_en</strong></td>
+<td><strong>echo [tmnr_learn_en 0~1] &gt; /proc/videograph/di/tmnr/tmnr_learn_en</strong></td>
 <td><strong>tmnr_learn_en</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read : cat /proc/videograph/di/tmnr/tmnr_learn_en</strong></p>
-<p><strong>Output: <img alt="Command : echo [tmnr_learn_en 0\~1] > /proc/videograph/di/tmnr/tmnr_learn_en tmnr_learn_en = tmnr_learn_en " src="nvt_media/e6de6dfca01d42e7de9994682ccd4f30.png" /></strong></p>
+<p><strong>Output: <img alt="Command : echo [tmnr_learn_en 0~1] &gt; /proc/videograph/di/tmnr/tmnr_learn_en tmnr_learn_en = tmnr_learn_en " src="nvt_media/e6de6dfca01d42e7de9994682ccd4f30.png" /></strong></p>
 <h6 id="procvideographditmnrvar"> /proc/videograph/di/tmnr/var<a class="headerlink" href="#procvideographditmnrvar" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the TMNR/y, cb, cr var parameter of the current camera channel.</p>
@@ -2459,13 +2459,13 @@ For indoor(without light/shadow change) scene, the recommend value is 32. For ot
 </thead>
 <tbody>
 <tr>
-<td><strong>echo [y_var 0\~64] [cb_var 0\~64] [cr_var 0\~64] > /proc/videograph/di/tmnr/var</strong></td>
+<td><strong>echo [y_var 0~64] [cb_var 0~64] [cr_var 0~64] &gt; /proc/videograph/di/tmnr/var</strong></td>
 <td><strong>y_var, cb_var, cr_var</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read : cat /proc/videograph/di/tmnr/var</strong></p>
-<p><strong>Output: <img alt="Command : echo [y_var 0\~64] [cb_var 0\~64] [cr_var 0\~64] > /proc/videograph/di/tmnr/var Y_var = y_var Cb_var = cb_var Cr_var = cr_var " src="nvt_media/f07449c66ae9b469f1a33e599cd1de55.png" /></strong></p>
+<p><strong>Output: <img alt="Command : echo [y_var 0~64] [cb_var 0~64] [cr_var 0~64] &gt; /proc/videograph/di/tmnr/var Y_var = y_var Cb_var = cb_var Cr_var = cr_var " src="nvt_media/f07449c66ae9b469f1a33e599cd1de55.png" /></strong></p>
 <h6 id="procvideographditmnrk"> /proc/videograph/di/tmnr/k<a class="headerlink" href="#procvideographditmnrk" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the TMNR/k parameter of the current camera channel.</p>
@@ -2480,13 +2480,13 @@ For indoor(without light/shadow change) scene, the recommend value is 32. For ot
 </thead>
 <tbody>
 <tr>
-<td><strong>echo [k 1\~8] > /proc/videograph/di/tmnr/k</strong></td>
+<td><strong>echo [k 1~8] &gt; /proc/videograph/di/tmnr/k</strong></td>
 <td><strong>k</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read : cat /proc/videograph/di/tmnr/k</strong></p>
-<p><strong>Output: <img alt="Command : echo [k 1\~8] > /proc/videograph/di/tmnr/k k = k " src="nvt_media/cfe118349b67d7b3c9630163f2f53552.png" /></strong></p>
+<p><strong>Output: <img alt="Command : echo [k 1~8] &gt; /proc/videograph/di/tmnr/k k = k " src="nvt_media/cfe118349b67d7b3c9630163f2f53552.png" /></strong></p>
 <h6 id="procvideographditmnrauto_k"> /proc/videograph/di/tmnr/auto_k<a class="headerlink" href="#procvideographditmnrauto_k" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the TMNR/auto_k related parameter of the current camera channel.</p>
@@ -2501,13 +2501,13 @@ For indoor(without light/shadow change) scene, the recommend value is 32. For ot
 </thead>
 <tbody>
 <tr>
-<td><strong>echo [auto_k 0 \~ 1] [k_hi 1\~8] [k_lo 1\~8]> /proc/videograph/di/tmnr/auto_k</strong></td>
+<td><strong>echo [auto_k 0 ~ 1] [k_hi 1~8] [k_lo 1~8]&gt; /proc/videograph/di/tmnr/auto_k</strong></td>
 <td><strong>auto_k, k_hi, k_lo</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read : cat /proc/videograph/di/tmnr/auto_k</strong></p>
-<p><strong>Output: <img alt="Command : echo [auto_k 0\~1] [k_hi 1\~8] [k_lo 1\~8]> /proc/videograph/di/tmnr/auto_k auto_k = auto_k k_hi = k_hi k_lo = k_lo " src="nvt_media/9cd66209949b9183c04dccd4204b2717.png" /></strong></p>
+<p><strong>Output: <img alt="Command : echo [auto_k 0~1] [k_hi 1~8] [k_lo 1~8]&gt; /proc/videograph/di/tmnr/auto_k auto_k = auto_k k_hi = k_hi k_lo = k_lo " src="nvt_media/9cd66209949b9183c04dccd4204b2717.png" /></strong></p>
 <h6 id="procvideographditmnrtrade_th"> /proc/videograph/di/tmnr/trade_th<a class="headerlink" href="#procvideographditmnrtrade_th" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the TMNR/trade_threshold parameter of the current camera channel.</p>
@@ -2522,13 +2522,13 @@ For indoor(without light/shadow change) scene, the recommend value is 32. For ot
 </thead>
 <tbody>
 <tr>
-<td><strong>echo [th 0 \~ 128] > /proc/videograph/di/tmnr/trade_th</strong></td>
+<td><strong>echo [th 0 ~ 128] &gt; /proc/videograph/di/tmnr/trade_th</strong></td>
 <td><strong>trade_threshold</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read : cat /proc/videograph/di/tmnr/trade_th</strong></p>
-<p><strong>Output: <img alt="Command : echo [th 0\~128] > /proc/videograph/di/tmnr/trade_th trade_threshold = trade_threshold " src="nvt_media/a64db87a0395b2848da690747afbe3cd.png" /></strong></p>
+<p><strong>Output: <img alt="Command : echo [th 0~128] &gt; /proc/videograph/di/tmnr/trade_th trade_threshold = trade_threshold " src="nvt_media/a64db87a0395b2848da690747afbe3cd.png" /></strong></p>
 <h6 id="procvideographditmnrsupp_str"> /proc/videograph/di/tmnr/supp_str<a class="headerlink" href="#procvideographditmnrsupp_str" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the TMNR/suppress_strength parameter of the current camera channel.</p>
@@ -2543,13 +2543,13 @@ For indoor(without light/shadow change) scene, the recommend value is 32. For ot
 </thead>
 <tbody>
 <tr>
-<td><strong>echo [str 2\~64] > /proc/videograph/di/tmnr/supp_str</strong></td>
+<td><strong>echo [str 2~64] &gt; /proc/videograph/di/tmnr/supp_str</strong></td>
 <td><strong>suppress_strength</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read : cat /proc/videograph/di/tmnr/supp_str</strong></p>
-<p><strong>Output: <img alt="Command : echo [str 2\~64] > /proc/videograph/di/tmnr/supp_str suppress_strength = suppress_strength " src="nvt_media/1f3ca44fdfa846d816178e0d62454144.png" /></strong></p>
+<p><strong>Output: <img alt="Command : echo [str 2~64] &gt; /proc/videograph/di/tmnr/supp_str suppress_strength = suppress_strength " src="nvt_media/1f3ca44fdfa846d816178e0d62454144.png" /></strong></p>
 <h6 id="procvideographditmnrnf"> /proc/videograph/di/tmnr/nf<a class="headerlink" href="#procvideographditmnrnf" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the TMNR/NF (Normalize Factor) parameter of the current camera channel.</p>
@@ -2564,13 +2564,13 @@ For indoor(without light/shadow change) scene, the recommend value is 32. For ot
 </thead>
 <tbody>
 <tr>
-<td><strong>echo [nf 1 \~ 6] > /proc/videograph/di/tmnr/nf</strong></td>
+<td><strong>echo [nf 1 ~ 6] &gt; /proc/videograph/di/tmnr/nf</strong></td>
 <td><strong>nf</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read : cat /proc/videograph/di/tmnr/nf</strong></p>
-<p><strong>Output: <img alt="Command : echo [nf 1 \~ 6] > /proc/videograph/di/tmnr/nf NF = nf " src="nvt_media/0e53339a9fcedbd97a5dcbce96ad9beb.png" /></strong></p>
+<p><strong>Output: <img alt="Command : echo [nf 1 ~ 6] &gt; /proc/videograph/di/tmnr/nf NF = nf " src="nvt_media/0e53339a9fcedbd97a5dcbce96ad9beb.png" /></strong></p>
 <h6 id="procvideographditmnrvar_offset"> /proc/videograph/di/tmnr/var_offset<a class="headerlink" href="#procvideographditmnrvar_offset" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the TMNR/var_offset parameter of the current camera channel.</p>
@@ -2585,13 +2585,13 @@ For indoor(without light/shadow change) scene, the recommend value is 32. For ot
 </thead>
 <tbody>
 <tr>
-<td><strong>echo [var_offset 0\~15] > /proc/videograph/di/tmnr/var_offset</strong></td>
+<td><strong>echo [var_offset 0~15] &gt; /proc/videograph/di/tmnr/var_offset</strong></td>
 <td><strong>var_offset</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read : cat /proc/videograph/di/tmnr/var_offset</strong></p>
-<p><strong>Output: <img alt="Command : echo [var_offset 0\~15] > /proc/videograph/di/tmnr/var_offset var_offset = var_offset " src="nvt_media/df3e4b3c016a6cd8690384990a40f4fa.png" /></strong></p>
+<p><strong>Output: <img alt="Command : echo [var_offset 0~15] &gt; /proc/videograph/di/tmnr/var_offset var_offset = var_offset " src="nvt_media/df3e4b3c016a6cd8690384990a40f4fa.png" /></strong></p>
 <h6 id="procvideographditmnrmotion_var"> /proc/videograph/di/tmnr/motion_var<a class="headerlink" href="#procvideographditmnrmotion_var" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the TMNR/motion_var parameter of the current camera channel.</p>
@@ -2606,13 +2606,13 @@ For indoor(without light/shadow change) scene, the recommend value is 32. For ot
 </thead>
 <tbody>
 <tr>
-<td><strong>echo [motion_var 1 \~ 20] > /proc/videograph/di/tmnr/motion_var</strong></td>
+<td><strong>echo [motion_var 1 ~ 20] &gt; /proc/videograph/di/tmnr/motion_var</strong></td>
 <td><strong>motion_var</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read : cat /proc/videograph/di/tmnr/motion_var</strong></p>
-<p><strong>Output: <img alt="Command : echo [motion_var 1\~20] > /proc/videograph/di/tmnr/motion_var motion_var = motion_var " src="nvt_media/7369c4ff04def97579f0509bba09754b.png" /></strong></p>
+<p><strong>Output: <img alt="Command : echo [motion_var 1~20] &gt; /proc/videograph/di/tmnr/motion_var motion_var = motion_var " src="nvt_media/7369c4ff04def97579f0509bba09754b.png" /></strong></p>
 <h6 id="procvideographditmnrmotion_th_mult"> /proc/videograph/di/tmnr/motion_th_mult<a class="headerlink" href="#procvideographditmnrmotion_th_mult" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the TMNR/motion_th_mult parameter of the current camera channel.</p>
@@ -2627,13 +2627,13 @@ For indoor(without light/shadow change) scene, the recommend value is 32. For ot
 </thead>
 <tbody>
 <tr>
-<td><strong>echo [motion_th_mult 0\~128] > /proc/videograph/di/tmnr/motion_th_mult</strong></td>
+<td><strong>echo [motion_th_mult 0~128] &gt; /proc/videograph/di/tmnr/motion_th_mult</strong></td>
 <td><strong>motion_th_mult</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read : cat /proc/videograph/di/tmnr</strong>/<strong>motion_th_mult</strong></p>
-<p><strong>Output: <img alt="Command : echo [motion_th_mult 0 \~ 128] > /proc/videograph/di/tmnr/motion_th_mult motion_th_mult = motion_th_mult " src="nvt_media/cca0b48fced8e4dc2f6a3afeae52290c.png" /></strong></p>
+<p><strong>Output: <img alt="Command : echo [motion_th_mult 0 ~ 128] &gt; /proc/videograph/di/tmnr/motion_th_mult motion_th_mult = motion_th_mult " src="nvt_media/cca0b48fced8e4dc2f6a3afeae52290c.png" /></strong></p>
 <h6 id="procvideographditmnrtmnr_fcs"> /proc/videograph/di/tmnr/tmnr_fcs<a class="headerlink" href="#procvideographditmnrtmnr_fcs" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the TMNR/FCS related parameter of the current camera channel.</p>
@@ -2648,13 +2648,13 @@ For indoor(without light/shadow change) scene, the recommend value is 32. For ot
 </thead>
 <tbody>
 <tr>
-<td><strong>echo [enable 0\~1] [fcs_th 0\~255] [fcs_weight 0\~16] > /proc/videograph/di/tmnr/tmnr_fcs</strong></td>
+<td><strong>echo [enable 0~1] [fcs_th 0~255] [fcs_weight 0~16] &gt; /proc/videograph/di/tmnr/tmnr_fcs</strong></td>
 <td><strong>tmnr_fcs_en,</strong>  <strong>tmnr_fcs_th,</strong>  <strong>tmnr_fcs_weight</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read : cat /proc/videograph/di/tmnr</strong>/<strong>tmnr_fcs</strong></p>
-<p><strong>Output: <img alt="Command : echo [enable 0\~1] [fcs_th 0\~255] [fcs_weight 0\~16] > /proc/videograph/di/tmnr/tmnr_fcs tmnr_fcs_en = tmnr_fcs_en tmnr_fcs_th = tmnr_fcs_th tmnr_fcs_weight = tmnr_fcs_weight " src="nvt_media/66bf04f5f382e35bbba1b7fc7a778db8.png" /></strong></p>
+<p><strong>Output: <img alt="Command : echo [enable 0~1] [fcs_th 0~255] [fcs_weight 0~16] &gt; /proc/videograph/di/tmnr/tmnr_fcs tmnr_fcs_en = tmnr_fcs_en tmnr_fcs_th = tmnr_fcs_th tmnr_fcs_weight = tmnr_fcs_weight " src="nvt_media/66bf04f5f382e35bbba1b7fc7a778db8.png" /></strong></p>
 <h6 id="procvideographditmnrdpr"> /proc/videograph/di/tmnr/dpr<a class="headerlink" href="#procvideographditmnrdpr" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or writer the TMNR/DPR related parameter of the current camera channel.</p>
@@ -2669,13 +2669,13 @@ For indoor(without light/shadow change) scene, the recommend value is 32. For ot
 </thead>
 <tbody>
 <tr>
-<td><strong>echo [dpr_en 0\~1] [motion_th 0\~255] [cnt_th 0\~16] [dpr_mode 0\~1] > /proc/videograph/di/tmnr/dpr</strong></td>
+<td><strong>echo [dpr_en 0~1] [motion_th 0~255] [cnt_th 0~16] [dpr_mode 0~1] &gt; /proc/videograph/di/tmnr/dpr</strong></td>
 <td><strong>dpr_en,</strong> <strong>dpr_motion_th,</strong>  <strong>dpr_cnt_th,</strong>  <strong>dpr_mode</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read : cat /proc/videograph/di/tmnr/dpr</strong></p>
-<p><strong>Output: <img alt="Command : echo [dpr_en 0\~1] [motion_th 0\~255] [cnt_th 0\~16] [dpr_mode 0\~1] > /proc/videograph/di/tmnr/dpr dpr_en = dpr_en dpr_motion_th = dpr_motion_th dpr_cnt_th = dpr_cnt_th dpr_mode = dpr_mode " src="nvt_media/da23096dbd3b17b51a4aeacb33812f46.png" /></strong></p>
+<p><strong>Output: <img alt="Command : echo [dpr_en 0~1] [motion_th 0~255] [cnt_th 0~16] [dpr_mode 0~1] &gt; /proc/videograph/di/tmnr/dpr dpr_en = dpr_en dpr_motion_th = dpr_motion_th dpr_cnt_th = dpr_cnt_th dpr_mode = dpr_mode " src="nvt_media/da23096dbd3b17b51a4aeacb33812f46.png" /></strong></p>
 <h2 id="4-de-interlace-di">4 De-Interlace (DI)<a class="headerlink" href="#4-de-interlace-di" title="Permanent link">&para;</a></h2>
 <p>The dynamic de-interlace method is to detect where is the motion object in the image and where is the static object in the image. For static block in the image using field de-interlace to get the completely resolution in vertical direction, and for motion block in the image using single field de-interlace to avoid sawtooth and ghost phenomenon. The following are common abnormal phenomenons which caused by de-interlace, it needs to adjust parameter to get the best image performance.</p>
 <p><img alt="D:\work6\636\fhtml\NT9833x_DI_Tuning_Guide_en.files\image031.png" src="nvt_media/8ab41dd1dffb373a820faccdbc726ad7.png" /></p>
@@ -2697,175 +2697,175 @@ For indoor(without light/shadow change) scene, the recommend value is 32. For ot
 <tbody>
 <tr>
 <td>top_motion_en</td>
-<td>0\~1</td>
+<td>0~1</td>
 <td>1</td>
 <td>Enable the motion detection of top field.</td>
 </tr>
 <tr>
 <td>bot_motion_en</td>
-<td>0\~1</td>
+<td>0~1</td>
 <td>1</td>
 <td>Enable the motion detection of bottom field.</td>
 </tr>
 <tr>
 <td>auto_th_en</td>
-<td>0\~1</td>
+<td>0~1</td>
 <td>1</td>
 <td>Based on Y to automatically generate “md_th”. If this function is enabled, the parameter “md_th” is invalid.</td>
 </tr>
 <tr>
 <td>strong_md_en</td>
-<td>0\~1</td>
+<td>0~1</td>
 <td>1</td>
 <td>Enable “strong_md” function. If “md” is larger than “strong_md_th”, it is determined as motion block, no matter the motion block is continuous or not.</td>
 </tr>
 <tr>
 <td>mmb_en</td>
-<td>0\~1</td>
+<td>0~1</td>
 <td>1</td>
 <td>Enable motion macro block(mmb) determine mechanism. Single mb is motion does not mean it is necessary mmb, it needs to be determined with other mb.</td>
 </tr>
 <tr>
 <td>smb_en</td>
-<td>0\~1</td>
+<td>0~1</td>
 <td>1</td>
 <td>Enable static macro block(smb) determine mechanism. (The pixel in smb still has possibility to be motion)</td>
 </tr>
 <tr>
 <td>emb_en</td>
-<td>0\~1</td>
+<td>0~1</td>
 <td>1</td>
 <td>Enable extend macro block(emb) determine mechanism, the smb will further perform emb to avoid fratured image.</td>
 </tr>
 <tr>
 <td>lmb_en</td>
-<td>0\~1</td>
+<td>0~1</td>
 <td>1</td>
 <td>Enable line macro block(lmb) determine mechanism. (mb is texture in line form)</td>
 </tr>
 <tr>
 <td>pmmb_en</td>
-<td>0\~1</td>
+<td>0~1</td>
 <td>1</td>
 <td>Enable pmmb detection, “tm_di” must be enable.</td>
 </tr>
 <tr>
 <td>corner_detect_en</td>
-<td>0\~1</td>
+<td>0~1</td>
 <td>1</td>
 <td>Determine whether it is corner pixel, if it is corner pixel, replace the pixel with average of the upper pixel and lower pixel.</td>
 </tr>
 <tr>
 <td>di_gmm_motion_en</td>
-<td>0\~1</td>
+<td>0~1</td>
 <td>1</td>
 <td>Reference gmm’s motion result. Motion = (DI motion || GMM motion)</td>
 </tr>
 <tr>
 <td>all_motion</td>
-<td>0\~1</td>
+<td>0~1</td>
 <td>0</td>
 <td>Debug mode. Set all image as motion.</td>
 </tr>
 <tr>
 <td>all_static</td>
-<td>0\~1</td>
+<td>0~1</td>
 <td>0</td>
 <td>Debug mode, set all image as static.</td>
 </tr>
 <tr>
 <td>strong_edge</td>
-<td>0\~255</td>
+<td>0~255</td>
 <td>40</td>
 <td>Threshold for determining strong edge.</td>
 </tr>
 <tr>
 <td>strong_md_th</td>
-<td>0\~255</td>
+<td>0~255</td>
 <td>40</td>
-<td>Threshold for determining strong motion. if (pixel diff > strong_md_th) => motion</td>
+<td>Threshold for determining strong motion. if (pixel diff &gt; strong_md_th) =&gt; motion</td>
 </tr>
 <tr>
 <td>md_th</td>
-<td>0\~255</td>
+<td>0~255</td>
 <td>10</td>
 <td>Threshold for determining whether pixel is motion.</td>
 </tr>
 <tr>
 <td>line_admit</td>
-<td>0\~15</td>
+<td>0~15</td>
 <td>4</td>
 <td>Threshold for determining whether it is line pixel. If number of continuous similar point is larger than line_admit, it is determined as line pixel.</td>
 </tr>
 <tr>
 <td>lmb_th</td>
-<td>0\~255</td>
+<td>0~255</td>
 <td>6</td>
 <td>Threshold for determining whether it is line mb. If line pixel in mb is larger than “lmb_th”, it is determined as line mb.</td>
 </tr>
 <tr>
 <td>mmb_th</td>
-<td>0\~255</td>
+<td>0~255</td>
 <td>16</td>
 <td>Threshold for determining whether it is mmb. If larger than “mmb_th”, it is motion.</td>
 </tr>
 <tr>
 <td>smb_th</td>
-<td>0\~255</td>
+<td>0~255</td>
 <td>4</td>
 <td>Threshold for determining whether it is smb. If larger than “smb_th”, it is static.</td>
 </tr>
 <tr>
 <td>emb_th</td>
-<td>0\~255</td>
+<td>0~255</td>
 <td>8</td>
 <td>Threshold for determining whether it is emb. If larger than “emb_th”, it is extend mb.</td>
 </tr>
 <tr>
 <td>ela_h_th</td>
-<td>0\~255</td>
+<td>0~255</td>
 <td>60</td>
 <td>The break point of edge strength weighting map. Please refer to advance description.</td>
 </tr>
 <tr>
 <td>ela_l_th</td>
-<td>0\~255</td>
+<td>0~255</td>
 <td>20</td>
 <td>The break point of edge strength weighting map. Please refer to advance description.</td>
 </tr>
 <tr>
 <td>mmb_scene_change_en</td>
-<td>0\~1</td>
+<td>0~1</td>
 <td>1</td>
 <td>Enable the scene change detection of mmb. When it is determined as scene changed, the algorithm will set all image as motion status to avoid fratured image.</td>
 </tr>
 <tr>
 <td>mmb_scene_change_th</td>
-<td>0\~2\^16-1</td>
+<td>0~2^16-1</td>
 <td>1080</td>
 <td>Threshold for determining whether it is scene changed. When the number of mmb is larger than this threshold, it is determined as scene changed.</td>
 </tr>
 <tr>
 <td>ch0_row1_status_ctrl</td>
-<td>0\~3</td>
+<td>0~3</td>
 <td>0</td>
 <td>Control with special treatment for first row in even field 2’b00 : Automatic processing by DI. 2’b01: Same as process that DI handle a still object 2’b10: Same as process that DI handle a motion object 2’b11: Fill it with black.</td>
 </tr>
 <tr>
 <td>ch1_row1_status_ctrl</td>
-<td>0\~3</td>
+<td>0~3</td>
 <td>0</td>
 <td>Control with special treatment for first row in odd field 2’b00 : Automatic processing by DI. 2’b01: Same as process that DI handle a still object 2’b10: Same as process that DI handle a motion object 2’b11: Fill it with black.</td>
 </tr>
 <tr>
 <td>ch0_last_row_status_ctrl</td>
-<td>0\~3</td>
+<td>0~3</td>
 <td>0</td>
 <td>Control with special treatment for last row in even field 2’b00 : Automatic processing by DI. 2’b01: Same as process that DI handle a still object 2’b10: Same as process that DI handle a motion object 2’b11: Fill it with black.</td>
 </tr>
 <tr>
 <td>ch1_last_row_status_ctrl</td>
-<td>0\~3</td>
+<td>0~3</td>
 <td>0</td>
 <td>Control with special treatment for last row in odd field 2’b00 : Automatic processing by DI. 2’b01: Same as process that DI handle a still object 2’b10: Same as process that DI handle a motion object 2’b11: Fill it with black.</td>
 </tr>
@@ -2902,13 +2902,13 @@ For indoor(without light/shadow change) scene, the recommend value is 32. For ot
 </thead>
 <tbody>
 <tr>
-<td><strong>echo [top_motion_en 0\~1] [bot_motion_en 0\~1] > /proc/videograph/di/di/motion_en</strong></td>
+<td><strong>echo [top_motion_en 0~1] [bot_motion_en 0~1] &gt; /proc/videograph/di/di/motion_en</strong></td>
 <td><strong>top_motion_en, bot_motion_en</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read : cat /proc/videograph/di/di/motion_en</strong></p>
-<p><strong>Output: <img alt="Command: echo [top_motion_en 0\~1] [bot_motion_en 0\~1] > /proc/videograph/di/di/motion_en top_motion_en = top_motion_en bot_motion_en = bot_motion_en " src="nvt_media/9db2b72a61c2821ec405a250a5286d8d.png" /></strong></p>
+<p><strong>Output: <img alt="Command: echo [top_motion_en 0~1] [bot_motion_en 0~1] &gt; /proc/videograph/di/di/motion_en top_motion_en = top_motion_en bot_motion_en = bot_motion_en " src="nvt_media/9db2b72a61c2821ec405a250a5286d8d.png" /></strong></p>
 <h6 id="procvideographdidimd_th"> /proc/videograph/di/di/md_th<a class="headerlink" href="#procvideographdidimd_th" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the DIE/md_th parameter of the current camera channel.</p>
@@ -2923,13 +2923,13 @@ For indoor(without light/shadow change) scene, the recommend value is 32. For ot
 </thead>
 <tbody>
 <tr>
-<td><strong>echo [auto_th_en 0 \~ 1] [md_th 0\~255]> /proc/videograph/di/di/md_th</strong></td>
+<td><strong>echo [auto_th_en 0 ~ 1] [md_th 0~255]&gt; /proc/videograph/di/di/md_th</strong></td>
 <td>auto_md_en, md_th ※ When “auto_md_en” is 1, “md_th” is not working.</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read : cat /proc/videograph/di/di/md_th</strong></p>
-<p><strong>Output: <img alt="Command : echo [auto_th_en 0 \~ 1] [md_th 0\~255]> /proc/videograph/di/di/md_th auto_th_en = auto_th_en md_th = md_th " src="nvt_media/67b8a73123f3f00eb34b2a81ceb1ec8f.png" /></strong></p>
+<p><strong>Output: <img alt="Command : echo [auto_th_en 0 ~ 1] [md_th 0~255]&gt; /proc/videograph/di/di/md_th auto_th_en = auto_th_en md_th = md_th " src="nvt_media/67b8a73123f3f00eb34b2a81ceb1ec8f.png" /></strong></p>
 <h6 id="procvideographdidistrong_md"> /proc/videograph/di/di/strong_md<a class="headerlink" href="#procvideographdidistrong_md" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the DI/strong_md related parameters of the current channel.</p>
@@ -2944,13 +2944,13 @@ For indoor(without light/shadow change) scene, the recommend value is 32. For ot
 </thead>
 <tbody>
 <tr>
-<td><strong>echo [strong_md_en 0 \~ 1] [strong_md_th 0\~255]> /proc/videograph/di/di/strong_md</strong></td>
+<td><strong>echo [strong_md_en 0 ~ 1] [strong_md_th 0~255]&gt; /proc/videograph/di/di/strong_md</strong></td>
 <td><strong>strong_md_en, strong_md_th</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read : cat /proc/videograph/di/di/strong_md</strong></p>
-<p><strong>Output: <img alt="Command : echo [strong_md_en 0 \~ 1] [strong_md_th 0\~255]> /proc/videograph/di/di/strong_md strong_md_en = strong_md_en strong_md_th = strong_md_th " src="nvt_media/1f333f32261e857563bca46b1dedee0c.png" /></strong></p>
+<p><strong>Output: <img alt="Command : echo [strong_md_en 0 ~ 1] [strong_md_th 0~255]&gt; /proc/videograph/di/di/strong_md strong_md_en = strong_md_en strong_md_th = strong_md_th " src="nvt_media/1f333f32261e857563bca46b1dedee0c.png" /></strong></p>
 <h6 id="procvideographdidistrong_edge"> /proc/videograph/di/di/strong_edge<a class="headerlink" href="#procvideographdidistrong_edge" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the DI/strong_edge parameter of the cuurent camera channel.</p>
@@ -2965,13 +2965,13 @@ For indoor(without light/shadow change) scene, the recommend value is 32. For ot
 </thead>
 <tbody>
 <tr>
-<td><strong>echo [strong_edge 0\~255]> /proc/videograph/di/di/strong_edge</strong></td>
+<td><strong>echo [strong_edge 0~255]&gt; /proc/videograph/di/di/strong_edge</strong></td>
 <td><strong>strong_edge</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read : cat /proc/videograph/di/di/strong_edge</strong></p>
-<p><strong>Output: <img alt="Command : echo [strong_edge 0\~255]> /proc/videograph/di/di/strong_edge strong_edge = strong_edge " src="nvt_media/5cfc99ef9ed5c3661c30b8d4dd8f6846.png" /></strong></p>
+<p><strong>Output: <img alt="Command : echo [strong_edge 0~255]&gt; /proc/videograph/di/di/strong_edge strong_edge = strong_edge " src="nvt_media/5cfc99ef9ed5c3661c30b8d4dd8f6846.png" /></strong></p>
 <h6 id="procvideographdidicorner_detect_en"> /proc/videograph/di/di/corner_detect_en<a class="headerlink" href="#procvideographdidicorner_detect_en" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the DI/corner_detect_en parameter of the current camera channel.</p>
@@ -2986,13 +2986,13 @@ For indoor(without light/shadow change) scene, the recommend value is 32. For ot
 </thead>
 <tbody>
 <tr>
-<td><strong>echo [corner_det_en 0\~1]> /proc/videograph/di/di/corner_det_en</strong></td>
+<td><strong>echo [corner_det_en 0~1]&gt; /proc/videograph/di/di/corner_det_en</strong></td>
 <td><strong>corner_detect_en</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read : cat /proc/videograph/di/di/corner_det_en</strong></p>
-<p><strong>Output: <img alt="Command : echo [corner_det_en 0\~1]> /proc/videograph/di/di/corner_det_en corner_detect_en = corner_detect_en  " src="nvt_media/c27c3726e5dc0304b72c799d8dd1dfc9.png" /></strong></p>
+<p><strong>Output: <img alt="Command : echo [corner_det_en 0~1]&gt; /proc/videograph/di/di/corner_det_en corner_detect_en = corner_detect_en  " src="nvt_media/c27c3726e5dc0304b72c799d8dd1dfc9.png" /></strong></p>
 <h6 id="procvideographdidiline_admit"> /proc/videograph/di/di/line_admit<a class="headerlink" href="#procvideographdidiline_admit" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the DI/line_admit parameter of the current camera channel.</p>
@@ -3007,13 +3007,13 @@ For indoor(without light/shadow change) scene, the recommend value is 32. For ot
 </thead>
 <tbody>
 <tr>
-<td><strong>echo [line_admit 0\~15]> /proc/videograph/di/di/line_admit</strong></td>
+<td><strong>echo [line_admit 0~15]&gt; /proc/videograph/di/di/line_admit</strong></td>
 <td><strong>line_admit</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read : cat /proc/videograph/di/di/line_admit</strong></p>
-<p><strong>Output: <img alt="Command : echo [line_admit 0\~15]> /proc/videograph/di/di/line_admit line_admit = line_admit " src="nvt_media/ab17fe49c958257f204603ea78cce7ba.png" /></strong></p>
+<p><strong>Output: <img alt="Command : echo [line_admit 0~15]&gt; /proc/videograph/di/di/line_admit line_admit = line_admit " src="nvt_media/ab17fe49c958257f204603ea78cce7ba.png" /></strong></p>
 <h6 id="procvideographdidiall_motion_static"> /proc/videograph/di/di/all_motion_static<a class="headerlink" href="#procvideographdidiall_motion_static" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the DI/all_motion, all_static parameter of the current camera channel.</p>
@@ -3028,13 +3028,13 @@ For indoor(without light/shadow change) scene, the recommend value is 32. For ot
 </thead>
 <tbody>
 <tr>
-<td><strong>echo [all_motion 0\~1] [all_static 0\~1] > /proc/videograph/di/di/all_motion_static</strong></td>
+<td><strong>echo [all_motion 0~1] [all_static 0~1] &gt; /proc/videograph/di/di/all_motion_static</strong></td>
 <td><strong>all_motion, all_static</strong> ※Should not be both set to 1.</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read : cat /proc/videograph/di/di/all_motion_static</strong></p>
-<p><strong>Output: <img alt="Command : echo [all_motion 0\~1] [all_static 0\~1] > /proc/videograph/di/di/all_motion_static all_motion = all_motion  all_static = all_static  " src="nvt_media/a7e480a60cbf123b1144e22fd474b0d4.png" /></strong></p>
+<p><strong>Output: <img alt="Command : echo [all_motion 0~1] [all_static 0~1] &gt; /proc/videograph/di/di/all_motion_static all_motion = all_motion  all_static = all_static  " src="nvt_media/a7e480a60cbf123b1144e22fd474b0d4.png" /></strong></p>
 <h6 id="procvideographdididi_gmm_motion_en"> /proc/videograph/di/di/di_gmm_motion_en<a class="headerlink" href="#procvideographdididi_gmm_motion_en" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the DI/di_gmm_motion_en of the current camera channel.</p>
@@ -3049,13 +3049,13 @@ For indoor(without light/shadow change) scene, the recommend value is 32. For ot
 </thead>
 <tbody>
 <tr>
-<td><strong>echo [enable 0\~1] > /proc/videograph/di/di/di_gmm_motion_en</strong></td>
+<td><strong>echo [enable 0~1] &gt; /proc/videograph/di/di/di_gmm_motion_en</strong></td>
 <td><strong>di_gmm_motion_en</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read : cat /proc/videograph/di/di/di_gmm_motion_en</strong></p>
-<p><strong>Output: <img alt="Command : echo [enable 0\~1] > /proc/videograph/di/di/di_gmm_motion_en di_gmm_motion_en = di_gmm_motion_en " src="nvt_media/40b4ee24a889c77b3154b0c4234b2a0e.png" /></strong></p>
+<p><strong>Output: <img alt="Command : echo [enable 0~1] &gt; /proc/videograph/di/di/di_gmm_motion_en di_gmm_motion_en = di_gmm_motion_en " src="nvt_media/40b4ee24a889c77b3154b0c4234b2a0e.png" /></strong></p>
 <h6 id="procvideographdidimmb_param"> /proc/videograph/di/di/mmb_param<a class="headerlink" href="#procvideographdidimmb_param" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the DI/mmb related parameter of the current camera channel.</p>
@@ -3070,13 +3070,13 @@ For indoor(without light/shadow change) scene, the recommend value is 32. For ot
 </thead>
 <tbody>
 <tr>
-<td><strong>echo [mmb_en 0\~1] [pmmb_en 0\~1] [mmb_th 0\~255] > /proc/videograph/di/di/mmb_param</strong></td>
+<td><strong>echo [mmb_en 0~1] [pmmb_en 0~1] [mmb_th 0~255] &gt; /proc/videograph/di/di/mmb_param</strong></td>
 <td><strong>mmb_en,</strong>  <strong>pmmb_en,(mmb_en should be 1)</strong> <strong>mmb_th</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read : cat /proc/videograph/di/di/mmb_param</strong></p>
-<p><strong>Output: <img alt="Command : echo [mmb_en 0\~1] [pmmb_en 0\~1] [mmb_th 0\~255] > /proc/videograph/di/di/mmb_param mmb_en = mmb_en pmmb_en = pmmb_en  mmb_th = mmb_th  " src="nvt_media/a1d25ee9644d3fe528cd0495577f3a35.png" /></strong></p>
+<p><strong>Output: <img alt="Command : echo [mmb_en 0~1] [pmmb_en 0~1] [mmb_th 0~255] &gt; /proc/videograph/di/di/mmb_param mmb_en = mmb_en pmmb_en = pmmb_en  mmb_th = mmb_th  " src="nvt_media/a1d25ee9644d3fe528cd0495577f3a35.png" /></strong></p>
 <h6 id="procvideographdidimmb_scene_change"> /proc/videograph/di/di/mmb_scene_change<a class="headerlink" href="#procvideographdidimmb_scene_change" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the DI/mmb scene change related parameter of the current camera channel.</p>
@@ -3091,13 +3091,13 @@ For indoor(without light/shadow change) scene, the recommend value is 32. For ot
 </thead>
 <tbody>
 <tr>
-<td><strong>echo [scene_change_en 0\~1] [scene_change_th 0\~65535] > /proc/videograph/di/di/mmb_scene_change</strong></td>
+<td><strong>echo [scene_change_en 0~1] [scene_change_th 0~65535] &gt; /proc/videograph/di/di/mmb_scene_change</strong></td>
 <td><strong>mmb_scene_change_en,</strong>  <strong>mmb_scene_change_th</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read : cat /proc/videograph/di/di/mmb_scene_change</strong></p>
-<p><strong>Output: <img alt="Command : echo [scene_change_en 0\~1] [scene_change_th 0\~65535] > /proc/videograph/di/di/mmb_scene_change mmb_scene_change_en = mmb_scene_change_en mmb_scene_change_th = mmb_scene_change_th " src="nvt_media/959476f8c21f64c8ee0b049a9e470dad.png" /></strong></p>
+<p><strong>Output: <img alt="Command : echo [scene_change_en 0~1] [scene_change_th 0~65535] &gt; /proc/videograph/di/di/mmb_scene_change mmb_scene_change_en = mmb_scene_change_en mmb_scene_change_th = mmb_scene_change_th " src="nvt_media/959476f8c21f64c8ee0b049a9e470dad.png" /></strong></p>
 <h6 id="procvideographdidismb_param"> /proc/videograph/di/di/smb_param<a class="headerlink" href="#procvideographdidismb_param" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the DI/smb related parameter of the current camera channel.</p>
@@ -3112,13 +3112,13 @@ For indoor(without light/shadow change) scene, the recommend value is 32. For ot
 </thead>
 <tbody>
 <tr>
-<td><strong>echo [smb_en 0\~1] [smb_th 0\~255] > /proc/videograph/di/di/smb_param</strong></td>
+<td><strong>echo [smb_en 0~1] [smb_th 0~255] &gt; /proc/videograph/di/di/smb_param</strong></td>
 <td><strong>smb_en,</strong>  <strong>smb_th</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read : cat /proc/videograph/di/di/smb_param</strong></p>
-<p><strong>Output: <img alt="Command : echo [smb_en 0\~1] [smb_th 0\~255] > /proc/videograph/di/di/smb_param smb_en = smb_en smb_th = smb_th  " src="nvt_media/187fd558f5e5097954b63ba655b59cfa.png" /></strong></p>
+<p><strong>Output: <img alt="Command : echo [smb_en 0~1] [smb_th 0~255] &gt; /proc/videograph/di/di/smb_param smb_en = smb_en smb_th = smb_th  " src="nvt_media/187fd558f5e5097954b63ba655b59cfa.png" /></strong></p>
 <h6 id="procvideographdidiemb_param"> /proc/videograph/di/di/emb_param<a class="headerlink" href="#procvideographdidiemb_param" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the DI/emb related parameter of the current camera channel.</p>
@@ -3133,13 +3133,13 @@ For indoor(without light/shadow change) scene, the recommend value is 32. For ot
 </thead>
 <tbody>
 <tr>
-<td><strong>echo [emb_en 0\~1] [emb_th 0\~255] > /proc/videograph/di/di/emb_param</strong></td>
+<td><strong>echo [emb_en 0~1] [emb_th 0~255] &gt; /proc/videograph/di/di/emb_param</strong></td>
 <td><strong>emb_en,</strong>  <strong>smb_th</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read : cat /proc/videograph/di/di/emb_param</strong></p>
-<p><strong>Output: <img alt="Command : echo [emb_en 0\~1] [emb_th 0\~255] > /proc/videograph/di/di/emb_param emb_en = emb_en emb_th = emb_th  " src="nvt_media/bd551a07ba464a94b57fce858a6334fb.png" /></strong></p>
+<p><strong>Output: <img alt="Command : echo [emb_en 0~1] [emb_th 0~255] &gt; /proc/videograph/di/di/emb_param emb_en = emb_en emb_th = emb_th  " src="nvt_media/bd551a07ba464a94b57fce858a6334fb.png" /></strong></p>
 <h6 id="procvideographdidilmb_param"> /proc/videograph/di/di/lmb_param<a class="headerlink" href="#procvideographdidilmb_param" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the DIE/lmb related parameter of the current camera channel.</p>
@@ -3154,13 +3154,13 @@ For indoor(without light/shadow change) scene, the recommend value is 32. For ot
 </thead>
 <tbody>
 <tr>
-<td><strong>echo [lmb_en 0\~1] [lmb_th 0\~255] > /proc/videograph/di/di/lmb_param</strong></td>
+<td><strong>echo [lmb_en 0~1] [lmb_th 0~255] &gt; /proc/videograph/di/di/lmb_param</strong></td>
 <td><strong>lmb_en,</strong>  <strong>lmb_th</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read : cat /proc/videograph/di/di/lmb_param</strong></p>
-<p><strong>Output: <img alt="Command : echo [lmb_en 0\~1] [lmb_th 0\~255] > /proc/videograph/di/di/lmb_param lmb_en = lmb_en lmb_th = lmb_th  " src="nvt_media/325636f1a06e7c2965127229a56edd09.png" /></strong></p>
+<p><strong>Output: <img alt="Command : echo [lmb_en 0~1] [lmb_th 0~255] &gt; /proc/videograph/di/di/lmb_param lmb_en = lmb_en lmb_th = lmb_th  " src="nvt_media/325636f1a06e7c2965127229a56edd09.png" /></strong></p>
 <h6 id="procvideographdidiela_th"> /proc/videograph/di/di/ela_th<a class="headerlink" href="#procvideographdidiela_th" title="Permanent link">&para;</a></h6>
 <p><strong>[Description]</strong></p>
 <p>Read or write the DIE/ela_h_th, ela_l_th related parameter of the current camera channel.</p>
@@ -3175,13 +3175,13 @@ For indoor(without light/shadow change) scene, the recommend value is 32. For ot
 </thead>
 <tbody>
 <tr>
-<td><strong>echo [ela_hi 0\~255] [ela_lo 0\~255] > /proc/videograph/di/di/ela_th</strong></td>
+<td><strong>echo [ela_hi 0~255] [ela_lo 0~255] &gt; /proc/videograph/di/di/ela_th</strong></td>
 <td><strong>ela_h_th,</strong>  <strong>ela_l_th</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read : cat /proc/videograph/di/di/ela_th</strong></p>
-<p><strong>Output: <img alt="Command : echo [ela_hi 0\~255] [ela_lo 0\~255] > /proc/videograph/di/di/ela_th ela_h_th = ela_h_th ela_l_th = ela_l_th  " src="nvt_media/842453cd5f99ec70b9fb7f0c2d0327c5.png" /></strong></p>
+<p><strong>Output: <img alt="Command : echo [ela_hi 0~255] [ela_lo 0~255] &gt; /proc/videograph/di/di/ela_th ela_h_th = ela_h_th ela_l_th = ela_l_th  " src="nvt_media/842453cd5f99ec70b9fb7f0c2d0327c5.png" /></strong></p>
 <h6 id="procvideographdidirow_status_ctrl"> /proc/videograph/di/di/row_status_ctrl<a class="headerlink" href="#procvideographdidirow_status_ctrl" title="Permanent link">&para;</a></h6>
 <p><strong>[描述]</strong></p>
 <p>Read or write the DEI/row1_status_ctrl, last_row_status_ctrl related parameter of the current camera channel.</p>
@@ -3196,13 +3196,13 @@ For indoor(without light/shadow change) scene, the recommend value is 32. For ot
 </thead>
 <tbody>
 <tr>
-<td><strong>echo [ch0_row1_status_ctrl 0\~3] [ch1_row1_status_ctrl 0\~3] [ch0_last_row_status_ctrl 0\~3] [ch1_last_row_status_ctrl 0\~3] > /proc/videograph/di/di/row_status_ctrl</strong></td>
+<td><strong>echo [ch0_row1_status_ctrl 0~3] [ch1_row1_status_ctrl 0~3] [ch0_last_row_status_ctrl 0~3] [ch1_last_row_status_ctrl 0~3] &gt; /proc/videograph/di/di/row_status_ctrl</strong></td>
 <td><strong>ch0_row1_status_ctrl,</strong>  <strong>ch1_row1_status_ctrl,</strong> <strong>ch0_last_row_status_ctrl,</strong> <strong>ch1_last_row_status_ctrl,</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Read : cat /proc/videograph/di/di/row_status_ctrl</strong></p>
-<p><strong>Output: <img alt="Command : echo [ch0_row1_status_ctrl 0\~3] [ch1_row1_status_ctrl 0\~3] [ch0_last_row_status_ctrl 0\~3] [ch1_last_row_status_ctrl 0\~3] > /proc/videograph/di/di/row_status_ctrl ch0_row1_status_ctrl = ch0_row1_status_ctrl ch1_row1_status_ctrl = ch1_row1_status_ctrl ch0_last_row_status_ctrl = ch0_last_row_status_ctrl ch1_last_row_status_ctrl = ch1_last_row_status_ctrl 0 : Automatic processing by DI. 1: Same as process that DI handle a still object 2: Same as process that DI handle a motion object 3: Fill it with black. " src="nvt_media/33541889e4e7486e7ce4ba00513c2953.png" /></strong></p>
+<p><strong>Output: <img alt="Command : echo [ch0_row1_status_ctrl 0~3] [ch1_row1_status_ctrl 0~3] [ch0_last_row_status_ctrl 0~3] [ch1_last_row_status_ctrl 0~3] &gt; /proc/videograph/di/di/row_status_ctrl ch0_row1_status_ctrl = ch0_row1_status_ctrl ch1_row1_status_ctrl = ch1_row1_status_ctrl ch0_last_row_status_ctrl = ch0_last_row_status_ctrl ch1_last_row_status_ctrl = ch1_last_row_status_ctrl 0 : Automatic processing by DI. 1: Same as process that DI handle a still object 2: Same as process that DI handle a motion object 3: Fill it with black. " src="nvt_media/33541889e4e7486e7ce4ba00513c2953.png" /></strong></p>
 <h2 id="5-revision-history">5 Revision History<a class="headerlink" href="#5-revision-history" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
