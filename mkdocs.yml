@@ -9,6 +9,7 @@ nav:
            - MD Tuning Guide: Software/CVAI/NT9833X_MD_Tuning_Guide_en.md
        - ISPQ:
           - VPE IQ Tuning Guide: Software/ISP/NT9833x_VPE_IQ_Tuning_Guide_en.md
+          - VPE IQ Tuning Guide(HTML): htm_rename_md/NT9833x_VPE_IQ_Tuning_Guide_en.md
           - LCD IQ Tuning Guide: Software/ISP/NT9833x_LCD_IQ_Tuning_Guide_en.md
           - DI Tuning Guide: Software/ISP/NT9833x_DI_Tuning_Guide_en.md
        - MEDIA:
